@@ -1,0 +1,81 @@
+﻿source_index,城市名称,年份,employeesNumber,reason,suspected_target_city,suspected_year_shift
+486,city25,2021,419,shifted duplicate block: matches city2 at source_year-1,city2,-1
+487,city25,2020,387,shifted duplicate block: matches city2 at source_year-1,city2,-1
+488,city25,2019,388,shifted duplicate block: matches city2 at source_year-1,city2,-1
+489,city25,2018,387,shifted duplicate block: matches city2 at source_year-1,city2,-1
+490,city25,2017,387,shifted duplicate block: matches city2 at source_year-1,city2,-1
+491,city25,2016,390,shifted duplicate block: matches city2 at source_year-1,city2,-1
+492,city25,2015,390,shifted duplicate block: matches city2 at source_year-1,city2,-1
+493,city25,2014,389,shifted duplicate block: matches city2 at source_year-1,city2,-1
+494,city25,2013,389,shifted duplicate block: matches city2 at source_year-1,city2,-1
+495,city25,2012,386,shifted duplicate block: matches city2 at source_year-1,city2,-1
+496,city25,2011,382,shifted duplicate block: matches city2 at source_year-1,city2,-1
+497,city25,2010,364,shifted duplicate block: matches city2 at source_year-1,city2,-1
+498,city25,2009,350,shifted duplicate block: matches city2 at source_year-1,city2,-1
+499,city25,2008,325,shifted duplicate block: matches city2 at source_year-1,city2,-1
+500,city25,2007,308,shifted duplicate block: matches city2 at source_year-1,city2,-1
+501,city25,2006,289,shifted duplicate block: matches city2 at source_year-1,city2,-1
+502,city25,2005,275,shifted duplicate block: matches city2 at source_year-1,city2,-1
+503,city25,2004,260,shifted duplicate block: matches city2 at source_year-1,city2,-1
+504,city25,2003,223,shifted duplicate block: matches city2 at source_year-1,city2,-1
+563,city29,2021,269,shifted duplicate block: matches city8 at source_year-1,city8,-1
+564,city29,2020,285,shifted duplicate block: matches city8 at source_year-1,city8,-1
+565,city29,2019,285,shifted duplicate block: matches city8 at source_year-1,city8,-1
+566,city29,2018,284,shifted duplicate block: matches city8 at source_year-1,city8,-1
+567,city29,2017,284,shifted duplicate block: matches city8 at source_year-1,city8,-1
+568,city29,2016,283,shifted duplicate block: matches city8 at source_year-1,city8,-1
+569,city29,2015,282,shifted duplicate block: matches city8 at source_year-1,city8,-1
+570,city29,2014,281,shifted duplicate block: matches city8 at source_year-1,city8,-1
+571,city29,2013,280,shifted duplicate block: matches city8 at source_year-1,city8,-1
+572,city29,2012,361,shifted duplicate block: matches city8 at source_year-1,city8,-1
+573,city29,2011,327,shifted duplicate block: matches city8 at source_year-1,city8,-1
+574,city29,2010,347,shifted duplicate block: matches city8 at source_year-1,city8,-1
+575,city29,2009,313,shifted duplicate block: matches city8 at source_year-1,city8,-1
+576,city29,2008,294,shifted duplicate block: matches city8 at source_year-1,city8,-1
+577,city29,2007,282,shifted duplicate block: matches city8 at source_year-1,city8,-1
+578,city29,2006,274,shifted duplicate block: matches city8 at source_year-1,city8,-1
+579,city29,2005,270,shifted duplicate block: matches city8 at source_year-1,city8,-1
+580,city29,2004,262,shifted duplicate block: matches city8 at source_year-1,city8,-1
+581,city29,2003,237,shifted duplicate block: matches city8 at source_year-1,city8,-1
+582,city31,2001,209,original city31 duplicate block: neither candidate series is supported as canonical city31 after cross-source remapping,,
+583,city31,2001,130,original city31 duplicate block: neither candidate series is supported as canonical city31 after cross-source remapping,,
+584,city31,2002,207,original city31 duplicate block: neither candidate series is supported as canonical city31 after cross-source remapping,,
+585,city31,2002,140,original city31 duplicate block: neither candidate series is supported as canonical city31 after cross-source remapping,,
+586,city31,2003,210,original city31 duplicate block: neither candidate series is supported as canonical city31 after cross-source remapping,,
+587,city31,2003,148,original city31 duplicate block: neither candidate series is supported as canonical city31 after cross-source remapping,,
+588,city31,2004,145,original city31 duplicate block: neither candidate series is supported as canonical city31 after cross-source remapping,,
+589,city31,2004,142,original city31 duplicate block: neither candidate series is supported as canonical city31 after cross-source remapping,,
+590,city31,2005,183,original city31 duplicate block: neither candidate series is supported as canonical city31 after cross-source remapping,,
+591,city31,2005,147,original city31 duplicate block: neither candidate series is supported as canonical city31 after cross-source remapping,,
+592,city31,2006,189,original city31 duplicate block: neither candidate series is supported as canonical city31 after cross-source remapping,,
+593,city31,2006,147,original city31 duplicate block: neither candidate series is supported as canonical city31 after cross-source remapping,,
+594,city31,2007,193,original city31 duplicate block: neither candidate series is supported as canonical city31 after cross-source remapping,,
+595,city31,2007,148,original city31 duplicate block: neither candidate series is supported as canonical city31 after cross-source remapping,,
+596,city31,2008,203,original city31 duplicate block: neither candidate series is supported as canonical city31 after cross-source remapping,,
+597,city31,2008,151,original city31 duplicate block: neither candidate series is supported as canonical city31 after cross-source remapping,,
+598,city31,2009,204,original city31 duplicate block: neither candidate series is supported as canonical city31 after cross-source remapping,,
+599,city31,2009,156,original city31 duplicate block: neither candidate series is supported as canonical city31 after cross-source remapping,,
+600,city31,2010,210,original city31 duplicate block: neither candidate series is supported as canonical city31 after cross-source remapping,,
+601,city31,2010,160,original city31 duplicate block: neither candidate series is supported as canonical city31 after cross-source remapping,,
+602,city31,2011,207,original city31 duplicate block: neither candidate series is supported as canonical city31 after cross-source remapping,,
+603,city31,2011,131,original city31 duplicate block: neither candidate series is supported as canonical city31 after cross-source remapping,,
+604,city31,2012,209,original city31 duplicate block: neither candidate series is supported as canonical city31 after cross-source remapping,,
+605,city31,2012,138,original city31 duplicate block: neither candidate series is supported as canonical city31 after cross-source remapping,,
+606,city31,2013,209,original city31 duplicate block: neither candidate series is supported as canonical city31 after cross-source remapping,,
+607,city31,2013,132,original city31 duplicate block: neither candidate series is supported as canonical city31 after cross-source remapping,,
+608,city31,2014,210,original city31 duplicate block: neither candidate series is supported as canonical city31 after cross-source remapping,,
+609,city31,2014,129,original city31 duplicate block: neither candidate series is supported as canonical city31 after cross-source remapping,,
+610,city31,2015,212,original city31 duplicate block: neither candidate series is supported as canonical city31 after cross-source remapping,,
+611,city31,2015,128,original city31 duplicate block: neither candidate series is supported as canonical city31 after cross-source remapping,,
+612,city31,2016,211,original city31 duplicate block: neither candidate series is supported as canonical city31 after cross-source remapping,,
+613,city31,2016,129,original city31 duplicate block: neither candidate series is supported as canonical city31 after cross-source remapping,,
+614,city31,2017,213,original city31 duplicate block: neither candidate series is supported as canonical city31 after cross-source remapping,,
+615,city31,2017,129,original city31 duplicate block: neither candidate series is supported as canonical city31 after cross-source remapping,,
+616,city31,2018,212,original city31 duplicate block: neither candidate series is supported as canonical city31 after cross-source remapping,,
+617,city31,2018,129,original city31 duplicate block: neither candidate series is supported as canonical city31 after cross-source remapping,,
+618,city31,2019,213,original city31 duplicate block: neither candidate series is supported as canonical city31 after cross-source remapping,,
+619,city31,2019,129,original city31 duplicate block: neither candidate series is supported as canonical city31 after cross-source remapping,,
+620,city31,2020,265,original city31 duplicate block: neither candidate series is supported as canonical city31 after cross-source remapping,,
+621,city31,2020,112,original city31 duplicate block: neither candidate series is supported as canonical city31 after cross-source remapping,,
+622,city31,2021,275,original city31 duplicate block: neither candidate series is supported as canonical city31 after cross-source remapping,,
+623,city31,2021,113,original city31 duplicate block: neither candidate series is supported as canonical city31 after cross-source remapping,,

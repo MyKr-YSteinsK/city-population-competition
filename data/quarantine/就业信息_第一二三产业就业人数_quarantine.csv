@@ -1,0 +1,19 @@
+﻿source_index,source_position,城市名称,年份,raw_pi_Employment,raw_si_Employment,raw_ti_Employment,sector_total,employeesNumber,abs_difference,reason
+141,13,city16,2019,59,25,50,134,145.0,11.0,cross-source sector conflict: |pi+si+ti-employeesNumber| > 1; component-level true values unresolved
+156,13,city17,2019,60,275,767,1102,897.0,205.0,cross-source sector conflict: |pi+si+ti-employeesNumber| > 1; component-level true values unresolved
+244,13,city3,2018,2,515,775,1292,1050.0,242.0,cross-source sector conflict: |pi+si+ti-employeesNumber| > 1; component-level true values unresolved
+245,14,city3,2019,1,509,773,1283,1230.0,53.0,cross-source sector conflict: |pi+si+ti-employeesNumber| > 1; component-level true values unresolved
+298,13,city6,2018,19,264,247,530,441.0,89.0,cross-source sector conflict: |pi+si+ti-employeesNumber| > 1; component-level true values unresolved
+299,14,city6,2019,21,263,248,532,589.0,57.0,cross-source sector conflict: |pi+si+ti-employeesNumber| > 1; component-level true values unresolved
+352,13,city9,2018,136,62,129,327,286.0,41.0,cross-source sector conflict: |pi+si+ti-employeesNumber| > 1; component-level true values unresolved
+353,14,city9,2019,136,62,126,324,278.0,46.0,cross-source sector conflict: |pi+si+ti-employeesNumber| > 1; component-level true values unresolved
+374,2,city22,2020,40,145,280,465,503.0,38.0,cross-source sector conflict: |pi+si+ti-employeesNumber| > 1; component-level true values unresolved
+404,13,city23,2019,6,67,92,165,116.0,49.0,cross-source sector conflict: |pi+si+ti-employeesNumber| > 1; component-level true values unresolved
+405,14,city23,2020,6,65,90,161,137.0,24.0,cross-source sector conflict: |pi+si+ti-employeesNumber| > 1; component-level true values unresolved
+472,13,city27,2019,60,98,89,247,240.0,7.0,cross-source sector conflict: |pi+si+ti-employeesNumber| > 1; component-level true values unresolved
+540,13,city31,2019,78,87,116,281,247.0,34.0,cross-source sector conflict: |pi+si+ti-employeesNumber| > 1; component-level true values unresolved
+541,14,city31,2020,78,87,108,273,258.0,15.0,cross-source sector conflict: |pi+si+ti-employeesNumber| > 1; component-level true values unresolved
+608,13,city35,2019,196,52,147,395,344.0,51.0,cross-source sector conflict: |pi+si+ti-employeesNumber| > 1; component-level true values unresolved
+609,14,city35,2020,193,53,145,391,336.0,55.0,cross-source sector conflict: |pi+si+ti-employeesNumber| > 1; component-level true values unresolved
+659,13,city38,2019,105,48,83,236,225.0,11.0,cross-source sector conflict: |pi+si+ti-employeesNumber| > 1; component-level true values unresolved
+660,14,city38,2020,104,49,78,231,203.0,28.0,cross-source sector conflict: |pi+si+ti-employeesNumber| > 1; component-level true values unresolved

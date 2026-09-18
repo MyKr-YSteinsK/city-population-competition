@@ -1,0 +1,2 @@
+﻿城市名称,年份,raw_averageWage,reason,action
+city31,2011,37492.0,high-confidence isolated wage anomaly; true value unresolved,invalidate canonical value to NA

@@ -1,0 +1,11 @@
+﻿table,scope,action,result,evidence
+从业人员数,raw city14 block,relabel_and_year_shift,"city16, year+1",cross-source sector-total invariant
+从业人员数,raw city16 block,relabel_and_year_shift,"city6, year-1",cross-source sector-total invariant
+从业人员数,raw city6 block,relabel_and_year_shift,"city31, year+1",cross-source sector-total invariant
+从业人员数,raw city33 second block,relabel,city34,cross-source sector-total invariant
+从业人员数,city25 second block,quarantine,19 shifted-duplicate rows,19/19 exact match to city2 at source_year-1
+从业人员数,city29 second block,quarantine,19 shifted-duplicate rows,19/19 exact match to city8 at source_year-1
+从业人员数,raw city31 duplicate block,quarantine,42 rows,canonical city31 supported by remapped raw city6 block
+从业人员数,source-missing keys,sector_sum_reconstruction,91 rows,validated employees ≈ pi+si+ti invariant
+第一二三产业就业人数,primary employment,repair pi_Employment,103 rows across 6 cities,employees-si-ti with exact post-repair total consistency
+第一二三产业就业人数,cross-source conflict rows,invalidate_components_to_NA_and_quarantine,18 rows,|pi+si+ti-employeesNumber| > 1 against independent source employees

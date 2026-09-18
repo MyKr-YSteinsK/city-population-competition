@@ -1,0 +1,14 @@
+﻿城市名称,年份,raw_density,regime_shift_year,reason,action
+city2,2013,1401.0,2016,high-confidence pre-regime batch anomaly; A-B-A density pattern with stable resident population,invalidate canonical density to NA
+city5,2013,1246.0,2016,high-confidence pre-regime batch anomaly; A-B-A density pattern with stable resident population,invalidate canonical density to NA
+city8,2013,479.0,2016,high-confidence pre-regime batch anomaly; A-B-A density pattern with stable resident population,invalidate canonical density to NA
+city12,2013,801.0,2016,high-confidence pre-regime batch anomaly; A-B-A density pattern with stable resident population,invalidate canonical density to NA
+city13,2013,565.0,2016,high-confidence pre-regime batch anomaly; A-B-A density pattern with stable resident population,invalidate canonical density to NA
+city15,2013,760.0,2016,high-confidence pre-regime batch anomaly; A-B-A density pattern with stable resident population,invalidate canonical density to NA
+city18,2013,1070.0,2016,high-confidence pre-regime batch anomaly; A-B-A density pattern with stable resident population,invalidate canonical density to NA
+city22,2014,1243.0,2017,high-confidence pre-regime batch anomaly; A-B-A density pattern with stable resident population,invalidate canonical density to NA
+city26,2014,912.0,2017,high-confidence pre-regime batch anomaly; A-B-A density pattern with stable resident population,invalidate canonical density to NA
+city30,2014,582.0,2017,high-confidence pre-regime batch anomaly; A-B-A density pattern with stable resident population,invalidate canonical density to NA
+city34,2014,425.0,2017,high-confidence pre-regime batch anomaly; A-B-A density pattern with stable resident population,invalidate canonical density to NA
+city37,2014,643.0,2017,high-confidence pre-regime batch anomaly; A-B-A density pattern with stable resident population,invalidate canonical density to NA
+city40,2014,823.0,2017,high-confidence pre-regime batch anomaly; A-B-A density pattern with stable resident population,invalidate canonical density to NA

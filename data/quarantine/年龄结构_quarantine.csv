@@ -1,0 +1,7 @@
+﻿城市名称,年份,raw_0-14,raw_15-64,raw_65+,reason,action
+city3,2000,66,174,18,high-confidence invalid 2000 age-structure observation; inconsistent with resident population and later age totals; relabel target unresolved,invalidate all age components to NA
+city16,2000,160,745,60,high-confidence invalid 2000 age-structure observation; inconsistent with resident population and later age totals; relabel target unresolved,invalidate all age components to NA
+city23,2000,60,629,9,high-confidence invalid 2000 age-structure observation; inconsistent with resident population and later age totals; relabel target unresolved,invalidate all age components to NA
+city27,2000,21,98,5,high-confidence invalid 2000 age-structure observation; inconsistent with resident population and later age totals; relabel target unresolved,invalidate all age components to NA
+city35,2000,89,263,34,high-confidence invalid 2000 age-structure observation; inconsistent with resident population and later age totals; relabel target unresolved,invalidate all age components to NA
+city38,2000,189,279,40,high-confidence invalid 2000 age-structure observation; inconsistent with resident population and later age totals; relabel target unresolved,invalidate all age components to NA

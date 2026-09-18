@@ -1,0 +1,5 @@
+﻿sheet,scope,action,raw,normalized,reason
+人均消费支出,city21-2022,repair,446007,44607,isolated magnitude error + cross-source mechanism evidence
+城镇居民人均收入,city label,repair,ctiy22,city22,invalid label with unique missing canonical counterpart
+城镇居民人均收入,city label,repair,ctiy31,city31,invalid label with unique missing canonical counterpart
+人均可支配收入,city21/city25/city29/city33 2015-2022,invalidate_to_NA,32 source values,NA,high-confidence block-level cross-sheet contamination; correct values unknown

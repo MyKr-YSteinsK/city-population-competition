@@ -1,0 +1,14 @@
+﻿城市名称,regime_shift_year,pre_regime_anomaly_year,status,interpretation
+city2,2016,2013,retained,suspected source/denominator regime change; values retained because post-shift regime is persistent
+city5,2016,2013,retained,suspected source/denominator regime change; values retained because post-shift regime is persistent
+city8,2016,2013,retained,suspected source/denominator regime change; values retained because post-shift regime is persistent
+city12,2016,2013,retained,suspected source/denominator regime change; values retained because post-shift regime is persistent
+city13,2016,2013,retained,suspected source/denominator regime change; values retained because post-shift regime is persistent
+city15,2016,2013,retained,suspected source/denominator regime change; values retained because post-shift regime is persistent
+city18,2016,2013,retained,suspected source/denominator regime change; values retained because post-shift regime is persistent
+city22,2017,2014,retained,suspected source/denominator regime change; values retained because post-shift regime is persistent
+city26,2017,2014,retained,suspected source/denominator regime change; values retained because post-shift regime is persistent
+city30,2017,2014,retained,suspected source/denominator regime change; values retained because post-shift regime is persistent
+city34,2017,2014,retained,suspected source/denominator regime change; values retained because post-shift regime is persistent
+city37,2017,2014,retained,suspected source/denominator regime change; values retained because post-shift regime is persistent
+city40,2017,2014,retained,suspected source/denominator regime change; values retained because post-shift regime is persistent
