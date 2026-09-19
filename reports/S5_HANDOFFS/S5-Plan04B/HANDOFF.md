@@ -6,7 +6,7 @@
 - Stage：`S5_EVIDENCE_DRIVEN_ITERATION`
 - Plan04 integrated base：`fac7ed9bf11459bc5d7c6772857683417bf70eac`（pre-integration gate 为 ff-only）
 - Worker branch：`s5/plan04b-training-replay-foundation`
-- Build commit：`856dc9e7f0a12c3e0d932217d5b608bead022fec`
+- Build commit：`e187f3ac229b45c2fd1b50801d2e2557d6fd918b`
 - Result：`training_replay_foundation_ready`
 - 本 worker 只建立历史训练回放和时间切分契约；未训练强模型，S5 未声明完成，S6 未进入。
 
@@ -31,7 +31,7 @@
 ## Contract and leakage verification
 
 - Plan04 formal compatibility：`PASS`; 1760 rows; model-feature mismatch cells：`0`; label/reference mismatch cells：`0`。
-- B3 compatibility：`True`; resident expected pooled MSE `872.452651515143`; registered expected pooled MSE `225.421212121213`. 
+- B3 compatibility：`True`; resident expected pooled MSE `872.452651515143`; registered expected pooled MSE `225.421212121213`.
 - Replay boundary rows：`32480`; source-cap violations：`0`; quarantine reintroductions：`0`; benchmark violations：`0`。
 - Population-history cutoff violations：`0`; B3-history cutoff violations：`0`。
 - Plan04's exact 144-feature contract, source-specific R1/R2 caps, benchmark-only age domain, S1 quarantine, and explicit missingness are retained.
