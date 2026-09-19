@@ -409,13 +409,20 @@ def fit_mixed_model(
     config: dict[str, Any],
     fit_stats: Counter[str],
 ) -> dict[str, Any]:
-    """Fit primary bfgs once, then at most the registered lbfgs fallback."""
+    """Fit the registered statsmodels default path without adding rescue logic.
+
+    ``MixedLM.fit(method=None)`` is the library's default fitting path.  In
+    statsmodels 0.15 it tries the documented internal sequence bfgs, lbfgs,
+    then cg.  This is treated as the single primary/default path.  Because
+    that path already includes lbfgs, the plan's optional lbfgs fallback is
+    not run a second time.
+    """
 
     y = label_values(train, framing)
     exog, exog_re = make_design(prepared, config, "train")
     groups = train["city_id"].astype(str).to_numpy()
     model = MixedLM(endog=y, exog=exog, groups=groups, exog_re=exog_re)
-    attempts = [("bfgs", False), ("lbfgs", True)]
+    attempts = [("default", False)]
     errors: list[str] = []
     fit_stats["model_fit_units"] += 1
     for method, fallback in attempts:
@@ -426,7 +433,7 @@ def fit_mixed_model(
         try:
             with warnings.catch_warnings():
                 warnings.simplefilter("ignore")
-                result = model.fit(reml=bool(config["reml"]), method=method, disp=False)
+                result = model.fit(reml=bool(config["reml"]), disp=False)
             if not bool(getattr(result, "converged", False)):
                 fit_stats["fallback_nonconverged_units" if fallback else "primary_nonconverged_units"] += 1
                 errors.append(f"{method}:not_converged")
@@ -1642,8 +1649,8 @@ def main() -> None:
             "city_id": "raw grouping variable only; not PCA input",
             "random_slope": f"standardized {SLOPE_FEATURE} using each training fold only",
             "reml": False,
-            "primary_optimizer": "bfgs",
-            "fallback_optimizer": "lbfgs at most once",
+            "primary_optimizer": "statsmodels MixedLM default (bfgs -> lbfgs -> cg)",
+            "fallback_optimizer": "lbfgs only when not already used by the primary path",
         },
         "forbidden_actions_not_run": [
             "alter_plan04_144_features",
