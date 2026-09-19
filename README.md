@@ -9,4 +9,4 @@ python scripts/run_s1.py
 
 `scripts/run_s1.py` 会依次运行 7 个领域审计脚本，重建 `data/normalized/` 与 `data/quarantine/`，验证关键不变量，刷新 `docs/s1_data_contract.csv` 和 `docs/s1_quality_issue_registry.csv`，并生成唯一审阅包 `reports/S1_FINAL_REVIEW_PACK.zip`。
 
-本仓库明确不包含 S2 验证设计、回测、特征工程、建模、预测或提交结果。后续工作必须先阅读 `docs/S1_MAIN_HANDOFF.md` 和 `docs/S1_DATA_CONTRACT.md`。
+S1 canonical/data-quality contract 仍不可随意改写；当前已授权的 S2 Validation Architecture 产物位于 `reports/S2_HANDOFFS/`。本仓库仍不包含 S3+ 模型竞赛、预测或提交结果。后续工作必须先阅读 `docs/S1_DATA_CONTRACT.md`、`CURRENT_LEARNING_CHECKPOINT.md` 和对应 S2 handoff。

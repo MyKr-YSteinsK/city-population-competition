@@ -12,6 +12,7 @@
 - `scripts/`：7 个领域审计脚本和一个统一 S1 runner。
 - `docs/`：当前上下文、执行指令、数据契约、质量登记、文件地图和 Main handoff。
 - `reports/S1_FINAL_REVIEW_PACK.zip`：唯一保留的当前 S1 审阅包；历史 Plan01-04 报告不再作为当前事实源。
+- `reports/S2_HANDOFFS/S2-Plan01/`：当前 S2 历史 information-set feasibility matrix 与 handoff；不包含正式模型验证或提交结果。
 
 ## Source facts
 

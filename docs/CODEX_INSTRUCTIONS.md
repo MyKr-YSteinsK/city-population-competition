@@ -2,19 +2,20 @@
 
 ## 当前任务
 
-本仓库处于 S1 最终冻结候选状态。当前允许的工作是：维护原始数据目录、运行 7 个领域审计脚本、验证规范化/隔离/溯源输出、维护数据契约、质量登记和 Main handoff。
+本仓库保留 S1 最终冻结的数据基础。当前允许的工作是：维护原始数据目录、运行 7 个领域审计脚本、验证规范化/隔离/溯源输出、维护数据契约、质量登记和经 Main/Lab 授权的 S2 Validation Architecture 计划。
 
 ## 强制边界
 
-- 不在本仓库内开始 S2 验证设计、伪测试、回测、特征工程、模型训练、预测、排行榜或 submission。
+- 可以执行经 Main/Lab 授权的 S2 Validation Architecture 计划，包括历史 information-set / pseudo-test 可行性审查；不得因此修改 S1 canonical/data-quality contract。
 - 不把缺失、隔离值、未知真值或源派生行静默填补为 0 或插值结果。
 - 不把 `overall_income` 与 `urban_income` 自动当作两个独立可信信号。
 - 年龄结构只接受 benchmark years `{2000, 2010, 2020}`；非 benchmark 年份不是该表的缺失键。
 - `test.xls` 保留在 `data/quarantine/source/`，不得进入 canonical pipeline。
 - 不修改 7 个合法 XLSX 原始文件；变更前必须记录哈希并在重建后复核。
+- 当前 S2 仍不得进入未授权的 S3+ feature engineering、模型训练、模型比较、预测、排行榜或 submission。
 
 ## 运行与交付
 
-从仓库根目录运行 `python scripts/run_s1.py`。脚本必须报告 `S1_REBUILD_PASS`，并验证原始哈希、规范化/隔离/溯源/制度报告输出、关键计数和审阅包确定性。
+从仓库根目录运行 `python scripts/run_s1.py` 可重建 S1；运行当前 S2 Plan01 使用 `python scripts/build_s2_plan01_matrix.py`。S2 产物必须区分 observed fact、assumed availability、unavailable、irregular domain 和 quality/provenance boundary。
 
 不要提交 `.venv`、缓存、临时文件、认证状态、绝对机器路径或秘密。GitHub 发布需要另行确认远端身份和权限；本地 Git 初始化不等于已推送或已发布。

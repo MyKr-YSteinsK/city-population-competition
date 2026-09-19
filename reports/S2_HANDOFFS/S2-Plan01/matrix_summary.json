@@ -1,0 +1,71 @@
+{
+  "candidate_summary_rows": 46,
+  "candidate_years_by_policy": {
+    "P1_ASOF_T_MINUS_1": [
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021
+    ],
+    "P2_ASOF_T_MINUS_2": [
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021
+    ]
+  },
+  "core_sources": [
+    "density",
+    "urbanization",
+    "unemployment",
+    "employees",
+    "sector",
+    "wage"
+  ],
+  "matrix_rows": 644,
+  "plan_id": "S2-Plan01",
+  "policies": [
+    "P1_ASOF_T_MINUS_1",
+    "P2_ASOF_T_MINUS_2"
+  ],
+  "s1_boundary_corrections_checked": true,
+  "s1_canonical_key_uniqueness_checked": true,
+  "s1_contract_rows_read": 14,
+  "screening_rules": {
+    "minimum_city_coverage": 0.9,
+    "minimum_prior_target_years_per_city": 3,
+    "note": "structural screening only; not a final validation contract"
+  },
+  "source_city_coverage_rows": 560,
+  "source_count": 14,
+  "source_inventory_rows": 14,
+  "target_label_unavailable_years": [
+    2022,
+    2023
+  ],
+  "target_source": "population",
+  "target_value_column": "常住人口（万人）",
+  "target_years_in_matrix": [
+    2001,
+    2023
+  ],
+  "test_xls_used": false
+}
