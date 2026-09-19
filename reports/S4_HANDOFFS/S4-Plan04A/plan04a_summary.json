@@ -1,0 +1,256 @@
+{
+  "b3_compatibility_pass": true,
+  "b3_compatibility_rows": [
+    {
+      "comparison_rule": "B3 row-level prediction/residual/squared-error delta <= 1e-9",
+      "max_abs_prediction_delta": 5.115907697472721e-13,
+      "max_abs_residual_delta": 4.849454171562684e-13,
+      "max_abs_squared_error_delta": 5.115907697472721e-13,
+      "rows_compared": 440,
+      "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+      "status": "PASS",
+      "target_id": "registered"
+    },
+    {
+      "comparison_rule": "B3 row-level prediction/residual/squared-error delta <= 1e-9",
+      "max_abs_prediction_delta": 5.115907697472721e-13,
+      "max_abs_residual_delta": 4.849454171562684e-13,
+      "max_abs_squared_error_delta": 5.115907697472721e-13,
+      "rows_compared": 440,
+      "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+      "status": "PASS",
+      "target_id": "registered"
+    },
+    {
+      "comparison_rule": "B3 row-level prediction/residual/squared-error delta <= 1e-9",
+      "max_abs_prediction_delta": 5.115907697472721e-13,
+      "max_abs_residual_delta": 4.849454171562684e-13,
+      "max_abs_squared_error_delta": 5.115907697472721e-13,
+      "rows_compared": 440,
+      "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+      "status": "PASS",
+      "target_id": "resident"
+    },
+    {
+      "comparison_rule": "B3 row-level prediction/residual/squared-error delta <= 1e-9",
+      "max_abs_prediction_delta": 5.115907697472721e-13,
+      "max_abs_residual_delta": 4.849454171562684e-13,
+      "max_abs_squared_error_delta": 5.115907697472721e-13,
+      "rows_compared": 440,
+      "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+      "status": "PASS",
+      "target_id": "resident"
+    }
+  ],
+  "b3_metric_compatibility_pass": true,
+  "b3_metric_compatibility_rows": [
+    {
+      "comparison_rule": "B3 pooled/macro/latest metric delta <= 1e-9",
+      "max_abs_metric_delta": 1.1368683772161603e-13,
+      "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+      "status": "PASS",
+      "target_id": "resident"
+    },
+    {
+      "comparison_rule": "B3 pooled/macro/latest metric delta <= 1e-9",
+      "max_abs_metric_delta": 1.1368683772161603e-13,
+      "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+      "status": "PASS",
+      "target_id": "resident"
+    },
+    {
+      "comparison_rule": "B3 pooled/macro/latest metric delta <= 1e-9",
+      "max_abs_metric_delta": 4.547473508864641e-13,
+      "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+      "status": "PASS",
+      "target_id": "registered"
+    },
+    {
+      "comparison_rule": "B3 pooled/macro/latest metric delta <= 1e-9",
+      "max_abs_metric_delta": 4.547473508864641e-13,
+      "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+      "status": "PASS",
+      "target_id": "registered"
+    }
+  ],
+  "branch": "s4/wave-a-density",
+  "candidate_id": "M4A_B3_PLUS_RIDGE_DENSITY",
+  "city_identity_used": false,
+  "common_origin_domain": "2011-2021",
+  "deep_dive_recommended": false,
+  "deep_dive_rule": {
+    "near_b3_condition": "within 1% with majority per-origin wins and latest-origin improvement in both scenarios",
+    "r1_clear_gain_condition": "R1 pooled improvement >= 1% and latest-origin improvement",
+    "resident_pooled_beats_b3": "any R1/R2 strict improvement"
+  },
+  "density_boundary": {
+    "all_boundary_rows_pass": true,
+    "audit_rows": 14960,
+    "quarantine_candidate_hit_count": 0,
+    "quarantine_guard_pass": true,
+    "quarantine_reintroduction_count": 0,
+    "regime_crossing_guard_pass": true,
+    "rows_with_suppressed_dynamics": 330,
+    "suppressed_dynamic_feature_cells": 594,
+    "suppressed_rows_by_role": {
+      "training": 174,
+      "validation": 156
+    }
+  },
+  "density_feature_manifest": [
+    {
+      "feature_group_id": "DENSITY_RECENT_V1",
+      "feature_name": "density_latest",
+      "formula": "latest non-missing density with actual year <= pseudo-target year minus scenario lag",
+      "missing_policy": "explicit missing; training-fold median imputation only",
+      "model_feature": "yes",
+      "semantic_role": "recent density level",
+      "source": "data/normalized/人口密度.csv",
+      "used_by": "M4A_B3_PLUS_RIDGE_DENSITY",
+      "year_rule": "S2 source-specific R1/R2 cap; no future fill or interpolation"
+    },
+    {
+      "feature_group_id": "DENSITY_RECENT_V1",
+      "feature_name": "density_recent_relative_change",
+      "formula": "((latest density - previous density) / previous density) / actual year gap",
+      "missing_policy": "explicit missing if fewer than two observations, zero denominator, or regime crossing",
+      "model_feature": "yes",
+      "semantic_role": "annualized recent relative density change",
+      "source": "data/normalized/人口密度.csv",
+      "used_by": "M4A_B3_PLUS_RIDGE_DENSITY",
+      "year_rule": "two latest allowed observations; actual year difference"
+    },
+    {
+      "feature_group_id": "DENSITY_RECENT_V1",
+      "feature_name": "density_recent3_relative_slope",
+      "formula": "OLS slope on latest three allowed densities divided by latest density",
+      "missing_policy": "explicit missing if fewer than three observations, zero denominator, or regime crossing",
+      "model_feature": "yes",
+      "semantic_role": "annualized recent relative density trend",
+      "source": "data/normalized/人口密度.csv",
+      "used_by": "M4A_B3_PLUS_RIDGE_DENSITY",
+      "year_rule": "three latest allowed observations; actual year differences"
+    },
+    {
+      "feature_group_id": "DENSITY_RECENT_V1",
+      "feature_name": "density_latest_year",
+      "formula": "actual year of density_latest",
+      "missing_policy": "blank when source has no value as of cap",
+      "model_feature": "no",
+      "semantic_role": "freshness audit field",
+      "source": "data/normalized/人口密度.csv",
+      "used_by": "audit_only",
+      "year_rule": "scenario-specific source cap"
+    },
+    {
+      "feature_group_id": "DENSITY_RECENT_V1",
+      "feature_name": "density_regime_audit",
+      "formula": "documented city regime shift and dynamic-window crossing diagnostics",
+      "missing_policy": "dynamics explicit missing when crossing is detected",
+      "model_feature": "no",
+      "semantic_role": "regime guard audit field",
+      "source": "data/normalized/人口密度_regime_report.csv",
+      "used_by": "audit_only",
+      "year_rule": "crossing means min(window year) < shift year <= max(window year)"
+    }
+  ],
+  "density_source": {
+    "canonical": "data/normalized/人口密度.csv",
+    "canonical_value_year_max": 2022,
+    "canonical_value_year_min": 2000,
+    "latest_usable_year": 2022,
+    "observed_snapshot_freshness_lag_years": 1,
+    "quarantine_count": 13,
+    "regime_city_count": 13,
+    "source_status": "source_plus_repair_and_invalidation"
+  },
+  "final_2023_prediction_run": false,
+  "metrics": {
+    "registered_R1_REFERENCE_SNAPSHOT_LAG_B3_RECENT_3POINT_OLS_TREND": {
+      "latest_2021_mse": 1485.6048611111196,
+      "pooled_mse": 225.42121212121324
+    },
+    "registered_R1_REFERENCE_SNAPSHOT_LAG_M4A_B3_PLUS_RIDGE_DENSITY": {
+      "latest_2021_mse": 1509.170342738752,
+      "latest_delta_vs_b3": 23.56548162763238,
+      "losses_vs_b3": 7,
+      "pooled_delta_vs_b3": 4.481784343586099,
+      "pooled_mse": 229.90299646479934,
+      "relative_improvement_vs_b3_pct": -1.9881821685778882,
+      "ties_vs_b3": 0,
+      "wins_vs_b3": 4
+    },
+    "registered_R2_CONSERVATIVE_PUBLICATION_STRESS_B3_RECENT_3POINT_OLS_TREND": {
+      "latest_2021_mse": 1485.6048611111196,
+      "pooled_mse": 225.42121212121324
+    },
+    "registered_R2_CONSERVATIVE_PUBLICATION_STRESS_M4A_B3_PLUS_RIDGE_DENSITY": {
+      "latest_2021_mse": 1499.8116741125955,
+      "latest_delta_vs_b3": 14.206813001475894,
+      "losses_vs_b3": 8,
+      "pooled_delta_vs_b3": 4.878763697199872,
+      "pooled_mse": 230.29997581841312,
+      "relative_improvement_vs_b3_pct": -2.164287757700668,
+      "ties_vs_b3": 0,
+      "wins_vs_b3": 3
+    },
+    "resident_R1_REFERENCE_SNAPSHOT_LAG_B3_RECENT_3POINT_OLS_TREND": {
+      "latest_2021_mse": 3705.42777777773,
+      "pooled_mse": 872.4526515151429
+    },
+    "resident_R1_REFERENCE_SNAPSHOT_LAG_M4A_B3_PLUS_RIDGE_DENSITY": {
+      "latest_2021_mse": 3183.88872821474,
+      "latest_delta_vs_b3": -521.5390495629904,
+      "losses_vs_b3": 7,
+      "pooled_delta_vs_b3": 34.19997320394202,
+      "pooled_mse": 906.6526247190849,
+      "relative_improvement_vs_b3_pct": -3.919980430404873,
+      "ties_vs_b3": 0,
+      "wins_vs_b3": 4
+    },
+    "resident_R2_CONSERVATIVE_PUBLICATION_STRESS_B3_RECENT_3POINT_OLS_TREND": {
+      "latest_2021_mse": 3705.42777777773,
+      "pooled_mse": 872.4526515151429
+    },
+    "resident_R2_CONSERVATIVE_PUBLICATION_STRESS_M4A_B3_PLUS_RIDGE_DENSITY": {
+      "latest_2021_mse": 3791.571296366275,
+      "latest_delta_vs_b3": 86.1435185885448,
+      "losses_vs_b3": 8,
+      "pooled_delta_vs_b3": 45.32254662750631,
+      "pooled_mse": 917.7751981426492,
+      "relative_improvement_vs_b3_pct": -5.194843129744293,
+      "ties_vs_b3": 0,
+      "wins_vs_b3": 3
+    }
+  },
+  "model_ids": [
+    "B3_RECENT_3POINT_OLS_TREND",
+    "M4A_B3_PLUS_RIDGE_DENSITY"
+  ],
+  "no_other_sources_used": true,
+  "outer_origin_model_fit_count": 44,
+  "plan_id": "S4-Plan04A",
+  "r1_r2_feature_difference_confirmed": true,
+  "reference_target_year": 2023,
+  "registered_supports_candidate_in_both_scenarios": false,
+  "resident_r1_improvement_pct": -3.919980430404873,
+  "resident_r1_to_r2_latest_delta": 607.6825681515352,
+  "resident_r1_to_r2_pooled_delta": 11.12257342356429,
+  "resident_r2_improvement_pct": -5.194843129744293,
+  "robustness_suite_run": false,
+  "s4_complete": false,
+  "s5_entered": false,
+  "scenario_lags": {
+    "R1_REFERENCE_SNAPSHOT_LAG": 1,
+    "R2_CONSERVATIVE_PUBLICATION_STRESS": 2
+  },
+  "screening_decision": "unsupported",
+  "screening_rationale": "resident pooled MSE does not show a sufficiently stable gain over B3 under the frozen R1/R2 screen",
+  "stage": "S4_FEATURE_ML_MODELING",
+  "starting_commit": "b8c302abe7ebf1710869aaa55a00d4b926d2bcac",
+  "strongest_baseline": "B3_RECENT_3POINT_OLS_TREND",
+  "submission_run": false,
+  "target_history_cutoff_rule": "population B3 history <= pseudo-target year minus 2; validation target history <= origin minus 2",
+  "training_excluded_b3_insufficient_history_rows": 5280,
+  "tuning_run": false
+}
