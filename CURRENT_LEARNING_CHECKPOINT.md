@@ -27,28 +27,30 @@
 - S2 Plan03 已建立条件化的本地 target/metric contract：常住人口是主代理目标，户籍人口是敏感性目标；MSE 为主指标、RMSE 为辅助指标；跨 origin 聚合方式仍延后冻结。
 - S2 Plan04 已吸收并核验官方人口 source：只替换人口 raw workbook，S1 full rebuild 在刷新后通过；`city40-2001` 常住人口为 284、户籍人口保持缺失。
 - Plan04 的 delta 证明 resident 2010 T-2 历史就绪城市由 37 增至 38，但 Plan01–03 candidate origins、target contract、MSE/RMSE contract 与核心 validation 结论保持不变。
+- S2 Plan05 已用刷新后的 canonical population 实际构建 2 个 deterministic target-history-only predictor，完成 common strict origins `2011–2021` 的 single latest holdout 与 multi-origin expanding backtest；leakage audit 全部 PASS，R1/R2 因不使用 covariates 而数值完全相同。
+- Plan05 的本地 architecture recommendation 为 hybrid：multi-origin expanding 作为稳定性主证据，2021 latest holdout 作为最终任务接近性诊断；pooled city-year MSE 作为任务对齐主聚合，macro-origin MSE 作为必须报告的稳定性敏感性。该 recommendation 不等于 S2 COMPLETE 或进入 S3。
 
 ## Partial / Fragile
 
-- 尚未学习并独立设计可信的 out-of-time validation / backtesting。
 - 各源的真实发布时间与 forecast-origin availability 仍未知；仓库明确标记为 unknown，应在 S2 作为 information-set 约束处理。
 - 赛题 target 的官方精确映射仍未被源材料完全证明；resident/registered sensitivity 与 publication timing 仍需保留为不确定性。
 - PDF 的 MSE / RMSE 表述冲突已在本地 evaluator 规则中显式隔离，但跨 origin 的最终聚合方式尚未冻结。
 - 官方 source reconciliation 已完成，但真实 publication timing、官方 target 映射与跨 origin 聚合仍未由本轮 source 修正解决。
+- Plan05 已形成跨 origin 聚合的可复核本地 recommendation；Main 仍需决定是否将该 recommendation 纳入 S2 final report，不能把固定 naive 规则的结果误写成正式模型结论。
 
 ## Open Questions
 
 - 真实 2023 预测时，每一类 source-level feature 到底允许使用到哪个年份？
 - 历史 pseudo-test 应如何复刻真实 horizon 与各字段 freshness，而不是统一按 `T-1` 截断？
-- 应使用单一 out-of-time holdout，还是多个 forecast origins 的 expanding / rolling backtest？
-- 跨 origin 应采用 pooled MSE、macro-origin MSE，还是另一个由比赛协议确认的聚合方式？
+- Main 是否接受 Plan05 的 hybrid validation architecture recommendation 并形成 S2 final report？
+- downstream 若获授权进入模型验证，能否取得官方 target mapping 与真实 source publication timing 的直接证据？
 - 目标官方口径与真实 publication timing 何时能取得新的直接证据？
 
 ## Active Anchor / Tracks
 
 - Anchor：城市人口分析与预测原始赛题 + GitHub `city-population-competition`。
 - Main：S2｜Validation Architecture。
-- Lab：当前未激活 S2 实验。
+- Lab：S2 Plan05 validation architecture 已完成 Codex 证据交付，等待 Main/Lab 复审；未进入 S3。
 
 ## Stage Experiment Workflow
 
@@ -66,7 +68,7 @@
 
 ## Next Entry Point
 
-S2 Main 先完成必要的 Validation Architecture 教学与实验问题定义；需要落地验证时再创建 `Lab｜S2 实验`。实验对话使用上述连续 Plan/Codex/handoff/review 工作流，而不是 Guided Implementation，也不让一次 Plan 无边界扫完整个后续 Stage。
+S2 Main 先复审 `reports/S2_HANDOFFS/S2-Plan05/`，决定是否据此形成 S2 final report；本 Plan 不自行宣布 S2 COMPLETE，也不推进 S3。
 
 ## Do Not Repeat
 

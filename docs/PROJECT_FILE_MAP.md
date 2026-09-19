@@ -30,6 +30,7 @@
 │   ├── build_s2_plan02_geometry.py
 │   ├── build_s2_plan03_target_metric_contract.py
 │   ├── build_s2_plan04_official_population_reconciliation.py
+│   ├── build_s2_plan05_validation_architecture.py
 │   └── run_s1.py
 └── reports/
     ├── S1_FINAL_REVIEW_PACK.zip
@@ -75,6 +76,21 @@
         ├── s2_recomputed_facts.csv
         ├── reproducibility_evidence.json
         └── plan04_summary.json
+    └── S2_HANDOFFS/S2-Plan05/
+        ├── HANDOFF.md
+        ├── validation_architecture_definitions.csv
+        ├── naive_predictor_definitions.csv
+        ├── origin_information_boundary.csv
+        ├── leakage_audit.csv
+        ├── per_origin_predictions_or_residuals.csv
+        ├── per_origin_metrics.csv
+        ├── cross_origin_aggregation_comparison.csv
+        ├── cross_origin_aggregation_weight_evidence.csv
+        ├── aggregation_sanity_checks.csv
+        ├── single_vs_multi_origin_comparison.csv
+        ├── validation_stability_summary.csv
+        ├── architecture_recommendation.csv
+        └── plan05_summary.json
 ```
 
 ## Generated and excluded

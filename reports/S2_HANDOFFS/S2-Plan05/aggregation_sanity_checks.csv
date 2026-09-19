@@ -1,0 +1,3 @@
+check_id,fixture,pooled_mse_A,pooled_mse_B,macro_origin_mse_A,macro_origin_mse_B,expected_pooled_best,expected_macro_best,status,interpretation
+UNEVEN_ORIGIN_WEIGHT_RANKING_REVERSAL,origin_1 has 1 row; origin_2 has 9 rows,0.9,0.4,0.5,2.0,B,A,PASS,Pooled and macro-origin aggregation are not interchangeable when scoreable origin sizes differ.
+RMSE_SQRT_MSE_IDENTITY,one fixed residual set,2.0,,2.0,,identity,identity,PASS,RMSE is sqrt(MSE) only for the same residual set and aggregation scope.
