@@ -1019,7 +1019,7 @@ def make_handoff(
         "## Frozen contract and execution",
         "",
         "- Feature contract：`S5-Plan04-FULL-MULTISOURCE-V1`；144 numeric features；city_id 使用固定 `city1..city40` one-hot。",
-        "- Replay contract：`S5-Plan04B-TRAINING-REPLAY-V1`；replay 2320 rows；formal OOF 1760 rows。",
+        "- Replay contract：`S5-Plan04B-TRAINING-REPLAY-V1`；replay 2320 rows；formal validation 1760 rows；每个 framing 的 OOF coverage 为 1760，合并 F1/F2 后文件为 3520 rows。",
         "- Outer training：`pseudo_target_year <= outer_origin_year - 2`；inner eligible fold：training >= 40、validation >= 20、`boundary_pass=PASS`。",
         "- 264 eligible inner folds / 484 geometry rows；8 个 outer fit group 使用 C1 conservative fallback。",
         "- XGBoost：`objective=reg:squarederror`、`tree_method=hist`、`random_state=20260919`、`n_jobs=1`、无 early stopping；原始 NaN 交给 native missing handling。",
@@ -1310,7 +1310,9 @@ def main() -> None:
                     flush=True,
                 )
 
-    assert len(oof_rows) == 1760
+    # The frozen coverage is 1760 rows per framing.  This worker keeps both
+    # required framings in one file, so the combined artifact has 3520 rows.
+    assert len(oof_rows) == len(TARGETS) * len(SCENARIOS) * len(ORIGINS) * len(CITIES) * len(FRAMINGS)
     assert len(configuration_rows) == 88
     assert len(inner_evidence_rows) == 1584
     assert len(gain_records) == 88
@@ -1369,6 +1371,7 @@ def main() -> None:
             "model_numeric_feature_count": len(model_features),
             "design_feature_count": len(DESIGN_FEATURES),
             "oof_row_count": len(oof_rows),
+            "oof_row_count_per_framing": len(oof_rows) // len(FRAMINGS),
             "configuration_selection_row_count": len(configuration_rows),
             "inner_evidence_row_count": len(inner_evidence_rows),
         },
