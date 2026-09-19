@@ -2,7 +2,7 @@
   "wave_id": "S5-Plan05-STRONG-MODEL-PARALLEL-WAVE",
   "plan_id": "S5-Plan05",
   "stage": "S5_EVIDENCE_DRIVEN_ITERATION",
-  "wave_base_sha": "58cb1434b7c543b8e5ea5e0ae67b2f93008e50c5",
+  "wave_base_sha": "1f97f67488cd7aec120ef8b9fa04407dc13d54ba",
   "integrated_plan04b_sha": "58cb1434b7c543b8e5ea5e0ae67b2f93008e50c5",
   "feature_contract_version": "S5-Plan04-FULL-MULTISOURCE-V1",
   "replay_contract_version": "S5-Plan04B-TRAINING-REPLAY-V1",

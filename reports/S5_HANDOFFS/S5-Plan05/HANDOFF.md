@@ -6,7 +6,7 @@
 - Stage：`S5_EVIDENCE_DRIVEN_ITERATION`
 - Plan04B ff-only integration：PASS
 - Integrated Plan04B SHA：`58cb1434b7c543b8e5ea5e0ae67b2f93008e50c5`
-- Wave base SHA：`58cb1434b7c543b8e5ea5e0ae67b2f93008e50c5`
+- Wave base SHA：`1f97f67488cd7aec120ef8b9fa04407dc13d54ba`
 - No competing model was trained by this Plan.
 - S5 未声明完成，S6 未进入。
 
