@@ -1,0 +1,9 @@
+contract_item,frozen_value,scope,status,evidence
+origin_domain,2011-2021 common strict origins,all B0/B1/B2 target x scenario comparisons,PASS,per_origin_metrics.csv and origin_information_boundary.csv
+target_history_cutoff,all predictor history rows have year <= T-2,all prediction and regression fit rows,PASS,leakage_audit.csv
+primary_target,resident / 常住人口（万人）,primary interpretation,PASS,aggregate_metrics.csv; target contract inherited from S2
+sensitivity_target,registered / 户籍人口（万人）,mandatory separate sensitivity,PASS,aggregate_metrics.csv
+primary_aggregation,pooled city-year MSE,ranking metric,PASS,aggregate_metrics.csv and pairwise_baseline_comparison.csv
+aggregation_sensitivity,macro-origin MSE,mandatory sensitivity,PASS,aggregate_metrics.csv and pairwise_baseline_comparison.csv
+latest_diagnostic,2021 holdout reported separately,"proximity/stress diagnostic, not sole winner rule",PASS,aggregate_metrics.csv and stability_summary.csv
+replay_scenarios,R1 and R2 retained,source-specific information-set identity,PASS,origin_information_boundary.csv and r1_r2_equivalence_check.csv

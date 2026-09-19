@@ -51,6 +51,14 @@
 - Plan05 中 2021 是所有固定 naive probe / target 组合的高误差甚至最差 origin，支持“不能只靠 latest holdout 做模型选择”。
 - per-origin stability 与 dominant-city SSE concentration 被纳入后续 S3–S5 必须报告的诊断边界。
 
+### S3 Plan01 baseline evidence
+
+- S3 Plan01 在不修改冻结 S2 contract 的前提下，正式重跑 B0 persistence、B1 recent two-point trend，并新增 B2 expanding per-city linear trend。
+- common origins 仍为 `2011–2021`，resident primary 与 registered sensitivity 均完整覆盖；prediction/residual rows 为 5,280，leakage audit 为 5,280，全部 PASS。
+- B1 在 resident 与 registered 的 pooled/macro MSE 上均为当前最强 aggregate baseline；B2 相比 B0 有改善，但相比 B1 在两个 target 上都变差。
+- B2 的 resident 结果显示 recent-vs-long-history 的明确 trade-off：2021 latest MSE 略优于 B1，且跨 origin MSE dispersion 更低；registered 在 2021 和 dispersion 上均不如 B1。B2 改善 B0 的贡献在 resident 受 city3 集中影响，registered 则更 broad-based。
+- R1/R2 对三个 target-history-only baseline 数值完全一致；B0/B1 与 S2 Plan05 的既有 probe 逐行兼容。S3 Plan01 未使用 covariates、复杂 ML、tuning、ensemble、2023 forecast 或 submission。
+
 ## Frozen S2 Validation Contract
 
 后续 S3–S5 的 material model comparison 默认必须：
@@ -86,7 +94,7 @@
 - Anchor：城市人口分析与预测原始赛题 + GitHub `city-population-competition`。
 - Main：**S3｜Baseline Ladder**。
 - S2 Lab：阶段任务结束，不再继续 Plan06。
-- S3 正式实验尚未激活；需要实验时新建 `Lab｜S3 实验`，继续采用阶段连续 Plan / Codex / handoff / review 工作流。
+- S3 Plan01 baseline evidence 已完成 Codex 交付，等待 Lab/Main 复审；后续仍需新 Plan，不由本轮自动推进。
 
 ## Stage Experiment Workflow
 
@@ -108,7 +116,7 @@ S3 的中心问题：
 
 > 在不依赖复杂 ML 的情况下，哪些简单、可解释、严格遵守 S2 validation contract 的预测规则已经构成有竞争力的 baseline，以及后续 ML 至少必须超过什么标准才有价值？
 
-Main 先完成必要的 baseline ladder 设计框架；随后激活 `Lab｜S3 实验`，由实验对话制定第一份 S3 Plan。
+Main/Lab 先复审 `reports/S3_HANDOFFS/S3-Plan01/`，决定是否保留 B1 为当前 strongest baseline，并为 recency–stability trade-off 设计下一份有限、预注册的 S3 问题；本 Plan 不宣布 S3 COMPLETE，也不进入 S4。
 
 ## Do Not Repeat
 

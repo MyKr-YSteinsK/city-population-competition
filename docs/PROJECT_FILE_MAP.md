@@ -31,6 +31,7 @@
 │   ├── build_s2_plan03_target_metric_contract.py
 │   ├── build_s2_plan04_official_population_reconciliation.py
 │   ├── build_s2_plan05_validation_architecture.py
+│   ├── build_s3_plan01_baseline_ladder.py
 │   └── run_s1.py
 └── reports/
     ├── S1_FINAL_REVIEW_PACK.zip
@@ -91,6 +92,23 @@
         ├── validation_stability_summary.csv
         ├── architecture_recommendation.csv
         └── plan05_summary.json
+    └── S3_HANDOFFS/S3-Plan01/
+        ├── HANDOFF.md
+        ├── baseline_predictor_definitions.csv
+        ├── validation_contract_evidence.csv
+        ├── origin_information_boundary.csv
+        ├── per_origin_predictions_or_residuals.csv
+        ├── per_origin_metrics.csv
+        ├── aggregate_metrics.csv
+        ├── pairwise_baseline_comparison.csv
+        ├── pairwise_origin_comparison.csv
+        ├── validation_stability_summary.csv
+        ├── city_improvement_concentration.csv
+        ├── improvement_concentration_summary.csv
+        ├── leakage_audit.csv
+        ├── r1_r2_equivalence_check.csv
+        ├── s2_b0_b1_compatibility_check.csv
+        └── plan01_summary.json
 ```
 
 ## Generated and excluded

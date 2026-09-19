@@ -2,14 +2,14 @@
 
 ## Purpose
 
-项目目标是为 40 个城市的人口相关数据建立可追溯的 source-level canonical layer，并在其上保留可由 Main 审阅的 S2 Validation Architecture 证据。当前交付对象仍不是预测模型、最终预测或提交。
+项目目标是为 40 个城市的人口相关数据建立可追溯的 source-level canonical layer，并在其上保留可由 Main 审阅的 S2 Validation Architecture 与 S3 Baseline Ladder 证据。当前交付对象仍不是最终预测或提交。
 
 ## Ownership and layers
 
 - `data/raw/`：7 个合法 XLSX 原始工作簿和任务参考 PDF。原始内容只读。
 - `data/normalized/`：7 个审计脚本重建的 14 张逻辑 canonical CSV，以及员工派生行 provenance、repair 和 density regime 报告。
 - `data/quarantine/`：确认无效或冲突的值，保留来源上下文；`source/test.xls` 的来源关系仍未解析，因此不进入 canonical。
-- `scripts/`：7 个领域审计脚本、统一 S1 runner，以及 S2 Plan01–05 的 focused evidence utilities。
+- `scripts/`：7 个领域审计脚本、统一 S1 runner，以及 S2 Plan01–05、S3 Plan01 的 focused evidence utilities。
 - `docs/`：当前上下文、执行指令、数据契约、质量登记、文件地图和 Main handoff。
 - `reports/S1_FINAL_REVIEW_PACK.zip`：唯一保留的当前 S1 审阅包；历史 Plan01-04 报告不再作为当前事实源。
 - `reports/S2_HANDOFFS/S2-Plan01/`：S2 前一轮历史 information-set feasibility matrix 与 handoff。
@@ -17,6 +17,7 @@
 - `reports/S2_HANDOFFS/S2-Plan03/`：当前 S2 target/metric contract investigation、年龄结构一致性证据与 evaluator sanity artifacts；常住人口作为主代理、户籍人口作为敏感性目标，尚未执行正式模型评分。
 - `reports/S2_HANDOFFS/S2-Plan04/`：官方人口 source reconciliation、S1 contract refresh 与 Plan01–03 population-derived before/after delta；历史 Plan01–03 handoff 保持不变。
 - `reports/S2_HANDOFFS/S2-Plan05/`：single latest holdout、multi-origin expanding backtest、leakage、pooled/macro aggregation、稳定性与 architecture recommendation；不包含正式 ML 模型、最终 2023 预测或 submission。
+- `reports/S3_HANDOFFS/S3-Plan01/`：B0 persistence、B1 recent two-point trend、B2 expanding per-city linear trend 的正式 baseline evidence、逐 origin metrics、pairwise comparison、稳定性、城市改善集中度与 leakage audit。
 
 ## Source facts
 
@@ -27,6 +28,8 @@
 Plan05 使用上述刷新后的 canonical population：共同严格 origin 为 `2011–2021`，resident 与 registered 的最新可评分 origin 均为 `2021`。本轮只使用 persistence 与两点线性趋势两个固定 target-history-only naive predictor；每个 origin 的 target 输入最晚为 `T-2`。R1/R2 的 source-specific information-set contract 被逐 origin 保留，但因本轮不使用 covariates，两个 scenario 的数值 residual 完全相同。
 
 Plan05 的内部验证架构建议是 hybrid：multi-origin expanding 作为稳定性主证据，latest holdout 作为最终任务接近性诊断；pooled city-year MSE 作为任务对齐的 primary aggregate，macro-origin MSE 作为稳定性敏感性。该建议不改变 target contract，不把 R1/R2 变成 publication facts，也不授权 S3。
+
+S3 Plan01 在不修改 S2 contract 的前提下重新运行 B0/B1，并新增唯一的 B2 expanding per-city linear trend。B1 在 resident 与 registered 的 pooled MSE 上均优于 B0 和 B2；B2 仍优于 B0，但 resident 的 2021 latest 与 origin stability 有局部优势，registered 则在 2021 和跨 origin 波动上较差。该结果是 baseline evidence，不是 S3 champion 或最终预测。
 
 两个需要特别防止回退的事实：
 
