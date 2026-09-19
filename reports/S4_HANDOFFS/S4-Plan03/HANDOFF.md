@@ -19,6 +19,7 @@
 ## Execution contract
 
 - 实际执行起始 SHA：`23c770e76271b1db5ac4316850bbaff798b60e81`。
+- 主体 evidence delivery commit：`cded6de9386264889d469602e359b59ed72e5bac`，已推送到 `origin/main`。
 - 执行前 `git fetch origin main`；branch 为 `main`，upstream 为 `origin/main`，起始 `HEAD == origin/main`，工作树无用户本地修改。
 - 计划内实际运行：
 
