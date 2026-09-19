@@ -245,4 +245,4 @@ Do not enter S4 and do not declare a champion beyond the current evidence. Prepa
 - s2_b0_b1_compatibility_check.csv
 - plan01_summary.json
 
-Artifact/implementation commit SHA: pending artifact commit. A metadata-only follow-up will record the full SHA.
+Artifact/implementation commit SHA: 426fb17b9b502de23447e766b4d861a2e191c327. A metadata-only follow-up commit will record this full SHA; no history rewrite or force push is allowed.
