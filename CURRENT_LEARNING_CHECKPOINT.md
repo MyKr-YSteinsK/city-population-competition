@@ -150,6 +150,7 @@ S4 的中心问题：
 
 - Plan 是研究合同和边界，不是逐行实现教程。
 - Codex 保留局部数据设计、实现、诊断、验证和合理实验决策空间。
+- 每次实验对话生成 Plan 时，必须**直接生成可下载文件**交给用户，不在聊天正文中预览或重复展示 Plan 全文。
 - 每个 Plan 的证据进入 `reports/S4_HANDOFFS/S4-PlanXX/`。
 - S4 Lab 不能自行进入 S5。
 - Stage 结束时生成 `S4_FEATURE_ML_MODELING_FINAL_REPORT.md`，重点保存真实参赛者视角的 Hypothesis → Experiment → Evidence → Interpretation → Decision 链。
