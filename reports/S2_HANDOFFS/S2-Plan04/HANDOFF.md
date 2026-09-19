@@ -127,7 +127,7 @@ The official population correction therefore changes source coverage and one ear
 
 ## Resulting commit
 
-Artifact/implementation commit SHA: to be recorded after the first delivery commit. Any later metadata-only commit will be reported separately; no history rewrite or force push is allowed.
+Artifact/implementation commit SHA: 6ccbf7ef94366cb81f87083e39395bb03bba85f4. This metadata-only follow-up commit records the SHA; no history rewrite or force push is allowed.
 
 ## Interpretation requirement: next S2 question
 
