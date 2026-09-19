@@ -11,7 +11,8 @@
 - Plan01 evidence commit：`db7bf05fa2447c6cdc316a054d08e1d248641a45`
 - Integrated `main`：`1a6770f763966b58dd7ae60fef34e332febcea09`
 - Worker branch：`s5/plan02-robust-local-trend-screening`
-- Worker evidence commit：在首次提交后记录；最终 worker tip 以本次 `TASK_RESULT` 返回
+- Worker evidence commit：`e8602f5e4d9ad1bd0c9dbbc987b4ad606d52ade3`
+- Final worker tip：docs-only 最终化提交 SHA 将在本次 `TASK_RESULT` 返回
 - 最终筛查决定：`robust_local_trend_unsupported`
 
 本 Plan 只评估冻结 B3/B4 与预注册的 RLT3/RLT5，未拟合 blend、未创建 routing、未调参、未添加外部数据。Plan02 完成不等于 S5 完成；S5 未被声明完成，S6 未进入。

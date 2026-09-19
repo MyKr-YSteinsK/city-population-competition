@@ -13,7 +13,7 @@
     "plan01_decision": "mechanism_signal_found:robust_local_trend"
   },
   "worker_branch": "s5/plan02-robust-local-trend-screening",
-  "worker_head_at_run": "1a6770f763966b58dd7ae60fef34e332febcea09",
+  "worker_head_at_run": "e8602f51148807cbc0aa5566bea09ed989b7e6d8",
   "target_ids": [
     "resident",
     "registered"
