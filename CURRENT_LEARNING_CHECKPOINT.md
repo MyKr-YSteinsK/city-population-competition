@@ -59,6 +59,14 @@
 - B2 的 resident 结果显示 recent-vs-long-history 的明确 trade-off：2021 latest MSE 略优于 B1，且跨 origin MSE dispersion 更低；registered 在 2021 和 dispersion 上均不如 B1。B2 改善 B0 的贡献在 resident 受 city3 集中影响，registered 则更 broad-based。
 - R1/R2 对三个 target-history-only baseline 数值完全一致；B0/B1 与 S2 Plan05 的既有 probe 逐行兼容。S3 Plan01 未使用 covariates、复杂 ML、tuning、ensemble、2023 forecast 或 submission。
 
+### S3 Plan02 recent-window and selector evidence
+
+- S3 Plan02 在不修改冻结 S2 contract 的前提下，只运行预注册的 B3 recent-3-point OLS、B4 recent-5-point OLS，并完整重跑 B0/B1/B2；B3/B4 均保持 40 城市 × 11 origins 的可比 coverage，B4 的 136 条不足 5 点记录固定回退 B1，无静默扩窗。
+- B3 是 resident 与 registered 的当前 strongest fixed baseline：resident pooled MSE `872.4527`，较 B1 改善 `9.90%`；registered pooled MSE `225.4212`，较 B1 改善 `5.76%`。resident 2021 B3 MSE `3705.4278` 高于 B1 `3457.5500`，registered 2021 B3 MSE `1485.6049` 略低于 B1 `1501.5250`，因此仍需保留 latest-regime 冲突。
+- global prequential selector 在 resident aggregate 上劣于 B1，在 registered 上较 B1 改善 `2.51%`；city-level selector 在 resident aggregate 上劣于 B1，在 registered 上改善 `4.75%`，但 registered 2021 仅为小幅改善。city selector 的 resident 改善集中且不 broad-based，registered 改善较 broad 但仍有集中度。
+- row/origin oracle 与 static-city oracle 都明确标记为 `ORACLE_NON_DEPLOYABLE_POST_HOC_UPPER_BOUND`；resident 相对 B3 的理论 headroom 分别为约 `52.62%` 与 `18.42%`，registered 分别约 `16.52%` 与 `8.20%`，不能作为真实模型性能或最终 ranking。
+- 计划共生成 12,320 条 fixed/selector prediction rows；fixed/selector leakage、selector current/future history、R1/R2 equivalence、S2 B0/B1 compatibility、Plan01 B0/B1/B2 compatibility 全部 PASS。未使用 covariates、复杂 ML、tuning、ensemble、clustering、2023 forecast 或 submission。
+
 ## Frozen S2 Validation Contract
 
 后续 S3–S5 的 material model comparison 默认必须：
@@ -94,7 +102,7 @@
 - Anchor：城市人口分析与预测原始赛题 + GitHub `city-population-competition`。
 - Main：**S3｜Baseline Ladder**。
 - S2 Lab：阶段任务结束，不再继续 Plan06。
-- S3 Plan01 baseline evidence 已完成 Codex 交付，等待 Lab/Main 复审；后续仍需新 Plan，不由本轮自动推进。
+- S3 Plan01 与 Plan02 baseline evidence 已完成 Codex 交付，等待 Lab/Main 复审；本轮不宣布 S3 COMPLETE，也不自动进入 S4。
 
 ## Stage Experiment Workflow
 
@@ -116,7 +124,7 @@ S3 的中心问题：
 
 > 在不依赖复杂 ML 的情况下，哪些简单、可解释、严格遵守 S2 validation contract 的预测规则已经构成有竞争力的 baseline，以及后续 ML 至少必须超过什么标准才有价值？
 
-Main/Lab 先复审 `reports/S3_HANDOFFS/S3-Plan01/`，决定是否保留 B1 为当前 strongest baseline，并为 recency–stability trade-off 设计下一份有限、预注册的 S3 问题；本 Plan 不宣布 S3 COMPLETE，也不进入 S4。
+Main/Lab 先复审 `reports/S3_HANDOFFS/S3-Plan01/` 与 `reports/S3_HANDOFFS/S3-Plan02/`，决定是否保留 B3 为当前 strongest fixed baseline，以及 selector 的 registered 小幅收益是否值得继续研究；本 Plan 不宣布 S3 COMPLETE，也不进入 S4。
 
 ## Do Not Repeat
 

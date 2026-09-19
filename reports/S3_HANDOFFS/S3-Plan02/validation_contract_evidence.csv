@@ -1,0 +1,14 @@
+contract_item,frozen_value,status,evidence
+origin_domain,2011-2021 common strict origins,PASS,per_origin_metrics.csv
+target_history_cutoff,all fixed predictor fit rows <= T-2,PASS,leakage_audit.csv
+primary_target,resident / 常住人口（万人）,PASS,aggregate_metrics.csv
+sensitivity_target,registered / 户籍人口（万人）,PASS,aggregate_metrics.csv
+primary_aggregation,pooled city-year MSE,PASS,aggregate_metrics.csv and pairwise_baseline_comparison.csv
+aggregation_sensitivity,macro-origin MSE,PASS,aggregate_metrics.csv and pairwise_baseline_comparison.csv
+latest_diagnostic,2021 latest holdout reported separately,PASS,aggregate_metrics.csv and late_origin_comparison.csv
+replay_scenarios,R1 and R2 retained; target-history-only numeric equivalence expected,PASS,r1_r2_equivalence_check.csv
+recent_window_scope,only fixed 3-point and 5-point OLS windows; no sweep,PASS,baseline_predictor_definitions.csv
+selector_history_boundary,selector history max origin < current origin,PASS,selector_history_audit.csv
+selector_cold_start,fewer than 3 prior scored origins => fixed B1,PASS,selector_definitions.csv and selector_history_audit.csv
+oracle_scope,oracle is non-deployable post-hoc diagnostic only,PASS,oracle_metrics.csv and oracle_assignment_distribution.csv
+model_boundary,"no covariates, complex ML, tuning, ensemble, clustering, 2023 forecast or submission",PASS,plan02_summary.json

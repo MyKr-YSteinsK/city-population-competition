@@ -109,6 +109,37 @@
         ├── r1_r2_equivalence_check.csv
         ├── s2_b0_b1_compatibility_check.csv
         └── plan01_summary.json
+    └── S3_HANDOFFS/S3-Plan02/
+        ├── HANDOFF.md
+        ├── baseline_predictor_definitions.csv
+        ├── selector_definitions.csv
+        ├── validation_contract_evidence.csv
+        ├── origin_information_boundary.csv
+        ├── per_origin_predictions_or_residuals.csv
+        ├── per_origin_metrics.csv
+        ├── aggregate_metrics.csv
+        ├── pairwise_baseline_comparison.csv
+        ├── pairwise_origin_comparison.csv
+        ├── validation_stability_summary.csv
+        ├── city_improvement_concentration.csv
+        ├── improvement_concentration_summary.csv
+        ├── selector_improvement_concentration_summary.csv
+        ├── leakage_audit.csv
+        ├── selector_history_audit.csv
+        ├── r1_r2_equivalence_check.csv
+        ├── s2_b0_b1_compatibility_check.csv
+        ├── plan01_b0_b1_b2_compatibility_check.csv
+        ├── slope_mechanism_diagnostics.csv
+        ├── slope_disagreement_summary.csv
+        ├── city_predictor_performance.csv
+        ├── city_preference_stability.csv
+        ├── target_preference_consistency.csv
+        ├── oracle_predictions_or_residuals.csv
+        ├── oracle_metrics.csv
+        ├── oracle_assignment_distribution.csv
+        ├── oracle_static_city_assignments.csv
+        ├── late_origin_comparison.csv
+        └── plan02_summary.json
 ```
 
 ## Generated and excluded

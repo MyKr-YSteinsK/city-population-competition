@@ -1,0 +1,3 @@
+predictor_id,predictor_name,selector_scope,candidate_predictors,selection_rule,cold_start_rule,selection_tie_break,uses_current_origin_residual,uses_future_origin_residual,plan_id,target_history_horizon_years,deployable
+GLOBAL_PREQUENTIAL_SELECTOR,global prequential selector,all cities within target and scenario,"B1,B2,B3,B4",mean historical squared error over origins < T,fewer than 3 prior scored origins => fixed B1 fallback,B1 then B2 then B3 then B4,no,no,S3-Plan02,2,yes
+CITY_PREQUENTIAL_SELECTOR,city-level prequential selector,one city within target and scenario,"B1,B2,B3,B4",mean historical squared error for this city over origins < T,fewer than 3 prior scored origins => fixed B1 fallback,B1 then B2 then B3 then B4,no,no,S3-Plan02,2,yes

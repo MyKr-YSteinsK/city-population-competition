@@ -12,7 +12,7 @@
 - 年龄结构只接受 benchmark years `{2000, 2010, 2020}`；非 benchmark 年份不是该表的缺失键。
 - `test.xls` 保留在 `data/quarantine/source/`，不得进入 canonical pipeline。
 - 不修改 7 个合法 XLSX 原始文件；变更前必须记录哈希并在重建后复核。
-- 当前 S3 Plan01 只能在冻结 S2 contract 内执行少量、可解释、target-history-only baseline；不得进入 S4，不得擅自扩大为 covariate feature engineering、复杂 ML、tuning、ensemble、预测、排行榜或 submission。
+- 当前 S3 Plan01/Plan02 只能在冻结 S2 contract 内执行少量、可解释、target-history-only baseline、预注册 recent-window 与 prequential selector 证据；不得进入 S4，不得擅自扩大为 covariate feature engineering、复杂 ML、tuning、ensemble、预测、排行榜或 submission。
 
 ## 运行与交付
 
