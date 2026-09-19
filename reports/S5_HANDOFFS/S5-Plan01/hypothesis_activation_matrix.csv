@@ -1,0 +1,7 @@
+﻿hypothesis_id,supporting_evidence,contradicting_evidence,risk_gate_status,decision_relevance_status,activation_recommendation
+partial_pooling_shrinkage,slope disagreement high-risk stratum and B1/B2 tradeoff gates,"slope-risk gate passed, but comparator decision relevance was insufficient",True,False,inactive
+robust_local_trend,historical difference volatility risk gate and concentrated B3 excess error,,True,True,active_candidate_direction
+fixed_low_capacity_blend,slope-disagreement stratum separates comparator gain from B3 advantage,"high-risk comparator gain occurred in 6/11 origins and low-risk B3 advantage in 5/11, below the 7/11 rule",True,False,inactive
+stronger_boosting,none from this diagnostic-only plan,S4 low-capacity HGB and multisource evidence already failed; no direct capacity signal here,not_screened,not_screened,inactive
+remaining_source_groups,none; no new source is in scope,S4 external-source and multisource evidence did not establish stable gain,not_screened,not_screened,inactive
+tuning,none; threshold and parameter search are forbidden here,no mechanism signal justifies tuning,not_screened,not_screened,inactive
