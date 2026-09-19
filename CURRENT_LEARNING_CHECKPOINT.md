@@ -67,6 +67,15 @@
 - row/origin oracle 与 static-city oracle 都明确标记为 `ORACLE_NON_DEPLOYABLE_POST_HOC_UPPER_BOUND`；resident 相对 B3 的理论 headroom 分别为约 `52.62%` 与 `18.42%`，registered 分别约 `16.52%` 与 `8.20%`，不能作为真实模型性能或最终 ranking。
 - 计划共生成 12,320 条 fixed/selector prediction rows；fixed/selector leakage、selector current/future history、R1/R2 equivalence、S2 B0/B1 compatibility、Plan01 B0/B1/B2 compatibility 全部 PASS。未使用 covariates、复杂 ML、tuning、ensemble、clustering、2023 forecast 或 submission。
 
+### S3 Plan03 pooled / growth / ML-hurdle evidence
+
+- S3 Plan03 在不修改冻结 S2 contract 的前提下，完整重跑 B0–B4，并只新增预注册的 B5 pooled expanding city-fixed-effect additive trend、B6 pooled recent-3 city-fixed-effect additive trend、B7 recent-3 per-city log-linear growth；没有运行 formal ML、covariates、tuning、ensemble、2023 forecast 或 submission。
+- B3 `B3_RECENT_3POINT_OLS_TREND` 仍是当前 strongest deployable fixed baseline：resident pooled MSE `872.4527`，registered `225.4212`。B7 的 resident `938.7316`、registered `227.0369`，接近但没有超过 B3；B6 为 resident `2783.7578` / registered `480.5422`，B5 为 resident `12154.0898` / registered `1294.2794`，共享绝对斜率的 pooled 规则明显失败。
+- B7 只在 `2016–2018` middle regime 取得局部优势；B3 保持 resident early/late 的优势，且 resident latest 2021 仍存在 B3 与 B1 的冲突。所有 growth fit 的 eligible history 均为正，本轮没有触发非正值排除或 B3 fallback。
+- local slope dispersion 与 pooled shared-slope 对比确认城市异质性是实质机制；slope deviation 与 pooled error delta 相关，但只是诊断证据，未据此新增手工 selector rule。
+- leave-one-origin-out 中 resident 的 B3 full-domain leader 在 `10/11` 次移除后保持，唯一切换发生在移除 2013；registered 为 `11/11` 保持。B5/B6/B7 的 concentration 与 leave-one-city diagnostics 已落盘，未把集中改善当作 broad gain。
+- Plan03 生成 `14,080` prediction/residual rows、`352` per-origin metric rows、`32` aggregate metric rows；leakage、R1/R2、S2、Plan01、Plan02 compatibility checks 全部 PASS。`s3_evidence_sufficient_candidate=yes`，但 `s3_complete=false`，仍由 Main/Lab 决定是否正式结束 S3。
+
 ## Frozen S2 Validation Contract
 
 后续 S3–S5 的 material model comparison 默认必须：
@@ -102,7 +111,7 @@
 - Anchor：城市人口分析与预测原始赛题 + GitHub `city-population-competition`。
 - Main：**S3｜Baseline Ladder**。
 - S2 Lab：阶段任务结束，不再继续 Plan06。
-- S3 Plan01 与 Plan02 baseline evidence 已完成 Codex 交付，等待 Lab/Main 复审；本轮不宣布 S3 COMPLETE，也不自动进入 S4。
+- S3 Plan01、Plan02 与 Plan03 baseline evidence 已完成 Codex 交付，等待 Lab/Main 复审；本轮不宣布 S3 COMPLETE，也不自动进入 S4。
 
 ## Stage Experiment Workflow
 
@@ -124,7 +133,7 @@ S3 的中心问题：
 
 > 在不依赖复杂 ML 的情况下，哪些简单、可解释、严格遵守 S2 validation contract 的预测规则已经构成有竞争力的 baseline，以及后续 ML 至少必须超过什么标准才有价值？
 
-Main/Lab 先复审 `reports/S3_HANDOFFS/S3-Plan01/` 与 `reports/S3_HANDOFFS/S3-Plan02/`，决定是否保留 B3 为当前 strongest fixed baseline，以及 selector 的 registered 小幅收益是否值得继续研究；本 Plan 不宣布 S3 COMPLETE，也不进入 S4。
+Main/Lab 先复审 `reports/S3_HANDOFFS/S3-Plan01/`、`reports/S3_HANDOFFS/S3-Plan02/` 与 `reports/S3_HANDOFFS/S3-Plan03/`，确认 B3 是否作为 S3 最终 fixed baseline，以及是否需要另一个严格预注册的 late-regime robustness check；本轮不宣布 S3 COMPLETE，也不进入 S4。
 
 ## Do Not Repeat
 

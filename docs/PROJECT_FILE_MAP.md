@@ -32,6 +32,8 @@
 │   ├── build_s2_plan04_official_population_reconciliation.py
 │   ├── build_s2_plan05_validation_architecture.py
 │   ├── build_s3_plan01_baseline_ladder.py
+│   ├── build_s3_plan02_recent_window_and_selector.py
+│   ├── build_s3_plan03_pooled_growth_and_ml_hurdle.py
 │   └── run_s1.py
 └── reports/
     ├── S1_FINAL_REVIEW_PACK.zip
@@ -140,6 +142,38 @@
         ├── oracle_static_city_assignments.csv
         ├── late_origin_comparison.csv
         └── plan02_summary.json
+    └── S3_HANDOFFS/S3-Plan03/
+        ├── HANDOFF.md
+        ├── baseline_predictor_definitions.csv
+        ├── validation_contract_evidence.csv
+        ├── origin_information_boundary.csv
+        ├── per_origin_predictions_or_residuals.csv
+        ├── per_origin_metrics.csv
+        ├── aggregate_metrics.csv
+        ├── pairwise_baseline_comparison.csv
+        ├── pairwise_origin_comparison.csv
+        ├── validation_stability_summary.csv
+        ├── latest_origin_comparison.csv
+        ├── time_regime_comparison.csv
+        ├── leave_one_origin_out_ranking.csv
+        ├── leave_one_origin_out_summary.csv
+        ├── city_improvement_concentration.csv
+        ├── improvement_concentration_summary.csv
+        ├── leave_one_city_sensitivity.csv
+        ├── leakage_audit.csv
+        ├── r1_r2_equivalence_check.csv
+        ├── s2_b0_b1_compatibility_check.csv
+        ├── plan01_b0_b1_b2_compatibility_check.csv
+        ├── plan02_b0_b1_b2_b3_b4_compatibility_check.csv
+        ├── pooled_fit_diagnostics.csv
+        ├── local_vs_pooled_slope_comparison.csv
+        ├── local_slope_dispersion.csv
+        ├── slope_error_relationship.csv
+        ├── growth_diagnostics.csv
+        ├── additive_vs_growth_comparison.csv
+        ├── ml_hurdle_candidate.csv
+        ├── s3_sufficiency_candidate.json
+        └── plan03_summary.json
 ```
 
 ## Generated and excluded

@@ -1,0 +1,26 @@
+{
+  "coverage": [
+    "persistence",
+    "recent additive trend",
+    "long-history additive trend",
+    "recent smoothing",
+    "per-city simple regression",
+    "pooled/global simple regression",
+    "recent multiplicative growth",
+    "multi-origin stability",
+    "latest 2021",
+    "concentration",
+    "city heterogeneity",
+    "leakage",
+    "ML hurdle"
+  ],
+  "is_formal_s3_complete_decision": "no",
+  "material_gap_within_s3_baseline_scope": "none identified after B0-B7, pooled/local/growth, robustness and hurdle evidence",
+  "next_boundary": "Main/Lab review and possible S3 final report; any S4 ML must clear ml_hurdle_candidate.csv.",
+  "plan_id": "S3-Plan03",
+  "reason": "S3 now covers local versus shared slope, additive versus multiplicative growth, robustness and the minimum future ML evidence gate without formal ML.",
+  "s3_evidence_sufficient_candidate": "yes",
+  "s4_entered": false,
+  "stage": "S3_BASELINE_LADDER",
+  "strongest_deployable_fixed_baseline_candidate": "B3_RECENT_3POINT_OLS_TREND"
+}

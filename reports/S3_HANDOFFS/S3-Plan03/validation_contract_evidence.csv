@@ -1,0 +1,12 @@
+contract_item,frozen_value,status,evidence
+origin_domain,2011-2021 common strict origins,PASS,per_origin_metrics.csv
+target_history_cutoff,all local and pooled training rows <= T-2,PASS,leakage_audit.csv
+primary_target,resident / 常住人口（万人）,PASS,aggregate_metrics.csv and ml_hurdle_candidate.csv
+sensitivity_target,registered / 户籍人口（万人）,PASS,aggregate_metrics.csv
+primary_aggregation,pooled city-year MSE,PASS,aggregate_metrics.csv
+aggregation_sensitivity,macro-origin MSE,PASS,aggregate_metrics.csv
+latest_diagnostic,2021 latest holdout separately reported,PASS,latest_origin_comparison.csv
+replay_scenarios,R1 and R2 retained and numerically equivalent for target-only predictors,PASS,r1_r2_equivalence_check.csv
+new_baseline_scope,"only B5 pooled expanding FE, B6 pooled recent3 FE, B7 recent3 per-city log growth",PASS,baseline_predictor_definitions.csv
+pooled_training_boundary,all pooled rows <= T-2 and current-origin labels excluded,PASS,leakage_audit.csv and pooled_fit_diagnostics.csv
+ml_boundary,"no formal ML, covariates, tuning, ensemble, selector expansion, 2023 forecast or submission",PASS,plan03_summary.json
