@@ -507,6 +507,25 @@ def predict_from_fit(
     return prediction
 
 
+def final_prediction(
+    fit: dict[str, Any],
+    prepared: dict[str, Any],
+    frame: pd.DataFrame,
+    config: dict[str, Any],
+    framing: str,
+    split: str,
+) -> np.ndarray:
+    """Convert the fitted response to the population prediction contract."""
+
+    prediction = predict_from_fit(fit, prepared, frame, config, split)
+    if framing == "F2_B3_RESIDUAL":
+        prediction = prediction + frame["b3_prediction"].to_numpy(dtype=float)
+    prediction = np.asarray(prediction, dtype=float)
+    if not np.isfinite(prediction).all():
+        raise ValueError("non_finite_final_prediction")
+    return prediction
+
+
 def config_by_id(config_id: str) -> dict[str, Any]:
     for config in CONFIGS:
         if config["config_id"] == config_id:
@@ -1078,8 +1097,13 @@ def run_screening(
                                 error = fit.get("error", "")
                                 if fit["success"]:
                                     try:
-                                        prediction = predict_from_fit(
-                                            fit, prepared, fold_validation, config, "validation"
+                                        prediction = final_prediction(
+                                            fit,
+                                            prepared,
+                                            fold_validation,
+                                            config,
+                                            framing_id,
+                                            "validation",
                                         )
                                         mse = float(
                                             np.mean(
@@ -1281,8 +1305,13 @@ def run_screening(
                         continue
 
                     try:
-                        prediction = predict_from_fit(
-                            outer_fit, outer_prepared, outer_validation, selected, "validation"
+                        prediction = final_prediction(
+                            outer_fit,
+                            outer_prepared,
+                            outer_validation,
+                            selected,
+                            framing_id,
+                            "validation",
                         )
                     except Exception as error:
                         fit_stats["outer_prediction_failure_count"] += 1
@@ -1402,6 +1431,16 @@ def metric_lookup(
     return matches[0]
 
 
+def format_metric(value: Any, digits: int = 6) -> str:
+    if value is None:
+        return "NA"
+    try:
+        numeric = float(value)
+    except (TypeError, ValueError):
+        return "NA"
+    return f"{numeric:.{digits}f}" if math.isfinite(numeric) else "NA"
+
+
 def handoff_text(
     summary: dict[str, Any],
     aggregate_rows: list[dict[str, Any]],
@@ -1418,7 +1457,7 @@ def handoff_text(
         f"- Worker branch：{BRANCH}",
         f"- Exact base SHA：{BASE_SHA}",
         f"- Runner commit used for execution：{worker_commit}",
-        f"- Official OOF coverage：{summary['candidate_oof_rows']} / {summary['required_oof_rows']} rows — {summary['oof_coverage_status']}",
+        f"- Official OOF coverage：combined {summary['candidate_oof_rows']} / {summary['required_oof_rows']} rows — {summary['oof_coverage_status']}；per framing {json.dumps(summary['coverage_by_framing'], ensure_ascii=False, sort_keys=True)}",
         f"- Classification：{summary['classification']}",
         "",
         "## Dependency",
@@ -1454,10 +1493,10 @@ def handoff_text(
                 except KeyError:
                     continue
                 lines.append(
-                    f"| {framing} | {target} | {scenario[:2]} | {row['pooled_city_year_mse']:.6f} | "
-                    f"{row['b3_pooled_city_year_mse']:.6f} | {row['improvement_vs_b3_pct']:.3f} | "
-                    f"{row['origin_win_count_vs_b3']} | {row['latest_2021_mse']:.6f} | "
-                    f"{row['top1_city_sse_share']:.3f} |"
+                    f"| {framing} | {target} | {scenario[:2]} | {format_metric(row.get('pooled_city_year_mse'))} | "
+                    f"{format_metric(row.get('b3_pooled_city_year_mse'))} | {format_metric(row.get('improvement_vs_b3_pct'), 3)} | "
+                    f"{row.get('origin_win_count_vs_b3', 'NA')} | {format_metric(row.get('latest_2021_mse'))} | "
+                    f"{format_metric(row.get('top1_city_sse_share'), 3)} |"
                 )
     lines.extend(
         [
@@ -1475,7 +1514,7 @@ def handoff_text(
             better = "F1_DIRECT" if f1["pooled_city_year_mse"] <= f2["pooled_city_year_mse"] else "F2_B3_RESIDUAL"
             lines.append(
                 f"- {target}/{scenario[:2]}：{better} pooled MSE 更低 "
-                f"(F1={f1['pooled_city_year_mse']:.6f}, F2={f2['pooled_city_year_mse']:.6f})。"
+                f"(F1={format_metric(f1.get('pooled_city_year_mse'))}, F2={format_metric(f2.get('pooled_city_year_mse'))})。"
             )
     lines.extend(
         [
@@ -1580,8 +1619,22 @@ def main() -> None:
     }
     coverage_status = "PASS" if len(all_oof) == len(expected_keys) and actual_keys == expected_keys else "FAIL"
     aggregate_rows, origin_rows, city_rows, metric_meta = calculate_metrics(all_oof, formal)
+    required_oof_rows_per_framing = len(TARGETS) * len(SCENARIOS) * len(ORIGINS) * len(cities)
+    coverage_by_framing: dict[str, Any] = {}
+    for framing in FRAMINGS:
+        framing_rows = int((all_oof["framing_id"] == framing).sum()) if len(all_oof) else 0
+        coverage_by_framing[framing] = {
+            "candidate_oof_rows": framing_rows,
+            "required_oof_rows": required_oof_rows_per_framing,
+            "status": "PASS" if framing_rows == required_oof_rows_per_framing else "FAIL",
+        }
     classifications = [
-        family_classification(aggregate_rows, framing, len(all_oof)) for framing in FRAMINGS
+        family_classification(
+            aggregate_rows,
+            framing,
+            coverage_by_framing[framing]["candidate_oof_rows"],
+        )
+        for framing in FRAMINGS
     ]
     labels = [item["classification"] for item in classifications]
     if coverage_status != "PASS":
@@ -1612,7 +1665,9 @@ def main() -> None:
         "model_feature_count": len(context["features"]),
         "candidate_oof_rows": len(all_oof),
         "required_oof_rows": len(expected_keys),
+        "required_oof_rows_per_framing": required_oof_rows_per_framing,
         "oof_coverage_status": coverage_status,
+        "coverage_by_framing": coverage_by_framing,
         "selection_group_count": len(result["selection_rows"]),
         "inner_geometry_row_count": len(inner),
         "eligible_inner_fold_count": int(
