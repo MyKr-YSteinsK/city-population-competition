@@ -17,6 +17,7 @@
 ## Execution contract
 
 - 实际执行起始 SHA：`71f76664426a3b720f9b03f77792c8f0905e9f92`。
+- 主体 evidence delivery commit：`1aed8c111fe356881cca64426070d27fd964daec`，已推送到 `origin/main`。
 - 起始时 `main` 与 `origin/main` 对齐；工作树无用户本地修改。
 - 已执行：
 
