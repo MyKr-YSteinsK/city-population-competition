@@ -332,7 +332,11 @@ def final_prediction(model: Any, x: np.ndarray, frame: pd.DataFrame, framing: st
 def feature_group(feature_name: str, groups: dict[str, list[str]]) -> tuple[str, str]:
     if feature_name.startswith("city_id_"):
         return "CITY_ONE_HOT", "city_one_hot"
-    if feature_name.endswith("_missing") or "_missing_" in feature_name:
+    if (
+        feature_name.endswith("_missing")
+        or "_missing_" in feature_name
+        or feature_name.startswith("missingindicator_")
+    ):
         return "MISSING_INDICATOR", "missing_indicator"
     for group, members in groups.items():
         if feature_name in members:
@@ -589,7 +593,7 @@ def run_family(
                             }
                         )
 
-    expected_rows = 2 * 2 * 11 * 40
+    expected_rows = 2 * 2 * 2 * 11 * 40
     assert len(oof_rows) == expected_rows
     assert len(selection_rows) == 2 * 2 * 2 * 11
     assert len(set((r["target_id"], r["scenario_id"], r["framing_id"], r["origin_year"], r["city_id"]) for r in oof_rows)) == expected_rows
@@ -914,7 +918,7 @@ def handoff_text(
         "",
         "## Coverage and selection",
         "",
-        f"- Formal OOF：每个 family 1760 行；两 family 合计 {summary['candidate_oof_rows']} 行。",
+        f"- Formal OOF：每个 family（两个 framing）3520 行；两 family 合计 {summary['candidate_oof_rows']} 行。每个 framing-specific promoted candidate 均覆盖 1760 行。",
         "- Framings：F1_DIRECT 与 F2_B3_RESIDUAL；targets：resident / registered；scenarios：R1 / R2。",
         f"- Nested selection groups：每个 family 88；合计 {summary['selection_group_count']}。",
         f"- Eligible inner folds：{summary['eligible_inner_fold_count']} / {summary['inner_geometry_row_count']}。",
@@ -1014,7 +1018,7 @@ def main() -> None:
 
     all_oof_rows = results["EXTRATREES"]["oof_rows"] + results["RIDGE"]["oof_rows"]
     all_oof = pd.DataFrame(all_oof_rows)
-    assert len(all_oof) == 3520
+    assert len(all_oof) == 7040
     aggregate_rows, origin_rows, city_rows, metric_meta = calculate_metrics(all_oof, formal)
     family_classifications = [
         family_classification(aggregate_rows, family, framing)
