@@ -27,6 +27,7 @@
 │   ├── audit_urbanization.py
 │   ├── audit_wage.py
 │   ├── build_s2_plan01_matrix.py
+│   ├── build_s2_plan02_geometry.py
 │   └── run_s1.py
 └── reports/
     ├── S1_FINAL_REVIEW_PACK.zip
@@ -38,6 +39,16 @@
         ├── pseudo_target_source_policy_matrix.csv
         ├── candidate_origin_summary.csv
         └── matrix_summary.json
+    └── S2_HANDOFFS/S2-Plan02/
+        ├── HANDOFF.md
+        ├── reference_forecast_geometry.csv
+        ├── replay_scenario_definitions.csv
+        ├── origin_source_scenario_freshness_matrix.csv
+        ├── origin_city_source_scenario_freshness.csv
+        ├── origin_feasibility_summary.csv
+        ├── plan01_vs_plan02_candidate_origin_comparison.csv
+        ├── screening_heuristics_review.csv
+        └── geometry_summary.json
 ```
 
 ## Generated and excluded

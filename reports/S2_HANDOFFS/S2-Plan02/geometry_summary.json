@@ -1,0 +1,354 @@
+{
+  "age_benchmark_domain_preserved": true,
+  "candidate_years_by_scenario": {
+    "R1_REFERENCE_SNAPSHOT_LAG": [
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021
+    ],
+    "R2_CONSERVATIVE_PUBLICATION_STRESS": [
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021
+    ]
+  },
+  "city_matrix_rows": 25760,
+  "conditional_years_by_scenario": {
+    "R1_REFERENCE_SNAPSHOT_LAG": [
+      2007,
+      2008,
+      2009
+    ],
+    "R2_CONSERVATIVE_PUBLICATION_STRESS": [
+      2007,
+      2008,
+      2009
+    ]
+  },
+  "employee_provenance_preserved": true,
+  "excluded_years_by_scenario": {
+    "R1_REFERENCE_SNAPSHOT_LAG": [
+      2001,
+      2002,
+      2003,
+      2004,
+      2005,
+      2006,
+      2022,
+      2023
+    ],
+    "R2_CONSERVATIVE_PUBLICATION_STRESS": [
+      2001,
+      2002,
+      2003,
+      2004,
+      2005,
+      2006,
+      2022,
+      2023
+    ]
+  },
+  "feasibility_rows": 46,
+  "matrix_rows": 644,
+  "model_scoring_run": false,
+  "origin_count": 23,
+  "plan_id": "S2-Plan02",
+  "publication_timing_proven": false,
+  "reference_year": 2023,
+  "s1_boundary_corrections_checked": true,
+  "s1_canonical_key_uniqueness_checked": true,
+  "scenario_count": 2,
+  "screening_rules": {
+    "core_sources": [
+      "density",
+      "urbanization",
+      "unemployment",
+      "employees",
+      "sector",
+      "wage"
+    ],
+    "minimum_city_coverage": 0.9,
+    "minimum_prior_target_years_per_city": 3,
+    "note": "All three remain structural heuristics, not final validation contracts."
+  },
+  "source_count": 14,
+  "target_history_horizon_years": 2,
+  "target_horizon_basis": "Population resident proxy latest observed value year is 2021; 2023 minus 2021 equals two-year snapshot horizon.",
+  "target_proxy_status": "conditional_proxy_not_uniquely_resolved_by_source_materials",
+  "target_source": "population",
+  "target_summaries": {
+    "2001": {
+      "history_cutoff_year": 1999,
+      "history_max_labels_per_city": 0,
+      "history_median_labels_per_city": 0,
+      "history_min_labels_per_city": 0,
+      "history_ready_city_count": 0,
+      "history_ready_coverage_rate": "0.000",
+      "target_label_available_city_count": 21,
+      "target_label_column": "常住人口（万人）",
+      "target_label_coverage_rate": "0.525"
+    },
+    "2002": {
+      "history_cutoff_year": 2000,
+      "history_max_labels_per_city": 0,
+      "history_median_labels_per_city": 0,
+      "history_min_labels_per_city": 0,
+      "history_ready_city_count": 0,
+      "history_ready_coverage_rate": "0.000",
+      "target_label_available_city_count": 11,
+      "target_label_column": "常住人口（万人）",
+      "target_label_coverage_rate": "0.275"
+    },
+    "2003": {
+      "history_cutoff_year": 2001,
+      "history_max_labels_per_city": 1,
+      "history_median_labels_per_city": 1,
+      "history_min_labels_per_city": 0,
+      "history_ready_city_count": 0,
+      "history_ready_coverage_rate": "0.000",
+      "target_label_available_city_count": 11,
+      "target_label_column": "常住人口（万人）",
+      "target_label_coverage_rate": "0.275"
+    },
+    "2004": {
+      "history_cutoff_year": 2002,
+      "history_max_labels_per_city": 2,
+      "history_median_labels_per_city": 1,
+      "history_min_labels_per_city": 0,
+      "history_ready_city_count": 0,
+      "history_ready_coverage_rate": "0.000",
+      "target_label_available_city_count": 11,
+      "target_label_column": "常住人口（万人）",
+      "target_label_coverage_rate": "0.275"
+    },
+    "2005": {
+      "history_cutoff_year": 2003,
+      "history_max_labels_per_city": 3,
+      "history_median_labels_per_city": 1,
+      "history_min_labels_per_city": 0,
+      "history_ready_city_count": 11,
+      "history_ready_coverage_rate": "0.275",
+      "target_label_available_city_count": 11,
+      "target_label_column": "常住人口（万人）",
+      "target_label_coverage_rate": "0.275"
+    },
+    "2006": {
+      "history_cutoff_year": 2004,
+      "history_max_labels_per_city": 4,
+      "history_median_labels_per_city": 1,
+      "history_min_labels_per_city": 0,
+      "history_ready_city_count": 11,
+      "history_ready_coverage_rate": "0.275",
+      "target_label_available_city_count": 27,
+      "target_label_column": "常住人口（万人）",
+      "target_label_coverage_rate": "0.675"
+    },
+    "2007": {
+      "history_cutoff_year": 2005,
+      "history_max_labels_per_city": 5,
+      "history_median_labels_per_city": 1,
+      "history_min_labels_per_city": 0,
+      "history_ready_city_count": 11,
+      "history_ready_coverage_rate": "0.275",
+      "target_label_available_city_count": 40,
+      "target_label_column": "常住人口（万人）",
+      "target_label_coverage_rate": "1.000"
+    },
+    "2008": {
+      "history_cutoff_year": 2006,
+      "history_max_labels_per_city": 6,
+      "history_median_labels_per_city": 1,
+      "history_min_labels_per_city": 0,
+      "history_ready_city_count": 11,
+      "history_ready_coverage_rate": "0.275",
+      "target_label_available_city_count": 40,
+      "target_label_column": "常住人口（万人）",
+      "target_label_coverage_rate": "1.000"
+    },
+    "2009": {
+      "history_cutoff_year": 2007,
+      "history_max_labels_per_city": 7,
+      "history_median_labels_per_city": 2,
+      "history_min_labels_per_city": 1,
+      "history_ready_city_count": 11,
+      "history_ready_coverage_rate": "0.275",
+      "target_label_available_city_count": 40,
+      "target_label_column": "常住人口（万人）",
+      "target_label_coverage_rate": "1.000"
+    },
+    "2010": {
+      "history_cutoff_year": 2008,
+      "history_max_labels_per_city": 8,
+      "history_median_labels_per_city": 3,
+      "history_min_labels_per_city": 2,
+      "history_ready_city_count": 37,
+      "history_ready_coverage_rate": "0.925",
+      "target_label_available_city_count": 40,
+      "target_label_column": "常住人口（万人）",
+      "target_label_coverage_rate": "1.000"
+    },
+    "2011": {
+      "history_cutoff_year": 2009,
+      "history_max_labels_per_city": 9,
+      "history_median_labels_per_city": 4,
+      "history_min_labels_per_city": 3,
+      "history_ready_city_count": 40,
+      "history_ready_coverage_rate": "1.000",
+      "target_label_available_city_count": 40,
+      "target_label_column": "常住人口（万人）",
+      "target_label_coverage_rate": "1.000"
+    },
+    "2012": {
+      "history_cutoff_year": 2010,
+      "history_max_labels_per_city": 10,
+      "history_median_labels_per_city": 5,
+      "history_min_labels_per_city": 4,
+      "history_ready_city_count": 40,
+      "history_ready_coverage_rate": "1.000",
+      "target_label_available_city_count": 40,
+      "target_label_column": "常住人口（万人）",
+      "target_label_coverage_rate": "1.000"
+    },
+    "2013": {
+      "history_cutoff_year": 2011,
+      "history_max_labels_per_city": 11,
+      "history_median_labels_per_city": 6,
+      "history_min_labels_per_city": 5,
+      "history_ready_city_count": 40,
+      "history_ready_coverage_rate": "1.000",
+      "target_label_available_city_count": 40,
+      "target_label_column": "常住人口（万人）",
+      "target_label_coverage_rate": "1.000"
+    },
+    "2014": {
+      "history_cutoff_year": 2012,
+      "history_max_labels_per_city": 12,
+      "history_median_labels_per_city": 7,
+      "history_min_labels_per_city": 6,
+      "history_ready_city_count": 40,
+      "history_ready_coverage_rate": "1.000",
+      "target_label_available_city_count": 40,
+      "target_label_column": "常住人口（万人）",
+      "target_label_coverage_rate": "1.000"
+    },
+    "2015": {
+      "history_cutoff_year": 2013,
+      "history_max_labels_per_city": 13,
+      "history_median_labels_per_city": 8,
+      "history_min_labels_per_city": 7,
+      "history_ready_city_count": 40,
+      "history_ready_coverage_rate": "1.000",
+      "target_label_available_city_count": 40,
+      "target_label_column": "常住人口（万人）",
+      "target_label_coverage_rate": "1.000"
+    },
+    "2016": {
+      "history_cutoff_year": 2014,
+      "history_max_labels_per_city": 14,
+      "history_median_labels_per_city": 9,
+      "history_min_labels_per_city": 8,
+      "history_ready_city_count": 40,
+      "history_ready_coverage_rate": "1.000",
+      "target_label_available_city_count": 40,
+      "target_label_column": "常住人口（万人）",
+      "target_label_coverage_rate": "1.000"
+    },
+    "2017": {
+      "history_cutoff_year": 2015,
+      "history_max_labels_per_city": 15,
+      "history_median_labels_per_city": 10,
+      "history_min_labels_per_city": 9,
+      "history_ready_city_count": 40,
+      "history_ready_coverage_rate": "1.000",
+      "target_label_available_city_count": 40,
+      "target_label_column": "常住人口（万人）",
+      "target_label_coverage_rate": "1.000"
+    },
+    "2018": {
+      "history_cutoff_year": 2016,
+      "history_max_labels_per_city": 16,
+      "history_median_labels_per_city": 11,
+      "history_min_labels_per_city": 10,
+      "history_ready_city_count": 40,
+      "history_ready_coverage_rate": "1.000",
+      "target_label_available_city_count": 40,
+      "target_label_column": "常住人口（万人）",
+      "target_label_coverage_rate": "1.000"
+    },
+    "2019": {
+      "history_cutoff_year": 2017,
+      "history_max_labels_per_city": 17,
+      "history_median_labels_per_city": 12,
+      "history_min_labels_per_city": 11,
+      "history_ready_city_count": 40,
+      "history_ready_coverage_rate": "1.000",
+      "target_label_available_city_count": 40,
+      "target_label_column": "常住人口（万人）",
+      "target_label_coverage_rate": "1.000"
+    },
+    "2020": {
+      "history_cutoff_year": 2018,
+      "history_max_labels_per_city": 18,
+      "history_median_labels_per_city": 13,
+      "history_min_labels_per_city": 12,
+      "history_ready_city_count": 40,
+      "history_ready_coverage_rate": "1.000",
+      "target_label_available_city_count": 40,
+      "target_label_column": "常住人口（万人）",
+      "target_label_coverage_rate": "1.000"
+    },
+    "2021": {
+      "history_cutoff_year": 2019,
+      "history_max_labels_per_city": 19,
+      "history_median_labels_per_city": 14,
+      "history_min_labels_per_city": 13,
+      "history_ready_city_count": 40,
+      "history_ready_coverage_rate": "1.000",
+      "target_label_available_city_count": 40,
+      "target_label_column": "常住人口（万人）",
+      "target_label_coverage_rate": "1.000"
+    },
+    "2022": {
+      "history_cutoff_year": 2020,
+      "history_max_labels_per_city": 20,
+      "history_median_labels_per_city": 15,
+      "history_min_labels_per_city": 14,
+      "history_ready_city_count": 40,
+      "history_ready_coverage_rate": "1.000",
+      "target_label_available_city_count": 0,
+      "target_label_column": "常住人口（万人）",
+      "target_label_coverage_rate": "0.000"
+    },
+    "2023": {
+      "history_cutoff_year": 2021,
+      "history_max_labels_per_city": 21,
+      "history_median_labels_per_city": 16,
+      "history_min_labels_per_city": 15,
+      "history_ready_city_count": 40,
+      "history_ready_coverage_rate": "1.000",
+      "target_label_available_city_count": 0,
+      "target_label_column": "常住人口（万人）",
+      "target_label_coverage_rate": "0.000"
+    }
+  },
+  "target_value_column": "常住人口（万人）",
+  "test_xls_used": false
+}

@@ -1,0 +1,4 @@
+heuristic_id,plan01_value,plan02_use,status,reason
+minimum_city_coverage,90%,retained as a structural diagnostic screen for core sources,not_final_validation_contract,"Coverage is necessary to expose missing information, but it does not prove publication timing, feature usefulness, independence, or model validity."
+minimum_prior_target_years_per_city,3 labels per city,reapplied only to target labels at or before T-2,target-horizon_structural_screen_only,"The horizon correction prevents a 2-year target task from silently using the T-1 label; the count still remains a feasibility heuristic, not a score contract."
+core_source_set,density;urbanization;unemployment;employees;sector;wage,provisional coverage screen only,not_final_source_contract,"The six sources were inherited for comparability; no model evidence or independence analysis was run, and optional sources remain auditable."
