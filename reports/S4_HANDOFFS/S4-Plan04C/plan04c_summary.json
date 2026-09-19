@@ -1,0 +1,313 @@
+{
+  "b3_aggregate_sanity_pass": true,
+  "b3_row_sanity_pass": true,
+  "boundary_audit_rows": 20240,
+  "branch": "s4/wave-a-employment",
+  "candidate_prediction_rows": 1760,
+  "common_origin_domain": "2011-2021",
+  "decision_detail": {
+    "close_with_origin_latest_support": false,
+    "deep_dive_recommended": false,
+    "deep_dive_rule": "resident beats B3 in both scenarios; or resident is within 1% with origin/latest support; or clear resident gain is provenance-sensitive",
+    "provenance_sensitive_resident": false,
+    "registered_supports_candidate": true,
+    "resident_beats_b3_in_both_r1_r2": false,
+    "resident_gain_present": false,
+    "screening_decision": "unsupported"
+  },
+  "deep_dive_recommended": false,
+  "employment_boundary_rule": "R1 source cap = pseudo-target-1; R2 source cap = pseudo-target-2",
+  "employment_r1_r2_boundary_pass": true,
+  "employment_source": {
+    "canonical_city_count": 40,
+    "canonical_row_count": 773,
+    "canonical_year_max": 2022,
+    "canonical_year_min": 2000,
+    "derived_row_count": 91,
+    "observed_latest_year": 2022,
+    "observed_snapshot_lag_years": 1,
+    "provenance_file": "data\\normalized\\就业信息_从业人员数_provenance.csv",
+    "quarantine_exact_value_overlap_count": 0,
+    "quarantine_file": "data\\quarantine\\就业信息_从业人员数_quarantine.csv",
+    "quarantine_row_count": 80,
+    "quarantine_unique_key_count": 59,
+    "source_non_derived_row_count": 682,
+    "source_status": "source_plus_remap_quarantine_and_derived"
+  },
+  "ensemble_run": false,
+  "feature_formulas": {
+    "employees_log_latest": "log1p(latest allowed positive employeesNumber)",
+    "employees_recent3_log_slope": "OLS slope of log(employeesNumber) against real year over latest three allowed positive observations",
+    "employees_recent_log_growth": "annualized [log(recent latest)-log(recent previous)] using latest two allowed positive observations"
+  },
+  "feature_group_id": "EMPLOYMENT_RECENT_V1",
+  "feature_names": [
+    "employees_log_latest",
+    "employees_recent_log_growth",
+    "employees_recent3_log_slope"
+  ],
+  "final_2023_prediction_run": false,
+  "frozen_base_commit": "b8c302abe7ebf1710869aaa55a00d4b926d2bcac",
+  "gbdt_run": false,
+  "metrics": {
+    "registered_R1_REFERENCE_SNAPSHOT_LAG_B3_RECENT_3POINT_OLS_TREND": {
+      "latest_2021_mse": 1485.6048611111196,
+      "macro_origin_mse": 225.42121212121322,
+      "pooled_mae": 5.60606060606061,
+      "pooled_mse": 225.42121212121324,
+      "pooled_rmse": 15.014033839085792
+    },
+    "registered_R1_REFERENCE_SNAPSHOT_LAG_M4C_B3_PLUS_RIDGE_EMPLOYMENT": {
+      "latest_2021_mse": 1482.3149324673218,
+      "macro_origin_mse": 224.90472414256476,
+      "pooled_mae": 5.747366305595432,
+      "pooled_mse": 224.90472414256473,
+      "pooled_rmse": 14.996823801810994
+    },
+    "registered_R2_CONSERVATIVE_PUBLICATION_STRESS_B3_RECENT_3POINT_OLS_TREND": {
+      "latest_2021_mse": 1485.6048611111196,
+      "macro_origin_mse": 225.42121212121322,
+      "pooled_mae": 5.60606060606061,
+      "pooled_mse": 225.42121212121324,
+      "pooled_rmse": 15.014033839085792
+    },
+    "registered_R2_CONSERVATIVE_PUBLICATION_STRESS_M4C_B3_PLUS_RIDGE_EMPLOYMENT": {
+      "latest_2021_mse": 1487.627151244727,
+      "macro_origin_mse": 225.38992593971926,
+      "pooled_mae": 5.737351074703255,
+      "pooled_mse": 225.38992593971926,
+      "pooled_rmse": 15.012991905004121
+    },
+    "resident_R1_REFERENCE_SNAPSHOT_LAG_B3_RECENT_3POINT_OLS_TREND": {
+      "latest_2021_mse": 3705.42777777773,
+      "macro_origin_mse": 872.4526515151429,
+      "pooled_mae": 14.196969696969695,
+      "pooled_mse": 872.4526515151429,
+      "pooled_rmse": 29.53730948334907
+    },
+    "resident_R1_REFERENCE_SNAPSHOT_LAG_M4C_B3_PLUS_RIDGE_EMPLOYMENT": {
+      "latest_2021_mse": 3623.5860245829813,
+      "macro_origin_mse": 908.5084120928776,
+      "pooled_mae": 14.862872876970014,
+      "pooled_mse": 908.5084120928777,
+      "pooled_rmse": 30.14147329001815
+    },
+    "resident_R2_CONSERVATIVE_PUBLICATION_STRESS_B3_RECENT_3POINT_OLS_TREND": {
+      "latest_2021_mse": 3705.42777777773,
+      "macro_origin_mse": 872.4526515151429,
+      "pooled_mae": 14.196969696969695,
+      "pooled_mse": 872.4526515151429,
+      "pooled_rmse": 29.53730948334907
+    },
+    "resident_R2_CONSERVATIVE_PUBLICATION_STRESS_M4C_B3_PLUS_RIDGE_EMPLOYMENT": {
+      "latest_2021_mse": 3671.838952167172,
+      "macro_origin_mse": 912.4184648582267,
+      "pooled_mae": 14.816316751319315,
+      "pooled_mse": 912.4184648582267,
+      "pooled_rmse": 30.206265324568456
+    }
+  },
+  "model_family": "Ridge residual correction",
+  "model_ids": [
+    "B3_RECENT_3POINT_OLS_TREND",
+    "M4C_B3_PLUS_RIDGE_EMPLOYMENT"
+  ],
+  "origin_count": 11,
+  "pairwise_vs_b3": {
+    "registered_R1_REFERENCE_SNAPSHOT_LAG": {
+      "baseline_latest_2021_mse": 1485.6048611111196,
+      "candidate_latest_2021_mse": 1482.3149324673218,
+      "candidate_origin_loss_count": 6,
+      "candidate_origin_win_count": 5,
+      "candidate_pooled_mse": 224.90472414256473,
+      "latest_mse_relative_improvement_pct": 0.22145381520474947,
+      "origin_loss_years": "2011;2012;2013;2014;2015;2017",
+      "origin_win_years": "2016;2018;2019;2020;2021",
+      "pooled_mse_absolute_delta_baseline_minus_candidate": 0.516487978648513,
+      "pooled_mse_relative_improvement_pct": 0.2291212853432745
+    },
+    "registered_R2_CONSERVATIVE_PUBLICATION_STRESS": {
+      "baseline_latest_2021_mse": 1485.6048611111196,
+      "candidate_latest_2021_mse": 1487.627151244727,
+      "candidate_origin_loss_count": 7,
+      "candidate_origin_win_count": 4,
+      "candidate_pooled_mse": 225.38992593971926,
+      "latest_mse_relative_improvement_pct": -0.1361257078880898,
+      "origin_loss_years": "2011;2012;2014;2015;2016;2017;2021",
+      "origin_win_years": "2013;2018;2019;2020",
+      "pooled_mse_absolute_delta_baseline_minus_candidate": 0.03128618149398221,
+      "pooled_mse_relative_improvement_pct": 0.013878987340889217
+    },
+    "resident_R1_REFERENCE_SNAPSHOT_LAG": {
+      "baseline_latest_2021_mse": 3705.42777777773,
+      "candidate_latest_2021_mse": 3623.5860245829813,
+      "candidate_origin_loss_count": 5,
+      "candidate_origin_win_count": 6,
+      "candidate_pooled_mse": 908.5084120928777,
+      "latest_mse_relative_improvement_pct": 2.208699186786799,
+      "origin_loss_years": "2013;2014;2015;2018;2019",
+      "origin_win_years": "2011;2012;2016;2017;2020;2021",
+      "pooled_mse_absolute_delta_baseline_minus_candidate": -36.05576057773487,
+      "pooled_mse_relative_improvement_pct": -4.132689666896963
+    },
+    "resident_R2_CONSERVATIVE_PUBLICATION_STRESS": {
+      "baseline_latest_2021_mse": 3705.42777777773,
+      "candidate_latest_2021_mse": 3671.838952167172,
+      "candidate_origin_loss_count": 5,
+      "candidate_origin_win_count": 6,
+      "candidate_pooled_mse": 912.4184648582267,
+      "latest_mse_relative_improvement_pct": 0.9064763267549776,
+      "origin_loss_years": "2013;2014;2015;2018;2019",
+      "origin_win_years": "2011;2012;2016;2017;2020;2021",
+      "pooled_mse_absolute_delta_baseline_minus_candidate": -39.96581334308382,
+      "pooled_mse_relative_improvement_pct": -4.580857571316597
+    }
+  },
+  "plan_id": "S4-Plan04C",
+  "population_profile": {
+    "canonical_row_count": 718,
+    "city_count": 40,
+    "duplicate_key_rows": 0,
+    "population_sha256": "7f12e54c5c8d72a20182a117ad26564e6f1892d6f4b9add0dc80135aabb18797",
+    "registered_latest_observed_year": 2021,
+    "registered_nonempty_count": 707,
+    "resident_latest_observed_year": 2021,
+    "resident_nonempty_count": 693,
+    "unique_key_count": 718,
+    "year_max": 2021,
+    "year_min": 2001
+  },
+  "provenance_association": {
+    "registered_R1_REFERENCE_SNAPSHOT_LAG": {
+      "candidate_predictor_id": "M4C_B3_PLUS_RIDGE_EMPLOYMENT",
+      "candidate_win_count": 186,
+      "candidate_win_share_any_derived_recent3": 0.11290322580645161,
+      "candidate_wins_any_derived_recent3": 21,
+      "derived_heavy_positive_gain_share": 0.027401189582964277,
+      "derived_window_positive_gain_share": 0.027401189582964277,
+      "metric_scope": "provenance_association",
+      "positive_sse_gain_any_derived_recent3": 59.008893894251564,
+      "positive_sse_gain_derived_heavy_recent3": 59.008893894251564,
+      "positive_sse_gain_total": 2153.5157703860514,
+      "provenance_sensitive": "no",
+      "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+      "target_id": "registered",
+      "validation_row_count": 440
+    },
+    "registered_R2_CONSERVATIVE_PUBLICATION_STRESS": {
+      "candidate_predictor_id": "M4C_B3_PLUS_RIDGE_EMPLOYMENT",
+      "candidate_win_count": 178,
+      "candidate_win_share_any_derived_recent3": 0.11797752808988764,
+      "candidate_wins_any_derived_recent3": 21,
+      "derived_heavy_positive_gain_share": 0.05162246680122987,
+      "derived_window_positive_gain_share": 0.05162246680122987,
+      "metric_scope": "provenance_association",
+      "positive_sse_gain_any_derived_recent3": 95.76725134208154,
+      "positive_sse_gain_derived_heavy_recent3": 95.76725134208154,
+      "positive_sse_gain_total": 1855.1467466835572,
+      "provenance_sensitive": "no",
+      "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+      "target_id": "registered",
+      "validation_row_count": 440
+    },
+    "resident_R1_REFERENCE_SNAPSHOT_LAG": {
+      "candidate_predictor_id": "M4C_B3_PLUS_RIDGE_EMPLOYMENT",
+      "candidate_win_count": 183,
+      "candidate_win_share_any_derived_recent3": 0.11475409836065574,
+      "candidate_wins_any_derived_recent3": 21,
+      "derived_heavy_positive_gain_share": 0.045305749936157616,
+      "derived_window_positive_gain_share": 0.045305749936157616,
+      "metric_scope": "provenance_association",
+      "positive_sse_gain_any_derived_recent3": 1174.5353181835087,
+      "positive_sse_gain_derived_heavy_recent3": 1174.5353181835087,
+      "positive_sse_gain_total": 25924.641349908117,
+      "provenance_sensitive": "no",
+      "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+      "target_id": "resident",
+      "validation_row_count": 440
+    },
+    "resident_R2_CONSERVATIVE_PUBLICATION_STRESS": {
+      "candidate_predictor_id": "M4C_B3_PLUS_RIDGE_EMPLOYMENT",
+      "candidate_win_count": 181,
+      "candidate_win_share_any_derived_recent3": 0.09944751381215469,
+      "candidate_wins_any_derived_recent3": 18,
+      "derived_heavy_positive_gain_share": 0.04928608680517997,
+      "derived_window_positive_gain_share": 0.04928608680517997,
+      "metric_scope": "provenance_association",
+      "positive_sse_gain_any_derived_recent3": 1135.4469742000197,
+      "positive_sse_gain_derived_heavy_recent3": 1135.4469742000197,
+      "positive_sse_gain_total": 23037.880420254507,
+      "provenance_sensitive": "no",
+      "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+      "target_id": "resident",
+      "validation_row_count": 440
+    }
+  },
+  "provenance_tracking_complete": true,
+  "quarantine_zero_reintroduction": true,
+  "r1_r2_sensitivity": {
+    "registered_B3_RECENT_3POINT_OLS_TREND": {
+      "r1_latest_2021_mse": 1485.6048611111196,
+      "r1_pooled_mse": 225.42121212121324,
+      "r1_r2_feature_difference_confirmed": "no",
+      "r1_r2_feature_difference_count": 0,
+      "r2_latest_2021_mse": 1485.6048611111196,
+      "r2_minus_r1_latest_2021_mse": 0.0,
+      "r2_minus_r1_pooled_mse": 0.0,
+      "r2_pooled_mse": 225.42121212121324
+    },
+    "registered_M4C_B3_PLUS_RIDGE_EMPLOYMENT": {
+      "r1_latest_2021_mse": 1482.3149324673218,
+      "r1_pooled_mse": 224.90472414256473,
+      "r1_r2_feature_difference_confirmed": "yes",
+      "r1_r2_feature_difference_count": 433,
+      "r2_latest_2021_mse": 1487.627151244727,
+      "r2_minus_r1_latest_2021_mse": 5.312218777405178,
+      "r2_minus_r1_pooled_mse": 0.4852017971545308,
+      "r2_pooled_mse": 225.38992593971926
+    },
+    "resident_B3_RECENT_3POINT_OLS_TREND": {
+      "r1_latest_2021_mse": 3705.42777777773,
+      "r1_pooled_mse": 872.4526515151429,
+      "r1_r2_feature_difference_confirmed": "no",
+      "r1_r2_feature_difference_count": 0,
+      "r2_latest_2021_mse": 3705.42777777773,
+      "r2_minus_r1_latest_2021_mse": 0.0,
+      "r2_minus_r1_pooled_mse": 0.0,
+      "r2_pooled_mse": 872.4526515151429
+    },
+    "resident_M4C_B3_PLUS_RIDGE_EMPLOYMENT": {
+      "r1_latest_2021_mse": 3623.5860245829813,
+      "r1_pooled_mse": 908.5084120928777,
+      "r1_r2_feature_difference_confirmed": "yes",
+      "r1_r2_feature_difference_count": 433,
+      "r2_latest_2021_mse": 3671.838952167172,
+      "r2_minus_r1_latest_2021_mse": 48.25292758419073,
+      "r2_minus_r1_pooled_mse": 3.9100527653489507,
+      "r2_pooled_mse": 912.4184648582267
+    }
+  },
+  "registered_b3_pooled_mse": 225.42121212121324,
+  "resident_b3_pooled_mse": 872.4526515151429,
+  "resident_registered_screening_complete": true,
+  "ridge_alpha": 1.0,
+  "s3_reference_summary": {
+    "starting_commit": "7e741ab91cdee3d9df396212da3b7e454629bf5d",
+    "strongest_fixed_baseline": "B3_RECENT_3POINT_OLS_TREND"
+  },
+  "s4_complete": false,
+  "s5_entered": false,
+  "screening_decision": "unsupported",
+  "screening_metric_rows": 140,
+  "stage": "S4_FEATURE_ML_MODELING",
+  "starting_commit": "b8c302abe7ebf1710869aaa55a00d4b926d2bcac",
+  "submission_run": false,
+  "target_history_cutoff_rule": "population B3 history <= pseudo-target-2; outer training labels <= outer-origin-2",
+  "training_geometry_rows": 44,
+  "tuning_run": false,
+  "uses_city_id": false,
+  "uses_density": false,
+  "uses_sector_shares": false,
+  "uses_unemployment": false,
+  "uses_wage": false
+}
