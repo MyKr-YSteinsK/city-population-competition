@@ -1,0 +1,565 @@
+{
+  "b3_compatibility_pass": true,
+  "b3_compatibility_rows": [
+    {
+      "comparison_rule": "B3 row-level prediction/residual/squared-error delta <= 1e-9",
+      "max_abs_prediction_delta": 5.115907697472721e-13,
+      "max_abs_residual_delta": 4.849454171562684e-13,
+      "max_abs_squared_error_delta": 5.115907697472721e-13,
+      "rows_compared": 440,
+      "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+      "status": "PASS",
+      "target_id": "registered"
+    },
+    {
+      "comparison_rule": "B3 row-level prediction/residual/squared-error delta <= 1e-9",
+      "max_abs_prediction_delta": 5.115907697472721e-13,
+      "max_abs_residual_delta": 4.849454171562684e-13,
+      "max_abs_squared_error_delta": 5.115907697472721e-13,
+      "rows_compared": 440,
+      "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+      "status": "PASS",
+      "target_id": "registered"
+    },
+    {
+      "comparison_rule": "B3 row-level prediction/residual/squared-error delta <= 1e-9",
+      "max_abs_prediction_delta": 5.115907697472721e-13,
+      "max_abs_residual_delta": 4.849454171562684e-13,
+      "max_abs_squared_error_delta": 5.115907697472721e-13,
+      "rows_compared": 440,
+      "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+      "status": "PASS",
+      "target_id": "resident"
+    },
+    {
+      "comparison_rule": "B3 row-level prediction/residual/squared-error delta <= 1e-9",
+      "max_abs_prediction_delta": 5.115907697472721e-13,
+      "max_abs_residual_delta": 4.849454171562684e-13,
+      "max_abs_squared_error_delta": 5.115907697472721e-13,
+      "rows_compared": 440,
+      "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+      "status": "PASS",
+      "target_id": "resident"
+    }
+  ],
+  "b3_metric_compatibility_pass": true,
+  "b3_metric_compatibility_rows": [
+    {
+      "comparison_rule": "B3 pooled/macro/latest metric delta <= 1e-9",
+      "max_abs_metric_delta": 1.1368683772161603e-13,
+      "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+      "status": "PASS",
+      "target_id": "resident"
+    },
+    {
+      "comparison_rule": "B3 pooled/macro/latest metric delta <= 1e-9",
+      "max_abs_metric_delta": 1.1368683772161603e-13,
+      "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+      "status": "PASS",
+      "target_id": "resident"
+    },
+    {
+      "comparison_rule": "B3 pooled/macro/latest metric delta <= 1e-9",
+      "max_abs_metric_delta": 4.547473508864641e-13,
+      "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+      "status": "PASS",
+      "target_id": "registered"
+    },
+    {
+      "comparison_rule": "B3 pooled/macro/latest metric delta <= 1e-9",
+      "max_abs_metric_delta": 4.547473508864641e-13,
+      "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+      "status": "PASS",
+      "target_id": "registered"
+    }
+  ],
+  "branch": "s4/wave-b-error-memory",
+  "candidate_id": "M5A_B3_PLUS_RIDGE_ERROR_MEMORY",
+  "city_identity_used": false,
+  "coefficient_direction_summary": {
+    "registered_R1_REFERENCE_SNAPSHOT_LAG_all_available_mean_b3_residual": {
+      "coefficient_max": -0.6110179701733434,
+      "coefficient_min": -2.554001550812327,
+      "negative_count": 11,
+      "origin_count": 11,
+      "positive_count": 0,
+      "sign_stability": "negative",
+      "zero_count": 0
+    },
+    "registered_R1_REFERENCE_SNAPSHOT_LAG_last_observed_b3_residual": {
+      "coefficient_max": 1.0182212686702823,
+      "coefficient_min": -1.976584522160078,
+      "negative_count": 9,
+      "origin_count": 11,
+      "positive_count": 2,
+      "sign_stability": "mixed",
+      "zero_count": 0
+    },
+    "registered_R1_REFERENCE_SNAPSHOT_LAG_recent3_mean_b3_residual": {
+      "coefficient_max": -0.04981384386361301,
+      "coefficient_min": -0.543350242316976,
+      "negative_count": 11,
+      "origin_count": 11,
+      "positive_count": 0,
+      "sign_stability": "negative",
+      "zero_count": 0
+    },
+    "registered_R1_REFERENCE_SNAPSHOT_LAG_recent3_residual_slope": {
+      "coefficient_max": 0.14336758911275937,
+      "coefficient_min": -2.4660132345650982,
+      "negative_count": 10,
+      "origin_count": 11,
+      "positive_count": 1,
+      "sign_stability": "mixed",
+      "zero_count": 0
+    },
+    "registered_R2_CONSERVATIVE_PUBLICATION_STRESS_all_available_mean_b3_residual": {
+      "coefficient_max": -0.6110179701733434,
+      "coefficient_min": -2.554001550812327,
+      "negative_count": 11,
+      "origin_count": 11,
+      "positive_count": 0,
+      "sign_stability": "negative",
+      "zero_count": 0
+    },
+    "registered_R2_CONSERVATIVE_PUBLICATION_STRESS_last_observed_b3_residual": {
+      "coefficient_max": 1.0182212686702823,
+      "coefficient_min": -1.976584522160078,
+      "negative_count": 9,
+      "origin_count": 11,
+      "positive_count": 2,
+      "sign_stability": "mixed",
+      "zero_count": 0
+    },
+    "registered_R2_CONSERVATIVE_PUBLICATION_STRESS_recent3_mean_b3_residual": {
+      "coefficient_max": -0.04981384386361301,
+      "coefficient_min": -0.543350242316976,
+      "negative_count": 11,
+      "origin_count": 11,
+      "positive_count": 0,
+      "sign_stability": "negative",
+      "zero_count": 0
+    },
+    "registered_R2_CONSERVATIVE_PUBLICATION_STRESS_recent3_residual_slope": {
+      "coefficient_max": 0.14336758911275937,
+      "coefficient_min": -2.4660132345650982,
+      "negative_count": 10,
+      "origin_count": 11,
+      "positive_count": 1,
+      "sign_stability": "mixed",
+      "zero_count": 0
+    },
+    "resident_R1_REFERENCE_SNAPSHOT_LAG_all_available_mean_b3_residual": {
+      "coefficient_max": 1.804738376917194,
+      "coefficient_min": -16.903984239176594,
+      "negative_count": 10,
+      "origin_count": 11,
+      "positive_count": 1,
+      "sign_stability": "mixed",
+      "zero_count": 0
+    },
+    "resident_R1_REFERENCE_SNAPSHOT_LAG_last_observed_b3_residual": {
+      "coefficient_max": 26.69128953346389,
+      "coefficient_min": -0.10979458801194263,
+      "negative_count": 1,
+      "origin_count": 11,
+      "positive_count": 10,
+      "sign_stability": "mixed",
+      "zero_count": 0
+    },
+    "resident_R1_REFERENCE_SNAPSHOT_LAG_recent3_mean_b3_residual": {
+      "coefficient_max": 1.3094460585370669,
+      "coefficient_min": -14.332978341532943,
+      "negative_count": 9,
+      "origin_count": 11,
+      "positive_count": 2,
+      "sign_stability": "mixed",
+      "zero_count": 0
+    },
+    "resident_R1_REFERENCE_SNAPSHOT_LAG_recent3_residual_slope": {
+      "coefficient_max": 8.678633690214939,
+      "coefficient_min": -17.602499190085318,
+      "negative_count": 6,
+      "origin_count": 11,
+      "positive_count": 5,
+      "sign_stability": "mixed",
+      "zero_count": 0
+    },
+    "resident_R2_CONSERVATIVE_PUBLICATION_STRESS_all_available_mean_b3_residual": {
+      "coefficient_max": 1.804738376917194,
+      "coefficient_min": -16.903984239176594,
+      "negative_count": 10,
+      "origin_count": 11,
+      "positive_count": 1,
+      "sign_stability": "mixed",
+      "zero_count": 0
+    },
+    "resident_R2_CONSERVATIVE_PUBLICATION_STRESS_last_observed_b3_residual": {
+      "coefficient_max": 26.69128953346389,
+      "coefficient_min": -0.10979458801194263,
+      "negative_count": 1,
+      "origin_count": 11,
+      "positive_count": 10,
+      "sign_stability": "mixed",
+      "zero_count": 0
+    },
+    "resident_R2_CONSERVATIVE_PUBLICATION_STRESS_recent3_mean_b3_residual": {
+      "coefficient_max": 1.3094460585370669,
+      "coefficient_min": -14.332978341532943,
+      "negative_count": 9,
+      "origin_count": 11,
+      "positive_count": 2,
+      "sign_stability": "mixed",
+      "zero_count": 0
+    },
+    "resident_R2_CONSERVATIVE_PUBLICATION_STRESS_recent3_residual_slope": {
+      "coefficient_max": 8.678633690214939,
+      "coefficient_min": -17.602499190085318,
+      "negative_count": 6,
+      "origin_count": 11,
+      "positive_count": 5,
+      "sign_stability": "mixed",
+      "zero_count": 0
+    }
+  },
+  "common_origin_domain": "2011-2021",
+  "covariates_used": false,
+  "deep_dive_recommended": false,
+  "error_memory_boundary": {
+    "all_boundary_rows_pass": true,
+    "audit_rows": 14960,
+    "current_row_residual_used_as_feature": false,
+    "future_residual_used_as_feature": false,
+    "history_boundary_violation_count": 0,
+    "residual_b3_fit_history_max_rule": "<= z-2",
+    "residual_history_max_rule": "<= y-2",
+    "self_residual_violation_count": 0,
+    "t_minus_1_violation_count": 0,
+    "training_rows": 13200,
+    "validation_rows": 1760
+  },
+  "feature_manifest": [
+    {
+      "feature_group_id": "B3_ERROR_MEMORY_V1",
+      "feature_name": "last_observed_b3_residual",
+      "formula": "B3 residual at the latest available historical pseudo-target z <= y-2",
+      "missing_policy": "explicit missing if no valid historical pseudo-residual",
+      "model_feature": "yes",
+      "semantic_role": "latest city-level model-error memory",
+      "source": "same target city history + frozen B3",
+      "used_by": "M5A_B3_PLUS_RIDGE_ERROR_MEMORY",
+      "year_rule": "historical pseudo-target boundary z <= y-2; each residual B3 fit history <= z-2"
+    },
+    {
+      "feature_group_id": "B3_ERROR_MEMORY_V1",
+      "feature_name": "recent3_mean_b3_residual",
+      "formula": "mean of the three latest valid historical B3 residuals",
+      "missing_policy": "explicit missing if fewer than three valid historical pseudo-residuals",
+      "model_feature": "yes",
+      "semantic_role": "recent persistent city-level model-error level",
+      "source": "same target city history + frozen B3",
+      "used_by": "M5A_B3_PLUS_RIDGE_ERROR_MEMORY",
+      "year_rule": "three latest residual pseudo-targets, all z <= y-2"
+    },
+    {
+      "feature_group_id": "B3_ERROR_MEMORY_V1",
+      "feature_name": "all_available_mean_b3_residual",
+      "formula": "mean of all valid historical B3 residuals with z <= y-2",
+      "missing_policy": "explicit missing if no valid historical pseudo-residual",
+      "model_feature": "yes",
+      "semantic_role": "longer city-level model-error bias memory",
+      "source": "same target city history + frozen B3",
+      "used_by": "M5A_B3_PLUS_RIDGE_ERROR_MEMORY",
+      "year_rule": "all valid residual pseudo-targets z <= y-2"
+    },
+    {
+      "feature_group_id": "B3_ERROR_MEMORY_V1",
+      "feature_name": "recent3_residual_slope",
+      "formula": "OLS slope of the three latest valid B3 residuals over actual pseudo-target years",
+      "missing_policy": "explicit missing if fewer than three valid historical pseudo-residuals",
+      "model_feature": "yes",
+      "semantic_role": "recent change in city-level model error",
+      "source": "same target city history + frozen B3",
+      "used_by": "M5A_B3_PLUS_RIDGE_ERROR_MEMORY",
+      "year_rule": "three latest residual pseudo-targets; actual year gaps; all z <= y-2"
+    }
+  ],
+  "final_2023_prediction_run": false,
+  "formal_ml_model_used": true,
+  "metrics": {
+    "registered_R1_REFERENCE_SNAPSHOT_LAG_B3_RECENT_3POINT_OLS_TREND": {
+      "latest_2021_mse": 1485.6048611111196,
+      "pooled_mse": 225.42121212121324
+    },
+    "registered_R1_REFERENCE_SNAPSHOT_LAG_M5A_B3_PLUS_RIDGE_ERROR_MEMORY": {
+      "coefficient_sign_summary": {
+        "all_available_mean_b3_residual": {
+          "coefficient_max": -0.6110179701733434,
+          "coefficient_min": -2.554001550812327,
+          "negative_count": 11,
+          "origin_count": 11,
+          "positive_count": 0,
+          "sign_stability": "negative",
+          "zero_count": 0
+        },
+        "last_observed_b3_residual": {
+          "coefficient_max": 1.0182212686702823,
+          "coefficient_min": -1.976584522160078,
+          "negative_count": 9,
+          "origin_count": 11,
+          "positive_count": 2,
+          "sign_stability": "mixed",
+          "zero_count": 0
+        },
+        "recent3_mean_b3_residual": {
+          "coefficient_max": -0.04981384386361301,
+          "coefficient_min": -0.543350242316976,
+          "negative_count": 11,
+          "origin_count": 11,
+          "positive_count": 0,
+          "sign_stability": "negative",
+          "zero_count": 0
+        },
+        "recent3_residual_slope": {
+          "coefficient_max": 0.14336758911275937,
+          "coefficient_min": -2.4660132345650982,
+          "negative_count": 10,
+          "origin_count": 11,
+          "positive_count": 1,
+          "sign_stability": "mixed",
+          "zero_count": 0
+        }
+      },
+      "latest_2021_mse": 1507.7336688293535,
+      "latest_delta_vs_b3": 22.12880771823393,
+      "losses_vs_b3": 8,
+      "pooled_delta_vs_b3": 5.0812866235066,
+      "pooled_mse": 230.50249874471984,
+      "relative_improvement_vs_b3_pct": -2.2541297581055932,
+      "ties_vs_b3": 0,
+      "wins_vs_b3": 3
+    },
+    "registered_R2_CONSERVATIVE_PUBLICATION_STRESS_B3_RECENT_3POINT_OLS_TREND": {
+      "latest_2021_mse": 1485.6048611111196,
+      "pooled_mse": 225.42121212121324
+    },
+    "registered_R2_CONSERVATIVE_PUBLICATION_STRESS_M5A_B3_PLUS_RIDGE_ERROR_MEMORY": {
+      "coefficient_sign_summary": {
+        "all_available_mean_b3_residual": {
+          "coefficient_max": -0.6110179701733434,
+          "coefficient_min": -2.554001550812327,
+          "negative_count": 11,
+          "origin_count": 11,
+          "positive_count": 0,
+          "sign_stability": "negative",
+          "zero_count": 0
+        },
+        "last_observed_b3_residual": {
+          "coefficient_max": 1.0182212686702823,
+          "coefficient_min": -1.976584522160078,
+          "negative_count": 9,
+          "origin_count": 11,
+          "positive_count": 2,
+          "sign_stability": "mixed",
+          "zero_count": 0
+        },
+        "recent3_mean_b3_residual": {
+          "coefficient_max": -0.04981384386361301,
+          "coefficient_min": -0.543350242316976,
+          "negative_count": 11,
+          "origin_count": 11,
+          "positive_count": 0,
+          "sign_stability": "negative",
+          "zero_count": 0
+        },
+        "recent3_residual_slope": {
+          "coefficient_max": 0.14336758911275937,
+          "coefficient_min": -2.4660132345650982,
+          "negative_count": 10,
+          "origin_count": 11,
+          "positive_count": 1,
+          "sign_stability": "mixed",
+          "zero_count": 0
+        }
+      },
+      "latest_2021_mse": 1507.7336688293535,
+      "latest_delta_vs_b3": 22.12880771823393,
+      "losses_vs_b3": 8,
+      "pooled_delta_vs_b3": 5.0812866235066,
+      "pooled_mse": 230.50249874471984,
+      "relative_improvement_vs_b3_pct": -2.2541297581055932,
+      "ties_vs_b3": 0,
+      "wins_vs_b3": 3
+    },
+    "resident_R1_REFERENCE_SNAPSHOT_LAG_B3_RECENT_3POINT_OLS_TREND": {
+      "latest_2021_mse": 3705.42777777773,
+      "pooled_mse": 872.4526515151429
+    },
+    "resident_R1_REFERENCE_SNAPSHOT_LAG_M5A_B3_PLUS_RIDGE_ERROR_MEMORY": {
+      "coefficient_sign_summary": {
+        "all_available_mean_b3_residual": {
+          "coefficient_max": 1.804738376917194,
+          "coefficient_min": -16.903984239176594,
+          "negative_count": 10,
+          "origin_count": 11,
+          "positive_count": 1,
+          "sign_stability": "mixed",
+          "zero_count": 0
+        },
+        "last_observed_b3_residual": {
+          "coefficient_max": 26.69128953346389,
+          "coefficient_min": -0.10979458801194263,
+          "negative_count": 1,
+          "origin_count": 11,
+          "positive_count": 10,
+          "sign_stability": "mixed",
+          "zero_count": 0
+        },
+        "recent3_mean_b3_residual": {
+          "coefficient_max": 1.3094460585370669,
+          "coefficient_min": -14.332978341532943,
+          "negative_count": 9,
+          "origin_count": 11,
+          "positive_count": 2,
+          "sign_stability": "mixed",
+          "zero_count": 0
+        },
+        "recent3_residual_slope": {
+          "coefficient_max": 8.678633690214939,
+          "coefficient_min": -17.602499190085318,
+          "negative_count": 6,
+          "origin_count": 11,
+          "positive_count": 5,
+          "sign_stability": "mixed",
+          "zero_count": 0
+        }
+      },
+      "latest_2021_mse": 3636.481457573134,
+      "latest_delta_vs_b3": -68.9463202045963,
+      "losses_vs_b3": 8,
+      "pooled_delta_vs_b3": 458.22629105090255,
+      "pooled_mse": 1330.6789425660454,
+      "relative_improvement_vs_b3_pct": -52.52162283593555,
+      "ties_vs_b3": 0,
+      "wins_vs_b3": 3
+    },
+    "resident_R2_CONSERVATIVE_PUBLICATION_STRESS_B3_RECENT_3POINT_OLS_TREND": {
+      "latest_2021_mse": 3705.42777777773,
+      "pooled_mse": 872.4526515151429
+    },
+    "resident_R2_CONSERVATIVE_PUBLICATION_STRESS_M5A_B3_PLUS_RIDGE_ERROR_MEMORY": {
+      "coefficient_sign_summary": {
+        "all_available_mean_b3_residual": {
+          "coefficient_max": 1.804738376917194,
+          "coefficient_min": -16.903984239176594,
+          "negative_count": 10,
+          "origin_count": 11,
+          "positive_count": 1,
+          "sign_stability": "mixed",
+          "zero_count": 0
+        },
+        "last_observed_b3_residual": {
+          "coefficient_max": 26.69128953346389,
+          "coefficient_min": -0.10979458801194263,
+          "negative_count": 1,
+          "origin_count": 11,
+          "positive_count": 10,
+          "sign_stability": "mixed",
+          "zero_count": 0
+        },
+        "recent3_mean_b3_residual": {
+          "coefficient_max": 1.3094460585370669,
+          "coefficient_min": -14.332978341532943,
+          "negative_count": 9,
+          "origin_count": 11,
+          "positive_count": 2,
+          "sign_stability": "mixed",
+          "zero_count": 0
+        },
+        "recent3_residual_slope": {
+          "coefficient_max": 8.678633690214939,
+          "coefficient_min": -17.602499190085318,
+          "negative_count": 6,
+          "origin_count": 11,
+          "positive_count": 5,
+          "sign_stability": "mixed",
+          "zero_count": 0
+        }
+      },
+      "latest_2021_mse": 3636.481457573134,
+      "latest_delta_vs_b3": -68.9463202045963,
+      "losses_vs_b3": 8,
+      "pooled_delta_vs_b3": 458.22629105090255,
+      "pooled_mse": 1330.6789425660454,
+      "relative_improvement_vs_b3_pct": -52.52162283593555,
+      "ties_vs_b3": 0,
+      "wins_vs_b3": 3
+    }
+  },
+  "model_ids": [
+    "B3_RECENT_3POINT_OLS_TREND",
+    "M5A_B3_PLUS_RIDGE_ERROR_MEMORY"
+  ],
+  "near_b3_and_broad_condition": false,
+  "outer_origin_model_fit_count": 44,
+  "plan_id": "S4-Plan05A",
+  "r1_r2_candidate_latest_delta_resident": 0.0,
+  "r1_r2_candidate_pooled_delta_resident": 0.0,
+  "r1_r2_equivalence_pass": true,
+  "r1_r2_equivalence_rows": [
+    {
+      "comparison_rule": "target-history-only R1/R2 row and memory-feature delta <= 1e-9",
+      "history_years_exact": "PASS",
+      "max_abs_numeric_delta": 0.0,
+      "predictor_id": "B3_RECENT_3POINT_OLS_TREND",
+      "rows_compared": 440,
+      "status": "PASS",
+      "target_id": "resident"
+    },
+    {
+      "comparison_rule": "target-history-only R1/R2 row and memory-feature delta <= 1e-9",
+      "history_years_exact": "PASS",
+      "max_abs_numeric_delta": 0.0,
+      "predictor_id": "M5A_B3_PLUS_RIDGE_ERROR_MEMORY",
+      "rows_compared": 440,
+      "status": "PASS",
+      "target_id": "resident"
+    },
+    {
+      "comparison_rule": "target-history-only R1/R2 row and memory-feature delta <= 1e-9",
+      "history_years_exact": "PASS",
+      "max_abs_numeric_delta": 0.0,
+      "predictor_id": "B3_RECENT_3POINT_OLS_TREND",
+      "rows_compared": 440,
+      "status": "PASS",
+      "target_id": "registered"
+    },
+    {
+      "comparison_rule": "target-history-only R1/R2 row and memory-feature delta <= 1e-9",
+      "history_years_exact": "PASS",
+      "max_abs_numeric_delta": 0.0,
+      "predictor_id": "M5A_B3_PLUS_RIDGE_ERROR_MEMORY",
+      "rows_compared": 440,
+      "status": "PASS",
+      "target_id": "registered"
+    }
+  ],
+  "reference_target_year": 2023,
+  "registered_supports_candidate_in_both_scenarios": false,
+  "resident_latest_support_in_both_scenarios": true,
+  "resident_majority_origin_wins_in_both_scenarios": false,
+  "resident_pooled_over_b3_in_both_scenarios": false,
+  "robustness_suite_run": false,
+  "s4_complete": false,
+  "s5_entered": false,
+  "screening_decision": "error_memory_unsupported",
+  "screening_rationale": "resident M5A does not provide a stable pooled, multi-origin, and latest improvement over B3",
+  "stage": "S4_FEATURE_ML_MODELING",
+  "starting_commit": "decfd7e0c68d14da31eabe5720ab706122c1040d",
+  "strongest_baseline": "B3_RECENT_3POINT_OLS_TREND",
+  "submission_run": false,
+  "target_history_cutoff_rule": "current B3 row history <= y-2; historical residual pseudo-target z <= y-2; each residual's B3 history <= z-2",
+  "training_excluded_b3_insufficient_history_rows": 5280,
+  "tuning_run": false,
+  "wave_a_integration_verified": true
+}
