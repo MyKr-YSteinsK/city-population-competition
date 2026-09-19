@@ -3,9 +3,10 @@
 ## Current Position
 
 - Main 正式判定 **S1｜数据建模与审计 COMPLETE**。
-- Main 已完成对 Lab final report 与 GitHub `main` 实际 S2 证据的复审，正式判定 **S2｜Validation Architecture COMPLETE**。
-- 当前进入 **S3｜Baseline Ladder**。
-- 当前工程事实源：GitHub 私有仓库 `MyKr-YSteinsK/city-population-competition` 的当前 `main`；S2 Main review 基线为 `2045280bdc7d1ee2d97d2f128c1dff235152f9ba`。
+- Main 正式判定 **S2｜Validation Architecture COMPLETE**。
+- Main 已复审 S3 final report 与 GitHub `main` 的 S3-Plan01..03 实际证据，正式判定 **S3｜Baseline Ladder COMPLETE**。
+- 当前进入 **S4｜Feature & ML Modeling**。
+- 当前工程事实源：GitHub 私有仓库 `MyKr-YSteinsK/city-population-competition` 当前 `main`；S3 Main review 基线为 `b3d0030113d3aa7a97acd0e99e2e639a2e3232c5`。
 - 历史聊天数字、旧 handoff 或旧假设不得覆盖当前仓库和后续新证据。
 
 ## Confirmed Mastery / Stable Understanding
@@ -20,125 +21,148 @@
 
 ### S2
 
-- 理解随机 IID split 不适合本题的核心原因：真实任务是时间外推，验证必须复刻 forecast-time information boundary。
-- 理解真实 2023 target history 截止 2021，因此历史 pseudo-target `T` 的 target-history cutoff 为 `T-2`，不能用 `T-1` 人口把任务偷偷变成一步预测。
-- 理解 current file max year 是当前 snapshot fact，不等于历史 publication schedule；source availability 必须作为 replay assumption 显式建模。
-- 理解 multi-origin expanding backtest 与 latest out-of-time holdout 回答不同问题：前者用于稳定性与模型选择主证据，后者用于最终任务接近性 / stress-window 诊断。
-- 理解 pooled city-year MSE 与 macro-origin MSE 是不同 aggregation contract；当前数值相等来自每个 origin 都有相同 scoreable city count，不是数学恒等式。
-- 理解 feature engineering、preprocessing、imputation、selection 与 model fit 都必须在每个 pseudo-origin information boundary 内独立完成，不能先看完整时间轴再切分。
-- 理解 resident target 仍是主代理而非官方映射已被证明，registered 必须作为 sensitivity target 保留。
+- 理解真实任务是时间外推，validation 必须复刻 forecast-time information boundary。
+- 理解 target-history cutoff 为 `T-2`，不能使用 `T-1` 人口把任务偷换成一步预测。
+- 理解 current snapshot max year 不等于历史 publication schedule；source availability 必须作为 replay assumption 显式建模。
+- 理解 multi-origin expanding backtest 与 latest out-of-time holdout 回答不同问题。
+- 理解 pooled city-year MSE 与 macro-origin MSE 是不同 aggregation contract。
+- 理解 preprocessing、feature engineering、imputation、selection 和 model fit 都必须在每个 pseudo-origin boundary 内独立完成。
+- 理解 resident 是 primary proxy 而非官方 target mapping 已被证明，registered 必须保留 sensitivity。
+
+### S3
+
+- 理解 baseline 的作用不是“先跑弱模型”，而是建立后续复杂模型必须真正超过的可解释 benchmark。
+- 理解本题人口自身历史中 trend signal 很强，persistence 明显不足。
+- 理解 recent-history length 存在 recency–stability trade-off：2 点趋势偏高方差，过长历史又过度平滑；当前 recent-3 local OLS 是最强固定基线。
+- 理解 city-specific slope 是真实信号；强制 pooled shared absolute slope 会产生明显 systematic error。
+- 理解 city heterogeneity 不等于可以事后给每个 city 选择不同模型；oracle headroom 与 deployable selector 必须严格区分。
+- 理解 aggregate leader 与 latest-origin leader 可以冲突，resident 2021 是明确案例。
+- 理解总体 MSE 可能被少数城市支配，因此后续 improvement 必须检查 broad gain、concentration 和 leave-one-city/origin robustness。
 
 ## Meaningful Evidence
 
-### S1 frozen foundation
+### Frozen S2 Validation Contract
 
-- 合法 raw source、canonical tables、quarantine、provenance 和 S1 rebuild contract 已冻结并可重建。
-- `test.xls` 保持 quarantine，不进入 canonical / validation / modeling truth。
+后续 S4–S5 material model comparison 默认必须：
 
-### S2 final evidence
-
-- Lab final synthesis：`S2_VALIDATION_ARCHITECTURE_FINAL_REPORT`。
-- GitHub `reports/S2_HANDOFFS/S2-Plan01..05/` 保存逐步实验与 handoff 证据。
-- Plan05 生成 3,520 prediction/residual rows 和 3,520 leakage audit rows；leakage audit 全部 PASS。
-- S2 使用 deterministic target-history-only probes 验证 architecture，没有越界进入正式 ML modeling / tuning / submission。
-- common strict origin domain 冻结为 `2011–2021`；resident-only 2010 仅可作为辅助诊断，不混入 resident/registered 主比较。
-- target-history horizon = 2 years：pseudo-target `T` 只允许使用 population target history through `T-2`。
-- primary target proxy：`常住人口（万人）`；mandatory sensitivity：`户籍人口（万人）`。
-- primary metric：MSE；auxiliary metric：RMSE；competition-score transform `1/(1+MSE)` 只有在 MSE scope 明确时才可解释。
-- validation architecture：multi-origin expanding backtest 为主模型选择 / 稳定性证据，2021 latest holdout 为 final-task proximity diagnostic。
-- primary aggregation：pooled city-year MSE；mandatory sensitivity：macro-origin MSE。若未来 coverage 不等导致 ranking disagreement，必须触发 contract review。
-- R1 `REFERENCE_SNAPSHOT_LAG` 与 R2 `CONSERVATIVE_PUBLICATION_STRESS` 保留为 source-specific information-set replay assumptions，不宣称是真实 publication facts。
-- Plan05 中 2021 是所有固定 naive probe / target 组合的高误差甚至最差 origin，支持“不能只靠 latest holdout 做模型选择”。
-- per-origin stability 与 dominant-city SSE concentration 被纳入后续 S3–S5 必须报告的诊断边界。
-
-### S3 Plan01 baseline evidence
-
-- S3 Plan01 在不修改冻结 S2 contract 的前提下，正式重跑 B0 persistence、B1 recent two-point trend，并新增 B2 expanding per-city linear trend。
-- common origins 仍为 `2011–2021`，resident primary 与 registered sensitivity 均完整覆盖；prediction/residual rows 为 5,280，leakage audit 为 5,280，全部 PASS。
-- B1 在 resident 与 registered 的 pooled/macro MSE 上均为当前最强 aggregate baseline；B2 相比 B0 有改善，但相比 B1 在两个 target 上都变差。
-- B2 的 resident 结果显示 recent-vs-long-history 的明确 trade-off：2021 latest MSE 略优于 B1，且跨 origin MSE dispersion 更低；registered 在 2021 和 dispersion 上均不如 B1。B2 改善 B0 的贡献在 resident 受 city3 集中影响，registered 则更 broad-based。
-- R1/R2 对三个 target-history-only baseline 数值完全一致；B0/B1 与 S2 Plan05 的既有 probe 逐行兼容。S3 Plan01 未使用 covariates、复杂 ML、tuning、ensemble、2023 forecast 或 submission。
-
-### S3 Plan02 recent-window and selector evidence
-
-- S3 Plan02 在不修改冻结 S2 contract 的前提下，只运行预注册的 B3 recent-3-point OLS、B4 recent-5-point OLS，并完整重跑 B0/B1/B2；B3/B4 均保持 40 城市 × 11 origins 的可比 coverage，B4 的 136 条不足 5 点记录固定回退 B1，无静默扩窗。
-- B3 是 resident 与 registered 的当前 strongest fixed baseline：resident pooled MSE `872.4527`，较 B1 改善 `9.90%`；registered pooled MSE `225.4212`，较 B1 改善 `5.76%`。resident 2021 B3 MSE `3705.4278` 高于 B1 `3457.5500`，registered 2021 B3 MSE `1485.6049` 略低于 B1 `1501.5250`，因此仍需保留 latest-regime 冲突。
-- global prequential selector 在 resident aggregate 上劣于 B1，在 registered 上较 B1 改善 `2.51%`；city-level selector 在 resident aggregate 上劣于 B1，在 registered 上改善 `4.75%`，但 registered 2021 仅为小幅改善。city selector 的 resident 改善集中且不 broad-based，registered 改善较 broad 但仍有集中度。
-- row/origin oracle 与 static-city oracle 都明确标记为 `ORACLE_NON_DEPLOYABLE_POST_HOC_UPPER_BOUND`；resident 相对 B3 的理论 headroom 分别为约 `52.62%` 与 `18.42%`，registered 分别约 `16.52%` 与 `8.20%`，不能作为真实模型性能或最终 ranking。
-- 计划共生成 12,320 条 fixed/selector prediction rows；fixed/selector leakage、selector current/future history、R1/R2 equivalence、S2 B0/B1 compatibility、Plan01 B0/B1/B2 compatibility 全部 PASS。未使用 covariates、复杂 ML、tuning、ensemble、clustering、2023 forecast 或 submission。
-
-### S3 Plan03 pooled / growth / ML-hurdle evidence
-
-- S3 Plan03 在不修改冻结 S2 contract 的前提下，完整重跑 B0–B4，并只新增预注册的 B5 pooled expanding city-fixed-effect additive trend、B6 pooled recent-3 city-fixed-effect additive trend、B7 recent-3 per-city log-linear growth；没有运行 formal ML、covariates、tuning、ensemble、2023 forecast 或 submission。
-- B3 `B3_RECENT_3POINT_OLS_TREND` 仍是当前 strongest deployable fixed baseline：resident pooled MSE `872.4527`，registered `225.4212`。B7 的 resident `938.7316`、registered `227.0369`，接近但没有超过 B3；B6 为 resident `2783.7578` / registered `480.5422`，B5 为 resident `12154.0898` / registered `1294.2794`，共享绝对斜率的 pooled 规则明显失败。
-- B7 只在 `2016–2018` middle regime 取得局部优势；B3 保持 resident early/late 的优势，且 resident latest 2021 仍存在 B3 与 B1 的冲突。所有 growth fit 的 eligible history 均为正，本轮没有触发非正值排除或 B3 fallback。
-- local slope dispersion 与 pooled shared-slope 对比确认城市异质性是实质机制；slope deviation 与 pooled error delta 相关，但只是诊断证据，未据此新增手工 selector rule。
-- leave-one-origin-out 中 resident 的 B3 full-domain leader 在 `10/11` 次移除后保持，唯一切换发生在移除 2013；registered 为 `11/11` 保持。B5/B6/B7 的 concentration 与 leave-one-city diagnostics 已落盘，未把集中改善当作 broad gain。
-- Plan03 生成 `14,080` prediction/residual rows、`352` per-origin metric rows、`32` aggregate metric rows；leakage、R1/R2、S2、Plan01、Plan02 compatibility checks 全部 PASS。`s3_evidence_sufficient_candidate=yes`，但 `s3_complete=false`，仍由 Main/Lab 决定是否正式结束 S3。
-
-## Frozen S2 Validation Contract
-
-后续 S3–S5 的 material model comparison 默认必须：
-
-1. 使用 common origins `2011–2021`；
+1. common origins = `2011–2021`；
 2. target history obey `T-2`；
 3. feature/source information set obey per-origin replay boundary；
-4. resident 作为 primary target proxy；
-5. registered 作为 mandatory sensitivity；
-6. pooled city-year MSE 为 primary aggregate；
+4. resident = primary target proxy；
+5. registered = mandatory sensitivity；
+6. pooled city-year MSE = primary aggregate；
 7. macro-origin MSE 必须同时报告；
 8. latest 2021 holdout 单独报告，不替代 multi-origin evidence；
 9. 检查 per-origin instability；
-10. 检查 dominant-city SSE concentration；
+10. 检查 dominant/top-3 city SSE concentration；
 11. 保留 leakage audit；
-12. 使用 covariates 时执行 R1 / R2 sensitivity，除非有明确证据允许删除其中一个 scenario。
+12. 使用 covariates 时真正执行 R1 / R2 sensitivity，除非出现足以修改 contract 的新证据。
 
-任何后续 Stage 不得为了更好分数静默修改以上 contract。若新证据要求修改，必须先回 Main 做 validation-contract review。
+不得为了更好分数静默修改以上 contract；若新证据要求修改，必须先回 Main 做 contract review。
+
+### S3 final baseline evidence
+
+- S3-Plan01..03 完整覆盖 B0–B7，未越界运行正式复杂 ML、tuning、ensemble、2023 final forecast 或 submission。
+- 所有 material experiment 的 leakage、R1/R2 target-only equivalence、S2 compatibility 与前序 Plan compatibility checks 均通过。
+- 当前 strongest deployable fixed baseline：
+  - `B3_RECENT_3POINT_OLS_TREND`
+  - 每个 city / pseudo-origin `T` 只使用 `T-2` 以前最近 3 个 non-missing target observations；
+  - per-city OLS：`population = intercept + slope × year`；
+  - 预测 target year `T`。
+- B3 resident primary pooled/macro MSE = `872.452651515143`。
+- B3 registered sensitivity pooled/macro MSE = `225.421212121213`。
+- Resident 2021 B3 MSE = `3705.42777777773`，不是 latest leader；B1/B2 在该 latest window 更好。后续模型不能用 aggregate improvement 掩盖 latest-regime degradation。
+- Registered 2021 B3 MSE = `1485.60486111112`，aggregate/latest 当前一致。
+- leave-one-origin-out：resident B3 保持 leader `10/11`，registered `11/11`。
+- pooled shared-slope baselines B5/B6 明显失败，确认 local city-specific dynamics 有预测价值。
+- log-growth B7 接近 B3，但 full-domain 仍未超过 B3；multiplicative growth 可作为后续 feature hypothesis，不是 baseline leader。
+- leakage-safe city selector 没有形成统一收益；oracle headroom 明确只作为 non-deployable upper bound。
+- B3 residual SSE 仍有明显 city concentration，后续 ML 改善必须检查是否只是修复少数 dominant cities。
+
+## Frozen S3 Baseline Hurdle
+
+S4/S5 的 material ML 至少需要满足：
+
+### Primary numerical hurdle
+
+在 resident primary、冻结 S2 contract 下：
+
+`pooled MSE < 872.452651515143`
+
+只超过 B0/B1 或只提高 score 不构成 ML 价值。
+
+### Required guardrails
+
+任何声称“优于 baseline”的 material model 必须同时报告并解释：
+
+- macro-origin MSE；
+- per-origin win/loss 与 instability；
+- latest 2021；
+- registered sensitivity；
+- dominant-city / top-3 SSE concentration；
+- leave-one-origin robustness；
+- leave-one-city sensitivity；
+- improved-city / city-origin coverage；
+- per-origin leakage audit；
+- 使用 covariates 时的 R1 / R2 sensitivity。
+
+如果只在 aggregate 改善而 latest 明显恶化，只能称 historical aggregate improvement，不能无条件称为更强最终方案。
 
 ## Remaining Uncertainty / Boundaries
 
-这些是真实未决边界，不再视为 S2 未完成：
+这些不构成 S3 未完成：
 
-- “总人口”到 resident / registered 的官方精确映射仍没有直接官方证明；采用 resident primary + registered sensitivity。
-- 真实 source publication timing 未知；采用 R1/R2 replay assumptions。
-- PDF formal section 的 MSE 与 FAQ RMSE 冲突没有新的官方澄清；本地 contract 冻结为 MSE primary / RMSE auxiliary。
-- Plan05 target-only probes 无法产生 R1/R2 数值差异；真正的 covariate sensitivity 留待 S3/S4 自然触发。
-- 2021 属于明显困难的 late regime；后续模型必须同时看 historical stability 与 latest-origin realism。
-- 一些指标可能被少数城市的 SSE 主导；后续 improvement 必须判断是 broad gain 还是单城修复。
+- 官方 target mapping 仍未直接证明；resident primary + registered sensitivity 继续保留。
+- 真实 publication timing 仍未知；R1/R2 继续作为 replay assumptions。
+- PDF MSE / FAQ RMSE 冲突仍无官方澄清；MSE primary / RMSE auxiliary contract 不变。
+- resident latest regime 与 full-domain aggregate 存在明确 tension；这是后续模型必须解决/解释的问题。
+- city-level oracle headroom 较大但 routing evidence 不稳定；不能事后手工给城市分模型。
 
 ## Active Anchor / Tracks
 
 - Anchor：城市人口分析与预测原始赛题 + GitHub `city-population-competition`。
-- Main：**S3｜Baseline Ladder**。
-- S2 Lab：阶段任务结束，不再继续 Plan06。
-- S3 Plan01、Plan02 与 Plan03 baseline evidence 已完成 Codex 交付，等待 Lab/Main 复审；本轮不宣布 S3 COMPLETE，也不自动进入 S4。
+- Main：**S4｜Feature & ML Modeling**。
+- S3 Lab：阶段结束，不再继续 S3 Plan04。
+- S4 正式实验尚未激活；需要实验时新建 `Lab｜S4 实验`，继续采用阶段连续 Plan / Codex / handoff / review 工作流。
+
+## S4 Entry Goal
+
+S4 的中心问题：
+
+> 怎样把 S1 的多源历史信息，在严格遵守 S2 information boundary 的前提下，转化为可学习的特征，并建立第一套真正的 ML pipeline，最终判断多源特征 + ML 是否能稳定超过 B3？
+
+优先学习/实验问题：
+
+- modeling dataset 应如何按 pseudo-origin 动态生成，而不是提前在完整时间轴一次性造特征；
+- target-history feature：latest / lag / difference / growth / recent trend / slope 如何编码；
+- 多源 covariates 在 R1/R2 下如何形成合法 as-of features；
+- missingness / provenance / invalidated / derived rows 如何进入 feature policy；
+- global model 与 local signal 如何结合；
+- 第一批候选模型以机制覆盖为目的，不做 model sweep；
+- 何时需要 Ridge / ElasticNet、tree / GBDT / LightGBM 等 JIT 理论；
+- 如何用 ablation 证明提升来自哪些 feature group，而不是黑箱复杂度。
 
 ## Stage Experiment Workflow
 
-从 S2 起，阶段实验采用“独立实验对话 → 连续 Plan → Codex 执行 → 证据回传 → 实验对话复审 → 下一 Plan”的工作流。
+继续采用：
 
-- 每个 Stage 在需要正式实验时新建独立实验对话。
-- 实验对话负责读取最新 repo 与证据、提出当前最高信息价值的问题、制定下一份 Plan、审查 Codex handoff，并迭代到 Stage evidence sufficient。
-- Plan 是目标、边界、验收与必要上下文，不是逐行实现教程；给 Codex 保留局部设计、诊断、验证和合理决策空间。
-- Codex 必须回传 actual changes、actual runs、evidence、failure/deviation、remaining uncertainty；不能用“完成了”代替证据。
-- 每个 Plan 的审查材料进入 Stage 专属独立 handoff 文件夹。
-- Stage 结束时实验对话生成完整 Markdown final report，重点记录真实参赛者视角的 `Question → Hypothesis → Experiment → Evidence → Interpretation → Decision` 链。
-- 只有 Main 有权正式判定 Stage complete 并推进下一 Stage。
+`Main → 独立 Stage Lab → Plan → Codex → handoff → Lab review → 下一 Plan → Stage final report → Main`
+
+- Plan 是研究合同和边界，不是逐行实现教程。
+- Codex 保留局部数据设计、实现、诊断、验证和合理实验决策空间。
+- 每个 Plan 的证据进入 `reports/S4_HANDOFFS/S4-PlanXX/`。
+- S4 Lab 不能自行进入 S5。
+- Stage 结束时生成 `S4_FEATURE_ML_MODELING_FINAL_REPORT.md`，重点保存真实参赛者视角的 Hypothesis → Experiment → Evidence → Interpretation → Decision 链。
 
 ## Next Entry Point
 
-进入 S3｜Baseline Ladder。
-
-S3 的中心问题：
-
-> 在不依赖复杂 ML 的情况下，哪些简单、可解释、严格遵守 S2 validation contract 的预测规则已经构成有竞争力的 baseline，以及后续 ML 至少必须超过什么标准才有价值？
-
-Main/Lab 先复审 `reports/S3_HANDOFFS/S3-Plan01/`、`reports/S3_HANDOFFS/S3-Plan02/` 与 `reports/S3_HANDOFFS/S3-Plan03/`，确认 B3 是否作为 S3 最终 fixed baseline，以及是否需要另一个严格预注册的 late-regime robustness check；本轮不宣布 S3 COMPLETE，也不进入 S4。
+Main 进入 S4，先建立 feature/modeling 的最小机制框架和第一轮实验问题；随后激活 `Lab｜S4 实验`。
 
 ## Do Not Repeat
 
-- 不重新展开 S1 数据考古，除非 GitHub `main` 出现会改变 source-level contract 的新证据。
-- 不重新设计 S2 validation architecture，除非后续实验发现 contract-level contradiction 或取得新的官方 target/publication evidence。
-- 不要求用户对已经明显掌握的简单概念做低价值解释性问答。
+- 不重新展开 S1 数据考古，除非最新 repo 出现会改变 source-level contract 的新证据。
+- 不重新设计 S2 validation architecture，除非出现 contract-level contradiction 或新的官方证据。
+- 不继续扩展类似 naive baseline；B3 已作为 S4 的 frozen hurdle。
+- 不要求用户对已经明显掌握的简单概念做低价值问答。
 - 不回到逐步手把手 Guided Lab 作为默认实验方式。
-- 不允许单个 Codex Plan 越过当前 Stage 或替代 Main 的 Stage completion 判定。
+- 不允许单个 Codex Plan 无边界完成整个 S4/S5 或替代 Main 的 Stage completion 判定。
