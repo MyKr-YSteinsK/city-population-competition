@@ -7,7 +7,8 @@
 - 类型：低成本、只读诊断筛查；不训练新模型
 - 冻结基线：`main @ 04e5cd469c45468a60b1f9b65a96e76311d5326b`
 - Worker branch：`s5/plan01-residual-regime-screening`
-- Worker evidence commit：在首次提交后记录；最终 worker tip 以本次 `TASK_RESULT` 为准
+- Worker evidence commit：`db7bf05fa2447c6cdc316a054d08e1d248641a45`
+- Final worker tip：本文件的 docs-only 最终化提交 SHA 将在 `TASK_RESULT` 中返回
 - 最终建议：`mechanism_signal_found:robust_local_trend`
 
 本分支没有修改 `main`、`CURRENT_LEARNING_CHECKPOINT.md`、共享状态文件或 S1–S4 基础设施；没有声明 S5 完成，也没有进入 S6。
