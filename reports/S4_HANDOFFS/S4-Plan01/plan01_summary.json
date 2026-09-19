@@ -1,0 +1,119 @@
+{
+  "aggregate_metric_rows": 12,
+  "b3_metric_compatibility_pass": true,
+  "b3_row_compatibility_pass": true,
+  "best_ml_improvement_vs_b3_pct": -4.343759311715114,
+  "best_ml_model_by_resident_pooled_mse": "M1A_RIDGE_DELTA_TH_CORE",
+  "best_ml_resident_pooled_mse": 910.3498948056373,
+  "best_pair_reference": "M1A_RIDGE_DELTA_TH_CORE_vs_B3",
+  "branch": "main",
+  "city_identity_used": false,
+  "common_origin_domain": "2011-2021",
+  "covariates_used": false,
+  "dominant_city_sse_shares": {
+    "registered_M1A_RIDGE_DELTA_TH_CORE": 0.4191198515022686,
+    "registered_M1B_RIDGE_DELTA_TH_SHAPE": 0.4016508385094546,
+    "resident_M1A_RIDGE_DELTA_TH_CORE": 0.27167557351238286,
+    "resident_M1B_RIDGE_DELTA_TH_SHAPE": 0.27896687157388095
+  },
+  "ensemble_run": false,
+  "feature_group_ids": [
+    "TH_CORE",
+    "TH_SHAPE"
+  ],
+  "final_2023_forecast_run": false,
+  "formal_ml_model_used": true,
+  "full_coverage": true,
+  "improved_city_origin_shares": {
+    "registered_M1A_RIDGE_DELTA_TH_CORE": 0.41818181818181815,
+    "registered_M1B_RIDGE_DELTA_TH_SHAPE": 0.3977272727272727,
+    "resident_M1A_RIDGE_DELTA_TH_CORE": 0.3704545454545455,
+    "resident_M1B_RIDGE_DELTA_TH_SHAPE": 0.3886363636363636
+  },
+  "improved_city_shares": {
+    "registered_M1A_RIDGE_DELTA_TH_CORE": 0.425,
+    "registered_M1B_RIDGE_DELTA_TH_SHAPE": 0.4,
+    "resident_M1A_RIDGE_DELTA_TH_CORE": 0.275,
+    "resident_M1B_RIDGE_DELTA_TH_SHAPE": 0.325
+  },
+  "leakage_audit_rows": 26460,
+  "leakage_pass": true,
+  "leave_one_origin_leader_survival": {
+    "registered_B3_RECENT_3POINT_OLS_TREND": 11,
+    "registered_M1A_RIDGE_DELTA_TH_CORE": 11,
+    "registered_M1B_RIDGE_DELTA_TH_SHAPE": 11,
+    "resident_B3_RECENT_3POINT_OLS_TREND": 9,
+    "resident_M1A_RIDGE_DELTA_TH_CORE": 9,
+    "resident_M1B_RIDGE_DELTA_TH_SHAPE": 9
+  },
+  "ml_prediction_rows": 3520,
+  "model_ids": [
+    "B3_RECENT_3POINT_OLS_TREND",
+    "M1A_RIDGE_DELTA_TH_CORE",
+    "M1B_RIDGE_DELTA_TH_SHAPE"
+  ],
+  "modeling_dataset_diagnostics_rows": 88,
+  "origin_count": 11,
+  "per_origin_metric_rows": 132,
+  "per_origin_win_counts_vs_b3": {
+    "registered_M1A_RIDGE_DELTA_TH_CORE": 4,
+    "registered_M1B_RIDGE_DELTA_TH_SHAPE": 3,
+    "resident_M1A_RIDGE_DELTA_TH_CORE": 5,
+    "resident_M1B_RIDGE_DELTA_TH_SHAPE": 3
+  },
+  "plan_id": "S4-Plan01",
+  "population_profile": {
+    "canonical_row_count": 718,
+    "city_count": 40,
+    "duplicate_key_rows": 0,
+    "population_sha256": "7f12e54c5c8d72a20182a117ad26564e6f1892d6f4b9add0dc80135aabb18797",
+    "registered_latest_observed_year": 2021,
+    "registered_nonempty_count": 707,
+    "resident_latest_observed_year": 2021,
+    "resident_nonempty_count": 693,
+    "unique_key_count": 718,
+    "year_max": 2021,
+    "year_min": 2001
+  },
+  "prediction_rows": 5280,
+  "r1_r2_equivalence_pass": true,
+  "registered_b3_latest_2021_mse": 1485.6048611111196,
+  "registered_b3_macro_mse": 225.42121212121322,
+  "registered_b3_pooled_mse": 225.42121212121324,
+  "registered_m1a_latest_2021_mse": 1507.968091920961,
+  "registered_m1a_macro_mse": 231.36001588742076,
+  "registered_m1a_pooled_mse": 231.36001588742073,
+  "registered_m1b_latest_2021_mse": 1518.5354576992738,
+  "registered_m1b_macro_mse": 238.43312500461468,
+  "registered_m1b_pooled_mse": 238.43312500461468,
+  "resident_b3_beaten": "no",
+  "resident_b3_latest_2021_mse": 3705.42777777773,
+  "resident_b3_macro_mse": 872.4526515151429,
+  "resident_b3_pooled_mse": 872.4526515151429,
+  "resident_m1a_latest_2021_mse": 3413.978047342008,
+  "resident_m1a_macro_mse": 910.3498948056374,
+  "resident_m1a_pooled_mse": 910.3498948056373,
+  "resident_m1b_latest_2021_mse": 3429.8958741114743,
+  "resident_m1b_macro_mse": 938.694952017902,
+  "resident_m1b_pooled_mse": 938.694952017902,
+  "s3_reference_summary": {
+    "starting_commit": "7e741ab91cdee3d9df396212da3b7e454629bf5d",
+    "strongest_fixed_baseline": "B3_RECENT_3POINT_OLS_TREND"
+  },
+  "s4_complete": false,
+  "s5_entered": false,
+  "shape_ablation_supported": "no",
+  "stage": "S4_FEATURE_ML_MODELING",
+  "starting_commit": "50f22159e1f38332967dd66bd9ddfb9a369fc21c",
+  "submission_run": false,
+  "target_history_cutoff_rule": "outer validation T uses target history <= T-2; historical training row y uses features <= y-2",
+  "technical_decision": "Use sklearn SimpleImputer(median, add_indicator=True), StandardScaler and Ridge(alpha=1.0) per outer origin; no missing feature is silently mapped to zero.",
+  "top_three_city_sse_shares": {
+    "registered_M1A_RIDGE_DELTA_TH_CORE": 0.8162021915534041,
+    "registered_M1B_RIDGE_DELTA_TH_SHAPE": 0.7963292218449923,
+    "resident_M1A_RIDGE_DELTA_TH_CORE": 0.47930867519971415,
+    "resident_M1B_RIDGE_DELTA_TH_SHAPE": 0.4841416835899962
+  },
+  "training_geometry_rows": 88,
+  "tuning_run": false
+}

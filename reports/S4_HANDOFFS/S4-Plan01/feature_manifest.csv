@@ -1,0 +1,7 @@
+feature_group_id,feature_name,formula,source,semantic_role,missing_policy,used_by
+TH_CORE,latest_value,target value at latest non-missing year <= row_year-2,same target city history,local level anchor,row excluded only if recent-3 history cannot be built; otherwise numeric,M1A;M1B
+TH_CORE,recent3_ols_projected_change,OLS(recent 3 allowed target points) projected to row_year minus latest_value,same target city history,B3 mechanism representation,row excluded only if recent-3 history cannot be built,M1A;M1B
+TH_CORE,latest_gap_years,row_year - latest_allowed_observation_year,same target city history,temporal gap,row excluded only if recent-3 history cannot be built,M1A;M1B
+TH_CORE,recent3_span_years,max(recent3_years) - min(recent3_years),same target city history,observation geometry,row excluded only if recent-3 history cannot be built,M1A;M1B
+TH_SHAPE,slope_disagreement_2v3,annualized recent-2 slope minus recent-3 OLS slope,same target city history,short-vs-recent trend shape,row excluded only if recent-3 history cannot be built,M1B
+TH_SHAPE,recent_relative_slope,recent3 OLS slope / latest_value,same target city history,growth-like scale signal,illegal or zero denominator becomes explicit missing and is imputed in training fold,M1B
