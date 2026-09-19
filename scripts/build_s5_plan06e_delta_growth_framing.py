@@ -429,7 +429,7 @@ def select_config(
     if len(eligible) < 3:
         selected = CONFIGS[0]
         selection_method = "fallback_conservative_default"
-        if not eligible:
+        if eligible.empty:
             for config in CONFIGS:
                 evidence.append(
                     {
