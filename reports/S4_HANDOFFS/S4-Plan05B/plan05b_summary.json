@@ -1,0 +1,252 @@
+{
+  "all_boundary_guards_pass": true,
+  "b3_checks": [
+    {
+      "comparison_rule": "B3 row-level prediction/residual/squared-error delta <= 1e-9",
+      "max_abs_prediction_delta": 5.115907697472721e-13,
+      "max_abs_residual_delta": 4.849454171562684e-13,
+      "max_abs_squared_error_delta": 5.115907697472721e-13,
+      "rows_compared": 440,
+      "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+      "status": "PASS",
+      "target_id": "registered"
+    },
+    {
+      "comparison_rule": "B3 row-level prediction/residual/squared-error delta <= 1e-9",
+      "max_abs_prediction_delta": 5.115907697472721e-13,
+      "max_abs_residual_delta": 4.849454171562684e-13,
+      "max_abs_squared_error_delta": 5.115907697472721e-13,
+      "rows_compared": 440,
+      "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+      "status": "PASS",
+      "target_id": "registered"
+    },
+    {
+      "comparison_rule": "B3 row-level prediction/residual/squared-error delta <= 1e-9",
+      "max_abs_prediction_delta": 5.115907697472721e-13,
+      "max_abs_residual_delta": 4.849454171562684e-13,
+      "max_abs_squared_error_delta": 5.115907697472721e-13,
+      "rows_compared": 440,
+      "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+      "status": "PASS",
+      "target_id": "resident"
+    },
+    {
+      "comparison_rule": "B3 row-level prediction/residual/squared-error delta <= 1e-9",
+      "max_abs_prediction_delta": 5.115907697472721e-13,
+      "max_abs_residual_delta": 4.849454171562684e-13,
+      "max_abs_squared_error_delta": 5.115907697472721e-13,
+      "rows_compared": 440,
+      "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+      "status": "PASS",
+      "target_id": "resident"
+    },
+    {
+      "max_abs_metric_delta": 1.1368683772161603e-13,
+      "predictor_id": "B3_RECENT_3POINT_OLS_TREND",
+      "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+      "status": "PASS",
+      "target_id": "resident"
+    },
+    {
+      "max_abs_metric_delta": 4.547473508864641e-13,
+      "predictor_id": "B3_RECENT_3POINT_OLS_TREND",
+      "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+      "status": "PASS",
+      "target_id": "registered"
+    }
+  ],
+  "b3_metric_compatibility_pass": true,
+  "b3_row_compatibility_pass": true,
+  "branch": "s4/wave-b-cross-city-relative",
+  "candidate_id": "M5B_B3_PLUS_RIDGE_CROSS_CITY_RELATIVE",
+  "candidate_model_run_scenario": "R1_REFERENCE_SNAPSHOT_LAG",
+  "candidate_prediction_rows": 880,
+  "city_count": 40,
+  "city_identity_used": false,
+  "common_origin_domain": "2011-2021",
+  "cross_city_boundary_pass": true,
+  "deep_dive_recommended": false,
+  "evidence_files": [
+    "HANDOFF.md",
+    "plan05b_summary.json",
+    "screening_metrics.csv",
+    "cross_city_feature_audit.csv",
+    "scripts/build_s4_plan05b_cross_city_relative.py"
+  ],
+  "evidence_generation_head": "decfd7e0c68d14da31eabe5720ab706122c1040d",
+  "external_covariates_used": false,
+  "feature_dispersion_validation_example": {
+    "latest_value": {
+      "available_city_count": 40,
+      "mad": 189.0,
+      "mean": 534.25,
+      "median": 478.5,
+      "missing_city_count": 0,
+      "std_population": 235.9673441389719,
+      "unique_value_count": 37
+    },
+    "projected_change": {
+      "available_city_count": 40,
+      "mad": 10.499999999999545,
+      "mean": 15.112499999999851,
+      "median": 4.83333333333303,
+      "missing_city_count": 0,
+      "std_population": 28.808138980638084,
+      "unique_value_count": 33
+    },
+    "recent3_slope": {
+      "available_city_count": 40,
+      "mad": 5.0,
+      "mean": 7.5125,
+      "median": 2.5,
+      "missing_city_count": 0,
+      "std_population": 14.096314899646645,
+      "unique_value_count": 25
+    },
+    "recent_relative_slope": {
+      "available_city_count": 40,
+      "mad": 0.007084546893695805,
+      "mean": 0.010941114832308607,
+      "median": 0.008182624113475177,
+      "missing_city_count": 0,
+      "std_population": 0.01588922804818349,
+      "unique_value_count": 39
+    }
+  },
+  "feature_group_id": "CROSS_CITY_RELATIVE_V1",
+  "feature_names": [
+    "latest_value_percentile",
+    "recent3_slope_percentile",
+    "projected_change_percentile",
+    "relative_slope_percentile"
+  ],
+  "final_2023_prediction_run": false,
+  "gbdt_run": false,
+  "model_definitions": [
+    {
+      "city_identity_used": "no",
+      "cross_city_relative_used": "no",
+      "estimator": "frozen_B3",
+      "feature_group_id": "FROZEN_B3",
+      "feature_names": "",
+      "model_family": "frozen_s3_reference",
+      "predictor_id": "B3_RECENT_3POINT_OLS_TREND",
+      "preprocessing": "not_applicable_frozen_reference",
+      "ridge_alpha": "",
+      "target_definition": "frozen B3 population level prediction",
+      "tuning": "no",
+      "uses_covariates": "no"
+    },
+    {
+      "city_identity_used": "no",
+      "cross_city_relative_used": "yes",
+      "estimator": "Ridge(alpha=1.0)",
+      "feature_group_id": "CROSS_CITY_RELATIVE_V1",
+      "feature_names": "latest_value_percentile;recent3_slope_percentile;projected_change_percentile;relative_slope_percentile",
+      "model_family": "Ridge_residual_correction",
+      "predictor_id": "M5B_B3_PLUS_RIDGE_CROSS_CITY_RELATIVE",
+      "preprocessing": "SimpleImputer(median, add_indicator=True) + StandardScaler fit inside outer origin",
+      "ridge_alpha": 1.0,
+      "target_definition": "b3_residual = actual target minus frozen B3 prediction",
+      "tuning": "no",
+      "uses_covariates": "no"
+    }
+  ],
+  "origin_count": 11,
+  "percentile_rule": "average-tie-rank normalized to [0,1] as (rank-1)/(n-1); n=1 -> 0.5",
+  "plan_id": "S4-Plan05B",
+  "population_profile": {
+    "canonical_row_count": 718,
+    "city_count": 40,
+    "duplicate_key_rows": 0,
+    "population_sha256": "7f12e54c5c8d72a20182a117ad26564e6f1892d6f4b9add0dc80135aabb18797",
+    "registered_latest_observed_year": 2021,
+    "registered_nonempty_count": 707,
+    "resident_latest_observed_year": 2021,
+    "resident_nonempty_count": 693,
+    "unique_key_count": 718,
+    "year_max": 2021,
+    "year_min": 2001
+  },
+  "population_t_minus_2_audit_pass": true,
+  "preprocessing_fit_boundary_pass": true,
+  "primary_target": "resident",
+  "r1_r2_feature_mismatch_count": 0,
+  "r2_candidate_model_rerun": false,
+  "raw_state_fields": [
+    "latest_value",
+    "recent3_slope",
+    "projected_change",
+    "recent_relative_slope"
+  ],
+  "s4_complete": false,
+  "s5_entered": false,
+  "scenario_equivalent": true,
+  "screening": {
+    "registered": {
+      "b3_latest_2021_mse": 1485.6048611111196,
+      "b3_macro_origin_mse": 225.42121212121322,
+      "b3_pooled_mse": 225.42121212121324,
+      "candidate_beats_b3": false,
+      "candidate_latest_2021_mse": 1517.9816681760535,
+      "candidate_macro_origin_mse": 230.5493700895652,
+      "candidate_pooled_mse": 230.5493700895652,
+      "latest_relative_improvement_pct": -2.179368680896651,
+      "origin_losses": 7,
+      "origin_ties": 0,
+      "origin_wins": 4,
+      "relative_improvement_pct": -2.274922541714685,
+      "scoreable_city_year_count": 440
+    },
+    "resident": {
+      "b3_latest_2021_mse": 3705.42777777773,
+      "b3_macro_origin_mse": 872.4526515151429,
+      "b3_pooled_mse": 872.4526515151429,
+      "candidate_beats_b3": false,
+      "candidate_latest_2021_mse": 3671.890459382366,
+      "candidate_macro_origin_mse": 917.6172071440456,
+      "candidate_pooled_mse": 917.6172071440457,
+      "latest_relative_improvement_pct": 0.9050862790119679,
+      "origin_losses": 7,
+      "origin_ties": 0,
+      "origin_wins": 4,
+      "relative_improvement_pct": -5.176734296178466,
+      "scoreable_city_year_count": 440
+    }
+  },
+  "screening_decision": "unsupported",
+  "sensitivity_target": "registered",
+  "stage": "S4 Feature & ML Modeling",
+  "starting_commit": "decfd7e0c68d14da31eabe5720ab706122c1040d",
+  "strongest_fixed_baseline": "B3_RECENT_3POINT_OLS_TREND",
+  "submission_run": false,
+  "target_history_cutoff_rule": "population target history <= T-2",
+  "top3_absolute_prediction_change": {
+    "registered": {
+      "top3_absolute_prediction_change": 103.32634618823636,
+      "top3_city_ids": [
+        "city4",
+        "city26",
+        "city37"
+      ],
+      "top3_share": 0.13499880456134658,
+      "total_absolute_prediction_change": 765.3871197154377
+    },
+    "resident": {
+      "top3_absolute_prediction_change": 332.18979099113835,
+      "top3_city_ids": [
+        "city34",
+        "city26",
+        "city15"
+      ],
+      "top3_share": 0.14472025021074073,
+      "total_absolute_prediction_change": 2295.392597147985
+    }
+  },
+  "training_audit_rows": 9240,
+  "training_missing_feature_cell_count": 1730,
+  "tuning_run": false,
+  "validation_audit_rows": 1760,
+  "validation_missing_feature_cell_count": 0
+}
