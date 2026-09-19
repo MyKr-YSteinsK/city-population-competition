@@ -14,6 +14,10 @@
 - 不修改 7 个合法 XLSX 原始文件；变更前必须记录哈希并在重建后复核。
 - S3 Plan01/Plan02/Plan03 与 S4 Plan01/Plan02/Plan03 只能在冻结 S2 contract 内执行少量、可解释、可复核的 evidence。S4 Plan01 限定为 target-history-only `TH_CORE`/`TH_SHAPE`、outer-origin `Ridge(alpha=1.0)`、训练 fold 内 preprocessing、R1/R2 equivalence 与完整稳定性审计；S4 Plan02 限定为 canonical `urbanization` 的 D2 residual-bias control、M2A level、M2B level+dynamics，复用 S2 source-specific cap；S4 Plan03 限定为固定低容量 `HistGradientBoostingRegressor` 的 M3A/M3B/M3C B3 residual correction，严格复用 Plan01/02 feature semantics。三者均不得加入其他 covariates、city identity、tuning、model sweep、ensemble、预测或 submission。S4 Plan01/02/03 evidence complete 均不等于整个 S4 完成，也不授权 S5。
 
+## S4 final boundary
+
+S4 Plan01–05C 的 evidence 已在冻结 S2 contract 内归档；Wave B 已整合，S4 final report 与 machine summary 已生成。B3 仍是 Main review 的 strongest fixed model。当前不授权无界扩展实验、S5、2023 forecast 或 submission；S4 stage completion 仍由 Main 判定。
+
 ## 运行与交付
 
 从仓库根目录运行 `python scripts/run_s1.py` 可重建 S1；S2/S3/S4 计划使用各自 handoff 中记录的 focused utility。S2/S3/S4 产物必须区分 observed fact、assumed availability、unavailable、irregular domain、quality/provenance boundary 和 pseudo-origin information boundary。

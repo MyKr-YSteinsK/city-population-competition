@@ -40,6 +40,9 @@
 │   ├── build_s4_plan04a_density_residual.py
 │   ├── build_s4_plan04b_wage_screen.py
 │   ├── build_s4_plan04c_employment_signal.py
+│   ├── build_s4_plan05a_error_memory.py
+│   ├── build_s4_plan05b_cross_city_relative.py
+│   ├── build_s4_plan05c_multisource_joint.py
 │   └── run_s1.py
 └── reports/
     ├── S1_FINAL_REVIEW_PACK.zip
@@ -268,6 +271,10 @@
         └── build_s4_plan04c_employment_signal.py (source in scripts/)
     └── S4_HANDOFFS/S4-WaveA/
         └── WAVE_A_SUMMARY.md
+    └── S4_HANDOFFS/S4-WaveB/
+        ├── WAVE_B_SUMMARY.md
+        └── s4_final_summary.json
+    └── S4_FEATURE_ML_MODELING_FINAL_REPORT.md
 ```
 
 ## Generated and excluded

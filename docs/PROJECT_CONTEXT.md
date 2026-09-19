@@ -28,6 +28,14 @@
 - `reports/S4_HANDOFFS/S4-Plan04C/`：从业人员数 `EMPLOYMENT_RECENT_V1` 的 B3 residual screening evidence；R1/R2 boundary、derived/quarantine provenance、aggregate/per-origin 与 source audit 均已归档，结论为 employment unsupported。
 - `reports/S4_HANDOFFS/S4-WaveA/`：三个单 source screening branch 的整合摘要；Wave A 已整合，S4 仍进行中，尚未进入 S5。
 
+## S4 Wave B and final evidence
+
+- reports/S4_HANDOFFS/S4-Plan05A/：城市级 B3 error-memory Ridge residual screening；T-2 residual-history boundary、B3 compatibility 与 R1/R2 equivalence 均已归档，结论为 error_memory_unsupported。
+- reports/S4_HANDOFFS/S4-Plan05B/：cross-city relative percentile Ridge residual screening；同一 pseudo-origin 横截面、T-2、R1/R2 equality 与 preprocessing boundary 均已归档，结论为 unsupported。
+- reports/S4_HANDOFFS/S4-Plan05C/：density、urbanization、wage、employment 四 source 的 compact RidgeCV residual screening；source-specific caps、quarantine/provenance、alpha 与 coefficient diagnostics 均已归档，结论为 multisource_joint_unsupported。
+- reports/S4_HANDOFFS/S4-WaveB/：Wave B 三分支整合摘要和 S4 机器可读 final summary。
+- S4_FEATURE_ML_MODELING_FINAL_REPORT.md：S4 Feature/ML 阶段最终 evidence report。B3 仍是 strongest fixed model；evidence package 已准备 Main review，但 s4_complete=false、未进入 S5，也未生成 2023 forecast/submission。Stage completion 仍由 Main 判定。
+
 ## Source facts
 
 当前 canonical 层包含人口规模、人口密度、城镇化率、失业率、从业人员数、三产业就业人数、平均工资、年龄结构和生活水平六类表。所有 14 张逻辑表保留城市/年份键的唯一性。

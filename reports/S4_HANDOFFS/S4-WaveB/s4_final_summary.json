@@ -1,0 +1,175 @@
+{
+  "stage": "S4_FEATURE_ML_MODELING",
+  "strongest_model": "B3_RECENT_3POINT_OLS_TREND",
+  "resident_b3_pooled_mse": 872.4526515151429,
+  "registered_b3_pooled_mse": 225.42121212121324,
+  "resident_b3_latest_2021_mse": 3705.42777777773,
+  "registered_b3_latest_2021_mse": 1485.6048611111196,
+  "validation_contract": {
+    "common_origins": "2011-2021",
+    "target_history_cutoff": "T-2",
+    "primary_target": "resident",
+    "sensitivity_target": "registered",
+    "primary_aggregate": "pooled_city_year_mse",
+    "secondary_diagnostic": "latest_2021_mse",
+    "scenarios": [
+      "R1_REFERENCE_SNAPSHOT_LAG",
+      "R2_CONSERVATIVE_PUBLICATION_STRESS"
+    ]
+  },
+  "material_candidates": [
+    {
+      "plan_id": "S4-Plan01",
+      "candidate_id": "M1A_RIDGE_DELTA_TH_CORE",
+      "mechanism": "target-history TH_CORE Ridge residual correction",
+      "resident_pooled_mse": {"R1": 910.3498948056373, "R2": 910.3498948056373},
+      "registered_pooled_mse": {"R1": 231.36001588742073, "R2": 231.36001588742073},
+      "decision": "unsupported"
+    },
+    {
+      "plan_id": "S4-Plan01",
+      "candidate_id": "M1B_RIDGE_DELTA_TH_SHAPE",
+      "mechanism": "target-history TH_SHAPE Ridge residual correction",
+      "resident_pooled_mse": {"R1": 938.694952017902, "R2": 938.694952017902},
+      "registered_pooled_mse": {"R1": 238.43312500461468, "R2": 238.43312500461468},
+      "decision": "unsupported"
+    },
+    {
+      "plan_id": "S4-Plan02",
+      "candidate_id": "D2_B3_GLOBAL_RESIDUAL_BIAS",
+      "mechanism": "urbanization-free global residual bias control",
+      "resident_pooled_mse": {"R1": 883.8125394819815, "R2": 883.8125394819815},
+      "registered_pooled_mse": {"R1": 225.5924298372592, "R2": 225.5924298372592},
+      "decision": "unsupported"
+    },
+    {
+      "plan_id": "S4-Plan02",
+      "candidate_id": "M2A_B3_PLUS_RIDGE_URB_LEVEL",
+      "mechanism": "urbanization level Ridge residual correction",
+      "resident_pooled_mse": {"R1": 903.7744804355517, "R2": 911.6277428632651},
+      "registered_pooled_mse": {"R1": 228.37347652149538, "R2": 228.71650750527826},
+      "decision": "unsupported"
+    },
+    {
+      "plan_id": "S4-Plan02",
+      "candidate_id": "M2B_B3_PLUS_RIDGE_URB_DYNAMICS",
+      "mechanism": "urbanization level plus dynamics Ridge residual correction",
+      "resident_pooled_mse": {"R1": 899.0824987897714, "R2": 925.7640997743664},
+      "registered_pooled_mse": {"R1": 228.93728392318317, "R2": 230.01734167450377},
+      "decision": "unsupported"
+    },
+    {
+      "plan_id": "S4-Plan03",
+      "candidate_id": "M3A_B3_PLUS_HGB_TH_CORE",
+      "mechanism": "low-capacity HGB with TH_CORE",
+      "resident_pooled_mse": {"R1": 938.209014586509, "R2": 938.209014586509},
+      "registered_pooled_mse": {"R1": 229.69712728037547, "R2": 229.69712728037547},
+      "decision": "unsupported"
+    },
+    {
+      "plan_id": "S4-Plan03",
+      "candidate_id": "M3B_B3_PLUS_HGB_TH_SHAPE",
+      "mechanism": "low-capacity HGB with TH_CORE plus TH_SHAPE",
+      "resident_pooled_mse": {"R1": 934.8748267368161, "R2": 934.8748267368161},
+      "registered_pooled_mse": {"R1": 238.29037799575562, "R2": 238.29037799575562},
+      "decision": "unsupported"
+    },
+    {
+      "plan_id": "S4-Plan03",
+      "candidate_id": "M3C_B3_PLUS_HGB_TH_URB",
+      "mechanism": "low-capacity HGB with target history plus urbanization",
+      "resident_pooled_mse": {"R1": 911.1682866767662, "R2": 974.0987009573113},
+      "registered_pooled_mse": {"R1": 230.57571582457243, "R2": 234.11536626589356},
+      "decision": "unsupported"
+    },
+    {
+      "plan_id": "S4-Plan04A",
+      "candidate_id": "M4A_B3_PLUS_RIDGE_DENSITY",
+      "mechanism": "recent density Ridge residual correction",
+      "resident_pooled_mse": {"R1": 906.6526247190849, "R2": 917.7751981426492},
+      "registered_pooled_mse": {"R1": 229.90299646479934, "R2": 230.29997581841312},
+      "decision": "unsupported"
+    },
+    {
+      "plan_id": "S4-Plan04B",
+      "candidate_id": "M4B_B3_PLUS_RIDGE_WAGE",
+      "mechanism": "recent wage development Ridge residual correction",
+      "resident_pooled_mse": {"R1": 943.9194721118193, "R2": 943.9194721118193},
+      "registered_pooled_mse": {"R1": 225.85057792249614, "R2": 225.85057792249614},
+      "decision": "unsupported"
+    },
+    {
+      "plan_id": "S4-Plan04C",
+      "candidate_id": "M4C_B3_PLUS_RIDGE_EMPLOYMENT",
+      "mechanism": "recent employment-scale Ridge residual correction",
+      "resident_pooled_mse": {"R1": 908.5084120928777, "R2": 912.4184648582267},
+      "registered_pooled_mse": {"R1": 224.90472414256473, "R2": 225.38992593971926},
+      "decision": "unsupported"
+    },
+    {
+      "plan_id": "S4-Plan05A",
+      "candidate_id": "M5A_B3_PLUS_RIDGE_ERROR_MEMORY",
+      "mechanism": "city-level historical B3 error memory",
+      "resident_pooled_mse": {"R1": 1330.678942566045, "R2": 1330.678942566045},
+      "registered_pooled_mse": {"R1": 230.50249874471984, "R2": 230.50249874471984},
+      "decision": "error_memory_unsupported"
+    },
+    {
+      "plan_id": "S4-Plan05B",
+      "candidate_id": "M5B_B3_PLUS_RIDGE_CROSS_CITY_RELATIVE",
+      "mechanism": "cross-city relative percentile Ridge residual correction",
+      "resident_pooled_mse": {"R1": 917.6172071440457, "R2": 917.6172071440456},
+      "registered_pooled_mse": {"R1": 230.5493700895652, "R2": 230.5493700895652},
+      "decision": "unsupported"
+    },
+    {
+      "plan_id": "S4-Plan05C",
+      "candidate_id": "M5C_B3_PLUS_RIDGECV_MULTISOURCE",
+      "mechanism": "four-source RidgeCV residual correction",
+      "resident_pooled_mse": {"R1": 903.3889811254039, "R2": 959.5399818940762},
+      "registered_pooled_mse": {"R1": 226.83854042856643, "R2": 227.21643232151277},
+      "decision": "multisource_joint_unsupported"
+    }
+  ],
+  "experiment_decisions": [
+    {"plan_id": "S4-Plan01", "decision": "unsupported", "deep_dive_recommended": false},
+    {"plan_id": "S4-Plan02", "decision": "unsupported", "deep_dive_recommended": false},
+    {"plan_id": "S4-Plan03", "decision": "unsupported", "deep_dive_recommended": false},
+    {"plan_id": "S4-Plan04A", "decision": "unsupported", "deep_dive_recommended": false},
+    {"plan_id": "S4-Plan04B", "decision": "unsupported", "deep_dive_recommended": false},
+    {"plan_id": "S4-Plan04C", "decision": "unsupported", "deep_dive_recommended": false},
+    {"plan_id": "S4-Plan05A", "decision": "error_memory_unsupported", "deep_dive_recommended": false},
+    {"plan_id": "S4-Plan05B", "decision": "unsupported", "deep_dive_recommended": false},
+    {"plan_id": "S4-Plan05C", "decision": "multisource_joint_unsupported", "deep_dive_recommended": false}
+  ],
+  "any_material_ml_candidate_beats_b3": false,
+  "formal_ridge_pipeline_established": true,
+  "formal_hgb_pipeline_established": true,
+  "multisource_pipeline_established": true,
+  "r1_r2_covariate_sensitivity_established": true,
+  "feature_ablation_established": true,
+  "s4_evidence_ready_for_main_review": true,
+  "s4_complete": false,
+  "s5_entered": false,
+  "final_2023_forecast_run": false,
+  "submission_run": false,
+  "integration": {
+    "integration_branch": "s4/wave-b-integration",
+    "wave_a_base": "decfd7e0c68d14da31eabe5720ab706122c1040d",
+    "conflicts": false,
+    "source_branches": {
+      "s4/wave-b-error-memory": "cbabf585357b0cae069efbf4aa4eed543ecae202",
+      "s4/wave-b-cross-city-relative": "e14bbfb30122a8d397542871c4af017bdcb96193",
+      "s4/wave-b-multisource-joint": "0b39868aa6027a26ebcbb13f7ebe1bfcd4394948"
+    },
+    "checkpoint_modified": false,
+    "s2_contract_modified": false,
+    "data_modified": false
+  },
+  "evidence_files": [
+    "S4_FEATURE_ML_MODELING_FINAL_REPORT.md",
+    "reports/S4_HANDOFFS/S4-WaveA/WAVE_A_SUMMARY.md",
+    "reports/S4_HANDOFFS/S4-WaveB/WAVE_B_SUMMARY.md",
+    "reports/S4_HANDOFFS/S4-WaveB/s4_final_summary.json"
+  ]
+}
