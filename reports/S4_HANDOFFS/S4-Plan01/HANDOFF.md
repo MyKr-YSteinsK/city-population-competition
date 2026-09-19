@@ -176,4 +176,4 @@ Recommendation：不要继续堆叠相似的 target-history lag/shape features�
 - `s4_complete=false`
 - `s5_entered=false`
 
-本文件中的 commit/push SHA 在完成 focused commit 后补写；之后会再做一次 JSON、artifact、upstream equality 和 clean worktree 验收。
+主体 focused commit：`dd2734ee0519cc197f1bed89f0964492b0640930`，已 push 到 `origin/main`。本次回填只更新本 HANDOFF 的交付元数据，随后以 metadata-only commit 收口，并再次执行 JSON、artifact、upstream equality 和 clean worktree 验收。
