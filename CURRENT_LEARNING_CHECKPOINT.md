@@ -42,14 +42,30 @@
 
 - Anchor：城市人口分析与预测原始赛题 + GitHub `city-population-competition`。
 - Main：S2｜Validation Architecture。
-- Lab：当前未激活 S2 实验。只有 Main 明确实验目标与边界后，才新建 `Lab｜S2 实验`。
+- Lab：当前未激活 S2 实验。
+
+## Stage Experiment Workflow
+
+从 S2 起，阶段实验采用“独立实验对话 → 连续 Plan → Codex 执行 → 证据回传 → 实验对话复审 → 下一 Plan”的工作流。
+
+- 每个 Stage 在需要正式实验时新建独立实验对话，例如 `Lab｜S2 实验`。
+- 实验对话不直接替 Codex 完成实现；它负责理解阶段目标、审查当前仓库与上一轮证据、制定下一份 Plan，并在 Codex 回传后重新判断。
+- Plan 是目标、边界、验收和必要上下文，不是逐行实现说明。必须给 Codex 保留局部方案设计、实现、诊断、验证和合理决策空间。
+- Codex 的重要实验仍须围绕 `Hypothesis / Question → Experiment → Evidence → Interpretation / Decision`，并回传真实运行证据、偏差、失败和剩余不确定性。
+- 每个 Codex Plan 的交付材料放入该 Stage 专属的独立 handoff 文件夹；用户将整个 handoff 文件夹内容提供给对应实验对话复审。不得仅凭 Codex 的文字“完成”判断实验结论。
+- 实验对话按序生成下一份 Plan，直到该 Stage 的实验问题形成足够证据；实验对话本身不得自行推进 Mainline Stage。
+- Stage 实验结束时，实验对话必须生成一份 Markdown 阶段报告。报告重点不是流水账，而是从真实参赛者视角记录：问题与约束、当时证据、关键假设、为什么选择某实验、实际验证结果、失败/反证、如何据此做决策、最终方案/结果、剩余边界，以及交给 Main 的阶段结论。
+- Main 阅读阶段报告和必要原始证据后，负责正式 Stage completion 判定、能力判断、下一 Stage 教学和 checkpoint 合并。
+- 已确认简单且低认知价值的重复性工程可交由 Codex 自主完成；关键 validation、leakage、feature/model 选择、实验解释仍要求人类拥有判断。
 
 ## Next Entry Point
 
-先建立 S2 的 Validation Contract：明确 `forecast origin`、`forecast horizon`、`information set`、`pseudo-test target year` 四者的关系；再比较随机切分、单一时间外 holdout 与多时点 backtest 各自在回答什么问题。
+S2 Main 先完成必要的 Validation Architecture 教学与实验问题定义；需要落地验证时再创建 `Lab｜S2 实验`。实验对话使用上述连续 Plan/Codex/handoff/review 工作流，而不是 Guided Implementation，也不让一次 Plan 无边界扫完整个后续 Stage。
 
 ## Do Not Repeat
 
 - 不重新展开 S1 数据考古，除非 GitHub `main` 出现会改变数据契约的新证据。
 - 不把历史聊天中的旧计数覆盖当前仓库事实。
-- 不在 Main 尚未定义实验问题前让 Codex 自动完成完整 validation / modeling pipeline。
+- 不再要求用户对显然已掌握的问题做低价值解释性问答。
+- 不再采用 S1 早期的逐步手把手 Guided Lab 作为默认实验方式。
+- 不让单个 Plan 越过当前 Stage 或替代 Main 的阶段判定。
