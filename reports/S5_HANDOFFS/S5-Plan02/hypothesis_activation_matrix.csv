@@ -1,0 +1,7 @@
+﻿hypothesis_id,supporting_evidence,contradicting_evidence,gate_status,activation_recommendation
+robust_local_trend,RLT3/RLT5 evaluated under raw and relative volatility strata,neither strong nor complementary robust signal passed,fail,inactive
+partial_pooling_shrinkage,no new Plan02 evidence for shrinkage parameters,Plan01 decision relevance for shrinkage was inactive,not_screened,inactive
+fixed_low_capacity_blend,no qualifying complementary robust signal,blend weights/routing are forbidden in Plan02,not_activated,inactive
+stronger_boosting,none,outside Plan02 scope and no direct evidence,not_screened,inactive
+remaining_source_groups,none; no new source in scope,external sources remain inactive from prior evidence,not_screened,inactive
+tuning,none; window and estimator are pre-registered,parameter and threshold search forbidden,not_screened,inactive

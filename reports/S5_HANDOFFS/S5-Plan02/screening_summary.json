@@ -1,0 +1,542 @@
+{
+  "plan_id": "S5-Plan02",
+  "stage": "S5_EVIDENCE_DRIVEN_ITERATION",
+  "base_sha": "1a6770f763966b58dd7ae60fef34e332febcea09",
+  "plan01_integration": {
+    "plan01_base_sha": "04e5cd469c45468a60b1f9b65a96e76311d5326b",
+    "plan01_tip_sha": "1a6770f763966b58dd7ae60fef34e332febcea09",
+    "plan01_evidence_commit": "db7bf05fa2447c6cdc316a054d08e1d248641a45",
+    "merge_base": "04e5cd469c45468a60b1f9b65a96e76311d5326b",
+    "ahead_from_plan01_base": 2,
+    "behind_from_plan01_base": 0,
+    "integrated_main_sha": "1a6770f763966b58dd7ae60fef34e332febcea09",
+    "plan01_decision": "mechanism_signal_found:robust_local_trend"
+  },
+  "worker_branch": "s5/plan02-robust-local-trend-screening",
+  "worker_head_at_run": "1a6770f763966b58dd7ae60fef34e332febcea09",
+  "target_ids": [
+    "resident",
+    "registered"
+  ],
+  "scenario_ids": [
+    "R1_REFERENCE_SNAPSHOT_LAG",
+    "R2_CONSERVATIVE_PUBLICATION_STRESS"
+  ],
+  "common_origins": [
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021
+  ],
+  "city_count": 40,
+  "scoreable_rows_per_target_scenario": 440,
+  "target_history_cutoff_rule": "all candidate history observations <= origin_year - 2",
+  "candidate_ids": [
+    "B3_RECENT_3POINT_OLS_TREND",
+    "B4_RECENT_5POINT_OLS_TREND",
+    "RLT3_RECENT_3POINT_MEDIAN_SLOPE_TREND",
+    "RLT5_RECENT_5POINT_MEDIAN_SLOPE_TREND"
+  ],
+  "robust_candidate_ids": [
+    "RLT3_RECENT_3POINT_MEDIAN_SLOPE_TREND",
+    "RLT5_RECENT_5POINT_MEDIAN_SLOPE_TREND"
+  ],
+  "rlt5_coverage_policy": "inherit frozen B4 fixed B1 fallback for fewer than 5 points; never fallback to B3",
+  "rlt5_coverage": {
+    "median_slope": 1624,
+    "b1_fallback": 136,
+    "not_computable": 0
+  },
+  "diagnostic_definitions": {
+    "raw_history_difference_volatility": "population standard deviation of all available first differences <= T-2",
+    "relative_history_difference_volatility": "raw volatility / max(abs(latest allowed target), 1e-12); diagnostic only",
+    "preorigin_target_scale": "latest allowed target level <= T-2",
+    "within_origin_high_risk_rule": "top ceil(25%) by diagnostic, ties broken by city_id"
+  },
+  "frozen_b3_compatibility": {
+    "expected_pooled_mse": {
+      "resident": 872.452651515143,
+      "registered": 225.421212121213
+    },
+    "observed": {
+      "resident_R1_REFERENCE_SNAPSHOT_LAG": {
+        "pooled_mse": 872.4526515151432,
+        "macro_origin_mse": 872.4526515151432,
+        "latest_2021_mse": 3705.427777777728,
+        "scoreable_rows": 440
+      },
+      "resident_R2_CONSERVATIVE_PUBLICATION_STRESS": {
+        "pooled_mse": 872.4526515151432,
+        "macro_origin_mse": 872.4526515151432,
+        "latest_2021_mse": 3705.427777777728,
+        "scoreable_rows": 440
+      },
+      "registered_R1_REFERENCE_SNAPSHOT_LAG": {
+        "pooled_mse": 225.42121212121316,
+        "macro_origin_mse": 225.4212121212132,
+        "latest_2021_mse": 1485.6048611111178,
+        "scoreable_rows": 440
+      },
+      "registered_R2_CONSERVATIVE_PUBLICATION_STRESS": {
+        "pooled_mse": 225.42121212121316,
+        "macro_origin_mse": 225.4212121212132,
+        "latest_2021_mse": 1485.6048611111178,
+        "scoreable_rows": 440
+      }
+    },
+    "checks": [
+      {
+        "target_id": "resident",
+        "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+        "expected_pooled_mse": 872.452651515143,
+        "observed_pooled_mse": 872.4526515151432,
+        "pooled_delta_vs_frozen": 2.2737367544323206e-13,
+        "macro_origin_mse": 872.4526515151432,
+        "latest_2021_mse": 3705.427777777728,
+        "scoreable_rows": 440,
+        "status": "PASS"
+      },
+      {
+        "target_id": "resident",
+        "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+        "expected_pooled_mse": 872.452651515143,
+        "observed_pooled_mse": 872.4526515151432,
+        "pooled_delta_vs_frozen": 2.2737367544323206e-13,
+        "macro_origin_mse": 872.4526515151432,
+        "latest_2021_mse": 3705.427777777728,
+        "scoreable_rows": 440,
+        "status": "PASS"
+      },
+      {
+        "target_id": "registered",
+        "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+        "expected_pooled_mse": 225.421212121213,
+        "observed_pooled_mse": 225.42121212121316,
+        "pooled_delta_vs_frozen": 1.7053025658242404e-13,
+        "macro_origin_mse": 225.4212121212132,
+        "latest_2021_mse": 1485.6048611111178,
+        "scoreable_rows": 440,
+        "status": "PASS"
+      },
+      {
+        "target_id": "registered",
+        "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+        "expected_pooled_mse": 225.421212121213,
+        "observed_pooled_mse": 225.42121212121316,
+        "pooled_delta_vs_frozen": 1.7053025658242404e-13,
+        "macro_origin_mse": 225.4212121212132,
+        "latest_2021_mse": 1485.6048611111178,
+        "scoreable_rows": 440,
+        "status": "PASS"
+      }
+    ],
+    "pass": true
+  },
+  "r1_r2_equivalence": {
+    "row_count": 0,
+    "max_prediction_delta": 0.0,
+    "pass": true,
+    "failed_checks": []
+  },
+  "boundary_checks": {
+    "max_history_boundary_violation_count": 0,
+    "origin_outcome_used_only_for_scoring": true,
+    "new_external_source_used": false,
+    "test_xls_used": false,
+    "threshold_search": false,
+    "parameter_search": false,
+    "routing_rule_created": false,
+    "blend_fitted": false,
+    "final_2023_forecast_run": false,
+    "submission_run": false
+  },
+  "strong_screening_gate": {
+    "RLT3_RECENT_3POINT_MEDIAN_SLOPE_TREND": {
+      "candidate_id": "RLT3_RECENT_3POINT_MEDIAN_SLOPE_TREND",
+      "resident_pooled_mse": 861.4909090909091,
+      "resident_b3_pooled_mse": 872.4526515151432,
+      "resident_relative_pooled_gain": 0.012564283465924957,
+      "resident_origin_wins": 6,
+      "resident_origin_losses": 5,
+      "resident_latest_2021_mse": 3666.8,
+      "registered_relative_pooled_changes": [
+        -0.007675866055469773,
+        -0.007675866055469773
+      ],
+      "registered_origin_losses": [
+        3,
+        3
+      ],
+      "registered_overall_loss_gate_pass": true,
+      "registered_raw_high_stratum_direction": [
+        {
+          "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+          "worse_origins": 3,
+          "improved_origins": 8
+        },
+        {
+          "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+          "worse_origins": 3,
+          "improved_origins": 8
+        }
+      ],
+      "registered_raw_high_no_strong_reversal": true,
+      "raw_high_volatility_pooled_delta": -35.96262626258567,
+      "raw_remaining_pooled_delta": -2.6281144781169132,
+      "raw_high_volatility_relative_improvement": 0.015433165071084297,
+      "raw_remaining_mse_ratio": 0.9932007691654319,
+      "mechanism_alignment_pass": true,
+      "relative_high_volatility_wins": 7,
+      "raw_high_volatility_wins": 6,
+      "scale_outside_high_raw_not_high_scale_relative_improvement": 0.0015954129852054915,
+      "scale_outside_nontrivial_pass": false,
+      "rlt5_beats_b4_resident_pooled": true,
+      "rlt5_minus_b4_resident_pooled_mse_delta": null,
+      "gates": {
+        "resident_pooled_gain_at_least_2_percent": false,
+        "resident_origin_wins_at_least_7_of_11": false,
+        "registered_pooled_worsening_not_over_2_percent": true,
+        "registered_losses_not_over_8_of_11": true,
+        "mechanism_high_volatility_gain_larger_than_remaining": true,
+        "scale_confounding_nontrivial_outside_high_scale": false,
+        "rlt5_beats_b4_if_applicable": true
+      },
+      "pass": false
+    },
+    "RLT5_RECENT_5POINT_MEDIAN_SLOPE_TREND": {
+      "candidate_id": "RLT5_RECENT_5POINT_MEDIAN_SLOPE_TREND",
+      "resident_pooled_mse": 933.8669013713675,
+      "resident_b3_pooled_mse": 872.4526515151432,
+      "resident_relative_pooled_gain": -0.07039264509033165,
+      "resident_origin_wins": 3,
+      "resident_origin_losses": 8,
+      "resident_latest_2021_mse": 4256.498090277777,
+      "registered_relative_pooled_changes": [
+        0.13883053736102954,
+        0.13883053736102954
+      ],
+      "registered_origin_losses": [
+        7,
+        7
+      ],
+      "registered_overall_loss_gate_pass": true,
+      "registered_raw_high_stratum_direction": [
+        {
+          "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+          "worse_origins": 7,
+          "improved_origins": 4
+        },
+        {
+          "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+          "worse_origins": 7,
+          "improved_origins": 4
+        }
+      ],
+      "registered_raw_high_no_strong_reversal": true,
+      "raw_high_volatility_pooled_delta": 178.26366646198403,
+      "raw_remaining_pooled_delta": 22.46444432097104,
+      "raw_high_volatility_relative_improvement": -0.0765008809589288,
+      "raw_remaining_mse_ratio": 1.058118070495174,
+      "mechanism_alignment_pass": false,
+      "relative_high_volatility_wins": 3,
+      "raw_high_volatility_wins": 3,
+      "scale_outside_high_raw_not_high_scale_relative_improvement": -0.05572642169173486,
+      "scale_outside_nontrivial_pass": false,
+      "rlt5_beats_b4_resident_pooled": true,
+      "rlt5_minus_b4_resident_pooled_mse_delta": -25.62759862864118,
+      "gates": {
+        "resident_pooled_gain_at_least_2_percent": false,
+        "resident_origin_wins_at_least_7_of_11": false,
+        "registered_pooled_worsening_not_over_2_percent": false,
+        "registered_losses_not_over_8_of_11": true,
+        "mechanism_high_volatility_gain_larger_than_remaining": false,
+        "scale_confounding_nontrivial_outside_high_scale": false,
+        "rlt5_beats_b4_if_applicable": true
+      },
+      "pass": false
+    }
+  },
+  "complementary_signal_gate": {
+    "RLT3_RECENT_3POINT_MEDIAN_SLOPE_TREND": {
+      "candidate_id": "RLT3_RECENT_3POINT_MEDIAN_SLOPE_TREND",
+      "resident_pooled_mse": 861.4909090909091,
+      "resident_b3_pooled_mse": 872.4526515151432,
+      "resident_relative_pooled_gain": 0.012564283465924957,
+      "resident_origin_wins": 6,
+      "resident_origin_losses": 5,
+      "resident_latest_2021_mse": 3666.8,
+      "registered_relative_pooled_changes": [
+        -0.007675866055469773,
+        -0.007675866055469773
+      ],
+      "registered_origin_losses": [
+        3,
+        3
+      ],
+      "registered_overall_loss_gate_pass": true,
+      "registered_raw_high_stratum_direction": [
+        {
+          "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+          "worse_origins": 3,
+          "improved_origins": 8
+        },
+        {
+          "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+          "worse_origins": 3,
+          "improved_origins": 8
+        }
+      ],
+      "registered_raw_high_no_strong_reversal": true,
+      "raw_high_volatility_pooled_delta": -35.96262626258567,
+      "raw_remaining_pooled_delta": -2.6281144781169132,
+      "raw_high_volatility_relative_improvement": 0.015433165071084297,
+      "raw_remaining_mse_ratio": 0.9932007691654319,
+      "mechanism_alignment_pass": true,
+      "relative_high_volatility_wins": 7,
+      "raw_high_volatility_wins": 6,
+      "scale_outside_high_raw_not_high_scale_relative_improvement": 0.0015954129852054915,
+      "scale_outside_nontrivial_pass": false,
+      "rlt5_beats_b4_resident_pooled": true,
+      "rlt5_minus_b4_resident_pooled_mse_delta": null,
+      "gates": {
+        "raw_high_volatility_wins_at_least_8_of_11": false,
+        "relative_high_volatility_wins_at_least_7_of_11": true,
+        "raw_remaining_mse_not_over_10_percent_worse": true,
+        "registered_no_strong_directional_reversal": true,
+        "scale_confounding_nontrivial_outside_high_scale": false,
+        "candidate_error_profile_is_complementary": true
+      },
+      "pass": false
+    },
+    "RLT5_RECENT_5POINT_MEDIAN_SLOPE_TREND": {
+      "candidate_id": "RLT5_RECENT_5POINT_MEDIAN_SLOPE_TREND",
+      "resident_pooled_mse": 933.8669013713675,
+      "resident_b3_pooled_mse": 872.4526515151432,
+      "resident_relative_pooled_gain": -0.07039264509033165,
+      "resident_origin_wins": 3,
+      "resident_origin_losses": 8,
+      "resident_latest_2021_mse": 4256.498090277777,
+      "registered_relative_pooled_changes": [
+        0.13883053736102954,
+        0.13883053736102954
+      ],
+      "registered_origin_losses": [
+        7,
+        7
+      ],
+      "registered_overall_loss_gate_pass": true,
+      "registered_raw_high_stratum_direction": [
+        {
+          "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+          "worse_origins": 7,
+          "improved_origins": 4
+        },
+        {
+          "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+          "worse_origins": 7,
+          "improved_origins": 4
+        }
+      ],
+      "registered_raw_high_no_strong_reversal": true,
+      "raw_high_volatility_pooled_delta": 178.26366646198403,
+      "raw_remaining_pooled_delta": 22.46444432097104,
+      "raw_high_volatility_relative_improvement": -0.0765008809589288,
+      "raw_remaining_mse_ratio": 1.058118070495174,
+      "mechanism_alignment_pass": false,
+      "relative_high_volatility_wins": 3,
+      "raw_high_volatility_wins": 3,
+      "scale_outside_high_raw_not_high_scale_relative_improvement": -0.05572642169173486,
+      "scale_outside_nontrivial_pass": false,
+      "rlt5_beats_b4_resident_pooled": true,
+      "rlt5_minus_b4_resident_pooled_mse_delta": -25.62759862864118,
+      "gates": {
+        "raw_high_volatility_wins_at_least_8_of_11": false,
+        "relative_high_volatility_wins_at_least_7_of_11": false,
+        "raw_remaining_mse_not_over_10_percent_worse": true,
+        "registered_no_strong_directional_reversal": true,
+        "scale_confounding_nontrivial_outside_high_scale": false,
+        "candidate_error_profile_is_complementary": false
+      },
+      "pass": false
+    }
+  },
+  "concentration_sanity": [
+    {
+      "target_id": "registered",
+      "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+      "candidate_id": "RLT3_RECENT_3POINT_MEDIAN_SLOPE_TREND",
+      "candidate_improves_pooled": true,
+      "pooled_b3_mse": 225.42121212121316,
+      "pooled_candidate_mse": 223.6909090909091,
+      "top_absolute_sse_improvement_city": "city24",
+      "top_absolute_sse_improvement": 233.38888888956748,
+      "top3_positive_improvement_share": 0.46414598540171925,
+      "improved_city_count": 29,
+      "improved_city_share": 0.725
+    },
+    {
+      "target_id": "registered",
+      "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+      "candidate_id": "RLT5_RECENT_5POINT_MEDIAN_SLOPE_TREND",
+      "candidate_improves_pooled": false,
+      "pooled_b3_mse": 225.42121212121316,
+      "pooled_candidate_mse": 256.7165601325758,
+      "top_absolute_sse_improvement_city": "city35",
+      "top_absolute_sse_improvement": 1359.220486111051,
+      "top3_positive_improvement_share": 0.8153202653202796,
+      "improved_city_count": 10,
+      "improved_city_share": 0.25
+    },
+    {
+      "target_id": "registered",
+      "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+      "candidate_id": "RLT3_RECENT_3POINT_MEDIAN_SLOPE_TREND",
+      "candidate_improves_pooled": true,
+      "pooled_b3_mse": 225.42121212121316,
+      "pooled_candidate_mse": 223.6909090909091,
+      "top_absolute_sse_improvement_city": "city24",
+      "top_absolute_sse_improvement": 233.38888888956748,
+      "top3_positive_improvement_share": 0.46414598540171925,
+      "improved_city_count": 29,
+      "improved_city_share": 0.725
+    },
+    {
+      "target_id": "registered",
+      "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+      "candidate_id": "RLT5_RECENT_5POINT_MEDIAN_SLOPE_TREND",
+      "candidate_improves_pooled": false,
+      "pooled_b3_mse": 225.42121212121316,
+      "pooled_candidate_mse": 256.7165601325758,
+      "top_absolute_sse_improvement_city": "city35",
+      "top_absolute_sse_improvement": 1359.220486111051,
+      "top3_positive_improvement_share": 0.8153202653202796,
+      "improved_city_count": 10,
+      "improved_city_share": 0.25
+    },
+    {
+      "target_id": "resident",
+      "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+      "candidate_id": "RLT3_RECENT_3POINT_MEDIAN_SLOPE_TREND",
+      "candidate_improves_pooled": true,
+      "pooled_b3_mse": 872.4526515151432,
+      "pooled_candidate_mse": 861.4909090909091,
+      "top_absolute_sse_improvement_city": "city17",
+      "top_absolute_sse_improvement": 967.3611111102266,
+      "top3_positive_improvement_share": 0.5174805898837108,
+      "improved_city_count": 37,
+      "improved_city_share": 0.925
+    },
+    {
+      "target_id": "resident",
+      "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+      "candidate_id": "RLT5_RECENT_5POINT_MEDIAN_SLOPE_TREND",
+      "candidate_improves_pooled": false,
+      "pooled_b3_mse": 872.4526515151432,
+      "pooled_candidate_mse": 933.8669013713675,
+      "top_absolute_sse_improvement_city": "city33",
+      "top_absolute_sse_improvement": 5205.743055555768,
+      "top3_positive_improvement_share": 0.8778471510545727,
+      "improved_city_count": 14,
+      "improved_city_share": 0.35
+    },
+    {
+      "target_id": "resident",
+      "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+      "candidate_id": "RLT3_RECENT_3POINT_MEDIAN_SLOPE_TREND",
+      "candidate_improves_pooled": true,
+      "pooled_b3_mse": 872.4526515151432,
+      "pooled_candidate_mse": 861.4909090909091,
+      "top_absolute_sse_improvement_city": "city17",
+      "top_absolute_sse_improvement": 967.3611111102266,
+      "top3_positive_improvement_share": 0.5174805898837108,
+      "improved_city_count": 37,
+      "improved_city_share": 0.925
+    },
+    {
+      "target_id": "resident",
+      "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+      "candidate_id": "RLT5_RECENT_5POINT_MEDIAN_SLOPE_TREND",
+      "candidate_improves_pooled": false,
+      "pooled_b3_mse": 872.4526515151432,
+      "pooled_candidate_mse": 933.8669013713675,
+      "top_absolute_sse_improvement_city": "city33",
+      "top_absolute_sse_improvement": 5205.743055555768,
+      "top3_positive_improvement_share": 0.8778471510545727,
+      "improved_city_count": 14,
+      "improved_city_share": 0.35
+    }
+  ],
+  "final_decision": "robust_local_trend_unsupported",
+  "winner": null,
+  "activated_next_direction": "stop_robust_local_trend_mechanism",
+  "hypothesis_activation": [
+    {
+      "hypothesis_id": "robust_local_trend",
+      "supporting_evidence": "RLT3/RLT5 evaluated under raw and relative volatility strata",
+      "contradicting_evidence": "neither strong nor complementary robust signal passed",
+      "gate_status": "fail",
+      "activation_recommendation": "inactive"
+    },
+    {
+      "hypothesis_id": "partial_pooling_shrinkage",
+      "supporting_evidence": "no new Plan02 evidence for shrinkage parameters",
+      "contradicting_evidence": "Plan01 decision relevance for shrinkage was inactive",
+      "gate_status": "not_screened",
+      "activation_recommendation": "inactive"
+    },
+    {
+      "hypothesis_id": "fixed_low_capacity_blend",
+      "supporting_evidence": "no qualifying complementary robust signal",
+      "contradicting_evidence": "blend weights/routing are forbidden in Plan02",
+      "gate_status": "not_activated",
+      "activation_recommendation": "inactive"
+    },
+    {
+      "hypothesis_id": "stronger_boosting",
+      "supporting_evidence": "none",
+      "contradicting_evidence": "outside Plan02 scope and no direct evidence",
+      "gate_status": "not_screened",
+      "activation_recommendation": "inactive"
+    },
+    {
+      "hypothesis_id": "remaining_source_groups",
+      "supporting_evidence": "none; no new source in scope",
+      "contradicting_evidence": "external sources remain inactive from prior evidence",
+      "gate_status": "not_screened",
+      "activation_recommendation": "inactive"
+    },
+    {
+      "hypothesis_id": "tuning",
+      "supporting_evidence": "none; window and estimator are pre-registered",
+      "contradicting_evidence": "parameter and threshold search forbidden",
+      "gate_status": "not_screened",
+      "activation_recommendation": "inactive"
+    }
+  ],
+  "s5_complete": false,
+  "s6_entered": false,
+  "reused_artifacts": [
+    "reports/S3_HANDOFFS/S3-Plan03/per_origin_predictions_or_residuals.csv",
+    "reports/S3_HANDOFFS/S3-Plan03/per_origin_metrics.csv",
+    "reports/S3_HANDOFFS/S3-Plan03/baseline_predictor_definitions.csv",
+    "reports/S5_HANDOFFS/S5-Plan01/screening_summary.json"
+  ],
+  "generated_artifacts": [
+    "HANDOFF.md",
+    "screening_metrics.csv",
+    "per_origin_comparison.csv",
+    "volatility_stratum_comparison.csv",
+    "scale_confounding_check.csv",
+    "candidate_definitions.csv",
+    "screening_summary.json",
+    "hypothesis_activation_matrix.csv",
+    "scripts/build_s5_plan02_robust_local_trend_screen.py"
+  ]
+}
