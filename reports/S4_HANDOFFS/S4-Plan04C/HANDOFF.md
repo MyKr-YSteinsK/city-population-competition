@@ -68,28 +68,28 @@
 
 ## Handoff questions
 
-1. **M4C R1/R2 是否超过 B3？**  
+1. **M4C R1/R2 是否超过 B3？**
    resident：否。R1 pooled MSE 908.508412，比 B3 高 36.055761；R2 为 912.418465，高 39.965813。两种 scenario 的 latest 2021 MSE 虽分别改善 2.2087%、0.9065%，但不能抵消全域 pooled loss。registered：pooled MSE 只在数值上略胜，不能升级为稳定 signal。
 
-2. **registered 是否支持？**  
+2. **registered 是否支持？**
    仅作 sensitivity，方向弱支持 pooled 指标：R1 224.904724 < 225.421212，R2 225.389926 < 225.421212；但 R1/R2 origin wins/losses 为 5/6、4/7，latest 在 R2 反而恶化 0.1361%，因此不支持 material、跨 origin 稳定增益。
 
-3. **per-origin wins/losses？**  
+3. **per-origin wins/losses？**
    resident R1 wins 2011;2012;2016;2017;2020;2021、losses 2013;2014;2015;2018;2019；R2 相同。registered R1 wins 2016;2018;2019;2020;2021、losses 2011;2012;2013;2014;2015;2017；R2 wins 2013;2018;2019;2020、losses 2011;2012;2014;2015;2016;2017;2021。
 
-4. **R1→R2 是否明显衰减？**  
+4. **R1→R2 是否明显衰减？**
    是。M4C resident pooled MSE 从 908.508412 增至 912.418465（+3.910053），latest 增 48.252928；registered pooled 增 0.485202，latest 增 5.312219。对每个 target，M4C validation employment feature 在 433/440 个 origin×city scope 中发生变化；两个 target 合计为 866/880。B3 的 R1/R2 prediction/residual/metric 数值保持完全一致。
 
-5. **validation/latest features 中有多少来自 derived rows？**  
+5. **validation/latest features 中有多少来自 derived rows？**
    全部 validation audit 的 latest feature 为 220/1760 rows；recent-2 derived cells 440；recent-3 derived cells 660，包含 derived 的 recent-3 rows 220/1760。2021 latest subset 为 160 rows，其中 latest derived 20、recent-3 derived cells 60。这些是 feature-use counts，不把同一 canonical derived key 在不同 target/scenario scope 的重复使用误报成更多独立 source rows。
 
-6. **gain/loss 是否明显与 derived provenance 关联？**  
+6. **gain/loss 是否明显与 derived provenance 关联？**
    否。按 row-level positive SSE gain 计算，resident derived-window share 为 R1 4.53%、R2 4.93%；candidate wins 落在 derived recent-3 window 的比例分别为 21/183、18/181。registered 对应 positive-gain share 为 2.74%、5.16%。因此没有出现“主要改善依赖 derived-latest / derived-heavy windows”的证据，provenance-sensitive employment signal 不成立。
 
-7. **quarantine 是否零回流？**  
+7. **quarantine 是否零回流？**
    是。employment_provenance_boundary_audit.csv 的 20240 rows 全部 boundary_status=PASS，exact quarantine candidate hit 为 0，且所有 rows 的 quarantine_value_reintroduced=no。runner 只从 canonical employment map 构造 features，quarantine 文件只用于审计边界。
 
-8. **是否值得 deep dive 或拆产业结构？**  
+8. **是否值得 deep dive 或拆产业结构？**
    当前不值得。deep_dive_recommended=false：resident 未过 B3，也未达到“距 B3 ≤1% 且 origin/latest evidence 明显支持”的条件；derived provenance 也没有造成明确 gain concentration。因此本 worker 不继续拆 sector shares、不进入 robustness 扩展、不宣布 S4 complete 或进入 S5。
 
 ## Verification actually passed
