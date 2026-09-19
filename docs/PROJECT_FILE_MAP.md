@@ -36,6 +36,7 @@
 │   ├── build_s3_plan03_pooled_growth_and_ml_hurdle.py
 │   ├── build_s4_plan01_ridge_delta_dynamics.py
 │   ├── build_s4_plan02_urbanization_residual.py
+│   ├── build_s4_plan03_hgb_interaction.py
 │   └── run_s1.py
 └── reports/
     ├── S1_FINAL_REVIEW_PACK.zip
@@ -220,6 +221,30 @@
         ├── b3_compatibility_check.csv
         ├── b3_metric_compatibility_check.csv
         └── plan02_summary.json
+    └── S4_HANDOFFS/S4-Plan03/
+        ├── HANDOFF.md
+        ├── feature_manifest.csv
+        ├── model_definitions.csv
+        ├── modeling_dataset_diagnostics.csv
+        ├── training_geometry.csv
+        ├── feature_missingness_imputation.csv
+        ├── aggregate_metrics.csv
+        ├── per_origin_metrics.csv
+        ├── per_origin_predictions_or_residuals.csv
+        ├── pairwise_b3_comparison.csv
+        ├── feature_ablation_comparison.csv
+        ├── latest_origin_comparison.csv
+        ├── r1_r2_equivalence_check.csv
+        ├── r1_r2_urbanization_sensitivity.csv
+        ├── city_improvement_concentration.csv
+        ├── leave_one_origin_out.csv
+        ├── leave_one_city_sensitivity.csv
+        ├── leakage_audit.csv
+        ├── b3_compatibility_check.csv
+        ├── b3_metric_compatibility_check.csv
+        ├── th_feature_compatibility_check.csv
+        ├── urbanization_information_boundary.csv
+        └── plan03_summary.json
 ```
 
 ## Generated and excluded

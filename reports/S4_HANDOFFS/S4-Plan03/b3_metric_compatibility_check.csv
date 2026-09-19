@@ -1,0 +1,5 @@
+target_id,scenario_id,predictor_id,max_abs_aggregate_delta,status,comparison_rule
+registered,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,0.0,PASS,"B3 pooled, macro and latest MSE delta <= 1e-9"
+registered,R2_CONSERVATIVE_PUBLICATION_STRESS,B3_RECENT_3POINT_OLS_TREND,0.0,PASS,"B3 pooled, macro and latest MSE delta <= 1e-9"
+resident,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,0.0,PASS,"B3 pooled, macro and latest MSE delta <= 1e-9"
+resident,R2_CONSERVATIVE_PUBLICATION_STRESS,B3_RECENT_3POINT_OLS_TREND,0.0,PASS,"B3 pooled, macro and latest MSE delta <= 1e-9"

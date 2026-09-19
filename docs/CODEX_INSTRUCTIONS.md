@@ -2,7 +2,7 @@
 
 ## 当前任务
 
-本仓库保留 S1 最终冻结的数据基础，并维护经 Main/Lab 授权的 S2 Validation Architecture、S3 Baseline Ladder 与 S4 Plan01/02 evidence。当前允许的工作是：维护原始数据目录、运行 7 个领域审计脚本、验证规范化/隔离/溯源输出、维护数据契约，以及在冻结 S2 contract 内执行已授权的 S3/S4 计划。
+本仓库保留 S1 最终冻结的数据基础，并维护经 Main/Lab 授权的 S2 Validation Architecture、S3 Baseline Ladder 与 S4 Plan01/02/03 evidence。当前允许的工作是：维护原始数据目录、运行 7 个领域审计脚本、验证规范化/隔离/溯源输出、维护数据契约，以及在冻结 S2 contract 内执行已授权的 S3/S4 计划。
 
 ## 强制边界
 
@@ -12,7 +12,7 @@
 - 年龄结构只接受 benchmark years `{2000, 2010, 2020}`；非 benchmark 年份不是该表的缺失键。
 - `test.xls` 保留在 `data/quarantine/source/`，不得进入 canonical pipeline。
 - 不修改 7 个合法 XLSX 原始文件；变更前必须记录哈希并在重建后复核。
-- S3 Plan01/Plan02/Plan03 与 S4 Plan01/Plan02 只能在冻结 S2 contract 内执行少量、可解释、可复核的 evidence。S4 Plan01 限定为 target-history-only `TH_CORE`/`TH_SHAPE`、outer-origin `Ridge(alpha=1.0)`、训练 fold 内 preprocessing、R1/R2 equivalence 与完整稳定性审计；S4 Plan02 限定为 canonical `urbanization` 的 D2 residual-bias control、M2A level、M2B level+dynamics，复用 S2 source-specific cap，且不得加入其他 covariates、city identity、tuning、ensemble、预测或 submission。S4 Plan01/02 evidence complete 均不等于整个 S4 完成，也不授权 S5。
+- S3 Plan01/Plan02/Plan03 与 S4 Plan01/Plan02/Plan03 只能在冻结 S2 contract 内执行少量、可解释、可复核的 evidence。S4 Plan01 限定为 target-history-only `TH_CORE`/`TH_SHAPE`、outer-origin `Ridge(alpha=1.0)`、训练 fold 内 preprocessing、R1/R2 equivalence 与完整稳定性审计；S4 Plan02 限定为 canonical `urbanization` 的 D2 residual-bias control、M2A level、M2B level+dynamics，复用 S2 source-specific cap；S4 Plan03 限定为固定低容量 `HistGradientBoostingRegressor` 的 M3A/M3B/M3C B3 residual correction，严格复用 Plan01/02 feature semantics。三者均不得加入其他 covariates、city identity、tuning、model sweep、ensemble、预测或 submission。S4 Plan01/02/03 evidence complete 均不等于整个 S4 完成，也不授权 S5。
 
 ## 运行与交付
 

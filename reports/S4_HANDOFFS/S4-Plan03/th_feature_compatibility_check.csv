@@ -1,0 +1,5 @@
+target_id,scenario_id,rows_compared,max_abs_feature_history_max_year_delta,max_abs_latest_value_delta,max_abs_recent3_ols_projected_change_delta,max_abs_latest_gap_years_delta,max_abs_recent3_span_years_delta,max_abs_slope_disagreement_2v3_delta,max_abs_recent_relative_slope_delta,feature_history_years_exact,status,comparison_rule
+registered,R1_REFERENCE_SNAPSHOT_LAG,440,0.0,0.0,0.0,0.0,0.0,0.0,0.0,PASS,PASS,Plan01 TH feature values and history years match at <=1e-9
+registered,R2_CONSERVATIVE_PUBLICATION_STRESS,440,0.0,0.0,0.0,0.0,0.0,0.0,0.0,PASS,PASS,Plan01 TH feature values and history years match at <=1e-9
+resident,R1_REFERENCE_SNAPSHOT_LAG,440,0.0,0.0,0.0,0.0,0.0,0.0,0.0,PASS,PASS,Plan01 TH feature values and history years match at <=1e-9
+resident,R2_CONSERVATIVE_PUBLICATION_STRESS,440,0.0,0.0,0.0,0.0,0.0,0.0,0.0,PASS,PASS,Plan01 TH feature values and history years match at <=1e-9

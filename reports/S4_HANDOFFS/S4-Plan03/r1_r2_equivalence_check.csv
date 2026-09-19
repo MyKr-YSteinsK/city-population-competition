@@ -1,0 +1,7 @@
+target_id,model_id,r1_scenario_id,r2_scenario_id,rows_compared,max_abs_prediction_delta,max_abs_residual_delta,max_abs_squared_error_delta,pooled_mse_delta,macro_origin_mse_delta,latest_mse_delta,status,comparison_rule
+resident,B3_RECENT_3POINT_OLS_TREND,R1_REFERENCE_SNAPSHOT_LAG,R2_CONSERVATIVE_PUBLICATION_STRESS,440,0.0,0.0,0.0,0.0,0.0,0.0,PASS,R1/R2 target-history-only row and metric deltas <= 1e-9
+resident,M3A_B3_PLUS_HGB_TH_CORE,R1_REFERENCE_SNAPSHOT_LAG,R2_CONSERVATIVE_PUBLICATION_STRESS,440,0.0,0.0,0.0,0.0,0.0,0.0,PASS,R1/R2 target-history-only row and metric deltas <= 1e-9
+resident,M3B_B3_PLUS_HGB_TH_SHAPE,R1_REFERENCE_SNAPSHOT_LAG,R2_CONSERVATIVE_PUBLICATION_STRESS,440,0.0,0.0,0.0,0.0,0.0,0.0,PASS,R1/R2 target-history-only row and metric deltas <= 1e-9
+registered,B3_RECENT_3POINT_OLS_TREND,R1_REFERENCE_SNAPSHOT_LAG,R2_CONSERVATIVE_PUBLICATION_STRESS,440,0.0,0.0,0.0,0.0,0.0,0.0,PASS,R1/R2 target-history-only row and metric deltas <= 1e-9
+registered,M3A_B3_PLUS_HGB_TH_CORE,R1_REFERENCE_SNAPSHOT_LAG,R2_CONSERVATIVE_PUBLICATION_STRESS,440,0.0,0.0,0.0,0.0,0.0,0.0,PASS,R1/R2 target-history-only row and metric deltas <= 1e-9
+registered,M3B_B3_PLUS_HGB_TH_SHAPE,R1_REFERENCE_SNAPSHOT_LAG,R2_CONSERVATIVE_PUBLICATION_STRESS,440,0.0,0.0,0.0,0.0,0.0,0.0,PASS,R1/R2 target-history-only row and metric deltas <= 1e-9
