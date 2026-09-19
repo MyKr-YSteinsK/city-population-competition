@@ -975,7 +975,7 @@ def handoff_text(summary: dict[str, Any]) -> str:
         "## Contract and leakage verification",
         "",
         f"- Plan04 formal compatibility：`{compatibility['status']}`; 1760 rows; model-feature mismatch cells：`{compatibility['model_feature_mismatch_cell_count']}`; label/reference mismatch cells：`{compatibility['label_reference_mismatch_cell_count']}`。",
-        f"- B3 compatibility：`{summary['b3_compatibility']['pass']}`; resident expected pooled MSE `872.452651515143`; registered expected pooled MSE `225.421212121213`. ",
+        f"- B3 compatibility：`{summary['b3_compatibility']['pass']}`; resident expected pooled MSE `872.452651515143`; registered expected pooled MSE `225.421212121213`.",
         f"- Replay boundary rows：`{boundary['row_count']}`; source-cap violations：`{boundary['source_cap_violation_count']}`; quarantine reintroductions：`{boundary['quarantine_reintroduction_count']}`; benchmark violations：`{boundary['benchmark_domain_violation_count']}`。",
         f"- Population-history cutoff violations：`{boundary['population_history_cutoff_violation_count']}`; B3-history cutoff violations：`{boundary['b3_history_cutoff_violation_count']}`。",
         "- Plan04's exact 144-feature contract, source-specific R1/R2 caps, benchmark-only age domain, S1 quarantine, and explicit missingness are retained.",
