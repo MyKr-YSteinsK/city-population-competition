@@ -1,0 +1,68 @@
+record_type,target_id,scenario_id,model_id,baseline_model_id,origin_year,metric_name,metric_value,comparison_value,pooled_mse,macro_origin_mse,latest_2021_mse,scoreable_city_year_count,candidate_origin_wins,candidate_origin_losses,origin_ties,origin_count,relative_improvement_pct,latest_relative_improvement_pct,scenario_equivalent,status,notes
+aggregate,registered,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,,,,,,225.421212121213,225.421212121213,1485.60486111112,440,,,,,,,yes,PASS,R1 model run; target-only cross-city features make R2 numerically equivalent
+aggregate,registered,R1_REFERENCE_SNAPSHOT_LAG,M5B_B3_PLUS_RIDGE_CROSS_CITY_RELATIVE,,,,,,230.549370089565,230.549370089565,1517.981668176054,440,,,,,,,yes,PASS,R1 model run; target-only cross-city features make R2 numerically equivalent
+aggregate,resident,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,,,,,,872.452651515143,872.452651515143,3705.42777777773,440,,,,,,,yes,PASS,R1 model run; target-only cross-city features make R2 numerically equivalent
+aggregate,resident,R1_REFERENCE_SNAPSHOT_LAG,M5B_B3_PLUS_RIDGE_CROSS_CITY_RELATIVE,,,,,,917.617207144046,917.617207144046,3671.890459382366,440,,,,,,,yes,PASS,R1 model run; target-only cross-city features make R2 numerically equivalent
+per_origin,registered,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,,2011,origin_mse,25.877083333333,,,,,40,,,,,,,,PASS,common strict origin; population history <= T-2
+per_origin,registered,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,,2012,origin_mse,18.388888888888,,,,,40,,,,,,,,PASS,common strict origin; population history <= T-2
+per_origin,registered,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,,2013,origin_mse,34.925000000001,,,,,40,,,,,,,,PASS,common strict origin; population history <= T-2
+per_origin,registered,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,,2014,origin_mse,65.003472222226,,,,,40,,,,,,,,PASS,common strict origin; population history <= T-2
+per_origin,registered,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,,2015,origin_mse,40.195833333335,,,,,40,,,,,,,,PASS,common strict origin; population history <= T-2
+per_origin,registered,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,,2016,origin_mse,51.726388888889,,,,,40,,,,,,,,PASS,common strict origin; population history <= T-2
+per_origin,registered,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,,2017,origin_mse,36.456249999995,,,,,40,,,,,,,,PASS,common strict origin; population history <= T-2
+per_origin,registered,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,,2018,origin_mse,107.17916666666,,,,,40,,,,,,,,PASS,common strict origin; population history <= T-2
+per_origin,registered,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,,2019,origin_mse,118.269444444442,,,,,40,,,,,,,,PASS,common strict origin; population history <= T-2
+per_origin,registered,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,,2020,origin_mse,496.006944444456,,,,,40,,,,,,,,PASS,common strict origin; population history <= T-2
+per_origin,registered,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,,2021,origin_mse,1485.60486111112,,,,,40,,,,,,,,PASS,common strict origin; population history <= T-2
+per_origin,registered,R1_REFERENCE_SNAPSHOT_LAG,M5B_B3_PLUS_RIDGE_CROSS_CITY_RELATIVE,,2011,origin_mse,23.562592599035,,,,,40,,,,,,,,PASS,common strict origin; population history <= T-2
+per_origin,registered,R1_REFERENCE_SNAPSHOT_LAG,M5B_B3_PLUS_RIDGE_CROSS_CITY_RELATIVE,,2012,origin_mse,22.249216984329,,,,,40,,,,,,,,PASS,common strict origin; population history <= T-2
+per_origin,registered,R1_REFERENCE_SNAPSHOT_LAG,M5B_B3_PLUS_RIDGE_CROSS_CITY_RELATIVE,,2013,origin_mse,29.012279860775,,,,,40,,,,,,,,PASS,common strict origin; population history <= T-2
+per_origin,registered,R1_REFERENCE_SNAPSHOT_LAG,M5B_B3_PLUS_RIDGE_CROSS_CITY_RELATIVE,,2014,origin_mse,61.165858515118,,,,,40,,,,,,,,PASS,common strict origin; population history <= T-2
+per_origin,registered,R1_REFERENCE_SNAPSHOT_LAG,M5B_B3_PLUS_RIDGE_CROSS_CITY_RELATIVE,,2015,origin_mse,45.537516192085,,,,,40,,,,,,,,PASS,common strict origin; population history <= T-2
+per_origin,registered,R1_REFERENCE_SNAPSHOT_LAG,M5B_B3_PLUS_RIDGE_CROSS_CITY_RELATIVE,,2016,origin_mse,43.946016357539,,,,,40,,,,,,,,PASS,common strict origin; population history <= T-2
+per_origin,registered,R1_REFERENCE_SNAPSHOT_LAG,M5B_B3_PLUS_RIDGE_CROSS_CITY_RELATIVE,,2017,origin_mse,37.375634554195,,,,,40,,,,,,,,PASS,common strict origin; population history <= T-2
+per_origin,registered,R1_REFERENCE_SNAPSHOT_LAG,M5B_B3_PLUS_RIDGE_CROSS_CITY_RELATIVE,,2018,origin_mse,112.191166997019,,,,,40,,,,,,,,PASS,common strict origin; population history <= T-2
+per_origin,registered,R1_REFERENCE_SNAPSHOT_LAG,M5B_B3_PLUS_RIDGE_CROSS_CITY_RELATIVE,,2019,origin_mse,131.40575111094,,,,,40,,,,,,,,PASS,common strict origin; population history <= T-2
+per_origin,registered,R1_REFERENCE_SNAPSHOT_LAG,M5B_B3_PLUS_RIDGE_CROSS_CITY_RELATIVE,,2020,origin_mse,511.615369638128,,,,,40,,,,,,,,PASS,common strict origin; population history <= T-2
+per_origin,registered,R1_REFERENCE_SNAPSHOT_LAG,M5B_B3_PLUS_RIDGE_CROSS_CITY_RELATIVE,,2021,origin_mse,1517.981668176054,,,,,40,,,,,,,,PASS,common strict origin; population history <= T-2
+per_origin,resident,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,,2011,origin_mse,415.288194444443,,,,,40,,,,,,,,PASS,common strict origin; population history <= T-2
+per_origin,resident,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,,2012,origin_mse,503.059722222222,,,,,40,,,,,,,,PASS,common strict origin; population history <= T-2
+per_origin,resident,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,,2013,origin_mse,922.348611111096,,,,,40,,,,,,,,PASS,common strict origin; population history <= T-2
+per_origin,resident,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,,2014,origin_mse,1121.434722222215,,,,,40,,,,,,,,PASS,common strict origin; population history <= T-2
+per_origin,resident,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,,2015,origin_mse,121.451388888887,,,,,40,,,,,,,,PASS,common strict origin; population history <= T-2
+per_origin,resident,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,,2016,origin_mse,66.409027777774,,,,,40,,,,,,,,PASS,common strict origin; population history <= T-2
+per_origin,resident,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,,2017,origin_mse,163.637500000004,,,,,40,,,,,,,,PASS,common strict origin; population history <= T-2
+per_origin,resident,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,,2018,origin_mse,115.988888888912,,,,,40,,,,,,,,PASS,common strict origin; population history <= T-2
+per_origin,resident,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,,2019,origin_mse,100.724999999989,,,,,40,,,,,,,,PASS,common strict origin; population history <= T-2
+per_origin,resident,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,,2020,origin_mse,2361.208333333298,,,,,40,,,,,,,,PASS,common strict origin; population history <= T-2
+per_origin,resident,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,,2021,origin_mse,3705.42777777773,,,,,40,,,,,,,,PASS,common strict origin; population history <= T-2
+per_origin,resident,R1_REFERENCE_SNAPSHOT_LAG,M5B_B3_PLUS_RIDGE_CROSS_CITY_RELATIVE,,2011,origin_mse,359.587108368014,,,,,40,,,,,,,,PASS,common strict origin; population history <= T-2
+per_origin,resident,R1_REFERENCE_SNAPSHOT_LAG,M5B_B3_PLUS_RIDGE_CROSS_CITY_RELATIVE,,2012,origin_mse,422.810731397268,,,,,40,,,,,,,,PASS,common strict origin; population history <= T-2
+per_origin,resident,R1_REFERENCE_SNAPSHOT_LAG,M5B_B3_PLUS_RIDGE_CROSS_CITY_RELATIVE,,2013,origin_mse,1091.069801698726,,,,,40,,,,,,,,PASS,common strict origin; population history <= T-2
+per_origin,resident,R1_REFERENCE_SNAPSHOT_LAG,M5B_B3_PLUS_RIDGE_CROSS_CITY_RELATIVE,,2014,origin_mse,1560.399817170575,,,,,40,,,,,,,,PASS,common strict origin; population history <= T-2
+per_origin,resident,R1_REFERENCE_SNAPSHOT_LAG,M5B_B3_PLUS_RIDGE_CROSS_CITY_RELATIVE,,2015,origin_mse,192.470725481437,,,,,40,,,,,,,,PASS,common strict origin; population history <= T-2
+per_origin,resident,R1_REFERENCE_SNAPSHOT_LAG,M5B_B3_PLUS_RIDGE_CROSS_CITY_RELATIVE,,2016,origin_mse,76.371322816489,,,,,40,,,,,,,,PASS,common strict origin; population history <= T-2
+per_origin,resident,R1_REFERENCE_SNAPSHOT_LAG,M5B_B3_PLUS_RIDGE_CROSS_CITY_RELATIVE,,2017,origin_mse,197.478121152714,,,,,40,,,,,,,,PASS,common strict origin; population history <= T-2
+per_origin,resident,R1_REFERENCE_SNAPSHOT_LAG,M5B_B3_PLUS_RIDGE_CROSS_CITY_RELATIVE,,2018,origin_mse,140.578411447386,,,,,40,,,,,,,,PASS,common strict origin; population history <= T-2
+per_origin,resident,R1_REFERENCE_SNAPSHOT_LAG,M5B_B3_PLUS_RIDGE_CROSS_CITY_RELATIVE,,2019,origin_mse,122.09878179458,,,,,40,,,,,,,,PASS,common strict origin; population history <= T-2
+per_origin,resident,R1_REFERENCE_SNAPSHOT_LAG,M5B_B3_PLUS_RIDGE_CROSS_CITY_RELATIVE,,2020,origin_mse,2259.033997874947,,,,,40,,,,,,,,PASS,common strict origin; population history <= T-2
+per_origin,resident,R1_REFERENCE_SNAPSHOT_LAG,M5B_B3_PLUS_RIDGE_CROSS_CITY_RELATIVE,,2021,origin_mse,3671.890459382366,,,,,40,,,,,,,,PASS,common strict origin; population history <= T-2
+pairwise,resident,R1_REFERENCE_SNAPSHOT_LAG,M5B_B3_PLUS_RIDGE_CROSS_CITY_RELATIVE,B3_RECENT_3POINT_OLS_TREND,,,,872.452651515143,917.617207144046,,3671.890459382366,,4,7,0,11,-5.176734296178,0.905086279012,yes,PASS,positive improvement means M5B lower MSE than B3
+pairwise,registered,R1_REFERENCE_SNAPSHOT_LAG,M5B_B3_PLUS_RIDGE_CROSS_CITY_RELATIVE,B3_RECENT_3POINT_OLS_TREND,,,,225.421212121213,230.549370089565,,1517.981668176054,,4,7,0,11,-2.274922541715,-2.179368680897,yes,PASS,positive improvement means M5B lower MSE than B3
+scenario_equivalence,,R1_vs_R2,,,,cross_city_feature_mismatch_count,0,0,,,,,,,,,,,yes,PASS,same target-only population information set and same pseudo-origin cross-section
+sanity,,,,,,b3_row_compatibility,1,1,,,,,,,,,,,,PASS,B3 row-level prediction/residual/squared-error delta <= 1e-9
+sanity,,,,,,b3_metric_compatibility,1,1,,,,,,,,,,,,PASS,B3 pooled/macro/latest MSE delta <= 1e-9
+sanity,,,,,,cross_city_feature_mismatch_count,0,0,,,,,,,,,,,,PASS,R1/R2 feature table equality
+sanity,,,,,,population_t_minus_2_fail_count,0,0,,,,,,,,,,,,PASS,B3 state uses only population history <= pseudo-target-2
+sanity,,,,,,preprocessing_fit_rows_mismatch_count,0,0,,,,,,,,,,,,PASS,fold-local imputer/scaler/Ridge use the same training rows
+sanity,,,,,,cross_city_boundary_fail_count,0,0,,,,,,,,,,,,PASS,cross-sectional statistics use same pseudo-origin allowed data
+sanity,,,,,,resident_validation_rows,440,440,,,,,,,,,,,,PASS,resident validation coverage
+sanity,,,,,,registered_validation_rows,440,440,,,,,,,,,,,,PASS,registered validation coverage
+top3_prediction_change,resident,,M5B_B3_PLUS_RIDGE_CROSS_CITY_RELATIVE,,,top1_absolute_prediction_change,117.40541881732,0.051148295487,,,,,,,,,,,,PASS,city=city34; sum abs(predicted B3 residual) across 11 origins
+top3_prediction_change,resident,,M5B_B3_PLUS_RIDGE_CROSS_CITY_RELATIVE,,,top2_absolute_prediction_change,114.855228681005,0.050037291583,,,,,,,,,,,,PASS,city=city26; sum abs(predicted B3 residual) across 11 origins
+top3_prediction_change,resident,,M5B_B3_PLUS_RIDGE_CROSS_CITY_RELATIVE,,,top3_absolute_prediction_change,99.929143492813,0.043534663141,,,,,,,,,,,,PASS,city=city15; sum abs(predicted B3 residual) across 11 origins
+top3_prediction_change,resident,,M5B_B3_PLUS_RIDGE_CROSS_CITY_RELATIVE,,,top3_absolute_prediction_change_share,0.144720250211,1.0,,,,,,,,,,,,PASS,light concentration sanity; not a leave-one-city analysis
+top3_prediction_change,registered,,M5B_B3_PLUS_RIDGE_CROSS_CITY_RELATIVE,,,top1_absolute_prediction_change,34.73110893011,0.045377179777,,,,,,,,,,,,PASS,city=city4; sum abs(predicted B3 residual) across 11 origins
+top3_prediction_change,registered,,M5B_B3_PLUS_RIDGE_CROSS_CITY_RELATIVE,,,top2_absolute_prediction_change,34.576815447524,0.045175590962,,,,,,,,,,,,PASS,city=city26; sum abs(predicted B3 residual) across 11 origins
+top3_prediction_change,registered,,M5B_B3_PLUS_RIDGE_CROSS_CITY_RELATIVE,,,top3_absolute_prediction_change,34.018421810603,0.044446033823,,,,,,,,,,,,PASS,city=city37; sum abs(predicted B3 residual) across 11 origins
+top3_prediction_change,registered,,M5B_B3_PLUS_RIDGE_CROSS_CITY_RELATIVE,,,top3_absolute_prediction_change_share,0.134998804561,1.0,,,,,,,,,,,,PASS,light concentration sanity; not a leave-one-city analysis
