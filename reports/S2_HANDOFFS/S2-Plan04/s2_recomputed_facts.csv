@@ -1,0 +1,14 @@
+fact_id,value
+plan01_candidate_years_P1,2009;2010;2011;2012;2013;2014;2015;2016;2017;2018;2019;2020;2021
+plan01_candidate_years_P2,2009;2010;2011;2012;2013;2014;2015;2016;2017;2018;2019;2020;2021
+plan02_resident_2023_history_ready_city_count,40
+plan02_R1_resident_candidate_years,2010;2011;2012;2013;2014;2015;2016;2017;2018;2019;2020;2021
+plan02_R2_resident_candidate_years,2010;2011;2012;2013;2014;2015;2016;2017;2018;2019;2020;2021
+plan03_R1_resident_candidate_years,2010;2011;2012;2013;2014;2015;2016;2017;2018;2019;2020;2021
+plan03_R1_registered_candidate_years,2011;2012;2013;2014;2015;2016;2017;2018;2019;2020;2021
+plan03_R2_resident_candidate_years,2010;2011;2012;2013;2014;2015;2016;2017;2018;2019;2020;2021
+plan03_R2_registered_candidate_years,2011;2012;2013;2014;2015;2016;2017;2018;2019;2020;2021
+plan03_target_contract_status,PRIMARY_PROXY_WITH_SENSITIVITY_TARGET
+plan03_primary_metric,MSE
+plan03_auxiliary_metric,RMSE
+plan03_cross_origin_aggregation,UNRESOLVED_DEFERRED

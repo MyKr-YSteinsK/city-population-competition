@@ -1,0 +1,54 @@
+fact_id,layer,old_value,new_value,changed,impact_level,downstream_implication
+plan01.population_inventory.canonical_row_count,S2-Plan01,717,718,yes,diagnostic,Plan01 inventory is refreshed in delta evidence; historical Plan01 handoff remains unchanged.
+plan01.population_inventory.value_row_count,S2-Plan01,717,718,yes,diagnostic,Plan01 inventory is refreshed in delta evidence; historical Plan01 handoff remains unchanged.
+plan01.population_inventory.missing_value_cells,S2-Plan01,35,36,yes,diagnostic,Plan01 inventory is refreshed in delta evidence; historical Plan01 handoff remains unchanged.
+plan01.population_inventory.row_year_min,S2-Plan01,2001,2001,no,diagnostic,Plan01 inventory is refreshed in delta evidence; historical Plan01 handoff remains unchanged.
+plan01.population_inventory.row_year_max,S2-Plan01,2021,2021,no,diagnostic,Plan01 inventory is refreshed in delta evidence; historical Plan01 handoff remains unchanged.
+plan01.resident_2001_label_city_count,S2-Plan01,21,22,yes,diagnostic,Early target-label coverage is recomputed without changing the structural screen.
+plan01.resident_2001_history_ready_city_count,S2-Plan01,0,0,no,diagnostic,Prior target-history count is recomputed from the refreshed canonical population.
+plan01.resident_2004_label_city_count,S2-Plan01,11,11,no,diagnostic,Target-label coverage remains comparable to the historical matrix.
+plan01.resident_2004_history_ready_city_count,S2-Plan01,11,11,no,diagnostic,Prior target-history count is recomputed from the refreshed canonical population.
+plan01.resident_2010_label_city_count,S2-Plan01,40,40,no,diagnostic,Target-label coverage remains comparable to the historical matrix.
+plan01.resident_2010_history_ready_city_count,S2-Plan01,40,40,no,diagnostic,Prior target-history count is recomputed from the refreshed canonical population.
+plan01.P1_ASOF_T_MINUS_1.candidate_years,S2-Plan01,2009;2010;2011;2012;2013;2014;2015;2016;2017;2018;2019;2020;2021,2009;2010;2011;2012;2013;2014;2015;2016;2017;2018;2019;2020;2021,no,candidate geometry,Candidate-origin set is explicitly compared; no historical handoff rewrite.
+plan01.P2_ASOF_T_MINUS_2.candidate_years,S2-Plan01,2009;2010;2011;2012;2013;2014;2015;2016;2017;2018;2019;2020;2021,2009;2010;2011;2012;2013;2014;2015;2016;2017;2018;2019;2020;2021,no,candidate geometry,Candidate-origin set is explicitly compared; no historical handoff rewrite.
+plan01.candidate_classification_changed_rows,S2-Plan01,0,0,no,candidate geometry,No Plan01 candidate classification changed if this remains zero.
+plan02.resident.R1_REFERENCE_SNAPSHOT_LAG.candidate_years,S2-Plan02,2010;2011;2012;2013;2014;2015;2016;2017;2018;2019;2020;2021,2010;2011;2012;2013;2014;2015;2016;2017;2018;2019;2020;2021,no,candidate geometry,Source-specific resident-origin geometry is compared against the historical Plan02 artifact.
+plan02.resident.R1_REFERENCE_SNAPSHOT_LAG.conditional_years,S2-Plan02,2007;2008;2009,2007;2008;2009,no,candidate geometry,Source-specific resident-origin geometry is compared against the historical Plan02 artifact.
+plan02.resident.R1_REFERENCE_SNAPSHOT_LAG.exclude_years,S2-Plan02,2001;2002;2003;2004;2005;2006;2022;2023,2001;2002;2003;2004;2005;2006;2022;2023,no,candidate geometry,Source-specific resident-origin geometry is compared against the historical Plan02 artifact.
+plan02.resident.R2_CONSERVATIVE_PUBLICATION_STRESS.candidate_years,S2-Plan02,2010;2011;2012;2013;2014;2015;2016;2017;2018;2019;2020;2021,2010;2011;2012;2013;2014;2015;2016;2017;2018;2019;2020;2021,no,candidate geometry,Source-specific resident-origin geometry is compared against the historical Plan02 artifact.
+plan02.resident.R2_CONSERVATIVE_PUBLICATION_STRESS.conditional_years,S2-Plan02,2007;2008;2009,2007;2008;2009,no,candidate geometry,Source-specific resident-origin geometry is compared against the historical Plan02 artifact.
+plan02.resident.R2_CONSERVATIVE_PUBLICATION_STRESS.exclude_years,S2-Plan02,2001;2002;2003;2004;2005;2006;2022;2023,2001;2002;2003;2004;2005;2006;2022;2023,no,candidate geometry,Source-specific resident-origin geometry is compared against the historical Plan02 artifact.
+plan02.resident_2023.target_label_available_city_count,S2-Plan02,0,0,no,diagnostic,The 2023 resident target horizon is recomputed without changing the two-year horizon rule.
+plan02.resident_2023.history_ready_city_count,S2-Plan02,40,40,no,diagnostic,The 2023 resident target horizon is recomputed without changing the two-year horizon rule.
+plan02.resident_2023.history_min_labels_per_city,S2-Plan02,15,15,no,diagnostic,The 2023 resident target horizon is recomputed without changing the two-year horizon rule.
+plan02.resident_2023.history_max_labels_per_city,S2-Plan02,21,21,no,diagnostic,The 2023 resident target horizon is recomputed without changing the two-year horizon rule.
+plan02.resident_target_horizon_years,S2-Plan02,2,2,no,contract boundary,The resident 2023 target horizon remains two years because the latest observed target year remains 2021.
+plan03.resident.observed_nonempty_row_count,S2-Plan03,692,693,yes,target evidence,Target evidence count is refreshed from the new canonical population.
+plan03.resident.same_year_age_overlap_n,S2-Plan03,75,75,no,target evidence,Age benchmark semantics remain unchanged; only overlapping population history is recomputed.
+plan03.resident.R1_REFERENCE_SNAPSHOT_LAG.candidate_years,S2-Plan03,2010;2011;2012;2013;2014;2015;2016;2017;2018;2019;2020;2021,2010;2011;2012;2013;2014;2015;2016;2017;2018;2019;2020;2021,no,candidate geometry,Target-origin comparison is refreshed while preserving resident/registered sensitivity.
+plan03.resident.R1_REFERENCE_SNAPSHOT_LAG.conditional_years,S2-Plan03,2007;2008;2009,2007;2008;2009,no,candidate geometry,Target-origin comparison is refreshed while preserving resident/registered sensitivity.
+plan03.resident.R1_REFERENCE_SNAPSHOT_LAG.exclude_years,S2-Plan03,2001;2002;2003;2004;2005;2006;2022;2023,2001;2002;2003;2004;2005;2006;2022;2023,no,candidate geometry,Target-origin comparison is refreshed while preserving resident/registered sensitivity.
+plan03.resident.R2_CONSERVATIVE_PUBLICATION_STRESS.candidate_years,S2-Plan03,2010;2011;2012;2013;2014;2015;2016;2017;2018;2019;2020;2021,2010;2011;2012;2013;2014;2015;2016;2017;2018;2019;2020;2021,no,candidate geometry,Target-origin comparison is refreshed while preserving resident/registered sensitivity.
+plan03.resident.R2_CONSERVATIVE_PUBLICATION_STRESS.conditional_years,S2-Plan03,2007;2008;2009,2007;2008;2009,no,candidate geometry,Target-origin comparison is refreshed while preserving resident/registered sensitivity.
+plan03.resident.R2_CONSERVATIVE_PUBLICATION_STRESS.exclude_years,S2-Plan03,2001;2002;2003;2004;2005;2006;2022;2023,2001;2002;2003;2004;2005;2006;2022;2023,no,candidate geometry,Target-origin comparison is refreshed while preserving resident/registered sensitivity.
+plan03.registered.observed_nonempty_row_count,S2-Plan03,707,707,no,target evidence,Target evidence count is refreshed from the new canonical population.
+plan03.registered.same_year_age_overlap_n,S2-Plan03,75,75,no,target evidence,Age benchmark semantics remain unchanged; only overlapping population history is recomputed.
+plan03.registered.R1_REFERENCE_SNAPSHOT_LAG.candidate_years,S2-Plan03,2011;2012;2013;2014;2015;2016;2017;2018;2019;2020;2021,2011;2012;2013;2014;2015;2016;2017;2018;2019;2020;2021,no,candidate geometry,Target-origin comparison is refreshed while preserving resident/registered sensitivity.
+plan03.registered.R1_REFERENCE_SNAPSHOT_LAG.conditional_years,S2-Plan03,2007;2008;2009;2010,2007;2008;2009;2010,no,candidate geometry,Target-origin comparison is refreshed while preserving resident/registered sensitivity.
+plan03.registered.R1_REFERENCE_SNAPSHOT_LAG.exclude_years,S2-Plan03,2001;2002;2003;2004;2005;2006;2022;2023,2001;2002;2003;2004;2005;2006;2022;2023,no,candidate geometry,Target-origin comparison is refreshed while preserving resident/registered sensitivity.
+plan03.registered.R2_CONSERVATIVE_PUBLICATION_STRESS.candidate_years,S2-Plan03,2011;2012;2013;2014;2015;2016;2017;2018;2019;2020;2021,2011;2012;2013;2014;2015;2016;2017;2018;2019;2020;2021,no,candidate geometry,Target-origin comparison is refreshed while preserving resident/registered sensitivity.
+plan03.registered.R2_CONSERVATIVE_PUBLICATION_STRESS.conditional_years,S2-Plan03,2007;2008;2009;2010,2007;2008;2009;2010,no,candidate geometry,Target-origin comparison is refreshed while preserving resident/registered sensitivity.
+plan03.registered.R2_CONSERVATIVE_PUBLICATION_STRESS.exclude_years,S2-Plan03,2001;2002;2003;2004;2005;2006;2022;2023,2001;2002;2003;2004;2005;2006;2022;2023,no,candidate geometry,Target-origin comparison is refreshed while preserving resident/registered sensitivity.
+plan03.resident_age_offset_1.overlap_n,S2-Plan03,81,81,no,diagnostic,The new 2001 resident label can affect the offset diagnostic only; same-year benchmark semantics remain primary.
+plan03.resident_age_offset_1.mean_absolute_diff,S2-Plan03,13.851852,13.851852,no,diagnostic,The new 2001 resident label can affect the offset diagnostic only; same-year benchmark semantics remain primary.
+plan03.resident_age_offset_1.median_absolute_diff,S2-Plan03,1.000000,1.000000,no,diagnostic,The new 2001 resident label can affect the offset diagnostic only; same-year benchmark semantics remain primary.
+plan03.resident_age_offset_1.mean_relative_absolute_diff,S2-Plan03,0.024923,0.024923,no,diagnostic,The new 2001 resident label can affect the offset diagnostic only; same-year benchmark semantics remain primary.
+plan03.resident_age_offset_1.mean_signed_diff,S2-Plan03,-3.061728,-3.061728,no,diagnostic,The new 2001 resident label can affect the offset diagnostic only; same-year benchmark semantics remain primary.
+plan03.resident_best_temporal_offset_diagnostic,S2-Plan03,1,1,no,diagnostic,No temporal lag is promoted to an official target definition.
+plan03.target_contract_status,S2-Plan03,PRIMARY_PROXY_WITH_SENSITIVITY_TARGET,PRIMARY_PROXY_WITH_SENSITIVITY_TARGET,no,contract boundary,"Target classification remains conditional, with resident primary and registered sensitivity."
+plan03.primary_metric,S2-Plan03,MSE,MSE,no,contract boundary,Metric contract is unaffected by a historical source-row addition.
+plan03.auxiliary_metric,S2-Plan03,RMSE,RMSE,no,contract boundary,Metric contract is unaffected by a historical source-row addition.
+plan03.cross_origin_aggregation,S2-Plan03,UNRESOLVED_DEFERRED,UNRESOLVED_DEFERRED,no,contract boundary,Cross-origin aggregation remains deliberately unresolved.
+plan03.age_complete_rows_used,S2-Plan03,91,91,no,contract boundary,"Age partial/invalidated rows are still excluded, not filled."
+plan03.employee_provenance_rows_preserved,S2-Plan03,91,91,no,contract boundary,Employee provenance is outside the population refresh and remains unchanged.

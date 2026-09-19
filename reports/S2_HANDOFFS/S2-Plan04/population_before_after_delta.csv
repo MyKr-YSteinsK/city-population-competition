@@ -1,0 +1,14 @@
+fact_id,old_value,new_value,changed,impact_level,downstream_implication
+canonical_row_count,717,718,yes,S1,Refreshes the population canonical source; all downstream population-derived counts must use the new row.
+常住人口（万人）_nonempty_count,692,693,yes,S1/S2,Adds one valid resident historical label; target label semantics do not become official by this change.
+户籍人口（万人）_nonempty_count,707,707,no,S1/S2,Registered target history is unchanged; its sensitivity role remains required.
+常住人口（万人）_missing_count,25,25,no,S1,Source missingness remains explicit; no value is filled.
+户籍人口（万人）_missing_count,10,11,yes,S1,The new row has registered missingness; retain it as missing.
+canonical_missing_cell_count,35,36,yes,S1,The contract and quality registry must report current missing cells.
+city40_2001_resident,,284.0,yes,S1,Confirms the official source fact was absorbed by canonicalization.
+city40_2001_registered,,,no,S1,Confirms the official source leaves registered population missing.
+常住人口（万人）_2001_label_count,21,22,yes,S2,Plan01 early target-label coverage increases by one city but remains below the 90% screen.
+户籍人口（万人）_2001_label_count,16,16,no,S2,Registered target-label coverage is unchanged.
+unique_key_count,717,718,yes,S1,The city-year key remains unique after the refresh.
+year_min,2001,2001,no,boundary,The observed source year domain remains unchanged.
+year_max,2021,2021,no,boundary,The observed source year domain remains unchanged.

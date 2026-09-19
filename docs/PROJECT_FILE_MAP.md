@@ -29,6 +29,7 @@
 │   ├── build_s2_plan01_matrix.py
 │   ├── build_s2_plan02_geometry.py
 │   ├── build_s2_plan03_target_metric_contract.py
+│   ├── build_s2_plan04_official_population_reconciliation.py
 │   └── run_s1.py
 └── reports/
     ├── S1_FINAL_REVIEW_PACK.zip
@@ -63,6 +64,17 @@
         ├── metric_sanity_results.csv
         ├── local_target_metric_contract.csv
         └── plan03_summary.json
+    └── S2_HANDOFFS/S2-Plan04/
+        ├── HANDOFF.md
+        ├── raw_source_hash_evidence.csv
+        ├── population_source_reconciliation.csv
+        ├── population_before_after_delta.csv
+        ├── s1_population_contract_evidence.csv
+        ├── s1_population_quality_evidence.csv
+        ├── s2_population_impact_delta.csv
+        ├── s2_recomputed_facts.csv
+        ├── reproducibility_evidence.json
+        └── plan04_summary.json
 ```
 
 ## Generated and excluded

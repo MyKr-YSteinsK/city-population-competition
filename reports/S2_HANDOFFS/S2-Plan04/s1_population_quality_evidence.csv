@@ -1,0 +1,3 @@
+snapshot,issue_id,dataset,affected_keys_or_coverage,status,evidence,decision,downstream_warning,source_ref
+before,QI-004,population,40-city source grid with resident missing=25 and registered missing=10,preserved coverage gap,Population canonical rows and zero-sentinel assertion were reproduced.,preserve source-specific missingness,Do not reconstruct population values at source-normalization stage.,data/normalized/人口规模.csv
+after,QI-004,population,40-city source grid with resident missing=25 and registered missing=11,preserved coverage gap,Population canonical rows and zero-sentinel assertion were reproduced.,preserve source-specific missingness,Do not reconstruct population values at source-normalization stage.,data/normalized/人口规模.csv

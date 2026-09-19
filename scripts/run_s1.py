@@ -440,6 +440,9 @@ def write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
 
 
 def quality_rows() -> list[dict[str, str]]:
+    population = pd.read_csv(NORMALIZED_DIR / "人口规模.csv")
+    resident_missing = int(population["常住人口（万人）"].isna().sum())
+    registered_missing = int(population["户籍人口（万人）"].isna().sum())
     return [
         {
             "issue_id": "QI-001",
@@ -482,7 +485,10 @@ def quality_rows() -> list[dict[str, str]]:
             "scope": "source coverage",
             "dataset": "population",
             "sheet": "人口规模",
-            "affected_keys_or_coverage": "40-city source grid with resident missing=25 and registered missing=10",
+            "affected_keys_or_coverage": (
+                f"40-city source grid with resident missing={resident_missing} "
+                f"and registered missing={registered_missing}"
+            ),
             "status": "preserved coverage gap",
             "evidence": "Population canonical rows and zero-sentinel assertion were reproduced.",
             "decision": "preserve source-specific missingness",

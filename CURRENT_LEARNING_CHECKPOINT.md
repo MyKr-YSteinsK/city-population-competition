@@ -25,6 +25,8 @@
 - 员工派生行保留独立 provenance；隔离值保持缺失，不回灌为伪装的原始事实。
 - Main 已对照 Brief / Plan 与仓库 handoff 完成最终验收，S1 不再继续扩展。
 - S2 Plan03 已建立条件化的本地 target/metric contract：常住人口是主代理目标，户籍人口是敏感性目标；MSE 为主指标、RMSE 为辅助指标；跨 origin 聚合方式仍延后冻结。
+- S2 Plan04 已吸收并核验官方人口 source：只替换人口 raw workbook，S1 full rebuild 在刷新后通过；`city40-2001` 常住人口为 284、户籍人口保持缺失。
+- Plan04 的 delta 证明 resident 2010 T-2 历史就绪城市由 37 增至 38，但 Plan01–03 candidate origins、target contract、MSE/RMSE contract 与核心 validation 结论保持不变。
 
 ## Partial / Fragile
 
@@ -32,6 +34,7 @@
 - 各源的真实发布时间与 forecast-origin availability 仍未知；仓库明确标记为 unknown，应在 S2 作为 information-set 约束处理。
 - 赛题 target 的官方精确映射仍未被源材料完全证明；resident/registered sensitivity 与 publication timing 仍需保留为不确定性。
 - PDF 的 MSE / RMSE 表述冲突已在本地 evaluator 规则中显式隔离，但跨 origin 的最终聚合方式尚未冻结。
+- 官方 source reconciliation 已完成，但真实 publication timing、官方 target 映射与跨 origin 聚合仍未由本轮 source 修正解决。
 
 ## Open Questions
 
