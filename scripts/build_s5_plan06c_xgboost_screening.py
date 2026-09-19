@@ -307,7 +307,9 @@ def load_contracts() -> dict[str, Any]:
     assert wave["data_contract"]["replay_row_count"] == 2320
     assert wave["data_contract"]["model_feature_count"] == 144
     assert parallel["feature_contract_version"] == FEATURE_CONTRACT_VERSION
-    assert parallel["replay_contract_version"] == REPLAY_CONTRACT_VERSION
+    # The parallel-worker contract names its replay version ``contract_version``;
+    # the wave contract uses the more explicit ``replay_contract_version``.
+    assert parallel["contract_version"] == REPLAY_CONTRACT_VERSION
     assert oof_header == [
         "model_id",
         "framing_id",
