@@ -1,0 +1,322 @@
+{
+  "audit_column_count": 264,
+  "b3_compatibility": {
+    "checks": [
+      {
+        "macro_delta_vs_frozen": -1.1368683772161603e-13,
+        "pooled_delta_vs_frozen": -1.1368683772161603e-13,
+        "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+        "status": "PASS",
+        "target_id": "resident"
+      },
+      {
+        "macro_delta_vs_frozen": -1.1368683772161603e-13,
+        "pooled_delta_vs_frozen": -1.1368683772161603e-13,
+        "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+        "status": "PASS",
+        "target_id": "resident"
+      },
+      {
+        "macro_delta_vs_frozen": 2.2737367544323206e-13,
+        "pooled_delta_vs_frozen": 2.5579538487363607e-13,
+        "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+        "status": "PASS",
+        "target_id": "registered"
+      },
+      {
+        "macro_delta_vs_frozen": 2.2737367544323206e-13,
+        "pooled_delta_vs_frozen": 2.5579538487363607e-13,
+        "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+        "status": "PASS",
+        "target_id": "registered"
+      }
+    ],
+    "expected_pooled_mse": {
+      "registered": 225.421212121213,
+      "resident": 872.452651515143
+    },
+    "observed": {
+      "registered_R1_REFERENCE_SNAPSHOT_LAG": {
+        "latest_2021_mse": 1485.6048611111196,
+        "macro_origin_mse": 225.42121212121322,
+        "pooled_mse": 225.42121212121324,
+        "scoreable_rows": 440
+      },
+      "registered_R2_CONSERVATIVE_PUBLICATION_STRESS": {
+        "latest_2021_mse": 1485.6048611111196,
+        "macro_origin_mse": 225.42121212121322,
+        "pooled_mse": 225.42121212121324,
+        "scoreable_rows": 440
+      },
+      "resident_R1_REFERENCE_SNAPSHOT_LAG": {
+        "latest_2021_mse": 3705.42777777773,
+        "macro_origin_mse": 872.4526515151429,
+        "pooled_mse": 872.4526515151429,
+        "scoreable_rows": 440
+      },
+      "resident_R2_CONSERVATIVE_PUBLICATION_STRESS": {
+        "latest_2021_mse": 3705.42777777773,
+        "macro_origin_mse": 872.4526515151429,
+        "pooled_mse": 872.4526515151429,
+        "scoreable_rows": 440
+      }
+    },
+    "pass": true
+  },
+  "base_sha": "d75ec4b9b1b392003c18201fa4b27899720f3c81",
+  "boundary_checks": {
+    "annual_interpolation_used": false,
+    "benchmark_domain_violation_count": 0,
+    "density_dynamic_guard_all_pass": true,
+    "employment_provenance_rows": 91,
+    "feature_selection_by_target_performance": false,
+    "final_2023_forecast_run": false,
+    "global_fill_used": false,
+    "imputer_fitted": false,
+    "model_fit_run": false,
+    "new_external_source_used": false,
+    "quarantine_reintroduction_count": 0,
+    "routing_or_gate_model_run": false,
+    "source_used_years_never_exceed_cap": true,
+    "submission_run": false,
+    "target_history_max_year_never_exceeds_T_minus_2": true,
+    "test_xls_used": false
+  },
+  "build_commit": "d75ec4b9b1b392003c18201fa4b27899720f3c81",
+  "city_count": 40,
+  "common_origins": [
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021
+  ],
+  "expected_matrix_rows": 1760,
+  "feature_availability_rows": 396,
+  "feature_contract_version": "S5-Plan04-FULL-MULTISOURCE-V1",
+  "feature_group_counts": {
+    "FG-AGE": 16,
+    "FG-D": 9,
+    "FG-EMP": 10,
+    "FG-LIFE": 55,
+    "FG-P": 17,
+    "FG-SECTOR": 14,
+    "FG-U": 7,
+    "FG-UNEMP": 7,
+    "FG-WAGE": 9
+  },
+  "feature_nonmissing_summary": {
+    "FG-AGE": {
+      "feature_count": 16,
+      "nonmissing_cells": 20124,
+      "total_cells": 28160
+    },
+    "FG-D": {
+      "feature_count": 9,
+      "nonmissing_cells": 15476,
+      "total_cells": 15840
+    },
+    "FG-EMP": {
+      "feature_count": 10,
+      "nonmissing_cells": 16676,
+      "total_cells": 17600
+    },
+    "FG-LIFE": {
+      "feature_count": 55,
+      "nonmissing_cells": 51924,
+      "total_cells": 96800
+    },
+    "FG-P": {
+      "feature_count": 17,
+      "nonmissing_cells": 29920,
+      "total_cells": 29920
+    },
+    "FG-SECTOR": {
+      "feature_count": 14,
+      "nonmissing_cells": 24640,
+      "total_cells": 24640
+    },
+    "FG-U": {
+      "feature_count": 7,
+      "nonmissing_cells": 12320,
+      "total_cells": 12320
+    },
+    "FG-UNEMP": {
+      "feature_count": 7,
+      "nonmissing_cells": 11564,
+      "total_cells": 12320
+    },
+    "FG-WAGE": {
+      "feature_count": 9,
+      "nonmissing_cells": 15840,
+      "total_cells": 15840
+    }
+  },
+  "identity_column_count": 5,
+  "label_column_count": 1,
+  "logical_source_group_count": 14,
+  "logical_source_groups": [
+    "population",
+    "density",
+    "urbanization",
+    "unemployment",
+    "employees",
+    "sector",
+    "wage",
+    "age",
+    "overall_income",
+    "overall_consumption",
+    "urban_consumption",
+    "rural_consumption",
+    "urban_income",
+    "rural_income"
+  ],
+  "matrix_rows": 1760,
+  "model_feature_count": 144,
+  "oof_prediction_contract_defined": true,
+  "oof_predictions_fabricated": false,
+  "optional_2023_feature_readiness_audit_executed": false,
+  "plan_id": "S5-Plan04",
+  "r1_r2_feature_difference": {
+    "difference_reason": "R2 adds one year of lag only for annual sources whose observed 2023 snapshot lag is one; population target history remains T-2 and benchmark-only age retains its own boundary.",
+    "feature_difference_pair_count_by_group": {
+      "FG-AGE": 0,
+      "FG-D": 814,
+      "FG-EMP": 800,
+      "FG-LIFE": 614,
+      "FG-P": 0,
+      "FG-SECTOR": 0,
+      "FG-U": 880,
+      "FG-UNEMP": 784,
+      "FG-WAGE": 0
+    },
+    "feature_difference_pair_count_by_source": {
+      "age": 0,
+      "density": 814,
+      "employees": 800,
+      "overall_consumption": 614,
+      "overall_income": 614,
+      "population": 0,
+      "rural_consumption": 614,
+      "rural_income": 614,
+      "sector": 0,
+      "unemployment": 784,
+      "urban_consumption": 614,
+      "urban_income": 614,
+      "urbanization": 880,
+      "wage": 0
+    },
+    "label_and_reference_columns_r1_r2_equivalent": true,
+    "row_pairs_compared": 880,
+    "row_pairs_with_any_model_feature_difference": 880
+  },
+  "recommendation": "parallel_plan05_wave_safe_after_main_review_and_integration",
+  "reference_column_count": 3,
+  "result": "full_multisource_foundation_ready",
+  "s5_complete": false,
+  "s6_entered": false,
+  "scenario_ids": [
+    "R1_REFERENCE_SNAPSHOT_LAG",
+    "R2_CONSERVATIVE_PUBLICATION_STRESS"
+  ],
+  "source_boundary_audit_rows": 24640,
+  "source_status": {
+    "age": {
+      "domain_type": "benchmark_only",
+      "observed_latest_year": 2020,
+      "observed_snapshot_lag_years": 3,
+      "source_status": "source_plus_invalidation"
+    },
+    "density": {
+      "domain_type": "annual_or_source_defined",
+      "observed_latest_year": 2022,
+      "observed_snapshot_lag_years": 1,
+      "source_status": "source_plus_repair_and_invalidation"
+    },
+    "employees": {
+      "domain_type": "annual_or_source_defined",
+      "observed_latest_year": 2022,
+      "observed_snapshot_lag_years": 1,
+      "source_status": "source_plus_remap_quarantine_and_derived"
+    },
+    "overall_consumption": {
+      "domain_type": "annual_or_source_defined",
+      "observed_latest_year": 2022,
+      "observed_snapshot_lag_years": 1,
+      "source_status": "source_plus_repair"
+    },
+    "overall_income": {
+      "domain_type": "annual_or_source_defined",
+      "observed_latest_year": 2022,
+      "observed_snapshot_lag_years": 1,
+      "source_status": "source_plus_invalidation"
+    },
+    "population": {
+      "domain_type": "annual_or_source_defined",
+      "observed_latest_year": 2021,
+      "observed_snapshot_lag_years": 2,
+      "source_status": "source_plus_sentinel_repair"
+    },
+    "rural_consumption": {
+      "domain_type": "annual_or_source_defined",
+      "observed_latest_year": 2022,
+      "observed_snapshot_lag_years": 1,
+      "source_status": "source_preserved"
+    },
+    "rural_income": {
+      "domain_type": "annual_or_source_defined",
+      "observed_latest_year": 2022,
+      "observed_snapshot_lag_years": 1,
+      "source_status": "source_preserved"
+    },
+    "sector": {
+      "domain_type": "annual_or_source_defined",
+      "observed_latest_year": 2021,
+      "observed_snapshot_lag_years": 2,
+      "source_status": "source_plus_repair_and_invalidation"
+    },
+    "unemployment": {
+      "domain_type": "annual_or_source_defined",
+      "observed_latest_year": 2022,
+      "observed_snapshot_lag_years": 1,
+      "source_status": "source_preserved"
+    },
+    "urban_consumption": {
+      "domain_type": "annual_or_source_defined",
+      "observed_latest_year": 2022,
+      "observed_snapshot_lag_years": 1,
+      "source_status": "source_preserved"
+    },
+    "urban_income": {
+      "domain_type": "annual_or_source_defined",
+      "observed_latest_year": 2022,
+      "observed_snapshot_lag_years": 1,
+      "source_status": "source_plus_label_repair"
+    },
+    "urbanization": {
+      "domain_type": "annual_or_source_defined",
+      "observed_latest_year": 2022,
+      "observed_snapshot_lag_years": 1,
+      "source_status": "source_preserved"
+    },
+    "wage": {
+      "domain_type": "annual_or_source_defined",
+      "observed_latest_year": 2021,
+      "observed_snapshot_lag_years": 2,
+      "source_status": "source_plus_invalidation"
+    }
+  },
+  "stage": "S5_EVIDENCE_DRIVEN_ITERATION",
+  "target_ids": [
+    "resident",
+    "registered"
+  ],
+  "unique_key_count": 1760,
+  "worker_branch": "s5/plan04-full-multisource-feature-foundation"
+}
