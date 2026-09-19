@@ -122,7 +122,7 @@ Working hypothesis 得到部分支持：当前材料不足以证明一个唯一�
 
 ## Resulting commit
 
-本 handoff 所属改动将在完成最终验证后正常 commit 并 push 到 upstream `main`；最终 commit SHA 以本文件所在提交和 `git rev-parse HEAD` 为准，并在最终 TASK_RESULT 中明确报告。
+本轮 artifact/implementation commit SHA：`2d5620fd021efa880462a8002fcd208af5f1f6f5`。随后仅为记录最终交付状态追加 metadata commit；最终仓库 HEAD 也在 TASK_RESULT 中明确报告。
 
 ## Interpretation Requirement
 
