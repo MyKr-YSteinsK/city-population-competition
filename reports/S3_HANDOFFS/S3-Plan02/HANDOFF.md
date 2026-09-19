@@ -218,6 +218,6 @@ Q10 的答案是：近期 slope 与长期 slope 的分歧是可观测机制，�
 
 ## Delivery
 
-- Artifact/implementation commit SHA: to be recorded after the focused commit.
-- Metadata follow-up commit: if needed, record the full artifact SHA without rewriting history or force pushing.
+- Artifact/implementation commit SHA: `edfaaf2759e905ef73c96dbd98d4427578c8bcfa`.
+- Metadata follow-up commit: this metadata-only follow-up records the full artifact SHA; no history rewrite or force push.
 - Delivery target: `main`，focused commit + push，最终确认 local `main == origin/main` 且 worktree clean。
