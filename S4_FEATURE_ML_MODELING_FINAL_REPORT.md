@@ -136,4 +136,4 @@ S4 evidence package is complete for Main review; Stage completion remains Main a
 9. **Is this final report complete?**
    Yes。它与当前 S4 machine artifacts 和 Wave A/B summaries 对齐。
 10. **What is final main SHA / push state?**
-    本报告与 Wave B evidence 提交后，integration branch 将 fast-forward 到 main 并正常 push；最终 main SHA 与 push/clean 状态以本次任务交付记录为准。原始 Wave A/B source branches 保留。
+    本报告与 Wave B evidence 已由 integration branch fast-forward 到 main 并正常 push；main 当前 clean 且与 origin/main 对齐，最终 exact SHA 以本次任务交付记录为准。原始 Wave A/B source branches 保留。
