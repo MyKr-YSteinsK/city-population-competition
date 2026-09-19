@@ -534,7 +534,10 @@ def attach_design_vectors(rows: list[dict[str, Any]], model_features: tuple[str,
     global DESIGN_FEATURES
     DESIGN_FEATURES = (*model_features, *(f"city_onehot_{city}" for city in CITIES))
     for row in rows:
-        vector = np.full(len(DESIGN_FEATURES), np.nan, dtype=np.float64)
+        # Numeric model features retain raw NaN; one-hot categories are an
+        # ordinary dense indicator block and therefore must use explicit 0s.
+        vector = np.zeros(len(DESIGN_FEATURES), dtype=np.float64)
+        vector[: len(model_features)] = np.nan
         for index, feature_name in enumerate(model_features):
             value = parse_float(row[feature_name])
             if value is not None:
