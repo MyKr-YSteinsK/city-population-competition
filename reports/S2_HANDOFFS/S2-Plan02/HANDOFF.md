@@ -202,7 +202,7 @@ screening_heuristics_review.csv records the treatment of the 90% coverage thresh
 
 ## Resulting commit
 
-Artifact/implementation commit SHA: to be recorded after the first delivery commit. Any later metadata-only commit will be reported separately; no history rewrite or force push is allowed.
+Artifact/implementation commit SHA: 3bfc1925f037d7b4e53e249a9805bbcc23ee8234. A later metadata-only commit records this SHA in the handoff; no history rewrite or force push is allowed.
 
 ## Interpretation requirement: next S2 question
 
