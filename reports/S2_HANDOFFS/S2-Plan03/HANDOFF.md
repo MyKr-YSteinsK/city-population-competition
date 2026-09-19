@@ -241,7 +241,7 @@ local_target_metric_contract.csv records the following local contract:
 
 ## Resulting commit
 
-Artifact/implementation commit SHA: to be recorded after the first delivery commit. Any later metadata-only commit will be reported separately; no history rewrite or force push is allowed.
+Artifact/implementation commit SHA: c8bd4f812fa2db65654fdb844f511e0f0852eb10. This metadata-only follow-up commit records the SHA; no history rewrite or force push is allowed.
 
 ## Interpretation requirement: next S2 question
 
