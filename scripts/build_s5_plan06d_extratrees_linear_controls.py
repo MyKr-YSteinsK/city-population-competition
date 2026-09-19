@@ -310,7 +310,10 @@ def fit_transform(
 
 def make_estimator(family: str, config: dict[str, Any]) -> Any:
     if family == "EXTRATREES":
-        return ExtraTreesRegressor(**config)
+        estimator_config = {
+            key: value for key, value in config.items() if key != "config_id"
+        }
+        return ExtraTreesRegressor(**estimator_config)
     return Ridge(alpha=float(config["alpha"]), fit_intercept=True)
 
 
