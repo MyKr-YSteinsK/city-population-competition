@@ -2,14 +2,14 @@
 
 ## Purpose
 
-项目目标是为 40 个城市的人口相关数据建立可追溯的 source-level canonical layer，并在其上保留可由 Main 审阅的 S2 Validation Architecture、S3 Baseline Ladder 与已授权的 S4 Plan01/02/03 feature/ML evidence。当前交付对象仍不是最终预测或提交。
+项目目标是为 40 个城市的人口相关数据建立可追溯的 source-level canonical layer，并在其上保留可由 Main 审阅的 S2 Validation Architecture、S3 Baseline Ladder、已授权的 S4 Plan01/02/03 feature/ML evidence 与 Wave A 单 source screening evidence。当前交付对象仍不是最终预测或提交。
 
 ## Ownership and layers
 
 - `data/raw/`：7 个合法 XLSX 原始工作簿和任务参考 PDF。原始内容只读。
 - `data/normalized/`：7 个审计脚本重建的 14 张逻辑 canonical CSV，以及员工派生行 provenance、repair 和 density regime 报告。
 - `data/quarantine/`：确认无效或冲突的值，保留来源上下文；`source/test.xls` 的来源关系仍未解析，因此不进入 canonical。
-- `scripts/`：7 个领域审计脚本、统一 S1 runner，以及 S2 Plan01–05、S3 Plan01–03、S4 Plan01–03 的 focused evidence utilities。
+- `scripts/`：7 个领域审计脚本、统一 S1 runner，以及 S2 Plan01–05、S3 Plan01–03、S4 Plan01–03 和 S4 Wave A Plan04A/B/C 的 focused evidence utilities。
 - `docs/`：当前上下文、执行指令、数据契约、质量登记、文件地图和 Main handoff。
 - `reports/S1_FINAL_REVIEW_PACK.zip`：唯一保留的当前 S1 审阅包；历史 Plan01-04 报告不再作为当前事实源。
 - `reports/S2_HANDOFFS/S2-Plan01/`：S2 前一轮历史 information-set feasibility matrix 与 handoff。
@@ -23,6 +23,10 @@
 - `reports/S4_HANDOFFS/S4-Plan01/`：target-history-only `TH_CORE` / `TH_SHAPE` feature manifest、outer-origin Ridge delta evidence、B3 compatibility、aggregate/per-origin/latest、ablation、concentration、leave-one-origin/city、leakage 与 R1/R2 equivalence artifacts；不包含 covariates、tuning、ensemble、2023 预测或 submission。
 - `reports/S4_HANDOFFS/S4-Plan02/`：城镇化率 `URB_LEVEL_V1` / `URB_DYNAMICS_V1` 的 B3 residual correction evidence，包含 D2 global residual bias control、M2A/M2B Ridge、R1/R2 freshness、training geometry、missingness、aggregate/per-origin/latest、ablation、concentration、leave-one-origin/city、coefficient/correlation、leakage 与 B3 compatibility artifacts；结论为 urbanization unsupported，不包含 2023 预测或 submission。
 - `reports/S4_HANDOFFS/S4-Plan03/`：低容量 `HistGradientBoostingRegressor` 的 B3 residual correction evidence，严格复用 Plan01 `TH_CORE/TH_SHAPE` 与 Plan02 `URB` semantics，包含 M3A/M3B/M3C、固定配置、三层 feature ablation、R1/R2 equivalence/sensitivity、training geometry、missingness、aggregate/per-origin/latest、concentration、leave-one-origin/city、leakage 与 B3 compatibility artifacts；结论为 Ridge 线性容量不足不是 Plan01/02 失败的主要解释，当前 feature 组合仍不支持 material ML 增益。
+- `reports/S4_HANDOFFS/S4-Plan04A/`：人口密度 `DENSITY_RECENT_V1` 的 B3 residual screening evidence；R1/R2 source-cap、regime-crossing suppression、quarantine guard、aggregate/per-origin 与 boundary audit 均已归档，结论为 density unsupported。
+- `reports/S4_HANDOFFS/S4-Plan04B/`：工资 `WAGE_RECENT_V1` 的 B3 residual screening evidence；R1/R2 wage cap 等价性、invalidated-key guard、aggregate/per-origin 与 boundary audit 均已归档，结论为 wage unsupported。
+- `reports/S4_HANDOFFS/S4-Plan04C/`：从业人员数 `EMPLOYMENT_RECENT_V1` 的 B3 residual screening evidence；R1/R2 boundary、derived/quarantine provenance、aggregate/per-origin 与 source audit 均已归档，结论为 employment unsupported。
+- `reports/S4_HANDOFFS/S4-WaveA/`：三个单 source screening branch 的整合摘要；Wave A 已整合，S4 仍进行中，尚未进入 S5。
 
 ## Source facts
 

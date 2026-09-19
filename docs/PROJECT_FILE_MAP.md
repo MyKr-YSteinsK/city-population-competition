@@ -37,6 +37,9 @@
 │   ├── build_s4_plan01_ridge_delta_dynamics.py
 │   ├── build_s4_plan02_urbanization_residual.py
 │   ├── build_s4_plan03_hgb_interaction.py
+│   ├── build_s4_plan04a_density_residual.py
+│   ├── build_s4_plan04b_wage_screen.py
+│   ├── build_s4_plan04c_employment_signal.py
 │   └── run_s1.py
 └── reports/
     ├── S1_FINAL_REVIEW_PACK.zip
@@ -245,6 +248,26 @@
         ├── th_feature_compatibility_check.csv
         ├── urbanization_information_boundary.csv
         └── plan03_summary.json
+    └── S4_HANDOFFS/S4-Plan04A/
+        ├── HANDOFF.md
+        ├── density_boundary_audit.csv
+        ├── plan04a_summary.json
+        ├── screening_metrics.csv
+        └── build_s4_plan04a_density_residual.py (source in scripts/)
+    └── S4_HANDOFFS/S4-Plan04B/
+        ├── HANDOFF.md
+        ├── plan04b_summary.json
+        ├── screening_metrics.csv
+        ├── wage_boundary_audit.csv
+        └── build_s4_plan04b_wage_screen.py (source in scripts/)
+    └── S4_HANDOFFS/S4-Plan04C/
+        ├── HANDOFF.md
+        ├── employment_provenance_boundary_audit.csv
+        ├── plan04c_summary.json
+        ├── screening_metrics.csv
+        └── build_s4_plan04c_employment_signal.py (source in scripts/)
+    └── S4_HANDOFFS/S4-WaveA/
+        └── WAVE_A_SUMMARY.md
 ```
 
 ## Generated and excluded
