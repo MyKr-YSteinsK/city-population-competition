@@ -13,6 +13,7 @@
 - Frozen base：b8c302abe7ebf1710869aaa55a00d4b926d2bcac。
 - 独立 worktree：D:\CS\MLDM\city-population-competition-s4-employment。
 - Branch：s4/wave-a-employment。
+- Evidence commit：1b4f85a（本地提交，完整 SHA 由 Git delivery 记录）。
 - 没有在 main 上实验或提交；没有修改 CURRENT_LEARNING_CHECKPOINT.md、docs/PROJECT_CONTEXT.md、docs/PROJECT_FILE_MAP.md、docs/CODEX_INSTRUCTIONS.md、S2 contract、前序 handoff 或其他 Wave A worker 文件。
 - 实际执行：
 
@@ -77,7 +78,7 @@
    resident R1 wins 2011;2012;2016;2017;2020;2021、losses 2013;2014;2015;2018;2019；R2 相同。registered R1 wins 2016;2018;2019;2020;2021、losses 2011;2012;2013;2014;2015;2017；R2 wins 2013;2018;2019;2020、losses 2011;2012;2014;2015;2016;2017;2021。
 
 4. **R1→R2 是否明显衰减？**  
-   是。M4C resident pooled MSE 从 908.508412 增至 912.418465（+3.910053），latest 增 48.252928；registered pooled 增 0.485202，latest 增 5.312219。M4C validation employment feature 在 433/440 个 target×origin×city scope 中发生变化；B3 的 R1/R2 prediction/residual/metric 数值保持完全一致。
+   是。M4C resident pooled MSE 从 908.508412 增至 912.418465（+3.910053），latest 增 48.252928；registered pooled 增 0.485202，latest 增 5.312219。对每个 target，M4C validation employment feature 在 433/440 个 origin×city scope 中发生变化；两个 target 合计为 866/880。B3 的 R1/R2 prediction/residual/metric 数值保持完全一致。
 
 5. **validation/latest features 中有多少来自 derived rows？**  
    全部 validation audit 的 latest feature 为 220/1760 rows；recent-2 derived cells 440；recent-3 derived cells 660，包含 derived 的 recent-3 rows 220/1760。2021 latest subset 为 160 rows，其中 latest derived 20、recent-3 derived cells 60。这些是 feature-use counts，不把同一 canonical derived key 在不同 target/scenario scope 的重复使用误报成更多独立 source rows。
