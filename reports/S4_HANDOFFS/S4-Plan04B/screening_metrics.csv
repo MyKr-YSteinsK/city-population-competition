@@ -1,0 +1,63 @@
+record_type,target_id,scenario_id,model_id,baseline_model_id,origin_year,metric_name,metric_value,comparison_value,pooled_mse,macro_origin_mse,latest_2021_mse,scoreable_city_year_count,candidate_origin_wins,candidate_origin_losses,origin_ties,origin_count,relative_improvement_pct,latest_relative_improvement_pct,scenario_equivalent,status,notes
+aggregate,registered,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,,,,,,225.421212121213,225.421212121213,1485.60486111112,440,,,,,,,yes,PASS,R1 model run; exact R2 wage-cap equivalence checked
+aggregate,registered,R1_REFERENCE_SNAPSHOT_LAG,M4B_B3_PLUS_RIDGE_WAGE,,,,,,225.850577922496,225.850577922496,1499.100610163823,440,,,,,,,yes,PASS,R1 model run; exact R2 wage-cap equivalence checked
+aggregate,resident,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,,,,,,872.452651515143,872.452651515143,3705.42777777773,440,,,,,,,yes,PASS,R1 model run; exact R2 wage-cap equivalence checked
+aggregate,resident,R1_REFERENCE_SNAPSHOT_LAG,M4B_B3_PLUS_RIDGE_WAGE,,,,,,943.919472111819,943.919472111819,3627.050360715766,440,,,,,,,yes,PASS,R1 model run; exact R2 wage-cap equivalence checked
+per_origin,registered,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,,2011,origin_mse,25.877083333333,,,,,40,,,,,,,,PASS,common strict origin; target history <= T-2
+per_origin,registered,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,,2012,origin_mse,18.388888888888,,,,,40,,,,,,,,PASS,common strict origin; target history <= T-2
+per_origin,registered,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,,2013,origin_mse,34.925000000001,,,,,40,,,,,,,,PASS,common strict origin; target history <= T-2
+per_origin,registered,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,,2014,origin_mse,65.003472222226,,,,,40,,,,,,,,PASS,common strict origin; target history <= T-2
+per_origin,registered,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,,2015,origin_mse,40.195833333335,,,,,40,,,,,,,,PASS,common strict origin; target history <= T-2
+per_origin,registered,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,,2016,origin_mse,51.726388888889,,,,,40,,,,,,,,PASS,common strict origin; target history <= T-2
+per_origin,registered,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,,2017,origin_mse,36.456249999995,,,,,40,,,,,,,,PASS,common strict origin; target history <= T-2
+per_origin,registered,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,,2018,origin_mse,107.17916666666,,,,,40,,,,,,,,PASS,common strict origin; target history <= T-2
+per_origin,registered,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,,2019,origin_mse,118.269444444442,,,,,40,,,,,,,,PASS,common strict origin; target history <= T-2
+per_origin,registered,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,,2020,origin_mse,496.006944444456,,,,,40,,,,,,,,PASS,common strict origin; target history <= T-2
+per_origin,registered,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,,2021,origin_mse,1485.60486111112,,,,,40,,,,,,,,PASS,common strict origin; target history <= T-2
+per_origin,registered,R1_REFERENCE_SNAPSHOT_LAG,M4B_B3_PLUS_RIDGE_WAGE,,2011,origin_mse,28.520335840121,,,,,40,,,,,,,,PASS,common strict origin; target history <= T-2
+per_origin,registered,R1_REFERENCE_SNAPSHOT_LAG,M4B_B3_PLUS_RIDGE_WAGE,,2012,origin_mse,18.595164998323,,,,,40,,,,,,,,PASS,common strict origin; target history <= T-2
+per_origin,registered,R1_REFERENCE_SNAPSHOT_LAG,M4B_B3_PLUS_RIDGE_WAGE,,2013,origin_mse,36.192266073752,,,,,40,,,,,,,,PASS,common strict origin; target history <= T-2
+per_origin,registered,R1_REFERENCE_SNAPSHOT_LAG,M4B_B3_PLUS_RIDGE_WAGE,,2014,origin_mse,67.657123442211,,,,,40,,,,,,,,PASS,common strict origin; target history <= T-2
+per_origin,registered,R1_REFERENCE_SNAPSHOT_LAG,M4B_B3_PLUS_RIDGE_WAGE,,2015,origin_mse,40.924624964267,,,,,40,,,,,,,,PASS,common strict origin; target history <= T-2
+per_origin,registered,R1_REFERENCE_SNAPSHOT_LAG,M4B_B3_PLUS_RIDGE_WAGE,,2016,origin_mse,54.584881102842,,,,,40,,,,,,,,PASS,common strict origin; target history <= T-2
+per_origin,registered,R1_REFERENCE_SNAPSHOT_LAG,M4B_B3_PLUS_RIDGE_WAGE,,2017,origin_mse,38.133673231443,,,,,40,,,,,,,,PASS,common strict origin; target history <= T-2
+per_origin,registered,R1_REFERENCE_SNAPSHOT_LAG,M4B_B3_PLUS_RIDGE_WAGE,,2018,origin_mse,100.646919660727,,,,,40,,,,,,,,PASS,common strict origin; target history <= T-2
+per_origin,registered,R1_REFERENCE_SNAPSHOT_LAG,M4B_B3_PLUS_RIDGE_WAGE,,2019,origin_mse,112.590977331923,,,,,40,,,,,,,,PASS,common strict origin; target history <= T-2
+per_origin,registered,R1_REFERENCE_SNAPSHOT_LAG,M4B_B3_PLUS_RIDGE_WAGE,,2020,origin_mse,487.409780338027,,,,,40,,,,,,,,PASS,common strict origin; target history <= T-2
+per_origin,registered,R1_REFERENCE_SNAPSHOT_LAG,M4B_B3_PLUS_RIDGE_WAGE,,2021,origin_mse,1499.100610163823,,,,,40,,,,,,,,PASS,common strict origin; target history <= T-2
+per_origin,resident,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,,2011,origin_mse,415.288194444443,,,,,40,,,,,,,,PASS,common strict origin; target history <= T-2
+per_origin,resident,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,,2012,origin_mse,503.059722222222,,,,,40,,,,,,,,PASS,common strict origin; target history <= T-2
+per_origin,resident,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,,2013,origin_mse,922.348611111096,,,,,40,,,,,,,,PASS,common strict origin; target history <= T-2
+per_origin,resident,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,,2014,origin_mse,1121.434722222215,,,,,40,,,,,,,,PASS,common strict origin; target history <= T-2
+per_origin,resident,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,,2015,origin_mse,121.451388888887,,,,,40,,,,,,,,PASS,common strict origin; target history <= T-2
+per_origin,resident,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,,2016,origin_mse,66.409027777774,,,,,40,,,,,,,,PASS,common strict origin; target history <= T-2
+per_origin,resident,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,,2017,origin_mse,163.637500000004,,,,,40,,,,,,,,PASS,common strict origin; target history <= T-2
+per_origin,resident,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,,2018,origin_mse,115.988888888912,,,,,40,,,,,,,,PASS,common strict origin; target history <= T-2
+per_origin,resident,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,,2019,origin_mse,100.724999999989,,,,,40,,,,,,,,PASS,common strict origin; target history <= T-2
+per_origin,resident,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,,2020,origin_mse,2361.208333333298,,,,,40,,,,,,,,PASS,common strict origin; target history <= T-2
+per_origin,resident,R1_REFERENCE_SNAPSHOT_LAG,B3_RECENT_3POINT_OLS_TREND,,2021,origin_mse,3705.42777777773,,,,,40,,,,,,,,PASS,common strict origin; target history <= T-2
+per_origin,resident,R1_REFERENCE_SNAPSHOT_LAG,M4B_B3_PLUS_RIDGE_WAGE,,2011,origin_mse,354.61682651053,,,,,40,,,,,,,,PASS,common strict origin; target history <= T-2
+per_origin,resident,R1_REFERENCE_SNAPSHOT_LAG,M4B_B3_PLUS_RIDGE_WAGE,,2012,origin_mse,380.624296401137,,,,,40,,,,,,,,PASS,common strict origin; target history <= T-2
+per_origin,resident,R1_REFERENCE_SNAPSHOT_LAG,M4B_B3_PLUS_RIDGE_WAGE,,2013,origin_mse,1241.655494431711,,,,,40,,,,,,,,PASS,common strict origin; target history <= T-2
+per_origin,resident,R1_REFERENCE_SNAPSHOT_LAG,M4B_B3_PLUS_RIDGE_WAGE,,2014,origin_mse,1719.718843751521,,,,,40,,,,,,,,PASS,common strict origin; target history <= T-2
+per_origin,resident,R1_REFERENCE_SNAPSHOT_LAG,M4B_B3_PLUS_RIDGE_WAGE,,2015,origin_mse,218.051445350039,,,,,40,,,,,,,,PASS,common strict origin; target history <= T-2
+per_origin,resident,R1_REFERENCE_SNAPSHOT_LAG,M4B_B3_PLUS_RIDGE_WAGE,,2016,origin_mse,59.445974243745,,,,,40,,,,,,,,PASS,common strict origin; target history <= T-2
+per_origin,resident,R1_REFERENCE_SNAPSHOT_LAG,M4B_B3_PLUS_RIDGE_WAGE,,2017,origin_mse,186.89891304053,,,,,40,,,,,,,,PASS,common strict origin; target history <= T-2
+per_origin,resident,R1_REFERENCE_SNAPSHOT_LAG,M4B_B3_PLUS_RIDGE_WAGE,,2018,origin_mse,150.703557796922,,,,,40,,,,,,,,PASS,common strict origin; target history <= T-2
+per_origin,resident,R1_REFERENCE_SNAPSHOT_LAG,M4B_B3_PLUS_RIDGE_WAGE,,2019,origin_mse,108.557164488066,,,,,40,,,,,,,,PASS,common strict origin; target history <= T-2
+per_origin,resident,R1_REFERENCE_SNAPSHOT_LAG,M4B_B3_PLUS_RIDGE_WAGE,,2020,origin_mse,2335.791316500045,,,,,40,,,,,,,,PASS,common strict origin; target history <= T-2
+per_origin,resident,R1_REFERENCE_SNAPSHOT_LAG,M4B_B3_PLUS_RIDGE_WAGE,,2021,origin_mse,3627.050360715766,,,,,40,,,,,,,,PASS,common strict origin; target history <= T-2
+pairwise,resident,R1_REFERENCE_SNAPSHOT_LAG,M4B_B3_PLUS_RIDGE_WAGE,B3_RECENT_3POINT_OLS_TREND,,,,872.452651515143,943.919472111819,,3627.050360715766,,5,6,0,11,-8.191484142155,2.115205632451,yes,PASS,positive improvement means M4B lower MSE than B3
+pairwise,registered,R1_REFERENCE_SNAPSHOT_LAG,M4B_B3_PLUS_RIDGE_WAGE,B3_RECENT_3POINT_OLS_TREND,,,,225.421212121213,225.850577922496,,1499.100610163823,,3,8,0,11,-0.190472669915,-0.908434631979,yes,PASS,positive improvement means M4B lower MSE than B3
+scenario_equivalence,,R1_REFERENCE_SNAPSHOT_LAG,,,,wage_required_lag_years,2,2,,,,,,,,,,,yes,PASS,S2 required_lag_years; no publication-date claim
+scenario_equivalence,,R2_CONSERVATIVE_PUBLICATION_STRESS,,,,wage_required_lag_years,2,2,,,,,,,,,,,yes,PASS,S2 required_lag_years; no publication-date claim
+scenario_equivalence,,R1_vs_R2,,,,wage_cap_mismatch_count_common_origins,0,0,,,,,,,,,,,yes,PASS,origin-specific cap equality across 2011-2021
+sanity,,,,,,b3_row_compatibility,1,1,,,,,,,,,,,,PASS,B3 row-level prediction/residual/squared-error delta <= 1e-9
+sanity,,,,,,b3_metric_compatibility,1,1,,,,,,,,,,,,PASS,B3 pooled/macro/latest MSE delta <= 1e-9
+sanity,,,,,,wage_invalidated_value_reintroduced_count,0,0,,,,,,,,,,,,PASS,canonical invalidated value never appears in feature-used years
+sanity,,,,,,wage_invalidated_key_used_count,0,0,,,,,,,,,,,,PASS,invalidated key may be in allowed history but is never used as a value
+sanity,,,,,,population_t_minus_2_fail_count,0,0,,,,,,,,,,,,PASS,population B3 history and outer training labels remain <= T-2
+sanity,,,,,,preprocessing_fit_rows_mismatch_count,0,0,,,,,,,,,,,,PASS,fold-local preprocessing and Ridge fit use the same training rows
+sanity,,,,,,boundary_fail_count,0,0,,,,,,,,,,,,PASS,"wage cap, target history, invalidation and outer-label boundary checks"
+sanity,,,,,,resident_validation_rows,440,440,,,,,,,,,,,,PASS,resident validation audit coverage
+sanity,,,,,,registered_validation_rows,440,440,,,,,,,,,,,,PASS,registered validation audit coverage
