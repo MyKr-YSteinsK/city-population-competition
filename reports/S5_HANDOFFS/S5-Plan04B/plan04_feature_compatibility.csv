@@ -1,0 +1,6 @@
+target_id,scenario_id,existing_row_count,generated_row_count,key_mismatch_count,identity_mismatch_count,model_feature_mismatch_cell_count,label_reference_mismatch_cell_count,audit_mismatch_cell_count,feature_contract_version,status
+resident,R1_REFERENCE_SNAPSHOT_LAG,440,440,0,0,0,0,0,S5-Plan04-FULL-MULTISOURCE-V1,PASS
+resident,R2_CONSERVATIVE_PUBLICATION_STRESS,440,440,0,0,0,0,0,S5-Plan04-FULL-MULTISOURCE-V1,PASS
+registered,R1_REFERENCE_SNAPSHOT_LAG,440,440,0,0,0,0,0,S5-Plan04-FULL-MULTISOURCE-V1,PASS
+registered,R2_CONSERVATIVE_PUBLICATION_STRESS,440,440,0,0,0,0,0,S5-Plan04-FULL-MULTISOURCE-V1,PASS
+ALL,ALL,1760,1760,0,0,0,0,0,S5-Plan04-FULL-MULTISOURCE-V1,PASS
