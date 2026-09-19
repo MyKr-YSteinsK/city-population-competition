@@ -1,0 +1,10 @@
+contract_item,value,direction_or_scope,evidence_basis,status,deferred_question
+target_contract_status,PRIMARY_PROXY_WITH_SENSITIVITY_TARGET,conditional target contract,PDF ambiguity plus resident-favoring age-sum consistency,proposed_for_next_S2,Official competition label remains unproven.
+primary_target_proxy,resident / 常住人口（万人）,label at pseudo-origin T for retrospective scoring,same-year age-sum consistency is materially stronger than registered,primary_proxy,Recheck alongside registered sensitivity in later backtests.
+secondary_target_sensitivity,registered / 户籍人口（万人）,"sensitivity target, not official truth claim",PDF names the field but does not map total population to it,required_sensitivity,"If rankings diverge, interpretation as official competition score is blocked."
+primary_metric,MSE,lower_is_better; per-origin city-year residuals,formal PDF evaluation section and score formula,local_primary,Cross-origin aggregation is not frozen.
+auxiliary_metric,RMSE,lower_is_better; same residual set as MSE,FAQ wording plus RMSE=sqrt(MSE) sanity evidence,local_auxiliary,Do not average or pool across origins without an explicit aggregation rule.
+competition_score_transform,1/(1+MSE),higher_is_better; only after MSE aggregation is specified,formal PDF evaluation section,reportable_per_defined_scope,No single multi-origin score is computed in this Plan.
+sample_unit,city-year evaluation row within one pseudo-origin,one target label per city at origin T,submission schema and historical origin design,defined_for_single_origin,Origin weighting remains open.
+cross_origin_aggregation,UNRESOLVED_DEFERRED,"do not mix pooled MSE, macro-origin MSE, average RMSE or pooled RMSE",sanity test demonstrates ranking can change,must_be_decided_in_backtest_architecture,Compare pooled city-year weighting versus macro-origin weighting.
+formal_model_scoring,NOT_RUN,non-goal of S2-Plan03,execution boundary,not_executed,Next Plan only.

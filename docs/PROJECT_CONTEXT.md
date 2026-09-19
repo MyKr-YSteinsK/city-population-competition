@@ -14,6 +14,7 @@
 - `reports/S1_FINAL_REVIEW_PACK.zip`：唯一保留的当前 S1 审阅包；历史 Plan01-04 报告不再作为当前事实源。
 - `reports/S2_HANDOFFS/S2-Plan01/`：S2 前一轮历史 information-set feasibility matrix 与 handoff。
 - `reports/S2_HANDOFFS/S2-Plan02/`：当前 S2 source-specific forecast geometry、replay freshness matrix 与 handoff；不包含正式模型验证或提交结果。
+- `reports/S2_HANDOFFS/S2-Plan03/`：当前 S2 target/metric contract investigation、年龄结构一致性证据与 evaluator sanity artifacts；常住人口作为主代理、户籍人口作为敏感性目标，尚未执行正式模型评分。
 
 ## Source facts
 

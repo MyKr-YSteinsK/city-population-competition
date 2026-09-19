@@ -1,0 +1,11 @@
+target_id,population_year_minus_age_year,overlap_n,mean_absolute_diff,median_absolute_diff,mean_relative_absolute_diff,mean_signed_diff,interpretation
+resident,-2,75,45.426667,24.000000,0.070530,35.773333,Temporal-offset diagnostic only; same-year alignment remains the primary semantic comparison and no lag is declared official.
+resident,-1,75,37.533333,20.000000,0.058570,27.613333,Temporal-offset diagnostic only; same-year alignment remains the primary semantic comparison and no lag is declared official.
+resident,0,75,23.493333,10.000000,0.039913,14.293333,Temporal-offset diagnostic only; same-year alignment remains the primary semantic comparison and no lag is declared official.
+resident,1,81,13.851852,1.000000,0.024923,-3.061728,Temporal-offset diagnostic only; same-year alignment remains the primary semantic comparison and no lag is declared official.
+resident,2,42,22.976190,6.500000,0.038789,-12.547619,Temporal-offset diagnostic only; same-year alignment remains the primary semantic comparison and no lag is declared official.
+registered,-2,75,157.520000,74.000000,0.346521,106.266667,Temporal-offset diagnostic only; same-year alignment remains the primary semantic comparison and no lag is declared official.
+registered,-1,75,155.080000,74.000000,0.331567,101.453333,Temporal-offset diagnostic only; same-year alignment remains the primary semantic comparison and no lag is declared official.
+registered,0,75,150.613333,70.000000,0.313752,95.226667,Temporal-offset diagnostic only; same-year alignment remains the primary semantic comparison and no lag is declared official.
+registered,1,80,148.400000,79.000000,0.347680,90.925000,Temporal-offset diagnostic only; same-year alignment remains the primary semantic comparison and no lag is declared official.
+registered,2,42,117.619048,73.000000,0.275292,66.380952,Temporal-offset diagnostic only; same-year alignment remains the primary semantic comparison and no lag is declared official.

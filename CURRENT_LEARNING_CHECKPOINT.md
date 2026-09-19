@@ -24,19 +24,22 @@
 - quality registry 显式保留 unresolved truth、coverage gap、derived provenance、density regime 与 income shift 等边界，不通过静默填补制造确定性。
 - 员工派生行保留独立 provenance；隔离值保持缺失，不回灌为伪装的原始事实。
 - Main 已对照 Brief / Plan 与仓库 handoff 完成最终验收，S1 不再继续扩展。
+- S2 Plan03 已建立条件化的本地 target/metric contract：常住人口是主代理目标，户籍人口是敏感性目标；MSE 为主指标、RMSE 为辅助指标；跨 origin 聚合方式仍延后冻结。
 
 ## Partial / Fragile
 
 - 尚未学习并独立设计可信的 out-of-time validation / backtesting。
 - 各源的真实发布时间与 forecast-origin availability 仍未知；仓库明确标记为 unknown，应在 S2 作为 information-set 约束处理。
-- 赛题 target 精确口径与 PDF 中 MSE / RMSE 表述冲突仍是赛题源材料层面的待决问题；正式 S2 实验前必须明确采用的本地 validation contract。
+- 赛题 target 的官方精确映射仍未被源材料完全证明；resident/registered sensitivity 与 publication timing 仍需保留为不确定性。
+- PDF 的 MSE / RMSE 表述冲突已在本地 evaluator 规则中显式隔离，但跨 origin 的最终聚合方式尚未冻结。
 
 ## Open Questions
 
 - 真实 2023 预测时，每一类 source-level feature 到底允许使用到哪个年份？
 - 历史 pseudo-test 应如何复刻真实 horizon 与各字段 freshness，而不是统一按 `T-1` 截断？
 - 应使用单一 out-of-time holdout，还是多个 forecast origins 的 expanding / rolling backtest？
-- 本地 evaluator 如何在 MSE / RMSE 源材料冲突下定义主指标与辅助指标？
+- 跨 origin 应采用 pooled MSE、macro-origin MSE，还是另一个由比赛协议确认的聚合方式？
+- 目标官方口径与真实 publication timing 何时能取得新的直接证据？
 
 ## Active Anchor / Tracks
 

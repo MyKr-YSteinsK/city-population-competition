@@ -28,6 +28,7 @@
 │   ├── audit_wage.py
 │   ├── build_s2_plan01_matrix.py
 │   ├── build_s2_plan02_geometry.py
+│   ├── build_s2_plan03_target_metric_contract.py
 │   └── run_s1.py
 └── reports/
     ├── S1_FINAL_REVIEW_PACK.zip
@@ -49,6 +50,19 @@
         ├── plan01_vs_plan02_candidate_origin_comparison.csv
         ├── screening_heuristics_review.csv
         └── geometry_summary.json
+    └── S2_HANDOFFS/S2-Plan03/
+        ├── HANDOFF.md
+        ├── target_evidence_matrix.csv
+        ├── age_population_consistency_detail.csv
+        ├── age_population_consistency_summary.csv
+        ├── age_population_consistency_offset.csv
+        ├── target_hypothesis_origin_geometry.csv
+        ├── target_hypothesis_origin_comparison.csv
+        ├── target_hypothesis_summary.csv
+        ├── metric_evidence_conflict_table.csv
+        ├── metric_sanity_results.csv
+        ├── local_target_metric_contract.csv
+        └── plan03_summary.json
 ```
 
 ## Generated and excluded

@@ -1,0 +1,7 @@
+test_id,actual,expected,status,interpretation
+hand_check_mse,3.3333333333333335,3.3333333333333335,PASS,"Residual squares are 1, 0 and 9."
+hand_check_rmse,1.8257418583505538,1.8257418583505538,PASS,RMSE is the square root of the same-sample MSE.
+hand_check_score,0.23076923076923073,0.23076923076923078,PASS,score = 1/(1+MSE) for the same hand-check residuals.
+same_aggregation_ranking_equivalence,"{""mse_a"": 1.0, ""mse_b"": 1.3333333333333333, ""rmse_a"": 1.0, ""rmse_b"": 1.1547005383792515, ""score_a"": 0.5, ""score_b"": 0.4285714285714286}","""MSE_A < MSE_B; RMSE_A < RMSE_B; score_A > score_B""",PASS,Same sample and same aggregation preserve model ordering.
+rmse_sqrt_mse_identity,1.0,1.0,PASS,RMSE equals sqrt(MSE) for the same residual set.
+cross_origin_aggregation_is_not_interchangeable,"{""macro_mse"": {""A"": 0.5, ""B"": 2.0}, ""macro_rmse"": {""A"": 0.5, ""B"": 1.0}, ""pooled_mse"": {""A"": 0.9, ""B"": 0.4}, ""pooled_rmse"": {""A"": 0.9486832980505138, ""B"": 0.6324555320336759}}","""macro ranks A better; pooled ranks B better""",PASS,Different origin weighting can change ranking; aggregation must be a separate contract.
