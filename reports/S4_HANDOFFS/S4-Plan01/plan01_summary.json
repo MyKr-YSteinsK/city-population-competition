@@ -21,6 +21,7 @@
     "TH_CORE",
     "TH_SHAPE"
   ],
+  "feature_missingness_rows": 440,
   "final_2023_forecast_run": false,
   "formal_ml_model_used": true,
   "full_coverage": true,

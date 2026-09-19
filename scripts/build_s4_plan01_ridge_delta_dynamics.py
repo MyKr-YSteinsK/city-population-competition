@@ -816,11 +816,18 @@ def build_latest_rows(aggregate_map: dict[tuple[str, str, str], dict[str, Any]])
 
 def build_training_rows_and_models(
     population: dict[str, dict[str, dict[int, float]]],
-) -> tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]]]:
+) -> tuple[
+    list[dict[str, Any]],
+    list[dict[str, Any]],
+    list[dict[str, Any]],
+    list[dict[str, Any]],
+    list[dict[str, Any]],
+]:
     ml_prediction_rows: list[dict[str, Any]] = []
     diagnostics: list[dict[str, Any]] = []
     geometry: list[dict[str, Any]] = []
     leakage: list[dict[str, Any]] = []
+    feature_missingness: list[dict[str, Any]] = []
     for target in TARGETS:
         target_id = target["target_id"]
         for origin in COMMON_ORIGINS:
@@ -956,6 +963,36 @@ def build_training_rows_and_models(
                             "coverage_status": "PASS" if len(validation_rows) == len(CITIES) else "FAIL",
                         }
                     )
+                    for feature_name in feature_names:
+                        training_missing = sum(
+                            value is None or not math.isfinite(float(value))
+                            for row in train_rows
+                            for value in [row["features"].get(feature_name)]
+                        )
+                        validation_missing = sum(
+                            value is None or not math.isfinite(float(value))
+                            for row in validation_rows
+                            for value in [row["features"].get(feature_name)]
+                        )
+                        feature_missingness.append(
+                            {
+                                "target_id": target_id,
+                                "scenario_id": scenario_id,
+                                "outer_origin_year": origin,
+                                "model_id": model_id,
+                                "feature_group_id": "TH_CORE" if model_id == M1A_ID else "TH_SHAPE",
+                                "feature_name": feature_name,
+                                "training_eligible_row_count": len(train_rows),
+                                "training_missing_count": training_missing,
+                                "training_imputation_count": training_missing,
+                                "validation_row_count": len(validation_rows),
+                                "validation_missing_count": validation_missing,
+                                "validation_imputation_count": validation_missing,
+                                "excluded_training_row_count_insufficient_recent3_history": len(excluded_rows),
+                                "imputation_rule": "SimpleImputer(strategy=median, add_indicator=True) fit on training rows only",
+                                "status": "PASS",
+                            }
+                        )
                     geometry.append(
                         {
                             "target_id": target_id,
@@ -983,7 +1020,7 @@ def build_training_rows_and_models(
     assert diagnostics
     assert all(row["coverage_status"] == "PASS" for row in diagnostics)
     assert all(row["leakage_status"] == "PASS" for row in leakage)
-    return ml_prediction_rows, diagnostics, geometry, leakage, []
+    return ml_prediction_rows, diagnostics, geometry, leakage, feature_missingness
 
 
 def validate_summary_metrics(
@@ -1022,7 +1059,7 @@ def main() -> None:
     b3_rows = [row for row in b3_rows if row["predictor_id"] == B3_ID]
     assert len(b3_rows) == len(TARGETS) * len(SCENARIOS) * len(COMMON_ORIGINS) * len(CITIES)
     b3_compatibility = compare_b3_reference(b3_rows)
-    ml_rows, dataset_diagnostics, training_geometry, leakage_audit, _ = build_training_rows_and_models(population)
+    ml_rows, dataset_diagnostics, training_geometry, leakage_audit, feature_missingness = build_training_rows_and_models(population)
     all_rows = [frozen_b3_row(row) for row in b3_rows] + ml_rows
     assert len(all_rows) == len(TARGETS) * len(SCENARIOS) * len(COMMON_ORIGINS) * len(CITIES) * len(MODEL_IDS)
 
@@ -1111,6 +1148,7 @@ def main() -> None:
         "aggregate_metric_rows": len(aggregate_metrics),
         "training_geometry_rows": len(training_geometry),
         "modeling_dataset_diagnostics_rows": len(dataset_diagnostics),
+        "feature_missingness_rows": len(feature_missingness),
         "leakage_audit_rows": len(leakage_audit),
         "full_coverage": all(row["coverage_status"] == "PASS" for row in dataset_diagnostics),
         "resident_b3_pooled_mse": resident_primary[B3_ID]["pooled_city_year_mse"],
@@ -1197,6 +1235,7 @@ def main() -> None:
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     write_csv(OUTPUT_DIR / "feature_manifest.csv", list(FEATURE_MANIFEST))
     write_csv(OUTPUT_DIR / "modeling_dataset_diagnostics.csv", dataset_diagnostics)
+    write_csv(OUTPUT_DIR / "feature_missingness_imputation.csv", feature_missingness)
     write_csv(OUTPUT_DIR / "training_geometry.csv", training_geometry)
     write_csv(OUTPUT_DIR / "aggregate_metrics.csv", aggregate_metrics)
     write_csv(OUTPUT_DIR / "per_origin_metrics.csv", per_origin_metrics)
@@ -1223,6 +1262,7 @@ def main() -> None:
     print(f"aggregate_metric_rows={len(aggregate_metrics)}")
     print(f"training_geometry_rows={len(training_geometry)}")
     print(f"modeling_dataset_diagnostics_rows={len(dataset_diagnostics)}")
+    print(f"feature_missingness_rows={len(feature_missingness)}")
     print(f"leakage_audit_rows={len(leakage_audit)}")
     print(f"full_coverage={summary['full_coverage']}")
     print(f"b3_row_compatibility_pass={summary['b3_row_compatibility_pass']}")

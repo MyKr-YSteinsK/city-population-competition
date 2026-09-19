@@ -17,7 +17,7 @@ S4-Plan01 的 evidence 已完成，但本实验没有产生可替代冻结 B3 �
 
 1. 新增 [build_s4_plan01_ridge_delta_dynamics.py](/D:/CS/MLDM/city-population-competition/scripts/build_s4_plan01_ridge_delta_dynamics.py)：实现 target-history-only 的 pseudo-origin feature builder、outer-origin Ridge pipeline、B3 兼容复现、指标/稳定性/集中度/泄漏证据生成。
 2. `requirements.txt` 增加 `scikit-learn`，用于冻结的 `SimpleImputer(median, add_indicator=True)`、`StandardScaler`、`Ridge(alpha=1.0)`。
-3. 新增本目录下的机器可读 artifacts 与本 HANDOFF。
+3. 新增本目录下的机器可读 artifacts 与本 HANDOFF；其中 `feature_missingness_imputation.csv` 按 feature/target/scenario/origin/model 显式记录 missing 与 imputation counts。
 4. 更新 [PROJECT_CONTEXT.md](/D:/CS/MLDM/city-population-competition/docs/PROJECT_CONTEXT.md)、[PROJECT_FILE_MAP.md](/D:/CS/MLDM/city-population-competition/docs/PROJECT_FILE_MAP.md)、[CODEX_INSTRUCTIONS.md](/D:/CS/MLDM/city-population-competition/docs/CODEX_INSTRUCTIONS.md)，登记 S4 Plan01 的执行边界和证据位置。
 
 `CURRENT_LEARNING_CHECKPOINT.md` 按 Plan01 要求保持只读；没有把 S4 Plan01 误写成整个 S4 完成，也没有进入 S5。
@@ -128,6 +128,7 @@ city-origin 残差中，M1B 相对 M1A 的较大正向差异集中在 resident �
 没有发现 deviation：
 
 - `leakage_audit.csv` 共 `26460` 行，全部 PASS；
+- `feature_missingness_imputation.csv` 按 feature/target/scenario/origin/model 逐项记录，所有 training/validation missing 与 imputation counts 均为 `0`；
 - validation 每个模型/target/scenario/origin 都是 40 个城市，训练和 validation 最大 history year 均满足外层 cutoff；
 - 正式 ML 训练覆盖 88 个 outer target×scenario×origin scopes；training feature missing cells 和 validation feature missing cells 均为 0；
 - `SimpleImputer` 仅在 training fold fit，模型 fit row count 与 preprocessing fit row count 相等；
@@ -161,7 +162,7 @@ Recommendation：不要继续堆叠相似的 target-history lag/shape features�
 
 本目录的 required artifacts 已全部生成：
 
-`HANDOFF.md`、`feature_manifest.csv`、`modeling_dataset_diagnostics.csv`、`training_geometry.csv`、`aggregate_metrics.csv`、`per_origin_metrics.csv`、`per_origin_predictions_or_residuals.csv`、`pairwise_b3_comparison.csv`、`ablation_comparison.csv`、`latest_origin_comparison.csv`、`city_improvement_concentration.csv`、`leave_one_origin_out.csv`、`leave_one_city_sensitivity.csv`、`leakage_audit.csv`、`r1_r2_equivalence_check.csv`、`plan01_summary.json`。
+`HANDOFF.md`、`feature_manifest.csv`、`feature_missingness_imputation.csv`、`modeling_dataset_diagnostics.csv`、`training_geometry.csv`、`aggregate_metrics.csv`、`per_origin_metrics.csv`、`per_origin_predictions_or_residuals.csv`、`pairwise_b3_comparison.csv`、`ablation_comparison.csv`、`latest_origin_comparison.csv`、`city_improvement_concentration.csv`、`leave_one_origin_out.csv`、`leave_one_city_sensitivity.csv`、`leakage_audit.csv`、`r1_r2_equivalence_check.csv`、`plan01_summary.json`。
 
 兼容性辅助 artifacts 为 `b3_compatibility_check.csv` 和 `b3_metric_compatibility_check.csv`。
 
