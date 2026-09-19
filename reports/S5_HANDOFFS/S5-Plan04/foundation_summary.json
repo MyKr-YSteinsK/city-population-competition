@@ -82,7 +82,7 @@
     "target_history_max_year_never_exceeds_T_minus_2": true,
     "test_xls_used": false
   },
-  "build_commit": "d75ec4b9b1b392003c18201fa4b27899720f3c81",
+  "build_commit": "1b9b8d90adb59b438e8817cdb7c08be473b8edb2",
   "city_count": 40,
   "common_origins": [
     2011,

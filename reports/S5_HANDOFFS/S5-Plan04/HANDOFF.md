@@ -6,7 +6,7 @@
 - Stage：`S5_EVIDENCE_DRIVEN_ITERATION`
 - Frozen base：`d75ec4b9b1b392003c18201fa4b27899720f3c81`
 - Worker branch：`s5/plan04-full-multisource-feature-foundation`
-- Exact worker commit at handoff generation：`d75ec4b9b1b392003c18201fa4b27899720f3c81`
+- Exact worker commit at handoff generation：`1b9b8d90adb59b438e8817cdb7c08be473b8edb2`
 - Foundation result：`full_multisource_foundation_ready`
 - S5 未声明完成，S6 未进入；Stage authority 仍为 Main。
 
