@@ -265,7 +265,7 @@ Pairwise primary evidence：
 
 ## Delivery
 
-- Artifact/implementation commit SHA：待 focused commit 完成后回填。
+- Artifact/implementation commit SHA：`6fb3afa089d9a263be56ad51a579e4425f4ee81d`。
 - Metadata follow-up commit：待 artifact SHA 回填后生成；不改写历史、不 force push。
 - Delivery target：`main`；focused commit + push，最终确认 local `main == origin/main` 且
   worktree clean。
