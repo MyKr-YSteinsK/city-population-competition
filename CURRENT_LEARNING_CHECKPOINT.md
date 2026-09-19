@@ -34,7 +34,7 @@
 
 - 各源的真实发布时间与 forecast-origin availability 仍未知；仓库明确标记为 unknown，应在 S2 作为 information-set 约束处理。
 - 赛题 target 的官方精确映射仍未被源材料完全证明；resident/registered sensitivity 与 publication timing 仍需保留为不确定性。
-- PDF 的 MSE / RMSE 表述冲突已在本地 evaluator 规则中显式隔离，但跨 origin 的最终聚合方式尚未冻结。
+- PDF 的 MSE / RMSE 表述冲突已在本地 evaluator 规则中显式隔离；Plan05 已提出 pooled-primary、macro-sensitivity 的本地聚合 recommendation，但比赛协议层面仍未有新的官方确认。
 - 官方 source reconciliation 已完成，但真实 publication timing、官方 target 映射与跨 origin 聚合仍未由本轮 source 修正解决。
 - Plan05 已形成跨 origin 聚合的可复核本地 recommendation；Main 仍需决定是否将该 recommendation 纳入 S2 final report，不能把固定 naive 规则的结果误写成正式模型结论。
 

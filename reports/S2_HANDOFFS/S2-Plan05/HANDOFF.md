@@ -21,7 +21,7 @@
 - Plan04 official source SHA256: 9775cf2b5cfb5e930a4c721816e72dbec614ed221d7c6778998d28459e373cb0
 - Current population canonical profile: 718 rows, 718 unique city-year keys, resident non-empty 693, registered non-empty 707, latest observed year 2021 for both targets
 
-Resulting commit SHA will be filled after the final metadata commit.
+Artifact/implementation commit SHA: 6beb826. A metadata-only follow-up commit will record this SHA; no history rewrite or force push is allowed.
 
 ## Actual changes
 
@@ -210,4 +210,4 @@ aggregation_sanity_checks.csv machine-verifies both RMSE/MSE identity and an une
 - architecture_recommendation.csv
 - plan05_summary.json
 
-Final resulting commit SHA: pending final metadata commit.
+Final delivery consists of the artifact/implementation commit above plus the metadata-only follow-up commit that records it.
