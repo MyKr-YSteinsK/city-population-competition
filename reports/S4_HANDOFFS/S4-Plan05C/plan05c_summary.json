@@ -1,0 +1,603 @@
+{
+  "alpha_audit_rows": 682,
+  "alpha_diagnostics": {
+    "registered_R1_REFERENCE_SNAPSHOT_LAG": {
+      "alpha_stability_status": "stable_but_extreme",
+      "coefficient_sign_flip_features": [
+        "urbanization_latest",
+        "urbanization_recent3_slope",
+        "density_recent3_relative_slope",
+        "wage_log_latest",
+        "wage_recent3_log_slope",
+        "employees_log_latest"
+      ],
+      "coefficient_sign_flip_total": 10,
+      "dominant_source_counts": {
+        "employees": 1,
+        "urbanization": 6,
+        "wage": 4
+      },
+      "dominant_source_share_max": 0.5302903193709142,
+      "dominant_source_share_mean": 0.41141214318922237,
+      "extreme_alpha_count": 11,
+      "extreme_alpha_share": 1.0,
+      "fallback_count": 0,
+      "selected_alpha_counts": {
+        "100.0": 11
+      },
+      "selected_alpha_max": 100.0,
+      "selected_alpha_min": 100.0,
+      "selected_alpha_unique_count": 1,
+      "single_source_dominance_ge_75pct_count": 0
+    },
+    "registered_R2_CONSERVATIVE_PUBLICATION_STRESS": {
+      "alpha_stability_status": "stable_but_extreme",
+      "coefficient_sign_flip_features": [
+        "urbanization_latest",
+        "urbanization_recent3_slope",
+        "density_recent3_relative_slope",
+        "wage_log_latest",
+        "wage_recent3_log_slope",
+        "employees_log_latest"
+      ],
+      "coefficient_sign_flip_total": 9,
+      "dominant_source_counts": {
+        "density": 2,
+        "urbanization": 5,
+        "wage": 4
+      },
+      "dominant_source_share_max": 0.5666937146294512,
+      "dominant_source_share_mean": 0.41125825079864564,
+      "extreme_alpha_count": 11,
+      "extreme_alpha_share": 1.0,
+      "fallback_count": 0,
+      "selected_alpha_counts": {
+        "100.0": 11
+      },
+      "selected_alpha_max": 100.0,
+      "selected_alpha_min": 100.0,
+      "selected_alpha_unique_count": 1,
+      "single_source_dominance_ge_75pct_count": 0
+    },
+    "resident_R1_REFERENCE_SNAPSHOT_LAG": {
+      "alpha_stability_status": "mixed",
+      "coefficient_sign_flip_features": [
+        "urbanization_recent3_slope",
+        "density_latest",
+        "wage_log_latest",
+        "wage_recent3_log_slope",
+        "employees_log_latest",
+        "employees_recent3_log_slope"
+      ],
+      "coefficient_sign_flip_total": 11,
+      "dominant_source_counts": {
+        "density": 9,
+        "urbanization": 2
+      },
+      "dominant_source_share_max": 0.5681934789693156,
+      "dominant_source_share_mean": 0.44200122863811303,
+      "extreme_alpha_count": 10,
+      "extreme_alpha_share": 0.9090909090909091,
+      "fallback_count": 0,
+      "selected_alpha_counts": {
+        "10.0": 1,
+        "100.0": 10
+      },
+      "selected_alpha_max": 100.0,
+      "selected_alpha_min": 10.0,
+      "selected_alpha_unique_count": 2,
+      "single_source_dominance_ge_75pct_count": 0
+    },
+    "resident_R2_CONSERVATIVE_PUBLICATION_STRESS": {
+      "alpha_stability_status": "stable_but_extreme",
+      "coefficient_sign_flip_features": [
+        "urbanization_recent3_slope",
+        "density_latest",
+        "density_recent3_relative_slope",
+        "wage_log_latest"
+      ],
+      "coefficient_sign_flip_total": 6,
+      "dominant_source_counts": {
+        "density": 6,
+        "employees": 2,
+        "urbanization": 3
+      },
+      "dominant_source_share_max": 0.4923001017798682,
+      "dominant_source_share_mean": 0.4192868117387121,
+      "extreme_alpha_count": 11,
+      "extreme_alpha_share": 1.0,
+      "fallback_count": 0,
+      "selected_alpha_counts": {
+        "100.0": 11
+      },
+      "selected_alpha_max": 100.0,
+      "selected_alpha_min": 100.0,
+      "selected_alpha_unique_count": 1,
+      "single_source_dominance_ge_75pct_count": 0
+    }
+  },
+  "alpha_grid": [
+    0.1,
+    1.0,
+    10.0,
+    100.0
+  ],
+  "b3_aggregate_sanity_pass": true,
+  "b3_row_sanity_pass": true,
+  "boundary_audit_rows": 14960,
+  "branch": "s4/wave-b-multisource-joint",
+  "candidate_prediction_rows": 1760,
+  "coefficient_diagnostics": {
+    "registered_R1_REFERENCE_SNAPSHOT_LAG": {
+      "coefficient_sign_flip_features": [
+        "urbanization_latest",
+        "urbanization_recent3_slope",
+        "density_recent3_relative_slope",
+        "wage_log_latest",
+        "wage_recent3_log_slope",
+        "employees_log_latest"
+      ],
+      "coefficient_sign_flip_total": 10,
+      "dominant_source_counts": {
+        "employees": 1,
+        "urbanization": 6,
+        "wage": 4
+      },
+      "dominant_source_share_max": 0.5302903193709142,
+      "dominant_source_share_mean": 0.41141214318922237
+    },
+    "registered_R2_CONSERVATIVE_PUBLICATION_STRESS": {
+      "coefficient_sign_flip_features": [
+        "urbanization_latest",
+        "urbanization_recent3_slope",
+        "density_recent3_relative_slope",
+        "wage_log_latest",
+        "wage_recent3_log_slope",
+        "employees_log_latest"
+      ],
+      "coefficient_sign_flip_total": 9,
+      "dominant_source_counts": {
+        "density": 2,
+        "urbanization": 5,
+        "wage": 4
+      },
+      "dominant_source_share_max": 0.5666937146294512,
+      "dominant_source_share_mean": 0.41125825079864564
+    },
+    "resident_R1_REFERENCE_SNAPSHOT_LAG": {
+      "coefficient_sign_flip_features": [
+        "urbanization_recent3_slope",
+        "density_latest",
+        "wage_log_latest",
+        "wage_recent3_log_slope",
+        "employees_log_latest",
+        "employees_recent3_log_slope"
+      ],
+      "coefficient_sign_flip_total": 11,
+      "dominant_source_counts": {
+        "density": 9,
+        "urbanization": 2
+      },
+      "dominant_source_share_max": 0.5681934789693156,
+      "dominant_source_share_mean": 0.44200122863811303
+    },
+    "resident_R2_CONSERVATIVE_PUBLICATION_STRESS": {
+      "coefficient_sign_flip_features": [
+        "urbanization_recent3_slope",
+        "density_latest",
+        "density_recent3_relative_slope",
+        "wage_log_latest"
+      ],
+      "coefficient_sign_flip_total": 6,
+      "dominant_source_counts": {
+        "density": 6,
+        "employees": 2,
+        "urbanization": 3
+      },
+      "dominant_source_share_max": 0.4923001017798682,
+      "dominant_source_share_mean": 0.4192868117387121
+    }
+  },
+  "common_origin_domain": "2011-2021",
+  "decision_detail": {
+    "decision_rule": "deep_dive=true when resident at least one scenario beats B3 and the other has no clear material reversal; or both scenarios are within 1% with complementary origin/latest evidence",
+    "decision_rule_one_pass": false,
+    "decision_rule_two_pass": false,
+    "deep_dive_recommended": false,
+    "other_scenario_no_clear_material_reversal": false,
+    "registered_consistency_within_minus_1pct": true,
+    "resident_at_least_one_scenario_gain": false,
+    "resident_both_scenarios_within_1pct": false,
+    "resident_complementary_origin_latest_evidence": true,
+    "resident_gain_scenarios": [],
+    "resident_relative_improvement_pct": {
+      "R1_REFERENCE_SNAPSHOT_LAG": -3.54590355780747,
+      "R2_CONSERVATIVE_PUBLICATION_STRESS": -9.981897611027177
+    },
+    "screening_decision": "multisource_joint_unsupported"
+  },
+  "deep_dive_recommended": false,
+  "density_regime_suppression_preserved": true,
+  "employment_provenance": {
+    "canonical_row_count": 773,
+    "canonical_value_row_count": 773,
+    "derived_row_count": 91,
+    "provenance_file": "data\\normalized\\就业信息_从业人员数_provenance.csv",
+    "quarantine_file": "data\\quarantine\\就业信息_从业人员数_quarantine.csv",
+    "quarantine_row_count": 80,
+    "quarantine_unique_key_count": 59,
+    "source_status": "source_plus_remap_quarantine_and_derived"
+  },
+  "ensemble_run": false,
+  "fallback_alpha": 10.0,
+  "feature_formulas": {
+    "density_latest": "latest allowed observed density level",
+    "density_recent3_relative_slope": "OLS slope of density against actual year divided by latest density; missing on documented regime crossing",
+    "employees_log_latest": "log1p(latest allowed positive employeesNumber)",
+    "employees_recent3_log_slope": "OLS slope of log employeesNumber against actual year over latest three allowed positive observations",
+    "urbanization_latest": "latest allowed observed urbanizationRate",
+    "urbanization_recent3_slope": "OLS slope of urbanizationRate against actual year over latest three allowed observations",
+    "wage_log_latest": "log1p(latest allowed positive averageWage)",
+    "wage_recent3_log_slope": "OLS slope of log averageWage against actual year over latest three allowed positive observations"
+  },
+  "feature_group_id": "MULTISOURCE_COMPACT_V1",
+  "feature_names": [
+    "urbanization_latest",
+    "urbanization_recent3_slope",
+    "density_latest",
+    "density_recent3_relative_slope",
+    "wage_log_latest",
+    "wage_recent3_log_slope",
+    "employees_log_latest",
+    "employees_recent3_log_slope"
+  ],
+  "feature_source_map": {
+    "density": [
+      "density_latest",
+      "density_recent3_relative_slope"
+    ],
+    "employees": [
+      "employees_log_latest",
+      "employees_recent3_log_slope"
+    ],
+    "urbanization": [
+      "urbanization_latest",
+      "urbanization_recent3_slope"
+    ],
+    "wage": [
+      "wage_log_latest",
+      "wage_recent3_log_slope"
+    ]
+  },
+  "final_2023_prediction_run": false,
+  "fit_record_count": 44,
+  "frozen_base_commit": "decfd7e0c68d14da31eabe5720ab706122c1040d",
+  "gbdt_run": false,
+  "inner_geometry": "expanding pseudo-origin: inner validation year y trains only on pseudo-target rows <= y-2",
+  "metrics": {
+    "registered_R1_REFERENCE_SNAPSHOT_LAG_B3_RECENT_3POINT_OLS_TREND": {
+      "latest_2021_mse": 1485.6048611111196,
+      "macro_origin_mse": 225.42121212121322,
+      "pooled_mae": 5.60606060606061,
+      "pooled_mse": 225.42121212121324,
+      "pooled_rmse": 15.014033839085792
+    },
+    "registered_R1_REFERENCE_SNAPSHOT_LAG_M5C_B3_PLUS_RIDGECV_MULTISOURCE": {
+      "latest_2021_mse": 1486.6193981800188,
+      "macro_origin_mse": 226.83854042856646,
+      "pooled_mae": 5.9465812718067355,
+      "pooled_mse": 226.83854042856643,
+      "pooled_rmse": 15.061159996114723
+    },
+    "registered_R2_CONSERVATIVE_PUBLICATION_STRESS_B3_RECENT_3POINT_OLS_TREND": {
+      "latest_2021_mse": 1485.6048611111196,
+      "macro_origin_mse": 225.42121212121322,
+      "pooled_mae": 5.60606060606061,
+      "pooled_mse": 225.42121212121324,
+      "pooled_rmse": 15.014033839085792
+    },
+    "registered_R2_CONSERVATIVE_PUBLICATION_STRESS_M5C_B3_PLUS_RIDGECV_MULTISOURCE": {
+      "latest_2021_mse": 1484.3313116266002,
+      "macro_origin_mse": 227.2164323215128,
+      "pooled_mae": 5.924054852968838,
+      "pooled_mse": 227.21643232151277,
+      "pooled_rmse": 15.073700020947504
+    },
+    "resident_R1_REFERENCE_SNAPSHOT_LAG_B3_RECENT_3POINT_OLS_TREND": {
+      "latest_2021_mse": 3705.42777777773,
+      "macro_origin_mse": 872.4526515151429,
+      "pooled_mae": 14.196969696969695,
+      "pooled_mse": 872.4526515151429,
+      "pooled_rmse": 29.53730948334907
+    },
+    "resident_R1_REFERENCE_SNAPSHOT_LAG_M5C_B3_PLUS_RIDGECV_MULTISOURCE": {
+      "latest_2021_mse": 3341.0666116047687,
+      "macro_origin_mse": 903.388981125404,
+      "pooled_mae": 15.743182437108292,
+      "pooled_mse": 903.3889811254039,
+      "pooled_rmse": 30.056429946442474
+    },
+    "resident_R2_CONSERVATIVE_PUBLICATION_STRESS_B3_RECENT_3POINT_OLS_TREND": {
+      "latest_2021_mse": 3705.42777777773,
+      "macro_origin_mse": 872.4526515151429,
+      "pooled_mae": 14.196969696969695,
+      "pooled_mse": 872.4526515151429,
+      "pooled_rmse": 29.53730948334907
+    },
+    "resident_R2_CONSERVATIVE_PUBLICATION_STRESS_M5C_B3_PLUS_RIDGECV_MULTISOURCE": {
+      "latest_2021_mse": 3711.371036673679,
+      "macro_origin_mse": 959.539981894076,
+      "pooled_mae": 15.867057149326346,
+      "pooled_mse": 959.5399818940762,
+      "pooled_rmse": 30.976442369873208
+    }
+  },
+  "minimum_inner_folds": 3,
+  "model_family": "RidgeCV residual correction",
+  "model_ids": [
+    "B3_RECENT_3POINT_OLS_TREND",
+    "M5C_B3_PLUS_RIDGECV_MULTISOURCE"
+  ],
+  "model_sweep_run": false,
+  "origin_count": 11,
+  "pairwise_vs_b3": {
+    "registered_R1_REFERENCE_SNAPSHOT_LAG": {
+      "baseline_latest_2021_mse": 1485.6048611111196,
+      "baseline_macro_origin_mse": 225.42121212121322,
+      "baseline_pooled_mse": 225.42121212121324,
+      "baseline_predictor_id": "B3_RECENT_3POINT_OLS_TREND",
+      "candidate_city_origin_improved_share": 0.38181818181818183,
+      "candidate_city_origin_worsened_share": 0.6181818181818182,
+      "candidate_latest_2021_mse": 1486.6193981800188,
+      "candidate_macro_origin_mse": 226.83854042856646,
+      "candidate_origin_loss_count": 7,
+      "candidate_origin_win_count": 4,
+      "candidate_pooled_mse": 226.83854042856643,
+      "candidate_predictor_id": "M5C_B3_PLUS_RIDGECV_MULTISOURCE",
+      "latest_candidate_outcome": "loss",
+      "latest_is_secondary_proximity_diagnostic": "yes",
+      "latest_mse_relative_improvement_pct": -0.06829117859377813,
+      "metric_scope": "pairwise_b3",
+      "origin_loss_years": "2012;2013;2014;2015;2016;2017;2021",
+      "origin_majority_win": "no",
+      "origin_tie_count": 0,
+      "origin_tie_years": "",
+      "origin_win_years": "2011;2018;2019;2020",
+      "pooled_mse_absolute_delta_baseline_minus_candidate": -1.4173283073531877,
+      "pooled_mse_relative_improvement_pct": -0.6287466445664677,
+      "ranking_metric": "pooled_city_year_mse",
+      "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+      "target_id": "registered"
+    },
+    "registered_R2_CONSERVATIVE_PUBLICATION_STRESS": {
+      "baseline_latest_2021_mse": 1485.6048611111196,
+      "baseline_macro_origin_mse": 225.42121212121322,
+      "baseline_pooled_mse": 225.42121212121324,
+      "baseline_predictor_id": "B3_RECENT_3POINT_OLS_TREND",
+      "candidate_city_origin_improved_share": 0.3840909090909091,
+      "candidate_city_origin_worsened_share": 0.615909090909091,
+      "candidate_latest_2021_mse": 1484.3313116266002,
+      "candidate_macro_origin_mse": 227.2164323215128,
+      "candidate_origin_loss_count": 7,
+      "candidate_origin_win_count": 4,
+      "candidate_pooled_mse": 227.21643232151277,
+      "candidate_predictor_id": "M5C_B3_PLUS_RIDGECV_MULTISOURCE",
+      "latest_candidate_outcome": "win",
+      "latest_is_secondary_proximity_diagnostic": "yes",
+      "latest_mse_relative_improvement_pct": 0.08572599066261247,
+      "metric_scope": "pairwise_b3",
+      "origin_loss_years": "2012;2013;2014;2015;2016;2017;2018",
+      "origin_majority_win": "no",
+      "origin_tie_count": 0,
+      "origin_tie_years": "",
+      "origin_win_years": "2011;2019;2020;2021",
+      "pooled_mse_absolute_delta_baseline_minus_candidate": -1.795220200299525,
+      "pooled_mse_relative_improvement_pct": -0.7963847693863882,
+      "ranking_metric": "pooled_city_year_mse",
+      "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+      "target_id": "registered"
+    },
+    "resident_R1_REFERENCE_SNAPSHOT_LAG": {
+      "baseline_latest_2021_mse": 3705.42777777773,
+      "baseline_macro_origin_mse": 872.4526515151429,
+      "baseline_pooled_mse": 872.4526515151429,
+      "baseline_predictor_id": "B3_RECENT_3POINT_OLS_TREND",
+      "candidate_city_origin_improved_share": 0.3795454545454545,
+      "candidate_city_origin_worsened_share": 0.6204545454545455,
+      "candidate_latest_2021_mse": 3341.0666116047687,
+      "candidate_macro_origin_mse": 903.388981125404,
+      "candidate_origin_loss_count": 7,
+      "candidate_origin_win_count": 4,
+      "candidate_pooled_mse": 903.3889811254039,
+      "candidate_predictor_id": "M5C_B3_PLUS_RIDGECV_MULTISOURCE",
+      "latest_candidate_outcome": "win",
+      "latest_is_secondary_proximity_diagnostic": "yes",
+      "latest_mse_relative_improvement_pct": 9.833174144106005,
+      "metric_scope": "pairwise_b3",
+      "origin_loss_years": "2013;2014;2015;2016;2017;2018;2019",
+      "origin_majority_win": "no",
+      "origin_tie_count": 0,
+      "origin_tie_years": "",
+      "origin_win_years": "2011;2012;2020;2021",
+      "pooled_mse_absolute_delta_baseline_minus_candidate": -30.936329610261055,
+      "pooled_mse_relative_improvement_pct": -3.54590355780747,
+      "ranking_metric": "pooled_city_year_mse",
+      "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+      "target_id": "resident"
+    },
+    "resident_R2_CONSERVATIVE_PUBLICATION_STRESS": {
+      "baseline_latest_2021_mse": 3705.42777777773,
+      "baseline_macro_origin_mse": 872.4526515151429,
+      "baseline_pooled_mse": 872.4526515151429,
+      "baseline_predictor_id": "B3_RECENT_3POINT_OLS_TREND",
+      "candidate_city_origin_improved_share": 0.34545454545454546,
+      "candidate_city_origin_worsened_share": 0.6545454545454545,
+      "candidate_latest_2021_mse": 3711.371036673679,
+      "candidate_macro_origin_mse": 959.539981894076,
+      "candidate_origin_loss_count": 8,
+      "candidate_origin_win_count": 3,
+      "candidate_pooled_mse": 959.5399818940762,
+      "candidate_predictor_id": "M5C_B3_PLUS_RIDGECV_MULTISOURCE",
+      "latest_candidate_outcome": "loss",
+      "latest_is_secondary_proximity_diagnostic": "yes",
+      "latest_mse_relative_improvement_pct": -0.16039332709685958,
+      "metric_scope": "pairwise_b3",
+      "origin_loss_years": "2013;2014;2015;2017;2018;2019;2020;2021",
+      "origin_majority_win": "no",
+      "origin_tie_count": 0,
+      "origin_tie_years": "",
+      "origin_win_years": "2011;2012;2016",
+      "pooled_mse_absolute_delta_baseline_minus_candidate": -87.0873303789333,
+      "pooled_mse_relative_improvement_pct": -9.981897611027177,
+      "ranking_metric": "pooled_city_year_mse",
+      "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+      "target_id": "resident"
+    }
+  },
+  "plan_id": "S4-Plan05C",
+  "quarantine_zero_reintroduction": true,
+  "r1_r2_feature_difference_confirmed": true,
+  "r1_r2_sensitivity": {
+    "registered_B3_RECENT_3POINT_OLS_TREND": {
+      "interpretation": "target-history-only equivalence control",
+      "metric_scope": "r1_r2_sensitivity",
+      "predictor_id": "B3_RECENT_3POINT_OLS_TREND",
+      "r1_latest_2021_mse": 1485.6048611111196,
+      "r1_pooled_mse": 225.42121212121324,
+      "r1_r2_feature_difference_confirmed": "no",
+      "r1_r2_feature_difference_count": 0,
+      "r1_r2_source_feature_difference_counts": "{}",
+      "r1_scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+      "r2_latest_2021_mse": 1485.6048611111196,
+      "r2_minus_r1_latest_2021_mse": 0.0,
+      "r2_minus_r1_pooled_mse": 0.0,
+      "r2_pooled_mse": 225.42121212121324,
+      "r2_scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+      "target_id": "registered",
+      "wage_r1_r2_equivalent": "yes"
+    },
+    "registered_M5C_B3_PLUS_RIDGECV_MULTISOURCE": {
+      "interpretation": "joint source-boundary rerun",
+      "metric_scope": "r1_r2_sensitivity",
+      "predictor_id": "M5C_B3_PLUS_RIDGECV_MULTISOURCE",
+      "r1_latest_2021_mse": 1486.6193981800188,
+      "r1_pooled_mse": 226.83854042856643,
+      "r1_r2_feature_difference_confirmed": "yes",
+      "r1_r2_feature_difference_count": 440,
+      "r1_r2_source_feature_difference_counts": "{\"density\":394,\"employees\":410,\"urbanization\":383}",
+      "r1_scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+      "r2_latest_2021_mse": 1484.3313116266002,
+      "r2_minus_r1_latest_2021_mse": -2.2880865534186796,
+      "r2_minus_r1_pooled_mse": 0.3778918929463373,
+      "r2_pooled_mse": 227.21643232151277,
+      "r2_scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+      "target_id": "registered",
+      "wage_r1_r2_equivalent": "yes"
+    },
+    "resident_B3_RECENT_3POINT_OLS_TREND": {
+      "interpretation": "target-history-only equivalence control",
+      "metric_scope": "r1_r2_sensitivity",
+      "predictor_id": "B3_RECENT_3POINT_OLS_TREND",
+      "r1_latest_2021_mse": 3705.42777777773,
+      "r1_pooled_mse": 872.4526515151429,
+      "r1_r2_feature_difference_confirmed": "no",
+      "r1_r2_feature_difference_count": 0,
+      "r1_r2_source_feature_difference_counts": "{}",
+      "r1_scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+      "r2_latest_2021_mse": 3705.42777777773,
+      "r2_minus_r1_latest_2021_mse": 0.0,
+      "r2_minus_r1_pooled_mse": 0.0,
+      "r2_pooled_mse": 872.4526515151429,
+      "r2_scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+      "target_id": "resident",
+      "wage_r1_r2_equivalent": "yes"
+    },
+    "resident_M5C_B3_PLUS_RIDGECV_MULTISOURCE": {
+      "interpretation": "joint source-boundary rerun",
+      "metric_scope": "r1_r2_sensitivity",
+      "predictor_id": "M5C_B3_PLUS_RIDGECV_MULTISOURCE",
+      "r1_latest_2021_mse": 3341.0666116047687,
+      "r1_pooled_mse": 903.3889811254039,
+      "r1_r2_feature_difference_confirmed": "yes",
+      "r1_r2_feature_difference_count": 440,
+      "r1_r2_source_feature_difference_counts": "{\"density\":394,\"employees\":410,\"urbanization\":383}",
+      "r1_scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+      "r2_latest_2021_mse": 3711.371036673679,
+      "r2_minus_r1_latest_2021_mse": 370.3044250689104,
+      "r2_minus_r1_pooled_mse": 56.15100076867225,
+      "r2_pooled_mse": 959.5399818940762,
+      "r2_scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+      "target_id": "resident",
+      "wage_r1_r2_equivalent": "yes"
+    }
+  },
+  "registered_b3_pooled_mse": 225.42121212121324,
+  "resident_b3_pooled_mse": 872.4526515151429,
+  "resident_registered_screening_complete": true,
+  "s4_complete": false,
+  "s5_entered": false,
+  "screening_decision": "multisource_joint_unsupported",
+  "screening_metric_rows": 192,
+  "source_boundary_audit_pass": true,
+  "source_geometry": {
+    "density": {
+      "latest_usable_year": 2022,
+      "observed_snapshot_freshness_lag_years": 1,
+      "source_derived_count": 0,
+      "source_invalidated_quarantine_count": 13,
+      "source_status": "source_plus_repair_and_invalidation"
+    },
+    "employees": {
+      "latest_usable_year": 2022,
+      "observed_snapshot_freshness_lag_years": 1,
+      "source_derived_count": 91,
+      "source_invalidated_quarantine_count": 59,
+      "source_status": "source_plus_remap_quarantine_and_derived"
+    },
+    "urbanization": {
+      "latest_usable_year": 2022,
+      "observed_snapshot_freshness_lag_years": 1,
+      "source_derived_count": 0,
+      "source_invalidated_quarantine_count": 0,
+      "source_status": "source_preserved"
+    },
+    "wage": {
+      "latest_usable_year": 2021,
+      "observed_snapshot_freshness_lag_years": 2,
+      "source_derived_count": 0,
+      "source_invalidated_quarantine_count": 1,
+      "source_status": "source_plus_invalidation"
+    }
+  },
+  "source_specific_caps": {
+    "density": {
+      "R1_REFERENCE_SNAPSHOT_LAG": 1,
+      "R2_CONSERVATIVE_PUBLICATION_STRESS": 2
+    },
+    "employees": {
+      "R1_REFERENCE_SNAPSHOT_LAG": 1,
+      "R2_CONSERVATIVE_PUBLICATION_STRESS": 2
+    },
+    "urbanization": {
+      "R1_REFERENCE_SNAPSHOT_LAG": 1,
+      "R2_CONSERVATIVE_PUBLICATION_STRESS": 2
+    },
+    "wage": {
+      "R1_REFERENCE_SNAPSHOT_LAG": 2,
+      "R2_CONSERVATIVE_PUBLICATION_STRESS": 2
+    }
+  },
+  "stage": "S4_FEATURE_ML_MODELING",
+  "starting_commit": "decfd7e0c68d14da31eabe5720ab706122c1040d",
+  "submission_run": false,
+  "target_history_cutoff_rule": "population B3 history <= pseudo-target-2; outer training labels <= outer-origin-2",
+  "tuning_run": false,
+  "uses_age": false,
+  "uses_city_id": false,
+  "uses_living_standard": false,
+  "uses_only_audited_four_sources": true,
+  "uses_sector_shares": false,
+  "uses_th_core": false,
+  "uses_unemployment": false,
+  "wage_r1_r2_equivalent": true
+}
