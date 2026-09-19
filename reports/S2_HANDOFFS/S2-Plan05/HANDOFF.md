@@ -21,7 +21,7 @@
 - Plan04 official source SHA256: 9775cf2b5cfb5e930a4c721816e72dbec614ed221d7c6778998d28459e373cb0
 - Current population canonical profile: 718 rows, 718 unique city-year keys, resident non-empty 693, registered non-empty 707, latest observed year 2021 for both targets
 
-Artifact/implementation commit SHA: 6beb826. A metadata-only follow-up commit will record this SHA; no history rewrite or force push is allowed.
+Artifact/implementation commit SHA: 6beb8263ecc6e6388b08496fc223ce537cefb6ab. A metadata-only follow-up commit records this SHA; no history rewrite or force push is allowed.
 
 ## Actual changes
 
