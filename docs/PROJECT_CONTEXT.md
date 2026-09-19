@@ -2,14 +2,14 @@
 
 ## Purpose
 
-项目目标是为 40 个城市的人口相关数据建立可追溯的 source-level canonical layer，并在其上保留可由 Main 审阅的 S2 Validation Architecture、S3 Baseline Ladder 与已授权的 S4 Plan01 feature/ML evidence。当前交付对象仍不是最终预测或提交。
+项目目标是为 40 个城市的人口相关数据建立可追溯的 source-level canonical layer，并在其上保留可由 Main 审阅的 S2 Validation Architecture、S3 Baseline Ladder 与已授权的 S4 Plan01/02 feature/ML evidence。当前交付对象仍不是最终预测或提交。
 
 ## Ownership and layers
 
 - `data/raw/`：7 个合法 XLSX 原始工作簿和任务参考 PDF。原始内容只读。
 - `data/normalized/`：7 个审计脚本重建的 14 张逻辑 canonical CSV，以及员工派生行 provenance、repair 和 density regime 报告。
 - `data/quarantine/`：确认无效或冲突的值，保留来源上下文；`source/test.xls` 的来源关系仍未解析，因此不进入 canonical。
-- `scripts/`：7 个领域审计脚本、统一 S1 runner，以及 S2 Plan01–05、S3 Plan01–03、S4 Plan01 的 focused evidence utilities。
+- `scripts/`：7 个领域审计脚本、统一 S1 runner，以及 S2 Plan01–05、S3 Plan01–03、S4 Plan01–02 的 focused evidence utilities。
 - `docs/`：当前上下文、执行指令、数据契约、质量登记、文件地图和 Main handoff。
 - `reports/S1_FINAL_REVIEW_PACK.zip`：唯一保留的当前 S1 审阅包；历史 Plan01-04 报告不再作为当前事实源。
 - `reports/S2_HANDOFFS/S2-Plan01/`：S2 前一轮历史 information-set feasibility matrix 与 handoff。
@@ -21,6 +21,7 @@
 - `reports/S3_HANDOFFS/S3-Plan02/`：B0–B4 fixed ladder、global/city prequential selector、oracle upper-bound diagnostics、城市偏好稳定性、late-origin、slope mechanism、集中度与 selector leakage evidence；不包含 2023 预测或 submission。
 - `reports/S3_HANDOFFS/S3-Plan03/`：B0–B7 fixed ladder、pooled city-fixed-effect additive trend、recent log-growth、local/pooled slope、growth、time-regime、leave-one-origin/city、concentration、leakage、compatibility 与 future-ML hurdle evidence；不包含 formal ML、2023 预测或 submission。
 - `reports/S4_HANDOFFS/S4-Plan01/`：target-history-only `TH_CORE` / `TH_SHAPE` feature manifest、outer-origin Ridge delta evidence、B3 compatibility、aggregate/per-origin/latest、ablation、concentration、leave-one-origin/city、leakage 与 R1/R2 equivalence artifacts；不包含 covariates、tuning、ensemble、2023 预测或 submission。
+- `reports/S4_HANDOFFS/S4-Plan02/`：城镇化率 `URB_LEVEL_V1` / `URB_DYNAMICS_V1` 的 B3 residual correction evidence，包含 D2 global residual bias control、M2A/M2B Ridge、R1/R2 freshness、training geometry、missingness、aggregate/per-origin/latest、ablation、concentration、leave-one-origin/city、coefficient/correlation、leakage 与 B3 compatibility artifacts；结论为 urbanization unsupported，不包含 2023 预测或 submission。
 
 ## Source facts
 
@@ -39,6 +40,8 @@ S3 Plan02 在不修改 S2 contract 的前提下只增加预注册 B3 recent-3-po
 S3 Plan03 在不修改 S2 contract 的前提下完整重跑 B0–B4，并新增 B5 pooled expanding city-fixed-effect additive trend、B6 pooled recent-3 city-fixed-effect additive trend、B7 recent-3 per-city log-linear growth。B3 仍是 strongest deployable fixed baseline：resident pooled MSE `872.4527`、registered `225.4212`；B7 接近但略差，B5/B6 共享绝对斜率明显劣化。Plan03 同时落盘 local/pooled slope、growth、time-regime、leave-one-origin/city、concentration 与 ML hurdle evidence；所有 leakage、R1/R2、S2、Plan01、Plan02 compatibility checks PASS，candidate sufficiency 为 yes。随后 S3 已在当前 checkpoint 中完成并授权进入 S4。
 
 S4 Plan01 在不修改 S2 target/metric/origin contract 的前提下，新增 target-history-only 的 `M1A_RIDGE_DELTA_TH_CORE` 与 `M1B_RIDGE_DELTA_TH_SHAPE`。两者均使用每个 outer origin 内 fit 的 median imputation、missing indicators、standardization 与 `Ridge(alpha=1.0)`，不使用 covariates、city identity、tuning 或 ensemble。B3 row/metric compatibility、full `40 × 11` coverage、leakage 与 R1/R2 equivalence 均 PASS；但 resident pooled MSE 分别为 `910.3499`、`938.6950`，均未超过 B3 的 `872.4527`，registered sensitivity 也发生同方向 reversal。因此当前结论为 `S4-Plan01 evidence complete`，不是整个 S4 完成，也未进入 S5。
+
+S4 Plan02 在不修改 S2 target/metric/origin contract 的前提下，新增只使用 canonical `urbanization` 的 D2 global residual bias control、M2A level Ridge 与 M2B level+dynamics Ridge。R1 复用 S2 lag 1 cap，R2 复用共享规则得到的 lag 2 cap；B3 row/metric compatibility、full `40 × 11` validation coverage、population `T-2`、urbanization boundary、leakage 与 source-year audits 均 PASS。B3 仍为 strongest fixed baseline：resident pooled MSE `872.4527`、registered `225.4212`；D2 与 M2A/M2B 均未改善 pooled aggregate，registered latest 也全部恶化。Plan02 结论为 `urbanization unsupported`，仍不是整个 S4 完成，也未进入 S5。
 
 两个需要特别防止回退的事实：
 
