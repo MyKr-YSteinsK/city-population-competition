@@ -11,7 +11,7 @@
 - Plan01 evidence commit：`db7bf05fa2447c6cdc316a054d08e1d248641a45`
 - Integrated `main`：`1a6770f763966b58dd7ae60fef34e332febcea09`
 - Worker branch：`s5/plan02-robust-local-trend-screening`
-- Worker evidence commit：`e8602f5e4d9ad1bd0c9dbbc987b4ad606d52ade3`
+- Worker evidence commit：`e8602f51148807cbc0aa5566bea09ed989b7e6d8`
 - Final worker tip：docs-only 最终化提交 SHA 将在本次 `TASK_RESULT` 返回
 - 最终筛查决定：`robust_local_trend_unsupported`
 
