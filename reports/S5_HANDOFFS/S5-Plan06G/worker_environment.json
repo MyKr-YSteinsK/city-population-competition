@@ -1,0 +1,25 @@
+{
+  "import_error": "",
+  "import_smoke_tests": {
+    "from statsmodels.regression.mixed_linear_model import MixedLM": "PASS",
+    "import statsmodels": "PASS"
+  },
+  "install_command": "python.exe -m pip install statsmodels==0.15.0",
+  "installation_status": "PASS",
+  "package_versions": {
+    "formulaic": "1.2.2",
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "patsy": "1.0.3",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1",
+    "statsmodels": "0.15.0"
+  },
+  "pip_check_output": "No broken requirements found.",
+  "pip_check_status": "PASS",
+  "plan_id": "S5-Plan06G",
+  "python": "3.14.6",
+  "requested_dependency": "statsmodels==0.15.0",
+  "shared_requirements_modified": false,
+  "statsmodels_version": "0.15.0"
+}
