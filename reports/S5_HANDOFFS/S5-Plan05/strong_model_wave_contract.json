@@ -1,0 +1,194 @@
+{
+  "wave_id": "S5-Plan05-STRONG-MODEL-PARALLEL-WAVE",
+  "plan_id": "S5-Plan05",
+  "stage": "S5_EVIDENCE_DRIVEN_ITERATION",
+  "wave_base_sha": "58cb1434b7c543b8e5ea5e0ae67b2f93008e50c5",
+  "integrated_plan04b_sha": "58cb1434b7c543b8e5ea5e0ae67b2f93008e50c5",
+  "feature_contract_version": "S5-Plan04-FULL-MULTISOURCE-V1",
+  "replay_contract_version": "S5-Plan04B-TRAINING-REPLAY-V1",
+  "file_paths": {
+    "formal_validation_matrix": "reports/S5_HANDOFFS/S5-Plan04/full_multisource_feature_matrix.csv",
+    "formal_validation_schema": "reports/S5_HANDOFFS/S5-Plan04/feature_matrix_schema.json",
+    "replay_matrix": "reports/S5_HANDOFFS/S5-Plan04B/full_multisource_training_replay_matrix.csv",
+    "parallel_worker_input_contract": "reports/S5_HANDOFFS/S5-Plan04B/parallel_worker_input_contract.json",
+    "outer_training_geometry": "reports/S5_HANDOFFS/S5-Plan04B/outer_training_geometry.csv",
+    "inner_split_geometry": "reports/S5_HANDOFFS/S5-Plan04B/inner_split_geometry.csv",
+    "oof_schema": "reports/S5_HANDOFFS/S5-Plan04/oof_prediction_contract.csv",
+    "environment_versions": "reports/S5_HANDOFFS/S5-Plan05/environment_versions.json"
+  },
+  "data_contract": {
+    "formal_validation_row_count": 1760,
+    "replay_row_count": 2320,
+    "model_feature_count": 144,
+    "formal_outer_origins": [
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021
+    ],
+    "city_count": 40,
+    "replay_pseudo_target_year_min": 2004,
+    "replay_pseudo_target_year_max": 2021,
+    "target_ids": [
+      "resident",
+      "registered"
+    ],
+    "scenario_ids": [
+      "R1_REFERENCE_SNAPSHOT_LAG",
+      "R2_CONSERVATIVE_PUBLICATION_STRESS"
+    ],
+    "categorical_metadata": [
+      "city_id"
+    ],
+    "numeric_feature_missingness": "raw NaN retained; no global imputation"
+  },
+  "outer_evaluation_contract": {
+    "primary_target": "resident",
+    "mandatory_sensitivity_target": "registered",
+    "primary_metric": "pooled_city_year_mse",
+    "mandatory_metrics": [
+      "pooled_city_year_mse",
+      "macro_origin_mse",
+      "per_origin_mse",
+      "origin_win_count_vs_b3",
+      "latest_2021_mse",
+      "rmse",
+      "mae",
+      "bias",
+      "city_level_sse",
+      "city_error_concentration"
+    ],
+    "b3_reference_pooled_mse": {
+      "resident": 872.452651515143,
+      "registered": 225.421212121213
+    },
+    "outer_training_rule": "pseudo_target_year <= outer_origin_year - 2",
+    "outer_validation_rule": "pseudo_target_year == outer_origin_year",
+    "official_prediction_coverage": "2 targets x 2 scenarios x 11 origins x 40 cities"
+  },
+  "inner_selection_contract": {
+    "geometry_row_count": 484,
+    "eligibility_rule": "inner_training_row_count >= 40 AND inner_validation_row_count >= 20 AND boundary_pass == PASS",
+    "eligible_inner_fold_count": 264,
+    "outer_fit_group_count": 44,
+    "outer_fit_groups_with_at_least_3_eligible_folds": 36,
+    "fallback_outer_fit_count": 8,
+    "fallback_rule": "when eligible inner folds < 3, use the worker pre-registered conservative default configuration and report selection_method=fallback_conservative_default",
+    "selection_objective": "mean inner validation MSE across eligible folds",
+    "tie_break_rule": "simpler or more regularized configuration according to pre-registered worker config order",
+    "outer_labels_in_selection": false,
+    "official_outer_origins_removed": false
+  },
+  "framings": [
+    {
+      "framing_id": "F1_DIRECT",
+      "training_label": "actual_target_value",
+      "prediction_rule": "model(features_T)"
+    },
+    {
+      "framing_id": "F2_B3_RESIDUAL",
+      "training_label": "b3_residual_actual_minus_prediction",
+      "prediction_rule": "B3(T) + model(features_T)"
+    }
+  ],
+  "city_identity_contract": {
+    "city_id_allowed": true,
+    "city_id_is_numeric_feature": false,
+    "target_encoding_outside_training_fold": false,
+    "allowed_handling": [
+      "native categorical handling where supported",
+      "deterministic one-hot encoding with fixed 40-city vocabulary",
+      "city-agnostic control that omits city_id"
+    ],
+    "post_hoc_static_routing": false
+  },
+  "preprocessing_contract": {
+    "native_tree_missing_handling_allowed": true,
+    "fold_local_imputer_and_missing_indicator_allowed": true,
+    "global_imputation_before_outer_split": false,
+    "future_row_imputation": false,
+    "preprocessing_fit_boundary": "inside the corresponding outer or inner training fold"
+  },
+  "oof_contract": {
+    "required_columns": [
+      "model_id",
+      "framing_id",
+      "target_id",
+      "scenario_id",
+      "origin_year",
+      "city_id",
+      "actual_target_value",
+      "prediction_value",
+      "residual_prediction_minus_actual",
+      "squared_error",
+      "training_max_label_year",
+      "feature_contract_version",
+      "worker_commit"
+    ],
+    "additional_columns_allowed": true,
+    "fake_or_in_sample_oof_rows": false,
+    "promoted_candidate_coverage": "2 targets x 2 scenarios x 11 origins x 40 cities"
+  },
+  "screening_contract": {
+    "small_preregistered_configuration_sets": true,
+    "optuna": false,
+    "bayesian_optimization": false,
+    "random_search": false,
+    "large_grid_search": false,
+    "outer_label_driven_rescue": false,
+    "feature_changes": false,
+    "city_specific_parameter_search": false,
+    "winner_only_tuning_deferred_until_joint_review": true
+  },
+  "planned_workers": [
+    {
+      "plan_id": "S5-Plan06A",
+      "family": "LightGBM"
+    },
+    {
+      "plan_id": "S5-Plan06B",
+      "family": "CatBoost"
+    },
+    {
+      "plan_id": "S5-Plan06C",
+      "family": "XGBoost"
+    },
+    {
+      "plan_id": "S5-Plan06D",
+      "family": "ExtraTrees_and_regularized_linear_control"
+    }
+  ],
+  "worker_file_governance": {
+    "worker_may_modify_requirements": false,
+    "worker_may_modify_plan04_or_plan04b_artifacts": false,
+    "worker_may_modify_checkpoint": false,
+    "worker_may_modify_other_worker_files": false,
+    "allowed_worker_scope": "own runner plus reports/S5_HANDOFFS/S5-Plan06X/*"
+  },
+  "forbidden_actions": [
+    "train any Plan06 model before its own worker task",
+    "inspect outer labels to choose configurations",
+    "alter the 144 model features",
+    "alter replay rows",
+    "alter validation geometry",
+    "create city routing",
+    "create ensemble or blend",
+    "generate 2023 prediction",
+    "generate submission",
+    "declare S5 complete",
+    "enter S6",
+    "update CURRENT_LEARNING_CHECKPOINT.md"
+  ],
+  "plan05_model_training_run": false,
+  "final_2023_forecast_run": false,
+  "submission_run": false,
+  "s5_complete": false,
+  "s6_entered": false
+}
