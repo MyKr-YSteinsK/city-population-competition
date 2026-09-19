@@ -151,6 +151,8 @@ S4 的中心问题：
 - Plan 是研究合同和边界，不是逐行实现教程。
 - Codex 保留局部数据设计、实现、诊断、验证和合理实验决策空间。
 - 每次实验对话生成 Plan 时，必须**直接生成可下载文件**交给用户，不在聊天正文中预览或重复展示 Plan 全文。
+- 每次生成 Plan 前，聊天中先给用户一个**简短说明**，概括本轮预计做什么、为什么做、预期获得什么证据/成果；保持简洁，不展开成 Plan 正文。
+- 每份 Plan 必须使用清晰的**中文标题式文件名**，格式优先为：`S<Stage>-Plan<NN>｜<中文实验标题>.md`。例如：`S4-Plan01｜近期人口动态特征与 Ridge 趋势修正实验.md`。标题应反映本轮核心实验问题，不使用泛化名称如“实验1”“优化计划”。
 - 每个 Plan 的证据进入 `reports/S4_HANDOFFS/S4-PlanXX/`。
 - S4 Lab 不能自行进入 S5。
 - Stage 结束时生成 `S4_FEATURE_ML_MODELING_FINAL_REPORT.md`，重点保存真实参赛者视角的 Hypothesis → Experiment → Evidence → Interpretation → Decision 链。
