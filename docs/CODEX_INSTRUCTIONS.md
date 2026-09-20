@@ -25,7 +25,7 @@ S4 Plan01–05C 的 evidence 已归档；S5 Plan01–06H 的真实证据、recov
 - F4 label 为 `log(actual_target_value / pop_latest_level)`，reconstruction 为 `pop_latest_level * exp(raw_prediction)`；不 clipping、不新增 feature、不调参、不重新选择模型。
 - current 2023 information set 只能映射到已经冻结的 Plan02 R1/R2；不能新造 source policy 或使用 2022/2023 target truth。
 - CatBoost 只允许 historical Plan06E 的三组 pre-registered configs、seed `20260919`、native `city_id`、raw NaN 和 inner selection/fallback rule；不允许 per-city routing/gating/ensemble。
-- 不生成 2023 prediction、submission，不修改 `CURRENT_LEARNING_CHECKPOINT.md`，不进入 S7；正式提交必须等待 Main 处理 target/unit boundary。
+- 不生成 2023 prediction、submission，不修改 `CURRENT_LEARNING_CHECKPOINT.md`，不进入 S7；正式提交必须等待 Main 处理 target/unit boundary。后续 final pipeline 必须保留 resident primary 与 registered alternative 两条独立路径，分别训练、分别生成候选，不得平均或混合。
 
 ## 运行与交付
 

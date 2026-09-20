@@ -6,14 +6,15 @@
 - `ready_for_main_stage_review`: `true`
 - `ready_for_s6_clean_rebuild`: `true`
 - `formal_submission_generated`: `false`
-- Execution source main SHA: `401b9b9660b65e580d9db2b4fd9d3f32493639a5`
+- Execution source main SHA: `f9b97f32adc0e60e6d270db16392e4d46e7ddbe4`
+- `origin/main` at audit: `f9b97f32adc0e60e6d270db16392e4d46e7ddbe4`
 - Branch at audit: `main`
-- Evidence packet commit SHA: `60b6381d30eb8e0f5d5b5c35d751ec723c74ec1b`
-- The final delivery HEAD is verified and reported after the follow-up handoff-record commit/push.
+- This handoff records the audited source state; the exact delivery HEAD is reported after commit/push verification.
 
 ## What was frozen
 
 - Resident-primary proxy target and F4 log-growth framing.
+- Two future final-pipeline target paths: resident `primary` and registered `alternative`, each to be trained and submitted separately only after authorization; no averaging or mixing.
 - Plan04/04B exact 144-feature contract, raw NaN, native `city_id`, and S1 guards.
 - Existing Plan02 R1/R2 current-information mappings: `R1_REFERENCE_SNAPSHOT_LAG=EXACT_R1; R2_CONSERVATIVE_PUBLICATION_STRESS=EXACT_R2`; no new policy was introduced.
 - Conceptual 2023 final-training geometry with target labels capped at 2021.
@@ -47,8 +48,9 @@
 - The official target says `总人口`, but resident versus registered and official unit are not proven. This is the reason for `PARTIALLY_FROZEN_SUBMISSION_BLOCKED`.
 - R1/R2 are observed-snapshot freshness proxies, not proven publication dates.
 - F4 is a resident-primary local candidate; it is not an official-target or universal-target claim.
+- The current Main checkpoint requires retaining a separately trainable registered alternative until a real platform score can inform target-mapping review; this Plan does not execute that later step.
 - No 2023 prediction, submission, model selection experiment, tuning, feature change, ensemble, routing, S7 entry, or checkpoint edit was performed.
 
 ## Recommendation to Main
 
-Accept this packet for Main stage review and, if the target/unit boundary is accepted, proceed to the separately authorized clean raw rebuild. Keep formal submission generation blocked until Main resolves or explicitly accepts the resident-proxy/unit limitation. Do not declare `S6_COMPLETE`.
+Accept this packet for Main stage review and, if the target/unit boundary is accepted, proceed to the separately authorized clean raw rebuild while preserving both target paths. Keep formal submission generation blocked until Main resolves or explicitly accepts the resident-proxy/unit limitation. Do not declare `S6_COMPLETE`.

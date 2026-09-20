@@ -8,6 +8,7 @@ Plan06E lineage, then emits the S6-Plan01 contract and handoff packet.
 
 from __future__ import annotations
 
+import argparse
 import csv
 import hashlib
 import importlib.metadata
@@ -91,6 +92,16 @@ def sha256_file(path: Path) -> str:
 
 def git(*args: str) -> str:
     return subprocess.check_output(["git", *args], cwd=ROOT, text=True, encoding="utf-8", stderr=subprocess.STDOUT).strip()
+
+
+def resolve_source_sha(requested: str | None) -> str:
+    """Resolve the main source baseline audited before local packet edits."""
+    if requested:
+        return git("rev-parse", requested)
+    try:
+        return git("rev-parse", "origin/main")
+    except subprocess.CalledProcessError:
+        return git("rev-parse", "HEAD")
 
 
 def present(value: Any) -> bool:
@@ -435,6 +446,19 @@ def build_contract(
             "registered_sensitivity_target_id": "registered",
             "registered_sensitivity_source_column": "户籍人口（万人）",
             "unit_in_local_contract": "万人",
+            "final_pipeline_target_paths": {
+                "resident": {
+                    "role": "primary",
+                    "plan01_action": "freeze_contract_only",
+                    "future_action": "separately_train_and_generate_candidate_when_authorized",
+                },
+                "registered": {
+                    "role": "alternative",
+                    "plan01_action": "retain_contract_path_only",
+                    "future_action": "separately_train_and_generate_candidate_when_authorized",
+                },
+            },
+            "target_path_policy": "Keep resident and registered as separate final-pipeline paths; do not average, mix, or route between them without new evidence.",
         },
         "framing": {
             "framing_id": F4_ID,
@@ -529,6 +553,7 @@ def build_contract(
             "schema_only": {"file_format": "CSV", "file_name": "submission.csv", "columns": ["city_id", "year", "pred"], "row_count": 40, "city_ids": "city1..city40", "year": 2023},
             "target_mapping_and_unit_safe_to_freeze": False,
             "formal_submission_generated": False,
+            "future_candidate_policy": "When authorized, generate separate resident and registered submission candidates; never average or mix the two paths.",
         },
         "rebuild_boundary": {"manifest_path": relative(OUT / "rebuild_manifest.csv"), "categories": sorted({row["category"] for row in manifest}), "clean_rebuild_is_authorized_now": False, "contract_evidence_preserved": True},
         "forbidden_inputs": [relative(FORBIDDEN_TEST_XLS), "external data", "B-data as current default input", "manually edited target truth", "2022/2023 target truth", "worker OOF predictions as final-fit shortcuts"],
@@ -555,6 +580,7 @@ def build_markdown(contract: dict[str, Any], info: list[dict[str, Any]], geometr
 
 - Primary target: `resident`, source column `常住人口（万人）`, local role `primary_proxy`.
 - Official wording: `总人口`; official mapping to resident versus registered remains `UNKNOWN`.
+- The later final pipeline must retain two separate target paths: resident `primary` and registered `alternative`; this Plan freezes the paths but does not fit, predict, average, or mix them.
 - F4: `{F4_ID}`.
 - Training label: `{F4_LABEL}`.
 - Reconstruction: `{F4_RECONSTRUCTION}`.
@@ -601,6 +627,7 @@ def build_markdown(contract: dict[str, Any], info: list[dict[str, Any]], geometr
 
 - Official PDF confirms CSV `submission.csv` with `city_id`, `year`, and `pred`; Main evidence confirms 40 rows `city1..city40` and `year=2023`.
 - Official target wording is `总人口`, but official mapping and unit are not safe to freeze from available evidence. The formal submission remains blocked and is not generated.
+- When later authorized, resident and registered must produce separate candidates; no averaging or mixing is permitted without new evidence.
 - Detailed evidence: `submission_schema_evidence.md`.
 
 ## Rebuild boundary
@@ -655,7 +682,7 @@ Status is intentionally split between schema evidence and target semantics.
 | target unit | local source contract is 万人; official PDF does not state unit | INFERRED_NOT_SAFE_TO_FREEZE | PDF plus S1 contract |
 | official submission sample | confirmed in Main evidence, not present in current raw tree | CONFIRMED | Main checkpoint and recorded MD5 |
 
-The official target wording does not resolve the local resident/registered mapping. Therefore this Plan freezes the resident-primary F4 reproduction contract only and does not generate a formal submission.
+The official target wording does not resolve the local resident/registered mapping. Therefore this Plan freezes the resident-primary F4 reproduction contract and retains a separate registered alternative path for later review; it does not fit either final path, generate a 2023 prediction, or generate a formal submission.
 """
     handoff_md = f"""# S6-Plan01 Handoff｜F4 最终方案合同冻结与复现边界审计
 
@@ -666,12 +693,14 @@ The official target wording does not resolve the local resident/registered mappi
 - `ready_for_s6_clean_rebuild`: `true`
 - `formal_submission_generated`: `false`
 - Execution source main SHA: `{source_sha}`
+- `origin/main` at audit: `{git('rev-parse', 'origin/main')}`
 - Branch at audit: `{git('branch', '--show-current')}`
 - This handoff records the audited source state; the exact delivery HEAD is reported after commit/push verification.
 
 ## What was frozen
 
 - Resident-primary proxy target and F4 log-growth framing.
+- Two future final-pipeline target paths: resident `primary` and registered `alternative`, each to be trained and submitted separately only after authorization; no averaging or mixing.
 - Plan04/04B exact 144-feature contract, raw NaN, native `city_id`, and S1 guards.
 - Existing Plan02 R1/R2 current-information mappings: `{mapping}`; no new policy was introduced.
 - Conceptual 2023 final-training geometry with target labels capped at 2021.
@@ -705,17 +734,21 @@ The official target wording does not resolve the local resident/registered mappi
 - The official target says `总人口`, but resident versus registered and official unit are not proven. This is the reason for `PARTIALLY_FROZEN_SUBMISSION_BLOCKED`.
 - R1/R2 are observed-snapshot freshness proxies, not proven publication dates.
 - F4 is a resident-primary local candidate; it is not an official-target or universal-target claim.
+- The current Main checkpoint requires retaining a separately trainable registered alternative until a real platform score can inform target-mapping review; this Plan does not execute that later step.
 - No 2023 prediction, submission, model selection experiment, tuning, feature change, ensemble, routing, S7 entry, or checkpoint edit was performed.
 
 ## Recommendation to Main
 
-Accept this packet for Main stage review and, if the target/unit boundary is accepted, proceed to the separately authorized clean raw rebuild. Keep formal submission generation blocked until Main resolves or explicitly accepts the resident-proxy/unit limitation. Do not declare `S6_COMPLETE`.
+Accept this packet for Main stage review and, if the target/unit boundary is accepted, proceed to the separately authorized clean raw rebuild while preserving both target paths. Keep formal submission generation blocked until Main resolves or explicitly accepts the resident-proxy/unit limitation. Do not declare `S6_COMPLETE`.
 """
     return contract_md, dependency_md, submission_md, handoff_md
 
 
 def main() -> None:
-    source_sha = git("rev-parse", "HEAD")
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--source-main-sha", help="main baseline audited before local packet edits; defaults to origin/main")
+    args = parser.parse_args()
+    source_sha = resolve_source_sha(args.source_main_sha)
     definitions, schema, worker_contract, model_features = load_feature_contract()
     replay, boundary, inner, replay_summary = load_replay_geometry()
     contract_rows = read_csv(S1_CONTRACT)

@@ -1,5 +1,5 @@
 kind,reference,path,commit,blob_sha,sha256,status,notes
-execution_source_main,401b9b9660b65e580d9db2b4fd9d3f32493639a5,,401b9b9660b65e580d9db2b4fd9d3f32493639a5,,,VERIFIED,main SHA audited before S6 contract edits
+execution_source_main,f9b97f32adc0e60e6d270db16392e4d46e7ddbe4,,f9b97f32adc0e60e6d270db16392e4d46e7ddbe4,,,VERIFIED,main SHA audited before S6 contract edits
 historical_commit,plan06e_artifact_tip,,343970c608fa1a0f6d5e7ab5d355c29757d6ce2e,,,VERIFIED,
 historical_commit,plan06e_artifact_generation_source,,469787d00b1dc220a017df02c6fbb6fcb76d2605,,,VERIFIED,
 historical_commit,plan06e_runner_introduction,,f960d2cb71de73e4ab39d341f7383022d9c55cac,,,VERIFIED,
@@ -24,4 +24,4 @@ legal_raw_xlsx,data/raw/城市人口分析与预测/数据集/就业信息.xlsx,
 legal_raw_xlsx,data/raw/城市人口分析与预测/数据集/工资水平.xlsx,data/raw/城市人口分析与预测/数据集/工资水平.xlsx,2de1a80aba16875eaeaf07b0cbdca0689f9b2105,,5baddb178796bc04b1424488b22bb77fe7a9fec61237b53f7d4f82acd6676547,VERIFIED,
 legal_raw_xlsx,data/raw/城市人口分析与预测/数据集/年龄结构.xlsx,data/raw/城市人口分析与预测/数据集/年龄结构.xlsx,2de1a80aba16875eaeaf07b0cbdca0689f9b2105,,9a7a1070f31074989323923cfbfb925a0c5b6ecc20dcef1ee8bc29b8aa8e82bb,VERIFIED,
 legal_raw_xlsx,data/raw/城市人口分析与预测/数据集/生活水平.xlsx,data/raw/城市人口分析与预测/数据集/生活水平.xlsx,2de1a80aba16875eaeaf07b0cbdca0689f9b2105,,1f684e8eecf51bbcc7fdd19a47d38c6abbb80c3767d4d14d477240893c1bd8ce,VERIFIED,
-generated_contract,final_solution_contract.json,reports/S6_HANDOFFS/S6-Plan01/final_solution_contract.json,,,7c75dbe5fe40c9a890f177553e0b95286652e8e6661e9dc1d2b5955fdcb1d653,VERIFIED,hash recorded in this registry
+generated_contract,final_solution_contract.json,reports/S6_HANDOFFS/S6-Plan01/final_solution_contract.json,,,f5deff350d96d2b688abf19ea63ad2edd0588750d20d6f9ecf52fd4d70561e2b,VERIFIED,hash recorded in this registry

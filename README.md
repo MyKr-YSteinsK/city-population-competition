@@ -1,6 +1,6 @@
 # City Population Competition — S6 Final Solution Contract
 
-本仓库保留城市人口预测项目从 S1 数据合同到 S5 evidence wave 的可追溯产物，并在 S6-Plan01 冻结 resident-primary F4 的最终方案合同与复现边界。当前合同状态为 `PARTIALLY_FROZEN_SUBMISSION_BLOCKED`：可以供 Main review 和后续 clean raw rebuild 使用，但尚未生成 2023 prediction 或正式 submission。
+本仓库保留城市人口预测项目从 S1 数据合同到 S5 evidence wave 的可追溯产物，并在 S6-Plan01 冻结 resident-primary F4 的最终方案合同与复现边界。当前合同状态为 `PARTIALLY_FROZEN_SUBMISSION_BLOCKED`：可以供 Main review 和后续 clean raw rebuild 使用，但尚未生成 2023 prediction 或正式 submission。后续 final pipeline 需保留 resident primary 与 registered alternative 两条独立候选路径，不得平均或混合。
 
 ```powershell
 python -m pip install -r requirements.txt

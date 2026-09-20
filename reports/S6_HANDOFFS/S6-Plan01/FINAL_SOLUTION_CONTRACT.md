@@ -7,12 +7,13 @@
 - Ready for Main stage review: `yes`
 - Ready for the later clean raw rebuild: `yes`
 - Formal 2023 prediction/submission generated: `no`
-- Source main SHA audited: `401b9b9660b65e580d9db2b4fd9d3f32493639a5`
+- Source main SHA audited: `f9b97f32adc0e60e6d270db16392e4d46e7ddbe4`
 
 ## Target and framing
 
 - Primary target: `resident`, source column `常住人口（万人）`, local role `primary_proxy`.
 - Official wording: `总人口`; official mapping to resident versus registered remains `UNKNOWN`.
+- The later final pipeline must retain two separate target paths: resident `primary` and registered `alternative`; this Plan freezes the paths but does not fit, predict, average, or mix them.
 - F4: `F4_LOG_GROWTH_FROM_LATEST`.
 - Training label: `log(actual_target_value / pop_latest_level)`.
 - Reconstruction: `pop_latest_level * exp(raw_prediction)`.
@@ -59,6 +60,7 @@
 
 - Official PDF confirms CSV `submission.csv` with `city_id`, `year`, and `pred`; Main evidence confirms 40 rows `city1..city40` and `year=2023`.
 - Official target wording is `总人口`, but official mapping and unit are not safe to freeze from available evidence. The formal submission remains blocked and is not generated.
+- When later authorized, resident and registered must produce separate candidates; no averaging or mixing is permitted without new evidence.
 - Detailed evidence: `submission_schema_evidence.md`.
 
 ## Rebuild boundary

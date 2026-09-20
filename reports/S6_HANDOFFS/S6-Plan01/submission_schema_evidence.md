@@ -15,4 +15,4 @@ Status is intentionally split between schema evidence and target semantics.
 | target unit | local source contract is 万人; official PDF does not state unit | INFERRED_NOT_SAFE_TO_FREEZE | PDF plus S1 contract |
 | official submission sample | confirmed in Main evidence, not present in current raw tree | CONFIRMED | Main checkpoint and recorded MD5 |
 
-The official target wording does not resolve the local resident/registered mapping. Therefore this Plan freezes the resident-primary F4 reproduction contract only and does not generate a formal submission.
+The official target wording does not resolve the local resident/registered mapping. Therefore this Plan freezes the resident-primary F4 reproduction contract and retains a separate registered alternative path for later review; it does not fit either final path, generate a 2023 prediction, or generate a formal submission.

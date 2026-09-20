@@ -43,9 +43,9 @@
     "source_count": 14
   },
   "execution": {
-    "audit_generated_at_utc": "2026-09-20T13:05:40.538316+00:00",
+    "audit_generated_at_utc": "2026-09-20T13:09:50.976606+00:00",
     "branch": "main",
-    "source_main_sha": "401b9b9660b65e580d9db2b4fd9d3f32493639a5"
+    "source_main_sha": "f9b97f32adc0e60e6d270db16392e4d46e7ddbe4"
   },
   "fallback_policy": {
     "config_fallback": "FRM_C1_CONSERVATIVE only when eligible inner fold count < 3",
@@ -237,6 +237,7 @@
       }
     ],
     "formal_submission_generated": false,
+    "future_candidate_policy": "When authorized, generate separate resident and registered submission candidates; never average or mix the two paths.",
     "pdf_evidence": {
       "pdf_contains_official_schema": true,
       "pdf_page_count": 4,
@@ -257,6 +258,18 @@
     "target_mapping_and_unit_safe_to_freeze": false
   },
   "target": {
+    "final_pipeline_target_paths": {
+      "registered": {
+        "future_action": "separately_train_and_generate_candidate_when_authorized",
+        "plan01_action": "retain_contract_path_only",
+        "role": "alternative"
+      },
+      "resident": {
+        "future_action": "separately_train_and_generate_candidate_when_authorized",
+        "plan01_action": "freeze_contract_only",
+        "role": "primary"
+      }
+    },
     "official_resident_registered_mapping": "UNKNOWN",
     "official_target_wording": "总人口",
     "primary_contract_role": "primary_proxy",
@@ -264,6 +277,7 @@
     "primary_target_id": "resident",
     "registered_sensitivity_source_column": "户籍人口（万人）",
     "registered_sensitivity_target_id": "registered",
+    "target_path_policy": "Keep resident and registered as separate final-pipeline paths; do not average, mix, or route between them without new evidence.",
     "unit_in_local_contract": "万人"
   },
   "training_geometry": {
