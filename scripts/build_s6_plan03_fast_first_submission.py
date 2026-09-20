@@ -11,6 +11,7 @@ deterministic registered/resident B3 controls.  It never reads or hashes
 from __future__ import annotations
 
 import argparse
+import csv
 import hashlib
 import json
 import math
@@ -24,6 +25,7 @@ import tempfile
 import time
 from concurrent.futures import ProcessPoolExecutor, as_completed
 from datetime import datetime, timezone
+from decimal import Decimal, ROUND_HALF_UP
 from pathlib import Path
 from typing import Any
 
@@ -146,6 +148,15 @@ def city_key(value: str) -> tuple[int, str]:
 
 def sorted_cities(values: Any) -> list[str]:
     return sorted({str(value) for value in values}, key=city_key)
+
+
+def format_submission_prediction(value: Any) -> str:
+    """Format an existing prediction with decimal half-up rounding only."""
+    decimal_value = Decimal(str(value))
+    if not decimal_value.is_finite():
+        raise ValueError(f"Submission prediction is not finite: {value!r}")
+    rounded = decimal_value.quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
+    return format(rounded, "f")
 
 
 def assert_columns(frame: pd.DataFrame, required: list[str], name: str) -> None:
@@ -745,7 +756,9 @@ def package_outputs(root: Path, inputs: dict[str, Any], worker_results: dict[str
         frame["year"] = pd.to_numeric(frame["year"], errors="raise").astype(int)
         frame["pred"] = pd.to_numeric(frame["pred"], errors="raise").astype(float)
         frame = frame.sort_values("city_id", key=lambda col: col.map(city_key))
-        frame[["city_id", "year", "pred"]].to_csv(output_path, index=False, encoding="utf-8", lineterminator="\n", float_format="%.12f")
+        output_frame = frame[["city_id", "year", "pred"]].copy()
+        output_frame["pred"] = output_frame["pred"].map(format_submission_prediction)
+        output_frame.to_csv(output_path, index=False, encoding="utf-8", lineterminator="\n")
         candidate_paths[candidate_id] = str(output_path.relative_to(root)).replace("\\", "/")
         checks = validate_submission(frame[["city_id", "year", "pred"]], expected_cities, candidate_id)
         submission_checks.extend(checks)
@@ -952,6 +965,42 @@ If Main accepts the resident-primary path after reviewing the registered sensiti
     return summary
 
 
+def format_existing_submissions(root: Path) -> None:
+    """Rewrite only the existing submission ``pred`` text at two decimals."""
+    handoff_dir = root / "reports" / "S6_HANDOFFS" / PLAN_ID
+    expected_cities = [f"city{index}" for index in range(1, 41)]
+    for candidate_id, filename in SUBMISSION_FILES.items():
+        path = handoff_dir / filename
+        with path.open("r", encoding="utf-8", newline="") as handle:
+            reader = csv.DictReader(handle)
+            if reader.fieldnames != ["city_id", "year", "pred"]:
+                raise ValueError(f"{filename}: unexpected columns {reader.fieldnames}")
+            rows = list(reader)
+        if len(rows) != 40:
+            raise ValueError(f"{filename}: expected 40 rows, found {len(rows)}")
+        if [row["city_id"] for row in rows] != expected_cities:
+            raise ValueError(f"{filename}: city order changed before formatting")
+        if {row["year"] for row in rows} != {"2023"}:
+            raise ValueError(f"{filename}: year is not uniformly 2023")
+        original_pred_tokens = [row["pred"] for row in rows]
+        formatted_pred_tokens = [format_submission_prediction(token) for token in original_pred_tokens]
+        for row, formatted in zip(rows, formatted_pred_tokens):
+            row["pred"] = formatted
+        with path.open("w", encoding="utf-8", newline="") as handle:
+            writer = csv.DictWriter(handle, fieldnames=["city_id", "year", "pred"], lineterminator="\n")
+            writer.writeheader()
+            writer.writerows(rows)
+        with path.open("r", encoding="utf-8", newline="") as handle:
+            written = list(csv.DictReader(handle))
+        if [row["city_id"] for row in written] != expected_cities or [row["year"] for row in written] != ["2023"] * 40:
+            raise ValueError(f"{filename}: identity columns changed during formatting")
+        if [row["pred"] for row in written] != formatted_pred_tokens:
+            raise ValueError(f"{filename}: formatted predictions did not round-trip exactly")
+        if any(not re.fullmatch(r"-?\d+\.\d{2}", row["pred"]) for row in written):
+            raise ValueError(f"{filename}: not every prediction has exactly two decimal places")
+        print(f"[S6-Plan03] formatted {candidate_id}: {filename}; rows=40; pred_decimals=2", flush=True)
+
+
 def run_orchestrator(root: Path) -> None:
     started = time.perf_counter()
     print(f"[S6-Plan03] preflight started at {utc_now()}", flush=True)
@@ -992,14 +1041,18 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=None)
     parser.add_argument("--orchestrate", action="store_true")
+    parser.add_argument("--format-existing", action="store_true")
     return parser.parse_args()
 
 
 def main() -> None:
     args = parse_args()
     root = (args.root or Path(__file__).resolve().parents[1]).resolve()
+    if args.format_existing:
+        format_existing_submissions(root)
+        return
     if not args.orchestrate:
-        raise SystemExit("Use --orchestrate for the authorized S6-Plan03 run")
+        raise SystemExit("Use --orchestrate or --format-existing for the authorized S6-Plan03 run")
     run_orchestrator(root)
 
 
