@@ -1,7 +1,7 @@
 {
   "base_sha": "1f97f67488cd7aec120ef8b9fa04407dc13d54ba",
   "branch": "s5/plan06g-hierarchical-partial-pooling",
-  "candidate_oof_rows": 2720,
+  "candidate_oof_rows": 2760,
   "city_concentration": [
     {
       "framing_id": "F1_DIRECT",
@@ -35,45 +35,57 @@
       "framing_id": "F2_B3_RESIDUAL",
       "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
       "target_id": "registered",
-      "top1_city_sse_share": 0.08216154631535309,
-      "top3_city_sse_share": 0.1971929565353374
+      "top1_city_sse_share": 0.12302076459935682,
+      "top3_city_sse_share": 0.32469456241922906
     },
     {
       "framing_id": "F2_B3_RESIDUAL",
       "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
       "target_id": "registered",
-      "top1_city_sse_share": 0.08414950843043419,
-      "top3_city_sse_share": 0.19924224929030768
+      "top1_city_sse_share": 0.4018825640895567,
+      "top3_city_sse_share": 0.7541019229774876
     },
     {
       "framing_id": "F2_B3_RESIDUAL",
       "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
       "target_id": "resident",
-      "top1_city_sse_share": 0.13425063590940148,
-      "top3_city_sse_share": 0.30585812886448654
+      "top1_city_sse_share": 0.2959990087398727,
+      "top3_city_sse_share": 0.5028186722815663
     },
     {
       "framing_id": "F2_B3_RESIDUAL",
       "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
       "target_id": "resident",
-      "top1_city_sse_share": 0.13462046547374032,
-      "top3_city_sse_share": 0.3087110382021066
+      "top1_city_sse_share": 0.271417495712964,
+      "top3_city_sse_share": 0.47575762625687823
     }
   ],
   "classification": "coverage_incomplete",
   "convergence_failure_counts": {
-    "fit_failed_units": 362,
-    "fit_success_units": 1238,
+    "fit_failed_units": 361,
+    "fit_success_units": 1239,
     "model_fit_units": 1600,
-    "outer_fit_failure_count": 20,
+    "outer_fit_failure_count": 19,
     "primary_attempts": 1600,
     "primary_exception_units": 20,
-    "primary_nonconverged_units": 342
+    "primary_nonconverged_units": 341
   },
-  "elapsed_seconds_before_report_write": 749.5946426391602,
+  "coverage_by_framing": {
+    "F1_DIRECT": {
+      "candidate_oof_rows": 1760,
+      "required_oof_rows": 1760,
+      "status": "PASS"
+    },
+    "F2_B3_RESIDUAL": {
+      "candidate_oof_rows": 1000,
+      "required_oof_rows": 1760,
+      "status": "FAIL"
+    }
+  },
+  "elapsed_seconds_before_report_write": 776.2665433883667,
   "eligible_inner_fold_count": 264,
   "feature_contract_version": "S5-Plan04-FULL-MULTISOURCE-V1",
-  "final_evidence_commit_at_report_generation": "19536661b207ffcfbd3e9929b5fe3b5a396e7abc",
+  "final_evidence_commit_at_report_generation": "56b5a6d45ed3d8f22e23d7270205000c01b8cca7",
   "forbidden_actions_not_run": [
     "alter_plan04_144_features",
     "alter_replay_rows",
@@ -91,13 +103,16 @@
   "formal_row_count": 1760,
   "framings": [
     {
-      "classification": "coverage_incomplete",
+      "classification": "family_unsupported",
       "competitive_scenarios": [],
       "family": "HIERARCHICAL_PARTIAL_POOLING",
       "framing_id": "F1_DIRECT",
       "primary_target": "resident",
-      "rule": "full 2 x 2 x 11 x 40 OOF coverage is required before performance classification",
-      "scenario_improvements_pct": {},
+      "rule": "both R1/R2 below B3 or >=2% in one with other no worse than -1%; gain requires >=2 origin wins and top1 city SSE share <75%",
+      "scenario_improvements_pct": {
+        "R1_REFERENCE_SNAPSHOT_LAG": -256.7916199295635,
+        "R2_CONSERVATIVE_PUBLICATION_STRESS": -301.3170243259284
+      },
       "valid_signal_scenarios": []
     },
     {
@@ -113,8 +128,8 @@
   ],
   "inner_geometry_row_count": 484,
   "metric_meta": {
-    "candidate_rows": 2720,
-    "combined_rows": 4480,
+    "candidate_rows": 2760,
+    "combined_rows": 4520,
     "reference_rows": 1760
   },
   "model_failures": [
@@ -148,17 +163,6 @@
       "framing_id": "F2_B3_RESIDUAL",
       "model_id": "HIERARCHICAL_SELECTED",
       "outer_origin_year": 2018,
-      "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
-      "target_id": "resident"
-    },
-    {
-      "config_id": "HIER_C1_RI_PCA8",
-      "error": "default:not_converged",
-      "failure_type": "outer_fit_failed",
-      "family": "HIERARCHICAL_PARTIAL_POOLING",
-      "framing_id": "F2_B3_RESIDUAL",
-      "model_id": "HIERARCHICAL_SELECTED",
-      "outer_origin_year": 2020,
       "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
       "target_id": "resident"
     },
@@ -307,34 +311,34 @@
     },
     {
       "config_id": "HIER_C1_RI_PCA8",
+      "error": "default:Singular matrix",
+      "failure_type": "outer_fit_failed",
+      "family": "HIERARCHICAL_PARTIAL_POOLING",
+      "framing_id": "F2_B3_RESIDUAL",
+      "model_id": "HIERARCHICAL_SELECTED",
+      "outer_origin_year": 2015,
+      "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+      "target_id": "registered"
+    },
+    {
+      "config_id": "HIER_C1_RI_PCA8",
+      "error": "default:not_converged",
+      "failure_type": "outer_fit_failed",
+      "family": "HIERARCHICAL_PARTIAL_POOLING",
+      "framing_id": "F2_B3_RESIDUAL",
+      "model_id": "HIERARCHICAL_SELECTED",
+      "outer_origin_year": 2016,
+      "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+      "target_id": "registered"
+    },
+    {
+      "config_id": "HIER_C1_RI_PCA8",
       "error": "default:not_converged",
       "failure_type": "outer_fit_failed",
       "family": "HIERARCHICAL_PARTIAL_POOLING",
       "framing_id": "F2_B3_RESIDUAL",
       "model_id": "HIERARCHICAL_SELECTED",
       "outer_origin_year": 2018,
-      "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
-      "target_id": "registered"
-    },
-    {
-      "config_id": "HIER_C1_RI_PCA8",
-      "error": "default:Singular matrix",
-      "failure_type": "outer_fit_failed",
-      "family": "HIERARCHICAL_PARTIAL_POOLING",
-      "framing_id": "F2_B3_RESIDUAL",
-      "model_id": "HIERARCHICAL_SELECTED",
-      "outer_origin_year": 2019,
-      "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
-      "target_id": "registered"
-    },
-    {
-      "config_id": "HIER_C1_RI_PCA8",
-      "error": "default:not_converged",
-      "failure_type": "outer_fit_failed",
-      "family": "HIERARCHICAL_PARTIAL_POOLING",
-      "framing_id": "F2_B3_RESIDUAL",
-      "model_id": "HIERARCHICAL_SELECTED",
-      "outer_origin_year": 2021,
       "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
       "target_id": "registered"
     }
@@ -352,19 +356,19 @@
     "registered/R2_CONSERVATIVE_PUBLICATION_STRESS/F1_DIRECT: fixed-effect residual city-mean variance averaged 30803.3 versus raw between-city variance 44421.6.",
     "registered/R2_CONSERVATIVE_PUBLICATION_STRESS/F1_DIRECT: low-history mean absolute random intercept was smaller than high-history (132.006 vs 156.16); this is a diagnostic, not routing evidence.",
     "registered/R2_CONSERVATIVE_PUBLICATION_STRESS/F1_DIRECT: selected-fit C3/non-C3 slope-nonzero fraction was 0.727; stability must be judged with the variance and convergence evidence.",
-    "registered/R2_CONSERVATIVE_PUBLICATION_STRESS/F2_B3_RESIDUAL: fixed-effect residual city-mean variance averaged 10.5809 versus raw between-city variance 6.26949.",
-    "registered/R2_CONSERVATIVE_PUBLICATION_STRESS/F2_B3_RESIDUAL: low-history mean absolute random intercept was smaller than high-history (1.13779 vs 2.42738); this is a diagnostic, not routing evidence.",
+    "registered/R2_CONSERVATIVE_PUBLICATION_STRESS/F2_B3_RESIDUAL: fixed-effect residual city-mean variance averaged 12.9387 versus raw between-city variance 5.69807.",
+    "registered/R2_CONSERVATIVE_PUBLICATION_STRESS/F2_B3_RESIDUAL: low-history mean absolute random intercept was smaller than high-history (1.12082 vs 2.19524); this is a diagnostic, not routing evidence.",
     "registered/R2_CONSERVATIVE_PUBLICATION_STRESS/F2_B3_RESIDUAL: selected-fit C3/non-C3 slope-nonzero fraction was 0.571; stability must be judged with the variance and convergence evidence.",
     "resident/R1_REFERENCE_SNAPSHOT_LAG/F1_DIRECT: fixed-effect residual city-mean variance averaged 24632.5 versus raw between-city variance 63876.8.",
     "resident/R1_REFERENCE_SNAPSHOT_LAG/F1_DIRECT: low-history mean absolute random intercept was smaller than high-history (119.115 vs 148.864); this is a diagnostic, not routing evidence.",
     "resident/R1_REFERENCE_SNAPSHOT_LAG/F1_DIRECT: selected-fit C3/non-C3 slope-nonzero fraction was 0.000; stability must be judged with the variance and convergence evidence.",
-    "resident/R1_REFERENCE_SNAPSHOT_LAG/F2_B3_RESIDUAL: fixed-effect residual city-mean variance averaged 68.6692 versus raw between-city variance 93.6491.",
-    "resident/R1_REFERENCE_SNAPSHOT_LAG/F2_B3_RESIDUAL: low-history mean absolute random intercept was smaller than high-history (0.619824 vs 1.06113); this is a diagnostic, not routing evidence.",
+    "resident/R1_REFERENCE_SNAPSHOT_LAG/F2_B3_RESIDUAL: fixed-effect residual city-mean variance averaged 64.5709 versus raw between-city variance 85.3513.",
+    "resident/R1_REFERENCE_SNAPSHOT_LAG/F2_B3_RESIDUAL: low-history mean absolute random intercept was smaller than high-history (0.677346 vs 1.29815); this is a diagnostic, not routing evidence.",
     "resident/R1_REFERENCE_SNAPSHOT_LAG/F2_B3_RESIDUAL: selected-fit C3/non-C3 slope-nonzero fraction was 0.000; stability must be judged with the variance and convergence evidence.",
     "resident/R2_CONSERVATIVE_PUBLICATION_STRESS/F1_DIRECT: fixed-effect residual city-mean variance averaged 24631 versus raw between-city variance 63876.8.",
     "resident/R2_CONSERVATIVE_PUBLICATION_STRESS/F1_DIRECT: low-history mean absolute random intercept was smaller than high-history (118.799 vs 150.418); this is a diagnostic, not routing evidence.",
     "resident/R2_CONSERVATIVE_PUBLICATION_STRESS/F1_DIRECT: selected-fit C3/non-C3 slope-nonzero fraction was 0.000; stability must be judged with the variance and convergence evidence.",
-    "resident/R2_CONSERVATIVE_PUBLICATION_STRESS/F2_B3_RESIDUAL: fixed-effect residual city-mean variance averaged 70.6176 versus raw between-city variance 87.789.",
+    "resident/R2_CONSERVATIVE_PUBLICATION_STRESS/F2_B3_RESIDUAL: fixed-effect residual city-mean variance averaged 70.3961 versus raw between-city variance 87.789.",
     "resident/R2_CONSERVATIVE_PUBLICATION_STRESS/F2_B3_RESIDUAL: low-history mean absolute random intercept was smaller than high-history (0.740011 vs 1.63738); this is a diagnostic, not routing evidence.",
     "resident/R2_CONSERVATIVE_PUBLICATION_STRESS/F2_B3_RESIDUAL: selected-fit C3/non-C3 slope-nonzero fraction was 0.000; stability must be judged with the variance and convergence evidence."
   ],
@@ -384,10 +388,12 @@
   "replay_contract_version": "S5-Plan04B-TRAINING-REPLAY-V1",
   "replay_row_count": 2320,
   "required_oof_rows": 3520,
-  "runner_commit_at_execution": "19536661b207ffcfbd3e9929b5fe3b5a396e7abc",
+  "required_oof_rows_per_framing": 1760,
+  "runner_commit_at_execution": "56b5a6d45ed3d8f22e23d7270205000c01b8cca7",
   "seed": 20260919,
   "selected_config_counts": {
-    "HIER_C1_RI_PCA8": 75,
+    "HIER_C1_RI_PCA8": 72,
+    "HIER_C2_RI_PCA16": 3,
     "HIER_C3_RI_RS_PCA12": 13
   },
   "selected_config_counts_by_framing": {
@@ -396,7 +402,8 @@
       "HIER_C3_RI_RS_PCA12": 9
     },
     "F2_B3_RESIDUAL": {
-      "HIER_C1_RI_PCA8": 40,
+      "HIER_C1_RI_PCA8": 37,
+      "HIER_C2_RI_PCA16": 3,
       "HIER_C3_RI_RS_PCA12": 4
     }
   },
@@ -432,13 +439,14 @@
     "total_unseen_city_counts": 60
   },
   "variance_component_summary": {
-    "random_intercept_variance_mean": 17537.113998559293,
-    "random_intercept_variance_median": 23562.30018108335,
-    "random_slope_variance_mean": 31.188433778781572,
+    "random_intercept_variance_mean": 17283.02309690249,
+    "random_intercept_variance_median": 23485.97890009763,
+    "random_slope_variance_mean": 34.75503617118498,
     "random_slope_variance_meaningfully_nonzero_fraction": 1.0,
-    "random_slope_variance_median": 34.7684453074047,
+    "random_slope_variance_median": 40.27706168410581,
     "random_slope_variance_nonnull_count": 13,
-    "residual_variance_mean": 269.97685894142967,
-    "successful_outer_fit_count": 68
-  }
+    "residual_variance_mean": 269.41957698613686,
+    "successful_outer_fit_count": 69
+  },
+  "worker_status": "complete_with_incomplete_coverage"
 }
