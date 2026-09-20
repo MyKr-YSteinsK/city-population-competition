@@ -1,0 +1,156 @@
+{
+  "base_sha": "1f97f67488cd7aec120ef8b9fa04407dc13d54ba",
+  "branch": "s5/plan06d-extratrees-linear-controls",
+  "candidate_oof_rows": 7040,
+  "elapsed_seconds": 2455.136946439743,
+  "elapsed_seconds_before_report_write": 2451.1744689941406,
+  "eligible_inner_fold_count": 264,
+  "environment": {
+    "catboost": "1.2.10",
+    "gpu_package_added": false,
+    "import_smoke_tests": {
+      "catboost": "PASS",
+      "estimator_symbol_smoke": "PASS",
+      "lightgbm": "PASS",
+      "xgboost": "PASS"
+    },
+    "lightgbm": "4.7.0",
+    "model_training_run": false,
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "plan_id": "S5-Plan05",
+    "python": "3.14.6",
+    "required_dependency_versions": {
+      "catboost": "1.2.10",
+      "lightgbm": "4.7.0",
+      "xgboost": "3.4.1"
+    },
+    "scikit_learn": "1.9.1",
+    "xgboost": "3.4.1"
+  },
+  "families": {
+    "EXTRATREES": {
+      "diagnostic_row_count": 27358,
+      "fallback_count": 16,
+      "fit_count": 88,
+      "inner_evidence_row_count": 1560,
+      "model_id": "EXTRATREES_SELECTED",
+      "selected_config_counts": {
+        "ET_C1_CONSERVATIVE": 40,
+        "ET_C2_MEDIUM": 11,
+        "ET_C3_FLEXIBLE_REGULARIZED": 37
+      }
+    },
+    "RIDGE": {
+      "diagnostic_row_count": 27270,
+      "fallback_count": 16,
+      "fit_count": 88,
+      "inner_evidence_row_count": 1560,
+      "model_id": "RIDGE_SELECTED",
+      "selected_config_counts": {
+        "RIDGE_C1_STRONG": 52,
+        "RIDGE_C3_LIGHT": 36
+      }
+    }
+  },
+  "family_classifications": [
+    {
+      "classification": "family_unsupported",
+      "competitive_scenarios": [],
+      "family": "EXTRATREES",
+      "framing_id": "F1_DIRECT",
+      "primary_target": "resident",
+      "rule": "both R1/R2 below B3 or >=2% in one with other no worse than -1%; gain requires >=2 origin wins and top1 city SSE share <75%",
+      "scenario_improvements_pct": {
+        "R1_REFERENCE_SNAPSHOT_LAG": -186.28391122757787,
+        "R2_CONSERVATIVE_PUBLICATION_STRESS": -189.6538073177256
+      },
+      "valid_signal_scenarios": []
+    },
+    {
+      "classification": "family_unsupported",
+      "competitive_scenarios": [],
+      "family": "EXTRATREES",
+      "framing_id": "F2_B3_RESIDUAL",
+      "primary_target": "resident",
+      "rule": "both R1/R2 below B3 or >=2% in one with other no worse than -1%; gain requires >=2 origin wins and top1 city SSE share <75%",
+      "scenario_improvements_pct": {
+        "R1_REFERENCE_SNAPSHOT_LAG": -16.198783548537808,
+        "R2_CONSERVATIVE_PUBLICATION_STRESS": -18.9125861103307
+      },
+      "valid_signal_scenarios": []
+    },
+    {
+      "classification": "family_unsupported",
+      "competitive_scenarios": [],
+      "family": "RIDGE",
+      "framing_id": "F1_DIRECT",
+      "primary_target": "resident",
+      "rule": "both R1/R2 below B3 or >=2% in one with other no worse than -1%; gain requires >=2 origin wins and top1 city SSE share <75%",
+      "scenario_improvements_pct": {
+        "R1_REFERENCE_SNAPSHOT_LAG": -526.0931219525892,
+        "R2_CONSERVATIVE_PUBLICATION_STRESS": -389.5626307511948
+      },
+      "valid_signal_scenarios": []
+    },
+    {
+      "classification": "family_unsupported",
+      "competitive_scenarios": [],
+      "family": "RIDGE",
+      "framing_id": "F2_B3_RESIDUAL",
+      "primary_target": "resident",
+      "rule": "both R1/R2 below B3 or >=2% in one with other no worse than -1%; gain requires >=2 origin wins and top1 city SSE share <75%",
+      "scenario_improvements_pct": {
+        "R1_REFERENCE_SNAPSHOT_LAG": -16.975237082895188,
+        "R2_CONSERVATIVE_PUBLICATION_STRESS": -19.136723980084422
+      },
+      "valid_signal_scenarios": []
+    }
+  ],
+  "family_mean_resident_pooled_mse": {
+    "EXTRATREES": 1769.0048187816728,
+    "RIDGE": 2948.38331527094
+  },
+  "family_overall_classification": {
+    "EXTRATREES": "family_unsupported",
+    "RIDGE": "family_unsupported"
+  },
+  "feature_contract_version": "S5-Plan04-FULL-MULTISOURCE-V1",
+  "final_evidence_commit": "006f1446b702975d68d1fed93309218c13411d98",
+  "forbidden_actions_not_run": [
+    "optuna",
+    "bayesian_optimization",
+    "random_search",
+    "large_grid_search",
+    "routing",
+    "gating",
+    "blend",
+    "2023_forecast",
+    "submission",
+    "s5_complete",
+    "s6_entered"
+  ],
+  "formal_row_count": 1760,
+  "inner_geometry_row_count": 484,
+  "metric_meta": {
+    "candidate_rows": 7040,
+    "combined_rows": 8800,
+    "reference_rows": 1760
+  },
+  "model_feature_count": 144,
+  "overall_stronger_family": "EXTRATREES",
+  "overall_worker_classification": "family_unsupported",
+  "plan_id": "S5-Plan06D",
+  "preprocessing": {
+    "city_id": "fixed deterministic 40-city one-hot, no target encoding",
+    "extratrees": "no scaling after imputation; n_jobs=1",
+    "numeric": "SimpleImputer(strategy=median, add_indicator=True, keep_empty_features=True), fold-local",
+    "ridge": "StandardScaler after fold-local imputation and one-hot"
+  },
+  "replay_contract_version": "S5-Plan04B-TRAINING-REPLAY-V1",
+  "replay_row_count": 2320,
+  "runner_commit_at_execution": "006f1446b702975d68d1fed93309218c13411d98",
+  "seed": 20260919,
+  "selection_group_count": 176,
+  "stage": "S5_EVIDENCE_DRIVEN_ITERATION"
+}
