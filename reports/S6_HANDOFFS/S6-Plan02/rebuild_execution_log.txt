@@ -1,0 +1,2179 @@
+=== SCHEMA ===
+shape = (718, 4)
+columns = ['��������', '���', '��ס�˿ڣ����ˣ�', '�����˿ڣ����ˣ�']
+��������            str
+���            int64
+��ס�˿ڣ����ˣ�    float64
+�����˿ڣ����ˣ�    float64
+dtype: object
+
+=== KEY CHECK ===
+unique_city_year_keys = 718
+duplicate_rows = 0
+
+=== KEY FORMAT ===
+invalid_city_rows = 0
+
+=== COVERAGE ===
+cities = 40
+years = 2001-2021
+cities_with_internal_gaps = 11
+  ��������  year_min  year_max  observed_years  expected_years  internal_missing_years
+city12      2001      2021              16              21                       5
+city13      2001      2021              16              21                       5
+ city2      2001      2021              16              21                       5
+city22      2001      2021              16              21                       5
+city26      2001      2021              16              21                       5
+city30      2001      2021              16              21                       5
+city34      2001      2021              16              21                       5
+city37      2001      2021              16              21                       5
+city40      2001      2021              16              21                       5
+ city5      2001      2021              16              21                       5
+ city8      2001      2021              16              21                       5
+
+=== MISSING VALUES ===
+��������         0
+���           0
+��ס�˿ڣ����ˣ�    20
+�����˿ڣ����ˣ�     7
+dtype: int64
+
+=== VALUE SANITY ===
+��ס�˿ڣ����ˣ�: min=0.0, max=1870.0, zero=5, negative=0
+�����˿ڣ����ˣ�: min=0.0, max=1045.0, zero=4, negative=0
+
+=== NORMALIZED CHECK ===
+null_counts:
+��ס�˿ڣ����ˣ�    25
+�����˿ڣ����ˣ�    11
+dtype: int64
+zero_counts:
+��ס�˿ڣ����ˣ�    0
+�����˿ڣ����ˣ�    0
+dtype: int64
+
+saved: <DISPOSABLE_WORKTREE>\data\normalized\�˿ڹ�ģ.csv
+shape: (718, 4)
+=== SCHEMA ===
+shape = (758, 3)
+columns = ['���', '��������', '�˿��ܶȣ���/ƽ�����']
+���              int64
+��������              str
+�˿��ܶȣ���/ƽ�����    int64
+dtype: object
+
+=== RAW KEY CHECK ===
+unique_city_year_keys = 757
+duplicate_rows = 2
+  ���   ��������  �˿��ܶȣ���/ƽ�����
+2002 city31          2315
+2002 city31           422
+
+=== KEY FORMAT ===
+invalid_city_rows = 0
+
+=== NORMALIZED CHECK ===
+rows = 757
+unique_city_year_keys = 757
+duplicate_rows = 0
+
+=== POPULATION DENSITY V2 VERIFICATION ===
+rows = 757
+unique_keys = 757
+duplicate_rows = 0
+cities = 40
+missing_density = 13
+quarantine_rows = 13
+
+=== DENSITY QUARANTINE ===
+  ��������   ���  raw_density  regime_shift_year                                                                                          reason                             action
+city12 2013        801.0               2016 high-confidence pre-regime batch anomaly; A-B-A density pattern with stable resident population invalidate canonical density to NA
+city13 2013        565.0               2016 high-confidence pre-regime batch anomaly; A-B-A density pattern with stable resident population invalidate canonical density to NA
+city15 2013        760.0               2016 high-confidence pre-regime batch anomaly; A-B-A density pattern with stable resident population invalidate canonical density to NA
+city18 2013       1070.0               2016 high-confidence pre-regime batch anomaly; A-B-A density pattern with stable resident population invalidate canonical density to NA
+ city2 2013       1401.0               2016 high-confidence pre-regime batch anomaly; A-B-A density pattern with stable resident population invalidate canonical density to NA
+ city5 2013       1246.0               2016 high-confidence pre-regime batch anomaly; A-B-A density pattern with stable resident population invalidate canonical density to NA
+ city8 2013        479.0               2016 high-confidence pre-regime batch anomaly; A-B-A density pattern with stable resident population invalidate canonical density to NA
+city22 2014       1243.0               2017 high-confidence pre-regime batch anomaly; A-B-A density pattern with stable resident population invalidate canonical density to NA
+city26 2014        912.0               2017 high-confidence pre-regime batch anomaly; A-B-A density pattern with stable resident population invalidate canonical density to NA
+city30 2014        582.0               2017 high-confidence pre-regime batch anomaly; A-B-A density pattern with stable resident population invalidate canonical density to NA
+city34 2014        425.0               2017 high-confidence pre-regime batch anomaly; A-B-A density pattern with stable resident population invalidate canonical density to NA
+city37 2014        643.0               2017 high-confidence pre-regime batch anomaly; A-B-A density pattern with stable resident population invalidate canonical density to NA
+city40 2014        823.0               2017 high-confidence pre-regime batch anomaly; A-B-A density pattern with stable resident population invalidate canonical density to NA
+
+=== COVERAGE ===
+cities = 40
+years = 2000-2022
+cities_with_internal_gaps = 14
+  ��������  year_min  year_max  observed_years  expected_years  internal_missing_years
+city12      2001      2019              18              19                       1
+city13      2001      2019              18              19                       1
+city15      2000      2019              19              20                       1
+city18      2000      2019              19              20                       1
+ city2      2001      2019              18              19                       1
+city22      2001      2020              19              20                       1
+city26      2001      2020              19              20                       1
+city27      2001      2022              21              22                       1
+city30      2001      2020              19              20                       1
+city34      2001      2020              19              20                       1
+city37      2001      2020              19              20                       1
+city40      2001      2020              19              20                       1
+ city5      2001      2019              18              19                       1
+ city8      2001      2019              18              19                       1
+
+=== MISSING VALUES ===
+���               0
+��������             0
+�˿��ܶȣ���/ƽ�����    13
+dtype: int64
+
+=== VALUE SANITY ===
+min = 122.0
+max = 8901.0
+zero_count = 0
+negative_count = 0
+
+saved: <DISPOSABLE_WORKTREE>\data\normalized\�˿��ܶ�.csv
+shape: (757, 3)
+saved quarantine: <DISPOSABLE_WORKTREE>\data\quarantine\�˿��ܶ�_quarantine.csv
+quarantine shape: (13, 6)
+saved regime report: <DISPOSABLE_WORKTREE>\data\normalized\�˿��ܶ�_regime_report.csv
+=== SCHEMA ===
+shape = (675, 3)
+columns = ['��������', '���', 'urbanizationRate']
+��������                  str
+���                  int64
+urbanizationRate    int64
+dtype: object
+
+=== KEY CHECK ===
+unique_city_year_keys = 675
+duplicate_rows = 0
+
+=== KEY FORMAT ===
+invalid_city_rows = 0
+
+=== COVERAGE ===
+cities = 40
+years = 2003-2022
+cities_with_internal_gaps = 0
+
+=== MISSING VALUES ===
+��������                0
+���                  0
+urbanizationRate    0
+dtype: int64
+
+=== VALUE DOMAIN ===
+min = 32
+max = 100
+outside_0_100 = 0
+zero_count = 0
+hundred_count = 7
+
+=== NORMALIZED CHECK ===
+rows = 675
+duplicate_rows = 0
+
+saved: <DISPOSABLE_WORKTREE>\data\normalized\������.csv
+shape: (675, 3)
+
+======================================================================
+��ҵ��Ϣ.xlsx / ����ʧҵ��
+======================================================================
+
+=== SCHEMA ===
+shape = (769, 3)
+columns = ['���', '��������', 'unemploymentRate']
+���                    int64
+��������                    str
+unemploymentRate    float64
+dtype: object
+
+=== KEY CHECK ===
+rows = 769
+unique_city_year_keys = 769
+duplicate_rows = 0
+
+=== KEY FORMAT ===
+invalid_city_rows = 0
+
+=== ENTITY COVERAGE ===
+expected_cities = 40
+observed_cities = 38
+missing_cities = ['city13', 'city34']
+unexpected_cities = []
+
+=== COVERAGE ===
+year_min = 2000
+year_max = 2022
+years = 23
+cities_with_internal_gaps = 8
+city1: [2004]
+city18: [2010, 2011, 2014, 2016]
+city30: [2010, 2011, 2012, 2020]
+city37: [2021]
+city40: [2003, 2012]
+city5: [2008, 2015, 2019]
+city7: [2011]
+city8: [2004, 2005]
+
+=== MISSING VALUES ===
+���                  0
+��������                0
+unemploymentRate    1
+dtype: int64
+
+=== UNEMPLOYMENT VALUE DOMAIN ===
+count = 768
+min = 0.0
+max = 5.0
+zero_count = 1
+negative_count = 0
+above_100 = 0
+
+=== ZERO UNEMPLOYMENT ROWS ===
+  ���   ��������  unemploymentRate
+2011 city21               0.0
+
+=== MISSING UNEMPLOYMENT ROWS ===
+  ���   ��������  unemploymentRate
+2022 city35               NaN
+
+=== NORMALIZED VERIFICATION ===
+
+=== KEY CHECK ===
+rows = 769
+unique_city_year_keys = 769
+duplicate_rows = 0
+
+saved: <DISPOSABLE_WORKTREE>\data\normalized\��ҵ��Ϣ_����ʧҵ��.csv
+shape: (769, 3)
+
+======================================================================
+��ҵ��Ϣ.xlsx / ��ҵ��Ա�� v2 + ����ҵ��ҵ v2
+======================================================================
+
+--- RAW EMPLOYEES ---
+
+=== SCHEMA ===
+shape = (762, 3)
+columns = ['��������', '���', 'employeesNumber']
+��������                 str
+���                 int64
+employeesNumber    int64
+dtype: object
+
+=== KEY CHECK ===
+rows = 762
+unique_city_year_keys = 690
+duplicate_rows = 144
+
+=== DUPLICATE CITY COUNTS ===
+��������
+city31     42
+city25     34
+city29     34
+city33     34
+
+=== KEY FORMAT ===
+invalid_city_rows = 0
+
+=== EMPLOYEES V2 SOURCE VERIFICATION ===
+source_rows = 682
+unique_keys = 682
+duplicate_rows = 0
+cities = 35
+missing_cities = ['city14', 'city26', 'city30', 'city37', 'city40']
+quarantine_rows = 80
+
+=== EMPLOYEES V2 FINAL VERIFICATION ===
+rows = 773
+unique_keys = 773
+duplicate_rows = 0
+cities = 40
+missing_cities = []
+derived_rows = 91
+rejected_sector_rows = 2
+internal_gaps = {'city1': [2020], 'city10': [2020], 'city11': [2020], 'city14': [2018, 2019], 'city4': [2020], 'city7': [2020]}
+
+--- FINAL EMPLOYEES ---
+
+=== KEY FORMAT ===
+invalid_city_rows = 0
+
+=== ENTITY COVERAGE ===
+expected_cities = 40
+observed_cities = 40
+missing_cities = []
+unexpected_cities = []
+
+=== COVERAGE ===
+year_min = 2000
+year_max = 2022
+years = 23
+cities_with_internal_gaps = 6
+city1: [2020]
+city10: [2020]
+city11: [2020]
+city14: [2018, 2019]
+city4: [2020]
+city7: [2020]
+
+=== MISSING VALUES ===
+��������               0
+���                 0
+employeesNumber    0
+dtype: int64
+
+=== EMPLOYEES VALUE DOMAIN ===
+count = 773
+min = 55
+max = 1245
+zero_count = 0
+negative_count = 0
+
+normalized: <DISPOSABLE_WORKTREE>\data\normalized\��ҵ��Ϣ_��ҵ��Ա��.csv (773, 3)
+quarantine: <DISPOSABLE_WORKTREE>\data\quarantine\��ҵ��Ϣ_��ҵ��Ա��_quarantine.csv (80, 7)
+provenance: <DISPOSABLE_WORKTREE>\data\normalized\��ҵ��Ϣ_��ҵ��Ա��_provenance.csv (91, 9)
+
+--- RAW SECTOR ---
+
+=== SCHEMA ===
+shape = (698, 5)
+columns = ['��������', '���', 'pi_Employment', 'si_Employment', 'ti_Employment']
+��������               str
+���               int64
+pi_Employment    int64
+si_Employment    int64
+ti_Employment    int64
+dtype: object
+
+=== KEY CHECK ===
+rows = 698
+unique_city_year_keys = 698
+duplicate_rows = 0
+
+=== KEY FORMAT ===
+invalid_city_rows = 0
+
+=== ENTITY COVERAGE ===
+expected_cities = 40
+observed_cities = 40
+missing_cities = []
+unexpected_cities = []
+
+=== COVERAGE ===
+year_min = 2002
+year_max = 2021
+years = 20
+cities_with_internal_gaps = 5
+city1: [2020]
+city10: [2020]
+city11: [2020]
+city4: [2020]
+city7: [2020]
+
+=== MISSING VALUES ===
+��������             0
+���               0
+pi_Employment    0
+si_Employment    0
+ti_Employment    0
+dtype: int64
+
+=== SECTOR VALUE DOMAIN ===
+
+--- pi_Employment ---
+count = 698
+min = 0
+max = 216
+zero_count = 98
+negative_count = 0
+
+--- si_Employment ---
+count = 698
+min = 16
+max = 515
+zero_count = 0
+negative_count = 0
+
+--- ti_Employment ---
+count = 698
+min = 9
+max = 839
+zero_count = 0
+negative_count = 0
+
+=== SECTOR V2 FINAL VERIFICATION ===
+rows = 698
+unique_keys = 698
+duplicate_rows = 0
+cities = 40
+missing values:
+pi_Employment    18
+si_Employment    18
+ti_Employment    18
+quarantine_rows = 18
+
+=== SECTOR CONFLICTS BY SOURCE POSITION ===
+source_position
+2      1
+13    10
+14     7
+
+--- FINAL SECTOR ---
+
+=== KEY CHECK ===
+rows = 698
+unique_city_year_keys = 698
+duplicate_rows = 0
+
+=== KEY FORMAT ===
+invalid_city_rows = 0
+
+=== ENTITY COVERAGE ===
+expected_cities = 40
+observed_cities = 40
+missing_cities = []
+unexpected_cities = []
+
+=== COVERAGE ===
+year_min = 2002
+year_max = 2021
+years = 20
+cities_with_internal_gaps = 5
+city1: [2020]
+city10: [2020]
+city11: [2020]
+city4: [2020]
+city7: [2020]
+
+=== MISSING VALUES ===
+��������              0
+���                0
+pi_Employment    18
+si_Employment    18
+ti_Employment    18
+dtype: int64
+
+=== SECTOR VALUE DOMAIN ===
+
+--- pi_Employment ---
+count = 680
+min = 0.0
+max = 387.0
+zero_count = 8
+negative_count = 0
+
+--- si_Employment ---
+count = 680
+min = 16.0
+max = 486.0
+zero_count = 0
+negative_count = 0
+
+--- ti_Employment ---
+count = 680
+min = 9.0
+max = 839.0
+zero_count = 0
+negative_count = 0
+
+normalized: <DISPOSABLE_WORKTREE>\data\normalized\��ҵ��Ϣ_��һ������ҵ��ҵ����.csv (698, 5)
+quarantine: <DISPOSABLE_WORKTREE>\data\quarantine\��ҵ��Ϣ_��һ������ҵ��ҵ����_quarantine.csv (18, 11)
+saved repair report: <DISPOSABLE_WORKTREE>\data\normalized\��ҵ��Ϣ_repair_report.csv
+===== RAW AUDIT =====
+=== SCHEMA ===
+shape = (21, 41)
+columns = ['averageWage', 'city1', 'city2', 'city3', 'city4', 'city5', 'city6', 'city7', 'city8', 'city9', 'city10', 'city11', 'city12', 'city13', 'city14', 'city15', 'city16', 'city17', 'city18', 'city19', 'city20', 'city21', 'city22', 'city23', 'city24', 'city25', 'city26', 'city27', 'city28', 'city29', 'city30', 'city31', 'city32', 'city33', 'city34', 'city35', 'city36', 'city37', 'city38', 'city39', 'city40']
+
+=== DTYPES ===
+averageWage        str
+city1          float64
+city2            int64
+city3          float64
+city4            int64
+city5            int64
+city6          float64
+city7          float64
+city8            int64
+city9            int64
+city10         float64
+city11           int64
+city12           int64
+city13         float64
+city14         float64
+city15         float64
+city16         float64
+city17         float64
+city18           int64
+city19         float64
+city20         float64
+city21           int64
+city22           int64
+city23         float64
+city24           int64
+city25           int64
+city26           int64
+city27         float64
+city28           int64
+city29           int64
+city30           int64
+city31         float64
+city32           int64
+city33           int64
+city34           int64
+city35         float64
+city36           int64
+city37           int64
+city38         float64
+city39           int64
+city40           int64
+dtype: object
+
+=== AXES ===
+year_rows = 21
+unique_year_labels = 21
+invalid_year_rows = 0
+city_columns = 40
+unique_city_columns = 40
+missing_cities = []
+unexpected_cities = []
+invalid_city_columns = []
+
+=== MISSING SUMMARY ===
+total_cells = 840
+missing_cells = 49
+observed_cells = 791
+
+=== MISSING YEARS BY CITY ===
+city1: leading=[], internal=[2020], trailing=[]
+city3: leading=[], internal=[], trailing=[2018, 2019, 2020, 2021]
+city6: leading=[], internal=[2010], trailing=[2018, 2019, 2020, 2021]
+city7: leading=[], internal=[2020], trailing=[]
+city10: leading=[], internal=[2020], trailing=[]
+city13: leading=[], internal=[2020], trailing=[]
+city14: leading=[], internal=[], trailing=[2018, 2019, 2020, 2021]
+city15: leading=[], internal=[], trailing=[2021]
+city16: leading=[], internal=[], trailing=[2018, 2019, 2020, 2021]
+city17: leading=[], internal=[], trailing=[2018, 2019, 2020, 2021]
+city19: leading=[], internal=[2019], trailing=[]
+city20: leading=[], internal=[2019], trailing=[]
+city23: leading=[], internal=[], trailing=[2018, 2019, 2020, 2021]
+city27: leading=[], internal=[], trailing=[2018, 2019, 2020, 2021]
+city31: leading=[], internal=[2010], trailing=[2018, 2019, 2020, 2021]
+city35: leading=[], internal=[], trailing=[2018, 2019, 2020, 2021]
+city38: leading=[], internal=[], trailing=[2018, 2019, 2020, 2021]
+
+=== VALUE DOMAIN ===
+count = 791
+min = 6176.0
+max = 138004.0
+zero_count = 0
+negative_count = 0
+
+=== NEGATIVE YEAR-TO-YEAR CHANGES ===
+  ��������   ���  prev_wage  averageWage change_rate
+city31 2012    37492.0      31908.0     -14.89%
+city11 2005    20776.0      20700.0      -0.37%
+city25 2007    29044.0      28948.0      -0.33%
+city11 2006    20700.0      20644.0      -0.27%
+
+=== NORMALIZED VERIFICATION ===
+rows = 840
+unique_keys = 840
+duplicate_rows = 0
+cities = 40
+year_min = 2001
+year_max = 2021
+missing_averageWage = 49
+
+=== WAGE V2 INVALIDATION VERIFICATION ===
+rows = 840
+unique_keys = 840
+duplicate_rows = 0
+missing_averageWage = 50
+quarantine_rows = 1
+
+=== CITY31 CONTEXT ===
+  ��������   ���  averageWage
+city31 2008      19376.0
+city31 2009      21672.0
+city31 2010         <NA>
+city31 2011         <NA>
+city31 2012      31908.0
+city31 2013      37984.0
+city31 2014      42848.0
+
+=== QUARANTINE ===
+  ��������   ���  raw_averageWage                                                       reason                           action
+city31 2011          37492.0 high-confidence isolated wage anomaly; true value unresolved invalidate canonical value to NA
+
+=== SAVE RESULT ===
+normalized: <DISPOSABLE_WORKTREE>\data\normalized\����ˮƽ_ְ��ƽ������.csv
+normalized shape: (840, 3)
+quarantine: <DISPOSABLE_WORKTREE>\data\quarantine\����ˮƽ_ְ��ƽ������_quarantine.csv
+quarantine shape: (1, 5)
+===== RAW AUDIT =====
+=== SCHEMA ===
+shape = (118, 5)
+columns = ['��������', '���', '0-14', '15-64', '65+']
+
+=== DTYPES ===
+��������         str
+���         int64
+0-14       int64
+15-64    float64
+65+      float64
+dtype: object
+
+=== KEY / COVERAGE ===
+rows = 118
+unique_keys = 118
+duplicate_rows = 0
+years = [np.int64(2000), np.int64(2010), np.int64(2020)]
+invalid_city_rows = 0
+missing_cities = []
+
+rows_by_year:
+���
+2000    38
+2010    40
+2020    40
+
+=== MISSING STRUCTURE ===
+missing_keys = [('city25', 2000), ('city26', 2000)]
+
+cell_missing:
+0-14      0
+15-64    20
+65+      15
+rows_with_missing_age_value = 21
+
+=== VALUE DOMAIN ===
+
+--- 0-14 ---
+count = 118
+min = 8
+max = 264
+zero_count = 0
+negative_count = 0
+
+--- 15-64 ---
+count = 98
+min = 72.0
+max = 1460.0
+zero_count = 0
+negative_count = 0
+
+--- 65+ ---
+count = 103
+min = 5.0
+max = 232.0
+zero_count = 0
+negative_count = 0
+
+=== KNOWN TEMPORAL ANOMALIES ===
+  ��������   ���  0-14  15-64  65+  age_total
+city16 2000   160  745.0 60.0      965.0
+city16 2010    20  230.0 25.0      275.0
+city23 2000    60  629.0  9.0      698.0
+city23 2010     8  140.0  8.0      156.0
+city27 2000    21   98.0  5.0      124.0
+city27 2010    38  463.0 38.0      539.0
+ city3 2000    66  174.0 18.0      258.0
+ city3 2010    48  966.0 18.0     1032.0
+city35 2000    89  263.0 34.0      386.0
+city35 2010    55  582.0 62.0      699.0
+city38 2000   189  279.0 40.0      508.0
+city38 2010    31  326.0 36.0      393.0
+
+=== NORMALIZED VERIFICATION ===
+rows = 118
+unique_keys = 118
+duplicate_rows = 0
+cities = 40
+years = [np.int64(2000), np.int64(2010), np.int64(2020)]
+missing_keys = [('city25', 2000), ('city26', 2000)]
+
+missing values:
+0-14      0
+15-64    20
+65+      15
+
+=== AGE STRUCTURE V2 INVALIDATION VERIFICATION ===
+rows = 118
+unique_keys = 118
+duplicate_rows = 0
+cities = 40
+
+=== MISSING CELLS ===
+0-14      6
+15-64    26
+65+      21
+
+quarantine_rows = 6
+
+=== INVALIDATED KEYS ===
+[('city16', 2000), ('city23', 2000), ('city27', 2000), ('city3', 2000), ('city35', 2000), ('city38', 2000)]
+
+=== MISSING KEYS ===
+[('city25', 2000), ('city26', 2000)]
+
+=== QUARANTINE ===
+  ��������   ���  raw_0-14  raw_15-64  raw_65+                                                                                                                                        reason                              action
+city16 2000       160        745       60 high-confidence invalid 2000 age-structure observation; inconsistent with resident population and later age totals; relabel target unresolved invalidate all age components to NA
+city23 2000        60        629        9 high-confidence invalid 2000 age-structure observation; inconsistent with resident population and later age totals; relabel target unresolved invalidate all age components to NA
+city27 2000        21         98        5 high-confidence invalid 2000 age-structure observation; inconsistent with resident population and later age totals; relabel target unresolved invalidate all age components to NA
+ city3 2000        66        174       18 high-confidence invalid 2000 age-structure observation; inconsistent with resident population and later age totals; relabel target unresolved invalidate all age components to NA
+city35 2000        89        263       34 high-confidence invalid 2000 age-structure observation; inconsistent with resident population and later age totals; relabel target unresolved invalidate all age components to NA
+city38 2000       189        279       40 high-confidence invalid 2000 age-structure observation; inconsistent with resident population and later age totals; relabel target unresolved invalidate all age components to NA
+
+=== SAVE RESULT ===
+normalized: <DISPOSABLE_WORKTREE>\data\normalized\����ṹ.csv
+normalized shape: (118, 5)
+quarantine: <DISPOSABLE_WORKTREE>\data\quarantine\����ṹ_quarantine.csv
+quarantine shape: (6, 7)
+
+======================================================================
+�˾���֧������
+======================================================================
+
+=== STRUCTURE ===
+shape = (22, 9)
+unique_cities = 22
+duplicate_city_rows = 0
+invalid_city_rows = 0
+missing_cities = ['city12', 'city13', 'city15', 'city18', 'city2', 'city22', 'city24', 'city26', 'city28', 'city30', 'city32', 'city34', 'city36', 'city37', 'city39', 'city40', 'city5', 'city8']
+years = [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022]
+
+=== MISSING VALUES ===
+��������    0
+2015    0
+2016    0
+2017    0
+2018    0
+2019    0
+2020    0
+2021    0
+2022    0
+
+=== VALUE DOMAIN ===
+count = 176
+min = 13280
+max = 70842
+zero_count = 0
+negative_count = 0
+
+=== TEMPORAL EXTREMES ===
+
+top increases:
+  ��������   ���  prev_value  disposableIncome change_rate
+city20 2022     37932.0             42648      12.43%
+city10 2022     37744.0             42036      11.37%
+city23 2017     36156.0             40152      11.05%
+
+top decreases:
+  ��������   ���  prev_value  disposableIncome change_rate
+ city3 2021     62520.0             64876       3.77%
+ city6 2021     54040.0             56244       4.08%
+city31 2021     32320.0             33664       4.16%
+
+=== VERIFY: �˾���֧������ ===
+rows = 176
+unique_keys = 176
+duplicate_rows = 0
+cities = 22
+years = [np.int64(2015), np.int64(2016), np.int64(2017), np.int64(2018), np.int64(2019), np.int64(2020), np.int64(2021), np.int64(2022)]
+missing_values = 32
+missing_cities = ['city12', 'city13', 'city15', 'city18', 'city2', 'city22', 'city24', 'city26', 'city28', 'city30', 'city32', 'city34', 'city36', 'city37', 'city39', 'city40', 'city5', 'city8']
+saved: <DISPOSABLE_WORKTREE>\data\normalized\����ˮƽ_�˾���֧������.csv (176, 3)
+saved quarantine: <DISPOSABLE_WORKTREE>\data\quarantine\����ˮƽ_�˾���֧������_quarantine.csv (32, 6)
+
+======================================================================
+�˾�����֧��
+======================================================================
+
+=== STRUCTURE ===
+shape = (23, 9)
+unique_cities = 23
+duplicate_city_rows = 0
+invalid_city_rows = 0
+missing_cities = ['city12', 'city13', 'city15', 'city2', 'city22', 'city24', 'city26', 'city28', 'city30', 'city32', 'city34', 'city36', 'city37', 'city39', 'city40', 'city5', 'city8']
+years = [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022]
+
+=== MISSING VALUES ===
+��������    0
+2015    0
+2016    0
+2017    0
+2018    0
+2019    0
+2020    0
+2021    0
+2022    0
+
+=== VALUE DOMAIN ===
+count = 184
+min = 9976
+max = 446007
+zero_count = 0
+negative_count = 0
+
+=== TEMPORAL EXTREMES ===
+
+top increases:
+  ��������   ���  prev_value  consumptionExpenditures change_rate
+city21 2022     38235.0                   446007    1066.49%
+city18 2022     28288.0                    34070      20.44%
+city20 2022     21024.0                    25040      19.10%
+
+top decreases:
+  ��������   ���  prev_value  consumptionExpenditures change_rate
+ city3 2021     43112.0                    40580      -5.87%
+city23 2021     38211.0                    36357      -4.85%
+city21 2021     40014.0                    38235      -4.45%
+
+=== VERIFY: �˾�����֧�� ===
+rows = 184
+unique_keys = 184
+duplicate_rows = 0
+cities = 23
+years = [np.int64(2015), np.int64(2016), np.int64(2017), np.int64(2018), np.int64(2019), np.int64(2020), np.int64(2021), np.int64(2022)]
+missing_values = 0
+missing_cities = ['city12', 'city13', 'city15', 'city2', 'city22', 'city24', 'city26', 'city28', 'city30', 'city32', 'city34', 'city36', 'city37', 'city39', 'city40', 'city5', 'city8']
+saved: <DISPOSABLE_WORKTREE>\data\normalized\����ˮƽ_�˾�����֧��.csv (184, 3)
+
+======================================================================
+�����������֧��
+======================================================================
+
+=== STRUCTURE ===
+shape = (28, 13)
+unique_cities = 28
+duplicate_city_rows = 0
+invalid_city_rows = 0
+missing_cities = ['city12', 'city13', 'city15', 'city18', 'city2', 'city26', 'city30', 'city33', 'city34', 'city37', 'city40', 'city5']
+years = [2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022]
+
+=== MISSING VALUES ===
+��������     0
+2011    10
+2012    10
+2013    10
+2014     1
+2015     1
+2016     1
+2017     1
+2018     1
+2019     1
+2020     1
+2021     1
+2022     1
+
+=== VALUE DOMAIN ===
+count = 297
+min = 8368.0
+max = 48628.0
+zero_count = 0
+negative_count = 0
+
+=== TEMPORAL EXTREMES ===
+
+top increases:
+  ��������   ���  prev_value  urbanConsumptionExpenditures change_rate
+ city9 2012     10180.0                       13160.0      29.27%
+city24 2021     26637.0                       34389.0      29.10%
+city36 2021     15822.0                       20370.0      28.74%
+
+top decreases:
+  ��������   ���  prev_value  urbanConsumptionExpenditures change_rate
+city24 2020     32976.0                       26637.0     -19.22%
+city36 2016     17586.0                       14742.0     -16.17%
+city31 2015     19905.0                       16761.0     -15.80%
+
+=== VERIFY: �����������֧�� ===
+rows = 336
+unique_keys = 336
+duplicate_rows = 0
+cities = 28
+years = [np.int64(2011), np.int64(2012), np.int64(2013), np.int64(2014), np.int64(2015), np.int64(2016), np.int64(2017), np.int64(2018), np.int64(2019), np.int64(2020), np.int64(2021), np.int64(2022)]
+missing_values = 39
+missing_cities = ['city12', 'city13', 'city15', 'city18', 'city2', 'city26', 'city30', 'city33', 'city34', 'city37', 'city40', 'city5']
+saved: <DISPOSABLE_WORKTREE>\data\normalized\����ˮƽ_�����������֧��.csv (336, 3)
+
+======================================================================
+ũ���������֧��
+======================================================================
+
+=== STRUCTURE ===
+shape = (22, 13)
+unique_cities = 22
+duplicate_city_rows = 0
+invalid_city_rows = 0
+missing_cities = ['city12', 'city13', 'city15', 'city18', 'city2', 'city24', 'city26', 'city28', 'city3', 'city30', 'city32', 'city33', 'city34', 'city36', 'city37', 'city39', 'city40', 'city5']
+years = [2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022]
+
+=== MISSING VALUES ===
+��������     0
+2011    12
+2012    12
+2013     7
+2014     0
+2015     0
+2016     0
+2017     1
+2018     1
+2019     1
+2020     1
+2021     1
+2022     4
+
+=== VALUE DOMAIN ===
+count = 224
+min = 4578.0
+max = 30568.0
+zero_count = 0
+negative_count = 0
+
+=== TEMPORAL EXTREMES ===
+
+top increases:
+  ��������   ���  prev_value  ruralConsumptionExpenditures change_rate
+ city9 2014      7624.0                        9860.0      29.33%
+city16 2012      4928.0                        6192.0      25.65%
+city23 2015     11415.0                       14301.0      25.28%
+
+top decreases:
+  ��������   ���  prev_value  ruralConsumptionExpenditures change_rate
+city22 2021     19980.0                       19419.0      -2.81%
+city21 2021     26295.0                       25662.0      -2.41%
+city31 2015      9396.0                        9189.0      -2.20%
+
+=== VERIFY: ũ���������֧�� ===
+rows = 264
+unique_keys = 264
+duplicate_rows = 0
+cities = 22
+years = [np.int64(2011), np.int64(2012), np.int64(2013), np.int64(2014), np.int64(2015), np.int64(2016), np.int64(2017), np.int64(2018), np.int64(2019), np.int64(2020), np.int64(2021), np.int64(2022)]
+missing_values = 40
+missing_cities = ['city12', 'city13', 'city15', 'city18', 'city2', 'city24', 'city26', 'city28', 'city3', 'city30', 'city32', 'city33', 'city34', 'city36', 'city37', 'city39', 'city40', 'city5']
+saved: <DISPOSABLE_WORKTREE>\data\normalized\����ˮƽ_ũ���������֧��.csv (264, 3)
+
+======================================================================
+��������˾�����
+======================================================================
+
+=== STRUCTURE ===
+shape = (33, 13)
+unique_cities = 33
+duplicate_city_rows = 0
+invalid_city_rows = 2
+missing_cities = ['city15', 'city22', 'city26', 'city31', 'city33', 'city34', 'city37', 'city40', 'city5']
+years = [2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022]
+
+=== MISSING VALUES ===
+��������     0
+2011    13
+2012    11
+2013     6
+2014     1
+2015     0
+2016     0
+2017     0
+2018     0
+2019     0
+2020     0
+2021     0
+2022     4
+
+=== VALUE DOMAIN ===
+count = 361
+min = 14735.0
+max = 76195.0
+zero_count = 0
+negative_count = 0
+
+=== TEMPORAL EXTREMES ===
+
+top increases:
+  ��������   ���  prev_value  urbanDisposableIncome change_rate
+ city8 2018     24880.0                35825.0      43.99%
+city36 2021     26289.0                35097.0      33.50%
+city39 2021     40602.0                52683.0      29.75%
+
+top decreases:
+  ��������   ���  prev_value  urbanDisposableIncome change_rate
+ city8 2017     30335.0                24880.0     -17.98%
+city36 2020     32001.0                26289.0     -17.85%
+city24 2020     50145.0                41472.0     -17.30%
+
+=== VERIFY: ��������˾����� ===
+rows = 396
+unique_keys = 396
+duplicate_rows = 0
+cities = 33
+years = [np.int64(2011), np.int64(2012), np.int64(2013), np.int64(2014), np.int64(2015), np.int64(2016), np.int64(2017), np.int64(2018), np.int64(2019), np.int64(2020), np.int64(2021), np.int64(2022)]
+missing_values = 35
+missing_cities = ['city15', 'city26', 'city33', 'city34', 'city37', 'city40', 'city5']
+saved: <DISPOSABLE_WORKTREE>\data\normalized\����ˮƽ_��������˾�����.csv (396, 3)
+
+======================================================================
+ũ������˾�����
+======================================================================
+
+=== STRUCTURE ===
+shape = (28, 13)
+unique_cities = 28
+duplicate_city_rows = 0
+invalid_city_rows = 0
+missing_cities = ['city15', 'city24', 'city26', 'city28', 'city3', 'city32', 'city34', 'city36', 'city37', 'city39', 'city40', 'city5']
+years = [2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022]
+
+=== MISSING VALUES ===
+��������     0
+2011    16
+2012    15
+2013    11
+2014     3
+2015     0
+2016     0
+2017     0
+2018     0
+2019     0
+2020     0
+2021     0
+2022     3
+
+=== VALUE DOMAIN ===
+count = 288
+min = 6316.0
+max = 67707.0
+zero_count = 0
+negative_count = 0
+
+=== TEMPORAL EXTREMES ===
+
+top increases:
+  ��������   ���  prev_value  ruralDisposableIncome change_rate
+ city8 2018     11928.0                17056.0      42.99%
+ city8 2016     10024.0                14316.0      42.82%
+city23 2015     14940.0                18393.0      23.11%
+
+top decreases:
+  ��������   ���  prev_value  ruralDisposableIncome change_rate
+ city8 2017     14316.0                11928.0     -16.68%
+city17 2015     18884.0                17660.0      -6.48%
+city31 2015     12684.0                12744.0       0.47%
+
+=== VERIFY: ũ������˾����� ===
+rows = 336
+unique_keys = 336
+duplicate_rows = 0
+cities = 28
+years = [np.int64(2011), np.int64(2012), np.int64(2013), np.int64(2014), np.int64(2015), np.int64(2016), np.int64(2017), np.int64(2018), np.int64(2019), np.int64(2020), np.int64(2021), np.int64(2022)]
+missing_values = 48
+missing_cities = ['city15', 'city24', 'city26', 'city28', 'city3', 'city32', 'city34', 'city36', 'city37', 'city39', 'city40', 'city5']
+saved: <DISPOSABLE_WORKTREE>\data\normalized\����ˮƽ_ũ������˾�����.csv (336, 3)
+saved repair report: <DISPOSABLE_WORKTREE>\data\normalized\����ˮƽ_repair_report.csv
+
+=== LIVING STANDARD COMPLETE ===
+6 normalized tables verified and saved.
+=== SCHEMA ===
+shape = (718, 4)
+columns = ['��������', '���', '��ס�˿ڣ����ˣ�', '�����˿ڣ����ˣ�']
+��������            str
+���            int64
+��ס�˿ڣ����ˣ�    float64
+�����˿ڣ����ˣ�    float64
+dtype: object
+
+=== KEY CHECK ===
+unique_city_year_keys = 718
+duplicate_rows = 0
+
+=== KEY FORMAT ===
+invalid_city_rows = 0
+
+=== COVERAGE ===
+cities = 40
+years = 2001-2021
+cities_with_internal_gaps = 11
+  ��������  year_min  year_max  observed_years  expected_years  internal_missing_years
+city12      2001      2021              16              21                       5
+city13      2001      2021              16              21                       5
+ city2      2001      2021              16              21                       5
+city22      2001      2021              16              21                       5
+city26      2001      2021              16              21                       5
+city30      2001      2021              16              21                       5
+city34      2001      2021              16              21                       5
+city37      2001      2021              16              21                       5
+city40      2001      2021              16              21                       5
+ city5      2001      2021              16              21                       5
+ city8      2001      2021              16              21                       5
+
+=== MISSING VALUES ===
+��������         0
+���           0
+��ס�˿ڣ����ˣ�    20
+�����˿ڣ����ˣ�     7
+dtype: int64
+
+=== VALUE SANITY ===
+��ס�˿ڣ����ˣ�: min=0.0, max=1870.0, zero=5, negative=0
+�����˿ڣ����ˣ�: min=0.0, max=1045.0, zero=4, negative=0
+
+=== NORMALIZED CHECK ===
+null_counts:
+��ס�˿ڣ����ˣ�    25
+�����˿ڣ����ˣ�    11
+dtype: int64
+zero_counts:
+��ס�˿ڣ����ˣ�    0
+�����˿ڣ����ˣ�    0
+dtype: int64
+
+saved: <DISPOSABLE_WORKTREE>\data\normalized\�˿ڹ�ģ.csv
+shape: (718, 4)
+=== SCHEMA ===
+shape = (758, 3)
+columns = ['���', '��������', '�˿��ܶȣ���/ƽ�����']
+���              int64
+��������              str
+�˿��ܶȣ���/ƽ�����    int64
+dtype: object
+
+=== RAW KEY CHECK ===
+unique_city_year_keys = 757
+duplicate_rows = 2
+  ���   ��������  �˿��ܶȣ���/ƽ�����
+2002 city31          2315
+2002 city31           422
+
+=== KEY FORMAT ===
+invalid_city_rows = 0
+
+=== NORMALIZED CHECK ===
+rows = 757
+unique_city_year_keys = 757
+duplicate_rows = 0
+
+=== POPULATION DENSITY V2 VERIFICATION ===
+rows = 757
+unique_keys = 757
+duplicate_rows = 0
+cities = 40
+missing_density = 13
+quarantine_rows = 13
+
+=== DENSITY QUARANTINE ===
+  ��������   ���  raw_density  regime_shift_year                                                                                          reason                             action
+city12 2013        801.0               2016 high-confidence pre-regime batch anomaly; A-B-A density pattern with stable resident population invalidate canonical density to NA
+city13 2013        565.0               2016 high-confidence pre-regime batch anomaly; A-B-A density pattern with stable resident population invalidate canonical density to NA
+city15 2013        760.0               2016 high-confidence pre-regime batch anomaly; A-B-A density pattern with stable resident population invalidate canonical density to NA
+city18 2013       1070.0               2016 high-confidence pre-regime batch anomaly; A-B-A density pattern with stable resident population invalidate canonical density to NA
+ city2 2013       1401.0               2016 high-confidence pre-regime batch anomaly; A-B-A density pattern with stable resident population invalidate canonical density to NA
+ city5 2013       1246.0               2016 high-confidence pre-regime batch anomaly; A-B-A density pattern with stable resident population invalidate canonical density to NA
+ city8 2013        479.0               2016 high-confidence pre-regime batch anomaly; A-B-A density pattern with stable resident population invalidate canonical density to NA
+city22 2014       1243.0               2017 high-confidence pre-regime batch anomaly; A-B-A density pattern with stable resident population invalidate canonical density to NA
+city26 2014        912.0               2017 high-confidence pre-regime batch anomaly; A-B-A density pattern with stable resident population invalidate canonical density to NA
+city30 2014        582.0               2017 high-confidence pre-regime batch anomaly; A-B-A density pattern with stable resident population invalidate canonical density to NA
+city34 2014        425.0               2017 high-confidence pre-regime batch anomaly; A-B-A density pattern with stable resident population invalidate canonical density to NA
+city37 2014        643.0               2017 high-confidence pre-regime batch anomaly; A-B-A density pattern with stable resident population invalidate canonical density to NA
+city40 2014        823.0               2017 high-confidence pre-regime batch anomaly; A-B-A density pattern with stable resident population invalidate canonical density to NA
+
+=== COVERAGE ===
+cities = 40
+years = 2000-2022
+cities_with_internal_gaps = 14
+  ��������  year_min  year_max  observed_years  expected_years  internal_missing_years
+city12      2001      2019              18              19                       1
+city13      2001      2019              18              19                       1
+city15      2000      2019              19              20                       1
+city18      2000      2019              19              20                       1
+ city2      2001      2019              18              19                       1
+city22      2001      2020              19              20                       1
+city26      2001      2020              19              20                       1
+city27      2001      2022              21              22                       1
+city30      2001      2020              19              20                       1
+city34      2001      2020              19              20                       1
+city37      2001      2020              19              20                       1
+city40      2001      2020              19              20                       1
+ city5      2001      2019              18              19                       1
+ city8      2001      2019              18              19                       1
+
+=== MISSING VALUES ===
+���               0
+��������             0
+�˿��ܶȣ���/ƽ�����    13
+dtype: int64
+
+=== VALUE SANITY ===
+min = 122.0
+max = 8901.0
+zero_count = 0
+negative_count = 0
+
+saved: <DISPOSABLE_WORKTREE>\data\normalized\�˿��ܶ�.csv
+shape: (757, 3)
+saved quarantine: <DISPOSABLE_WORKTREE>\data\quarantine\�˿��ܶ�_quarantine.csv
+quarantine shape: (13, 6)
+saved regime report: <DISPOSABLE_WORKTREE>\data\normalized\�˿��ܶ�_regime_report.csv
+=== SCHEMA ===
+shape = (675, 3)
+columns = ['��������', '���', 'urbanizationRate']
+��������                  str
+���                  int64
+urbanizationRate    int64
+dtype: object
+
+=== KEY CHECK ===
+unique_city_year_keys = 675
+duplicate_rows = 0
+
+=== KEY FORMAT ===
+invalid_city_rows = 0
+
+=== COVERAGE ===
+cities = 40
+years = 2003-2022
+cities_with_internal_gaps = 0
+
+=== MISSING VALUES ===
+��������                0
+���                  0
+urbanizationRate    0
+dtype: int64
+
+=== VALUE DOMAIN ===
+min = 32
+max = 100
+outside_0_100 = 0
+zero_count = 0
+hundred_count = 7
+
+=== NORMALIZED CHECK ===
+rows = 675
+duplicate_rows = 0
+
+saved: <DISPOSABLE_WORKTREE>\data\normalized\������.csv
+shape: (675, 3)
+
+======================================================================
+��ҵ��Ϣ.xlsx / ����ʧҵ��
+======================================================================
+
+=== SCHEMA ===
+shape = (769, 3)
+columns = ['���', '��������', 'unemploymentRate']
+���                    int64
+��������                    str
+unemploymentRate    float64
+dtype: object
+
+=== KEY CHECK ===
+rows = 769
+unique_city_year_keys = 769
+duplicate_rows = 0
+
+=== KEY FORMAT ===
+invalid_city_rows = 0
+
+=== ENTITY COVERAGE ===
+expected_cities = 40
+observed_cities = 38
+missing_cities = ['city13', 'city34']
+unexpected_cities = []
+
+=== COVERAGE ===
+year_min = 2000
+year_max = 2022
+years = 23
+cities_with_internal_gaps = 8
+city1: [2004]
+city18: [2010, 2011, 2014, 2016]
+city30: [2010, 2011, 2012, 2020]
+city37: [2021]
+city40: [2003, 2012]
+city5: [2008, 2015, 2019]
+city7: [2011]
+city8: [2004, 2005]
+
+=== MISSING VALUES ===
+���                  0
+��������                0
+unemploymentRate    1
+dtype: int64
+
+=== UNEMPLOYMENT VALUE DOMAIN ===
+count = 768
+min = 0.0
+max = 5.0
+zero_count = 1
+negative_count = 0
+above_100 = 0
+
+=== ZERO UNEMPLOYMENT ROWS ===
+  ���   ��������  unemploymentRate
+2011 city21               0.0
+
+=== MISSING UNEMPLOYMENT ROWS ===
+  ���   ��������  unemploymentRate
+2022 city35               NaN
+
+=== NORMALIZED VERIFICATION ===
+
+=== KEY CHECK ===
+rows = 769
+unique_city_year_keys = 769
+duplicate_rows = 0
+
+saved: <DISPOSABLE_WORKTREE>\data\normalized\��ҵ��Ϣ_����ʧҵ��.csv
+shape: (769, 3)
+
+======================================================================
+��ҵ��Ϣ.xlsx / ��ҵ��Ա�� v2 + ����ҵ��ҵ v2
+======================================================================
+
+--- RAW EMPLOYEES ---
+
+=== SCHEMA ===
+shape = (762, 3)
+columns = ['��������', '���', 'employeesNumber']
+��������                 str
+���                 int64
+employeesNumber    int64
+dtype: object
+
+=== KEY CHECK ===
+rows = 762
+unique_city_year_keys = 690
+duplicate_rows = 144
+
+=== DUPLICATE CITY COUNTS ===
+��������
+city31     42
+city25     34
+city29     34
+city33     34
+
+=== KEY FORMAT ===
+invalid_city_rows = 0
+
+=== EMPLOYEES V2 SOURCE VERIFICATION ===
+source_rows = 682
+unique_keys = 682
+duplicate_rows = 0
+cities = 35
+missing_cities = ['city14', 'city26', 'city30', 'city37', 'city40']
+quarantine_rows = 80
+
+=== EMPLOYEES V2 FINAL VERIFICATION ===
+rows = 773
+unique_keys = 773
+duplicate_rows = 0
+cities = 40
+missing_cities = []
+derived_rows = 91
+rejected_sector_rows = 2
+internal_gaps = {'city1': [2020], 'city10': [2020], 'city11': [2020], 'city14': [2018, 2019], 'city4': [2020], 'city7': [2020]}
+
+--- FINAL EMPLOYEES ---
+
+=== KEY FORMAT ===
+invalid_city_rows = 0
+
+=== ENTITY COVERAGE ===
+expected_cities = 40
+observed_cities = 40
+missing_cities = []
+unexpected_cities = []
+
+=== COVERAGE ===
+year_min = 2000
+year_max = 2022
+years = 23
+cities_with_internal_gaps = 6
+city1: [2020]
+city10: [2020]
+city11: [2020]
+city14: [2018, 2019]
+city4: [2020]
+city7: [2020]
+
+=== MISSING VALUES ===
+��������               0
+���                 0
+employeesNumber    0
+dtype: int64
+
+=== EMPLOYEES VALUE DOMAIN ===
+count = 773
+min = 55
+max = 1245
+zero_count = 0
+negative_count = 0
+
+normalized: <DISPOSABLE_WORKTREE>\data\normalized\��ҵ��Ϣ_��ҵ��Ա��.csv (773, 3)
+quarantine: <DISPOSABLE_WORKTREE>\data\quarantine\��ҵ��Ϣ_��ҵ��Ա��_quarantine.csv (80, 7)
+provenance: <DISPOSABLE_WORKTREE>\data\normalized\��ҵ��Ϣ_��ҵ��Ա��_provenance.csv (91, 9)
+
+--- RAW SECTOR ---
+
+=== SCHEMA ===
+shape = (698, 5)
+columns = ['��������', '���', 'pi_Employment', 'si_Employment', 'ti_Employment']
+��������               str
+���               int64
+pi_Employment    int64
+si_Employment    int64
+ti_Employment    int64
+dtype: object
+
+=== KEY CHECK ===
+rows = 698
+unique_city_year_keys = 698
+duplicate_rows = 0
+
+=== KEY FORMAT ===
+invalid_city_rows = 0
+
+=== ENTITY COVERAGE ===
+expected_cities = 40
+observed_cities = 40
+missing_cities = []
+unexpected_cities = []
+
+=== COVERAGE ===
+year_min = 2002
+year_max = 2021
+years = 20
+cities_with_internal_gaps = 5
+city1: [2020]
+city10: [2020]
+city11: [2020]
+city4: [2020]
+city7: [2020]
+
+=== MISSING VALUES ===
+��������             0
+���               0
+pi_Employment    0
+si_Employment    0
+ti_Employment    0
+dtype: int64
+
+=== SECTOR VALUE DOMAIN ===
+
+--- pi_Employment ---
+count = 698
+min = 0
+max = 216
+zero_count = 98
+negative_count = 0
+
+--- si_Employment ---
+count = 698
+min = 16
+max = 515
+zero_count = 0
+negative_count = 0
+
+--- ti_Employment ---
+count = 698
+min = 9
+max = 839
+zero_count = 0
+negative_count = 0
+
+=== SECTOR V2 FINAL VERIFICATION ===
+rows = 698
+unique_keys = 698
+duplicate_rows = 0
+cities = 40
+missing values:
+pi_Employment    18
+si_Employment    18
+ti_Employment    18
+quarantine_rows = 18
+
+=== SECTOR CONFLICTS BY SOURCE POSITION ===
+source_position
+2      1
+13    10
+14     7
+
+--- FINAL SECTOR ---
+
+=== KEY CHECK ===
+rows = 698
+unique_city_year_keys = 698
+duplicate_rows = 0
+
+=== KEY FORMAT ===
+invalid_city_rows = 0
+
+=== ENTITY COVERAGE ===
+expected_cities = 40
+observed_cities = 40
+missing_cities = []
+unexpected_cities = []
+
+=== COVERAGE ===
+year_min = 2002
+year_max = 2021
+years = 20
+cities_with_internal_gaps = 5
+city1: [2020]
+city10: [2020]
+city11: [2020]
+city4: [2020]
+city7: [2020]
+
+=== MISSING VALUES ===
+��������              0
+���                0
+pi_Employment    18
+si_Employment    18
+ti_Employment    18
+dtype: int64
+
+=== SECTOR VALUE DOMAIN ===
+
+--- pi_Employment ---
+count = 680
+min = 0.0
+max = 387.0
+zero_count = 8
+negative_count = 0
+
+--- si_Employment ---
+count = 680
+min = 16.0
+max = 486.0
+zero_count = 0
+negative_count = 0
+
+--- ti_Employment ---
+count = 680
+min = 9.0
+max = 839.0
+zero_count = 0
+negative_count = 0
+
+normalized: <DISPOSABLE_WORKTREE>\data\normalized\��ҵ��Ϣ_��һ������ҵ��ҵ����.csv (698, 5)
+quarantine: <DISPOSABLE_WORKTREE>\data\quarantine\��ҵ��Ϣ_��һ������ҵ��ҵ����_quarantine.csv (18, 11)
+saved repair report: <DISPOSABLE_WORKTREE>\data\normalized\��ҵ��Ϣ_repair_report.csv
+===== RAW AUDIT =====
+=== SCHEMA ===
+shape = (21, 41)
+columns = ['averageWage', 'city1', 'city2', 'city3', 'city4', 'city5', 'city6', 'city7', 'city8', 'city9', 'city10', 'city11', 'city12', 'city13', 'city14', 'city15', 'city16', 'city17', 'city18', 'city19', 'city20', 'city21', 'city22', 'city23', 'city24', 'city25', 'city26', 'city27', 'city28', 'city29', 'city30', 'city31', 'city32', 'city33', 'city34', 'city35', 'city36', 'city37', 'city38', 'city39', 'city40']
+
+=== DTYPES ===
+averageWage        str
+city1          float64
+city2            int64
+city3          float64
+city4            int64
+city5            int64
+city6          float64
+city7          float64
+city8            int64
+city9            int64
+city10         float64
+city11           int64
+city12           int64
+city13         float64
+city14         float64
+city15         float64
+city16         float64
+city17         float64
+city18           int64
+city19         float64
+city20         float64
+city21           int64
+city22           int64
+city23         float64
+city24           int64
+city25           int64
+city26           int64
+city27         float64
+city28           int64
+city29           int64
+city30           int64
+city31         float64
+city32           int64
+city33           int64
+city34           int64
+city35         float64
+city36           int64
+city37           int64
+city38         float64
+city39           int64
+city40           int64
+dtype: object
+
+=== AXES ===
+year_rows = 21
+unique_year_labels = 21
+invalid_year_rows = 0
+city_columns = 40
+unique_city_columns = 40
+missing_cities = []
+unexpected_cities = []
+invalid_city_columns = []
+
+=== MISSING SUMMARY ===
+total_cells = 840
+missing_cells = 49
+observed_cells = 791
+
+=== MISSING YEARS BY CITY ===
+city1: leading=[], internal=[2020], trailing=[]
+city3: leading=[], internal=[], trailing=[2018, 2019, 2020, 2021]
+city6: leading=[], internal=[2010], trailing=[2018, 2019, 2020, 2021]
+city7: leading=[], internal=[2020], trailing=[]
+city10: leading=[], internal=[2020], trailing=[]
+city13: leading=[], internal=[2020], trailing=[]
+city14: leading=[], internal=[], trailing=[2018, 2019, 2020, 2021]
+city15: leading=[], internal=[], trailing=[2021]
+city16: leading=[], internal=[], trailing=[2018, 2019, 2020, 2021]
+city17: leading=[], internal=[], trailing=[2018, 2019, 2020, 2021]
+city19: leading=[], internal=[2019], trailing=[]
+city20: leading=[], internal=[2019], trailing=[]
+city23: leading=[], internal=[], trailing=[2018, 2019, 2020, 2021]
+city27: leading=[], internal=[], trailing=[2018, 2019, 2020, 2021]
+city31: leading=[], internal=[2010], trailing=[2018, 2019, 2020, 2021]
+city35: leading=[], internal=[], trailing=[2018, 2019, 2020, 2021]
+city38: leading=[], internal=[], trailing=[2018, 2019, 2020, 2021]
+
+=== VALUE DOMAIN ===
+count = 791
+min = 6176.0
+max = 138004.0
+zero_count = 0
+negative_count = 0
+
+=== NEGATIVE YEAR-TO-YEAR CHANGES ===
+  ��������   ���  prev_wage  averageWage change_rate
+city31 2012    37492.0      31908.0     -14.89%
+city11 2005    20776.0      20700.0      -0.37%
+city25 2007    29044.0      28948.0      -0.33%
+city11 2006    20700.0      20644.0      -0.27%
+
+=== NORMALIZED VERIFICATION ===
+rows = 840
+unique_keys = 840
+duplicate_rows = 0
+cities = 40
+year_min = 2001
+year_max = 2021
+missing_averageWage = 49
+
+=== WAGE V2 INVALIDATION VERIFICATION ===
+rows = 840
+unique_keys = 840
+duplicate_rows = 0
+missing_averageWage = 50
+quarantine_rows = 1
+
+=== CITY31 CONTEXT ===
+  ��������   ���  averageWage
+city31 2008      19376.0
+city31 2009      21672.0
+city31 2010         <NA>
+city31 2011         <NA>
+city31 2012      31908.0
+city31 2013      37984.0
+city31 2014      42848.0
+
+=== QUARANTINE ===
+  ��������   ���  raw_averageWage                                                       reason                           action
+city31 2011          37492.0 high-confidence isolated wage anomaly; true value unresolved invalidate canonical value to NA
+
+=== SAVE RESULT ===
+normalized: <DISPOSABLE_WORKTREE>\data\normalized\����ˮƽ_ְ��ƽ������.csv
+normalized shape: (840, 3)
+quarantine: <DISPOSABLE_WORKTREE>\data\quarantine\����ˮƽ_ְ��ƽ������_quarantine.csv
+quarantine shape: (1, 5)
+===== RAW AUDIT =====
+=== SCHEMA ===
+shape = (118, 5)
+columns = ['��������', '���', '0-14', '15-64', '65+']
+
+=== DTYPES ===
+��������         str
+���         int64
+0-14       int64
+15-64    float64
+65+      float64
+dtype: object
+
+=== KEY / COVERAGE ===
+rows = 118
+unique_keys = 118
+duplicate_rows = 0
+years = [np.int64(2000), np.int64(2010), np.int64(2020)]
+invalid_city_rows = 0
+missing_cities = []
+
+rows_by_year:
+���
+2000    38
+2010    40
+2020    40
+
+=== MISSING STRUCTURE ===
+missing_keys = [('city25', 2000), ('city26', 2000)]
+
+cell_missing:
+0-14      0
+15-64    20
+65+      15
+rows_with_missing_age_value = 21
+
+=== VALUE DOMAIN ===
+
+--- 0-14 ---
+count = 118
+min = 8
+max = 264
+zero_count = 0
+negative_count = 0
+
+--- 15-64 ---
+count = 98
+min = 72.0
+max = 1460.0
+zero_count = 0
+negative_count = 0
+
+--- 65+ ---
+count = 103
+min = 5.0
+max = 232.0
+zero_count = 0
+negative_count = 0
+
+=== KNOWN TEMPORAL ANOMALIES ===
+  ��������   ���  0-14  15-64  65+  age_total
+city16 2000   160  745.0 60.0      965.0
+city16 2010    20  230.0 25.0      275.0
+city23 2000    60  629.0  9.0      698.0
+city23 2010     8  140.0  8.0      156.0
+city27 2000    21   98.0  5.0      124.0
+city27 2010    38  463.0 38.0      539.0
+ city3 2000    66  174.0 18.0      258.0
+ city3 2010    48  966.0 18.0     1032.0
+city35 2000    89  263.0 34.0      386.0
+city35 2010    55  582.0 62.0      699.0
+city38 2000   189  279.0 40.0      508.0
+city38 2010    31  326.0 36.0      393.0
+
+=== NORMALIZED VERIFICATION ===
+rows = 118
+unique_keys = 118
+duplicate_rows = 0
+cities = 40
+years = [np.int64(2000), np.int64(2010), np.int64(2020)]
+missing_keys = [('city25', 2000), ('city26', 2000)]
+
+missing values:
+0-14      0
+15-64    20
+65+      15
+
+=== AGE STRUCTURE V2 INVALIDATION VERIFICATION ===
+rows = 118
+unique_keys = 118
+duplicate_rows = 0
+cities = 40
+
+=== MISSING CELLS ===
+0-14      6
+15-64    26
+65+      21
+
+quarantine_rows = 6
+
+=== INVALIDATED KEYS ===
+[('city16', 2000), ('city23', 2000), ('city27', 2000), ('city3', 2000), ('city35', 2000), ('city38', 2000)]
+
+=== MISSING KEYS ===
+[('city25', 2000), ('city26', 2000)]
+
+=== QUARANTINE ===
+  ��������   ���  raw_0-14  raw_15-64  raw_65+                                                                                                                                        reason                              action
+city16 2000       160        745       60 high-confidence invalid 2000 age-structure observation; inconsistent with resident population and later age totals; relabel target unresolved invalidate all age components to NA
+city23 2000        60        629        9 high-confidence invalid 2000 age-structure observation; inconsistent with resident population and later age totals; relabel target unresolved invalidate all age components to NA
+city27 2000        21         98        5 high-confidence invalid 2000 age-structure observation; inconsistent with resident population and later age totals; relabel target unresolved invalidate all age components to NA
+ city3 2000        66        174       18 high-confidence invalid 2000 age-structure observation; inconsistent with resident population and later age totals; relabel target unresolved invalidate all age components to NA
+city35 2000        89        263       34 high-confidence invalid 2000 age-structure observation; inconsistent with resident population and later age totals; relabel target unresolved invalidate all age components to NA
+city38 2000       189        279       40 high-confidence invalid 2000 age-structure observation; inconsistent with resident population and later age totals; relabel target unresolved invalidate all age components to NA
+
+=== SAVE RESULT ===
+normalized: <DISPOSABLE_WORKTREE>\data\normalized\����ṹ.csv
+normalized shape: (118, 5)
+quarantine: <DISPOSABLE_WORKTREE>\data\quarantine\����ṹ_quarantine.csv
+quarantine shape: (6, 7)
+
+======================================================================
+�˾���֧������
+======================================================================
+
+=== STRUCTURE ===
+shape = (22, 9)
+unique_cities = 22
+duplicate_city_rows = 0
+invalid_city_rows = 0
+missing_cities = ['city12', 'city13', 'city15', 'city18', 'city2', 'city22', 'city24', 'city26', 'city28', 'city30', 'city32', 'city34', 'city36', 'city37', 'city39', 'city40', 'city5', 'city8']
+years = [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022]
+
+=== MISSING VALUES ===
+��������    0
+2015    0
+2016    0
+2017    0
+2018    0
+2019    0
+2020    0
+2021    0
+2022    0
+
+=== VALUE DOMAIN ===
+count = 176
+min = 13280
+max = 70842
+zero_count = 0
+negative_count = 0
+
+=== TEMPORAL EXTREMES ===
+
+top increases:
+  ��������   ���  prev_value  disposableIncome change_rate
+city20 2022     37932.0             42648      12.43%
+city10 2022     37744.0             42036      11.37%
+city23 2017     36156.0             40152      11.05%
+
+top decreases:
+  ��������   ���  prev_value  disposableIncome change_rate
+ city3 2021     62520.0             64876       3.77%
+ city6 2021     54040.0             56244       4.08%
+city31 2021     32320.0             33664       4.16%
+
+=== VERIFY: �˾���֧������ ===
+rows = 176
+unique_keys = 176
+duplicate_rows = 0
+cities = 22
+years = [np.int64(2015), np.int64(2016), np.int64(2017), np.int64(2018), np.int64(2019), np.int64(2020), np.int64(2021), np.int64(2022)]
+missing_values = 32
+missing_cities = ['city12', 'city13', 'city15', 'city18', 'city2', 'city22', 'city24', 'city26', 'city28', 'city30', 'city32', 'city34', 'city36', 'city37', 'city39', 'city40', 'city5', 'city8']
+saved: <DISPOSABLE_WORKTREE>\data\normalized\����ˮƽ_�˾���֧������.csv (176, 3)
+saved quarantine: <DISPOSABLE_WORKTREE>\data\quarantine\����ˮƽ_�˾���֧������_quarantine.csv (32, 6)
+
+======================================================================
+�˾�����֧��
+======================================================================
+
+=== STRUCTURE ===
+shape = (23, 9)
+unique_cities = 23
+duplicate_city_rows = 0
+invalid_city_rows = 0
+missing_cities = ['city12', 'city13', 'city15', 'city2', 'city22', 'city24', 'city26', 'city28', 'city30', 'city32', 'city34', 'city36', 'city37', 'city39', 'city40', 'city5', 'city8']
+years = [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022]
+
+=== MISSING VALUES ===
+��������    0
+2015    0
+2016    0
+2017    0
+2018    0
+2019    0
+2020    0
+2021    0
+2022    0
+
+=== VALUE DOMAIN ===
+count = 184
+min = 9976
+max = 446007
+zero_count = 0
+negative_count = 0
+
+=== TEMPORAL EXTREMES ===
+
+top increases:
+  ��������   ���  prev_value  consumptionExpenditures change_rate
+city21 2022     38235.0                   446007    1066.49%
+city18 2022     28288.0                    34070      20.44%
+city20 2022     21024.0                    25040      19.10%
+
+top decreases:
+  ��������   ���  prev_value  consumptionExpenditures change_rate
+ city3 2021     43112.0                    40580      -5.87%
+city23 2021     38211.0                    36357      -4.85%
+city21 2021     40014.0                    38235      -4.45%
+
+=== VERIFY: �˾�����֧�� ===
+rows = 184
+unique_keys = 184
+duplicate_rows = 0
+cities = 23
+years = [np.int64(2015), np.int64(2016), np.int64(2017), np.int64(2018), np.int64(2019), np.int64(2020), np.int64(2021), np.int64(2022)]
+missing_values = 0
+missing_cities = ['city12', 'city13', 'city15', 'city2', 'city22', 'city24', 'city26', 'city28', 'city30', 'city32', 'city34', 'city36', 'city37', 'city39', 'city40', 'city5', 'city8']
+saved: <DISPOSABLE_WORKTREE>\data\normalized\����ˮƽ_�˾�����֧��.csv (184, 3)
+
+======================================================================
+�����������֧��
+======================================================================
+
+=== STRUCTURE ===
+shape = (28, 13)
+unique_cities = 28
+duplicate_city_rows = 0
+invalid_city_rows = 0
+missing_cities = ['city12', 'city13', 'city15', 'city18', 'city2', 'city26', 'city30', 'city33', 'city34', 'city37', 'city40', 'city5']
+years = [2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022]
+
+=== MISSING VALUES ===
+��������     0
+2011    10
+2012    10
+2013    10
+2014     1
+2015     1
+2016     1
+2017     1
+2018     1
+2019     1
+2020     1
+2021     1
+2022     1
+
+=== VALUE DOMAIN ===
+count = 297
+min = 8368.0
+max = 48628.0
+zero_count = 0
+negative_count = 0
+
+=== TEMPORAL EXTREMES ===
+
+top increases:
+  ��������   ���  prev_value  urbanConsumptionExpenditures change_rate
+ city9 2012     10180.0                       13160.0      29.27%
+city24 2021     26637.0                       34389.0      29.10%
+city36 2021     15822.0                       20370.0      28.74%
+
+top decreases:
+  ��������   ���  prev_value  urbanConsumptionExpenditures change_rate
+city24 2020     32976.0                       26637.0     -19.22%
+city36 2016     17586.0                       14742.0     -16.17%
+city31 2015     19905.0                       16761.0     -15.80%
+
+=== VERIFY: �����������֧�� ===
+rows = 336
+unique_keys = 336
+duplicate_rows = 0
+cities = 28
+years = [np.int64(2011), np.int64(2012), np.int64(2013), np.int64(2014), np.int64(2015), np.int64(2016), np.int64(2017), np.int64(2018), np.int64(2019), np.int64(2020), np.int64(2021), np.int64(2022)]
+missing_values = 39
+missing_cities = ['city12', 'city13', 'city15', 'city18', 'city2', 'city26', 'city30', 'city33', 'city34', 'city37', 'city40', 'city5']
+saved: <DISPOSABLE_WORKTREE>\data\normalized\����ˮƽ_�����������֧��.csv (336, 3)
+
+======================================================================
+ũ���������֧��
+======================================================================
+
+=== STRUCTURE ===
+shape = (22, 13)
+unique_cities = 22
+duplicate_city_rows = 0
+invalid_city_rows = 0
+missing_cities = ['city12', 'city13', 'city15', 'city18', 'city2', 'city24', 'city26', 'city28', 'city3', 'city30', 'city32', 'city33', 'city34', 'city36', 'city37', 'city39', 'city40', 'city5']
+years = [2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022]
+
+=== MISSING VALUES ===
+��������     0
+2011    12
+2012    12
+2013     7
+2014     0
+2015     0
+2016     0
+2017     1
+2018     1
+2019     1
+2020     1
+2021     1
+2022     4
+
+=== VALUE DOMAIN ===
+count = 224
+min = 4578.0
+max = 30568.0
+zero_count = 0
+negative_count = 0
+
+=== TEMPORAL EXTREMES ===
+
+top increases:
+  ��������   ���  prev_value  ruralConsumptionExpenditures change_rate
+ city9 2014      7624.0                        9860.0      29.33%
+city16 2012      4928.0                        6192.0      25.65%
+city23 2015     11415.0                       14301.0      25.28%
+
+top decreases:
+  ��������   ���  prev_value  ruralConsumptionExpenditures change_rate
+city22 2021     19980.0                       19419.0      -2.81%
+city21 2021     26295.0                       25662.0      -2.41%
+city31 2015      9396.0                        9189.0      -2.20%
+
+=== VERIFY: ũ���������֧�� ===
+rows = 264
+unique_keys = 264
+duplicate_rows = 0
+cities = 22
+years = [np.int64(2011), np.int64(2012), np.int64(2013), np.int64(2014), np.int64(2015), np.int64(2016), np.int64(2017), np.int64(2018), np.int64(2019), np.int64(2020), np.int64(2021), np.int64(2022)]
+missing_values = 40
+missing_cities = ['city12', 'city13', 'city15', 'city18', 'city2', 'city24', 'city26', 'city28', 'city3', 'city30', 'city32', 'city33', 'city34', 'city36', 'city37', 'city39', 'city40', 'city5']
+saved: <DISPOSABLE_WORKTREE>\data\normalized\����ˮƽ_ũ���������֧��.csv (264, 3)
+
+======================================================================
+��������˾�����
+======================================================================
+
+=== STRUCTURE ===
+shape = (33, 13)
+unique_cities = 33
+duplicate_city_rows = 0
+invalid_city_rows = 2
+missing_cities = ['city15', 'city22', 'city26', 'city31', 'city33', 'city34', 'city37', 'city40', 'city5']
+years = [2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022]
+
+=== MISSING VALUES ===
+��������     0
+2011    13
+2012    11
+2013     6
+2014     1
+2015     0
+2016     0
+2017     0
+2018     0
+2019     0
+2020     0
+2021     0
+2022     4
+
+=== VALUE DOMAIN ===
+count = 361
+min = 14735.0
+max = 76195.0
+zero_count = 0
+negative_count = 0
+
+=== TEMPORAL EXTREMES ===
+
+top increases:
+  ��������   ���  prev_value  urbanDisposableIncome change_rate
+ city8 2018     24880.0                35825.0      43.99%
+city36 2021     26289.0                35097.0      33.50%
+city39 2021     40602.0                52683.0      29.75%
+
+top decreases:
+  ��������   ���  prev_value  urbanDisposableIncome change_rate
+ city8 2017     30335.0                24880.0     -17.98%
+city36 2020     32001.0                26289.0     -17.85%
+city24 2020     50145.0                41472.0     -17.30%
+
+=== VERIFY: ��������˾����� ===
+rows = 396
+unique_keys = 396
+duplicate_rows = 0
+cities = 33
+years = [np.int64(2011), np.int64(2012), np.int64(2013), np.int64(2014), np.int64(2015), np.int64(2016), np.int64(2017), np.int64(2018), np.int64(2019), np.int64(2020), np.int64(2021), np.int64(2022)]
+missing_values = 35
+missing_cities = ['city15', 'city26', 'city33', 'city34', 'city37', 'city40', 'city5']
+saved: <DISPOSABLE_WORKTREE>\data\normalized\����ˮƽ_��������˾�����.csv (396, 3)
+
+======================================================================
+ũ������˾�����
+======================================================================
+
+=== STRUCTURE ===
+shape = (28, 13)
+unique_cities = 28
+duplicate_city_rows = 0
+invalid_city_rows = 0
+missing_cities = ['city15', 'city24', 'city26', 'city28', 'city3', 'city32', 'city34', 'city36', 'city37', 'city39', 'city40', 'city5']
+years = [2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022]
+
+=== MISSING VALUES ===
+��������     0
+2011    16
+2012    15
+2013    11
+2014     3
+2015     0
+2016     0
+2017     0
+2018     0
+2019     0
+2020     0
+2021     0
+2022     3
+
+=== VALUE DOMAIN ===
+count = 288
+min = 6316.0
+max = 67707.0
+zero_count = 0
+negative_count = 0
+
+=== TEMPORAL EXTREMES ===
+
+top increases:
+  ��������   ���  prev_value  ruralDisposableIncome change_rate
+ city8 2018     11928.0                17056.0      42.99%
+ city8 2016     10024.0                14316.0      42.82%
+city23 2015     14940.0                18393.0      23.11%
+
+top decreases:
+  ��������   ���  prev_value  ruralDisposableIncome change_rate
+ city8 2017     14316.0                11928.0     -16.68%
+city17 2015     18884.0                17660.0      -6.48%
+city31 2015     12684.0                12744.0       0.47%
+
+=== VERIFY: ũ������˾����� ===
+rows = 336
+unique_keys = 336
+duplicate_rows = 0
+cities = 28
+years = [np.int64(2011), np.int64(2012), np.int64(2013), np.int64(2014), np.int64(2015), np.int64(2016), np.int64(2017), np.int64(2018), np.int64(2019), np.int64(2020), np.int64(2021), np.int64(2022)]
+missing_values = 48
+missing_cities = ['city15', 'city24', 'city26', 'city28', 'city3', 'city32', 'city34', 'city36', 'city37', 'city39', 'city40', 'city5']
+saved: <DISPOSABLE_WORKTREE>\data\normalized\����ˮƽ_ũ������˾�����.csv (336, 3)
+saved repair report: <DISPOSABLE_WORKTREE>\data\normalized\����ˮƽ_repair_report.csv
+
+=== LIVING STANDARD COMPLETE ===
+6 normalized tables verified and saved.
+S1_REBUILD_PASS
+canonical_tables=14
+employee_provenance_rows=91
+employee_invariant=484/484 within absolute difference 1
+density_invalidated=13
+density_regime_rows=13
+wage_invalidated=1
+age_invalidated=6
+living_income_invalidated=32
+population_zero_sentinels=0
+city21_consumption_2022=44607
+raw_hash_equal=True
+output_hash_equal=True
+pack_members=10
+pack_sha256=642345dbf723a6a5a4833a5b195f2f768d74c6ce72ea4a2cc8ab7eff283347c9

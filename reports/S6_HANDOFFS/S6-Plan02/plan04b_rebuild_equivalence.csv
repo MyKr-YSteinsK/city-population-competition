@@ -1,0 +1,6 @@
+target_id,scenario_id,generated_row_count,reference_row_count,generated_duplicate_key_count,reference_duplicate_key_count,key_mismatch_count,missing_key_count,extra_key_count,identity_mismatch_cell_count,model_feature_mismatch_cell_count,label_reference_mismatch_cell_count,status
+resident,R1_REFERENCE_SNAPSHOT_LAG,573,573,0,0,0,0,0,0,0,0,PASS
+resident,R2_CONSERVATIVE_PUBLICATION_STRESS,573,573,0,0,0,0,0,0,0,0,PASS
+registered,R1_REFERENCE_SNAPSHOT_LAG,587,587,0,0,0,0,0,0,0,0,PASS
+registered,R2_CONSERVATIVE_PUBLICATION_STRESS,587,587,0,0,0,0,0,0,0,0,PASS
+ALL,ALL,2320,2320,0,0,0,0,0,0,0,0,PASS

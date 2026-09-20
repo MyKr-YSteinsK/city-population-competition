@@ -1,0 +1,49 @@
+{
+  "audit_scope": {
+    "catboost_fit_count": 0,
+    "checkpoint_modified": false,
+    "estimator_fit_count": 0,
+    "external_data_used": false,
+    "f4_config_selection_2023_count": 0,
+    "prediction_2023_count": 0,
+    "submission_count": 0,
+    "test_xls_hashed": false,
+    "test_xls_opened": false,
+    "tuning_search_count": 0
+  },
+  "captured_at_utc": "2026-09-20T13:32:26.795126+00:00",
+  "git": {
+    "disposable_worktree": true,
+    "head_equals_origin_main": true,
+    "head_sha": "124bf189c50ba136fa6c7bd74283dd9a8f90a026",
+    "origin_main_sha": "124bf189c50ba136fa6c7bd74283dd9a8f90a026"
+  },
+  "package_versions": {
+    "catboost": "1.2.10",
+    "lightgbm": "4.7.0",
+    "numpy": "2.5.3",
+    "openpyxl": "3.1.5",
+    "pandas": "3.0.6",
+    "pypdf": "6.19.0",
+    "scikit-learn": "1.9.1",
+    "xgboost": "3.4.1"
+  },
+  "platform": {
+    "machine": "AMD64",
+    "release": "11",
+    "system": "Windows"
+  },
+  "python": {
+    "executable_name": "python.exe",
+    "version": "3.14.6 (tags/v3.14.6:c63aec6, Jun 10 2026, 10:26:10) [MSC v.1944 64 bit (AMD64)]"
+  },
+  "raw_inputs": {
+    "forbidden_test_xls_metadata_only": {
+      "exists": true,
+      "path": "data/quarantine/source/test.xls",
+      "size_bytes": 22016
+    },
+    "legal_xlsx_count": 7,
+    "official_pdf": "data/raw/城市人口分析与预测/城市人口分析与预测.pdf"
+  }
+}

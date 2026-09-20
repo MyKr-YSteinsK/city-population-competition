@@ -1,0 +1,270 @@
+{
+  "boundary_checks": {
+    "checkpoint_sha_unchanged": true,
+    "no_2023_prediction_or_submission": true,
+    "no_b_data_input": true,
+    "no_fitted_model_input": true,
+    "no_forbidden_test_xls_content_access": true,
+    "no_oof_input": true,
+    "no_target_truth_after_2021": true
+  },
+  "contract": {
+    "allowed_scenarios": [
+      "R1_REFERENCE_SNAPSHOT_LAG",
+      "R2_CONSERVATIVE_PUBLICATION_STRESS"
+    ],
+    "allowed_targets": [
+      "registered",
+      "resident"
+    ],
+    "contract_id": "S6_FINAL_F4_RESIDENT_PRIMARY_2023_V1",
+    "contract_sha256": "f5deff350d96d2b688abf19ea63ad2edd0588750d20d6f9ecf52fd4d70561e2b",
+    "contract_status": "PARTIALLY_FROZEN_SUBMISSION_BLOCKED",
+    "contract_version": "S6-Plan01-FINAL-SOLUTION-CONTRACT-V1",
+    "feature_count": 144,
+    "forbidden_inputs": [
+      "data/quarantine/source/test.xls",
+      "external data",
+      "B-data as current default input",
+      "manually edited target truth",
+      "2022/2023 target truth",
+      "worker OOF predictions as final-fit shortcuts"
+    ],
+    "source_main_sha_in_plan01": "f9b97f32adc0e60e6d270db16392e4d46e7ddbe4",
+    "target_cutoff": 2021
+  },
+  "current_2023_feature_foundation": {
+    "benchmark_domain_violation_count": 0,
+    "boundary_row_count": 2240,
+    "mapping_status": {
+      "R1_REFERENCE_SNAPSHOT_LAG": "EXACT_R1",
+      "R2_CONSERVATIVE_PUBLICATION_STRESS": "EXACT_R2"
+    },
+    "quarantine_reintroduction_count": 0,
+    "row_count": 160,
+    "row_count_by_target_scenario": {
+      "registered|R1_REFERENCE_SNAPSHOT_LAG": 40,
+      "registered|R2_CONSERVATIVE_PUBLICATION_STRESS": 40,
+      "resident|R1_REFERENCE_SNAPSHOT_LAG": 40,
+      "resident|R2_CONSERVATIVE_PUBLICATION_STRESS": 40
+    },
+    "source_cap_violation_count": 0,
+    "target_truth_after_2021_used": false
+  },
+  "dependency_audit": {
+    "historical_plan04_matrix_generation_input": false,
+    "historical_plan04b_matrix_generation_input": false,
+    "raw_plus_frozen_contracts_and_code_sufficient": true,
+    "status": "PASS"
+  },
+  "dual_target_role_mapping": [
+    {
+      "current_2023_features_required": "yes",
+      "final_model_frozen": "F4 resident primary per Plan01",
+      "historical_s5_role": "primary",
+      "notes": "Primary proxy path; official total-population mapping remains unresolved.",
+      "s6_final_pipeline_role": "primary",
+      "target_id": "resident",
+      "training_data_required": "yes"
+    },
+    {
+      "current_2023_features_required": "yes",
+      "final_model_frozen": "no; later Main/S6 review required",
+      "historical_s5_role": "sensitivity",
+      "notes": "Plan01 sensitivity_only describes S5 history and does not permit omission from S6.",
+      "s6_final_pipeline_role": "alternative_required",
+      "target_id": "registered",
+      "training_data_required": "yes"
+    }
+  ],
+  "git": {
+    "branch": "",
+    "detached_head": true,
+    "head_equals_origin_main": true,
+    "head_sha": "124bf189c50ba136fa6c7bd74283dd9a8f90a026",
+    "origin_main_sha": "124bf189c50ba136fa6c7bd74283dd9a8f90a026",
+    "worktree_clean_after_generation": false
+  },
+  "isolation": {
+    "historical_matrices_unavailable_during_generation": true,
+    "removed_file_count": 25,
+    "removed_paths": [
+      "data/normalized/人口密度.csv",
+      "data/normalized/人口密度_regime_report.csv",
+      "data/normalized/人口规模.csv",
+      "data/normalized/城镇化率.csv",
+      "data/normalized/就业信息_repair_report.csv",
+      "data/normalized/就业信息_从业人员数.csv",
+      "data/normalized/就业信息_从业人员数_provenance.csv",
+      "data/normalized/就业信息_城镇失业率.csv",
+      "data/normalized/就业信息_第一二三产业就业人数.csv",
+      "data/normalized/工资水平_职工平均工资.csv",
+      "data/normalized/年龄结构.csv",
+      "data/normalized/生活水平_repair_report.csv",
+      "data/normalized/生活水平_人均可支配收入.csv",
+      "data/normalized/生活水平_人均消费支出.csv",
+      "data/normalized/生活水平_农村居民人均收入.csv",
+      "data/normalized/生活水平_农村居民消费支出.csv",
+      "data/normalized/生活水平_城镇居民人均收入.csv",
+      "data/normalized/生活水平_城镇居民消费支出.csv",
+      "data/quarantine/人口密度_quarantine.csv",
+      "data/quarantine/就业信息_从业人员数_quarantine.csv",
+      "data/quarantine/就业信息_第一二三产业就业人数_quarantine.csv",
+      "data/quarantine/工资水平_职工平均工资_quarantine.csv",
+      "data/quarantine/年龄结构_quarantine.csv",
+      "data/quarantine/生活水平_人均可支配收入_quarantine.csv",
+      "reports/S1_FINAL_REVIEW_PACK.zip"
+    ],
+    "test_xls_touched": false
+  },
+  "model_work": {
+    "catboost_fit_count": 0,
+    "estimator_fit_count": 0,
+    "f4_config_selection_2023_count": 0,
+    "prediction_2023_count": 0,
+    "submission_count": 0,
+    "tuning_search_count": 0
+  },
+  "plan04_rebuild": {
+    "audit_mismatch_cell_count": 0,
+    "boundary_checks": {
+      "benchmark_domain_violation_count": 0,
+      "city_count": 40,
+      "feature_name_order_exact": true,
+      "formal_origin_count": 11,
+      "quarantine_reintroduction_count": 0,
+      "source_cap_violation_count": 0
+    },
+    "equivalence_status": "PASS",
+    "feature_count": 144,
+    "key_mismatch_count": 0,
+    "label_reference_mismatch_cell_count": 0,
+    "model_feature_mismatch_cell_count": 0,
+    "row_count": 1760,
+    "status": "PASS"
+  },
+  "plan04b_rebuild": {
+    "b3_compatibility": {
+      "checks": [
+        {
+          "macro_delta_vs_frozen": -1.1368683772161603e-13,
+          "pooled_delta_vs_frozen": -1.1368683772161603e-13,
+          "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+          "status": "PASS",
+          "target_id": "resident"
+        },
+        {
+          "macro_delta_vs_frozen": -1.1368683772161603e-13,
+          "pooled_delta_vs_frozen": -1.1368683772161603e-13,
+          "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+          "status": "PASS",
+          "target_id": "resident"
+        },
+        {
+          "macro_delta_vs_frozen": 2.2737367544323206e-13,
+          "pooled_delta_vs_frozen": 2.5579538487363607e-13,
+          "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+          "status": "PASS",
+          "target_id": "registered"
+        },
+        {
+          "macro_delta_vs_frozen": 2.2737367544323206e-13,
+          "pooled_delta_vs_frozen": 2.5579538487363607e-13,
+          "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+          "status": "PASS",
+          "target_id": "registered"
+        }
+      ],
+      "expected_pooled_mse": {
+        "registered": 225.421212121213,
+        "resident": 872.452651515143
+      },
+      "observed": {
+        "registered_R1_REFERENCE_SNAPSHOT_LAG": {
+          "latest_2021_mse": 1485.6048611111196,
+          "macro_origin_mse": 225.42121212121322,
+          "pooled_mse": 225.42121212121324,
+          "scoreable_rows": 440
+        },
+        "registered_R2_CONSERVATIVE_PUBLICATION_STRESS": {
+          "latest_2021_mse": 1485.6048611111196,
+          "macro_origin_mse": 225.42121212121322,
+          "pooled_mse": 225.42121212121324,
+          "scoreable_rows": 440
+        },
+        "resident_R1_REFERENCE_SNAPSHOT_LAG": {
+          "latest_2021_mse": 3705.42777777773,
+          "macro_origin_mse": 872.4526515151429,
+          "pooled_mse": 872.4526515151429,
+          "scoreable_rows": 440
+        },
+        "resident_R2_CONSERVATIVE_PUBLICATION_STRESS": {
+          "latest_2021_mse": 3705.42777777773,
+          "macro_origin_mse": 872.4526515151429,
+          "pooled_mse": 872.4526515151429,
+          "scoreable_rows": 440
+        }
+      },
+      "pass": true
+    },
+    "b3_compatibility_status": "PASS",
+    "boundary_violation_counts": {
+      "b3_history": 0,
+      "benchmark": 0,
+      "population_history": 0,
+      "quarantine": 0,
+      "source_cap": 0
+    },
+    "equivalence_status": "PASS",
+    "inner_boundary_violation_count": 0,
+    "inner_geometry_rows": 484,
+    "key_mismatch_count": 0,
+    "label_reference_mismatch_cell_count": 0,
+    "model_feature_mismatch_cell_count": 0,
+    "outer_boundary_violation_count": 0,
+    "outer_geometry_rows": 44,
+    "pseudo_target_year_max": 2021,
+    "pseudo_target_year_min": 2004,
+    "row_count": 2320,
+    "row_count_by_target_scenario": {
+      "registered|R1_REFERENCE_SNAPSHOT_LAG": 587,
+      "registered|R2_CONSERVATIVE_PUBLICATION_STRESS": 587,
+      "resident|R1_REFERENCE_SNAPSHOT_LAG": 573,
+      "resident|R2_CONSERVATIVE_PUBLICATION_STRESS": 573
+    },
+    "status": "PASS"
+  },
+  "plan_id": "S6-Plan02",
+  "raw_integrity": {
+    "status": "PASS",
+    "test_xls_content_accessed": false,
+    "test_xls_hashed": false,
+    "unexpected_legal_raw_workbook_count": 0
+  },
+  "required_artifacts": [
+    "HANDOFF.md",
+    "clean_rebuild_summary.json",
+    "raw_integrity_check.csv",
+    "input_dependency_audit.csv",
+    "s1_rebuild_equivalence.csv",
+    "plan04_rebuild_equivalence.csv",
+    "plan04b_rebuild_equivalence.csv",
+    "rebuilt_training_replay_matrix.csv",
+    "current_2023_feature_matrix.csv",
+    "current_2023_feature_boundary_audit.csv",
+    "dual_target_role_mapping.csv",
+    "rebuild_artifact_equivalence.csv",
+    "environment_snapshot.json"
+  ],
+  "result": "READY_FOR_S6_HISTORICAL_REPRODUCTION_CONTROLS",
+  "s1_rebuild": {
+    "artifact_count": 27,
+    "byte_identical_count": 0,
+    "canonical_rebuilt_from_legal_raw": true,
+    "execution_log": "reports/S6_HANDOFFS/S6-Plan02/rebuild_execution_log.txt",
+    "mismatch_count": 0,
+    "semantic_identical_count": 27,
+    "status": "PASS"
+  },
+  "status": "READY_FOR_S6_HISTORICAL_REPRODUCTION_CONTROLS"
+}

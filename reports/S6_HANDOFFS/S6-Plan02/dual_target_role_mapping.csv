@@ -1,0 +1,3 @@
+target_id,historical_s5_role,s6_final_pipeline_role,training_data_required,current_2023_features_required,final_model_frozen,notes
+resident,primary,primary,yes,yes,F4 resident primary per Plan01,Primary proxy path; official total-population mapping remains unresolved.
+registered,sensitivity,alternative_required,yes,yes,no; later Main/S6 review required,Plan01 sensitivity_only describes S5 history and does not permit omission from S6.

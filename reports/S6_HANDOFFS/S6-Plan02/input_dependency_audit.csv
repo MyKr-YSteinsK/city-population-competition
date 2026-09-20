@@ -1,0 +1,30 @@
+artifact,path,category,generation_input,access_phase,status,notes
+all_rebuilt_outputs,data/raw/城市人口分析与预测/城市人口分析与预测.pdf,immutable_raw,yes,generation,PASS,legal raw source
+all_rebuilt_outputs,data/raw/城市人口分析与预测/数据集/人口密度.xlsx,immutable_raw,yes,generation,PASS,legal raw source
+all_rebuilt_outputs,data/raw/城市人口分析与预测/数据集/人口规模.xlsx,immutable_raw,yes,generation,PASS,legal raw source
+all_rebuilt_outputs,data/raw/城市人口分析与预测/数据集/城镇化率.xlsx,immutable_raw,yes,generation,PASS,legal raw source
+all_rebuilt_outputs,data/raw/城市人口分析与预测/数据集/就业信息.xlsx,immutable_raw,yes,generation,PASS,legal raw source
+all_rebuilt_outputs,data/raw/城市人口分析与预测/数据集/工资水平.xlsx,immutable_raw,yes,generation,PASS,legal raw source
+all_rebuilt_outputs,data/raw/城市人口分析与预测/数据集/年龄结构.xlsx,immutable_raw,yes,generation,PASS,legal raw source
+all_rebuilt_outputs,data/raw/城市人口分析与预测/数据集/生活水平.xlsx,immutable_raw,yes,generation,PASS,legal raw source
+all_rebuilt_outputs,reports/S6_HANDOFFS/S6-Plan01/final_solution_contract.json,frozen_specification_or_code,yes,generation,PASS,authoritative contract/code; no historical matrix shortcut
+all_rebuilt_outputs,reports/S6_HANDOFFS/S6-Plan01/current_2023_information_set_audit.csv,frozen_specification_or_code,yes,generation,PASS,authoritative contract/code; no historical matrix shortcut
+all_rebuilt_outputs,docs/s1_data_contract.csv,frozen_specification_or_code,yes,generation,PASS,authoritative contract/code; no historical matrix shortcut
+all_rebuilt_outputs,reports/S2_HANDOFFS/S2-Plan02/replay_scenario_definitions.csv,frozen_specification_or_code,yes,generation,PASS,authoritative contract/code; no historical matrix shortcut
+all_rebuilt_outputs,reports/S2_HANDOFFS/S2-Plan02/pseudo_target_source_policy_matrix.csv,frozen_specification_or_code,yes,generation,PASS,authoritative contract/code; no historical matrix shortcut
+all_rebuilt_outputs,scripts/run_s1.py,frozen_specification_or_code,yes,generation,PASS,authoritative contract/code; no historical matrix shortcut
+all_rebuilt_outputs,scripts/build_s2_plan02_geometry.py,frozen_specification_or_code,yes,generation,PASS,authoritative contract/code; no historical matrix shortcut
+all_rebuilt_outputs,scripts/build_s3_plan01_baseline_ladder.py,frozen_specification_or_code,yes,generation,PASS,authoritative contract/code; no historical matrix shortcut
+all_rebuilt_outputs,scripts/build_s3_plan02_recent_window_and_selector.py,frozen_specification_or_code,yes,generation,PASS,authoritative contract/code; no historical matrix shortcut
+all_rebuilt_outputs,scripts/build_s5_plan04_full_multisource_feature_foundation.py,frozen_specification_or_code,yes,generation,PASS,authoritative contract/code; no historical matrix shortcut
+all_rebuilt_outputs,scripts/build_s5_plan04b_training_replay_foundation.py,frozen_specification_or_code,yes,generation,PASS,authoritative contract/code; no historical matrix shortcut
+equivalence_checks_only,reports/S5_HANDOFFS/S5-Plan04/full_multisource_feature_matrix.csv,historical_comparison_only,no,post_generation_git_object,PASS,removed from disposable filesystem before generation; read from Git after independent build
+equivalence_checks_only,reports/S5_HANDOFFS/S5-Plan04B/full_multisource_training_replay_matrix.csv,historical_comparison_only,no,post_generation_git_object,PASS,removed from disposable filesystem before generation; read from Git after independent build
+equivalence_checks_only,reports/S5_HANDOFFS/S5-Plan04B/outer_training_geometry.csv,historical_comparison_only,no,post_generation_git_object,PASS,removed from disposable filesystem before generation; read from Git after independent build
+equivalence_checks_only,reports/S5_HANDOFFS/S5-Plan04B/inner_split_geometry.csv,historical_comparison_only,no,post_generation_git_object,PASS,removed from disposable filesystem before generation; read from Git after independent build
+all_rebuilt_outputs,data/quarantine/source/test.xls,forbidden_input,no,not_used,PASS,metadata only; content not opened or hashed
+all_rebuilt_outputs,B-data,forbidden_input,no,not_used,PASS,forbidden current input
+all_rebuilt_outputs,S5 worker OOF/prediction/performance artifacts,forbidden_input,no,not_used,PASS,not used
+all_rebuilt_outputs,saved fitted models/cached 2023 predictions,forbidden_input,no,not_used,PASS,not used
+all_rebuilt_outputs,2022/2023 target truth,forbidden_input,no,not_used,PASS,not used
+current_2023_feature_matrix.csv,reports/S6_HANDOFFS/S6-Plan02/current_2023_feature_matrix.csv,regenerated_derived,no,output,PASS,160 rows built from raw + frozen contracts/code
