@@ -114,6 +114,7 @@ B3 仍是最重要的简单可复现 benchmark；S6 reproduction 必须能够同
 - F4 在真实 2023 当前 snapshot 上的最终 prediction 尚未生成，因此不存在 final submission evidence。
 - final training 时怎样把历史 replay geometry 映射到真实 2023 information set，必须在 S6 明确冻结，不能凭历史 backtest runner 隐式推断。
 - submission schema / exact output coverage 仍需 S6 做最终事实检查。
+- 经典赛 leaderboard score 与本地 MSE→score 数量级存在值得警惕的 sanity question，但当前不作为 S6 blocker。先按既定 S6 路线完成首次真实 submission；拿到平台实际评分后，再决定是否开启 metric / target-scale / leaderboard 专项复盘。
 
 ## S6 Entry Point
 
