@@ -8,7 +8,8 @@
 - `formal_submission_generated`: `false`
 - Execution source main SHA: `401b9b9660b65e580d9db2b4fd9d3f32493639a5`
 - Branch at audit: `main`
-- This handoff records the audited source state; the exact delivery HEAD is reported after commit/push verification.
+- Evidence packet commit SHA: `60b6381d30eb8e0f5d5b5c35d751ec723c74ec1b`
+- The final delivery HEAD is verified and reported after the follow-up handoff-record commit/push.
 
 ## What was frozen
 
