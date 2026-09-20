@@ -112,6 +112,7 @@ B3 仍是最重要的简单可复现 benchmark；S6 reproduction 必须能够同
 - 真实 source publication timing 仍未知；历史 R1/R2 只是 replay assumptions。
 - PDF formal MSE / FAQ RMSE 冲突仍未获得官方澄清；本地 contract 继续 MSE primary / RMSE auxiliary。
 - F4 在真实 2023 当前 snapshot 上的最终 prediction 尚未生成，因此不存在 final submission evidence。
+- 鉴于官方“总人口”到常住人口/户籍人口的精确映射仍未直接证明，S6 final pipeline 必须同时保留两套目标路径：resident primary 与 registered alternative。两者应分别训练、分别生成 2023 predictions、分别生成符合官方 schema 的 submission 候选；不得在没有新证据时平均或混合。首次真实平台提交后，可根据实际 score 再做 target-mapping 复盘。
 - final training 时怎样把历史 replay geometry 映射到真实 2023 information set，必须在 S6 明确冻结，不能凭历史 backtest runner 隐式推断。
 - submission schema / exact output coverage 仍需 S6 做最终事实检查。
 - 经典赛 leaderboard score 与本地 MSE→score 数量级存在值得警惕的 sanity question，但当前不作为 S6 blocker。先按既定 S6 路线完成首次真实 submission；拿到平台实际评分后，再决定是否开启 metric / target-scale / leaderboard 专项复盘。
