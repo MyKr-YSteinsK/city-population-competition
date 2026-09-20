@@ -1,0 +1,28 @@
+{
+  "api_compatibility_adjustments": [],
+  "constructor_signature": "(feature_names: collections.abc.Sequence[None | str] | None = None, feature_types: collections.abc.Sequence[None | str | collections.abc.Sequence[str] | collections.abc.Sequence[float]] | None = None, max_bins: int = 1024, max_interaction_bins: int = 64, interactions: int | float | str | collections.abc.Sequence[int | str | collections.abc.Sequence[int | str]] | None = '5x', exclude: collections.abc.Sequence[int | str | collections.abc.Sequence[int | str]] | None = None, validation_size: int | float | None = 0.15, outer_bags: int = 14, inner_bags: int | None = 0, learning_rate: float = 0.04, greedy_ratio: float | None = 10.0, cyclic_progress: bool | float | int = False, smoothing_rounds: int | None = 500, interaction_smoothing_rounds: int | None = 100, max_rounds: int | None = 50000, early_stopping_rounds: int | None = 100, early_stopping_tolerance: float | None = 1e-05, callback: collections.abc.Callable[[int, int, bool, float], bool] | None = None, min_samples_leaf: int | None = 4, min_hessian: float | None = 0.0, reg_alpha: float | None = 0.0, reg_lambda: float | None = 0.0, max_delta_step: float | None = 0.0, gain_scale: float | None = 5.0, min_cat_samples: int | None = 10, cat_smooth: float | None = 10.0, missing: str = 'separate', max_leaves: int = 2, monotone_constraints: collections.abc.Sequence[int] | None = None, objective: str = 'rmse', n_jobs: int | None = -2, random_state: int | None = 42)",
+  "import_status": "PASS",
+  "installation_status": "PASS",
+  "interpret": "0.7.8",
+  "interpret_core": "0.7.8",
+  "pip_check_output": "No broken requirements found.",
+  "pip_check_status": "PASS",
+  "process_fit_workers": 8,
+  "python": "3.14.6",
+  "requested_install_command": "python -m pip install interpret==0.7.8",
+  "simple_imputer_required_parameters_supported": true,
+  "simple_imputer_signature": "(*, missing_values=nan, strategy='mean', fill_value=None, copy=True, add_indicator=False, keep_empty_features=False)",
+  "status": "PASS",
+  "supported_requested_parameters": [
+    "interactions",
+    "learning_rate",
+    "max_bins",
+    "max_leaves",
+    "max_rounds",
+    "min_samples_leaf",
+    "n_jobs",
+    "outer_bags",
+    "random_state"
+  ],
+  "unsupported_requested_parameters": []
+}

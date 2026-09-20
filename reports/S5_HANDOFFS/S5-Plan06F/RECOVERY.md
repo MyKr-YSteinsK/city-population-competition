@@ -28,4 +28,4 @@ Selection counts are execution diagnostics only and are not model-performance ev
 
 - Worker branch: `s5/plan06f-ebm-additive-screening`.
 - Frozen Wave base: `1f97f67488cd7aec120ef8b9fa04407dc13d54ba`.
-- Environment evidence, if needed for audit, remains on the worker branch at `reports/S5_HANDOFFS/S5-Plan06F/worker_environment.json`.
+- Environment evidence, if needed for audit, is retained in final main at `reports/S5_HANDOFFS/S5-Plan06F/worker_environment.json`.
