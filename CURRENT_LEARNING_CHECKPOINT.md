@@ -97,6 +97,15 @@ B3 仍是最重要的简单可复现 benchmark；S6 reproduction 必须能够同
 - F4 的 framing signal 已有强 evidence，但学习者对完整 final-training / current-2023 information-set reconstruction / submission generation 的独立复现能力尚未验证；这正是 S6 的任务。
 - S5 的 partial-pooling / EBM 等方向没有形成可采信正向结论；不应在 S6 再开启模型研究。
 
+## Official Classic-Mode Clarification
+
+- 当前用户参加的是 DataFountain **经典赛（classic competition）**，不是 2023 年已结束的正式初赛/决赛。
+- DataFountain 经典赛规则明确：当前提交会进行自动评测，并显示在 **经典赛排行榜**；评测采用“原赛题初赛 A 榜评测规则”。因此当前提交不写入历史“初赛 A 榜”或“初赛 B 榜”，也不属于原决赛排名。
+- 官方 dataset 页面仍保留历史资产：原“数据文件夹”、单独的“B榜数据”、以及“提交样例”。用户上传的 `B-data.zip` MD5 为 `6DC5FD08E6C8B13271521BB23122EB2C`，与官方 B 榜数据 MD5 完全一致；`submission_sample.csv` MD5 为 `882A25A3037ABC8A5531CD0991EDBFD9`，与官方提交样例完全一致。
+- 对上传资产的直接检查确认：提交样例为 40 行 `city1..city40`、`year=2023`、列为 `city_id, year, pred`。
+- B 榜数据不是当前 classic submission 的默认建模输入：它是原正式比赛 B 榜阶段的独立历史资产。其 40 个匿名 city 标签虽然仍为 `city1..city40`，但人口历史与原数据文件夹大量不同，且人口规模可覆盖到 2022，说明不能把两套同名 city ID 当作同一实体直接拼接。
+- 因此当前 S6 应继续以原 A-stage “数据文件夹”对应的项目 canonical data 为建模事实源，并使用官方 submission sample 冻结输出 schema；B 榜数据只作为历史赛制研究/迁移材料，除非 Main 另行开启明确的 B 榜复现实验。
+
 ## Remaining Uncertainty
 
 - 官方“总人口”究竟对应 resident 还是 registered 仍没有直接证明。
