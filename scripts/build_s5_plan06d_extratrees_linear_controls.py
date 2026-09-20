@@ -344,6 +344,117 @@ def feature_group(feature_name: str, groups: dict[str, list[str]]) -> tuple[str,
     return "OTHER", "transformed_feature"
 
 
+def aggregate_diagnostic_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    raw = [
+        row
+        for row in rows
+        if row.get("diagnostic_type") in {"feature_importance", "coefficient"}
+    ]
+    feature_groups: dict[tuple[Any, ...], list[dict[str, Any]]] = defaultdict(list)
+    for row in raw:
+        key = (
+            row["family"],
+            row["model_id"],
+            row["framing_id"],
+            row["target_id"],
+            row["scenario_id"],
+            row["feature_name"],
+            row["feature_group"],
+            row["feature_role"],
+        )
+        feature_groups[key].append(row)
+    aggregate: list[dict[str, Any]] = []
+    for key, values in feature_groups.items():
+        family, model_id, framing_id, target_id, scenario_id, name, group, role = key
+        signed = np.asarray([float(row["importance_or_coefficient"]) for row in values])
+        absolute = np.abs(signed)
+        positive = float(np.mean(signed > 1e-12))
+        negative = float(np.mean(signed < -1e-12))
+        nonzero = float(np.mean(np.abs(signed) > 1e-12))
+        aggregate.append(
+            {
+                "family": family,
+                "model_id": model_id,
+                "framing_id": framing_id,
+                "target_id": target_id,
+                "scenario_id": scenario_id,
+                "outer_origin_year": "",
+                "selected_config_id": "",
+                "feature_name": name,
+                "feature_group": group,
+                "feature_role": role,
+                "diagnostic_type": (
+                    "aggregate_feature_importance"
+                    if family == "EXTRATREES"
+                    else "aggregate_coefficient_summary"
+                ),
+                "importance_or_coefficient": float(np.mean(signed)),
+                "absolute_magnitude": float(np.mean(absolute)),
+                "capacity_metric": "",
+                "capacity_value": "",
+                "summary_count": len(values),
+                "positive_fraction": positive,
+                "negative_fraction": negative,
+                "nonzero_fraction": nonzero,
+                "sign_stability": max(positive, negative),
+            }
+        )
+
+    fit_group_values: dict[tuple[Any, ...], dict[int, list[float]]] = defaultdict(lambda: defaultdict(list))
+    for row in raw:
+        fit_key = (
+            row["family"],
+            row["model_id"],
+            row["framing_id"],
+            row["target_id"],
+            row["scenario_id"],
+            row["outer_origin_year"],
+            row["feature_group"],
+        )
+        fit_group_values[fit_key][int(row["outer_origin_year"])].append(
+            float(row["importance_or_coefficient"])
+        )
+    group_summaries: dict[tuple[Any, ...], list[float]] = defaultdict(list)
+    for fit_key, per_fit in fit_group_values.items():
+        group_key = (*fit_key[:5], fit_key[6])
+        values = per_fit[next(iter(per_fit))] if len(per_fit) == 1 else [v for vs in per_fit.values() for v in vs]
+        if fit_key[0] == "EXTRATREES":
+            group_summaries[group_key].append(float(np.sum(values)))
+        else:
+            group_summaries[group_key].append(float(np.sum(np.abs(values))))
+    for key, values in group_summaries.items():
+        family, model_id, framing_id, target_id, scenario_id, group = key
+        aggregate.append(
+            {
+                "family": family,
+                "model_id": model_id,
+                "framing_id": framing_id,
+                "target_id": target_id,
+                "scenario_id": scenario_id,
+                "outer_origin_year": "",
+                "selected_config_id": "",
+                "feature_name": "",
+                "feature_group": group,
+                "feature_role": "city_one_hot_aggregate" if group == "CITY_ONE_HOT" else "feature_group_aggregate",
+                "diagnostic_type": (
+                    "aggregate_group_importance"
+                    if family == "EXTRATREES"
+                    else "aggregate_group_coefficient_magnitude"
+                ),
+                "importance_or_coefficient": float(np.mean(values)),
+                "absolute_magnitude": float(np.mean(values)),
+                "capacity_metric": "",
+                "capacity_value": "",
+                "summary_count": len(values),
+                "positive_fraction": "",
+                "negative_fraction": "",
+                "nonzero_fraction": "",
+                "sign_stability": "",
+            }
+        )
+    return aggregate
+
+
 def run_family(
     family: str,
     replay: pd.DataFrame,
@@ -593,6 +704,7 @@ def run_family(
                             }
                         )
 
+    diagnostic_rows.extend(aggregate_diagnostic_rows(diagnostic_rows))
     expected_rows = 2 * 2 * 2 * 11 * 40
     assert len(oof_rows) == expected_rows
     assert len(selection_rows) == 2 * 2 * 2 * 11
@@ -964,6 +1076,7 @@ def handoff_text(
             "",
             "- ExtraTrees：outer-selected feature importance、feature group、city one-hot、tree capacity 均写入 feature_importance.csv。",
             "- Ridge：outer-selected coefficient magnitude、feature group、city one-hot、missing indicators、alpha 与稀疏度均写入同一诊断表。",
+            "- feature_importance.csv 同时包含按 selected outer fits 聚合的 feature/group importance，以及 Ridge coefficient sign stability。",
             "- Fold-local median imputation + missing indicators；Ridge 仅在同一 fold 内追加 StandardScaler；ExtraTrees 不缩放。",
             "- Library/runtime limitations：使用项目已冻结的 Python / numpy / pandas / scikit-learn 环境；ExtraTrees 与 Ridge 均为 CPU、single-thread；没有 GPU 或并行随机性。",
             "",
@@ -1172,6 +1285,8 @@ def main() -> None:
         "feature_group", "feature_role", "diagnostic_type",
         "importance_or_coefficient", "absolute_magnitude",
         "capacity_metric", "capacity_value",
+        "summary_count", "positive_fraction", "negative_fraction",
+        "nonzero_fraction", "sign_stability",
     ]
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     write_rows(OUTPUT_DIR / "oof_predictions.csv", all_oof_rows, output_fields_oof)
