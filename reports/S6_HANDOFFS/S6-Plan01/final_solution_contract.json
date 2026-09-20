@@ -1,0 +1,396 @@
+{
+  "b3_control": {
+    "authoritative_code": "scripts/build_s3_plan02_recent_window_and_selector.py",
+    "compatibility_evidence": [
+      "reports/S4_HANDOFFS/S4-Plan01/b3_compatibility_check.csv",
+      "reports/S4_HANDOFFS/S4-Plan01/b3_metric_compatibility_check.csv"
+    ],
+    "definition": "per-city OLS on the latest three non-missing target observations <= T-2; extrapolate to T; B1 fallback only when fewer than three points",
+    "model_id": "B3_RECENT_3POINT_OLS_TREND",
+    "no_city_mixing_or_gating": true,
+    "registered_latest_2021_mse": 1485.604861111118,
+    "registered_pooled_mse": 225.421212121213,
+    "resident_latest_2021_mse": 3705.427777777728,
+    "resident_pooled_mse": 872.452651515143,
+    "target_history_cutoff": "T-2"
+  },
+  "config_selection": {
+    "eligibility": "inner_training_row_count >= 40, inner_validation_row_count >= 20, boundary_pass == PASS",
+    "fallback": "if eligible inner fold count < 3, select FRM_C1_CONSERVATIVE",
+    "fallback_is_not": "B3 solution fallback; no per-city routing/gating",
+    "historical_source": "469787d00b1dc220a017df02c6fbb6fcb76d2605:scripts/build_s5_plan06e_delta_growth_framing.py",
+    "inner_training_rule": "pseudo_target_year <= inner_validation_year - 2",
+    "selection_is_unique_without_2023_labels": true,
+    "selection_procedure": "eligible inner folds only; each config mean inner validation MSE; choose lowest by strict comparison with np.isclose tie preservation in preregistered order",
+    "uses_2023_truth": false
+  },
+  "contract_id": "S6_FINAL_F4_RESIDENT_PRIMARY_2023_V1",
+  "contract_status": "PARTIALLY_FROZEN_SUBMISSION_BLOCKED",
+  "contract_version": "S6-Plan01-FINAL-SOLUTION-CONTRACT-V1",
+  "current_2023_information_set": {
+    "allowed_scenarios": [
+      "R1_REFERENCE_SNAPSHOT_LAG",
+      "R2_CONSERVATIVE_PUBLICATION_STRESS"
+    ],
+    "mapping_status_by_scenario": {
+      "R1_REFERENCE_SNAPSHOT_LAG": "EXACT_R1",
+      "R2_CONSERVATIVE_PUBLICATION_STRESS": "EXACT_R2"
+    },
+    "new_policy_required": false,
+    "publication_timing_proven": false,
+    "reference_year": 2023,
+    "source_audit_path": "reports/S6_HANDOFFS/S6-Plan01/current_2023_information_set_audit.csv",
+    "source_count": 14
+  },
+  "execution": {
+    "audit_generated_at_utc": "2026-09-20T13:05:40.538316+00:00",
+    "branch": "main",
+    "source_main_sha": "401b9b9660b65e580d9db2b4fd9d3f32493639a5"
+  },
+  "fallback_policy": {
+    "config_fallback": "FRM_C1_CONSERVATIVE only when eligible inner fold count < 3",
+    "no_post_hoc_city_routing": true,
+    "solution_fallback": "B3_RECENT_3POINT_OLS_TREND is the frozen reference/fallback if F4 cannot be reproduced under this contract"
+  },
+  "feature_contract": {
+    "categorical_handling": "CatBoost native categorical; no one-hot or target encoding",
+    "categorical_metadata": [
+      "city_id"
+    ],
+    "feature_contract_version": "S5-Plan04-FULL-MULTISOURCE-V1",
+    "feature_group_count": 9,
+    "feature_group_counts": {
+      "FG-AGE": 16,
+      "FG-D": 9,
+      "FG-EMP": 10,
+      "FG-LIFE": 55,
+      "FG-P": 17,
+      "FG-SECTOR": 14,
+      "FG-U": 7,
+      "FG-UNEMP": 7,
+      "FG-WAGE": 9
+    },
+    "feature_names_are_order_checked": true,
+    "missingness": "raw numeric NaN retained; no Plan04 imputation",
+    "numeric_model_feature_count": 144,
+    "preprocessing": "no imputation, scaling, selector, or post-hoc feature selection",
+    "quarantine_provenance_density_age_guards": "preserved from S1/Plan04; no quarantine reintroduction; age benchmark-only",
+    "source_of_feature_names": [
+      "reports/S5_HANDOFFS/S5-Plan04/feature_definitions.csv",
+      "reports/S5_HANDOFFS/S5-Plan04B/parallel_worker_input_contract.json"
+    ]
+  },
+  "forbidden_inputs": [
+    "data/quarantine/source/test.xls",
+    "external data",
+    "B-data as current default input",
+    "manually edited target truth",
+    "2022/2023 target truth",
+    "worker OOF predictions as final-fit shortcuts"
+  ],
+  "framing": {
+    "clipping": "none",
+    "final_prediction_history_cutoff": "<= 2021 for 2023 prediction",
+    "framing_id": "F4_LOG_GROWTH_FROM_LATEST",
+    "label": "log(actual_target_value / pop_latest_level)",
+    "population_history_cutoff": "latest non-missing target history <= pseudo_target_year - 2",
+    "positive_finite_requirements": [
+      "pop_latest_level > 0",
+      "actual_target_value > 0 for historical F4 labels",
+      "raw prediction and reconstruction finite"
+    ],
+    "reconstruction": "pop_latest_level * exp(raw_prediction)",
+    "target_truth_sources_for_prediction": "forbidden; no 2022/2023 target truth"
+  },
+  "immutability_mechanism": {
+    "hash_registry": "reports/S6_HANDOFFS/S6-Plan01/historical_lineage_hashes.csv",
+    "no_force_push_or_history_rewrite": true,
+    "source_lineage_locked_to_commit_and_blob": true,
+    "tracked_contract": "reports/S6_HANDOFFS/S6-Plan01/final_solution_contract.json"
+  },
+  "lineage": {
+    "plan06e_archive_tag": "archive/pre-s6/s5-plan06e-delta-growth-framing",
+    "plan06e_artifact_generation_source": "469787d00b1dc220a017df02c6fbb6fcb76d2605",
+    "plan06e_artifact_tip": "343970c608fa1a0f6d5e7ab5d355c29757d6ce2e",
+    "plan06e_runner_introduction": "f960d2cb71de73e4ab39d341f7383022d9c55cac",
+    "plan06e_wave_base": "1f97f67488cd7aec120ef8b9fa04407dc13d54ba"
+  },
+  "model": {
+    "allow_writing_files": false,
+    "catboost_version_required": "1.2.10",
+    "configs": [
+      {
+        "config_id": "FRM_C1_CONSERVATIVE",
+        "depth": 4,
+        "fallback_default": true,
+        "iterations": 400,
+        "l2_leaf_reg": 20.0,
+        "learning_rate": 0.03,
+        "rsm": 0.7
+      },
+      {
+        "config_id": "FRM_C2_MEDIUM",
+        "depth": 5,
+        "fallback_default": false,
+        "iterations": 600,
+        "l2_leaf_reg": 10.0,
+        "learning_rate": 0.03,
+        "rsm": 0.8
+      },
+      {
+        "config_id": "FRM_C3_FLEXIBLE_REGULARIZED",
+        "depth": 6,
+        "fallback_default": false,
+        "iterations": 800,
+        "l2_leaf_reg": 10.0,
+        "learning_rate": 0.02,
+        "rsm": 0.85
+      }
+    ],
+    "estimator": "CatBoostRegressor",
+    "eval_metric": "RMSE",
+    "loss_function": "RMSE",
+    "outer_label_early_stopping": false,
+    "random_seed": 20260919,
+    "random_strength": 1.0,
+    "thread_count": 1,
+    "verbose": false
+  },
+  "ready_for_main_stage_review": true,
+  "ready_for_s6_clean_rebuild": true,
+  "rebuild_boundary": {
+    "categories": [
+      "final_contract_evidence",
+      "forbidden_input",
+      "historical_evidence",
+      "immutable_preserve",
+      "immutable_preserve_but_forbidden_input",
+      "rebuildable_derived"
+    ],
+    "clean_rebuild_is_authorized_now": false,
+    "contract_evidence_preserved": true,
+    "manifest_path": "reports/S6_HANDOFFS/S6-Plan01/rebuild_manifest.csv"
+  },
+  "submission_generation_authorized": false,
+  "submission_schema": {
+    "evidence_path": "reports/S6_HANDOFFS/S6-Plan01/submission_schema_evidence.md",
+    "fields": [
+      {
+        "evidence": "data/raw/城市人口分析与预测/城市人口分析与预测.pdf page 1; CURRENT_LEARNING_CHECKPOINT.md official sample check",
+        "field": "official_task_prediction_year",
+        "status": "CONFIRMED",
+        "value": "2023"
+      },
+      {
+        "evidence": "data/raw/城市人口分析与预测/城市人口分析与预测.pdf page 1",
+        "field": "official_target_wording",
+        "status": "CONFIRMED",
+        "value": "各个城市 2023 年的总人口数"
+      },
+      {
+        "evidence": "PDF says 总人口; legal population source has separate resident/registered columns; no direct mapping",
+        "field": "resident_vs_registered_mapping",
+        "status": "UNKNOWN",
+        "value": "not proved by official material"
+      },
+      {
+        "evidence": "CURRENT_LEARNING_CHECKPOINT.md official sample direct check; S1 canonical coverage",
+        "field": "known_city_universe",
+        "status": "CONFIRMED",
+        "value": "city1..city40"
+      },
+      {
+        "evidence": "CURRENT_LEARNING_CHECKPOINT.md official sample direct check; canonical city set",
+        "field": "final_universe_size",
+        "status": "CONFIRMED",
+        "value": "40"
+      },
+      {
+        "evidence": "CURRENT_LEARNING_CHECKPOINT.md; official PDF schema page",
+        "field": "city_ordering_requirement",
+        "status": "INFERRED_NOT_SAFE_TO_FREEZE",
+        "value": "sample is city1..city40; formal ordering rule not stated"
+      },
+      {
+        "evidence": "data/raw/城市人口分析与预测/城市人口分析与预测.pdf page 3; CURRENT_LEARNING_CHECKPOINT.md",
+        "field": "header_columns",
+        "status": "CONFIRMED",
+        "value": "city_id, year, pred"
+      },
+      {
+        "evidence": "data/raw/城市人口分析与预测/城市人口分析与预测.pdf page 3",
+        "field": "file_format",
+        "status": "CONFIRMED",
+        "value": "CSV"
+      },
+      {
+        "evidence": "data/raw/城市人口分析与预测/城市人口分析与预测.pdf page 1 and source contract",
+        "field": "target_unit",
+        "status": "INFERRED_NOT_SAFE_TO_FREEZE",
+        "value": "local contract uses 万人; official unit not stated in PDF"
+      },
+      {
+        "evidence": "CURRENT_LEARNING_CHECKPOINT.md with official sample MD5",
+        "field": "official_submission_template",
+        "status": "CONFIRMED",
+        "value": "submission_sample.csv was confirmed in Main evidence but is not in current raw tree"
+      }
+    ],
+    "formal_submission_generated": false,
+    "pdf_evidence": {
+      "pdf_contains_official_schema": true,
+      "pdf_page_count": 4,
+      "pdf_text_sha256": "832aef54fb324559d92c36611976d34fe8c86318d3c74cc7833ff09800568b39"
+    },
+    "schema_only": {
+      "city_ids": "city1..city40",
+      "columns": [
+        "city_id",
+        "year",
+        "pred"
+      ],
+      "file_format": "CSV",
+      "file_name": "submission.csv",
+      "row_count": 40,
+      "year": 2023
+    },
+    "target_mapping_and_unit_safe_to_freeze": false
+  },
+  "target": {
+    "official_resident_registered_mapping": "UNKNOWN",
+    "official_target_wording": "总人口",
+    "primary_contract_role": "primary_proxy",
+    "primary_source_column": "常住人口（万人）",
+    "primary_target_id": "resident",
+    "registered_sensitivity_source_column": "户籍人口（万人）",
+    "registered_sensitivity_target_id": "registered",
+    "unit_in_local_contract": "万人"
+  },
+  "training_geometry": {
+    "allowed_label_max_pseudo_target_year": 2021,
+    "duplicate_key_count_all_rows": 0,
+    "geometry_rows": [
+      {
+        "allowed_label_max_pseudo_target_year": 2021,
+        "allowed_label_min_pseudo_target_year": 2004,
+        "b3_history_cutoff_fail_count": 0,
+        "b3_prediction_unavailable_count": 0,
+        "benchmark_domain_violation_count": 0,
+        "boundary_audit_rows_for_pair": 8022,
+        "builder_excluded_label_rows_total": 480,
+        "builder_excluded_rows_total": 1040,
+        "builder_exclusion_reasons": "b3_prediction_unavailable:480;no_target_label:560",
+        "candidate_role": "primary",
+        "duplicate_key_count": 0,
+        "final_prediction_year": 2023,
+        "full_replay_matrix_rows_for_pair": 573,
+        "geometry_status": "PASS",
+        "missing_label_count": 0,
+        "nonpositive_label_count": 0,
+        "nonpositive_pop_latest_count": 0,
+        "population_history_cutoff_fail_count": 0,
+        "quarantine_reintroduction_count": 0,
+        "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+        "source_cap_violation_count": 0,
+        "target_history_cutoff_year": 2021,
+        "target_id": "resident",
+        "training_city_count": 40,
+        "training_row_count": 573,
+        "training_year_count": 18,
+        "uses_2022_or_2023_target_truth": "no"
+      },
+      {
+        "allowed_label_max_pseudo_target_year": 2021,
+        "allowed_label_min_pseudo_target_year": 2004,
+        "b3_history_cutoff_fail_count": 0,
+        "b3_prediction_unavailable_count": 0,
+        "benchmark_domain_violation_count": 0,
+        "boundary_audit_rows_for_pair": 8022,
+        "builder_excluded_label_rows_total": 480,
+        "builder_excluded_rows_total": 1040,
+        "builder_exclusion_reasons": "b3_prediction_unavailable:480;no_target_label:560",
+        "candidate_role": "primary",
+        "duplicate_key_count": 0,
+        "final_prediction_year": 2023,
+        "full_replay_matrix_rows_for_pair": 573,
+        "geometry_status": "PASS",
+        "missing_label_count": 0,
+        "nonpositive_label_count": 0,
+        "nonpositive_pop_latest_count": 0,
+        "population_history_cutoff_fail_count": 0,
+        "quarantine_reintroduction_count": 0,
+        "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+        "source_cap_violation_count": 0,
+        "target_history_cutoff_year": 2021,
+        "target_id": "resident",
+        "training_city_count": 40,
+        "training_row_count": 573,
+        "training_year_count": 18,
+        "uses_2022_or_2023_target_truth": "no"
+      },
+      {
+        "allowed_label_max_pseudo_target_year": 2021,
+        "allowed_label_min_pseudo_target_year": 2004,
+        "b3_history_cutoff_fail_count": 0,
+        "b3_prediction_unavailable_count": 0,
+        "benchmark_domain_violation_count": 0,
+        "boundary_audit_rows_for_pair": 8218,
+        "builder_excluded_label_rows_total": 480,
+        "builder_excluded_rows_total": 1040,
+        "builder_exclusion_reasons": "b3_prediction_unavailable:480;no_target_label:560",
+        "candidate_role": "sensitivity_only",
+        "duplicate_key_count": 0,
+        "final_prediction_year": 2023,
+        "full_replay_matrix_rows_for_pair": 587,
+        "geometry_status": "PASS",
+        "missing_label_count": 0,
+        "nonpositive_label_count": 0,
+        "nonpositive_pop_latest_count": 0,
+        "population_history_cutoff_fail_count": 0,
+        "quarantine_reintroduction_count": 0,
+        "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+        "source_cap_violation_count": 0,
+        "target_history_cutoff_year": 2021,
+        "target_id": "registered",
+        "training_city_count": 40,
+        "training_row_count": 587,
+        "training_year_count": 18,
+        "uses_2022_or_2023_target_truth": "no"
+      },
+      {
+        "allowed_label_max_pseudo_target_year": 2021,
+        "allowed_label_min_pseudo_target_year": 2004,
+        "b3_history_cutoff_fail_count": 0,
+        "b3_prediction_unavailable_count": 0,
+        "benchmark_domain_violation_count": 0,
+        "boundary_audit_rows_for_pair": 8218,
+        "builder_excluded_label_rows_total": 480,
+        "builder_excluded_rows_total": 1040,
+        "builder_exclusion_reasons": "b3_prediction_unavailable:480;no_target_label:560",
+        "candidate_role": "sensitivity_only",
+        "duplicate_key_count": 0,
+        "final_prediction_year": 2023,
+        "full_replay_matrix_rows_for_pair": 587,
+        "geometry_status": "PASS",
+        "missing_label_count": 0,
+        "nonpositive_label_count": 0,
+        "nonpositive_pop_latest_count": 0,
+        "population_history_cutoff_fail_count": 0,
+        "quarantine_reintroduction_count": 0,
+        "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+        "source_cap_violation_count": 0,
+        "target_history_cutoff_year": 2021,
+        "target_id": "registered",
+        "training_city_count": 40,
+        "training_row_count": 587,
+        "training_year_count": 18,
+        "uses_2022_or_2023_target_truth": "no"
+      }
+    ],
+    "prediction_year": 2023,
+    "quarantine_reintroduction_count_all_rows": 0,
+    "source_cap_violation_count_all_rows": 0,
+    "target_label_truth_2022_or_2023_used": false,
+    "training_geometry_path": "reports/S6_HANDOFFS/S6-Plan01/final_training_geometry.csv"
+  }
+}

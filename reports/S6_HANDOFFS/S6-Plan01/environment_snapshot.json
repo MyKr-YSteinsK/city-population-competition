@@ -1,0 +1,45 @@
+{
+  "audit_scope": {
+    "external_data_used": false,
+    "model_fit_executed": false,
+    "prediction_generated": false,
+    "submission_generated": false,
+    "test_xls_opened": false
+  },
+  "captured_at_utc": "2026-09-20T13:05:41.630542+00:00",
+  "git": {
+    "branch": "main",
+    "origin_main": "401b9b9660b65e580d9db2b4fd9d3f32493639a5",
+    "source_main_sha": "401b9b9660b65e580d9db2b4fd9d3f32493639a5",
+    "status_before_generated_outputs": "clean_before_script_edit_is_recorded_in_handoff"
+  },
+  "input_files": {
+    "forbidden_test_xls_metadata_only": {
+      "exists": true,
+      "path": "data/quarantine/source/test.xls",
+      "size_bytes": 22016
+    },
+    "legal_raw_xlsx_count": 7,
+    "official_pdf": "data/raw/城市人口分析与预测/城市人口分析与预测.pdf"
+  },
+  "package_versions": {
+    "catboost": "1.2.10",
+    "lightgbm": "4.7.0",
+    "numpy": "2.5.3",
+    "openpyxl": "3.1.5",
+    "pandas": "3.0.6",
+    "pypdf": "6.19.0",
+    "scikit-learn": "1.9.1",
+    "xgboost": "3.4.1"
+  },
+  "platform": {
+    "machine": "AMD64",
+    "release": "11",
+    "system": "Windows",
+    "version": "10.0.26200"
+  },
+  "python": {
+    "executable_name": "python.exe",
+    "version": "3.14.6 (tags/v3.14.6:c63aec6, Jun 10 2026, 10:26:10) [MSC v.1944 64 bit (AMD64)]"
+  }
+}

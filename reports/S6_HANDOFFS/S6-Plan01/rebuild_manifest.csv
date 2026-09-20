@@ -1,0 +1,20 @@
+category,path,status,source_of_truth,clean_rebuild_action,notes
+immutable_preserve,data/raw/城市人口分析与预测/城市人口分析与预测.pdf,PRESERVE,official raw PDF,never delete or rewrite,Official task wording and submission schema evidence.
+immutable_preserve,data/raw/城市人口分析与预测/数据集/人口密度.xlsx,PRESERVE,official raw XLSX,never delete or rewrite,One of the 7 legal raw source workbooks; read-only input.
+immutable_preserve,data/raw/城市人口分析与预测/数据集/人口规模.xlsx,PRESERVE,official raw XLSX,never delete or rewrite,One of the 7 legal raw source workbooks; read-only input.
+immutable_preserve,data/raw/城市人口分析与预测/数据集/城镇化率.xlsx,PRESERVE,official raw XLSX,never delete or rewrite,One of the 7 legal raw source workbooks; read-only input.
+immutable_preserve,data/raw/城市人口分析与预测/数据集/就业信息.xlsx,PRESERVE,official raw XLSX,never delete or rewrite,One of the 7 legal raw source workbooks; read-only input.
+immutable_preserve,data/raw/城市人口分析与预测/数据集/工资水平.xlsx,PRESERVE,official raw XLSX,never delete or rewrite,One of the 7 legal raw source workbooks; read-only input.
+immutable_preserve,data/raw/城市人口分析与预测/数据集/年龄结构.xlsx,PRESERVE,official raw XLSX,never delete or rewrite,One of the 7 legal raw source workbooks; read-only input.
+immutable_preserve,data/raw/城市人口分析与预测/数据集/生活水平.xlsx,PRESERVE,official raw XLSX,never delete or rewrite,One of the 7 legal raw source workbooks; read-only input.
+immutable_preserve,Git history/tags and S5 historical identity,PRESERVE,Git object database,never rewrite history; no force push,archive/pre-s6/s5-plan06e-delta-growth-framing
+immutable_preserve_but_forbidden_input,data/quarantine/source/test.xls,PRESERVE_FILE_ONLY,existing file metadata only,do not delete in this Plan; never read content,Forbidden input; not hashed or opened by this runner.
+final_contract_evidence,reports/S6_HANDOFFS/S6-Plan01/*,PRESERVE_AFTER_FREEZE,S6 contract/handoff,preserve contract and evidence identity,Contract hash is recorded in historical_lineage_hashes.csv.
+rebuildable_derived,data/normalized/*.csv,REBUILD,S1 scripts plus legal raw inputs,can be removed and rebuilt from raw,Canonical normalized data; not an irreplaceable source.
+rebuildable_derived,data/quarantine/*.csv and data/normalized/*provenance*.csv,REBUILD,S1 audit/rebuild scripts,can be removed and rebuilt from raw,"Repairs, provenance, quarantine, and regime guards remain explicit."
+rebuildable_derived,reports/S5_HANDOFFS/S5-Plan04/**,REBUILD,Plan04 builder and feature contract,can be removed and rebuilt; preserve current copy for audit,"144-feature matrix is derived, not a new source of truth."
+rebuildable_derived,reports/S5_HANDOFFS/S5-Plan04B/**,REBUILD,Plan04B builder and replay contract,can be removed and rebuilt; preserve current copy for audit,Replay/geometry/boundary artifacts are derived.
+rebuildable_derived,"model artifacts, prediction artifacts, caches, tmp/**",REBUILD,future S6 builders,remove only within an authorized clean rebuild,No final model/prediction/submission exists in this Plan.
+historical_evidence,reports/S5_HANDOFFS/** and archive/pre-s6/s5-plan06e-delta-growth-framing,PRESERVE_IDENTITY,committed S5 evidence and immutable tag,do not reinterpret or replace with new metrics,Historical evidence supports review; worker OOF is not a final-fit shortcut.
+forbidden_input,external data / B-data / manually edited truth / 2022-2023 target truth,FORBIDDEN,none,never introduce,"B-data is historical research material, not current default input."
+forbidden_input,data/quarantine/source/test.xls,FORBIDDEN,none,never open/read,May remain on disk only as preserved file metadata.

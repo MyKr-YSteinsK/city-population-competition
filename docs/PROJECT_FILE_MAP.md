@@ -43,6 +43,10 @@
 │   ├── build_s4_plan05a_error_memory.py
 │   ├── build_s4_plan05b_cross_city_relative.py
 │   ├── build_s4_plan05c_multisource_joint.py
+│   ├── build_s5_plan04_full_multisource_feature_foundation.py
+│   ├── build_s5_plan04b_training_replay_foundation.py
+│   ├── build_s5_plan07_wave_consolidation.py
+│   ├── build_s6_plan01_final_solution_contract_audit.py
 │   └── run_s1.py
 └── reports/
     ├── S1_FINAL_REVIEW_PACK.zip
@@ -275,8 +279,25 @@
         ├── WAVE_B_SUMMARY.md
         └── s4_final_summary.json
     └── S4_FEATURE_ML_MODELING_FINAL_REPORT.md
+    └── S5_HANDOFFS/
+        ├── S5_MAIN_HANDOFF.md
+        ├── S5_EXPERIMENT_REGISTRY.csv
+        ├── S5_FINAL_CANDIDATE_COMPARISON.csv
+        ├── S5_EVIDENCE_DRIVEN_ITERATION_FINAL_REPORT.md
+        └── S5-Plan04/ and S5-Plan04B/ derived feature/replay foundations
+    └── S6_HANDOFFS/S6-Plan01/
+        ├── HANDOFF.md
+        ├── FINAL_SOLUTION_CONTRACT.md
+        ├── final_solution_contract.json
+        ├── dependency_map.md
+        ├── rebuild_manifest.csv
+        ├── current_2023_information_set_audit.csv
+        ├── final_training_geometry.csv
+        ├── historical_lineage_hashes.csv
+        ├── submission_schema_evidence.md
+        └── environment_snapshot.json
 ```
 
 ## Generated and excluded
 
-`.venv/`、Python cache、临时压缩包、历史 Plan01-04 报告和历史探索 runner 不属于当前交付树。S2 Plan handoff 只保留本轮审查所需的当前 artifacts，不进入 S3+ 模型或提交工作。
+`.venv/`、Python cache、临时压缩包、未授权模型/预测缓存和外部数据不属于当前交付树。`data/normalized/`、quarantine/provenance/regime CSV、Plan04/04B feature/replay matrix、future model/prediction artifacts 均属于可重建派生物；7 个合法 XLSX、官方 PDF、Git history/tags、S5 historical identity 和 S6 contract evidence 必须保留。`data/quarantine/source/test.xls` 可以保留文件本体，但其内容永远是 forbidden input。
