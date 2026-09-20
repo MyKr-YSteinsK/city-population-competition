@@ -1,144 +1,170 @@
-# S5｜Evidence-driven Iteration Final Evidence Report
+# S5｜Evidence-driven Iteration Final Evidence Report — Plan07 Wave Consolidation
 
-> 本报告整合已审核并已合入 `main` 的 S5-Plan01 与 S5-Plan02 证据。它提供 Main stage review 输入，不声明 S5 完成，也不授权 S6。
+> 状态：`ready_for_main_stage_review`。本报告整合 S5-Plan01～06H 的真实 evidence；不声明 `S5 COMPLETE`，不进入 S6。Plan07 只做 evidence consolidation，没有新增模型、调参、validation/feature/replay contract 变更、2023 prediction、submission、ensemble、stacking、routing 或 gating。
 
-## 1. S5 started from what problem?
+## 1. Main review decision
 
-S4 已确认：在冻结 S2 validation contract 下，B3 仍是最强的可部署 fixed baseline；target-history、外生 source、低容量 HGB、error memory、cross-city relative position 与 multisource RidgeCV 均未形成稳定的 resident aggregate gain。S4 的主要产出是可复核的机制否证链，而不是更高分模型。
+完整 Wave 的结论不再是“B3 仍是最强而忽略 Plan06E”。在统一 panel 下：
 
-因此 S5 没有继续无假设地增加模型，而是先问：
+- resident primary：`F4_LOG_GROWTH_FROM_LATEST` 是当前最强候选，R1 pooled MSE `739.6007`（相对 B3 `+15.227%`），R2 `802.4457`（`+8.024%`）。它应进入 Main Stage Completion Review，但尚不是本报告宣布的 final winner 或部署替代。
+- resident comparison：F3 也形成真实 framing signal；CatBoost F2 是 Plan06A-D 中最好的有效 residual control，但 resident 仍比 B3 差 `11.560%–13.724%`。
+- registered sensitivity：RLT3 有小幅 legacy gain（`223.6909` vs B3 `225.4212`，`8/11` origin wins），但 Plan06E 的 F3/F4 没有复制该 registered gain；因此不能把 resident 的 F4 信号解释成两个 target 都稳定改善。
+- Plan06F 只做 recovery 归档；Plan06G 因 coverage 不完整隔离；Plan06H 全部 city-local candidates unsupported。三者都不进入最终候选胜出比较。
 
-> B3 的失败风险能否在 target 观察到之前被识别？如果能，风险结构是否足以支持一个具体的低容量修正机制？
+最终推荐：`ready_for_main_stage_review = true`；等待 Main 做 Stage Completion Review。此状态不等价于 S5 完成，也不授权 S6。
 
-Plan01 发现历史一阶差分波动具有可重复的风险关联，于是唯一激活的下一步是 Plan02 的稳健局部趋势 screening。Plan02 未达到预注册 promotion gate；本阶段停止扩展该机制。
+## 2. Frozen evaluation boundary and reference
 
-## 2. Frozen evaluation boundary
+| 项目 | 冻结事实 |
+|---|---|
+| Origins | `2011–2021`, 11 个 expanding origins |
+| Cities | 40 |
+| History boundary | target history `<= T-2` |
+| Feature contract | `S5-Plan04-FULL-MULTISOURCE-V1`, 144 numeric features |
+| Replay contract | `S5-Plan04B-TRAINING-REPLAY-V1`, 2,320 replay rows |
+| Primary competition metric | pooled city-year MSE |
+| Primary target | resident |
+| Mandatory sensitivity | registered、R1/R2、macro-origin、per-origin、latest-2021 |
+| Frozen B3 resident | pooled `872.452651515143`; latest-2021 `3705.427777777728` |
+| Frozen B3 registered | pooled `225.421212121213`; latest-2021 `1485.604861111118` |
 
-- common origins：`2011–2021`，11 个 expanding origins
-- target history：严格 `<= T-2`
-- resident：primary target proxy
-- registered：mandatory sensitivity
-- pooled city-year MSE：primary aggregate
-- macro-origin MSE：稳定性 sensitivity
-- latest 2021：单独诊断，不替代 multi-origin aggregate
-- per-origin wins/losses、R1/R2 equivalence 与 city concentration：保留
-- 无随机切分、target leakage、外部新 source、`test.xls`、2023 final prediction 或 submission
+B3 在本次 panel 中从已提交的 S4 frozen OOF 重新计算辅助指标；没有重新训练 B3。机器可读完整结果见 [S5_FINAL_CANDIDATE_COMPARISON.csv](reports/S5_FINAL_CANDIDATE_COMPARISON.csv) 和 [S5_FINAL_CANDIDATE_COMPARISON.json](reports/S5_FINAL_CANDIDATE_COMPARISON.json)。
 
-S5-Plan01 与 Plan02 均沿用该合同。Plan02 的 target-history-only candidates 在 R1/R2 数值等价。
+## 3. Unified evidence panel semantics
 
-本次报告生成前，Plan02 已从 `main @ 1a6770f763966b58dd7ae60fef34e332febcea09` 以 fast-forward 方式整合至 `abe92fc60a132a35cfcf2d78be0bc5422b05bc6f`；报告提交会在该整合状态之上继续前进。
+MSE 仍是官方 primary competition metric。panel 同时保留：relative improvement vs B3、RMSE、MAE、median absolute error、P90/P95 absolute error、signed bias、macro-origin MSE、origin wins/losses、latest-2021 MSE、worst cities、top-1/top-3 city SSE concentration、已有的 scale-bin diagnostics 和 R1/R2 sensitivity。
 
-## 3. Experiment registry
+本次新增的辅助指标均来自已提交 OOF predictions 的重算，P90/P95 使用绝对误差排序后 `(n-1) * q` 的线性插值。Plan02 的 RLT3 没有持久化 row-level RLT3 OOF，因此其 pooled/RMSE/MAE/median/bias/origin/latest/scale 只复用已提交 aggregate artifacts；无法重算的 quantile、worst-city 和 city-SSE 字段在 panel 中明确写为 `UNAVAILABLE_NOT_PERSISTED`，没有为了补齐而重跑或伪造 OOF。
 
-| ID | Hypothesis / Question | Change | Key Result | Interpretation | Decision |
-|---|---|---|---|---|---|
-| S5-Plan01 | pre-origin diagnostics 是否能识别 B3 failure risk，并指向可修复机制？ | 复用 B1/B2/B3 predictions；从 `<=T-2` target history 构造 5 个诊断；不训练模型 | 五个 resident diagnostics 均通过 risk gate；volatility 通过 decision relevance；shrinkage/blend 仅有 6/11 高风险 comparator gains | risk predictability 存在，但风险识别不等于 repairability | `mechanism_signal_found:robust_local_trend` |
-| S5-Plan02 | deterministic median-slope robust local trend 是否能修复高波动风险？ | 固定评估 B3、B4、RLT3、RLT5；raw/relative volatility 与 scale 分层；不 blend、不调参 | RLT3 resident MSE `861.4909`，仅改善 `1.256%`、赢 `6/11`；RLT5 resident/registered 明显不稳定 | 没有达到 strong 或 complementary gate；不应继续添加稳健 estimator | `robust_local_trend_unsupported` |
+panel 中的角色分为：
 
-轻量机器 registry 见 `reports/S5_EXPERIMENT_REGISTRY.csv`，每个 material Plan 仅一行。
+- `frozen_primary_reference`：B3；
+- `legacy_valid_candidate`：RLT3；
+- `best_valid_residual_family_control`：CatBoost F2；
+- `framing_candidate`：F3/F4；
+- `valid_residual_family_control`：其余 A-D residual controls，仅作 family 对照，不进入收缩后的 final candidate set。
 
-## 4. Plan01 — what structure actually exists?
+## 4. Plan01～05 evidence lineage
 
-resident primary、R1/R2 数值相同的风险统计如下；高风险组是每个 origin 内按诊断值排序的 top `ceil(25%)`，同值按 `city_id` 打破：
+| Plan | 真实产出 | 收口解释 | 本次处理 |
+|---|---|---|---|
+| S5-Plan01 | B3 failure-risk diagnostics；历史一阶差分 volatility 的 median abs Spearman `0.4281`，风险方向 `11/11` | 可识别 risk，不等于可修复；唯一激活 robust local trend | 保留为机制起点 |
+| S5-Plan02 | B3/B4/RLT3/RLT5；RLT3 resident pooled `861.4909`，registered `223.6909` | resident gain 仅 `1.256%`、`6/11`；scale-outside gain `0.1595%`，未过 strong/complementary gate | RLT3 作为 legacy comparison，不晋级 |
+| S5-Plan03 | 旧的 Plan01/02-only final evidence report | 该 report 没有覆盖后续 Plan04～06 Wave；不存在独立新模型证据 | 标记为 superseded，由本报告替换 |
+| S5-Plan04 | 1,760-row、144-feature full multi-source matrix；B3 compatibility pass；source-cap violations `0` | feature foundation ready，不是模型胜出证据 | 作为所有 worker 的冻结输入 |
+| S5-Plan04B | 2,320 replay rows；44 outer groups；484 inner split rows；264 eligible folds；boundary violations `0` | replay/time-split foundation ready | 作为统一 worker geometry |
+| S5-Plan05 | frozen feature/replay/OOF/metric contract；未训练模型 | 只建立强模型并行 Wave 的治理边界 | 作为 06A-H 的共同合同 |
 
-| Diagnostic | Median abs Spearman | Positive origins | High / remaining B3 MSE | High-risk worse origins |
-|---|---:|---:|---:|---:|
-| slope disagreement | 0.3748 | 11/11 | 4.4271× | 9/11 |
-| B1/B2/B3 prediction spread | 0.3510 | 11/11 | 5.4239× | 9/11 |
-| historical difference volatility | 0.4281 | 11/11 | 6.0006× | 10/11 |
-| recent acceleration | 0.3129 | 11/11 | 1.7219× | 8/11 |
-| pre-origin target scale | 0.5220 | 11/11 | 12.1582× | 11/11 |
+## 5. Plan06A～06H worker ledger
 
-这些数值证明的是：部分 B3 failure risk 可以被 pre-origin state 分层。它们没有证明任何修正模型必然有效。
+| Plan | Branch tip | classification | 核心事实 | final panel treatment |
+|---|---|---|---|---|
+| 06A LightGBM | `4ecbd41` | `family_competitive_but_unstable` | F2 residual closest；resident still above B3；F1 direct failed | residual control |
+| 06B CatBoost | `9ffdb15` | `family_competitive_but_unstable` | F2 residual is best valid A-D control；still no resident replacement | retained as best A-D control |
+| 06C XGBoost | `2570210` | `family_unsupported` | direct failed；residual above B3 | negative control |
+| 06D ExtraTrees + Ridge | `01ab61b` | `family_unsupported` | complete OOF/diagnostics；both residual controls above resident B3 | negative controls |
+| 06E Delta/Growth | `343970c` | `framing_signal_found` | F3/F4 resident signal；F4 strongest；registered no stable replacement | final framing candidates |
+| 06F EBM | `1f97f67` | recovery-only | `88/88` execution and selection counts recovered；core performance files unavailable | excluded; see recovery note |
+| 06G Hierarchical | `d468215` | `coverage_incomplete` | combined `2760/3520`; F2 `1000/1760`; 19 outer failures | excluded from candidate ranking |
+| 06H City-Local | `baf1a90` | `city_local_unsupported` | all candidates unsupported；all-144 local Ridge `n << p` collapse | excluded; no routing |
 
-Plan01 的决策相关性进一步限制了解释：
+## 6. Resident primary comparison
 
-- partial pooling / shrinkage 的高风险 comparator gain 只有 `6/11` origins；
-- 低风险 B3 advantage 只有 `5/11` origins；
-- fixed low-capacity blend 未达到 `7/11` 的预注册稳定性要求；
-- registered sensitivity 没有形成强方向反转；
-- 因此只有 volatility → robust local trend 获得下一实验资格。
+### 6.1 Competition score, stability and latest origin
 
-Plan01 还发现错误集中具有重复性，但 dominant city 与 pre-origin state 的重叠并不充分，不能把 post-hoc city identity 变成 routing rule。
+The values below are the compact view of the full panel. Relative improvement is positive when MSE is lower than B3.
 
-## 5. Plan02 — did robust estimation repair the risk?
+| Candidate | R1 pooled MSE / gain | R1 wins | R1 latest-2021 | R2 pooled MSE / gain | R2 wins | R2 latest-2021 | R2-R1 pooled MSE |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| B3 | `872.4527 / 0.000%` | — | `3705.4278` | `872.4527 / 0.000%` | — | `3705.4278` | `0.0000` |
+| RLT3 | `861.4909 / +1.256%` | `6/11` | `3666.8000` | `861.4909 / +1.256%` | `6/11` | `3666.8000` | `0.0000` |
+| best A-D residual: CatBoost F2 | `973.3091 / -11.560%` | `4/11` | `3401.4606` | `992.1917 / -13.724%` | `3/11` | `3378.6405` | `18.8826` |
+| F3 delta | `788.8413 / +9.583%` | `4/11` | `2988.5422` | `818.4477 / +6.190%` | `5/11` | `3469.7645` | `29.6064` |
+| F4 log growth | **`739.6007 / +15.227%`** | `5/11` | `2956.2890` | **`802.4457 / +8.024%`** | `7/11` | `3595.0013` | `62.8451` |
 
-下表为 R1；R2 对 target-history-only candidates 数值等价。`Origin wins` 是 candidate 严格优于 B3 的 origin 数：
+F4 is the strongest resident candidate in pooled competition score across both scenarios. Its latest-2021 error improves versus B3 in both R1 and R2, but R2 remains materially higher than R1. That temporal sensitivity is a review risk, not a reason to hide the aggregate gain.
 
-| Target | Candidate | Pooled MSE | Latest 2021 MSE | Origin wins vs B3 |
-|---|---|---:|---:|---:|
-| resident | B3 | 872.4527 | 3705.4278 | — |
-| resident | B4 | 959.4945 | 4209.0620 | 3/11 |
-| resident | RLT3 | 861.4909 | 3666.8000 | 6/11 |
-| resident | RLT5 | 933.8669 | 4256.4981 | 3/11 |
-| registered | B3 | 225.4212 | 1485.6049 | — |
-| registered | B4 | 247.2048 | 1578.3430 | 4/11 |
-| registered | RLT3 | 223.6909 | 1483.1500 | 8/11 |
-| registered | RLT5 | 256.7166 | 1576.6210 | 4/11 |
+### 6.2 Typical error, tail risk, bias and city concentration
 
-RLT3 的 resident aggregate 表面上优于 B3，但不能晋级：
+| Candidate / scenario | RMSE | MAE | Median AE | P90 / P95 AE | bias | top-1 / top-3 city SSE |
+|---|---:|---:|---:|---:|---:|---:|
+| B3 R1 | `29.5373` | `14.1970` | `4.8333` | `36.9167 / 55.5083` | `-3.4447` | `28.61% / 50.22%` |
+| B3 R2 | `29.5373` | `14.1970` | `4.8333` | `36.9167 / 55.5083` | `-3.4447` | `28.61% / 50.22%` |
+| CatBoost F2 R1 | `31.1979` | `15.5281` | `5.4297` | `38.8364 / 67.9965` | `-1.5114` | `27.65% / 50.86%` |
+| CatBoost F2 R2 | `31.4991` | `15.7819` | `6.0535` | `38.0452 / 68.9007` | `-1.4461` | `28.37% / 50.71%` |
+| F3 R1 | `28.0863` | `14.2429` | `5.1460` | `37.6124 / 65.5255` | `-1.1922` | `25.51% / 47.96%` |
+| F3 R2 | `28.6085` | `14.2271` | `4.9167` | `37.5963 / 61.3884` | `-1.9910` | `26.70% / 49.52%` |
+| F4 R1 | **`27.1956`** | **`13.6773`** | **`4.6633`** | `37.5663 / 61.7663` | `-1.2072` | **`24.69% / 48.55%`** |
+| F4 R2 | `28.3275` | `14.0268` | `4.9517` | `38.3911 / 59.4285` | `-1.1823` | `26.85% / 50.09%` |
 
-- resident pooled gain 约 `1.256%`，strong gate 要求至少 `2%`；
-- resident origin wins 为 `6/11`，要求至少 `7/11`；
-- raw high-volatility 层 wins 仅 `6/11`，complementary gate 要求至少 `8/11`；
-- normalized-volatility 层 wins `7/11`，但不是 raw gate 的替代；
-- high raw volatility 且非 high target scale 子集的 pooled 改善约 `0.1595%`，低于固定 `1%` scale-confounding gate；
-- RLT3 的小幅 aggregate gain 不能被解释为稳定、scale-independent 的机制修复。
+Interpretation:
 
-RLT5 虽比 B4 的 5-point OLS 控制更好，但比 B3 的 resident pooled MSE 高约 `7.04%`，registered pooled MSE 高约 `13.88%`，因此不能把“更长窗口”或“median slope”升级为可部署替代。
+- F4 improves typical error, bias magnitude, and city SSE concentration relative to B3 in the resident primary.
+- F4's P90 is roughly B3-like and its R1 P95 is higher than B3; the gain is not a blanket tail-risk win. The panel keeps tail metrics visible so Main does not promote on MSE alone.
+- The shared worst-SSE cities for the resident comparison remain concentrated around `city5`, `city24`, and `city21` for the worker candidates; no post-hoc city routing is inferred.
+- F4 improves all resident low/medium/high scale bins in both R1 and R2. F3 also improves all three resident bins, while A-D controls do not carry a comparable persisted scale-bin panel.
 
-Plan02 的 concentration sanity 也没有发现隐藏的单城修复：RLT3 resident 改善城市为 `37/40`，top-3 positive SSE improvement share 为 `51.75%`；没有创建 routing 或 reweighting。
+### 6.3 Resident decision
 
-## 6. Hypotheses now closed / inactive
+`F4_LOG_GROWTH_FROM_LATEST` is the strongest resident candidate for Main review. It is not declared a global winner because the registered sensitivity is negative, R2 is weaker than R1, and tail risk is mixed. `F3` remains a credible framing comparator. `RLT3` and the A-D residual controls are not resident replacements.
 
-| Hypothesis | Status | Evidence interpretation |
-|---|---|---|
-| robust local trend | tested and unsupported | RLT3 有小幅 aggregate gain但不满足 strong/complementary gate；RLT5 在两个 target 上不稳定 |
-| partial pooling / shrinkage | not activated | Plan01 comparator decision relevance 未达到 7/11；Plan02 没有新增证据 |
-| fixed low-capacity blend | not activated | Plan01 未分离出稳定高风险 comparator gain 与低风险 B3 advantage；Plan02 禁止 fit blend |
-| stronger boosting | not activated | 没有新 nonlinear interaction 证据；S4 low-capacity HGB 已为负证据 |
-| remaining source groups | not activated | S5 没有新的 residual/source hypothesis |
-| tuning | not activated | 没有通过 promotion gate 的 candidate 值得 tuning |
+## 7. Registered sensitivity comparison
 
-“tested and unsupported”只适用于本次 robust local trend screening；“not activated”不表示对应方向理论上永远无效，而是当前 S5 evidence budget 没有为其开实验。
+### 7.1 Competition score and temporal behavior
 
-## 7. What S5 actually taught us
+| Candidate | R1 pooled MSE / gain | R1 wins | R1 latest-2021 | R2 pooled MSE / gain | R2 wins | R2 latest-2021 | R2-R1 pooled MSE |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| B3 | `225.4212 / 0.000%` | — | `1485.6049` | `225.4212 / 0.000%` | — | `1485.6049` | `0.0000` |
+| RLT3 | **`223.6909 / +0.768%`** | **`8/11`** | `1483.1500` | **`223.6909 / +0.768%`** | **`8/11`** | `1483.1500` | `0.0000` |
+| best A-D residual: CatBoost F2 | `227.3468 / -0.854%` | `7/11` | `1535.7843` | `227.1253 / -0.756%` | `7/11` | `1508.4479` | `-0.2215` |
+| F3 delta | `228.3363 / -1.293%` | `5/11` | `1542.8513` | `227.5234 / -0.933%` | `5/11` | `1516.4408` | `-0.8129` |
+| F4 log growth | `243.2445 / -7.907%` | `4/11` | `1563.9760` | `246.8899 / -9.524%` | `4/11` | `1558.6918` | `3.6454` |
 
-1. B3 failure 不是完全随机的；多个 pre-origin diagnostics 可以识别 hard rows，尤其是 historical first-difference volatility。
-2. risk predictability 不等于 repairability。能识别 hard cases，并不代表已有 comparator 或 robust estimator 能在这些 cases 中稳定获益。
-3. 绝对误差集中与 target scale 有明显纠缠；scale-normalized check 是必要的，否则很容易把大城市 MSE 误读为纯 volatility mechanism。
-4. RLT3 的 `861.49` 说明单一 aggregate 改善不足以晋级；multi-origin stability、risk-stratum alignment 和 scale-confounding gate 阻止了 latest/pooled 过度解读。
-5. 固定 validation contract 与预注册门槛成功阻止了追加 estimator、blend 或 tuning 来挽救负结果。
-6. 在当前证据预算和冻结合同下，B3 仍是最强的 deployable fixed reference。
+RLT3's `223.6909` is a real small signal in the Plan02 artifact, with `8/11` origin wins and a `0.768%` pooled gain. It does not become the final candidate because its resident gain is below the pre-registered `2%` strong gate, resident wins are only `6/11`, and scale-outside improvement is only `0.1595%`. Plan06E's F3/F4 are not equivalent to RLT3 on registered: F3 is only locally helpful in the high-scale bin and is worse in low/medium bins; F4 worsens all registered scale bins in the persisted diagnostics.
 
-## 8. Current best solution status
+### 7.2 Registered error profile
 
-当前最强 fixed model 仍为 `B3_RECENT_3POINT_OLS_TREND`：
+| Candidate / scenario | RMSE | MAE | Median AE | P90 / P95 AE | bias | top-1 / top-3 city SSE |
+|---|---:|---:|---:|---:|---:|---:|
+| B3 R1/R2 | `15.0140` | `5.6061` | `2.7500` | `11.3500 / 16.6917` | `-0.6273` | `42.32% / 80.90%` |
+| RLT3 R1/R2 | `14.9563` | `5.4909` | `3.0000` | unavailable | `-0.6000` | unavailable |
+| CatBoost F2 R1 | `15.0780` | `6.1450` | `3.1339` | `11.6265 / 17.7061` | `+0.3187` | `41.67% / 77.67%` |
+| CatBoost F2 R2 | `15.0707` | `6.2656` | `3.4586` | `12.5144 / 17.5676` | `+0.3205` | `41.70% / 76.96%` |
+| F3 R1 | `15.1108` | `6.1630` | `3.2029` | `11.8582 / 16.8503` | `+0.1670` | `42.29% / 80.62%` |
+| F3 R2 | `15.0839` | `6.2135` | `3.4199` | `12.0445 / 17.4985` | `+0.1918` | `42.52% / 80.29%` |
+| F4 R1 | `15.5963` | `6.5554` | `3.3530` | `12.6941 / 20.5268` | `+0.3480` | `40.04% / 76.31%` |
+| F4 R2 | `15.7127` | `6.4636` | `3.2917` | `13.0446 / 20.2158` | `+0.2305` | `39.36% / 77.21%` |
 
-- resident pooled MSE：`872.452651515143`
-- registered pooled MSE：`225.421212121213`
-- resident latest 2021 MSE：`3705.42777777773`
-- registered latest 2021 MSE：`1485.60486111112`
+Registered interpretation is therefore sensitivity-only: RLT3 is a small legacy signal, CatBoost is close but still worse in MSE, F3 is near B3 but not better, and F4 is clearly not a registered replacement. The resident-primary/registered-sensitivity contract means F4 can remain under Main review as a resident model framing while the registered result blocks a claim of universal target improvement.
 
-S5 没有产生足够稳定的 replacement。尚未生成 2023 final prediction，也没有生成 submission。不能据此声称 B3 理论最优、robust estimator 永远无效、或未来数据上的最终名次已知。
+## 8. Unsupported, incomplete and recovery evidence
 
-## 9. Lab recommendation to Main
+### Plan06F recovery
 
-最终建议：`ready_for_main_stage_review`
+The persistent recovery note is [reports/S5_HANDOFFS/S5-Plan06F/RECOVERY.md](reports/S5_HANDOFFS/S5-Plan06F/RECOVERY.md). Local Codex session evidence verifies the first run's `88/88` outer fits, `C1=64/88`, `C2=24/88`, `F1=44/44 C1`, `F2=20 C1 / 24 C2`, geometry `44/264/8`, and the `1560` correct inner-row count versus the erroneous `1632` assertion. OOF, aggregate/per-origin metrics, inner MSE, term importance and city errors were not persisted. Selection counts are not model-performance evidence.
 
-理由：S5 已完成高信息量的 residual/regime decomposition，并对唯一通过 Plan01 decision-relevance 的机制做了冻结合同下的独立 screening；该机制未通过 promotion gate，当前没有其他 active hypothesis。后续若继续实验，必须由 Main/Lab 提出新的具体 unresolved hypothesis，而不是继续增加同类模型。
+### Plan06G coverage
 
-Main 需要独立决定：
+Plan06G is isolated as `coverage_incomplete`: combined OOF `2760/3520`, F2 `1000/1760`, and 19 outer fit failures. Its abnormal registered/R1 F2 MSE is not admissible for candidate selection. No fallback OOF rows are invented.
 
-- 是否认可 S5 completion signal；
-- 是否更新 `CURRENT_LEARNING_CHECKPOINT.md`；
-- 是否授权进入 S6。
+### Plan06H city-local
 
-本报告不替 Main 作出上述阶段授权决定。
+Plan06H's six city-local candidates are all `city_local_unsupported`. The all-144 local Ridge's `n << p` collapse is a diagnostic failure. No city identity, local error, or persistence statistic is converted into routing or gating.
 
-## 10. Evidence paths
+## 9. Final candidate contraction
 
-- Plan01：`reports/S5_HANDOFFS/S5-Plan01/`
-- Plan02：`reports/S5_HANDOFFS/S5-Plan02/`
-- upstream S4 context：`S4_FEATURE_ML_MODELING_FINAL_REPORT.md`
-- registry：`reports/S5_EXPERIMENT_REGISTRY.csv`
+The final candidate set for Main review is intentionally small:
+
+1. B3 frozen reference;
+2. RLT3 legacy registered-sensitivity comparator;
+3. CatBoost F2 as the best valid Plan06A-D residual control;
+4. F3 delta framing;
+5. F4 log-growth framing, strongest resident candidate.
+
+LightGBM, XGBoost, ExtraTrees and Ridge remain in the panel as reproducible controls, but are not promoted into the final candidate set. Plan06F/G/H are not ranked as if their evidence were complete or admissible.
+
+## 10. Main handoff and boundary
+
+The concise handoff is [reports/S5_MAIN_HANDOFF.md](reports/S5_MAIN_HANDOFF.md). The machine-readable registry is [reports/S5_EXPERIMENT_REGISTRY.csv](reports/S5_EXPERIMENT_REGISTRY.csv).
+
+`ready_for_main_stage_review = true` means the evidence package is ready for Main's review. It does not mean `S5 COMPLETE`; this branch does not enter S6, produce a 2023 forecast, or create a submission.
