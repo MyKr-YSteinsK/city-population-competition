@@ -1,0 +1,1036 @@
+{
+  "plan_id": "S5-Plan06B",
+  "model_id": "S5-Plan06B-CATBOOST",
+  "status": "COMPLETE",
+  "classification": "family_competitive_but_unstable",
+  "classification_evidence": {
+    "rule_source": "S5-Plan05 section 13",
+    "stable_spread_operationalization": "at least two origin wins and at least two improved cities in the relevant scenario(s)",
+    "evidence_by_framing": [
+      {
+        "framing_id": "F2_B3_RESIDUAL",
+        "r1_improvement_vs_b3_pct": -0.11560109695736909,
+        "r2_improvement_vs_b3_pct": -0.13724421536866904,
+        "r1_origin_wins": 4,
+        "r2_origin_wins": 3,
+        "r1_improved_city_count": 13,
+        "r2_improved_city_count": 10,
+        "stable_for_both_scenarios": true,
+        "stable_for_strong_scenario": false,
+        "signal_both_scenarios": false,
+        "signal_one_scenario_with_other_within_minus_1pct": false,
+        "meaningful_local_or_scenario_improvement": true
+      }
+    ],
+    "strong_signal_cases": [],
+    "classification": "family_competitive_but_unstable"
+  },
+  "base_sha": "1f97f67488cd7aec120ef8b9fa04407dc13d54ba",
+  "git": {
+    "branch": "s5/plan06b-catboost-screening",
+    "worker_commit": "1f97f67488cd7aec120ef8b9fa04407dc13d54ba"
+  },
+  "seed": 20260919,
+  "library_versions": {
+    "catboost": "1.2.10"
+  },
+  "catboost_parameters": {
+    "common": {
+      "loss_function": "RMSE",
+      "eval_metric": "RMSE",
+      "random_seed": 20260919,
+      "allow_writing_files": false,
+      "verbose": false,
+      "thread_count": 1,
+      "random_strength": 1.0
+    },
+    "pre_registered_configs": [
+      {
+        "config_id": "CAT_C1_CONSERVATIVE",
+        "config_order": 1,
+        "iterations": 400,
+        "learning_rate": 0.03,
+        "depth": 4,
+        "l2_leaf_reg": 20.0,
+        "rsm": 0.7,
+        "fallback_default": true
+      },
+      {
+        "config_id": "CAT_C2_MEDIUM",
+        "config_order": 2,
+        "iterations": 600,
+        "learning_rate": 0.03,
+        "depth": 5,
+        "l2_leaf_reg": 10.0,
+        "rsm": 0.8,
+        "fallback_default": false
+      },
+      {
+        "config_id": "CAT_C3_FLEXIBLE_REGULARIZED",
+        "config_order": 3,
+        "iterations": 800,
+        "learning_rate": 0.02,
+        "depth": 6,
+        "l2_leaf_reg": 10.0,
+        "rsm": 0.85,
+        "fallback_default": false
+      }
+    ],
+    "cpu_single_thread": true,
+    "parameter_compatibility": "passed; rsm supported by installed CPU regressor"
+  },
+  "data_contract": {
+    "feature_contract_version": "S5-Plan04-FULL-MULTISOURCE-V1",
+    "replay_contract_version": "S5-Plan04B-TRAINING-REPLAY-V1",
+    "formal_validation_rows": 1760,
+    "replay_rows": 2320,
+    "numeric_model_features": 144,
+    "model_input_columns": 145,
+    "city_count": 40,
+    "outer_origins": [
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021
+    ],
+    "targets": [
+      "resident",
+      "registered"
+    ],
+    "scenarios": [
+      "R1_REFERENCE_SNAPSHOT_LAG",
+      "R2_CONSERVATIVE_PUBLICATION_STRESS"
+    ],
+    "framings": [
+      "F1_DIRECT",
+      "F2_B3_RESIDUAL"
+    ],
+    "formal_oof_rows_per_framing": 1760,
+    "b3_reference_pooled_mse": {
+      "resident": 872.452651515143,
+      "registered": 225.421212121213
+    }
+  },
+  "inner_selection": {
+    "eligible_inner_folds": 264,
+    "total_inner_folds": 484,
+    "outer_fit_groups": 44,
+    "fallback_outer_fit_count_per_framing": 8,
+    "fallback_outer_fit_count_all_framings": 16,
+    "selection_method_values": [
+      "fallback_conservative_default",
+      "inner_mean_validation_mse"
+    ],
+    "selection_counts": {
+      "('F1_DIRECT', 'CAT_C1_CONSERVATIVE')": 18,
+      "('F1_DIRECT', 'CAT_C2_MEDIUM')": 26,
+      "('F2_B3_RESIDUAL', 'CAT_C1_CONSERVATIVE')": 23,
+      "('F2_B3_RESIDUAL', 'CAT_C2_MEDIUM')": 5,
+      "('F2_B3_RESIDUAL', 'CAT_C3_FLEXIBLE_REGULARIZED')": 16
+    },
+    "capacity_by_origin": [
+      {
+        "framing_id": "F1_DIRECT",
+        "outer_origin_year": 2011,
+        "selected_config_id": "CAT_C1_CONSERVATIVE",
+        "outer_fit_count": 4
+      },
+      {
+        "framing_id": "F1_DIRECT",
+        "outer_origin_year": 2012,
+        "selected_config_id": "CAT_C1_CONSERVATIVE",
+        "outer_fit_count": 4
+      },
+      {
+        "framing_id": "F1_DIRECT",
+        "outer_origin_year": 2013,
+        "selected_config_id": "CAT_C1_CONSERVATIVE",
+        "outer_fit_count": 2
+      },
+      {
+        "framing_id": "F1_DIRECT",
+        "outer_origin_year": 2013,
+        "selected_config_id": "CAT_C2_MEDIUM",
+        "outer_fit_count": 2
+      },
+      {
+        "framing_id": "F1_DIRECT",
+        "outer_origin_year": 2014,
+        "selected_config_id": "CAT_C1_CONSERVATIVE",
+        "outer_fit_count": 2
+      },
+      {
+        "framing_id": "F1_DIRECT",
+        "outer_origin_year": 2014,
+        "selected_config_id": "CAT_C2_MEDIUM",
+        "outer_fit_count": 2
+      },
+      {
+        "framing_id": "F1_DIRECT",
+        "outer_origin_year": 2015,
+        "selected_config_id": "CAT_C1_CONSERVATIVE",
+        "outer_fit_count": 1
+      },
+      {
+        "framing_id": "F1_DIRECT",
+        "outer_origin_year": 2015,
+        "selected_config_id": "CAT_C2_MEDIUM",
+        "outer_fit_count": 3
+      },
+      {
+        "framing_id": "F1_DIRECT",
+        "outer_origin_year": 2016,
+        "selected_config_id": "CAT_C1_CONSERVATIVE",
+        "outer_fit_count": 1
+      },
+      {
+        "framing_id": "F1_DIRECT",
+        "outer_origin_year": 2016,
+        "selected_config_id": "CAT_C2_MEDIUM",
+        "outer_fit_count": 3
+      },
+      {
+        "framing_id": "F1_DIRECT",
+        "outer_origin_year": 2017,
+        "selected_config_id": "CAT_C1_CONSERVATIVE",
+        "outer_fit_count": 1
+      },
+      {
+        "framing_id": "F1_DIRECT",
+        "outer_origin_year": 2017,
+        "selected_config_id": "CAT_C2_MEDIUM",
+        "outer_fit_count": 3
+      },
+      {
+        "framing_id": "F1_DIRECT",
+        "outer_origin_year": 2018,
+        "selected_config_id": "CAT_C1_CONSERVATIVE",
+        "outer_fit_count": 1
+      },
+      {
+        "framing_id": "F1_DIRECT",
+        "outer_origin_year": 2018,
+        "selected_config_id": "CAT_C2_MEDIUM",
+        "outer_fit_count": 3
+      },
+      {
+        "framing_id": "F1_DIRECT",
+        "outer_origin_year": 2019,
+        "selected_config_id": "CAT_C1_CONSERVATIVE",
+        "outer_fit_count": 1
+      },
+      {
+        "framing_id": "F1_DIRECT",
+        "outer_origin_year": 2019,
+        "selected_config_id": "CAT_C2_MEDIUM",
+        "outer_fit_count": 3
+      },
+      {
+        "framing_id": "F1_DIRECT",
+        "outer_origin_year": 2020,
+        "selected_config_id": "CAT_C1_CONSERVATIVE",
+        "outer_fit_count": 1
+      },
+      {
+        "framing_id": "F1_DIRECT",
+        "outer_origin_year": 2020,
+        "selected_config_id": "CAT_C2_MEDIUM",
+        "outer_fit_count": 3
+      },
+      {
+        "framing_id": "F1_DIRECT",
+        "outer_origin_year": 2021,
+        "selected_config_id": "CAT_C2_MEDIUM",
+        "outer_fit_count": 4
+      },
+      {
+        "framing_id": "F2_B3_RESIDUAL",
+        "outer_origin_year": 2011,
+        "selected_config_id": "CAT_C1_CONSERVATIVE",
+        "outer_fit_count": 4
+      },
+      {
+        "framing_id": "F2_B3_RESIDUAL",
+        "outer_origin_year": 2012,
+        "selected_config_id": "CAT_C1_CONSERVATIVE",
+        "outer_fit_count": 4
+      },
+      {
+        "framing_id": "F2_B3_RESIDUAL",
+        "outer_origin_year": 2013,
+        "selected_config_id": "CAT_C1_CONSERVATIVE",
+        "outer_fit_count": 1
+      },
+      {
+        "framing_id": "F2_B3_RESIDUAL",
+        "outer_origin_year": 2013,
+        "selected_config_id": "CAT_C2_MEDIUM",
+        "outer_fit_count": 1
+      },
+      {
+        "framing_id": "F2_B3_RESIDUAL",
+        "outer_origin_year": 2013,
+        "selected_config_id": "CAT_C3_FLEXIBLE_REGULARIZED",
+        "outer_fit_count": 2
+      },
+      {
+        "framing_id": "F2_B3_RESIDUAL",
+        "outer_origin_year": 2014,
+        "selected_config_id": "CAT_C1_CONSERVATIVE",
+        "outer_fit_count": 2
+      },
+      {
+        "framing_id": "F2_B3_RESIDUAL",
+        "outer_origin_year": 2014,
+        "selected_config_id": "CAT_C2_MEDIUM",
+        "outer_fit_count": 1
+      },
+      {
+        "framing_id": "F2_B3_RESIDUAL",
+        "outer_origin_year": 2014,
+        "selected_config_id": "CAT_C3_FLEXIBLE_REGULARIZED",
+        "outer_fit_count": 1
+      },
+      {
+        "framing_id": "F2_B3_RESIDUAL",
+        "outer_origin_year": 2015,
+        "selected_config_id": "CAT_C1_CONSERVATIVE",
+        "outer_fit_count": 2
+      },
+      {
+        "framing_id": "F2_B3_RESIDUAL",
+        "outer_origin_year": 2015,
+        "selected_config_id": "CAT_C2_MEDIUM",
+        "outer_fit_count": 1
+      },
+      {
+        "framing_id": "F2_B3_RESIDUAL",
+        "outer_origin_year": 2015,
+        "selected_config_id": "CAT_C3_FLEXIBLE_REGULARIZED",
+        "outer_fit_count": 1
+      },
+      {
+        "framing_id": "F2_B3_RESIDUAL",
+        "outer_origin_year": 2016,
+        "selected_config_id": "CAT_C1_CONSERVATIVE",
+        "outer_fit_count": 2
+      },
+      {
+        "framing_id": "F2_B3_RESIDUAL",
+        "outer_origin_year": 2016,
+        "selected_config_id": "CAT_C3_FLEXIBLE_REGULARIZED",
+        "outer_fit_count": 2
+      },
+      {
+        "framing_id": "F2_B3_RESIDUAL",
+        "outer_origin_year": 2017,
+        "selected_config_id": "CAT_C1_CONSERVATIVE",
+        "outer_fit_count": 2
+      },
+      {
+        "framing_id": "F2_B3_RESIDUAL",
+        "outer_origin_year": 2017,
+        "selected_config_id": "CAT_C3_FLEXIBLE_REGULARIZED",
+        "outer_fit_count": 2
+      },
+      {
+        "framing_id": "F2_B3_RESIDUAL",
+        "outer_origin_year": 2018,
+        "selected_config_id": "CAT_C1_CONSERVATIVE",
+        "outer_fit_count": 1
+      },
+      {
+        "framing_id": "F2_B3_RESIDUAL",
+        "outer_origin_year": 2018,
+        "selected_config_id": "CAT_C3_FLEXIBLE_REGULARIZED",
+        "outer_fit_count": 3
+      },
+      {
+        "framing_id": "F2_B3_RESIDUAL",
+        "outer_origin_year": 2019,
+        "selected_config_id": "CAT_C1_CONSERVATIVE",
+        "outer_fit_count": 2
+      },
+      {
+        "framing_id": "F2_B3_RESIDUAL",
+        "outer_origin_year": 2019,
+        "selected_config_id": "CAT_C3_FLEXIBLE_REGULARIZED",
+        "outer_fit_count": 2
+      },
+      {
+        "framing_id": "F2_B3_RESIDUAL",
+        "outer_origin_year": 2020,
+        "selected_config_id": "CAT_C1_CONSERVATIVE",
+        "outer_fit_count": 2
+      },
+      {
+        "framing_id": "F2_B3_RESIDUAL",
+        "outer_origin_year": 2020,
+        "selected_config_id": "CAT_C3_FLEXIBLE_REGULARIZED",
+        "outer_fit_count": 2
+      },
+      {
+        "framing_id": "F2_B3_RESIDUAL",
+        "outer_origin_year": 2021,
+        "selected_config_id": "CAT_C1_CONSERVATIVE",
+        "outer_fit_count": 1
+      },
+      {
+        "framing_id": "F2_B3_RESIDUAL",
+        "outer_origin_year": 2021,
+        "selected_config_id": "CAT_C2_MEDIUM",
+        "outer_fit_count": 2
+      },
+      {
+        "framing_id": "F2_B3_RESIDUAL",
+        "outer_origin_year": 2021,
+        "selected_config_id": "CAT_C3_FLEXIBLE_REGULARIZED",
+        "outer_fit_count": 1
+      }
+    ]
+  },
+  "metrics": {
+    "aggregate": [
+      {
+        "model_id": "S5-Plan06B-CATBOOST",
+        "target_id": "registered",
+        "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+        "framing_id": "F1_DIRECT",
+        "row_count": 440,
+        "origin_count": 11,
+        "city_count": 40,
+        "pooled_city_year_mse": 1219.774371371858,
+        "b3_pooled_city_year_mse": 225.42121212121327,
+        "delta_vs_b3_mse": 994.3531592506447,
+        "improvement_vs_b3_pct": -4.411089577124455,
+        "macro_origin_mse": 1219.7743713718578,
+        "origin_win_count_vs_b3": 0,
+        "origin_win_rate_vs_b3": 0.0,
+        "latest_2021_mse": 2088.8902773748714,
+        "rmse": 34.92526837938197,
+        "mae": 20.473753609180203,
+        "bias_prediction_minus_actual": -4.778044258275595,
+        "total_sse": 536700.7234036175,
+        "top1_city_sse_concentration": 0.35216522356528335,
+        "top3_city_sse_concentration": 0.5513704420925111,
+        "improved_city_count_vs_b3": 3,
+        "fallback_fit_count": 2,
+        "outer_fit_count": 11,
+        "training_row_count_min": 107,
+        "training_row_count_max": 507,
+        "training_row_count_mean": 307.0
+      },
+      {
+        "model_id": "S5-Plan06B-CATBOOST",
+        "target_id": "registered",
+        "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+        "framing_id": "F2_B3_RESIDUAL",
+        "row_count": 440,
+        "origin_count": 11,
+        "city_count": 40,
+        "pooled_city_year_mse": 227.34677265155585,
+        "b3_pooled_city_year_mse": 225.42121212121327,
+        "delta_vs_b3_mse": 1.9255605303425796,
+        "improvement_vs_b3_pct": -0.00854205561323651,
+        "macro_origin_mse": 227.34677265155585,
+        "origin_win_count_vs_b3": 7,
+        "origin_win_rate_vs_b3": 0.6363636363636364,
+        "latest_2021_mse": 1535.7842661523907,
+        "rmse": 15.078022836285793,
+        "mae": 6.1450066738879805,
+        "bias_prediction_minus_actual": 0.3186501623390719,
+        "total_sse": 100032.57996668457,
+        "top1_city_sse_concentration": 0.41671362711570886,
+        "top3_city_sse_concentration": 0.7767166459989258,
+        "improved_city_count_vs_b3": 9,
+        "fallback_fit_count": 2,
+        "outer_fit_count": 11,
+        "training_row_count_min": 107,
+        "training_row_count_max": 507,
+        "training_row_count_mean": 307.0
+      },
+      {
+        "model_id": "S5-Plan06B-CATBOOST",
+        "target_id": "registered",
+        "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+        "framing_id": "F1_DIRECT",
+        "row_count": 440,
+        "origin_count": 11,
+        "city_count": 40,
+        "pooled_city_year_mse": 1266.3593436453757,
+        "b3_pooled_city_year_mse": 225.42121212121327,
+        "delta_vs_b3_mse": 1040.9381315241624,
+        "improvement_vs_b3_pct": -4.617747024465604,
+        "macro_origin_mse": 1266.359343645376,
+        "origin_win_count_vs_b3": 0,
+        "origin_win_rate_vs_b3": 0.0,
+        "latest_2021_mse": 2020.9229221286937,
+        "rmse": 35.585943062470264,
+        "mae": 20.957800289044116,
+        "bias_prediction_minus_actual": -4.528542491245939,
+        "total_sse": 557198.1112039653,
+        "top1_city_sse_concentration": 0.39542345993908334,
+        "top3_city_sse_concentration": 0.58484393397691,
+        "improved_city_count_vs_b3": 0,
+        "fallback_fit_count": 2,
+        "outer_fit_count": 11,
+        "training_row_count_min": 107,
+        "training_row_count_max": 507,
+        "training_row_count_mean": 307.0
+      },
+      {
+        "model_id": "S5-Plan06B-CATBOOST",
+        "target_id": "registered",
+        "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+        "framing_id": "F2_B3_RESIDUAL",
+        "row_count": 440,
+        "origin_count": 11,
+        "city_count": 40,
+        "pooled_city_year_mse": 227.12526464670842,
+        "b3_pooled_city_year_mse": 225.42121212121327,
+        "delta_vs_b3_mse": 1.7040525254951433,
+        "improvement_vs_b3_pct": -0.00755941514758085,
+        "macro_origin_mse": 227.12526464670844,
+        "origin_win_count_vs_b3": 7,
+        "origin_win_rate_vs_b3": 0.6363636363636364,
+        "latest_2021_mse": 1508.4478668819334,
+        "rmse": 15.070675653291342,
+        "mae": 6.265611792601354,
+        "bias_prediction_minus_actual": 0.3204768882890314,
+        "total_sse": 99935.1164445517,
+        "top1_city_sse_concentration": 0.4170480899467369,
+        "top3_city_sse_concentration": 0.7695608723495243,
+        "improved_city_count_vs_b3": 6,
+        "fallback_fit_count": 2,
+        "outer_fit_count": 11,
+        "training_row_count_min": 107,
+        "training_row_count_max": 507,
+        "training_row_count_mean": 307.0
+      },
+      {
+        "model_id": "S5-Plan06B-CATBOOST",
+        "target_id": "resident",
+        "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+        "framing_id": "F1_DIRECT",
+        "row_count": 440,
+        "origin_count": 11,
+        "city_count": 40,
+        "pooled_city_year_mse": 4165.627482636594,
+        "b3_pooled_city_year_mse": 872.452651515143,
+        "delta_vs_b3_mse": 3293.1748311214515,
+        "improvement_vs_b3_pct": -3.7746172533287243,
+        "macro_origin_mse": 4165.627482636595,
+        "origin_win_count_vs_b3": 0,
+        "origin_win_rate_vs_b3": 0.0,
+        "latest_2021_mse": 4568.949441611108,
+        "rmse": 64.54167244994969,
+        "mae": 33.999399654343925,
+        "bias_prediction_minus_actual": -6.144939412073702,
+        "total_sse": 1832876.0923601014,
+        "top1_city_sse_concentration": 0.5540793815898486,
+        "top3_city_sse_concentration": 0.7591023436422164,
+        "improved_city_count_vs_b3": 8,
+        "fallback_fit_count": 2,
+        "outer_fit_count": 11,
+        "training_row_count_min": 93,
+        "training_row_count_max": 493,
+        "training_row_count_mean": 293.0
+      },
+      {
+        "model_id": "S5-Plan06B-CATBOOST",
+        "target_id": "resident",
+        "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+        "framing_id": "F2_B3_RESIDUAL",
+        "row_count": 440,
+        "origin_count": 11,
+        "city_count": 40,
+        "pooled_city_year_mse": 973.3091350736587,
+        "b3_pooled_city_year_mse": 872.452651515143,
+        "delta_vs_b3_mse": 100.85648355851572,
+        "improvement_vs_b3_pct": -0.11560109695736909,
+        "macro_origin_mse": 973.3091350736587,
+        "origin_win_count_vs_b3": 4,
+        "origin_win_rate_vs_b3": 0.36363636363636365,
+        "latest_2021_mse": 3401.460584402067,
+        "rmse": 31.19790273517851,
+        "mae": 15.528125361904584,
+        "bias_prediction_minus_actual": -1.5114360125885118,
+        "total_sse": 428256.01943240984,
+        "top1_city_sse_concentration": 0.2765037219778416,
+        "top3_city_sse_concentration": 0.5086420522308289,
+        "improved_city_count_vs_b3": 13,
+        "fallback_fit_count": 2,
+        "outer_fit_count": 11,
+        "training_row_count_min": 93,
+        "training_row_count_max": 493,
+        "training_row_count_mean": 293.0
+      },
+      {
+        "model_id": "S5-Plan06B-CATBOOST",
+        "target_id": "resident",
+        "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+        "framing_id": "F1_DIRECT",
+        "row_count": 440,
+        "origin_count": 11,
+        "city_count": 40,
+        "pooled_city_year_mse": 4254.6040335809175,
+        "b3_pooled_city_year_mse": 872.452651515143,
+        "delta_vs_b3_mse": 3382.1513820657747,
+        "improvement_vs_b3_pct": -3.8766016427277386,
+        "macro_origin_mse": 4254.604033580917,
+        "origin_win_count_vs_b3": 0,
+        "origin_win_rate_vs_b3": 0.0,
+        "latest_2021_mse": 4540.145142430238,
+        "rmse": 65.22732581963572,
+        "mae": 34.85078554190229,
+        "bias_prediction_minus_actual": -8.406030587481133,
+        "total_sse": 1872025.7747756036,
+        "top1_city_sse_concentration": 0.5520660037314757,
+        "top3_city_sse_concentration": 0.7609240467638628,
+        "improved_city_count_vs_b3": 5,
+        "fallback_fit_count": 2,
+        "outer_fit_count": 11,
+        "training_row_count_min": 93,
+        "training_row_count_max": 493,
+        "training_row_count_mean": 293.0
+      },
+      {
+        "model_id": "S5-Plan06B-CATBOOST",
+        "target_id": "resident",
+        "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+        "framing_id": "F2_B3_RESIDUAL",
+        "row_count": 440,
+        "origin_count": 11,
+        "city_count": 40,
+        "pooled_city_year_mse": 992.1917311186537,
+        "b3_pooled_city_year_mse": 872.452651515143,
+        "delta_vs_b3_mse": 119.73907960351073,
+        "improvement_vs_b3_pct": -0.13724421536866904,
+        "macro_origin_mse": 992.1917311186536,
+        "origin_win_count_vs_b3": 3,
+        "origin_win_rate_vs_b3": 0.2727272727272727,
+        "latest_2021_mse": 3378.640515319026,
+        "rmse": 31.499075083542593,
+        "mae": 15.781924547303907,
+        "bias_prediction_minus_actual": -1.4461343809664233,
+        "total_sse": 436564.36169220763,
+        "top1_city_sse_concentration": 0.2836988821821284,
+        "top3_city_sse_concentration": 0.5070656370290396,
+        "improved_city_count_vs_b3": 10,
+        "fallback_fit_count": 2,
+        "outer_fit_count": 11,
+        "training_row_count_min": 93,
+        "training_row_count_max": 493,
+        "training_row_count_mean": 293.0
+      }
+    ],
+    "direct_vs_residual": [
+      {
+        "target_id": "registered",
+        "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+        "framing_id": "F1_DIRECT",
+        "pooled_city_year_mse": 1219.774371371858,
+        "improvement_vs_b3_pct": -4.411089577124455
+      },
+      {
+        "target_id": "registered",
+        "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+        "framing_id": "F2_B3_RESIDUAL",
+        "pooled_city_year_mse": 227.34677265155585,
+        "improvement_vs_b3_pct": -0.00854205561323651
+      },
+      {
+        "target_id": "registered",
+        "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+        "framing_id": "F1_DIRECT",
+        "pooled_city_year_mse": 1266.3593436453757,
+        "improvement_vs_b3_pct": -4.617747024465604
+      },
+      {
+        "target_id": "registered",
+        "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+        "framing_id": "F2_B3_RESIDUAL",
+        "pooled_city_year_mse": 227.12526464670842,
+        "improvement_vs_b3_pct": -0.00755941514758085
+      },
+      {
+        "target_id": "resident",
+        "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+        "framing_id": "F1_DIRECT",
+        "pooled_city_year_mse": 4165.627482636594,
+        "improvement_vs_b3_pct": -3.7746172533287243
+      },
+      {
+        "target_id": "resident",
+        "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+        "framing_id": "F2_B3_RESIDUAL",
+        "pooled_city_year_mse": 973.3091350736587,
+        "improvement_vs_b3_pct": -0.11560109695736909
+      },
+      {
+        "target_id": "resident",
+        "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+        "framing_id": "F1_DIRECT",
+        "pooled_city_year_mse": 4254.6040335809175,
+        "improvement_vs_b3_pct": -3.8766016427277386
+      },
+      {
+        "target_id": "resident",
+        "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+        "framing_id": "F2_B3_RESIDUAL",
+        "pooled_city_year_mse": 992.1917311186537,
+        "improvement_vs_b3_pct": -0.13724421536866904
+      }
+    ],
+    "r1_vs_r2": [
+      {
+        "target_id": "registered",
+        "framing_id": "F1_DIRECT",
+        "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+        "pooled_city_year_mse": 1219.774371371858,
+        "origin_win_count_vs_b3": 0,
+        "latest_2021_mse": 2088.8902773748714
+      },
+      {
+        "target_id": "registered",
+        "framing_id": "F2_B3_RESIDUAL",
+        "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+        "pooled_city_year_mse": 227.34677265155585,
+        "origin_win_count_vs_b3": 7,
+        "latest_2021_mse": 1535.7842661523907
+      },
+      {
+        "target_id": "registered",
+        "framing_id": "F1_DIRECT",
+        "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+        "pooled_city_year_mse": 1266.3593436453757,
+        "origin_win_count_vs_b3": 0,
+        "latest_2021_mse": 2020.9229221286937
+      },
+      {
+        "target_id": "registered",
+        "framing_id": "F2_B3_RESIDUAL",
+        "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+        "pooled_city_year_mse": 227.12526464670842,
+        "origin_win_count_vs_b3": 7,
+        "latest_2021_mse": 1508.4478668819334
+      },
+      {
+        "target_id": "resident",
+        "framing_id": "F1_DIRECT",
+        "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+        "pooled_city_year_mse": 4165.627482636594,
+        "origin_win_count_vs_b3": 0,
+        "latest_2021_mse": 4568.949441611108
+      },
+      {
+        "target_id": "resident",
+        "framing_id": "F2_B3_RESIDUAL",
+        "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+        "pooled_city_year_mse": 973.3091350736587,
+        "origin_win_count_vs_b3": 4,
+        "latest_2021_mse": 3401.460584402067
+      },
+      {
+        "target_id": "resident",
+        "framing_id": "F1_DIRECT",
+        "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+        "pooled_city_year_mse": 4254.6040335809175,
+        "origin_win_count_vs_b3": 0,
+        "latest_2021_mse": 4540.145142430238
+      },
+      {
+        "target_id": "resident",
+        "framing_id": "F2_B3_RESIDUAL",
+        "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+        "pooled_city_year_mse": 992.1917311186537,
+        "origin_win_count_vs_b3": 3,
+        "latest_2021_mse": 3378.640515319026
+      }
+    ]
+  },
+  "diagnostics": {
+    "city_id_importance_mean": 0.1652144731624885,
+    "city_id_importance_share": 0.001652144731624885,
+    "top_feature_groups": [
+      {
+        "scope": "overall_selected_outer_fits",
+        "scope_key": "overall_selected_outer_fits",
+        "level": "feature_group",
+        "feature_name": "",
+        "feature_group": "FG-P",
+        "is_city_id": false,
+        "selected_fit_count": 1496,
+        "mean_importance": 3.6420465431986537,
+        "median_importance": 0.7037607475625245,
+        "std_importance": 6.20497958866801,
+        "min_importance": 0.0,
+        "max_importance": 32.39146632442151,
+        "importance_share": 0.5069242841636201
+      },
+      {
+        "scope": "overall_selected_outer_fits",
+        "scope_key": "overall_selected_outer_fits",
+        "level": "feature_group",
+        "feature_name": "",
+        "feature_group": "FG-EMP",
+        "is_city_id": false,
+        "selected_fit_count": 880,
+        "mean_importance": 1.0630731589837863,
+        "median_importance": 0.19813165787241416,
+        "std_importance": 2.23269469158739,
+        "min_importance": 0.0,
+        "max_importance": 16.11761292770696,
+        "importance_share": 0.14796559948905086
+      },
+      {
+        "scope": "overall_selected_outer_fits",
+        "scope_key": "overall_selected_outer_fits",
+        "level": "feature_group",
+        "feature_name": "",
+        "feature_group": "FG-D",
+        "is_city_id": false,
+        "selected_fit_count": 792,
+        "mean_importance": 0.43086499349313157,
+        "median_importance": 0.18235958671192917,
+        "std_importance": 0.6124967093197929,
+        "min_importance": 0.0,
+        "max_importance": 4.457643779637411,
+        "importance_share": 0.0599706582019249
+      },
+      {
+        "scope": "overall_selected_outer_fits",
+        "scope_key": "overall_selected_outer_fits",
+        "level": "feature_group",
+        "feature_name": "",
+        "feature_group": "FG-AGE",
+        "is_city_id": false,
+        "selected_fit_count": 1408,
+        "mean_importance": 0.4297623390489676,
+        "median_importance": 0.13809462317248267,
+        "std_importance": 0.8913328328257685,
+        "min_importance": 0.0,
+        "max_importance": 11.37743972410016,
+        "importance_share": 0.05981718341565906
+      },
+      {
+        "scope": "overall_selected_outer_fits",
+        "scope_key": "overall_selected_outer_fits",
+        "level": "feature_group",
+        "feature_name": "",
+        "feature_group": "FG-SECTOR",
+        "is_city_id": false,
+        "selected_fit_count": 1232,
+        "mean_importance": 0.41376658591992543,
+        "median_importance": 0.20116240448223413,
+        "std_importance": 0.6562337639841589,
+        "min_importance": 0.0,
+        "max_importance": 6.131751533311943,
+        "importance_share": 0.05759078800625931
+      },
+      {
+        "scope": "overall_selected_outer_fits",
+        "scope_key": "overall_selected_outer_fits",
+        "level": "feature_group",
+        "feature_name": "",
+        "feature_group": "FG-U",
+        "is_city_id": false,
+        "selected_fit_count": 616,
+        "mean_importance": 0.37939888918756104,
+        "median_importance": 0.074607931330372,
+        "std_importance": 1.1522734916767745,
+        "min_importance": 0.0,
+        "max_importance": 15.58117991070114,
+        "importance_share": 0.05280726317818137
+      },
+      {
+        "scope": "overall_selected_outer_fits",
+        "scope_key": "overall_selected_outer_fits",
+        "level": "feature_group",
+        "feature_name": "",
+        "feature_group": "FG-WAGE",
+        "is_city_id": false,
+        "selected_fit_count": 792,
+        "mean_importance": 0.3371714269863272,
+        "median_importance": 0.12311361928364781,
+        "std_importance": 0.5590213320903947,
+        "min_importance": 0.0,
+        "max_importance": 5.503091460450871,
+        "importance_share": 0.04692976386714656
+      },
+      {
+        "scope": "overall_selected_outer_fits",
+        "scope_key": "overall_selected_outer_fits",
+        "level": "feature_group",
+        "feature_name": "",
+        "feature_group": "FG-UNEMP",
+        "is_city_id": false,
+        "selected_fit_count": 616,
+        "mean_importance": 0.26519152757904774,
+        "median_importance": 0.07829526833315656,
+        "std_importance": 0.5071608315077115,
+        "min_importance": 0.0,
+        "max_importance": 4.300438862822835,
+        "importance_share": 0.036911122274181536
+      },
+      {
+        "scope": "overall_selected_outer_fits",
+        "scope_key": "overall_selected_outer_fits",
+        "level": "feature_group",
+        "feature_name": "",
+        "feature_group": "CITY_ID",
+        "is_city_id": true,
+        "selected_fit_count": 88,
+        "mean_importance": 0.1652144731624885,
+        "median_importance": 0.0,
+        "std_importance": 0.46182606226217215,
+        "min_importance": 0.0,
+        "max_importance": 2.2850481476669,
+        "importance_share": 0.02299565026091319
+      },
+      {
+        "scope": "overall_selected_outer_fits",
+        "scope_key": "overall_selected_outer_fits",
+        "level": "feature_group",
+        "feature_name": "",
+        "feature_group": "FG-LIFE",
+        "is_city_id": false,
+        "selected_fit_count": 4840,
+        "mean_importance": 0.05810677042324919,
+        "median_importance": 0.0,
+        "std_importance": 0.19417849184136465,
+        "min_importance": 0.0,
+        "max_importance": 3.029249813595358,
+        "importance_share": 0.008087687143063169
+      }
+    ],
+    "overall_top1_city_sse_concentration": [
+      {
+        "target_id": "registered",
+        "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+        "framing_id": "F1_DIRECT",
+        "top1_city_sse_concentration": 0.35216522356528335
+      },
+      {
+        "target_id": "registered",
+        "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+        "framing_id": "F2_B3_RESIDUAL",
+        "top1_city_sse_concentration": 0.41671362711570886
+      },
+      {
+        "target_id": "registered",
+        "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+        "framing_id": "F1_DIRECT",
+        "top1_city_sse_concentration": 0.39542345993908334
+      },
+      {
+        "target_id": "registered",
+        "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+        "framing_id": "F2_B3_RESIDUAL",
+        "top1_city_sse_concentration": 0.4170480899467369
+      },
+      {
+        "target_id": "resident",
+        "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+        "framing_id": "F1_DIRECT",
+        "top1_city_sse_concentration": 0.5540793815898486
+      },
+      {
+        "target_id": "resident",
+        "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+        "framing_id": "F2_B3_RESIDUAL",
+        "top1_city_sse_concentration": 0.2765037219778416
+      },
+      {
+        "target_id": "resident",
+        "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+        "framing_id": "F1_DIRECT",
+        "top1_city_sse_concentration": 0.5520660037314757
+      },
+      {
+        "target_id": "resident",
+        "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+        "framing_id": "F2_B3_RESIDUAL",
+        "top1_city_sse_concentration": 0.2836988821821284
+      }
+    ],
+    "overall_top3_city_sse_concentration": [
+      {
+        "target_id": "registered",
+        "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+        "framing_id": "F1_DIRECT",
+        "top3_city_sse_concentration": 0.5513704420925111
+      },
+      {
+        "target_id": "registered",
+        "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+        "framing_id": "F2_B3_RESIDUAL",
+        "top3_city_sse_concentration": 0.7767166459989258
+      },
+      {
+        "target_id": "registered",
+        "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+        "framing_id": "F1_DIRECT",
+        "top3_city_sse_concentration": 0.58484393397691
+      },
+      {
+        "target_id": "registered",
+        "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+        "framing_id": "F2_B3_RESIDUAL",
+        "top3_city_sse_concentration": 0.7695608723495243
+      },
+      {
+        "target_id": "resident",
+        "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+        "framing_id": "F1_DIRECT",
+        "top3_city_sse_concentration": 0.7591023436422164
+      },
+      {
+        "target_id": "resident",
+        "scenario_id": "R1_REFERENCE_SNAPSHOT_LAG",
+        "framing_id": "F2_B3_RESIDUAL",
+        "top3_city_sse_concentration": 0.5086420522308289
+      },
+      {
+        "target_id": "resident",
+        "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+        "framing_id": "F1_DIRECT",
+        "top3_city_sse_concentration": 0.7609240467638628
+      },
+      {
+        "target_id": "resident",
+        "scenario_id": "R2_CONSERVATIVE_PUBLICATION_STRESS",
+        "framing_id": "F2_B3_RESIDUAL",
+        "top3_city_sse_concentration": 0.5070656370290396
+      }
+    ],
+    "missing_numeric_cells_formal": 54956,
+    "missing_numeric_cells_replay": 90202,
+    "city_aware_ablation_run": false
+  },
+  "runtime": {
+    "started_at_utc": "2026-09-20T04:23:53.755557+00:00",
+    "finished_at_utc": "2026-09-20T08:12:31.916350+00:00",
+    "duration_seconds": 13718.160822299993,
+    "inner_fit_count": 1584,
+    "outer_fit_count": 88,
+    "total_fit_count": 1672,
+    "parallel_fit_workers": 4,
+    "thread_count_per_fit": 1
+  },
+  "deviations": [],
+  "forbidden_actions_run": {
+    "routing_or_gating": false,
+    "ensemble_or_blend": false,
+    "outer_label_tuning": false,
+    "2023_prediction_or_submission": false,
+    "s5_complete_or_s6_entered": false
+  }
+}
