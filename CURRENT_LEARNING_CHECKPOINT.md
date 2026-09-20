@@ -5,157 +5,155 @@
 - **S1｜数据建模与审计 COMPLETE**
 - **S2｜Validation Architecture COMPLETE**
 - **S3｜Baseline Ladder COMPLETE**
-- Main 已复审 S4 final report、Wave A/B summaries 与 machine summary，正式判定 **S4｜Feature & ML Modeling COMPLETE**。
-- 当前进入 **S5｜Evidence-driven Iteration**。
-- 当前工程事实源：GitHub 私有仓库 `MyKr-YSteinsK/city-population-competition` 当前 `main`。
-- S4 Main review 基线：`0bfc07be5c229d7da41bd0edbd1e64998f2b2b07`。
+- **S4｜Feature & ML Modeling COMPLETE**
+- Main 已复审 S5 final report、Main handoff、candidate comparison、experiment registry 与异常/recovery 边界，正式判定 **S5｜Evidence-driven Iteration COMPLETE**。
+- 当前正式进入 **S6｜Final Solution & Reproduction**。
+- S5 Main review 使用的 canonical engineering base：GitHub `main` @ `2fbba5f2362e4dc1b1d8f5679d0fd13453fa840e`。
+- 后续工程事实继续以 GitHub 私有仓库 `MyKr-YSteinsK/city-population-competition` 当前 `main` 为准。
 
-## Confirmed Mastery
+## S5 Confirmed
 
-### S1–S3
+- 能从 residual / stability / negative evidence 出发提出高信息价值实验，而不是按“还没试过什么模型”继续搜索。
+- 能区分 primary resident improvement 与 registered sensitivity：resident 上的真实提升不能包装成 universal target improvement。
+- 能把 R1/R2 差异作为 information-boundary sensitivity 解释，不把 R1 更好自动当成模型更强。
+- 能区分完整 performance evidence、recovery-only evidence 与 coverage-incomplete evidence；不可恢复或不完整结果不得进入 ranking。
+- 能执行 screening-first / winner-only deep dive，并在强模型、local/hierarchical、target-framing 等多类 hypothesis 后主动收缩候选集。
+- 能解释为什么 tail metric、origin wins、latest、scale bin、city concentration 与 primary pooled MSE 需要共同阅读，而不是由单一数字决定。
+- 能在 S5 结束时停止 model fishing；没有为了阶段“必须更复杂”继续新增模型。
 
-此前 checkpoint 中已确认的数据审计、validation architecture 与 baseline reasoning 继续有效，不重复展开。
+## Meaningful Evidence
 
-### S4
+- S5 Experiment Registry 已形成完整的 `Hypothesis → Experiment → Evidence → Interpretation → Decision` 链。
+- Frozen validation contract 未被 S5 为了分数静默修改；common origins、T-2、resident primary / registered sensitivity、R1/R2、pooled/macro 与 latest diagnostics 继续有效。
+- B3 resident pooled MSE = `872.4527`，仍是冻结 benchmark。
+- `F4_LOG_GROWTH_FROM_LATEST` 在 resident primary 上形成当前最强有效 signal：
+  - R1 pooled MSE = `739.6007`，相对 B3 改善约 `15.227%`；
+  - R2 pooled MSE = `802.4457`，改善约 `8.024%`；
+  - origin wins = `5/11`、`7/11`；
+  - latest-2021 MSE = `2956.2890`、`3595.0013`；
+  - RMSE / MAE / median AE / bias / city SSE concentration 总体优于 B3；
+  - resident low / medium / high scale bins 在 R1/R2 均改善。
+- F4 的 P95 tail error 并未全面优于 B3，因此它不是全维度统治型 improvement。
+- `F3_DELTA_FROM_LATEST` 是次级有效 framing signal，但 resident pooled improvement 小于 F4。
+- Plan06A–D 的强模型 residual controls 没有在 resident primary 上替代 B3；CatBoost F2 只是其中最强有效 control。
+- registered sensitivity：
+  - B3 = `225.4212`；
+  - RLT3 = `223.6909`，约 `+0.768%`，`8/11` origin wins；
+  - F3 = `228.3363 / 227.5234`；
+  - F4 = `243.2445 / 246.8899`。
+  因此 F4 不能解释成 resident + registered 的 universal improvement。
+- Plan06F = recovery-only：执行/selection facts 可恢复，但核心 OOF/performance evidence 不可恢复，不参与排名。
+- Plan06G = coverage incomplete：不完整 OOF 与 outer failures 使其 performance 不可用于 candidate promotion。
+- Plan06H = city-local unsupported：不支持 routing/gating。
+- S5 Final Candidate Panel 已主动收缩为 B3、RLT3、CatBoost F2 control、F3、F4，而不是保留所有尝试模型。
+- Pre-S6 cleanup 已将实验 branch/worktree 收束回 canonical `main`；历史 unique worker commits 通过 immutable archive tags 保留审计引用。
 
-- 能解释为什么 B3 在本题很难被当前 residual-correction ML 超越：recent-3 local trend 已吸收主要人口动态信号，新增 target-history / covariate features 多数只是在重解释弱残差信号。
-- 能区分 **latest 2021 improvement** 与 **multi-origin aggregate improvement**；latest 局部提升不能覆盖 historical aggregate 恶化。
-- 能解释 R1-only 或 R1 更强的 covariate gain 为什么需要警惕：真实 publication timing 未知，freshness-dependent gain 在 R2 下退化说明结论依赖 information-boundary assumption。
-- 能解释 RidgeCV 多数 outer fit 选择最大正则 `alpha=100`、同时 coefficient direction 跨 origin/scenario 翻号，属于增量 signal 弱且不稳定的证据，而不是“应该继续调更多参数”的信号。
-- 能根据多组独立 falsification evidence 判断停止 feature/model fishing，而不是因为“还有模型没试过”继续机械 sweep。
-- 已建立对 leakage-safe pseudo-origin feature generation、source-specific as-of covariates、provenance/quarantine/regime-aware handling、Ridge/HGB/RidgeCV pipeline、ablation 与 R1/R2 sensitivity 的工作理解。
+## Final Candidate Status
 
-## Meaningful S4 Evidence
+### Primary final-solution candidate for S6
 
-- Frozen strongest model 仍为 `B3_RECENT_3POINT_OLS_TREND`。
-- B3 resident pooled MSE = `872.452651515143`；registered pooled MSE = `225.421212121213`。
-- S4 已实际覆盖 target-history Ridge / shape、urbanization、low-capacity HGB、density、wage、employment、city-level error memory、cross-city relative features、compact multi-source RidgeCV。
-- 没有 material S4 candidate 在 resident primary multi-origin aggregate 上稳定超过 B3。
-- 多个 candidate 只改善 latest 2021，同时恶化 historical aggregate，形成明确 latest-regime tension。
-- density / employment / multisource 等 R1 较新信息的局部 gain 在 R2 下退化或 reversal，说明 freshness dependence 真实存在。
-- multi-source RidgeCV 多数 outer fit 选择最大正则 `alpha=100`，多个 coefficient 跨 origin/scenario 翻号。
-- leakage、T-2、source as-of、preprocessing、R1/R2 与 compatibility checks 均通过；负结果没有明显工程边界错误可解释。
-- S4 已形成 reproducible formal ML pipeline 与多机制 falsification evidence，即使没有产生分数提升，也满足 Stage completion signal。
-- 未生成 2023 final prediction / submission，未提前进入 S5。
+`F4_LOG_GROWTH_FROM_LATEST`
+
+状态：
+
+**promoted_to_S6_resident_primary_candidate**
+
+理由：
+
+- 在冻结 resident primary contract 下，R1 / R2 pooled MSE 都实质低于 B3；
+- 两个 scenario 下 latest-2021 均优于 B3；
+- typical error、bias、scale bins 和 city concentration 提供与 primary MSE 同方向的辅助证据；
+- improvement 不是只依赖单一 scenario 或单一 scale bin。
+
+### Reference / fallback
+
+`B3_RECENT_3POINT_OLS_TREND`
+
+状态：
+
+**frozen_reference_and_fallback**
+
+B3 仍是最重要的简单可复现 benchmark；S6 reproduction 必须能够同时重现它，以校验 final pipeline 没有破坏历史合同。
+
+### Sensitivity comparator
+
+`RLT3_RECENT_3POINT_MEDIAN_SLOPE_TREND`
+
+状态：
+
+**registered_sensitivity_comparator_only**
+
+它在 registered 上有小幅稳定信号，但 resident 未达到 S5 strong gate，不作为 primary final model。
+
+### Important boundary
+
+不存在“resident / registered 两个 target 上都统一胜出”的 universal winner。S6 冻结的是当前项目本地 contract 下的 **resident-primary final candidate**，不是已经取得官方 target mapping 证明的全局竞赛真值最优模型。
 
 ## Partial / Fragile
 
-- stronger boosting、tuning、ensemble/blending、partial pooling 尚未形成正向实验证据；它们仍是 Conditional，不因进入 S5 自动激活。
-- 对少数 dominant cities / late-regime residual 的可预测结构仍未充分解释。
-- 对“如何把 local trend 的高适应性与更稳定的 shrinkage / pooling 结合”仍缺实证。
-- 学习者已能做当前阶段的机制/决策解释；更强的独立 Defense / changed-case Transfer 留到 S5/S7 继续取证。
+- F4 的 resident origin wins 不是压倒性一致，R1 为 `5/11`、R2 为 `7/11`；其优势主要由 aggregate + 多项辅助指标共同支持。
+- F4 的 tail P95 不是全面优于 B3，最终方案解释必须保留 tail-risk caveat。
+- F4 在 registered 上明显劣于 B3/RLT3；如果未来官方 target mapping 证明目标是 registered，当前 final candidate 必须重新选择。
+- F4 的 framing signal 已有强 evidence，但学习者对完整 final-training / current-2023 information-set reconstruction / submission generation 的独立复现能力尚未验证；这正是 S6 的任务。
+- S5 的 partial-pooling / EBM 等方向没有形成可采信正向结论；不应在 S6 再开启模型研究。
 
 ## Remaining Uncertainty
 
-- 官方 target mapping 仍未直接证明；resident primary + registered sensitivity 保留。
-- 真实 source publication timing 仍未知；R1/R2 replay assumptions 保留。
-- PDF MSE / FAQ RMSE 冲突无新的官方澄清；MSE primary / RMSE auxiliary 不变。
-- B3 是否已经接近本题在当前数据条件下的可实现上限未知。
-- residual concentration / late-regime difficulty 是否能被低容量、可解释方法稳定利用未知。
+- 官方“总人口”究竟对应 resident 还是 registered 仍没有直接证明。
+- 真实 source publication timing 仍未知；历史 R1/R2 只是 replay assumptions。
+- PDF formal MSE / FAQ RMSE 冲突仍未获得官方澄清；本地 contract 继续 MSE primary / RMSE auxiliary。
+- F4 在真实 2023 当前 snapshot 上的最终 prediction 尚未生成，因此不存在 final submission evidence。
+- final training 时怎样把历史 replay geometry 映射到真实 2023 information set，必须在 S6 明确冻结，不能凭历史 backtest runner 隐式推断。
+- submission schema / exact output coverage 仍需 S6 做最终事实检查。
 
-## Frozen Contracts Entering S5
+## S6 Entry Point
 
-### Validation
+S6 中心问题：
 
-继续冻结 S2 contract：
+> 怎样把已经选出的 resident-primary F4 candidate，从“validated experiment”冻结为一个 raw → canonical → feature → train → 2023 prediction → submission 的可重复 final solution，同时确保最终训练没有悄悄改变 S2–S5 的信息边界和模型定义？
 
-- common origins `2011–2021`
-- target history `T-2`
-- resident primary / registered sensitivity
-- pooled city-year MSE primary
-- macro-origin MSE mandatory sensitivity
-- latest 2021 separate diagnostic
-- per-origin instability + city concentration
-- leakage audit
-- covariate experiments执行 R1/R2 sensitivity
+S6 第一入口不是继续试模型，而是建立 **Final Solution Contract + Reproduction Contract**。
 
-### Baseline
+第一任务应完成：
 
-B3 继续作为 strongest deployable fixed reference。任何“改进”必须在相同 scope 下比较，不能只凭单一 origin / target / scenario / score。
+1. 从当前 `main` 精确提取 F4 的真实实现、feature/replay/model dependencies 与必要 artifacts；
+2. 冻结 final target/model/feature/current-2023 information-set/fallback/seed/environment/output-schema；
+3. 明确 historical validation geometry 与真实 2023 final-fit geometry 的对应关系；
+4. 明确 B3 reproduction control；
+5. 定义 fresh rebuild：从 raw source 清理可重建派生产物后，如何重新得到 canonical、final feature/model 和最终 prediction；
+6. 在 contract review 通过前，不生成正式 submission，也不再做模型选择实验。
 
-## S5 Entry Strategy
+## S6 Execution Strategy
 
-S5 中心问题：
+S6 以 **serial reproducibility workflow** 为主，而不是 S5 的 parallel model screening：
 
-> 从 S3/S4 已有误差和负结果证据出发，哪些剩余 hypothesis 真正值得测试；如何快速淘汰无信号方向，只对有证据的 winner 深挖，而不是继续 feature/model fishing？
+`contract freeze → clean rebuild → historical reproduction controls → final fit/prediction → submission validation → fresh end-to-end rerun`
 
-初始优先级：
+只有彼此完全独立的环境/schema checks 才适合并行；任何会改变 final contract 的步骤必须串行。
 
-1. 先做 residual / regime decomposition，确认 dominant-city、late-regime、recency-vs-stability tension 是否提供可操作结构。
-2. 优先考虑低容量、机制明确的迭代，例如 local-trend shrinkage / partial pooling、预注册 blend 或 robust local trend；这些方向直接回应 S3/S4 已发现的问题。
-3. remaining source groups 只在存在明确 residual hypothesis 时做独立 screening，不做 feature dump。
-4. stronger boosting 暂不自动激活：low-capacity HGB 与多源 RidgeCV 已给出负证据；只有 residual structure 明确支持 nonlinear interaction 时再开。
-5. tuning 暂不激活：没有值得 tuning 的正向候选。
-6. ensemble/blending / partial pooling 为 Conditional；若低容量 screening 有稳定信号再 deep dive。
+每个 S6 Plan 仍遵守项目 Plan 交付规则：
 
-## Parallel-first Experiment Topology
-
-从 S5 起正式采用：
-
-`统一 frozen base → 独立 hypotheses 并行 screening → 统一 evidence review/integration → 只对 winner deep dive → 下一 wave`
-
-适合并行的条件：
-
-- hypothesis / source / mechanism / robustness test 相互独立；
-- 共享 frozen validation/baseline；
-- 一个结果不是另一个实验设计的必要输入。
-
-必须串行的情况：
-
-- 后续设计依赖前一实验真实结果；
-- 会修改 shared data / validation / model contract；
-- 下一实验需要上一实验选出 feature/model；
-- 多 worker 会同时修改同一 shared core implementation。
-
-并行 branch 默认：
-
-- 每 worker 独立 branch/worktree；
-- 同一 frozen base；
-- 不直接改 `main`；
-- 不修改 checkpoint；
-- 尽量不修改 shared context files；
-- screening branch 只产 evidence；
-- wave 结束后统一 integration；
-- source branches 暂留作审计引用；
-- integration 后下一 wave 使用新的统一基点；
-- 长期悬空 branch 不成为事实源。
-
-## Evidence Budget
-
-默认采用：
-
-`快速 screening → 有信号才 deep dive`
-
-- stable infrastructure 不重复做低价值全量审计，只验证当前 Plan 新增风险。
-- 明显失败 candidate 允许早停。
-- 失败 screening 不为了 artifact 完整性强行追加 leave-one-city / leave-one-origin / concentration / 大量 ablation / model sweep。
-- promising candidate 才进入完整 robustness、ablation、stability 与机制解释。
-
-## Stage Experiment Workflow
-
-- Main 拥有 Stage authority。
-- S5 Lab 负责 wave design、Plan、Codex handoff review 与局部决策，不得自行宣布 S5 COMPLETE / 进入 S6。
-- Plan 只规定核心问题、frozen boundary、forbidden actions、success/failure rule、required evidence；Codex 保留 code organization、debugging、lightweight sanity checks 和合理实现决策空间。
-- 每次生成 Plan 前，聊天中先简要说明“预计做什么 / 为什么做 / 预计得到什么证据”。
-- 每次 Plan **直接生成可下载 Markdown 文件，不在聊天中预览正文**。
-- Plan 文件名使用：`S5-PlanNN｜中文实验标题.md`。
-- 每个 Plan / parallel worker 的 evidence 进入 `reports/S5_HANDOFFS/...` 的独立目录。
-- 每个 wave 结束先做统一 review/integration，再决定下一 wave。
-- S5 最终生成阶段报告，保存真实参赛者视角的 `Hypothesis → Experiment → Evidence → Interpretation → Decision` 链，再交 Main 判定。
+- 聊天先简短说明预计做什么 / 为什么 / 预计成果；
+- Plan 直接生成可下载 Markdown 文件，不在聊天中预览全文；
+- 文件名使用 `S6-PlanNN｜中文标题.md`；
+- Plan 给 Codex 保留合理实现与验证空间，但不得重新开启 model selection/tuning。
 
 ## Next Entry Point
 
-创建 `Lab｜S5 实验`。
+新建 `Lab｜S6 Final Solution & Reproduction`。
 
-第一个高价值问题不是“再试哪个模型”，而是：
+第一份 Plan 应围绕：
 
-> B3 的失败主要来自哪些可重复 residual regimes；这些模式是否支持一组相互独立、低容量、可解释的 shrinkage / robust-trend / blend hypotheses，并值得进入 parallel screening？
+**Final Solution Contract Freeze**
+
+目标不是预测，而是把 F4 从实验候选固化成唯一可复现的 final pipeline specification，并定义随后 clean-room reproduction 的验收标准。
 
 ## Do Not Repeat
 
-- 不重新展开 S1 数据考古。
-- 不重新设计 S2 contract，除非出现 contract-level contradiction / 新官方证据。
-- 不继续扩展 S3 naive baseline ladder。
-- 不重跑 S4 已明确 falsified 的同类 feature/model correction。
-- 不因为阶段编号进入 S5 就自动开启 stronger boosting / tuning / ensemble。
-- 不做无假设的大规模 feature/model sweep。
+- 不重新开启 S5 model sweep。
+- 不重跑已关闭的 LightGBM / XGBoost / ExtraTrees / EBM / hierarchical / city-local family 只为了寻找更低分。
+- 不调参、Optuna、stacking、routing 或 post-hoc city gating，除非 Main 因 contract-level contradiction 正式退回 S5。
+- 不把 Plan06F recovery-only 或 Plan06G incomplete evidence 重新解释成 performance evidence。
+- 不把 F4 的 resident improvement 说成 registered / universal improvement。
+- 不在 Final Solution Contract 冻结前生成正式 2023 submission。
+- 不依赖已存在的派生 CSV / cache 作为唯一复现路径；S6 必须证明 raw source 可以重新构建 final solution。
