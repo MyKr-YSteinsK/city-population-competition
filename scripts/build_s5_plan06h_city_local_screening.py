@@ -41,7 +41,11 @@ RIDGE_ALPHA = 1000.0
 EWMA_DECAY = 0.7
 MIN_MEAN_ROWS = 3
 MIN_RIDGE_ROWS = 5
+# Contract CSVs store rounded predictions and squared errors.  The input
+# identity check therefore uses a slightly wider tolerance, while metric
+# win/loss comparisons retain the strict frozen tie band.
 NUMERIC_TOLERANCE = 1e-12
+INPUT_NUMERIC_TOLERANCE = 1e-10
 
 OUTPUT_DIR = ROOT / "reports" / "S5_HANDOFFS" / PLAN_ID
 FORMAL_MATRIX_PATH = ROOT / "reports" / "S5_HANDOFFS" / "S5-Plan04" / "full_multisource_feature_matrix.csv"
@@ -235,7 +239,7 @@ def require_fields(header: list[str], required: Iterable[str], label: str) -> No
 
 
 def close_enough(left: float, right: float) -> bool:
-    return abs(left - right) <= NUMERIC_TOLERANCE * max(1.0, abs(left), abs(right))
+    return abs(left - right) <= INPUT_NUMERIC_TOLERANCE * max(1.0, abs(left), abs(right))
 
 
 def compare_metrics(left: float, right: float) -> int:
