@@ -1012,6 +1012,35 @@ def run_screening(
         framing: Counter() for framing in FRAMINGS
     }
     fit_stats: Counter[str] = Counter()
+    total_progress_groups = len(TARGETS) * len(SCENARIOS) * len(ORIGINS) * len(FRAMINGS)
+    completed_progress_groups = 0
+    progress_started = time.time()
+    last_progress_report = progress_started
+
+    def mark_progress_group_complete() -> None:
+        nonlocal completed_progress_groups, last_progress_report
+        completed_progress_groups += 1
+        now = time.time()
+        if (
+            completed_progress_groups == total_progress_groups
+            or now - last_progress_report >= 30.0
+        ):
+            elapsed = now - progress_started
+            rate = completed_progress_groups / elapsed if elapsed > 0 else 0.0
+            remaining = (
+                (total_progress_groups - completed_progress_groups) / rate
+                if rate > 0
+                else None
+            )
+            eta_text = "unknown" if remaining is None else f"{remaining / 60.0:.1f} min"
+            print(
+                f"[{PLAN_ID}] progress groups={completed_progress_groups}/{total_progress_groups} "
+                f"({completed_progress_groups / total_progress_groups:.1%}), "
+                f"fit_units={fit_stats['model_fit_units']}, "
+                f"elapsed={elapsed / 60.0:.1f} min, eta={eta_text}",
+                flush=True,
+            )
+            last_progress_report = now
 
     for target_id in TARGETS:
         for scenario_id in SCENARIOS:
@@ -1302,6 +1331,7 @@ def run_screening(
                                 "error": outer_fit.get("error", ""),
                             }
                         )
+                        mark_progress_group_complete()
                         continue
 
                     try:
@@ -1323,6 +1353,7 @@ def run_screening(
                                 "error": short_error(error),
                             }
                         )
+                        mark_progress_group_complete()
                         continue
                     assert len(prediction) == 40
                     for row, predicted in zip(outer_validation.to_dict("records"), prediction):
@@ -1348,6 +1379,7 @@ def run_screening(
                                 "unseen_city_count": unseen_city_count,
                             }
                         )
+                    mark_progress_group_complete()
 
     return {
         "oof_rows": oof_rows,
@@ -1456,6 +1488,7 @@ def handoff_text(
         f"- Stage：{STAGE}",
         f"- Worker branch：{BRANCH}",
         f"- Exact base SHA：{BASE_SHA}",
+        f"- Worker status：{summary['worker_status']}",
         f"- Runner commit used for execution：{worker_commit}",
         f"- Official OOF coverage：combined {summary['candidate_oof_rows']} / {summary['required_oof_rows']} rows — {summary['oof_coverage_status']}；per framing {json.dumps(summary['coverage_by_framing'], ensure_ascii=False, sort_keys=True)}",
         f"- Classification：{summary['classification']}",
@@ -1667,6 +1700,7 @@ def main() -> None:
         "required_oof_rows": len(expected_keys),
         "required_oof_rows_per_framing": required_oof_rows_per_framing,
         "oof_coverage_status": coverage_status,
+        "worker_status": "complete" if coverage_status == "PASS" else "complete_with_incomplete_coverage",
         "coverage_by_framing": coverage_by_framing,
         "selection_group_count": len(result["selection_rows"]),
         "inner_geometry_row_count": len(inner),
@@ -1937,7 +1971,10 @@ def main() -> None:
         flush=True,
     )
     if coverage_status != "PASS":
-        raise RuntimeError("hierarchical_worker_oof_coverage_incomplete")
+        print(
+            f"[{PLAN_ID}] no promotion: incomplete OOF coverage is recorded in model_summary.json and HANDOFF.md",
+            flush=True,
+        )
 
 
 if __name__ == "__main__":
