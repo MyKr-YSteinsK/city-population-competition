@@ -1,0 +1,47 @@
+{
+  "captured_at_utc": "2026-09-20T14:31:23.470810+00:00",
+  "plan_id": "S6-Plan03",
+  "python": {
+    "executable": "C:\\Users\\Yukis\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+    "version": "3.14.6 (tags/v3.14.6:c63aec6, Jun 10 2026, 10:26:10) [MSC v.1944 64 bit (AMD64)]"
+  },
+  "platform": {
+    "system": "Windows",
+    "release": "11",
+    "machine": "AMD64"
+  },
+  "package_versions": {
+    "catboost": "1.2.10",
+    "numpy": "2.5.3",
+    "pandas": "3.0.6"
+  },
+  "git": {
+    "generation_source_sha": "2c64f5ec6eb8ed1ad6c571ecbe01f1dd2947d288",
+    "generation_branch": "codex/s6-plan03-fast-first"
+  },
+  "input_hashes": {
+    "clean_rebuild_summary": "b788f26260d6797577f577c90c4e3dc2ae6c336ebb9f629153d7229be518bcc1",
+    "rebuilt_training_replay_matrix": "c4af3688890b578d263a5fb9b224fc687e3c1c76997b30caa9c578e2858949b3",
+    "current_2023_feature_matrix": "03beb97bb711c318631119c4515ddb54087a148536af03f954a733e00e6a842f",
+    "current_2023_feature_boundary_audit": "ecfd656ca26a3ea315de03ed866888cf59a854254d9c4356671aad00aaaecbab",
+    "final_solution_contract": "f5deff350d96d2b688abf19ea63ad2edd0588750d20d6f9ecf52fd4d70561e2b",
+    "replay_input_contract": "91eebf578220c3afc649b012e98246ed9de08a95b2dcf42b1003a0734ad65962"
+  },
+  "checkpoint_sha_before": "013cc0832ee8f1fcbe2f62d382d5358c5ed1da85cb8f575d664ccd0579ef9ceb",
+  "checkpoint_sha_after": "013cc0832ee8f1fcbe2f62d382d5358c5ed1da85cb8f575d664ccd0579ef9ceb",
+  "parallel_topology": {
+    "workstreams": [
+      "A resident F4 R1",
+      "B resident F4 R2",
+      "C registered RLT3/B3 plus resident B3",
+      "D packaging/schema validation"
+    ],
+    "execution": "ProcessPoolExecutor(max_workers=3) for A/B/C; D in orchestrator after all futures",
+    "fit_thread_count": 1
+  },
+  "test_xls_access": {
+    "opened": false,
+    "hashed": false
+  },
+  "model_binary_persisted": false
+}

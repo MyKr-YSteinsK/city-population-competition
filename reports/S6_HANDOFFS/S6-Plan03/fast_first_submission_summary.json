@@ -1,0 +1,134 @@
+{
+  "plan_id": "S6-Plan03",
+  "status": "BLOCKED_SUBMISSION_SCHEMA",
+  "strategy": "FAST_FIRST_SUBMISSION",
+  "generated_at_utc": "2026-09-20T14:31:23.469961+00:00",
+  "git": {
+    "generation_source_sha": "2c64f5ec6eb8ed1ad6c571ecbe01f1dd2947d288",
+    "generation_branch": "codex/s6-plan03-fast-first",
+    "canonical_main_at_start": "2c64f5ec6eb8ed1ad6c571ecbe01f1dd2947d288",
+    "final_delivery_sha_recorded_by_main_after_commit": "pending_commit"
+  },
+  "parallel_topology": {
+    "workstreams": [
+      "A resident F4 R1",
+      "B resident F4 R2",
+      "C registered RLT3/B3 plus resident B3",
+      "D packaging/schema validation"
+    ],
+    "execution": "ProcessPoolExecutor(max_workers=3) for A/B/C; D in orchestrator after all futures",
+    "fit_thread_count": 1
+  },
+  "plan02_foundation": {
+    "status": "PASS",
+    "replay_rows": 2320,
+    "current_2023_rows": 160,
+    "current_boundary_rows": 2240,
+    "model_feature_count": 144,
+    "replay_contract_version": "S5-Plan04B-TRAINING-REPLAY-V1",
+    "feature_contract_version": "S5-Plan04-FULL-MULTISOURCE-V1",
+    "replay_hash": "c4af3688890b578d263a5fb9b224fc687e3c1c76997b30caa9c578e2858949b3",
+    "current_feature_hash": "03beb97bb711c318631119c4515ddb54087a148536af03f954a733e00e6a842f",
+    "boundary_audit_hash": "ecfd656ca26a3ea315de03ed866888cf59a854254d9c4356671aad00aaaecbab",
+    "plan04_equivalence": "PASS",
+    "plan04b_equivalence": "PASS",
+    "inner_boundary_violation_count": 0,
+    "target_truth_after_2021_used": false
+  },
+  "resident_f4": {
+    "R1_REFERENCE_SNAPSHOT_LAG": {
+      "selected_config_id": "FRM_C3_FLEXIBLE_REGULARIZED",
+      "selection_method": "inner_mean_validation_mse",
+      "eligible_inner_fold_count": 13,
+      "training_row_count": 573,
+      "training_max_label_year": 2021,
+      "inner_scores": {
+        "FRM_C1_CONSERVATIVE": 688.5431302040054,
+        "FRM_C2_MEDIUM": 681.7136425379174,
+        "FRM_C3_FLEXIBLE_REGULARIZED": 673.646095001205
+      }
+    },
+    "R2_CONSERVATIVE_PUBLICATION_STRESS": {
+      "selected_config_id": "FRM_C1_CONSERVATIVE",
+      "selection_method": "inner_mean_validation_mse",
+      "eligible_inner_fold_count": 13,
+      "training_row_count": 573,
+      "training_max_label_year": 2021,
+      "inner_scores": {
+        "FRM_C1_CONSERVATIVE": 725.8420888837446,
+        "FRM_C2_MEDIUM": 738.1610465092817,
+        "FRM_C3_FLEXIBLE_REGULARIZED": 729.7669337824736
+      }
+    }
+  },
+  "registered_sensitivity": {
+    "rlt3_model_id": "RLT3_RECENT_3POINT_MEDIAN_SLOPE_TREND",
+    "b3_model_id": "B3_RECENT_3POINT_OLS_TREND",
+    "rlt3_r1_r2_equivalence": {
+      "status": "PASS",
+      "target_id": "registered",
+      "reason": "registered target history only",
+      "max_abs_diff": 0.0
+    },
+    "no_covariates": true
+  },
+  "candidate_paths": {
+    "resident_f4_r1": "reports/S6_HANDOFFS/S6-Plan03/submission_resident_f4_r1.csv",
+    "resident_f4_r2": "reports/S6_HANDOFFS/S6-Plan03/submission_resident_f4_r2.csv",
+    "registered_rlt3": "reports/S6_HANDOFFS/S6-Plan03/submission_registered_rlt3.csv",
+    "registered_b3": "reports/S6_HANDOFFS/S6-Plan03/submission_registered_b3.csv",
+    "resident_b3": "reports/S6_HANDOFFS/S6-Plan03/submission_resident_b3.csv"
+  },
+  "candidate_count": 5,
+  "model_work": {
+    "catboost_fit_count": 80,
+    "estimator_fit_count": 80,
+    "f4_config_selection_2023_count": 2,
+    "prediction_2023_count": 5,
+    "submission_count": 5,
+    "tuning_search_count": 0,
+    "new_model_family_count": 0,
+    "blend_count": 0,
+    "routing_or_gating_count": 0
+  },
+  "submission_validation": {
+    "status": "BLOCKED_SUBMISSION_SCHEMA",
+    "failed_checks": 2,
+    "failed_candidates": [
+      "registered_b3",
+      "registered_rlt3"
+    ],
+    "candidate_files": [
+      "reports/S6_HANDOFFS/S6-Plan03/submission_resident_f4_r1.csv",
+      "reports/S6_HANDOFFS/S6-Plan03/submission_resident_f4_r2.csv",
+      "reports/S6_HANDOFFS/S6-Plan03/submission_registered_rlt3.csv",
+      "reports/S6_HANDOFFS/S6-Plan03/submission_registered_b3.csv",
+      "reports/S6_HANDOFFS/S6-Plan03/submission_resident_b3.csv"
+    ]
+  },
+  "forbidden_input_audit": {
+    "test_xls_content_accessed": false,
+    "test_xls_hashed": false,
+    "b_data_used": false,
+    "external_data_used": false,
+    "target_truth_after_2021_used": false,
+    "current_2023_target_truth_columns_present": false,
+    "worker_oof_used_as_final_fit_shortcut": false,
+    "checkpoint_sha_before": "013cc0832ee8f1fcbe2f62d382d5358c5ed1da85cb8f575d664ccd0579ef9ceb",
+    "checkpoint_sha_after": "013cc0832ee8f1fcbe2f62d382d5358c5ed1da85cb8f575d664ccd0579ef9ceb",
+    "checkpoint_unchanged": true
+  },
+  "deferred_reproduction_debt": [
+    "full historical F4 OOF replay",
+    "exact all-origin configuration-selection reproduction",
+    "full RLT3 historical regeneration",
+    "deeper fresh end-to-end release proof"
+  ],
+  "platform_upload_performed": false,
+  "recommended_first_upload": "submission_resident_f4_r1.csv",
+  "resident_first_submission_candidates_pass": true,
+  "ready_for_first_platform_submission": false,
+  "ready_for_main_stage_review": true,
+  "s6_complete": false,
+  "s7_entered": false
+}
