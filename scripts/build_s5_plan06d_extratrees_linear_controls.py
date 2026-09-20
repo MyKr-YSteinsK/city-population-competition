@@ -1070,6 +1070,7 @@ def handoff_text(
     lines.extend(
         [
             f"- Family-level screening label — ExtraTrees：{summary['family_overall_classification']['EXTRATREES']}；Ridge：{summary['family_overall_classification']['RIDGE']}。",
+            f"- Overall worker classification：{summary['overall_worker_classification']}。",
             f"- Overall lower resident pooled-MSE family across the registered screening cells：{summary['overall_stronger_family']}。",
             "",
             "## Diagnostics",
@@ -1151,6 +1152,15 @@ def main() -> None:
             overall_classification[family] = "family_competitive_but_unstable"
         else:
             overall_classification[family] = "family_unsupported"
+    classification_order = {
+        "family_unsupported": 0,
+        "family_competitive_but_unstable": 1,
+        "family_signal_found": 2,
+    }
+    overall_worker_classification = max(
+        overall_classification.values(),
+        key=lambda label: classification_order[label],
+    )
     resident_rows = [
         row
         for row in aggregate_rows
@@ -1210,6 +1220,7 @@ def main() -> None:
         },
         "family_classifications": family_classifications,
         "family_overall_classification": overall_classification,
+        "overall_worker_classification": overall_worker_classification,
         "family_mean_resident_pooled_mse": family_scores,
         "overall_stronger_family": overall_stronger,
         "metric_meta": metric_meta,
