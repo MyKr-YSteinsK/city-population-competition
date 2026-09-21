@@ -1644,10 +1644,10 @@ def run(root: Path, fit_workers: int) -> dict[str, Any]:
     output_dir.mkdir(parents=True, exist_ok=True)
     worker_commit = git_value(root, "rev-parse", "HEAD")
     branch = git_value(root, "branch", "--show-current")
-    if worker_commit != PARENT_SHA:
-        raise ValueError(f"runner must be committed from Plan02 worker commit, got {worker_commit}; expected parent lineage {PARENT_SHA}")
-    if not git_is_ancestor(root, RECOVERY_MAIN_SHA, PARENT_SHA):
-        raise ValueError("Plan01 parent does not descend from recovery main")
+    if not git_is_ancestor(root, PARENT_SHA, worker_commit):
+        raise ValueError(f"runner commit does not descend from Plan01 parent: {worker_commit} <- {PARENT_SHA}")
+    if not git_is_ancestor(root, RECOVERY_MAIN_SHA, worker_commit):
+        raise ValueError("Plan02 runner commit does not descend from recovery main")
     versions = runtime_versions()
     schema = json.loads((root / "reports" / "S5_HANDOFFS" / "S5-Plan04" / "feature_matrix_schema.json").read_text(encoding="utf-8"))
     contract = json.loads((root / "reports" / "S5_HANDOFFS" / "S5-Plan04B" / "parallel_worker_input_contract.json").read_text(encoding="utf-8"))
