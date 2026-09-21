@@ -9,10 +9,11 @@
 - **S5｜Evidence-driven Iteration COMPLETE**
 - Main 已复审 S6 Plan02–04 的 clean rebuild、final fit/prediction、final freeze 与 provenance 证据，正式判定 **S6｜Final Solution & Reproduction COMPLETE**。
 - **S7｜Transfer & Defense 已启动，但当前暂停最终 closeout**：Review 已提供了有价值的迁移/答辩证据，并暴露出“真实 2023 target 与最终测试 regime 可能与历史 backtest 明显不同”的新问题。
-- 用户已明确批准新增 **S8｜真实目标重建与答案驱动的可推广建模（Post-hoc Target Reconstruction & Reverse Modeling）**，当前 Mainline 正式进入 S8。
+- 用户已明确批准新增 **S8｜真实目标重建与答案驱动的可推广建模（Post-hoc Target Reconstruction & Reverse Modeling）**。S8 继续负责 candidate truth / identity / year-alignment / regime forensic，不宣告完成。
+- 用户进一步明确批准新增 **S9｜文献驱动的人口预测方法与盲测挑战（Literature-Guided Forecast Benchmark & Procedurally Blinded 2023 Holdout）**，当前 Mainline 的模型研究入口转入 S9；S8 作为独立 truth/evaluation support track 保留。
 - S6 closeout engineering base：GitHub `main` @ `bfe265d3d57f43938e967890567a4162d7b3c896`。
-- S6 frozen final solution 继续保持不变；S8 是独立的 post-hoc research extension，不回写或伪装成原 competition-legal final solution。
-- S8 完成后返回 S7，整合新证据后再做最终 Reproduction / Defense / Transfer Success Definition 审查。
+- S6 frozen final solution 继续保持不变；S8/S9 都是后续 research extensions，不回写或伪装成原 competition-legal final solution。
+- S9 完成后与 S8 证据一并返回 S7，整合后再做最终 Reproduction / Defense / Transfer Success Definition 审查。
 
 ## S6 Confirmed
 
@@ -243,6 +244,119 @@ S8 完成后返回 **S7｜Transfer & Defense**。
 S7 最终答辩需要新增一项：
 
 > 已知 final test 发生 distribution / statistical-regime shift 时，怎样区分“validation 错了”“数据口径变了”“真实机制变了”“post-hoc answer fitting”，以及怎样把答案启发转化为新的可推广 hypothesis？
+
+## S9｜文献驱动的人口预测方法与盲测挑战
+
+### Stage Purpose
+
+重新模拟一次真实比赛：把 S8 的 2023 candidate truth 当作不可见测试集，只用原 competition-legal 历史数据、S2 时间验证与人口预测文献启发的方法完成训练、调整、筛选与最终 2023 预测；**模型/预测冻结后才一次性 reveal 2023**。
+
+由于学习者与 Main 已经见过当前 candidate truth，S9 只能称为 **procedurally blinded holdout**，不能声称是认知上完全未知的 blind test。实验完整性依靠数据隔离、worker boundary、commit/hash freeze 与 one-time reveal。
+
+### Blind Boundary
+
+- 训练/调参 worker 不得读取 S8 candidate truth、real-2022 population、逐城市 2023 error 或答案驱动的 city-specific correction。
+- 所有 candidate promotion 只允许使用 historical OOF evidence。
+- 2023 predictions 必须在 reveal 前生成并 commit/hash。
+- reveal 后计算 2023 MSE 只用于最终外部评估；如果 reveal 后继续调模型，必须另开 `POST_REVEAL_RESEARCH` round，不得把修改后的结果称为 blind result。
+- S8 truth 版本在 reveal 前应锁定 provenance/version；若后续 truth reconstruction 发生 materially changed revision，需要把旧/新 truth 作为不同 evaluator version 报告。
+
+### Frozen Internal Validation
+
+- resident primary；
+- common expanding pseudo-origins 2011–2021；
+- target history cutoff `<= T-2`；
+- pooled city-year MSE primary；
+- macro-origin / per-origin / RMSE / MAE / bias / coverage / leakage 作为稳定性证据；
+- 预注册 `T=2013` 为 **census analogue stress slice**：其 cutoff `<=2011` 与 final `T=2023` cutoff `<=2021` 在 census-anchor geometry 上对应，用于检验 census jump 是否应继续外推。
+
+### S9 Research Lines
+
+1. **Local statistical forecasting**
+   - Persistence / B3 / RLT3 references；
+   - SES；
+   - Holt；
+   - damped Holt / ETS；
+   - Theta；
+   - bounded ARIMA benchmark。
+
+2. **F4 framing × learner**
+   - Ridge；
+   - LightGBM；
+   - XGBoost；
+   - CatBoost existing reference。
+   - 目的：区分 target framing improvement 与 learner effect，而不是继续模型扫货。
+
+3. **Forecast combination**
+   - simple mean；
+   - median / trimmed robust combination；
+   - historical-error-based static weighting。
+   - 权重只来自历史 inner/OOF evidence。
+
+4. **Dynamic expert gating / FFORMA-like MoE**
+   - expert pool 控制在 3–5 个机制互补模型；
+   - low-capacity soft gate；
+   - gate features 只允许 pre-origin state information，例如 recent growth / slope / acceleration / volatility / scale / expert disagreement / census-distance proxy；
+   - 必须 nested / OOF，禁止 current outer target leakage。
+
+5. **Census-aware mechanism**
+   - pre-census slope；
+   - census jump；
+   - post-census growth；
+   - level reset vs persistent growth；
+   - trend/growth damping。
+   - 先检验 2013 analogue，再看完整 multi-origin；不得根据 2023 truth 调 shrinkage。
+
+### Internal Freeze
+
+S9 champion 必须在 reveal 前根据内部 evidence 冻结。
+
+每个 material candidate 至少报告：
+
+- pooled historical MSE；
+- RMSE / MAE / bias；
+- macro-origin MSE；
+- origin wins/losses；
+- latest-origin MSE；
+- 2013 census analogue MSE；
+- coverage / leakage audit；
+- model complexity / deployability。
+
+可以同时冻结少量 diagnostic finalists，但 champion 身份不得在 reveal 后改写。
+
+### One-time 2023 Reveal
+
+当 champion + finalists 的 2023 predictions 已 commit/hash 后：
+
+1. 解锁 S8 candidate truth；
+2. 统一计算 40-city 2023 MSE / RMSE / MAE / bias；
+3. 同时展示 `internal historical MSE` 与 `2023 holdout MSE`；
+4. 检查模型排序是否一致；
+5. 分析 regime shift / census rebasing / expert selection 是否解释 ranking reversal。
+
+### Current Candidate Priority
+
+第一条正式新实验线：
+
+`Persistence → SES → Holt → Damped Holt/ETS → Theta → bounded ARIMA`
+
+原因不是补模型名单，而是它们直接检验“人口趋势应继续、阻尼还是重置”的机制。
+
+之后再进入：
+
+`F4 × learner → forecast combination → dynamic gate → census-aware mechanism`
+
+### Relationship to Prior Routing Decision
+
+S7 supplemental jump investigation 关闭的是当时证据下的 jump classifier / routing。S9 是用户基于新的文献与 post-hoc evidence 明确授权的新 research stage，因此允许重新研究 **general expert combination / dynamic gating**，但必须遵守新的 blind/nested validation contract；这不等于回写 S6 或否定旧结论。
+
+### Return Point
+
+S9 完成后与 S8 truth/evidence 一并返回 S7。
+
+S7 最终 Transfer/Defense 需要回答：
+
+> 如果内部 backtest 与 blind final holdout 给出不同模型排序，应如何解释、怎样判断 validation misspecification、regime shift、statistical rebasing 与 post-hoc overfitting？
 
 ## S7 Entry Point
 
