@@ -61,8 +61,8 @@ the final resident submission.
 - The official “总人口” semantic mapping was not externally verified; resident
   was intentionally frozen as the project decision.
 - Full historical F4 replay was deferred after the fast first submission path.
-- The final artifact is a local candidate, not a declaration of `S6_COMPLETE`.
-  The checkpoint remains unchanged and S7 is not declared.
+- The final artifact is a local candidate; completion status remains with Main.
+  The checkpoint remains unchanged and the next stage is not declared.
 
 ## Output artifacts
 

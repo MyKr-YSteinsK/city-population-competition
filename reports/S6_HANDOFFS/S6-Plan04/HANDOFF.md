@@ -27,5 +27,6 @@ clipping, routing, ensemble, or manual correction was introduced.
 ## Main review request
 
 Lab recommends that Main close the S6 implementation phase and decide the
-project/learning-state handling. This handoff does not declare `S6_COMPLETE`,
-does not rewrite `CURRENT_LEARNING_CHECKPOINT.md`, and does not declare S7.
+project/learning-state handling. This handoff does not set a completed-stage
+status, does not rewrite `CURRENT_LEARNING_CHECKPOINT.md`, and does not declare
+the next stage.

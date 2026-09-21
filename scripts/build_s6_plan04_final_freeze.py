@@ -260,8 +260,8 @@ the final resident submission.
 - The official “总人口” semantic mapping was not externally verified; resident
   was intentionally frozen as the project decision.
 - Full historical F4 replay was deferred after the fast first submission path.
-- The final artifact is a local candidate, not a declaration of `S6_COMPLETE`.
-  The checkpoint remains unchanged and S7 is not declared.
+- The final artifact is a local candidate; completion status remains with Main.
+  The checkpoint remains unchanged and the next stage is not declared.
 
 ## Output artifacts
 
@@ -307,8 +307,9 @@ clipping, routing, ensemble, or manual correction was introduced.
 ## Main review request
 
 Lab recommends that Main close the S6 implementation phase and decide the
-project/learning-state handling. This handoff does not declare `S6_COMPLETE`,
-does not rewrite `CURRENT_LEARNING_CHECKPOINT.md`, and does not declare S7.
+project/learning-state handling. This handoff does not set a completed-stage
+status, does not rewrite `CURRENT_LEARNING_CHECKPOINT.md`, and does not declare
+the next stage.
 """
     (repo_root / HANDOFF_RELATIVE_PATH).write_text(handoff, encoding="utf-8")
 
