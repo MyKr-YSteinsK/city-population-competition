@@ -1,0 +1,13 @@
+audit_id,status,evidence
+base_sha_matches_origin_main,PASS,bfe265d3d57f43938e967890567a4162d7b3c896
+target_scope_resident_only,PASS,all investigation rows target_id=resident
+common_origins_2011_2021,PASS,11 origins x 40 cities x 2 scenarios
+primary_q90_fixed,PASS,q=0.90; q=0.85/0.95 descriptive sensitivity only
+threshold_training_universe_t_minus_2,PASS,max training pseudo-target year <= outer origin - 2 for every row
+current_outer_target_not_used_for_threshold,PASS,thresholds computed before evaluation-row merge; flag false for all rows
+population_target_history_t_minus_2,PASS,all evaluation replay rows have target_history_cutoff_year = origin-2
+source_specific_replay_boundary,PASS,audit_rows=12320; failing_cells=0
+outcomes_used_only_for_labels_and_error_utility,PASS,feature study joins frozen pre-origin replay features after label construction; no outcome column enters feature statistics
+no_city_identity_routing,PASS,city_id is used only as a join key and descriptive recurrence key
+no_forbidden_inputs,PASS,"runner reads current frozen CSV artifacts and immutable S5 tags only; no test.xls, B-data, external 2022/2023 target truth"
+no_model_fit_or_threshold_search,PASS,"re-analysis runner; no estimator imports, fit calls, or q selection"

@@ -1,0 +1,253 @@
+{
+  "plan_id": "S7-Supplemental-Plan01",
+  "status": "COMPLETE_RETURN_TO_MAIN",
+  "decision": "H_JUMP_RISK_IDENTIFIABLE_BUT_NOT_DEPLOYABLE",
+  "decision_note": "PRECURSOR_GATE_B_OR_C_NOT_PASSED",
+  "base_sha": "bfe265d3d57f43938e967890567a4162d7b3c896",
+  "worker_branch": "codex/s7-supplemental-jump-plan01",
+  "worker_head_at_run": "bfe265d3d57f43938e967890567a4162d7b3c896",
+  "current_origin_main": "bfe265d3d57f43938e967890567a4162d7b3c896",
+  "frozen_contract": {
+    "target": "resident",
+    "origins": [
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021
+    ],
+    "population_history_cutoff": "T-2",
+    "feature_contract_version": "S5-Plan04-FULL-MULTISOURCE-V1",
+    "replay_contract_version": "S5-Plan04B-TRAINING-REPLAY-V1",
+    "primary_q": 0.9,
+    "sensitivity_q_values": [
+      0.85,
+      0.95
+    ],
+    "forbidden_inputs": [
+      "test.xls",
+      "B-data",
+      "external 2022/2023 target truth"
+    ]
+  },
+  "provenance": {
+    "f4_oof_source": "archive/pre-s6/s5-plan06e-delta-growth-framing:reports/S5_HANDOFFS/S5-Plan06E/oof_predictions.csv",
+    "f3_oof_source": "archive/pre-s6/s5-plan06e-delta-growth-framing:reports/S5_HANDOFFS/S5-Plan06E/oof_predictions.csv",
+    "f2_oof_source": "archive/pre-s6/s5-plan06b-catboost-screening:reports/S5_HANDOFFS/S5-Plan06B/oof_predictions.csv",
+    "f4_tag_commit": "e8b3af4d6cfadc74089a2a6d39db7a8086d3f7b0",
+    "f2_tag_commit": "2f4580291d436f63e806917145bb510c823179c8",
+    "f4_resident_rows": 880,
+    "f3_resident_rows": 880,
+    "f2_resident_rows": 880,
+    "missing_panel_features": []
+  },
+  "event_sample_gate": {
+    "primary_unique_jump_positive_count": 68,
+    "origins_with_at_least_two": 6,
+    "required_positive_count": 30,
+    "required_origins_with_at_least_two": 6,
+    "pass": true,
+    "sensitivity": {
+      "0.9": {
+        "unique_primary_jump_positive_count": 68,
+        "origins_with_at_least_two": 6,
+        "per_origin_jump_counts": {
+          "2011": 6,
+          "2012": 8,
+          "2013": 11,
+          "2014": 11,
+          "2015": 0,
+          "2016": 1,
+          "2017": 0,
+          "2018": 1,
+          "2019": 1,
+          "2020": 13,
+          "2021": 16
+        }
+      },
+      "0.85": {
+        "unique_primary_jump_positive_count": 87,
+        "origins_with_at_least_two": 9,
+        "per_origin_jump_counts": {
+          "2011": 9,
+          "2012": 11,
+          "2013": 13,
+          "2014": 15,
+          "2015": 1,
+          "2016": 2,
+          "2017": 1,
+          "2018": 2,
+          "2019": 2,
+          "2020": 14,
+          "2021": 17
+        }
+      },
+      "0.95": {
+        "unique_primary_jump_positive_count": 45,
+        "origins_with_at_least_two": 6,
+        "per_origin_jump_counts": {
+          "2011": 3,
+          "2012": 6,
+          "2013": 7,
+          "2014": 7,
+          "2015": 0,
+          "2016": 0,
+          "2017": 0,
+          "2018": 0,
+          "2019": 1,
+          "2020": 7,
+          "2021": 14
+        }
+      }
+    }
+  },
+  "gate_a_f4_event_relevance": {
+    "by_scenario": {
+      "R1_REFERENCE_SNAPSHOT_LAG": {
+        "f4_jump_mse_ratio": 23.292714175252424,
+        "f4_sse_share_row_share_ratio": 5.239925518955494,
+        "f4_jump_worse_origins": 8,
+        "gate_a_pass": true
+      },
+      "R2_CONSERVATIVE_PUBLICATION_STRESS": {
+        "f4_jump_mse_ratio": 25.656037428749446,
+        "f4_sse_share_row_share_ratio": 5.333364937867342,
+        "f4_jump_worse_origins": 9,
+        "gate_a_pass": true
+      }
+    },
+    "both_scenarios_pass": true
+  },
+  "gate_b_precursor": {
+    "r1_candidate_count": 0,
+    "r1_candidate_features": [],
+    "r1_pass": false
+  },
+  "gate_c_r1_r2_robustness": {
+    "candidate_count": 0,
+    "candidate_features": [],
+    "pass": false
+  },
+  "gate_d_f2_conditional_utility": {
+    "available": true,
+    "by_scenario": {
+      "R1_REFERENCE_SNAPSHOT_LAG": {
+        "jump_improvement_pct": -0.05290392594662929,
+        "jump_origin_win_count": 6,
+        "normal_improvement_pct": -0.5736035097601233,
+        "normal_origin_win_count": 1,
+        "normal_broad_gain": false,
+        "gate_d_pass": false
+      },
+      "R2_CONSERVATIVE_PUBLICATION_STRESS": {
+        "jump_improvement_pct": -0.06807523718645614,
+        "jump_origin_win_count": 6,
+        "normal_improvement_pct": -0.6425231360575787,
+        "normal_origin_win_count": 2,
+        "normal_broad_gain": false,
+        "gate_d_pass": false
+      },
+      "both_scenarios_pass": false
+    },
+    "both_scenarios_pass": false
+  },
+  "city_recurrence_description": {
+    "R1_REFERENCE_SNAPSHOT_LAG": [
+      {
+        "city_id": "city21",
+        "jump_count": 6,
+        "f4_sse": 36727.981247182346,
+        "b3_sse": 38631.527777778974,
+        "jump_origin_recurrence": 6
+      },
+      {
+        "city_id": "city5",
+        "jump_count": 5,
+        "f4_sse": 80361.25341135566,
+        "b3_sse": 109831.2777777763,
+        "jump_origin_recurrence": 5
+      },
+      {
+        "city_id": "city10",
+        "jump_count": 5,
+        "f4_sse": 1572.181812964499,
+        "b3_sse": 2356.6666666667506,
+        "jump_origin_recurrence": 5
+      },
+      {
+        "city_id": "city20",
+        "jump_count": 5,
+        "f4_sse": 561.0679518319644,
+        "b3_sse": 1044.4444444444473,
+        "jump_origin_recurrence": 5
+      },
+      {
+        "city_id": "city33",
+        "jump_count": 4,
+        "f4_sse": 21538.87653315207,
+        "b3_sse": 39982.08333333355,
+        "jump_origin_recurrence": 4
+      }
+    ],
+    "R2_CONSERVATIVE_PUBLICATION_STRESS": [
+      {
+        "city_id": "city21",
+        "jump_count": 6,
+        "f4_sse": 38960.36010556928,
+        "b3_sse": 38631.527777778974,
+        "jump_origin_recurrence": 6
+      },
+      {
+        "city_id": "city5",
+        "jump_count": 5,
+        "f4_sse": 94787.96125898107,
+        "b3_sse": 109831.2777777763,
+        "jump_origin_recurrence": 5
+      },
+      {
+        "city_id": "city10",
+        "jump_count": 5,
+        "f4_sse": 1714.8959675203246,
+        "b3_sse": 2356.6666666667506,
+        "jump_origin_recurrence": 5
+      },
+      {
+        "city_id": "city20",
+        "jump_count": 5,
+        "f4_sse": 617.8542041904749,
+        "b3_sse": 1044.4444444444473,
+        "jump_origin_recurrence": 5
+      },
+      {
+        "city_id": "city33",
+        "jump_count": 4,
+        "f4_sse": 27080.173606910736,
+        "b3_sse": 39982.08333333355,
+        "jump_origin_recurrence": 4
+      }
+    ]
+  },
+  "boundary_audit": {
+    "status": "PASS",
+    "rows": 12
+  },
+  "execution": {
+    "model_fit_count": 0,
+    "new_predictions": 0,
+    "new_submissions": 0,
+    "threshold_search": false,
+    "feature_search": false,
+    "city_routing": false,
+    "deviations": []
+  },
+  "commands": [
+    "python -m py_compile scripts/build_s7_jump_event_study.py",
+    "python scripts/build_s7_jump_event_study.py"
+  ]
+}
