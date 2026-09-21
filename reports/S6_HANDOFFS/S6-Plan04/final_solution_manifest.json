@@ -1,0 +1,63 @@
+{
+  "plan_id": "S6-Plan04",
+  "status": "FINAL_SOLUTION_FROZEN_FOR_MAIN_CLOSEOUT",
+  "final_solution": {
+    "target": "resident",
+    "framing": "F4_LOG_GROWTH_FROM_LATEST",
+    "scenario": "R1_REFERENCE_SNAPSHOT_LAG",
+    "model_config": "FRM_C3_FLEXIBLE_REGULARIZED",
+    "seed": 20260919,
+    "feature_count": 144,
+    "training_rows": 573,
+    "max_label_year": 2021,
+    "prediction_year": 2023
+  },
+  "artifacts": {
+    "final_submission_path": "reports/S6_HANDOFFS/S6-Plan04/submission_final.csv",
+    "high_precision_source_path": "reports/S6_HANDOFFS/S6-Plan04/submission_resident_f4_r1_high_precision.csv",
+    "plan03_formatted_candidate_path": "reports/S6_HANDOFFS/S6-Plan03/submission_resident_f4_r1.csv",
+    "report_path": "S6_FINAL_SOLUTION_REPORT.md",
+    "manifest_path": "reports/S6_HANDOFFS/S6-Plan04/final_solution_manifest.json",
+    "handoff_path": "reports/S6_HANDOFFS/S6-Plan04/HANDOFF.md"
+  },
+  "submission_verification": {
+    "columns": [
+      "city_id",
+      "year",
+      "pred"
+    ],
+    "row_count": 40,
+    "city_order": "city1..city40",
+    "year_values": [
+      2023
+    ],
+    "prediction_format": "fixed_point_2_decimal",
+    "rounding": "Decimal ROUND_HALF_UP",
+    "max_absolute_rounding_delta": "0.004750777693",
+    "final_sha256": "901e5e91b47f89ec2bdc34c7fc5ff6290319e50878b6abc19f5dd7d6477dc82b",
+    "high_precision_source_sha256": "c86e02c1b5cf67b7219f1894927649870cbc6f3efa76e798231fca5a144bccfa",
+    "plan03_formatted_candidate_sha256": "901e5e91b47f89ec2bdc34c7fc5ff6290319e50878b6abc19f5dd7d6477dc82b",
+    "plan03_formatted_candidate_matches_final": true
+  },
+  "provenance": {
+    "high_precision_source_commit": "e7040aff56eac45d3cbaadc8045ba446d9b9f02d",
+    "high_precision_source_git_path": "reports/S6_HANDOFFS/S6-Plan03/submission_resident_f4_r1.csv",
+    "source_recovery_reason": "The authorized S6-Plan03 formatting commit changed the working copy at the historical source path to two decimals; this exact high-precision blob was recovered from the immutable Plan03 commit without retraining.",
+    "original_plan03_working_copy_modified": true
+  },
+  "evidence_boundaries": {
+    "leaderboard_score_available": false,
+    "official_total_population_mapping_externally_verified": false,
+    "resident_target_frozen_by_project_decision": true,
+    "full_historical_f4_replay": "deferred",
+    "registered_city40_abnormal_drop_in_final_submission": false,
+    "test_xls_accessed": false,
+    "b_data_accessed": false,
+    "external_2022_2023_truth_accessed": false
+  },
+  "execution": {
+    "model_fit_count_in_plan04": 0,
+    "new_model_experiments": 0,
+    "generated_by": "scripts/build_s6_plan04_final_freeze.py"
+  }
+}
