@@ -8,9 +8,11 @@
 - **S4｜Feature & ML Modeling COMPLETE**
 - **S5｜Evidence-driven Iteration COMPLETE**
 - Main 已复审 S6 Plan02–04 的 clean rebuild、final fit/prediction、final freeze 与 provenance 证据，正式判定 **S6｜Final Solution & Reproduction COMPLETE**。
-- 当前正式进入 **S7｜Transfer & Defense**。
+- **S7｜Transfer & Defense 已启动，但当前暂停最终 closeout**：Review 已提供了有价值的迁移/答辩证据，并暴露出“真实 2023 target 与最终测试 regime 可能与历史 backtest 明显不同”的新问题。
+- 用户已明确批准新增 **S8｜真实目标重建与答案驱动的可推广建模（Post-hoc Target Reconstruction & Reverse Modeling）**，当前 Mainline 正式进入 S8。
 - S6 closeout engineering base：GitHub `main` @ `bfe265d3d57f43938e967890567a4162d7b3c896`。
-- 当前阶段不再继续优化 final model；S7 只做能力整合、Defense、Transfer 与最终 Success Definition 审查。
+- S6 frozen final solution 继续保持不变；S8 是独立的 post-hoc research extension，不回写或伪装成原 competition-legal final solution。
+- S8 完成后返回 S7，整合新证据后再做最终 Reproduction / Defense / Transfer Success Definition 审查。
 
 ## S6 Confirmed
 
@@ -123,6 +125,124 @@ registered 路径已保留实验与 candidate evidence，但未形成可直接�
 - 旧 Plan06B CatBoost F2 的 conditional re-analysis 也未通过 Gate D：pooled jump rows 相对 B3 仍恶化约 `5.29%`（R1）/`6.81%`（R2），normal rows 恶化更明显；虽然 jump stratum 在 6/11 origins 局部获胜，但不足以支持“先识别 jump 再用 F2 修正”的可部署结构。
 - Main 决定：**关闭 supplemental jump-model track**。不再授权 jump classifier、hurdle/mixture、direction/magnitude model、city routing 或基于已知 worst-city 的条件修正。该结果作为一个重要 limitation 保留到 S7 Defense/Transfer：本题可识别“哪里风险高/哪里 tail 集中”，但现有合法信息不足以稳定提前识别具体 jump event。
 - 只有未来出现新的、合法且 materially stronger pre-origin evidence，才允许 Main 重新评估；现有证据本身不构成 reopening 条件。
+
+## S8｜真实目标重建与答案驱动的可推广建模
+
+### Stage Purpose
+
+S8 允许在 **post-hoc research sandbox** 中使用外部真实城市统计资料与高置信度重建的 2023 candidate truth，回答两个新问题：
+
+1. DataFountain competition year=2023 的隐藏 target 到底最可能对应什么现实统计口径、统计年份和城市实体？
+2. 已经看到候选答案以后，能否从误差结构中反推出一个 **不是 city-by-city 手调、而是能在历史 analogue / changed-case 中重新成立的预测机制**？
+
+本阶段不是重新解释 S6 final，也不以“把 candidate truth 拟合到最低误差”为目标。
+
+### Current Forensic Evidence
+
+- 已构造一份 40-city candidate mapping 与 candidate 2023 truth，用于 post-hoc validation；它目前是 **高置信度重建假设，不是 DataFountain 官方 hidden-label 文件**。
+- 当前工作假设是 competition year 与现实统计年存在约 +1 对齐关系，因此 competition 2023 可能对应 real 2022 resident population；该假设必须在 S8 中用多表、多年份、官方统计来源继续取证。
+- 对当前 candidate truth 的离线比较显示：
+  - frozen resident F4-R1 约 MSE 1912；
+  - resident B3 约 MSE 4225；
+  - simple persistence（沿用 competition-2021 resident）约 MSE 122。
+- 这个排序与历史 multi-origin backtest 明显冲突，提示 final test 可能存在 post-census / post-revision regime shift；在完成 truth reconstruction audit 前，不把该解释写成事实。
+
+### Hard Separation: Competition-Legal vs Post-hoc
+
+S0–S6 原竞赛方案继续遵守“禁止外部数据”。
+
+S8 新增一个明确隔离的外部取证层：
+
+- **允许**：真实城市反匿名、多年度常住/户籍人口、统计公报、人口普查、人口密度/城镇化/就业/工资/生活水平等外部资料，用于 identity verification、year alignment、candidate truth reconstruction、error forensics。
+- **禁止**：把 real 2021/2022/2023 等在原预测时不可见的外部数据作为 feature，再声称模型是原比赛可部署方案。
+- 外部未来数据只能作为 post-hoc truth / diagnostic evidence。
+- 所有 S8 产物必须显式标注 `POST_HOC_EXTERNAL_RESEARCH`，不得覆盖 `submission_final.csv`。
+
+### Answer-aware Modeling Contract
+
+S8 允许“从答案出发”发现 hypothesis，但不允许直接把答案拟合成规则。
+
+允许：
+
+`candidate truth → error pattern → mechanism hypothesis → historical analogue test → deployability judgment`
+
+禁止：
+
+`candidate truth → per-city correction / tuned coefficients → declare generalizable`
+
+任何新模型若要获得“可推广 / deployable”标签，至少必须：
+
+- 只使用原 competition information boundary 内可获得的变量；
+- 不使用 2023 candidate truth 做 row-specific routing；
+- 不使用真实城市名称作为隐藏 shortcut，除非研究目标明确变成“已知真实城市身份后的外部数据预测”，且与原赛题模型严格分开；
+- 在多个历史 pseudo-origin 上重新验证；
+- 对 census/revision hypothesis，优先使用 **2010 census analogue**：把 competition 2011 附近视作类似基准重估点，检查从该时点向后两年的模型是否也应采用 level anchoring / growth shrinkage，而不是只在 2023 上成立；
+- 2023 candidate truth 只能作为 post-hoc target，不能成为唯一 acceptance evidence。
+
+### S8 Workstreams
+
+1. **S8-A｜Target Forensics**
+   - 40 city de-anonymization；
+   - competition year ↔ real statistical year 对齐；
+   - resident vs registered 目标语义；
+   - 多年度 population + registered + density + urbanization + employment + wage + age structure 等交叉验证；
+   - official source 优先；
+   - 每个 city 输出 mapping confidence 与 conflicting evidence。
+
+2. **S8-B｜Candidate Truth Reconstruction**
+   - 收集 real 2021 / 2022 resident population；
+   - 明确年末人口、七普口径、统计公报修订、整数万人 round/截断等；
+   - 形成 versioned candidate truth；
+   - 对不确定 city 保留区间或多个候选，不强行单值。
+
+3. **S8-C｜Frozen Solution Error Autopsy**
+   - 统一比较 persistence / B3 / F4-R1 / F4-R2 / registered controls；
+   - decomposition by city / province / scale / census jump / pre-2020 trend；
+   - 判断系统 bias、tail、regime shift 与 statistical re-basing 的关系。
+
+4. **S8-D｜Reverse Hypothesis Mining**
+   - 从答案发现可解释机制，如：
+     - census-aware level anchoring；
+     - growth shrinkage toward persistence；
+     - breakpoint-aware trend；
+     - pre-census trend 与 census jump 分离；
+     - low-capacity partial pooling。
+   - 每次只允许一个机制假设，不进行大模型 sweep。
+
+5. **S8-E｜Generalization Gate**
+   - 把 candidate mechanism 放回历史数据；
+   - 使用 multi-origin + census analogue + changed-case 验证；
+   - 检查其提升是否仅来自 2023 hindsight；
+   - 若历史 evidence 不支持，则明确标记为 `ANSWER_FIT_NOT_DEPLOYABLE`。
+
+6. **S8-F｜Post-hoc Research Solution**
+   - 只有通过 Generalization Gate 的机制，才形成 post-hoc research model；
+   - 与 frozen S6 solution 分开报告；
+   - 说明它若在原比赛前部署，需要哪些可见信息与先验假设。
+
+### S8 Stop / Success Conditions
+
+S8 不以 candidate-truth MSE 越低越好作为唯一目标。
+
+阶段完成需要：
+
+- 40-city mapping / year alignment / target semantics 达到足够高的取证质量，剩余不确定项显式隔离；
+- candidate truth 可重复构造并有 provenance；
+- 冻结模型真实误差得到可信复盘；
+- 至少一个 answer-derived mechanism 被送回历史 analogue 验证；
+- 最终明确区分：
+  - `POST_HOC_ONLY`
+  - `HISTORICALLY_SUPPORTED_BUT_UNPROVEN`
+  - `DEPLOYABLE_UNDER_ORIGINAL_INFORMATION_BOUNDARY`
+- 不论是否找到更强模型，都形成“为什么 2023 与历史 validation 排序不同”的可辩护结论。
+
+### Return Point
+
+S8 完成后返回 **S7｜Transfer & Defense**。
+
+S7 最终答辩需要新增一项：
+
+> 已知 final test 发生 distribution / statistical-regime shift 时，怎样区分“validation 错了”“数据口径变了”“真实机制变了”“post-hoc answer fitting”，以及怎样把答案启发转化为新的可推广 hypothesis？
 
 ## S7 Entry Point
 
