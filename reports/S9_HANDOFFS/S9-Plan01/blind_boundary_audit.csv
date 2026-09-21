@@ -1,0 +1,6 @@
+audit_id,scope,status,detail
+allowlist_only,S9-Plan01 runner file access,PASS,all runtime file reads are the enumerated S1-S5 competition-legal allowlist
+truth_track_isolation,S8 / Truth artifacts and branches,PASS,"not opened, searched, hashed, copied, parsed, or summarized"
+future_target_isolation,2022/2023 target labels and evaluator truth,PASS,population input is asserted to have max year <= 2021; no final forecast generated
+external_data_isolation,external / leaderboard / identity lookup,PASS,no network data source or de-anonymized city lookup is used by the runner
+allowlist_hash_count,allowlisted source lineage,PASS,11 allowlisted files hashed and recorded

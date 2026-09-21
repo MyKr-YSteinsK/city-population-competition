@@ -1,0 +1,268 @@
+{
+  "base_sha": "0a74372ea4e3555b3d659e6a2c77647b92eabea4",
+  "blind_boundary": {
+    "external_data_read": false,
+    "final_2023_prediction_generated": false,
+    "future_target_label_read": false,
+    "s8_branch_read": false,
+    "truth_artifact_read": false
+  },
+  "branch": "codex/s9-plan01-local-statistical-forecasting",
+  "candidate_definitions": [
+    {
+      "candidate_id": "B0_PERSISTENCE_LAST_OBSERVED",
+      "fallback": "unscoreable only if no legal history",
+      "family": "persistence",
+      "formula": "y_hat(T)=y_last; latest non-missing target year <= T-2",
+      "mechanism": "level_persistence",
+      "parameters": {},
+      "source": "frozen S3 fit_prediction"
+    },
+    {
+      "candidate_id": "B1_TWO_POINT_LINEAR_TREND",
+      "fallback": "unscoreable only if fewer than two legal points",
+      "family": "recent_trend",
+      "formula": "latest_value + latest_two_point_slope * (T-latest_year)",
+      "mechanism": "two_point_slope",
+      "parameters": {},
+      "source": "frozen S3 fit_prediction"
+    },
+    {
+      "candidate_id": "B3_RECENT_3POINT_OLS_TREND",
+      "fallback": "frozen B1 fallback inside S3 implementation",
+      "family": "recent_trend",
+      "formula": "OLS on latest 3 non-missing target points <= T-2",
+      "mechanism": "recent_3point_ols",
+      "parameters": {
+        "window": 3
+      },
+      "source": "frozen S3 fit_prediction and S3-Plan03 rows"
+    },
+    {
+      "candidate_id": "RLT3_RECENT_3POINT_MEDIAN_SLOPE_TREND",
+      "fallback": "frozen B1 fallback, then B0 only if necessary",
+      "family": "robust_recent_trend",
+      "formula": "S5 frozen RLT3 source implementation on latest 3 legal points",
+      "mechanism": "median_pairwise_slope",
+      "parameters": {
+        "intercept": "median_y_minus_slope_year",
+        "slope": "median_all_pairwise_slopes",
+        "window": 3
+      },
+      "source": "frozen S5-Plan02 fit_median_slope"
+    },
+    {
+      "candidate_id": "SES_ALPHA_0_5",
+      "fallback": "B0 if no legal point",
+      "family": "smoothing",
+      "formula": "level_t=0.5*y_t+0.5*level_(t-1); forecast latest level",
+      "mechanism": "simple_exponential_smoothing",
+      "parameters": {
+        "alpha": 0.5
+      },
+      "source": "S9 fixed implementation"
+    },
+    {
+      "candidate_id": "HOLT_LINEAR_A05_B03",
+      "fallback": "SES if fewer than two legal points",
+      "family": "smoothing_trend",
+      "formula": "calendar-year Holt level/trend with fixed alpha and beta",
+      "mechanism": "holt_linear",
+      "parameters": {
+        "alpha": 0.5,
+        "beta": 0.3
+      },
+      "source": "S9 fixed implementation"
+    },
+    {
+      "candidate_id": "HOLT_DAMPED_A05_B03_PHI080",
+      "fallback": "SES if fewer than two legal points",
+      "family": "damped_trend",
+      "formula": "Holt state with fixed geometric trend damping phi=0.8",
+      "mechanism": "damped_holt",
+      "parameters": {
+        "alpha": 0.5,
+        "beta": 0.3,
+        "phi": 0.8
+      },
+      "source": "S9 fixed implementation"
+    },
+    {
+      "candidate_id": "THETA_THETA2_ALPHA05",
+      "fallback": "B0 if fewer than two legal points",
+      "family": "theta",
+      "formula": "average fixed-theta transformed SES forecast and OLS trend forecast",
+      "mechanism": "theta_decomposition",
+      "parameters": {
+        "alpha": 0.5,
+        "theta": 2.0,
+        "trend": "OLS"
+      },
+      "source": "S9 fixed implementation"
+    },
+    {
+      "candidate_id": "ARIMA_110_BOUNDED",
+      "fallback": "B3 if fewer than three legal points or invalid fit",
+      "family": "bounded_arima",
+      "formula": "calendar-normalized first differences with bounded AR(1) forecast",
+      "mechanism": "arima_110",
+      "parameters": {
+        "order": "(1,1,0)",
+        "phi_clip": [
+          -0.95,
+          0.95
+        ]
+      },
+      "source": "S9 fixed implementation"
+    },
+    {
+      "candidate_id": "ARIMA_011_FIXED_THETA05",
+      "fallback": "B3 if fewer than three legal points or invalid fit",
+      "family": "bounded_arima",
+      "formula": "first-difference mean drift plus fixed bounded MA(1) innovation",
+      "mechanism": "arima_011",
+      "parameters": {
+        "order": "(0,1,1)",
+        "theta": 0.5
+      },
+      "source": "S9 fixed implementation"
+    }
+  ],
+  "contract_context": {
+    "s1_contract_row_count": 14,
+    "s1_quality_row_count": 7,
+    "s2_boundary_row_count": 44
+  },
+  "plan_id": "S9-Plan01",
+  "population_profile": {
+    "canonical_row_count": 718,
+    "city_count": 40,
+    "nonempty_by_target": {
+      "registered": 707,
+      "resident": 693
+    },
+    "sha256": "7f12e54c5c8d72a20182a117ad26564e6f1892d6f4b9add0dc80135aabb18797",
+    "unique_city_year_count": 718,
+    "year_max": 2021,
+    "year_min": 2001
+  },
+  "rlt3_provenance_audit": {
+    "candidate_id": "RLT3_RECENT_3POINT_MEDIAN_SLOPE_TREND",
+    "definition_row": {
+      "candidate_id": "RLT3_RECENT_3POINT_MEDIAN_SLOPE_TREND",
+      "coverage_b1_fallback": "0",
+      "coverage_median_slope": "1760",
+      "estimator": "deterministic median-slope / median-intercept",
+      "fallback_policy": "fixed B1 fallback only if fewer than 3; no silent B3 fallback",
+      "family_role": "pre_registered_robust_candidate",
+      "formula": "median of all pairwise slopes; median(y_i - robust_slope * year_i) intercept; predict T",
+      "history_window": "3",
+      "missing_history_policy": "latest non-missing observations <= T-2"
+    },
+    "definition_sha256": "1cb371f15ef34ddac8b19d98bcb017a6f9536a82ddca6385aac86425bb0ef08f",
+    "provenance_pass": true,
+    "source_function": "fit_median_slope",
+    "source_script_sha256": "9731c3838df579061fdea1fb011417c4c791768316ca0ec7c61bacb041f20f21",
+    "uses_external_data": false,
+    "uses_truth_artifact": false
+  },
+  "runner_commit": "e815f5ff501059a4373f45b7e0ffe321f397ba43",
+  "runtime": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.14.6",
+    "runtime_seconds": 2.4345038000001296
+  },
+  "source_lineage": [
+    {
+      "access_role": "allowlisted_input",
+      "git_blob_sha": "e11a8a4330134a673bf637234cc85d396237e50f",
+      "relative_path": "data/normalized/人口规模.csv",
+      "sha256": "7f12e54c5c8d72a20182a117ad26564e6f1892d6f4b9add0dc80135aabb18797"
+    },
+    {
+      "access_role": "allowlisted_input",
+      "git_blob_sha": "c733cbbc26a205d9f3d314c5c60fea8c208f047f",
+      "relative_path": "docs/s1_data_contract.csv",
+      "sha256": "d07f327d3570d9ba931e804b792b46e91cff480a513c41100b217523d5c36630"
+    },
+    {
+      "access_role": "allowlisted_input",
+      "git_blob_sha": "fbce09eb825e5199029c3dad6f8eafbaafe794e8",
+      "relative_path": "docs/s1_quality_issue_registry.csv",
+      "sha256": "a811820bc0d1561aacc4c03bb9ec0bffca47033ded5593993dfc8ee9302870e1"
+    },
+    {
+      "access_role": "allowlisted_input",
+      "git_blob_sha": "a46819c747d96a515681accde3d7ee02ef812052",
+      "relative_path": "reports/S2_HANDOFFS/S2-Plan05/plan05_summary.json",
+      "sha256": "42f6b75647ae1781a03c9600d4f90a297331158614daf1e7cf7f6fcab050ccf5"
+    },
+    {
+      "access_role": "allowlisted_input",
+      "git_blob_sha": "c9525c4a315a4c39b02552b1e2720acfabbb65c2",
+      "relative_path": "reports/S2_HANDOFFS/S2-Plan05/origin_information_boundary.csv",
+      "sha256": "17a25602773a182d0a4141f565929c5194092ba63e8746365990174aa9137ea5"
+    },
+    {
+      "access_role": "allowlisted_input",
+      "git_blob_sha": "01899f37057dd3dee4f96547536dc4eb4b292a9c",
+      "relative_path": "reports/S2_HANDOFFS/S2-Plan02/replay_scenario_definitions.csv",
+      "sha256": "b904f9d0efc2848408942b49271fcf1279df2fafc3007edf786644d148ffff83"
+    },
+    {
+      "access_role": "allowlisted_input",
+      "git_blob_sha": "2c90c8d6e13e22f8ca3a3069c715d1ebca43b7dc",
+      "relative_path": "reports/S3_HANDOFFS/S3-Plan02/baseline_predictor_definitions.csv",
+      "sha256": "52062f3cb906cf7140304d270fd0b95187bfba1e8780a1951de86ce7a197f4bd"
+    },
+    {
+      "access_role": "allowlisted_input",
+      "git_blob_sha": "f08c3ba2df787177df3de58e41b8f6779d4ae8ce",
+      "relative_path": "reports/S3_HANDOFFS/S3-Plan03/per_origin_predictions_or_residuals.csv",
+      "sha256": "9bc06bd14138a813ca45822649849c53e74d9e16d9c20335f06fde7a41f4221a"
+    },
+    {
+      "access_role": "allowlisted_input",
+      "git_blob_sha": "5889fdb86d32e16371377f82c02a84d7500414a3",
+      "relative_path": "scripts/build_s3_plan02_recent_window_and_selector.py",
+      "sha256": "912e7757002805fd42457bb1b566771c3e68366e1b42cbdba4ba42840f285c11"
+    },
+    {
+      "access_role": "allowlisted_input",
+      "git_blob_sha": "754326ce8b0ca3381a62faf2362d8198fec3cd12",
+      "relative_path": "reports/S5_HANDOFFS/S5-Plan02/candidate_definitions.csv",
+      "sha256": "1cb371f15ef34ddac8b19d98bcb017a6f9536a82ddca6385aac86425bb0ef08f"
+    },
+    {
+      "access_role": "allowlisted_input",
+      "git_blob_sha": "5310a6bb50fad96becd71919cce65a2a8e658ae3",
+      "relative_path": "scripts/build_s5_plan02_robust_local_trend_screen.py",
+      "sha256": "9731c3838df579061fdea1fb011417c4c791768316ca0ec7c61bacb041f20f21"
+    }
+  ],
+  "validation_contract": {
+    "census_analogue_origin": 2013,
+    "city_count": 40,
+    "history_cutoff": "origin_year - 2",
+    "origins": [
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021
+    ],
+    "primary_metric": "pooled_city_year_mse",
+    "primary_target": "resident",
+    "scenarios": [
+      "R1_REFERENCE_SNAPSHOT_LAG",
+      "R2_CONSERVATIVE_PUBLICATION_STRESS"
+    ],
+    "sensitivity_target": "registered"
+  }
+}

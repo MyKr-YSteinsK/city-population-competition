@@ -1,0 +1,11 @@
+plan_id,candidate_id,pre_registered_before_scoring,configuration_selection_method,inner_validation_selection,outer_target_error_used_for_configuration,post_score_parameter_expansion,champion_selected_in_plan01,retained_for_lab_review
+S9-Plan01,B0_PERSISTENCE_LAST_OBSERVED,yes,fixed_preregistered_configuration,no,no,no,no,yes
+S9-Plan01,B1_TWO_POINT_LINEAR_TREND,yes,fixed_preregistered_configuration,no,no,no,no,yes
+S9-Plan01,B3_RECENT_3POINT_OLS_TREND,yes,fixed_preregistered_configuration,no,no,no,no,yes
+S9-Plan01,RLT3_RECENT_3POINT_MEDIAN_SLOPE_TREND,yes,fixed_preregistered_configuration,no,no,no,no,yes
+S9-Plan01,SES_ALPHA_0_5,yes,fixed_preregistered_configuration,no,no,no,no,yes
+S9-Plan01,HOLT_LINEAR_A05_B03,yes,fixed_preregistered_configuration,no,no,no,no,yes
+S9-Plan01,HOLT_DAMPED_A05_B03_PHI080,yes,fixed_preregistered_configuration,no,no,no,no,yes
+S9-Plan01,THETA_THETA2_ALPHA05,yes,fixed_preregistered_configuration,no,no,no,no,yes
+S9-Plan01,ARIMA_110_BOUNDED,yes,fixed_preregistered_configuration,no,no,no,no,yes
+S9-Plan01,ARIMA_011_FIXED_THETA05,yes,fixed_preregistered_configuration,no,no,no,no,yes
