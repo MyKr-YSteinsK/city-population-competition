@@ -6,165 +6,160 @@
 - **S2｜Validation Architecture COMPLETE**
 - **S3｜Baseline Ladder COMPLETE**
 - **S4｜Feature & ML Modeling COMPLETE**
-- Main 已复审 S5 final report、Main handoff、candidate comparison、experiment registry 与异常/recovery 边界，正式判定 **S5｜Evidence-driven Iteration COMPLETE**。
-- 当前正式进入 **S6｜Final Solution & Reproduction**。
-- S5 Main review 使用的 canonical engineering base：GitHub `main` @ `2fbba5f2362e4dc1b1d8f5679d0fd13453fa840e`。
-- 后续工程事实继续以 GitHub 私有仓库 `MyKr-YSteinsK/city-population-competition` 当前 `main` 为准。
+- **S5｜Evidence-driven Iteration COMPLETE**
+- Main 已复审 S6 Plan02–04 的 clean rebuild、final fit/prediction、final freeze 与 provenance 证据，正式判定 **S6｜Final Solution & Reproduction COMPLETE**。
+- 当前正式进入 **S7｜Transfer & Defense**。
+- S6 closeout engineering base：GitHub `main` @ `bfe265d3d57f43938e967890567a4162d7b3c896`。
+- 当前阶段不再继续优化 final model；S7 只做能力整合、Defense、Transfer 与最终 Success Definition 审查。
 
-## S5 Confirmed
+## S6 Confirmed
 
-- 能从 residual / stability / negative evidence 出发提出高信息价值实验，而不是按“还没试过什么模型”继续搜索。
-- 能区分 primary resident improvement 与 registered sensitivity：resident 上的真实提升不能包装成 universal target improvement。
-- 能把 R1/R2 差异作为 information-boundary sensitivity 解释，不把 R1 更好自动当成模型更强。
-- 能区分完整 performance evidence、recovery-only evidence 与 coverage-incomplete evidence；不可恢复或不完整结果不得进入 ranking。
-- 能执行 screening-first / winner-only deep dive，并在强模型、local/hierarchical、target-framing 等多类 hypothesis 后主动收缩候选集。
-- 能解释为什么 tail metric、origin wins、latest、scale bin、city concentration 与 primary pooled MSE 需要共同阅读，而不是由单一数字决定。
-- 能在 S5 结束时停止 model fishing；没有为了阶段“必须更复杂”继续新增模型。
+- 已将 S5 的 resident-primary candidate 固化为可执行 final solution，而不是继续 model search。
+- 已完成 disposable-worktree clean raw rebuild：
+  - official PDF + 7 legal XLSX；
+  - S1 raw→canonical equivalence PASS；
+  - S5 Plan04 1760-row / 144-feature matrix rebuild PASS；
+  - Plan04B 2320-row replay rebuild PASS；
+  - source-cap / quarantine / benchmark / population-history / B3-history boundary violations = 0。
+- 已建立 2023 current feature foundation：
+  - 160 rows；
+  - resident / registered × R1 / R2 各 40 rows；
+  - 2240 boundary audit rows；
+  - no target label after 2021。
+- 已基于 rebuilt foundation 完成 final-fit candidate generation：
+  - resident F4 R1 selected config = `FRM_C3_FLEXIBLE_REGULARIZED`；
+  - training rows = 573；
+  - max label year = 2021；
+  - seed = 20260919；
+  - prediction year = 2023。
+- 最终方案已冻结为：
+  - target = resident；
+  - framing = `F4_LOG_GROWTH_FROM_LATEST`；
+  - scenario = `R1_REFERENCE_SNAPSHOT_LAG`；
+  - model = CatBoost C3 / `FRM_C3_FLEXIBLE_REGULARIZED`。
+- 最终 submission 已生成并冻结：
+  - path = `reports/S6_HANDOFFS/S6-Plan04/submission_final.csv`；
+  - 40 rows；
+  - `city1..city40`；
+  - year = 2023；
+  - columns = `city_id,year,pred`；
+  - 2-decimal fixed-point rendering；
+  - no clipping / routing / ensemble / manual city correction。
+- final freeze 保留高精度 provenance，并记录 exact immutable source commit 与 SHA256。
+- `test.xls`、B-data、external 2022/2023 truth 未进入 final solution。
+- registered alternatives 已在 Plan03 单独生成并审查；B3/RLT3 对 city40 出现合法历史外推导致的负值，因此未通过 positive-prediction schema，也未通过 clipping 或人工修正强行提交。
 
-## Meaningful Evidence
+## Reproduction Assessment
 
-- S5 Experiment Registry 已形成完整的 `Hypothesis → Experiment → Evidence → Interpretation → Decision` 链。
-- Frozen validation contract 未被 S5 为了分数静默修改；common origins、T-2、resident primary / registered sensitivity、R1/R2、pooled/macro 与 latest diagnostics 继续有效。
-- B3 resident pooled MSE = `872.4527`，仍是冻结 benchmark。
-- `F4_LOG_GROWTH_FROM_LATEST` 在 resident primary 上形成当前最强有效 signal：
-  - R1 pooled MSE = `739.6007`，相对 B3 改善约 `15.227%`；
-  - R2 pooled MSE = `802.4457`，改善约 `8.024%`；
-  - origin wins = `5/11`、`7/11`；
-  - latest-2021 MSE = `2956.2890`、`3595.0013`；
-  - RMSE / MAE / median AE / bias / city SSE concentration 总体优于 B3；
-  - resident low / medium / high scale bins 在 R1/R2 均改善。
-- F4 的 P95 tail error 并未全面优于 B3，因此它不是全维度统治型 improvement。
-- `F3_DELTA_FROM_LATEST` 是次级有效 framing signal，但 resident pooled improvement 小于 F4。
-- Plan06A–D 的强模型 residual controls 没有在 resident primary 上替代 B3；CatBoost F2 只是其中最强有效 control。
-- registered sensitivity：
-  - B3 = `225.4212`；
-  - RLT3 = `223.6909`，约 `+0.768%`，`8/11` origin wins；
-  - F3 = `228.3363 / 227.5234`；
-  - F4 = `243.2445 / 246.8899`。
-  因此 F4 不能解释成 resident + registered 的 universal improvement。
-- Plan06F = recovery-only：执行/selection facts 可恢复，但核心 OOF/performance evidence 不可恢复，不参与排名。
-- Plan06G = coverage incomplete：不完整 OOF 与 outer failures 使其 performance 不可用于 candidate promotion。
-- Plan06H = city-local unsupported：不支持 routing/gating。
-- S5 Final Candidate Panel 已主动收缩为 B3、RLT3、CatBoost F2 control、F3、F4，而不是保留所有尝试模型。
-- Pre-S6 cleanup 已将实验 branch/worktree 收束回 canonical `main`；历史 unique worker commits 通过 immutable archive tags 保留审计引用。
+S6 的核心 reproduction gate 判定为 **通过，但带明确债务**。
 
-## Final Candidate Status
+已实际发生的链路是：
 
-### Primary final-solution candidate for S6
+`raw official sources → canonical rebuild → 144-feature/replay/current foundation rebuild → final fit → 2023 candidate predictions → frozen final submission`
 
-`F4_LOG_GROWTH_FROM_LATEST`
+因此满足 Brief/Plan 对“原始数据可重新构建 final solution、关键中间产物可解释、不能依赖手工 Excel 改表”的核心要求。
+
+未完成的更强复验包括：
+
+- full historical F4 OOF replay；
+- exact all-origin F4 selection reproduction；
+- full RLT3 historical regeneration；
+- 更深的一次性 fresh end-to-end release proof。
+
+这些被保留为 **reproduction debt / supplemental verification**，而不是当前 S6 blocker。S7 最终项目审查时必须如实说明，不能把它们描述成已经完成。
+
+## Final Solution Status
+
+### Frozen resident-primary final solution
+
+`resident / F4_LOG_GROWTH_FROM_LATEST / R1_REFERENCE_SNAPSHOT_LAG / CatBoost C3`
 
 状态：
 
-**promoted_to_S6_resident_primary_candidate**
+**FINAL_SOLUTION_FROZEN_FOR_PROJECT_REVIEW**
 
-理由：
+关键边界：
 
-- 在冻结 resident primary contract 下，R1 / R2 pooled MSE 都实质低于 B3；
-- 两个 scenario 下 latest-2021 均优于 B3；
-- typical error、bias、scale bins 和 city concentration 提供与 primary MSE 同方向的辅助证据；
-- improvement 不是只依赖单一 scenario 或单一 scale bin。
+- local historical evidence 支持 resident F4；
+- R1 historically stronger than R2；
+- leaderboard score 尚不可用；
+- 官方“总人口”到 resident / registered 的语义映射仍未外部确认；
+- 因此它是当前项目 contract 下的 final solution，不是已被 leaderboard 或官方 target mapping 证明的全局最优解。
 
-### Reference / fallback
+### Reference
 
 `B3_RECENT_3POINT_OLS_TREND`
 
-状态：
+继续作为 simple benchmark / historical reference。
 
-**frozen_reference_and_fallback**
+### Registered alternative
 
-B3 仍是最重要的简单可复现 benchmark；S6 reproduction 必须能够同时重现它，以校验 final pipeline 没有破坏历史合同。
+registered 路径已保留实验与 candidate evidence，但未形成可直接提交的 final alternative；city40 的合法历史异常导致 B3/RLT3 负外推。不得事后 clipping 或人工修值伪造一个“可用” registered final solution。
 
-### Sensitivity comparator
+## S6 Partial / Fragile
 
-`RLT3_RECENT_3POINT_MEDIAN_SLOPE_TREND`
-
-状态：
-
-**registered_sensitivity_comparator_only**
-
-它在 registered 上有小幅稳定信号，但 resident 未达到 S5 strong gate，不作为 primary final model。
-
-### Important boundary
-
-不存在“resident / registered 两个 target 上都统一胜出”的 universal winner。S6 冻结的是当前项目本地 contract 下的 **resident-primary final candidate**，不是已经取得官方 target mapping 证明的全局竞赛真值最优模型。
-
-## Partial / Fragile
-
-- F4 的 resident origin wins 不是压倒性一致，R1 为 `5/11`、R2 为 `7/11`；其优势主要由 aggregate + 多项辅助指标共同支持。
-- F4 的 tail P95 不是全面优于 B3，最终方案解释必须保留 tail-risk caveat。
-- F4 在 registered 上明显劣于 B3/RLT3；如果未来官方 target mapping 证明目标是 registered，当前 final candidate 必须重新选择。
-- F4 的 framing signal 已有强 evidence，但学习者对完整 final-training / current-2023 information-set reconstruction / submission generation 的独立复现能力尚未验证；这正是 S6 的任务。
-- S5 的 partial-pooling / EBM 等方向没有形成可采信正向结论；不应在 S6 再开启模型研究。
-
-## Official Classic-Mode Clarification
-
-- 当前用户参加的是 DataFountain **经典赛（classic competition）**，不是 2023 年已结束的正式初赛/决赛。
-- DataFountain 经典赛规则明确：当前提交会进行自动评测，并显示在 **经典赛排行榜**；评测采用“原赛题初赛 A 榜评测规则”。因此当前提交不写入历史“初赛 A 榜”或“初赛 B 榜”，也不属于原决赛排名。
-- 官方 dataset 页面仍保留历史资产：原“数据文件夹”、单独的“B榜数据”、以及“提交样例”。用户上传的 `B-data.zip` MD5 为 `6DC5FD08E6C8B13271521BB23122EB2C`，与官方 B 榜数据 MD5 完全一致；`submission_sample.csv` MD5 为 `882A25A3037ABC8A5531CD0991EDBFD9`，与官方提交样例完全一致。
-- 对上传资产的直接检查确认：提交样例为 40 行 `city1..city40`、`year=2023`、列为 `city_id, year, pred`。
-- B 榜数据不是当前 classic submission 的默认建模输入：它是原正式比赛 B 榜阶段的独立历史资产。其 40 个匿名 city 标签虽然仍为 `city1..city40`，但人口历史与原数据文件夹大量不同，且人口规模可覆盖到 2022，说明不能把两套同名 city ID 当作同一实体直接拼接。
-- 因此当前 S6 应继续以原 A-stage “数据文件夹”对应的项目 canonical data 为建模事实源，并使用官方 submission sample 冻结输出 schema；B 榜数据只作为历史赛制研究/迁移材料，除非 Main 另行开启明确的 B 榜复现实验。
+- leaderboard score unavailable；当前 final solution 尚未获得平台外部反馈。
+- official “总人口” target mapping 仍 unresolved。
+- full historical F4 replay 被延期。
+- current R1 final choice依赖历史 replay assumption；真实 publication timing 不可直接恢复。
+- final submission 的数值已冻结，但对 leaderboard metric / score-scale 的 sanity question 仍保留；首次真实提交后再决定是否专项复盘。
+- registered sensitivity 仍是语义风险，不应因为 resident final freeze 而被遗忘。
 
 ## Remaining Uncertainty
 
-- 官方“总人口”究竟对应 resident 还是 registered 仍没有直接证明。
-- 真实 source publication timing 仍未知；历史 R1/R2 只是 replay assumptions。
-- PDF formal MSE / FAQ RMSE 冲突仍未获得官方澄清；本地 contract 继续 MSE primary / RMSE auxiliary。
-- F4 在真实 2023 当前 snapshot 上的最终 prediction 尚未生成，因此不存在 final submission evidence。
-- 鉴于官方“总人口”到常住人口/户籍人口的精确映射仍未直接证明，S6 final pipeline 必须同时保留两套目标路径：resident primary 与 registered alternative。两者应分别训练、分别生成 2023 predictions、分别生成符合官方 schema 的 submission 候选；不得在没有新证据时平均或混合。首次真实平台提交后，可根据实际 score 再做 target-mapping 复盘。
-- final training 时怎样把历史 replay geometry 映射到真实 2023 information set，必须在 S6 明确冻结，不能凭历史 backtest runner 隐式推断。
-- submission schema / exact output coverage 仍需 S6 做最终事实检查。
-- 经典赛 leaderboard score 与本地 MSE→score 数量级存在值得警惕的 sanity question，但当前不作为 S6 blocker。先按既定 S6 路线完成首次真实 submission；拿到平台实际评分后，再决定是否开启 metric / target-scale / leaderboard 专项复盘。
+- 官方 target mapping：resident vs registered。
+- PDF MSE / FAQ RMSE 与 leaderboard score-scale 之间的解释差异。
+- leaderboard score 尚未取得。
+- full historical F4 reproduction debt。
+- 一个旧 S5 半成品模型仍在独立运行；它不是 S7 blocker。未来结果只作为 late supplemental evidence 合并，除非出现足以实质改变 current final-solution conclusion 的证据。
 
-## S6 Entry Point
+## S7 Entry Point
 
-S6 中心问题：
+S7 中心问题：
 
-> 怎样把已经选出的 resident-primary F4 candidate，从“validated experiment”冻结为一个 raw → canonical → feature → train → 2023 prediction → submission 的可重复 final solution，同时确保最终训练没有悄悄改变 S2–S5 的信息边界和模型定义？
+> S1–S6 的能力是否已经真正属于学习者，而不是只存在于 repo、报告和 Codex 输出里？
 
-S6 第一入口不是继续试模型，而是建立 **Final Solution Contract + Reproduction Contract**。
+S7 不重新教学 S1–S6，也不重新跑模型搜索。
 
-第一任务应完成：
+评估分三条主线：
 
-1. 从当前 `main` 精确提取 F4 的真实实现、feature/replay/model dependencies 与必要 artifacts；
-2. 冻结 final target/model/feature/current-2023 information-set/fallback/seed/environment/output-schema；
-3. 明确 historical validation geometry 与真实 2023 final-fit geometry 的对应关系；
-4. 明确 B3 reproduction control；
-5. 定义 fresh rebuild：从 raw source 清理可重建派生产物后，如何重新得到 canonical、final feature/model 和最终 prediction；
-6. 在 contract review 通过前，不生成正式 submission，也不再做模型选择实验。
+1. **Project Decision Chain Integration**
+   - 从任务取证、数据审计、validation、baseline、feature/model、S5 iteration 到 S6 final freeze，能否解释每个关键决策为什么发生、替代方案为什么被拒绝。
 
-## S6 Execution Strategy
+2. **Defense**
+   - problem framing；
+   - target / horizon / information boundary；
+   - validation architecture；
+   - leakage；
+   - B3 为什么强；
+   - F4 为什么成为 final framing；
+   - multi-source / stronger model 为什么多数失败；
+   - R1/R2、registered sensitivity、tail risk、city concentration；
+   - final solution 的 reproduction boundary 与 remaining uncertainty。
 
-S6 以 **serial reproducibility workflow** 为主，而不是 S5 的 parallel model screening：
+3. **Transfer**
+   - 改 forecast horizon；
+   - 改 feature availability / publication lag；
+   - 换城市范围或加入 unseen cities；
+   - 改 metric；
+   - 改 target mapping；
+   - 截断历史或删最新 source；
+   - 要求判断哪些 contract / validation / feature / model 必须重设计，哪些可以保留。
 
-`contract freeze → clean rebuild → historical reproduction controls → final fit/prediction → submission validation → fresh end-to-end rerun`
+## S7 Assessment Strategy
 
-只有彼此完全独立的环境/schema checks 才适合并行；任何会改变 final contract 的步骤必须串行。
-
-每个 S6 Plan 仍遵守项目 Plan 交付规则：
-
-- 聊天先简短说明预计做什么 / 为什么 / 预计成果；
-- Plan 直接生成可下载 Markdown 文件，不在聊天中预览全文；
-- 文件名使用 `S6-PlanNN｜中文标题.md`；
-- Plan 给 Codex 保留合理实现与验证空间，但不得重新开启 model selection/tuning。
-
-## Next Entry Point
-
-新建 `Lab｜S6 Final Solution & Reproduction`。
-
-第一份 Plan 应围绕：
-
-**Final Solution Contract Freeze**
-
-目标不是预测，而是把 F4 从实验候选固化成唯一可复现的 final pipeline specification，并定义随后 clean-room reproduction 的验收标准。
+- 新建独立 `Review｜迁移与答辩` 对话，减少旧教学上下文对答题的提示。
+- 以 learner-owned explanation、diagnosis、changed-case redesign 为主要证据。
+- 不考 API 背诵，不机械复述报告数字。
+- 可使用 repo / final report 做事实核对，但核心判断必须由学习者给出。
+- Review 只回传证据与脆弱点；最终项目 COMPLETE 仍由 Main 对照 Brief 的 Reproduction + Defense + Transfer Success Definition 决定。
 
 ## Do Not Repeat
 
-- 不重新开启 S5 model sweep。
-- 不重跑已关闭的 LightGBM / XGBoost / ExtraTrees / EBM / hierarchical / city-local family 只为了寻找更低分。
-- 不调参、Optuna、stacking、routing 或 post-hoc city gating，除非 Main 因 contract-level contradiction 正式退回 S5。
-- 不把 Plan06F recovery-only 或 Plan06G incomplete evidence 重新解释成 performance evidence。
-- 不把 F4 的 resident improvement 说成 registered / universal improvement。
-- 不在 Final Solution Contract 冻结前生成正式 2023 submission。
-- 不依赖已存在的派生 CSV / cache 作为唯一复现路径；S6 必须证明 raw source 可以重新构建 final solution。
+- 不重新开启 S5/S6 model sweep、tuning、Optuna、ensemble、routing、city gating。
+- 不为了补 artifact 仪式感重跑所有 historical worker。
+- 不把 deferred full historical F4 replay 说成已完成。
+- 不把 leaderboard unavailable 说成模型已在线验证。
+- 不把 resident final solution 说成官方 target mapping 已确认。
+- 不重新教授 S1–S6 已经有稳定证据的基础内容。
+- S7 不负责改变 mainline；若 Review 暴露重大 blocking gap，回 Main 决定是否做最小 remediation。
