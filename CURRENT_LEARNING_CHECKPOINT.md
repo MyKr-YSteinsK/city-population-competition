@@ -245,6 +245,92 @@ S7 最终答辩需要新增一项：
 
 > 已知 final test 发生 distribution / statistical-regime shift 时，怎样区分“validation 错了”“数据口径变了”“真实机制变了”“post-hoc answer fitting”，以及怎样把答案启发转化为新的可推广 hypothesis？
 
+## S8 / S9 Parallel Execution Topology
+
+用户已明确要求 S8 与 S9 **并行执行**，并重新划分职责，避免 S8 的 2023 truth 信息污染 S9 的 procedurally blinded model selection。
+
+### S8 — Truth Track only
+
+S8 当前只执行原 workstream 的：
+
+- **S8-A Target Forensics**
+- **S8-B Candidate Truth Reconstruction**
+
+S8 的责任是构造并冻结一个可审计、versioned 的 hidden evaluator truth，包括：
+
+- city identity mapping；
+- competition year ↔ real statistical year；
+- resident / registered semantics；
+- real-2022 population candidate；
+- source provenance / confidence / conflicts；
+- rounding / units / uncertainty；
+- truth manifest / version hash。
+
+在 S9 blind prediction freeze 之前，**暂停 S8-C～S8-F**：
+
+- 不继续 Frozen Solution Error Autopsy；
+- 不从 2023 answer 反推模型；
+- 不根据 2023 误差设计 correction / routing / shrinkage；
+- 不把任何 2023 row-level error、model ranking、province error、bias、candidate-truth MSE 传给 S9。
+
+S8 可以持有这些既往已知事实，但不得把它们作为 S9 输入或更新 shared model-selection artifacts。
+
+### S9 — Model Track only
+
+S9 独立执行 literature-guided forecasting research。S9 worker / conversation：
+
+- 只读取原 competition-legal 数据、历史 OOF / validation artifacts、S1–S6 competition-legal evidence 与方法论文；
+- 不读取 S8 branch / S8 truth artifacts；
+- 不读取 real-2022/2023 population truth；
+- 不读取 candidate-truth evaluation tables；
+- 不根据任何已知 2023 error 调参、挑模型或加权；
+- 所有 candidate promotion 仅由 historical OOF / nested validation 决定。
+
+S9 可研究 ETS / Holt / damped Holt / Theta / bounded ARIMA、F4×learner、forecast combination、FFORMA-like dynamic gating、census-aware mechanisms，但必须在原 information boundary 内完成。
+
+### Synchronization / Freeze Protocol
+
+S8 与 S9 可从当前 main 各自建立独立 branch / Lab conversation 并行运行。
+
+S8 完成 A+B 后：
+
+- 生成 `truth_v1` + provenance / hash；
+- 冻结并等待；
+- 不向 S9暴露内容。
+
+S9 完成内部实验后：
+
+- 预先选定 champion / 少量 diagnostic finalists；
+- 生成 2023 predictions；
+- commit + SHA256 freeze；
+- 输出 blind-evaluator handoff；
+- 在 reveal 前停止模型修改。
+
+只有在两边都 freeze 后，Main / independent evaluator 才允许同时读取：
+
+`S8 truth_vN + S9 frozen predictions`
+
+并一次性报告：
+
+- internal historical MSE；
+- census-analogue / stability evidence；
+- 2023 holdout MSE / RMSE / MAE / bias；
+- internal ranking vs 2023 ranking。
+
+Reveal 后任何新模型或权重修改都必须明确归入 `POST_REVEAL_RESEARCH`，不得改写 blind result。
+
+### Stale-context rule
+
+现有 S8 或 S9 对话若早于本 parallel-topology 决策启动，必须先：
+
+1. refetch remote `main`；
+2. 读取最新 `CURRENT_LEARNING_CHECKPOINT.md`；
+3. 重新核对当前 Brief / Plan；
+4. 将旧 stage plan 标记为 superseded；
+5. 根据本节重新生成自己的 plan。
+
+不得凭旧聊天上下文继续执行旧 plan。
+
 ## S9｜文献驱动的人口预测方法与盲测挑战
 
 ### Stage Purpose
