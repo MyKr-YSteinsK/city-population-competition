@@ -48,6 +48,7 @@ HISTORICAL_SOURCE_SHA = "469787d00b1dc220a017df02c6fbb6fcb76d2605"
 HISTORICAL_SOURCE_BLOB = "4185ed8a95b26af4b203f26202e2f97cf9f6b8eb"
 HISTORICAL_SOURCE_PATH = "scripts/build_s5_plan06e_delta_growth_framing.py"
 SEED = 20260919
+CHECKPOINT_VERSION = 1
 TARGETS = ("resident", "registered")
 SCENARIOS = (
     "R1_REFERENCE_SNAPSHOT_LAG",
@@ -314,6 +315,12 @@ def parse_args() -> argparse.Namespace:
         default=min(4, os.cpu_count() or 1),
         help="Concurrent independent inner fits; each learner fit remains single-threaded.",
     )
+    parser.add_argument(
+        "--stop-after-groups",
+        type=int,
+        default=None,
+        help="Pause cleanly after this many newly completed checkpoint groups; for recovery testing only.",
+    )
     return parser.parse_args()
 
 
@@ -378,6 +385,142 @@ def finite_json(value: Any) -> Any:
     if isinstance(value, float) and (math.isnan(value) or math.isinf(value)):
         return None
     return value
+
+
+class CheckpointPause(RuntimeError):
+    """Raised after a requested clean checkpoint pause."""
+
+
+def write_json_atomic(payload: dict[str, Any], path: Path) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = path.with_name(f".{path.name}.tmp-{os.getpid()}")
+    temporary.write_text(
+        json.dumps(finite_json(payload), ensure_ascii=False, indent=2, allow_nan=False) + "\n",
+        encoding="utf-8",
+    )
+    os.replace(temporary, path)
+
+
+def checkpoint_group_key(candidate_id: str, target_id: str, scenario_id: str, outer_origin: int) -> str:
+    return f"{candidate_id}|{target_id}|{scenario_id}|{outer_origin}"
+
+
+def checkpoint_identity(
+    worker_commit: str,
+    model_features: list[str],
+    lineage: dict[str, Any],
+) -> dict[str, Any]:
+    return {
+        "checkpoint_version": CHECKPOINT_VERSION,
+        "plan_id": PLAN_ID,
+        "runner_commit": worker_commit,
+        "parent_sha": PARENT_SHA,
+        "framing_id": FRAMING_ID,
+        "feature_contract": FEATURE_CONTRACT,
+        "replay_contract": REPLAY_CONTRACT,
+        "seed": SEED,
+        "model_features": list(model_features),
+        "lineage": lineage,
+    }
+
+
+def checkpoint_file_for(checkpoint_dir: Path, key: str) -> Path:
+    safe_key = key.replace("|", "__")
+    return checkpoint_dir / "groups" / f"{safe_key}.json"
+
+
+def load_checkpoint_groups(
+    checkpoint_dir: Path,
+    identity: dict[str, Any],
+    expected_keys: set[str],
+) -> dict[str, dict[str, Any]]:
+    groups_dir = checkpoint_dir / "groups"
+    if not groups_dir.exists():
+        return {}
+    loaded: dict[str, dict[str, Any]] = {}
+    for path in sorted(groups_dir.glob("*.json")):
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        if payload.get("checkpoint_version") != CHECKPOINT_VERSION:
+            raise ValueError(f"checkpoint version mismatch: {path}")
+        if payload.get("identity") != identity:
+            raise ValueError(f"checkpoint identity mismatch: {path}; refuse mixed-contract resume")
+        key = str(payload.get("key", ""))
+        if key not in expected_keys:
+            raise ValueError(f"checkpoint contains unexpected group: {path}")
+        if key in loaded:
+            raise ValueError(f"duplicate checkpoint group: {key}")
+        selection = payload.get("selection_row")
+        inner_evidence = payload.get("inner_evidence")
+        oof_rows = payload.get("oof_rows")
+        if not isinstance(selection, dict) or not isinstance(inner_evidence, list) or not isinstance(oof_rows, list):
+            raise ValueError(f"checkpoint payload shape invalid: {path}")
+        if len(oof_rows) != 40:
+            raise ValueError(f"checkpoint OOF row count invalid: {path}")
+        if checkpoint_group_key(
+            str(selection.get("candidate_id")),
+            str(selection.get("target_id")),
+            str(selection.get("scenario_id")),
+            int(selection.get("outer_origin_year")),
+        ) != key:
+            raise ValueError(f"checkpoint selection key mismatch: {path}")
+        loaded[key] = payload
+    manifest_path = checkpoint_dir / "manifest.json"
+    if manifest_path.exists():
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        if manifest.get("checkpoint_version") != CHECKPOINT_VERSION or manifest.get("identity") != identity:
+            raise ValueError("checkpoint manifest identity/version mismatch; refuse mixed-contract resume")
+        manifest_keys = set(str(key) for key in manifest.get("completed_keys", []))
+        missing_group_files = manifest_keys - set(loaded)
+        if missing_group_files:
+            raise ValueError(f"checkpoint manifest references missing group files: {sorted(missing_group_files)}")
+        if set(loaded) - manifest_keys:
+            # A process may have been interrupted after the group payload was
+            # atomically replaced but before the advisory manifest update.
+            # The payload is the source of truth; repair only the manifest.
+            write_json_atomic(
+                {
+                    "checkpoint_version": CHECKPOINT_VERSION,
+                    "identity": identity,
+                    "updated_at_utc": datetime.now(timezone.utc).isoformat(),
+                    "completed_keys": sorted(loaded),
+                },
+                manifest_path,
+            )
+    return loaded
+
+
+def save_checkpoint_group(
+    checkpoint_dir: Path,
+    identity: dict[str, Any],
+    key: str,
+    selection: dict[str, Any],
+    inner_evidence: list[dict[str, Any]],
+    oof_rows: list[dict[str, Any]],
+    eligible_count: int,
+    config_count: int,
+) -> None:
+    payload = {
+        "checkpoint_version": CHECKPOINT_VERSION,
+        "identity": identity,
+        "key": key,
+        "saved_at_utc": datetime.now(timezone.utc).isoformat(),
+        "fit_counts": {"inner": int(eligible_count * config_count), "outer": 1},
+        "selection_row": selection,
+        "inner_evidence": inner_evidence,
+        "oof_rows": oof_rows,
+    }
+    write_json_atomic(payload, checkpoint_file_for(checkpoint_dir, key))
+    groups_dir = checkpoint_dir / "groups"
+    completed_keys = sorted(path.stem.replace("__", "|") for path in groups_dir.glob("*.json"))
+    write_json_atomic(
+        {
+            "checkpoint_version": CHECKPOINT_VERSION,
+            "identity": identity,
+            "updated_at_utc": datetime.now(timezone.utc).isoformat(),
+            "completed_keys": completed_keys,
+        },
+        checkpoint_dir / "manifest.json",
+    )
 
 
 def fmt(value: Any, digits: int = 6) -> str:
@@ -1635,13 +1778,16 @@ def runtime_versions() -> dict[str, str]:
     }
 
 
-def run(root: Path, fit_workers: int) -> dict[str, Any]:
+def run(root: Path, fit_workers: int, stop_after_groups: int | None = None) -> dict[str, Any]:
     if fit_workers < 1:
         raise ValueError("--fit-workers must be >= 1")
+    if stop_after_groups is not None and stop_after_groups < 1:
+        raise ValueError("--stop-after-groups must be >= 1 when supplied")
     started = time.perf_counter()
     started_at = datetime.now(timezone.utc).isoformat()
     output_dir = root / "reports" / "S9_HANDOFFS" / PLAN_ID
     output_dir.mkdir(parents=True, exist_ok=True)
+    checkpoint_dir = root / ".s9_checkpoints" / PLAN_ID
     worker_commit = git_value(root, "rev-parse", "HEAD")
     branch = git_value(root, "branch", "--show-current")
     if not git_is_ancestor(root, PARENT_SHA, worker_commit):
@@ -1659,14 +1805,25 @@ def run(root: Path, fit_workers: int) -> dict[str, Any]:
     inner_geometry = prepare_geometry(root / "reports/S5_HANDOFFS/S5-Plan04B/inner_split_geometry.csv", ["outer_origin_year", "inner_validation_year", "inner_training_max_year", "inner_training_min_year"])
     contract_evidence = validate_contract(formal, replay, outer_geometry, inner_geometry)
     controls = load_plan01_controls(root, formal)
+    checkpoint_id = checkpoint_identity(worker_commit, model_features, lineage)
+    expected_checkpoint_keys = {
+        checkpoint_group_key(candidate_id, target_id, scenario_id, outer_origin)
+        for candidate_id in LEARNER_IDS
+        for target_id in TARGETS
+        for scenario_id in SCENARIOS
+        for outer_origin in OUTER_ORIGINS
+    }
+    checkpoint_groups = load_checkpoint_groups(checkpoint_dir, checkpoint_id, expected_checkpoint_keys)
     print(f"[{PLAN_ID}] versions={json.dumps(versions, sort_keys=True)}", flush=True)
     print(f"[{PLAN_ID}] validated formal={len(formal)} replay={len(replay)} features={len(model_features)} eligible_inner={contract_evidence['eligible_inner_folds']}", flush=True)
     print(f"[{PLAN_ID}] fit-workers={fit_workers}; learner_fits={len(LEARNER_IDS)} pipelines; F4 only", flush=True)
+    print(f"[{PLAN_ID}] checkpoint_dir={checkpoint_dir}; resumed_groups={len(checkpoint_groups)}/{len(expected_checkpoint_keys)}", flush=True)
 
     selection_rows: list[dict[str, Any]] = []
     inner_rows_out: list[dict[str, Any]] = []
     model_oof_rows: list[dict[str, Any]] = []
     fit_counts = Counter()
+    newly_completed_groups = 0
     with ProcessPoolExecutor(max_workers=fit_workers) as executor:
         for target_id in TARGETS:
             for scenario_id in SCENARIOS:
@@ -1689,6 +1846,16 @@ def run(root: Path, fit_workers: int) -> dict[str, Any]:
                         & (inner_geometry["outer_origin_year"] == outer_origin)
                     ].copy()
                     for candidate_id in LEARNER_IDS:
+                        checkpoint_key = checkpoint_group_key(candidate_id, target_id, scenario_id, outer_origin)
+                        if checkpoint_key in checkpoint_groups:
+                            checkpoint = checkpoint_groups[checkpoint_key]
+                            selection_rows.append(checkpoint["selection_row"])
+                            inner_rows_out.extend(checkpoint["inner_evidence"])
+                            model_oof_rows.extend(checkpoint["oof_rows"])
+                            fit_counts["inner"] += int(checkpoint["fit_counts"]["inner"])
+                            fit_counts["outer"] += int(checkpoint["fit_counts"]["outer"])
+                            print(f"[{PLAN_ID}] RESUMED {checkpoint_key}", flush=True)
+                            continue
                         selected, selection_method, evidence, scores, eligible_count = select_config(
                             candidate_id,
                             target_id,
@@ -1701,12 +1868,36 @@ def run(root: Path, fit_workers: int) -> dict[str, Any]:
                         )
                         fit_counts["inner"] += int(eligible_count) * len(CONFIGS[candidate_id])
                         inner_rows_out.extend(evidence)
-                        selection_rows.append(selection_row(candidate_id, target_id, scenario_id, outer_origin, selected, selection_method, scores, eligible_count, len(inner_group), outer_pool))
+                        selected_row = selection_row(candidate_id, target_id, scenario_id, outer_origin, selected, selection_method, scores, eligible_count, len(inner_group), outer_pool)
+                        selection_rows.append(selected_row)
                         prediction = fit_predict(candidate_id, selected, outer_pool, formal_group, model_features)
                         fit_counts["outer"] += 1
+                        group_oof_rows: list[dict[str, Any]] = []
                         for row, pred in zip(formal_group.itertuples(index=False), prediction):
-                            model_oof_rows.append(model_oof_row(candidate_id, target_id, scenario_id, outer_origin, row, float(pred), selected, selection_method, len(outer_pool)))
+                            group_oof_rows.append(model_oof_row(candidate_id, target_id, scenario_id, outer_origin, row, float(pred), selected, selection_method, len(outer_pool)))
+                        model_oof_rows.extend(group_oof_rows)
+                        save_checkpoint_group(
+                            checkpoint_dir,
+                            checkpoint_id,
+                            checkpoint_key,
+                            selected_row,
+                            evidence,
+                            group_oof_rows,
+                            eligible_count,
+                            len(CONFIGS[candidate_id]),
+                        )
+                        checkpoint_groups[checkpoint_key] = {
+                            "fit_counts": {"inner": int(eligible_count * len(CONFIGS[candidate_id])), "outer": 1},
+                            "selection_row": selected_row,
+                            "inner_evidence": evidence,
+                            "oof_rows": group_oof_rows,
+                        }
+                        newly_completed_groups += 1
                         print(f"[{PLAN_ID}] {candidate_id}/{target_id}/{scenario_id}/{outer_origin}: selected={selected['config_id']} method={selection_method} eligible={eligible_count}", flush=True)
+                        if stop_after_groups is not None and newly_completed_groups >= stop_after_groups:
+                            raise CheckpointPause(
+                                f"saved {newly_completed_groups} new group(s); resume from {checkpoint_dir}"
+                            )
 
     learner_oof = pd.DataFrame(model_oof_rows)
     selection_frame = pd.DataFrame(selection_rows)
@@ -1870,7 +2061,11 @@ def run(root: Path, fit_workers: int) -> dict[str, Any]:
 def main() -> None:
     args = parse_args()
     root = args.root.resolve() if args.root else Path(__file__).resolve().parents[1]
-    summary = run(root, args.fit_workers)
+    try:
+        summary = run(root, args.fit_workers, args.stop_after_groups)
+    except CheckpointPause as exc:
+        print(json.dumps({"plan_id": PLAN_ID, "status": "CHECKPOINT_PAUSED", "message": str(exc)}, ensure_ascii=False), flush=True)
+        return
     print(json.dumps({"plan_id": PLAN_ID, "status": summary["status"], "duration_seconds": summary["runtime"]["duration_seconds"]}, ensure_ascii=False), flush=True)
 
 
