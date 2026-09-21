@@ -113,6 +113,17 @@ registered 路径已保留实验与 candidate evidence，但未形成可直接�
 - full historical F4 reproduction debt。
 - 一个旧 S5 半成品模型仍在独立运行；它不是 S7 blocker。未来结果只作为 late supplemental evidence 合并，除非出现足以实质改变 current final-solution conclusion 的证据。
 
+## Supplemental Jump Investigation
+
+- S7 Supplemental Jump Event Study 已由 Main 复核，worker commit：`7b35fec79e3b4b2e1145127fa415b9aa8deb83ca`，结论正式接受为 **`H_JUMP_RISK_IDENTIFIABLE_BUT_NOT_DEPLOYABLE`**。
+- 该 investigation 没有训练 classifier / hurdle / mixture / magnitude model，也没有生成新 2023 prediction 或 submission；frozen S6 final solution 不变。
+- q90 jump label 使用 outer-training universe 内 `pseudo_target_year <= T-2` 定义，没有使用当前 outer target 调 threshold；primary sample 有 68 个 unique jump positives，只有 6/11 origins 至少有 2 个 positives，且事件明显集中在少数年份。
+- F4 remaining-tail relevance 成立：jump rows 的 F4 MSE 约为 normal rows 的 `23.29×`（R1）/`25.66×`（R2），说明 unresolved error 确实集中在 structural-surprise regime。
+- 但 precursor gate 失败：预注册 population / employment / sector / density / urbanization / wage / living-standard 等 pre-origin features 中，没有 feature 在跨-origin稳定性与 R1/R2 robustness 上通过 Gate B/C。部分 pooled AUC / standardized difference 看似有方向，但 origin-level consistency 不足，不能升级为 deployable jump detector。
+- 旧 Plan06B CatBoost F2 的 conditional re-analysis 也未通过 Gate D：pooled jump rows 相对 B3 仍恶化约 `5.29%`（R1）/`6.81%`（R2），normal rows 恶化更明显；虽然 jump stratum 在 6/11 origins 局部获胜，但不足以支持“先识别 jump 再用 F2 修正”的可部署结构。
+- Main 决定：**关闭 supplemental jump-model track**。不再授权 jump classifier、hurdle/mixture、direction/magnitude model、city routing 或基于已知 worst-city 的条件修正。该结果作为一个重要 limitation 保留到 S7 Defense/Transfer：本题可识别“哪里风险高/哪里 tail 集中”，但现有合法信息不足以稳定提前识别具体 jump event。
+- 只有未来出现新的、合法且 materially stronger pre-origin evidence，才允许 Main 重新评估；现有证据本身不构成 reopening 条件。
+
 ## S7 Entry Point
 
 S7 中心问题：
