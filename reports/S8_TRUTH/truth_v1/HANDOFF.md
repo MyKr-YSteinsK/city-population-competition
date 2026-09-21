@@ -3,10 +3,8 @@
 Status: S8_TRUTH_V1_PROVISIONAL_FREEZE
 Branch: codex/s8-truth-reconstruction-v1
 Base SHA: 0a74372ea4e3555b3d659e6a2c77647b92eabea4
-Final Commit SHA: PENDING_ARTIFACT_COMMIT
-Working tree at generation: ?? reports/S8_TRUTH/
-?? scripts/build_s8_truth_v1.py
-?? scripts/validate_s8_truth_v1.py
+Final Commit SHA: 2560c6e4b78c4d24eae2119b9eaab5a025af54e7
+Working tree at generation: M reports/S8_TRUTH/truth_v1/S8_TRUTH_RECONSTRUCTION_REPORT.md
 
 Truth version: candidate_truth_2023_v1
 Truth SHA256 evaluator: 026c2c4723eadad8ae8519586e0a146d47b1bd0525fde315aa4ec4994e86927d

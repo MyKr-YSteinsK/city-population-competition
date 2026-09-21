@@ -62,4 +62,4 @@ and because the city40 identity/registered conflict remains explicit.
 Run python scripts/build_s8_truth_v1.py --input-root <data-root> --repo-root <worktree-root>.
 Outputs are under reports/S8_TRUTH/truth_v1.
 
-Artifact commit at generation time: not yet committed.
+Artifact commit at generation time: 2560c6e4b78c4d24eae2119b9eaab5a025af54e7.
