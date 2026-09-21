@@ -1,0 +1,5 @@
+city_id,real_city,province,conflict_type,indicator,competition_year,real_year,primary_value,alternate_value,primary_source_id,alternate_source_id,severity,resolution_status,resolution_note
+city3,深圳,广东,REGISTERED_FIELD_MISMATCH,registered_population,2021,2020,514,584.5791,SRC_COMP_POP,SRC_GD_CENSUS_2020,MATERIAL,UNRESOLVED_RETAIN_RAW,Raw competition value is preserved; no city correction is applied.
+city40,镇江,江苏,REGISTERED_FIELD_MISMATCH,registered_population,2021,2020,65,269.25,SRC_COMP_POP,SRC_JS_YEARBOOK_2020,MATERIAL,UNRESOLVED_RETAIN_RAW,Raw competition value is preserved; no city correction is applied.
+city12,泰州,江苏,CHINESE_NAME_COLLISION,city_name,2021,2020,泰州,台州,SRC_COMP_POP,SRC_ZJ_CENSUS_2020,MINOR,RESOLVED_BY_PROVINCE_AND_FINGERPRINT,Jiangsu Taizhou selected; Zhejiang Taizhou is city29.
+city29,台州,浙江,CHINESE_NAME_COLLISION,city_name,2021,2020,台州,泰州,SRC_COMP_POP,SRC_JS_CENSUS_2020,MINOR,RESOLVED_BY_PROVINCE_AND_FINGERPRINT,Zhejiang Taizhou selected; Jiangsu Taizhou is city12.

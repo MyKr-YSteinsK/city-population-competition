@@ -1,0 +1,58 @@
+{
+  "truth_version": "candidate_truth_2023_v1",
+  "plan_id": "S8-Plan01",
+  "base_commit": "0a74372ea4e3555b3d659e6a2c77647b92eabea4",
+  "branch": "codex/s8-truth-reconstruction-v1",
+  "generation_script": "scripts/build_s8_truth_v1.py",
+  "generated_at": "2026-09-21T18:00:00+08:00",
+  "competition_target_year": 2023,
+  "real_statistical_year": 2022,
+  "target_semantics": "RESIDENT_POPULATION",
+  "unit": "raw 万人; evaluator integer 万人",
+  "rounding_rule": "ROUND_HALF_UP_TO_INTEGER_WAN",
+  "city_count": 40,
+  "resolved_city_count": 40,
+  "provisional_city_count": 1,
+  "unresolved_city_count": 0,
+  "source_count": 29,
+  "tier1_source_count": 15,
+  "fallback_source_count": 9,
+  "truth_file": "candidate_truth_2023_v1_evaluator.csv",
+  "truth_sha256": "026c2c4723eadad8ae8519586e0a146d47b1bd0525fde315aa4ec4994e86927d",
+  "full_truth_file": "candidate_truth_2023_v1.csv",
+  "full_truth_sha256": "52f303a9a1f1cf08d8a0b3a1e67abf0e31e7d48896761606b6749fa5eefcfb38",
+  "evidence_files": [
+    "competition_city_fingerprints.csv",
+    "source_ledger.csv",
+    "city_identity_evidence.csv",
+    "city_identity_mapping.csv",
+    "year_alignment_evidence.csv",
+    "year_alignment_summary.csv",
+    "target_semantics_evidence.csv",
+    "target_semantics_summary.json",
+    "statistical_revision_ledger.csv",
+    "candidate_truth_2023_raw.csv",
+    "truth_conflicts.csv",
+    "rounding_unit_evidence.csv",
+    "candidate_truth_2023_v1.csv",
+    "candidate_truth_2023_v1_evaluator.csv"
+  ],
+  "known_conflicts": [
+    "city3 registered population mismatch retained",
+    "city40 registered population 2021 value 65 retained and mapping provisional",
+    "city12/city29 Taizhou name collision resolved by province and fingerprint",
+    "Tier-3 2022 values keep freeze provisional"
+  ],
+  "usage_scope": [
+    "POST_HOC_HIDDEN_EVALUATOR_ONLY",
+    "NOT_FOR_MODEL_SELECTION",
+    "NOT_SHARED_WITH_S9"
+  ],
+  "freeze_status": "S8_TRUTH_V1_PROVISIONAL_FREEZE",
+  "isolation": {
+    "s9_branch_read": false,
+    "s9_predictions_read": false,
+    "model_evaluation_performed": false,
+    "test_xls_accessed": false
+  }
+}

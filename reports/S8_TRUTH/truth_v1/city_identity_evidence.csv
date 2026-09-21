@@ -1,0 +1,241 @@
+city_id,candidate_real_city,province,evidence_type,competition_year,competition_value,real_year,real_value,unit,source_id,match_description,supports_or_conflicts,evidence_strength,notes
+city1,湖州,浙江,MULTIYEAR_POPULATION_TRAJECTORY,2018,300,2017,299.5,万人,SRC_HIST_ZJ,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city1,湖州,浙江,MULTIYEAR_POPULATION_TRAJECTORY,2019,303,2018,302.7,万人,SRC_HIST_ZJ,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city1,湖州,浙江,CENSUS_POPULATION_ANCHOR,2021,337,2020,336.7579,万人,SRC_ZJ_CENSUS_2020,2021 competition resident value rounds to the 2020 census anchor,SUPPORTS,HIGH,Persons converted to 万人 for comparison.
+city1,湖州,浙江,REGISTERED_POPULATION_STRUCTURE,2021,268,2020,268.06,万人,SRC_ZJ_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,registered is retained as an independent comparator
+city1,湖州,浙江,URBANIZATION_STRUCTURE,2021,66,2020,65.6,%,SRC_ZJ_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,urbanization is independent structural evidence
+city1,湖州,浙江,DENSITY_STRUCTURE,2021,587,2020,579.4,人/平方公里,SRC_ZJ_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,MEDIUM,density is independent structural evidence
+city2,无锡,江苏,MULTIYEAR_POPULATION_TRAJECTORY,2018,655,2017,655.3,万人,SRC_HIST_JS,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city2,无锡,江苏,MULTIYEAR_POPULATION_TRAJECTORY,2019,657,2018,657.45,万人,SRC_HIST_JS,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city2,无锡,江苏,CENSUS_POPULATION_ANCHOR,2021,746,2020,746.2135,万人,SRC_JS_CENSUS_2020,2021 competition resident value rounds to the 2020 census anchor,SUPPORTS,HIGH,Persons converted to 万人 for comparison.
+city2,无锡,江苏,REGISTERED_POPULATION_STRUCTURE,2021,509,2020,508.97,万人,SRC_JS_YEARBOOK_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,registered is retained as an independent comparator
+city2,无锡,江苏,URBANIZATION_STRUCTURE,2021,83,2020,82.8,%,SRC_JS_YEARBOOK_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,urbanization is independent structural evidence
+city2,无锡,江苏,DENSITY_STRUCTURE,2021,,2020,1612,人/平方公里,SRC_JS_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,CONFLICTS,MEDIUM,density is independent structural evidence
+city3,深圳,广东,MULTIYEAR_POPULATION_TRAJECTORY,2018,1587,2017,1252.83,万人,SRC_HIST_GD,historical annual trajectory cross-check,CONFLICTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city3,深圳,广东,MULTIYEAR_POPULATION_TRAJECTORY,2019,1666,2018,1302.66,万人,SRC_HIST_GD,historical annual trajectory cross-check,CONFLICTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city3,深圳,广东,CENSUS_POPULATION_ANCHOR,2021,1763,2020,1756.0061,万人,SRC_GD_CENSUS_2020,2021 competition resident value rounds to the 2020 census anchor,CONFLICTS,HIGH,Persons converted to 万人 for comparison.
+city3,深圳,广东,REGISTERED_POPULATION_STRUCTURE,2021,514,2020,584.5791,万人,SRC_GD_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,CONFLICTS,HIGH,registered is retained as an independent comparator
+city3,深圳,广东,URBANIZATION_STRUCTURE,2021,100,2020,99.54,%,SRC_GD_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,urbanization is independent structural evidence
+city3,深圳,广东,DENSITY_STRUCTURE,2021,8901,2020,8760,人/平方公里,SRC_GD_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,MEDIUM,density is independent structural evidence
+city4,舟山,浙江,MULTIYEAR_POPULATION_TRAJECTORY,2018,117,2017,116.8,万人,SRC_HIST_ZJ,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city4,舟山,浙江,MULTIYEAR_POPULATION_TRAJECTORY,2019,117,2018,117.3,万人,SRC_HIST_ZJ,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city4,舟山,浙江,CENSUS_POPULATION_ANCHOR,2021,116,2020,115.7817,万人,SRC_ZJ_CENSUS_2020,2021 competition resident value rounds to the 2020 census anchor,SUPPORTS,HIGH,Persons converted to 万人 for comparison.
+city4,舟山,浙江,REGISTERED_POPULATION_STRUCTURE,2021,96,2020,96.2,万人,SRC_ZJ_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,registered is retained as an independent comparator
+city4,舟山,浙江,URBANIZATION_STRUCTURE,2021,72,2020,71.9,%,SRC_ZJ_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,urbanization is independent structural evidence
+city4,舟山,浙江,DENSITY_STRUCTURE,2021,777,2020,794.4,人/平方公里,SRC_ZJ_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,CONFLICTS,MEDIUM,density is independent structural evidence
+city5,苏州,江苏,MULTIYEAR_POPULATION_TRAJECTORY,2018,1068,2017,1068.36,万人,SRC_HIST_JS,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city5,苏州,江苏,MULTIYEAR_POPULATION_TRAJECTORY,2019,1072,2018,1072.17,万人,SRC_HIST_JS,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city5,苏州,江苏,CENSUS_POPULATION_ANCHOR,2021,1275,2020,1274.8262,万人,SRC_JS_CENSUS_2020,2021 competition resident value rounds to the 2020 census anchor,SUPPORTS,HIGH,Persons converted to 万人 for comparison.
+city5,苏州,江苏,REGISTERED_POPULATION_STRUCTURE,2021,744,2020,744.33,万人,SRC_JS_YEARBOOK_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,registered is retained as an independent comparator
+city5,苏州,江苏,URBANIZATION_STRUCTURE,2021,82,2020,81.7,%,SRC_JS_YEARBOOK_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,urbanization is independent structural evidence
+city5,苏州,江苏,DENSITY_STRUCTURE,2021,,2020,1470,人/平方公里,SRC_JS_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,CONFLICTS,MEDIUM,density is independent structural evidence
+city6,佛山,广东,MULTIYEAR_POPULATION_TRAJECTORY,2018,900,2017,765.67,万人,SRC_HIST_GD,historical annual trajectory cross-check,CONFLICTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city6,佛山,广东,MULTIYEAR_POPULATION_TRAJECTORY,2019,926,2018,790.57,万人,SRC_HIST_GD,historical annual trajectory cross-check,CONFLICTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city6,佛山,广东,CENSUS_POPULATION_ANCHOR,2021,952,2020,949.8863,万人,SRC_GD_CENSUS_2020,2021 competition resident value rounds to the 2020 census anchor,CONFLICTS,HIGH,Persons converted to 万人 for comparison.
+city6,佛山,广东,REGISTERED_POPULATION_STRUCTURE,2021,474,2020,473.7736,万人,SRC_GD_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,registered is retained as an independent comparator
+city6,佛山,广东,URBANIZATION_STRUCTURE,2021,95,2020,95.2,%,SRC_GD_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,urbanization is independent structural evidence
+city6,佛山,广东,DENSITY_STRUCTURE,2021,2531,2020,2501,人/平方公里,SRC_GD_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,MEDIUM,density is independent structural evidence
+city7,绍兴,浙江,MULTIYEAR_POPULATION_TRAJECTORY,2018,501,2017,501,万人,SRC_HIST_ZJ,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city7,绍兴,浙江,MULTIYEAR_POPULATION_TRAJECTORY,2019,504,2018,503.5,万人,SRC_HIST_ZJ,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city7,绍兴,浙江,CENSUS_POPULATION_ANCHOR,2021,527,2020,527.0977,万人,SRC_ZJ_CENSUS_2020,2021 competition resident value rounds to the 2020 census anchor,SUPPORTS,HIGH,Persons converted to 万人 for comparison.
+city7,绍兴,浙江,REGISTERED_POPULATION_STRUCTURE,2021,448,2020,447.64,万人,SRC_ZJ_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,registered is retained as an independent comparator
+city7,绍兴,浙江,URBANIZATION_STRUCTURE,2021,71,2020,71,%,SRC_ZJ_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,urbanization is independent structural evidence
+city7,绍兴,浙江,DENSITY_STRUCTURE,2021,643,2020,639.1,人/平方公里,SRC_ZJ_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,MEDIUM,density is independent structural evidence
+city8,淮安,江苏,MULTIYEAR_POPULATION_TRAJECTORY,2018,491,2017,491.4,万人,SRC_HIST_JS,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city8,淮安,江苏,MULTIYEAR_POPULATION_TRAJECTORY,2019,493,2018,492.5,万人,SRC_HIST_JS,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city8,淮安,江苏,CENSUS_POPULATION_ANCHOR,2021,456,2020,455.623,万人,SRC_JS_CENSUS_2020,2021 competition resident value rounds to the 2020 census anchor,SUPPORTS,HIGH,Persons converted to 万人 for comparison.
+city8,淮安,江苏,REGISTERED_POPULATION_STRUCTURE,2021,558,2020,557.97,万人,SRC_JS_YEARBOOK_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,registered is retained as an independent comparator
+city8,淮安,江苏,URBANIZATION_STRUCTURE,2021,66,2020,65.7,%,SRC_JS_YEARBOOK_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,urbanization is independent structural evidence
+city8,淮安,江苏,DENSITY_STRUCTURE,2021,,2020,459,人/平方公里,SRC_JS_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,CONFLICTS,MEDIUM,density is independent structural evidence
+city9,茂名,广东,MULTIYEAR_POPULATION_TRAJECTORY,2018,599,2017,620.41,万人,SRC_HIST_GD,historical annual trajectory cross-check,CONFLICTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city9,茂名,广东,MULTIYEAR_POPULATION_TRAJECTORY,2019,606,2018,631.32,万人,SRC_HIST_GD,historical annual trajectory cross-check,CONFLICTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city9,茂名,广东,CENSUS_POPULATION_ANCHOR,2021,618,2020,617.405,万人,SRC_GD_CENSUS_2020,2021 competition resident value rounds to the 2020 census anchor,SUPPORTS,HIGH,Persons converted to 万人 for comparison.
+city9,茂名,广东,REGISTERED_POPULATION_STRUCTURE,2021,823,2020,823.2969,万人,SRC_GD_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,registered is retained as an independent comparator
+city9,茂名,广东,URBANIZATION_STRUCTURE,2021,44,2020,43.56,%,SRC_GD_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,urbanization is independent structural evidence
+city9,茂名,广东,DENSITY_STRUCTURE,2021,543,2020,539,人/平方公里,SRC_GD_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,MEDIUM,density is independent structural evidence
+city10,丽水,浙江,MULTIYEAR_POPULATION_TRAJECTORY,2018,219,2017,218.6,万人,SRC_HIST_ZJ,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city10,丽水,浙江,MULTIYEAR_POPULATION_TRAJECTORY,2019,220,2018,219.9,万人,SRC_HIST_ZJ,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city10,丽水,浙江,CENSUS_POPULATION_ANCHOR,2021,251,2020,250.7396,万人,SRC_ZJ_CENSUS_2020,2021 competition resident value rounds to the 2020 census anchor,SUPPORTS,HIGH,Persons converted to 万人 for comparison.
+city10,丽水,浙江,REGISTERED_POPULATION_STRUCTURE,2021,271,2020,270.74,万人,SRC_ZJ_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,registered is retained as an independent comparator
+city10,丽水,浙江,URBANIZATION_STRUCTURE,2021,62,2020,61.8,%,SRC_ZJ_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,urbanization is independent structural evidence
+city10,丽水,浙江,DENSITY_STRUCTURE,2021,145,2020,145.2,人/平方公里,SRC_ZJ_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,MEDIUM,density is independent structural evidence
+city11,嘉兴,浙江,MULTIYEAR_POPULATION_TRAJECTORY,2018,466,2017,465.6,万人,SRC_HIST_ZJ,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city11,嘉兴,浙江,MULTIYEAR_POPULATION_TRAJECTORY,2019,473,2018,472.6,万人,SRC_HIST_ZJ,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city11,嘉兴,浙江,CENSUS_POPULATION_ANCHOR,2021,540,2020,540.0868,万人,SRC_ZJ_CENSUS_2020,2021 competition resident value rounds to the 2020 census anchor,SUPPORTS,HIGH,Persons converted to 万人 for comparison.
+city11,嘉兴,浙江,REGISTERED_POPULATION_STRUCTURE,2021,367,2020,367.38,万人,SRC_ZJ_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,registered is retained as an independent comparator
+city11,嘉兴,浙江,URBANIZATION_STRUCTURE,2021,71,2020,71.3,%,SRC_ZJ_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,urbanization is independent structural evidence
+city11,嘉兴,浙江,DENSITY_STRUCTURE,2021,1313,2020,1281.3,人/平方公里,SRC_ZJ_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,CONFLICTS,MEDIUM,density is independent structural evidence
+city12,泰州,江苏,MULTIYEAR_POPULATION_TRAJECTORY,2018,465,2017,465.19,万人,SRC_HIST_JS,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city12,泰州,江苏,MULTIYEAR_POPULATION_TRAJECTORY,2019,464,2018,463.57,万人,SRC_HIST_JS,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city12,泰州,江苏,CENSUS_POPULATION_ANCHOR,2021,452,2020,451.2762,万人,SRC_JS_CENSUS_2020,2021 competition resident value rounds to the 2020 census anchor,SUPPORTS,HIGH,Persons converted to 万人 for comparison.
+city12,泰州,江苏,REGISTERED_POPULATION_STRUCTURE,2021,497,2020,497.15,万人,SRC_JS_YEARBOOK_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,registered is retained as an independent comparator
+city12,泰州,江苏,URBANIZATION_STRUCTURE,2021,68,2020,68.1,%,SRC_JS_YEARBOOK_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,urbanization is independent structural evidence
+city12,泰州,江苏,DENSITY_STRUCTURE,2021,,2020,781,人/平方公里,SRC_JS_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,CONFLICTS,MEDIUM,density is independent structural evidence
+city13,宿迁,江苏,MULTIYEAR_POPULATION_TRAJECTORY,2018,491,2017,491.46,万人,SRC_HIST_JS,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city13,宿迁,江苏,MULTIYEAR_POPULATION_TRAJECTORY,2019,493,2018,492.59,万人,SRC_HIST_JS,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city13,宿迁,江苏,CENSUS_POPULATION_ANCHOR,2021,499,2020,498.6192,万人,SRC_JS_CENSUS_2020,2021 competition resident value rounds to the 2020 census anchor,SUPPORTS,HIGH,Persons converted to 万人 for comparison.
+city13,宿迁,江苏,REGISTERED_POPULATION_STRUCTURE,2021,592,2020,592.1,万人,SRC_JS_YEARBOOK_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,registered is retained as an independent comparator
+city13,宿迁,江苏,URBANIZATION_STRUCTURE,2021,62,2020,62.2,%,SRC_JS_YEARBOOK_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,urbanization is independent structural evidence
+city13,宿迁,江苏,DENSITY_STRUCTURE,2021,,2020,584,人/平方公里,SRC_JS_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,CONFLICTS,MEDIUM,density is independent structural evidence
+city14,河源,广东,MULTIYEAR_POPULATION_TRAJECTORY,2018,287,2017,309.11,万人,SRC_HIST_GD,historical annual trajectory cross-check,CONFLICTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city14,河源,广东,MULTIYEAR_POPULATION_TRAJECTORY,2019,286,2018,309.39,万人,SRC_HIST_GD,historical annual trajectory cross-check,CONFLICTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city14,河源,广东,CENSUS_POPULATION_ANCHOR,2021,284,2020,283.7686,万人,SRC_GD_CENSUS_2020,2021 competition resident value rounds to the 2020 census anchor,SUPPORTS,HIGH,Persons converted to 万人 for comparison.
+city14,河源,广东,REGISTERED_POPULATION_STRUCTURE,2021,372,2020,372.1774,万人,SRC_GD_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,registered is retained as an independent comparator
+city14,河源,广东,URBANIZATION_STRUCTURE,2021,49,2020,48.5,%,SRC_GD_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,urbanization is independent structural evidence
+city14,河源,广东,DENSITY_STRUCTURE,2021,181,2020,181,人/平方公里,SRC_GD_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,MEDIUM,density is independent structural evidence
+city15,徐州,江苏,MULTIYEAR_POPULATION_TRAJECTORY,2018,875,2017,876.35,万人,SRC_HIST_JS,historical annual trajectory cross-check,CONFLICTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city15,徐州,江苏,MULTIYEAR_POPULATION_TRAJECTORY,2019,880,2018,880.2,万人,SRC_HIST_JS,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city15,徐州,江苏,CENSUS_POPULATION_ANCHOR,2021,905,2020,908.379,万人,SRC_JS_CENSUS_2020,2021 competition resident value rounds to the 2020 census anchor,CONFLICTS,HIGH,Persons converted to 万人 for comparison.
+city15,徐州,江苏,REGISTERED_POPULATION_STRUCTURE,2021,1035,2020,1038.05,万人,SRC_JS_YEARBOOK_2020,2021 competition structure compared with 2020 mapped-city source,CONFLICTS,HIGH,registered is retained as an independent comparator
+city15,徐州,江苏,URBANIZATION_STRUCTURE,2021,66,2020,65.6,%,SRC_JS_YEARBOOK_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,urbanization is independent structural evidence
+city15,徐州,江苏,DENSITY_STRUCTURE,2021,,2020,771,人/平方公里,SRC_JS_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,CONFLICTS,MEDIUM,density is independent structural evidence
+city16,韶关,广东,MULTIYEAR_POPULATION_TRAJECTORY,2018,285,2017,297.92,万人,SRC_HIST_GD,historical annual trajectory cross-check,CONFLICTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city16,韶关,广东,MULTIYEAR_POPULATION_TRAJECTORY,2019,285,2018,299.76,万人,SRC_HIST_GD,historical annual trajectory cross-check,CONFLICTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city16,韶关,广东,CENSUS_POPULATION_ANCHOR,2021,285,2020,285.5131,万人,SRC_GD_CENSUS_2020,2021 competition resident value rounds to the 2020 census anchor,SUPPORTS,HIGH,Persons converted to 万人 for comparison.
+city16,韶关,广东,REGISTERED_POPULATION_STRUCTURE,2021,335,2020,336.5996,万人,SRC_GD_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,CONFLICTS,HIGH,registered is retained as an independent comparator
+city16,韶关,广东,URBANIZATION_STRUCTURE,2021,57,2020,57.33,%,SRC_GD_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,urbanization is independent structural evidence
+city16,韶关,广东,DENSITY_STRUCTURE,2021,155,2020,157,人/平方公里,SRC_GD_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,MEDIUM,density is independent structural evidence
+city17,广州,广东,MULTIYEAR_POPULATION_TRAJECTORY,2018,1745,2017,1449.84,万人,SRC_HIST_GD,historical annual trajectory cross-check,CONFLICTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city17,广州,广东,MULTIYEAR_POPULATION_TRAJECTORY,2019,1795,2018,1490.44,万人,SRC_HIST_GD,historical annual trajectory cross-check,CONFLICTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city17,广州,广东,CENSUS_POPULATION_ANCHOR,2021,1870,2020,1867.6605,万人,SRC_GD_CENSUS_2020,2021 competition resident value rounds to the 2020 census anchor,CONFLICTS,HIGH,Persons converted to 万人 for comparison.
+city17,广州,广东,REGISTERED_POPULATION_STRUCTURE,2021,980,2020,985.1142,万人,SRC_GD_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,CONFLICTS,HIGH,registered is retained as an independent comparator
+city17,广州,广东,URBANIZATION_STRUCTURE,2021,86,2020,86.19,%,SRC_GD_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,urbanization is independent structural evidence
+city17,广州,广东,DENSITY_STRUCTURE,2021,2595,2020,2512,人/平方公里,SRC_GD_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,CONFLICTS,MEDIUM,density is independent structural evidence
+city18,常州,江苏,MULTIYEAR_POPULATION_TRAJECTORY,2018,470,2017,471.73,万人,SRC_HIST_JS,historical annual trajectory cross-check,CONFLICTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city18,常州,江苏,MULTIYEAR_POPULATION_TRAJECTORY,2019,470,2018,472.86,万人,SRC_HIST_JS,historical annual trajectory cross-check,CONFLICTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city18,常州,江苏,CENSUS_POPULATION_ANCHOR,2021,525,2020,527.8121,万人,SRC_JS_CENSUS_2020,2021 competition resident value rounds to the 2020 census anchor,CONFLICTS,HIGH,Persons converted to 万人 for comparison.
+city18,常州,江苏,REGISTERED_POPULATION_STRUCTURE,2021,385,2020,386.63,万人,SRC_JS_YEARBOOK_2020,2021 competition structure compared with 2020 mapped-city source,CONFLICTS,HIGH,registered is retained as an independent comparator
+city18,常州,江苏,URBANIZATION_STRUCTURE,2021,77,2020,77.1,%,SRC_JS_YEARBOOK_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,urbanization is independent structural evidence
+city18,常州,江苏,DENSITY_STRUCTURE,2021,,2020,1207,人/平方公里,SRC_JS_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,CONFLICTS,MEDIUM,density is independent structural evidence
+city19,金华,浙江,MULTIYEAR_POPULATION_TRAJECTORY,2018,555,2017,556.4,万人,SRC_HIST_ZJ,historical annual trajectory cross-check,CONFLICTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city19,金华,浙江,MULTIYEAR_POPULATION_TRAJECTORY,2019,560,2018,560.4,万人,SRC_HIST_ZJ,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city19,金华,浙江,CENSUS_POPULATION_ANCHOR,2021,705,2020,705.0683,万人,SRC_ZJ_CENSUS_2020,2021 competition resident value rounds to the 2020 census anchor,SUPPORTS,HIGH,Persons converted to 万人 for comparison.
+city19,金华,浙江,REGISTERED_POPULATION_STRUCTURE,2021,495,2020,493.9,万人,SRC_ZJ_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,CONFLICTS,HIGH,registered is retained as an independent comparator
+city19,金华,浙江,URBANIZATION_STRUCTURE,2021,68,2020,68.2,%,SRC_ZJ_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,urbanization is independent structural evidence
+city19,金华,浙江,DENSITY_STRUCTURE,2021,650,2020,645.4,人/平方公里,SRC_ZJ_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,MEDIUM,density is independent structural evidence
+city20,衢州,浙江,MULTIYEAR_POPULATION_TRAJECTORY,2018,220,2017,218.5,万人,SRC_HIST_ZJ,historical annual trajectory cross-check,CONFLICTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city20,衢州,浙江,MULTIYEAR_POPULATION_TRAJECTORY,2019,220,2018,220.9,万人,SRC_HIST_ZJ,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city20,衢州,浙江,CENSUS_POPULATION_ANCHOR,2021,225,2020,227.6184,万人,SRC_ZJ_CENSUS_2020,2021 competition resident value rounds to the 2020 census anchor,CONFLICTS,HIGH,Persons converted to 万人 for comparison.
+city20,衢州,浙江,REGISTERED_POPULATION_STRUCTURE,2021,255,2020,256.87,万人,SRC_ZJ_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,CONFLICTS,HIGH,registered is retained as an independent comparator
+city20,衢州,浙江,URBANIZATION_STRUCTURE,2021,58,2020,57.6,%,SRC_ZJ_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,urbanization is independent structural evidence
+city20,衢州,浙江,DENSITY_STRUCTURE,2021,255,2020,257.5,人/平方公里,SRC_ZJ_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,MEDIUM,density is independent structural evidence
+city21,杭州,浙江,MULTIYEAR_POPULATION_TRAJECTORY,2018,947,2017,946.8,万人,SRC_HIST_ZJ,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city21,杭州,浙江,MULTIYEAR_POPULATION_TRAJECTORY,2019,981,2018,980.6,万人,SRC_HIST_ZJ,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city21,杭州,浙江,CENSUS_POPULATION_ANCHOR,2021,1194,2020,1193.601,万人,SRC_ZJ_CENSUS_2020,2021 competition resident value rounds to the 2020 census anchor,SUPPORTS,HIGH,Persons converted to 万人 for comparison.
+city21,杭州,浙江,REGISTERED_POPULATION_STRUCTURE,2021,814,2020,813.83,万人,SRC_ZJ_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,registered is retained as an independent comparator
+city21,杭州,浙江,URBANIZATION_STRUCTURE,2021,84,2020,83.3,%,SRC_ZJ_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,urbanization is independent structural evidence
+city21,杭州,浙江,DENSITY_STRUCTURE,2021,706,2020,710,人/平方公里,SRC_ZJ_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,MEDIUM,density is independent structural evidence
+city22,南京,江苏,MULTIYEAR_POPULATION_TRAJECTORY,2018,834,2017,833.5,万人,SRC_HIST_JS,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city22,南京,江苏,MULTIYEAR_POPULATION_TRAJECTORY,2019,844,2018,843.62,万人,SRC_HIST_JS,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city22,南京,江苏,CENSUS_POPULATION_ANCHOR,2021,932,2020,931.4685,万人,SRC_JS_CENSUS_2020,2021 competition resident value rounds to the 2020 census anchor,SUPPORTS,HIGH,Persons converted to 万人 for comparison.
+city22,南京,江苏,REGISTERED_POPULATION_STRUCTURE,2021,723,2020,722.57,万人,SRC_JS_YEARBOOK_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,registered is retained as an independent comparator
+city22,南京,江苏,URBANIZATION_STRUCTURE,2021,87,2020,86.8,%,SRC_JS_YEARBOOK_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,urbanization is independent structural evidence
+city22,南京,江苏,DENSITY_STRUCTURE,2021,,2020,1412,人/平方公里,SRC_JS_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,CONFLICTS,MEDIUM,density is independent structural evidence
+city23,珠海,广东,MULTIYEAR_POPULATION_TRAJECTORY,2018,207,2017,176.54,万人,SRC_HIST_GD,historical annual trajectory cross-check,CONFLICTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city23,珠海,广东,MULTIYEAR_POPULATION_TRAJECTORY,2019,221,2018,189.11,万人,SRC_HIST_GD,historical annual trajectory cross-check,CONFLICTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city23,珠海,广东,CENSUS_POPULATION_ANCHOR,2021,245,2020,243.9585,万人,SRC_GD_CENSUS_2020,2021 competition resident value rounds to the 2020 census anchor,CONFLICTS,HIGH,Persons converted to 万人 for comparison.
+city23,珠海,广东,REGISTERED_POPULATION_STRUCTURE,2021,139,2020,139.2176,万人,SRC_GD_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,registered is retained as an independent comparator
+city23,珠海,广东,URBANIZATION_STRUCTURE,2021,91,2020,90.47,%,SRC_GD_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,urbanization is independent structural evidence
+city23,珠海,广东,DENSITY_STRUCTURE,2021,1420,2020,1405,人/平方公里,SRC_GD_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,MEDIUM,density is independent structural evidence
+city24,济南,山东,MULTIYEAR_POPULATION_TRAJECTORY,2018,732,2017,732.12,万人,SRC_HIST_SD,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city24,济南,山东,MULTIYEAR_POPULATION_TRAJECTORY,2019,746,2018,746.04,万人,SRC_HIST_SD,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city24,济南,山东,CENSUS_POPULATION_ANCHOR,2021,920,2020,920.2432,万人,SRC_SD_CENSUS_2020,2021 competition resident value rounds to the 2020 census anchor,SUPPORTS,HIGH,Persons converted to 万人 for comparison.
+city24,济南,山东,REGISTERED_POPULATION_STRUCTURE,2021,807,2020,806.7252,万人,SRC_SD_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,registered is retained as an independent comparator
+city24,济南,山东,URBANIZATION_STRUCTURE,2021,74,2020,73.46,%,SRC_SD_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,urbanization is independent structural evidence
+city24,济南,山东,DENSITY_STRUCTURE,2021,1151,2020,902.1,人/平方公里,SRC_SD_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,CONFLICTS,MEDIUM,density is independent structural evidence
+city25,宁波,浙江,MULTIYEAR_POPULATION_TRAJECTORY,2018,801,2017,800.5,万人,SRC_HIST_ZJ,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city25,宁波,浙江,MULTIYEAR_POPULATION_TRAJECTORY,2019,820,2018,820.2,万人,SRC_HIST_ZJ,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city25,宁波,浙江,CENSUS_POPULATION_ANCHOR,2021,940,2020,940.4283,万人,SRC_ZJ_CENSUS_2020,2021 competition resident value rounds to the 2020 census anchor,SUPPORTS,HIGH,Persons converted to 万人 for comparison.
+city25,宁波,浙江,REGISTERED_POPULATION_STRUCTURE,2021,614,2020,613.66,万人,SRC_ZJ_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,registered is retained as an independent comparator
+city25,宁波,浙江,URBANIZATION_STRUCTURE,2021,78,2020,78,%,SRC_ZJ_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,urbanization is independent structural evidence
+city25,宁波,浙江,DENSITY_STRUCTURE,2021,960,2020,959.7,人/平方公里,SRC_ZJ_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,MEDIUM,density is independent structural evidence
+city26,南通,江苏,MULTIYEAR_POPULATION_TRAJECTORY,2018,731,2017,730.5,万人,SRC_HIST_JS,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city26,南通,江苏,MULTIYEAR_POPULATION_TRAJECTORY,2019,731,2018,731,万人,SRC_HIST_JS,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city26,南通,江苏,CENSUS_POPULATION_ANCHOR,2021,773,2020,772.6635,万人,SRC_JS_CENSUS_2020,2021 competition resident value rounds to the 2020 census anchor,SUPPORTS,HIGH,Persons converted to 万人 for comparison.
+city26,南通,江苏,REGISTERED_POPULATION_STRUCTURE,2021,756,2020,756.06,万人,SRC_JS_YEARBOOK_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,registered is retained as an independent comparator
+city26,南通,江苏,URBANIZATION_STRUCTURE,2021,71,2020,70.4,%,SRC_JS_YEARBOOK_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,urbanization is independent structural evidence
+city26,南通,江苏,DENSITY_STRUCTURE,2021,,2020,732,人/平方公里,SRC_JS_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,CONFLICTS,MEDIUM,density is independent structural evidence
+city27,汕头,广东,MULTIYEAR_POPULATION_TRAJECTORY,2018,548,2017,560.82,万人,SRC_HIST_GD,historical annual trajectory cross-check,CONFLICTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city27,汕头,广东,MULTIYEAR_POPULATION_TRAJECTORY,2019,549,2018,563.85,万人,SRC_HIST_GD,historical annual trajectory cross-check,CONFLICTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city27,汕头,广东,CENSUS_POPULATION_ANCHOR,2021,550,2020,550.2031,万人,SRC_GD_CENSUS_2020,2021 competition resident value rounds to the 2020 census anchor,SUPPORTS,HIGH,Persons converted to 万人 for comparison.
+city27,汕头,广东,REGISTERED_POPULATION_STRUCTURE,2021,576,2020,575.5585,万人,SRC_GD_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,registered is retained as an independent comparator
+city27,汕头,广东,URBANIZATION_STRUCTURE,2021,71,2020,70.7,%,SRC_GD_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,urbanization is independent structural evidence
+city27,汕头,广东,DENSITY_STRUCTURE,2021,2497,2020,2503,人/平方公里,SRC_GD_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,MEDIUM,density is independent structural evidence
+city28,青岛,山东,MULTIYEAR_POPULATION_TRAJECTORY,2018,972,2017,929.05,万人,SRC_HIST_SD,historical annual trajectory cross-check,CONFLICTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city28,青岛,山东,MULTIYEAR_POPULATION_TRAJECTORY,2019,981,2018,939.48,万人,SRC_HIST_SD,historical annual trajectory cross-check,CONFLICTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city28,青岛,山东,CENSUS_POPULATION_ANCHOR,2021,1011,2020,1007.1722,万人,SRC_SD_CENSUS_2020,2021 competition resident value rounds to the 2020 census anchor,CONFLICTS,HIGH,Persons converted to 万人 for comparison.
+city28,青岛,山东,REGISTERED_POPULATION_STRUCTURE,2021,837,2020,836.8395,万人,SRC_SD_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,registered is retained as an independent comparator
+city28,青岛,山东,URBANIZATION_STRUCTURE,2021,77,2020,76.34,%,SRC_SD_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,urbanization is independent structural evidence
+city28,青岛,山东,DENSITY_STRUCTURE,2021,896,2020,895.7,人/平方公里,SRC_SD_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,MEDIUM,density is independent structural evidence
+city29,台州,浙江,MULTIYEAR_POPULATION_TRAJECTORY,2018,612,2017,611.8,万人,SRC_HIST_ZJ,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city29,台州,浙江,MULTIYEAR_POPULATION_TRAJECTORY,2019,614,2018,613.9,万人,SRC_HIST_ZJ,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city29,台州,浙江,CENSUS_POPULATION_ANCHOR,2021,662,2020,662.2888,万人,SRC_ZJ_CENSUS_2020,2021 competition resident value rounds to the 2020 census anchor,SUPPORTS,HIGH,Persons converted to 万人 for comparison.
+city29,台州,浙江,REGISTERED_POPULATION_STRUCTURE,2021,606,2020,606.98,万人,SRC_ZJ_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,registered is retained as an independent comparator
+city29,台州,浙江,URBANIZATION_STRUCTURE,2021,63,2020,62,%,SRC_ZJ_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,urbanization is independent structural evidence
+city29,台州,浙江,DENSITY_STRUCTURE,2021,656,2020,659.4,人/平方公里,SRC_ZJ_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,MEDIUM,density is independent structural evidence
+city30,连云港,江苏,MULTIYEAR_POPULATION_TRAJECTORY,2018,452,2017,451.84,万人,SRC_HIST_JS,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city30,连云港,江苏,MULTIYEAR_POPULATION_TRAJECTORY,2019,452,2018,452,万人,SRC_HIST_JS,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city30,连云港,江苏,CENSUS_POPULATION_ANCHOR,2021,460,2020,459.936,万人,SRC_JS_CENSUS_2020,2021 competition resident value rounds to the 2020 census anchor,SUPPORTS,HIGH,Persons converted to 万人 for comparison.
+city30,连云港,江苏,REGISTERED_POPULATION_STRUCTURE,2021,534,2020,534.48,万人,SRC_JS_YEARBOOK_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,registered is retained as an independent comparator
+city30,连云港,江苏,URBANIZATION_STRUCTURE,2021,62,2020,61.5,%,SRC_JS_YEARBOOK_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,urbanization is independent structural evidence
+city30,连云港,江苏,DENSITY_STRUCTURE,2021,,2020,603,人/平方公里,SRC_JS_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,CONFLICTS,MEDIUM,density is independent structural evidence
+city31,江门,广东,MULTIYEAR_POPULATION_TRAJECTORY,2018,465,2017,456.17,万人,SRC_HIST_GD,historical annual trajectory cross-check,CONFLICTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city31,江门,广东,MULTIYEAR_POPULATION_TRAJECTORY,2019,470,2018,459.82,万人,SRC_HIST_GD,historical annual trajectory cross-check,CONFLICTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city31,江门,广东,CENSUS_POPULATION_ANCHOR,2021,480,2020,479.809,万人,SRC_GD_CENSUS_2020,2021 competition resident value rounds to the 2020 census anchor,SUPPORTS,HIGH,Persons converted to 万人 for comparison.
+city31,江门,广东,REGISTERED_POPULATION_STRUCTURE,2021,402,2020,401.5866,万人,SRC_GD_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,registered is retained as an independent comparator
+city31,江门,广东,URBANIZATION_STRUCTURE,2021,68,2020,67.63,%,SRC_GD_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,urbanization is independent structural evidence
+city31,江门,广东,DENSITY_STRUCTURE,2021,504,2020,505,人/平方公里,SRC_GD_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,MEDIUM,density is independent structural evidence
+city32,淄博,山东,MULTIYEAR_POPULATION_TRAJECTORY,2018,471,2017,470.84,万人,SRC_HIST_SD,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city32,淄博,山东,MULTIYEAR_POPULATION_TRAJECTORY,2019,470,2018,470.18,万人,SRC_HIST_SD,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city32,淄博,山东,CENSUS_POPULATION_ANCHOR,2021,471,2020,470.4138,万人,SRC_SD_CENSUS_2020,2021 competition resident value rounds to the 2020 census anchor,SUPPORTS,HIGH,Persons converted to 万人 for comparison.
+city32,淄博,山东,REGISTERED_POPULATION_STRUCTURE,2021,434,2020,434.4877,万人,SRC_SD_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,registered is retained as an independent comparator
+city32,淄博,山东,URBANIZATION_STRUCTURE,2021,75,2020,74.27,%,SRC_SD_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,urbanization is independent structural evidence
+city32,淄博,山东,DENSITY_STRUCTURE,2021,789,2020,788.9,人/平方公里,SRC_SD_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,MEDIUM,density is independent structural evidence
+city33,温州,浙江,MULTIYEAR_POPULATION_TRAJECTORY,2018,922,2017,921.5,万人,SRC_HIST_ZJ,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city33,温州,浙江,MULTIYEAR_POPULATION_TRAJECTORY,2019,925,2018,925,万人,SRC_HIST_ZJ,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city33,温州,浙江,CENSUS_POPULATION_ANCHOR,2021,956,2020,957.2903,万人,SRC_ZJ_CENSUS_2020,2021 competition resident value rounds to the 2020 census anchor,CONFLICTS,HIGH,Persons converted to 万人 for comparison.
+city33,温州,浙江,REGISTERED_POPULATION_STRUCTURE,2021,834,2020,833.75,万人,SRC_ZJ_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,registered is retained as an independent comparator
+city33,温州,浙江,URBANIZATION_STRUCTURE,2021,73,2020,72.2,%,SRC_ZJ_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,urbanization is independent structural evidence
+city33,温州,浙江,DENSITY_STRUCTURE,2021,791,2020,789.4,人/平方公里,SRC_ZJ_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,MEDIUM,density is independent structural evidence
+city34,盐城,江苏,MULTIYEAR_POPULATION_TRAJECTORY,2018,724,2017,724.22,万人,SRC_HIST_JS,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city34,盐城,江苏,MULTIYEAR_POPULATION_TRAJECTORY,2019,720,2018,720,万人,SRC_HIST_JS,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city34,盐城,江苏,CENSUS_POPULATION_ANCHOR,2021,671,2020,670.9629,万人,SRC_JS_CENSUS_2020,2021 competition resident value rounds to the 2020 census anchor,SUPPORTS,HIGH,Persons converted to 万人 for comparison.
+city34,盐城,江苏,REGISTERED_POPULATION_STRUCTURE,2021,814,2020,814.49,万人,SRC_JS_YEARBOOK_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,registered is retained as an independent comparator
+city34,盐城,江苏,URBANIZATION_STRUCTURE,2021,65,2020,64.1,%,SRC_JS_YEARBOOK_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,urbanization is independent structural evidence
+city34,盐城,江苏,DENSITY_STRUCTURE,2021,,2020,396,人/平方公里,SRC_JS_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,CONFLICTS,MEDIUM,density is independent structural evidence
+city35,湛江,广东,MULTIYEAR_POPULATION_TRAJECTORY,2018,698,2017,730.5,万人,SRC_HIST_GD,historical annual trajectory cross-check,CONFLICTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city35,湛江,广东,MULTIYEAR_POPULATION_TRAJECTORY,2019,698,2018,733.2,万人,SRC_HIST_GD,historical annual trajectory cross-check,CONFLICTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city35,湛江,广东,CENSUS_POPULATION_ANCHOR,2021,698,2020,698.1236,万人,SRC_GD_CENSUS_2020,2021 competition resident value rounds to the 2020 census anchor,SUPPORTS,HIGH,Persons converted to 万人 for comparison.
+city35,湛江,广东,REGISTERED_POPULATION_STRUCTURE,2021,860,2020,859.5758,万人,SRC_GD_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,registered is retained as an independent comparator
+city35,湛江,广东,URBANIZATION_STRUCTURE,2021,46,2020,45.46,%,SRC_GD_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,urbanization is independent structural evidence
+city35,湛江,广东,DENSITY_STRUCTURE,2021,526,2020,528,人/平方公里,SRC_GD_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,MEDIUM,density is independent structural evidence
+city36,枣庄,山东,MULTIYEAR_POPULATION_TRAJECTORY,2018,392,2017,392.03,万人,SRC_HIST_SD,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city36,枣庄,山东,MULTIYEAR_POPULATION_TRAJECTORY,2019,393,2018,392.73,万人,SRC_HIST_SD,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city36,枣庄,山东,CENSUS_POPULATION_ANCHOR,2021,386,2020,385.5601,万人,SRC_SD_CENSUS_2020,2021 competition resident value rounds to the 2020 census anchor,SUPPORTS,HIGH,Persons converted to 万人 for comparison.
+city36,枣庄,山东,REGISTERED_POPULATION_STRUCTURE,2021,426,2020,426.1114,万人,SRC_SD_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,registered is retained as an independent comparator
+city36,枣庄,山东,URBANIZATION_STRUCTURE,2021,60,2020,59.32,%,SRC_SD_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,urbanization is independent structural evidence
+city36,枣庄,山东,DENSITY_STRUCTURE,2021,845,2020,845.5,人/平方公里,SRC_SD_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,MEDIUM,density is independent structural evidence
+city37,扬州,江苏,MULTIYEAR_POPULATION_TRAJECTORY,2018,451,2017,450.82,万人,SRC_HIST_JS,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city37,扬州,江苏,MULTIYEAR_POPULATION_TRAJECTORY,2019,453,2018,453.1,万人,SRC_HIST_JS,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city37,扬州,江苏,CENSUS_POPULATION_ANCHOR,2021,456,2020,455.9797,万人,SRC_JS_CENSUS_2020,2021 competition resident value rounds to the 2020 census anchor,SUPPORTS,HIGH,Persons converted to 万人 for comparison.
+city37,扬州,江苏,REGISTERED_POPULATION_STRUCTURE,2021,455,2020,454.71,万人,SRC_JS_YEARBOOK_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,registered is retained as an independent comparator
+city37,扬州,江苏,URBANIZATION_STRUCTURE,2021,71,2020,71,%,SRC_JS_YEARBOOK_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,urbanization is independent structural evidence
+city37,扬州,江苏,DENSITY_STRUCTURE,2021,,2020,691,人/平方公里,SRC_JS_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,CONFLICTS,MEDIUM,density is independent structural evidence
+city38,肇庆,广东,MULTIYEAR_POPULATION_TRAJECTORY,2018,404,2017,411.54,万人,SRC_HIST_GD,historical annual trajectory cross-check,CONFLICTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city38,肇庆,广东,MULTIYEAR_POPULATION_TRAJECTORY,2019,407,2018,415.17,万人,SRC_HIST_GD,historical annual trajectory cross-check,CONFLICTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city38,肇庆,广东,CENSUS_POPULATION_ANCHOR,2021,412,2020,411.3594,万人,SRC_GD_CENSUS_2020,2021 competition resident value rounds to the 2020 census anchor,SUPPORTS,HIGH,Persons converted to 万人 for comparison.
+city38,肇庆,广东,REGISTERED_POPULATION_STRUCTURE,2021,455,2020,455.4056,万人,SRC_GD_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,registered is retained as an independent comparator
+city38,肇庆,广东,URBANIZATION_STRUCTURE,2021,52,2020,51.02,%,SRC_GD_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,urbanization is independent structural evidence
+city38,肇庆,广东,DENSITY_STRUCTURE,2021,276,2020,273,人/平方公里,SRC_GD_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,MEDIUM,density is independent structural evidence
+city39,东营,山东,MULTIYEAR_POPULATION_TRAJECTORY,2018,215,2017,215.46,万人,SRC_HIST_SD,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city39,东营,山东,MULTIYEAR_POPULATION_TRAJECTORY,2019,217,2018,217.21,万人,SRC_HIST_SD,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city39,东营,山东,CENSUS_POPULATION_ANCHOR,2021,219,2020,219.3518,万人,SRC_SD_CENSUS_2020,2021 competition resident value rounds to the 2020 census anchor,SUPPORTS,HIGH,Persons converted to 万人 for comparison.
+city39,东营,山东,REGISTERED_POPULATION_STRUCTURE,2021,198,2020,197.9605,万人,SRC_SD_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,registered is retained as an independent comparator
+city39,东营,山东,URBANIZATION_STRUCTURE,2021,72,2020,71.45,%,SRC_SD_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,urbanization is independent structural evidence
+city39,东营,山东,DENSITY_STRUCTURE,2021,266,2020,266.1,人/平方公里,SRC_SD_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,MEDIUM,density is independent structural evidence
+city40,镇江,江苏,MULTIYEAR_POPULATION_TRAJECTORY,2018,319,2017,318.63,万人,SRC_HIST_JS,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city40,镇江,江苏,MULTIYEAR_POPULATION_TRAJECTORY,2019,320,2018,319.64,万人,SRC_HIST_JS,historical annual trajectory cross-check,SUPPORTS,MEDIUM,Tier-4 trajectory cross-check; not used alone.
+city40,镇江,江苏,CENSUS_POPULATION_ANCHOR,2021,321,2020,321.0418,万人,SRC_JS_CENSUS_2020,2021 competition resident value rounds to the 2020 census anchor,SUPPORTS,HIGH,Persons converted to 万人 for comparison.
+city40,镇江,江苏,REGISTERED_POPULATION_STRUCTURE,2021,65,2020,269.25,万人,SRC_JS_YEARBOOK_2020,2021 competition structure compared with 2020 mapped-city source,CONFLICTS,HIGH,registered is retained as an independent comparator
+city40,镇江,江苏,URBANIZATION_STRUCTURE,2021,80,2020,79.5,%,SRC_JS_YEARBOOK_2020,2021 competition structure compared with 2020 mapped-city source,SUPPORTS,HIGH,urbanization is independent structural evidence
+city40,镇江,江苏,DENSITY_STRUCTURE,2021,,2020,835,人/平方公里,SRC_JS_CENSUS_2020,2021 competition structure compared with 2020 mapped-city source,CONFLICTS,MEDIUM,density is independent structural evidence

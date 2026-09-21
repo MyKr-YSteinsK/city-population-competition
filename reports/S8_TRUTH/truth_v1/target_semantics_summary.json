@@ -1,0 +1,68 @@
+{
+  "selected_semantics": "RESIDENT_POPULATION",
+  "confidence": "HIGH_WITH_EXPLICIT_EXCEPTIONS",
+  "target_year_in_competition": 2023,
+  "real_statistical_year_for_semantics": 2020,
+  "city_count": 40,
+  "resident_match_count": 31,
+  "registered_match_count": 32,
+  "urbanization_match_count": 40,
+  "density_match_count": 23,
+  "registered_conflict_count": 8,
+  "registered_conflicts": [
+    {
+      "city_id": "city3",
+      "real_city": "深圳",
+      "registered_competition": 514.0,
+      "registered_anchor": 584.5791
+    },
+    {
+      "city_id": "city15",
+      "real_city": "徐州",
+      "registered_competition": 1035.0,
+      "registered_anchor": 1038.05
+    },
+    {
+      "city_id": "city16",
+      "real_city": "韶关",
+      "registered_competition": 335.0,
+      "registered_anchor": 336.5996
+    },
+    {
+      "city_id": "city17",
+      "real_city": "广州",
+      "registered_competition": 980.0,
+      "registered_anchor": 985.1142
+    },
+    {
+      "city_id": "city18",
+      "real_city": "常州",
+      "registered_competition": 385.0,
+      "registered_anchor": 386.63
+    },
+    {
+      "city_id": "city19",
+      "real_city": "金华",
+      "registered_competition": 495.0,
+      "registered_anchor": 493.9
+    },
+    {
+      "city_id": "city20",
+      "real_city": "衢州",
+      "registered_competition": 255.0,
+      "registered_anchor": 256.87
+    },
+    {
+      "city_id": "city40",
+      "real_city": "镇江",
+      "registered_competition": 65.0,
+      "registered_anchor": 269.25
+    }
+  ],
+  "forbidden_model_evidence_used": false,
+  "notes": [
+    "Resident 2021 competition rows align to 2020 census anchors under the selected +1 label lag.",
+    "Registered population remains a separate field; city3 and city40 anomalies are not corrected.",
+    "No model performance, MSE, ranking, or S9 artifact was used."
+  ]
+}

@@ -1,0 +1,321 @@
+city_id,real_city,indicator,competition_year,competition_value,candidate_real_year,real_value,alignment_offset,source_id,absolute_difference,relative_difference,revision_note,supports_alignment
+city1,湖州,resident_population,2019,303,2017,299.5,-2,SRC_HIST_ZJ,3.5,0.011686,historical negative control,NO
+city1,湖州,resident_population,2021,337,2020,336.7579,-1,SRC_ZJ_CENSUS_2020,0.2421,0.000719,CENSUS_BENCHMARK,YES
+city1,湖州,resident_population,2018,300,2018,302.7,0,SRC_HIST_ZJ,2.7,0.00892,same-label negative control,NO
+city1,湖州,resident_population,2020,306,2020,336.7579,0,SRC_ZJ_CENSUS_2020,30.7579,0.091335,same-label census negative control,NO
+city1,湖州,resident_population,2021,337,2022,341.3,1,SRC_ZJ_2022_POP_BULLETIN_REPRO,4.3,0.012599,"future-year change check, not alignment evidence",NO
+city1,湖州,registered_population,2021,268,2020,268.06,-1,SRC_ZJ_CENSUS_2020,0.06,0.000224,registered comparator,YES
+city1,湖州,urbanization_rate,2021,66,2020,65.6,-1,SRC_ZJ_CENSUS_2020,0.4,0.006098,structural comparator,YES
+city1,湖州,population_density,2021,587,2020,579.4,-1,SRC_ZJ_CENSUS_2020,7.6,0.013117,structural comparator,YES
+city2,无锡,resident_population,2019,657,2017,655.3,-2,SRC_HIST_JS,1.7,0.002594,historical negative control,NO
+city2,无锡,resident_population,2021,746,2020,746.2135,-1,SRC_JS_CENSUS_2020,0.2135,0.000286,CENSUS_BENCHMARK,YES
+city2,无锡,resident_population,2018,655,2018,657.45,0,SRC_HIST_JS,2.45,0.003727,same-label negative control,NO
+city2,无锡,resident_population,2020,745,2020,746.2135,0,SRC_JS_CENSUS_2020,1.2135,0.001626,same-label census negative control,NO
+city2,无锡,resident_population,2021,746,2022,749.08,1,SRC_JS_2022_NJ0306,3.08,0.004112,"future-year change check, not alignment evidence",NO
+city2,无锡,registered_population,2021,509,2020,508.97,-1,SRC_JS_YEARBOOK_2020,0.03,0.000059,registered comparator,YES
+city2,无锡,urbanization_rate,2021,83,2020,82.8,-1,SRC_JS_YEARBOOK_2020,0.2,0.002415,structural comparator,YES
+city2,无锡,population_density,2021,,2020,1612,-1,SRC_JS_CENSUS_2020,,,structural comparator,NO
+city3,深圳,resident_population,2019,1666,2017,1252.83,-2,SRC_HIST_GD,413.17,0.329789,historical negative control,NO
+city3,深圳,resident_population,2021,1763,2020,1756.0061,-1,SRC_GD_CENSUS_2020,6.9939,0.003983,CENSUS_BENCHMARK,NO
+city3,深圳,resident_population,2018,1587,2018,1302.66,0,SRC_HIST_GD,284.34,0.218276,same-label negative control,NO
+city3,深圳,resident_population,2020,1710,2020,1756.0061,0,SRC_GD_CENSUS_2020,46.0061,0.026199,same-label census negative control,NO
+city3,深圳,resident_population,2021,1763,2022,1766.18,1,SRC_SZ_2022_BULLETIN,3.18,0.0018,"future-year change check, not alignment evidence",NO
+city3,深圳,registered_population,2021,514,2020,584.5791,-1,SRC_GD_CENSUS_2020,70.5791,0.120735,registered comparator,NO
+city3,深圳,urbanization_rate,2021,100,2020,99.54,-1,SRC_GD_CENSUS_2020,0.46,0.004621,structural comparator,YES
+city3,深圳,population_density,2021,8901,2020,8760,-1,SRC_GD_CENSUS_2020,141,0.016096,structural comparator,YES
+city4,舟山,resident_population,2019,117,2017,116.8,-2,SRC_HIST_ZJ,0.2,0.001712,historical negative control,YES
+city4,舟山,resident_population,2021,116,2020,115.7817,-1,SRC_ZJ_CENSUS_2020,0.2183,0.001885,CENSUS_BENCHMARK,YES
+city4,舟山,resident_population,2018,117,2018,117.3,0,SRC_HIST_ZJ,0.3,0.002558,same-label negative control,YES
+city4,舟山,resident_population,2020,118,2020,115.7817,0,SRC_ZJ_CENSUS_2020,2.2183,0.019159,same-label census negative control,NO
+city4,舟山,resident_population,2021,116,2022,117,1,SRC_ZJ_2022_POP_BULLETIN_REPRO,1,0.008547,"future-year change check, not alignment evidence",NO
+city4,舟山,registered_population,2021,96,2020,96.2,-1,SRC_ZJ_CENSUS_2020,0.2,0.002079,registered comparator,YES
+city4,舟山,urbanization_rate,2021,72,2020,71.9,-1,SRC_ZJ_CENSUS_2020,0.1,0.001391,structural comparator,YES
+city4,舟山,population_density,2021,777,2020,794.4,-1,SRC_ZJ_CENSUS_2020,17.4,0.021903,structural comparator,NO
+city5,苏州,resident_population,2019,1072,2017,1068.36,-2,SRC_HIST_JS,3.64,0.003407,historical negative control,NO
+city5,苏州,resident_population,2021,1275,2020,1274.8262,-1,SRC_JS_CENSUS_2020,0.1738,0.000136,CENSUS_BENCHMARK,YES
+city5,苏州,resident_population,2018,1068,2018,1072.17,0,SRC_HIST_JS,4.17,0.003889,same-label negative control,NO
+city5,苏州,resident_population,2020,1271,2020,1274.8262,0,SRC_JS_CENSUS_2020,3.8262,0.003001,same-label census negative control,NO
+city5,苏州,resident_population,2021,1275,2022,1291.06,1,SRC_JS_2022_NJ0306,16.06,0.012439,"future-year change check, not alignment evidence",NO
+city5,苏州,registered_population,2021,744,2020,744.33,-1,SRC_JS_YEARBOOK_2020,0.33,0.000443,registered comparator,YES
+city5,苏州,urbanization_rate,2021,82,2020,81.7,-1,SRC_JS_YEARBOOK_2020,0.3,0.003672,structural comparator,YES
+city5,苏州,population_density,2021,,2020,1470,-1,SRC_JS_CENSUS_2020,,,structural comparator,NO
+city6,佛山,resident_population,2019,926,2017,765.67,-2,SRC_HIST_GD,160.33,0.209398,historical negative control,NO
+city6,佛山,resident_population,2021,952,2020,949.8863,-1,SRC_GD_CENSUS_2020,2.1137,0.002225,CENSUS_BENCHMARK,NO
+city6,佛山,resident_population,2018,900,2018,790.57,0,SRC_HIST_GD,109.43,0.138419,same-label negative control,NO
+city6,佛山,resident_population,2020,943,2020,949.8863,0,SRC_GD_CENSUS_2020,6.8863,0.00725,same-label census negative control,NO
+city6,佛山,resident_population,2021,952,2022,955.23,1,SRC_GD_2022_YEARBOOK_REPRO,3.23,0.003381,"future-year change check, not alignment evidence",NO
+city6,佛山,registered_population,2021,474,2020,473.7736,-1,SRC_GD_CENSUS_2020,0.2264,0.000478,registered comparator,YES
+city6,佛山,urbanization_rate,2021,95,2020,95.2,-1,SRC_GD_CENSUS_2020,0.2,0.002101,structural comparator,YES
+city6,佛山,population_density,2021,2531,2020,2501,-1,SRC_GD_CENSUS_2020,30,0.011995,structural comparator,YES
+city7,绍兴,resident_population,2019,504,2017,501,-2,SRC_HIST_ZJ,3,0.005988,historical negative control,NO
+city7,绍兴,resident_population,2021,527,2020,527.0977,-1,SRC_ZJ_CENSUS_2020,0.0977,0.000185,CENSUS_BENCHMARK,YES
+city7,绍兴,resident_population,2018,501,2018,503.5,0,SRC_HIST_ZJ,2.5,0.004965,same-label negative control,NO
+city7,绍兴,resident_population,2020,506,2020,527.0977,0,SRC_ZJ_CENSUS_2020,21.0977,0.040026,same-label census negative control,NO
+city7,绍兴,resident_population,2021,527,2022,535.3,1,SRC_ZJ_2022_POP_BULLETIN_REPRO,8.3,0.015505,"future-year change check, not alignment evidence",NO
+city7,绍兴,registered_population,2021,448,2020,447.64,-1,SRC_ZJ_CENSUS_2020,0.36,0.000804,registered comparator,YES
+city7,绍兴,urbanization_rate,2021,71,2020,71,-1,SRC_ZJ_CENSUS_2020,0,0,structural comparator,YES
+city7,绍兴,population_density,2021,643,2020,639.1,-1,SRC_ZJ_CENSUS_2020,3.9,0.006102,structural comparator,YES
+city8,淮安,resident_population,2019,493,2017,491.4,-2,SRC_HIST_JS,1.6,0.003256,historical negative control,NO
+city8,淮安,resident_population,2021,456,2020,455.623,-1,SRC_JS_CENSUS_2020,0.377,0.000827,CENSUS_BENCHMARK,YES
+city8,淮安,resident_population,2018,491,2018,492.5,0,SRC_HIST_JS,1.5,0.003046,same-label negative control,NO
+city8,淮安,resident_population,2020,464,2020,455.623,0,SRC_JS_CENSUS_2020,8.377,0.018386,same-label census negative control,NO
+city8,淮安,resident_population,2021,456,2022,455.31,1,SRC_JS_2022_NJ0306,0.69,0.001515,"future-year change check, not alignment evidence",NO
+city8,淮安,registered_population,2021,558,2020,557.97,-1,SRC_JS_YEARBOOK_2020,0.03,0.000054,registered comparator,YES
+city8,淮安,urbanization_rate,2021,66,2020,65.7,-1,SRC_JS_YEARBOOK_2020,0.3,0.004566,structural comparator,YES
+city8,淮安,population_density,2021,,2020,459,-1,SRC_JS_CENSUS_2020,,,structural comparator,NO
+city9,茂名,resident_population,2019,606,2017,620.41,-2,SRC_HIST_GD,14.41,0.023227,historical negative control,NO
+city9,茂名,resident_population,2021,618,2020,617.405,-1,SRC_GD_CENSUS_2020,0.595,0.000964,CENSUS_BENCHMARK,YES
+city9,茂名,resident_population,2018,599,2018,631.32,0,SRC_HIST_GD,32.32,0.051194,same-label negative control,NO
+city9,茂名,resident_population,2020,612,2020,617.405,0,SRC_GD_CENSUS_2020,5.405,0.008754,same-label census negative control,NO
+city9,茂名,resident_population,2021,618,2022,623.82,1,SRC_GD_2022_YEARBOOK_REPRO,5.82,0.00933,"future-year change check, not alignment evidence",NO
+city9,茂名,registered_population,2021,823,2020,823.2969,-1,SRC_GD_CENSUS_2020,0.2969,0.000361,registered comparator,YES
+city9,茂名,urbanization_rate,2021,44,2020,43.56,-1,SRC_GD_CENSUS_2020,0.44,0.010101,structural comparator,YES
+city9,茂名,population_density,2021,543,2020,539,-1,SRC_GD_CENSUS_2020,4,0.007421,structural comparator,YES
+city10,丽水,resident_population,2019,220,2017,218.6,-2,SRC_HIST_ZJ,1.4,0.006404,historical negative control,NO
+city10,丽水,resident_population,2021,251,2020,250.7396,-1,SRC_ZJ_CENSUS_2020,0.2604,0.001039,CENSUS_BENCHMARK,YES
+city10,丽水,resident_population,2018,219,2018,219.9,0,SRC_HIST_ZJ,0.9,0.004093,same-label negative control,YES
+city10,丽水,resident_population,2020,221,2020,250.7396,0,SRC_ZJ_CENSUS_2020,29.7396,0.118608,same-label census negative control,NO
+city10,丽水,resident_population,2021,251,2022,251.5,1,SRC_ZJ_2022_POP_BULLETIN_REPRO,0.5,0.001988,"future-year change check, not alignment evidence",NO
+city10,丽水,registered_population,2021,271,2020,270.74,-1,SRC_ZJ_CENSUS_2020,0.26,0.00096,registered comparator,YES
+city10,丽水,urbanization_rate,2021,62,2020,61.8,-1,SRC_ZJ_CENSUS_2020,0.2,0.003236,structural comparator,YES
+city10,丽水,population_density,2021,145,2020,145.2,-1,SRC_ZJ_CENSUS_2020,0.2,0.001377,structural comparator,YES
+city11,嘉兴,resident_population,2019,473,2017,465.6,-2,SRC_HIST_ZJ,7.4,0.015893,historical negative control,NO
+city11,嘉兴,resident_population,2021,540,2020,540.0868,-1,SRC_ZJ_CENSUS_2020,0.0868,0.000161,CENSUS_BENCHMARK,YES
+city11,嘉兴,resident_population,2018,466,2018,472.6,0,SRC_HIST_ZJ,6.6,0.013965,same-label negative control,NO
+city11,嘉兴,resident_population,2020,480,2020,540.0868,0,SRC_ZJ_CENSUS_2020,60.0868,0.111254,same-label census negative control,NO
+city11,嘉兴,resident_population,2021,540,2022,555.1,1,SRC_ZJ_2022_POP_BULLETIN_REPRO,15.1,0.027202,"future-year change check, not alignment evidence",NO
+city11,嘉兴,registered_population,2021,367,2020,367.38,-1,SRC_ZJ_CENSUS_2020,0.38,0.001034,registered comparator,YES
+city11,嘉兴,urbanization_rate,2021,71,2020,71.3,-1,SRC_ZJ_CENSUS_2020,0.3,0.004208,structural comparator,YES
+city11,嘉兴,population_density,2021,1313,2020,1281.3,-1,SRC_ZJ_CENSUS_2020,31.7,0.02474,structural comparator,NO
+city12,泰州,resident_population,2019,464,2017,465.19,-2,SRC_HIST_JS,1.19,0.002558,historical negative control,NO
+city12,泰州,resident_population,2021,452,2020,451.2762,-1,SRC_JS_CENSUS_2020,0.7238,0.001604,CENSUS_BENCHMARK,YES
+city12,泰州,resident_population,2018,465,2018,463.57,0,SRC_HIST_JS,1.43,0.003085,same-label negative control,NO
+city12,泰州,resident_population,2020,452,2020,451.2762,0,SRC_JS_CENSUS_2020,0.7238,0.001604,same-label census negative control,YES
+city12,泰州,resident_population,2021,452,2022,450.56,1,SRC_JS_2022_NJ0306,1.44,0.003196,"future-year change check, not alignment evidence",NO
+city12,泰州,registered_population,2021,497,2020,497.15,-1,SRC_JS_YEARBOOK_2020,0.15,0.000302,registered comparator,YES
+city12,泰州,urbanization_rate,2021,68,2020,68.1,-1,SRC_JS_YEARBOOK_2020,0.1,0.001468,structural comparator,YES
+city12,泰州,population_density,2021,,2020,781,-1,SRC_JS_CENSUS_2020,,,structural comparator,NO
+city13,宿迁,resident_population,2019,493,2017,491.46,-2,SRC_HIST_JS,1.54,0.003134,historical negative control,NO
+city13,宿迁,resident_population,2021,499,2020,498.6192,-1,SRC_JS_CENSUS_2020,0.3808,0.000764,CENSUS_BENCHMARK,YES
+city13,宿迁,resident_population,2018,491,2018,492.59,0,SRC_HIST_JS,1.59,0.003228,same-label negative control,NO
+city13,宿迁,resident_population,2020,497,2020,498.6192,0,SRC_JS_CENSUS_2020,1.6192,0.003247,same-label census negative control,NO
+city13,宿迁,resident_population,2021,499,2022,497.53,1,SRC_JS_2022_NJ0306,1.47,0.002955,"future-year change check, not alignment evidence",NO
+city13,宿迁,registered_population,2021,592,2020,592.1,-1,SRC_JS_YEARBOOK_2020,0.1,0.000169,registered comparator,YES
+city13,宿迁,urbanization_rate,2021,62,2020,62.2,-1,SRC_JS_YEARBOOK_2020,0.2,0.003215,structural comparator,YES
+city13,宿迁,population_density,2021,,2020,584,-1,SRC_JS_CENSUS_2020,,,structural comparator,NO
+city14,河源,resident_population,2019,286,2017,309.11,-2,SRC_HIST_GD,23.11,0.074763,historical negative control,NO
+city14,河源,resident_population,2021,284,2020,283.7686,-1,SRC_GD_CENSUS_2020,0.2314,0.000815,CENSUS_BENCHMARK,YES
+city14,河源,resident_population,2018,287,2018,309.39,0,SRC_HIST_GD,22.39,0.072368,same-label negative control,NO
+city14,河源,resident_population,2020,285,2020,283.7686,0,SRC_GD_CENSUS_2020,1.2314,0.004339,same-label census negative control,NO
+city14,河源,resident_population,2021,284,2022,284.17,1,SRC_GD_2022_YEARBOOK_REPRO,0.17,0.000598,"future-year change check, not alignment evidence",NO
+city14,河源,registered_population,2021,372,2020,372.1774,-1,SRC_GD_CENSUS_2020,0.1774,0.000477,registered comparator,YES
+city14,河源,urbanization_rate,2021,49,2020,48.5,-1,SRC_GD_CENSUS_2020,0.5,0.010309,structural comparator,YES
+city14,河源,population_density,2021,181,2020,181,-1,SRC_GD_CENSUS_2020,0,0,structural comparator,YES
+city15,徐州,resident_population,2019,880,2017,876.35,-2,SRC_HIST_JS,3.65,0.004165,historical negative control,NO
+city15,徐州,resident_population,2021,905,2020,908.379,-1,SRC_JS_CENSUS_2020,3.379,0.00372,CENSUS_BENCHMARK,NO
+city15,徐州,resident_population,2018,875,2018,880.2,0,SRC_HIST_JS,5.2,0.005908,same-label negative control,NO
+city15,徐州,resident_population,2020,905,2020,908.379,0,SRC_JS_CENSUS_2020,3.379,0.00372,same-label census negative control,NO
+city15,徐州,resident_population,2021,905,2022,901.85,1,SRC_JS_2022_NJ0306,3.15,0.003493,"future-year change check, not alignment evidence",NO
+city15,徐州,registered_population,2021,1035,2020,1038.05,-1,SRC_JS_YEARBOOK_2020,3.05,0.002938,registered comparator,NO
+city15,徐州,urbanization_rate,2021,66,2020,65.6,-1,SRC_JS_YEARBOOK_2020,0.4,0.006098,structural comparator,YES
+city15,徐州,population_density,2021,,2020,771,-1,SRC_JS_CENSUS_2020,,,structural comparator,NO
+city16,韶关,resident_population,2019,285,2017,297.92,-2,SRC_HIST_GD,12.92,0.043367,historical negative control,NO
+city16,韶关,resident_population,2021,285,2020,285.5131,-1,SRC_GD_CENSUS_2020,0.5131,0.001797,CENSUS_BENCHMARK,YES
+city16,韶关,resident_population,2018,285,2018,299.76,0,SRC_HIST_GD,14.76,0.049239,same-label negative control,NO
+city16,韶关,resident_population,2020,285,2020,285.5131,0,SRC_GD_CENSUS_2020,0.5131,0.001797,same-label census negative control,YES
+city16,韶关,resident_population,2021,285,2022,286.18,1,SRC_GD_2022_YEARBOOK_REPRO,1.18,0.004123,"future-year change check, not alignment evidence",NO
+city16,韶关,registered_population,2021,335,2020,336.5996,-1,SRC_GD_CENSUS_2020,1.5996,0.004752,registered comparator,NO
+city16,韶关,urbanization_rate,2021,57,2020,57.33,-1,SRC_GD_CENSUS_2020,0.33,0.005756,structural comparator,YES
+city16,韶关,population_density,2021,155,2020,157,-1,SRC_GD_CENSUS_2020,2,0.012739,structural comparator,YES
+city17,广州,resident_population,2019,1795,2017,1449.84,-2,SRC_HIST_GD,345.16,0.238068,historical negative control,NO
+city17,广州,resident_population,2021,1870,2020,1867.6605,-1,SRC_GD_CENSUS_2020,2.3395,0.001253,CENSUS_BENCHMARK,NO
+city17,广州,resident_population,2018,1745,2018,1490.44,0,SRC_HIST_GD,254.56,0.170795,same-label negative control,NO
+city17,广州,resident_population,2020,1830,2020,1867.6605,0,SRC_GD_CENSUS_2020,37.6605,0.020165,same-label census negative control,NO
+city17,广州,resident_population,2021,1870,2022,1873.41,1,SRC_GZ_2022_BULLETIN,3.41,0.00182,"future-year change check, not alignment evidence",NO
+city17,广州,registered_population,2021,980,2020,985.1142,-1,SRC_GD_CENSUS_2020,5.1142,0.005191,registered comparator,NO
+city17,广州,urbanization_rate,2021,86,2020,86.19,-1,SRC_GD_CENSUS_2020,0.19,0.002204,structural comparator,YES
+city17,广州,population_density,2021,2595,2020,2512,-1,SRC_GD_CENSUS_2020,83,0.033041,structural comparator,NO
+city18,常州,resident_population,2019,470,2017,471.73,-2,SRC_HIST_JS,1.73,0.003667,historical negative control,NO
+city18,常州,resident_population,2021,525,2020,527.8121,-1,SRC_JS_CENSUS_2020,2.8121,0.005328,CENSUS_BENCHMARK,NO
+city18,常州,resident_population,2018,470,2018,472.86,0,SRC_HIST_JS,2.86,0.006048,same-label negative control,NO
+city18,常州,resident_population,2020,525,2020,527.8121,0,SRC_JS_CENSUS_2020,2.8121,0.005328,same-label census negative control,NO
+city18,常州,resident_population,2021,525,2022,536.62,1,SRC_JS_2022_NJ0306,11.62,0.021654,"future-year change check, not alignment evidence",NO
+city18,常州,registered_population,2021,385,2020,386.63,-1,SRC_JS_YEARBOOK_2020,1.63,0.004216,registered comparator,NO
+city18,常州,urbanization_rate,2021,77,2020,77.1,-1,SRC_JS_YEARBOOK_2020,0.1,0.001297,structural comparator,YES
+city18,常州,population_density,2021,,2020,1207,-1,SRC_JS_CENSUS_2020,,,structural comparator,NO
+city19,金华,resident_population,2019,560,2017,556.4,-2,SRC_HIST_ZJ,3.6,0.00647,historical negative control,NO
+city19,金华,resident_population,2021,705,2020,705.0683,-1,SRC_ZJ_CENSUS_2020,0.0683,0.000097,CENSUS_BENCHMARK,YES
+city19,金华,resident_population,2018,555,2018,560.4,0,SRC_HIST_ZJ,5.4,0.009636,same-label negative control,NO
+city19,金华,resident_population,2020,560,2020,705.0683,0,SRC_ZJ_CENSUS_2020,145.0683,0.205751,same-label census negative control,NO
+city19,金华,resident_population,2021,705,2022,712.7,1,SRC_ZJ_2022_POP_BULLETIN_REPRO,7.7,0.010804,"future-year change check, not alignment evidence",NO
+city19,金华,registered_population,2021,495,2020,493.9,-1,SRC_ZJ_CENSUS_2020,1.1,0.002227,registered comparator,NO
+city19,金华,urbanization_rate,2021,68,2020,68.2,-1,SRC_ZJ_CENSUS_2020,0.2,0.002933,structural comparator,YES
+city19,金华,population_density,2021,650,2020,645.4,-1,SRC_ZJ_CENSUS_2020,4.6,0.007127,structural comparator,YES
+city20,衢州,resident_population,2019,220,2017,218.5,-2,SRC_HIST_ZJ,1.5,0.006865,historical negative control,NO
+city20,衢州,resident_population,2021,225,2020,227.6184,-1,SRC_ZJ_CENSUS_2020,2.6184,0.011503,CENSUS_BENCHMARK,NO
+city20,衢州,resident_population,2018,220,2018,220.9,0,SRC_HIST_ZJ,0.9,0.004074,same-label negative control,YES
+city20,衢州,resident_population,2020,220,2020,227.6184,0,SRC_ZJ_CENSUS_2020,7.6184,0.03347,same-label census negative control,NO
+city20,衢州,resident_population,2021,225,2022,229,1,SRC_ZJ_2022_POP_BULLETIN_REPRO,4,0.017467,"future-year change check, not alignment evidence",NO
+city20,衢州,registered_population,2021,255,2020,256.87,-1,SRC_ZJ_CENSUS_2020,1.87,0.00728,registered comparator,NO
+city20,衢州,urbanization_rate,2021,58,2020,57.6,-1,SRC_ZJ_CENSUS_2020,0.4,0.006944,structural comparator,YES
+city20,衢州,population_density,2021,255,2020,257.5,-1,SRC_ZJ_CENSUS_2020,2.5,0.009709,structural comparator,YES
+city21,杭州,resident_population,2019,981,2017,946.8,-2,SRC_HIST_ZJ,34.2,0.036122,historical negative control,NO
+city21,杭州,resident_population,2021,1194,2020,1193.601,-1,SRC_ZJ_CENSUS_2020,0.399,0.000334,CENSUS_BENCHMARK,YES
+city21,杭州,resident_population,2018,947,2018,980.6,0,SRC_HIST_ZJ,33.6,0.034265,same-label negative control,NO
+city21,杭州,resident_population,2020,1036,2020,1193.601,0,SRC_ZJ_CENSUS_2020,157.601,0.132038,same-label census negative control,NO
+city21,杭州,resident_population,2021,1194,2022,1237.6,1,SRC_ZJ_2022_POP_BULLETIN_REPRO,43.6,0.035229,"future-year change check, not alignment evidence",NO
+city21,杭州,registered_population,2021,814,2020,813.83,-1,SRC_ZJ_CENSUS_2020,0.17,0.000209,registered comparator,YES
+city21,杭州,urbanization_rate,2021,84,2020,83.3,-1,SRC_ZJ_CENSUS_2020,0.7,0.008403,structural comparator,YES
+city21,杭州,population_density,2021,706,2020,710,-1,SRC_ZJ_CENSUS_2020,4,0.005634,structural comparator,YES
+city22,南京,resident_population,2019,844,2017,833.5,-2,SRC_HIST_JS,10.5,0.012597,historical negative control,NO
+city22,南京,resident_population,2021,932,2020,931.4685,-1,SRC_JS_CENSUS_2020,0.5315,0.000571,CENSUS_BENCHMARK,YES
+city22,南京,resident_population,2018,834,2018,843.62,0,SRC_HIST_JS,9.62,0.011403,same-label negative control,NO
+city22,南京,resident_population,2020,928,2020,931.4685,0,SRC_JS_CENSUS_2020,3.4685,0.003724,same-label census negative control,NO
+city22,南京,resident_population,2021,932,2022,949.11,1,SRC_JS_2022_NJ0306,17.11,0.018027,"future-year change check, not alignment evidence",NO
+city22,南京,registered_population,2021,723,2020,722.57,-1,SRC_JS_YEARBOOK_2020,0.43,0.000595,registered comparator,YES
+city22,南京,urbanization_rate,2021,87,2020,86.8,-1,SRC_JS_YEARBOOK_2020,0.2,0.002304,structural comparator,YES
+city22,南京,population_density,2021,,2020,1412,-1,SRC_JS_CENSUS_2020,,,structural comparator,NO
+city23,珠海,resident_population,2019,221,2017,176.54,-2,SRC_HIST_GD,44.46,0.251841,historical negative control,NO
+city23,珠海,resident_population,2021,245,2020,243.9585,-1,SRC_GD_CENSUS_2020,1.0415,0.004269,CENSUS_BENCHMARK,NO
+city23,珠海,resident_population,2018,207,2018,189.11,0,SRC_HIST_GD,17.89,0.094601,same-label negative control,NO
+city23,珠海,resident_population,2020,233,2020,243.9585,0,SRC_GD_CENSUS_2020,10.9585,0.04492,same-label census negative control,NO
+city23,珠海,resident_population,2021,245,2022,245,1,SRC_GD_2022_YEARBOOK_REPRO,0,0,"future-year change check, not alignment evidence",NO
+city23,珠海,registered_population,2021,139,2020,139.2176,-1,SRC_GD_CENSUS_2020,0.2176,0.001563,registered comparator,YES
+city23,珠海,urbanization_rate,2021,91,2020,90.47,-1,SRC_GD_CENSUS_2020,0.53,0.005858,structural comparator,YES
+city23,珠海,population_density,2021,1420,2020,1405,-1,SRC_GD_CENSUS_2020,15,0.010676,structural comparator,YES
+city24,济南,resident_population,2019,746,2017,732.12,-2,SRC_HIST_SD,13.88,0.018959,historical negative control,NO
+city24,济南,resident_population,2021,920,2020,920.2432,-1,SRC_SD_CENSUS_2020,0.2432,0.000264,CENSUS_BENCHMARK,YES
+city24,济南,resident_population,2018,732,2018,746.04,0,SRC_HIST_SD,14.04,0.018819,same-label negative control,NO
+city24,济南,resident_population,2020,891,2020,920.2432,0,SRC_SD_CENSUS_2020,29.2432,0.031778,same-label census negative control,NO
+city24,济南,resident_population,2021,920,2022,941.5,1,SRC_JN_2022_BULLETIN,21.5,0.022836,"future-year change check, not alignment evidence",NO
+city24,济南,registered_population,2021,807,2020,806.7252,-1,SRC_SD_CENSUS_2020,0.2748,0.000341,registered comparator,YES
+city24,济南,urbanization_rate,2021,74,2020,73.46,-1,SRC_SD_CENSUS_2020,0.54,0.007351,structural comparator,YES
+city24,济南,population_density,2021,1151,2020,902.1,-1,SRC_SD_CENSUS_2020,248.9,0.275912,structural comparator,NO
+city25,宁波,resident_population,2019,820,2017,800.5,-2,SRC_HIST_ZJ,19.5,0.02436,historical negative control,NO
+city25,宁波,resident_population,2021,940,2020,940.4283,-1,SRC_ZJ_CENSUS_2020,0.4283,0.000455,CENSUS_BENCHMARK,YES
+city25,宁波,resident_population,2018,801,2018,820.2,0,SRC_HIST_ZJ,19.2,0.023409,same-label negative control,NO
+city25,宁波,resident_population,2020,854,2020,940.4283,0,SRC_ZJ_CENSUS_2020,86.4283,0.091903,same-label census negative control,NO
+city25,宁波,resident_population,2021,940,2022,961.8,1,SRC_ZJ_2022_POP_BULLETIN_REPRO,21.8,0.022666,"future-year change check, not alignment evidence",NO
+city25,宁波,registered_population,2021,614,2020,613.66,-1,SRC_ZJ_CENSUS_2020,0.34,0.000554,registered comparator,YES
+city25,宁波,urbanization_rate,2021,78,2020,78,-1,SRC_ZJ_CENSUS_2020,0,0,structural comparator,YES
+city25,宁波,population_density,2021,960,2020,959.7,-1,SRC_ZJ_CENSUS_2020,0.3,0.000313,structural comparator,YES
+city26,南通,resident_population,2019,731,2017,730.5,-2,SRC_HIST_JS,0.5,0.000684,historical negative control,YES
+city26,南通,resident_population,2021,773,2020,772.6635,-1,SRC_JS_CENSUS_2020,0.3365,0.000436,CENSUS_BENCHMARK,YES
+city26,南通,resident_population,2018,731,2018,731,0,SRC_HIST_JS,0,0,same-label negative control,YES
+city26,南通,resident_population,2020,772,2020,772.6635,0,SRC_JS_CENSUS_2020,0.6635,0.000859,same-label census negative control,YES
+city26,南通,resident_population,2021,773,2022,774.35,1,SRC_JS_2022_NJ0306,1.35,0.001743,"future-year change check, not alignment evidence",NO
+city26,南通,registered_population,2021,756,2020,756.06,-1,SRC_JS_YEARBOOK_2020,0.06,0.000079,registered comparator,YES
+city26,南通,urbanization_rate,2021,71,2020,70.4,-1,SRC_JS_YEARBOOK_2020,0.6,0.008523,structural comparator,YES
+city26,南通,population_density,2021,,2020,732,-1,SRC_JS_CENSUS_2020,,,structural comparator,NO
+city27,汕头,resident_population,2019,549,2017,560.82,-2,SRC_HIST_GD,11.82,0.021076,historical negative control,NO
+city27,汕头,resident_population,2021,550,2020,550.2031,-1,SRC_GD_CENSUS_2020,0.2031,0.000369,CENSUS_BENCHMARK,YES
+city27,汕头,resident_population,2018,548,2018,563.85,0,SRC_HIST_GD,15.85,0.02811,same-label negative control,NO
+city27,汕头,resident_population,2020,549,2020,550.2031,0,SRC_GD_CENSUS_2020,1.2031,0.002187,same-label census negative control,NO
+city27,汕头,resident_population,2021,550,2022,554.19,1,SRC_GD_2022_YEARBOOK_REPRO,4.19,0.007561,"future-year change check, not alignment evidence",NO
+city27,汕头,registered_population,2021,576,2020,575.5585,-1,SRC_GD_CENSUS_2020,0.4415,0.000767,registered comparator,YES
+city27,汕头,urbanization_rate,2021,71,2020,70.7,-1,SRC_GD_CENSUS_2020,0.3,0.004243,structural comparator,YES
+city27,汕头,population_density,2021,2497,2020,2503,-1,SRC_GD_CENSUS_2020,6,0.002397,structural comparator,YES
+city28,青岛,resident_population,2019,981,2017,929.05,-2,SRC_HIST_SD,51.95,0.055917,historical negative control,NO
+city28,青岛,resident_population,2021,1011,2020,1007.1722,-1,SRC_SD_CENSUS_2020,3.8278,0.003801,CENSUS_BENCHMARK,NO
+city28,青岛,resident_population,2018,972,2018,939.48,0,SRC_HIST_SD,32.52,0.034615,same-label negative control,NO
+city28,青岛,resident_population,2020,992,2020,1007.1722,0,SRC_SD_CENSUS_2020,15.1722,0.015064,same-label census negative control,NO
+city28,青岛,resident_population,2021,1011,2022,1034.21,1,SRC_QD_2022_BULLETIN,23.21,0.022442,"future-year change check, not alignment evidence",NO
+city28,青岛,registered_population,2021,837,2020,836.8395,-1,SRC_SD_CENSUS_2020,0.1605,0.000192,registered comparator,YES
+city28,青岛,urbanization_rate,2021,77,2020,76.34,-1,SRC_SD_CENSUS_2020,0.66,0.008646,structural comparator,YES
+city28,青岛,population_density,2021,896,2020,895.7,-1,SRC_SD_CENSUS_2020,0.3,0.000335,structural comparator,YES
+city29,台州,resident_population,2019,614,2017,611.8,-2,SRC_HIST_ZJ,2.2,0.003596,historical negative control,NO
+city29,台州,resident_population,2021,662,2020,662.2888,-1,SRC_ZJ_CENSUS_2020,0.2888,0.000436,CENSUS_BENCHMARK,YES
+city29,台州,resident_population,2018,612,2018,613.9,0,SRC_HIST_ZJ,1.9,0.003095,same-label negative control,NO
+city29,台州,resident_population,2020,614,2020,662.2888,0,SRC_ZJ_CENSUS_2020,48.2888,0.072912,same-label census negative control,NO
+city29,台州,resident_population,2021,662,2022,667.8,1,SRC_ZJ_2022_POP_BULLETIN_REPRO,5.8,0.008685,"future-year change check, not alignment evidence",NO
+city29,台州,registered_population,2021,606,2020,606.98,-1,SRC_ZJ_CENSUS_2020,0.98,0.001615,registered comparator,YES
+city29,台州,urbanization_rate,2021,63,2020,62,-1,SRC_ZJ_CENSUS_2020,1,0.016129,structural comparator,YES
+city29,台州,population_density,2021,656,2020,659.4,-1,SRC_ZJ_CENSUS_2020,3.4,0.005156,structural comparator,YES
+city30,连云港,resident_population,2019,452,2017,451.84,-2,SRC_HIST_JS,0.16,0.000354,historical negative control,YES
+city30,连云港,resident_population,2021,460,2020,459.936,-1,SRC_JS_CENSUS_2020,0.064,0.000139,CENSUS_BENCHMARK,YES
+city30,连云港,resident_population,2018,452,2018,452,0,SRC_HIST_JS,0,0,same-label negative control,YES
+city30,连云港,resident_population,2020,459,2020,459.936,0,SRC_JS_CENSUS_2020,0.936,0.002035,same-label census negative control,NO
+city30,连云港,resident_population,2021,460,2022,460.05,1,SRC_JS_2022_NJ0306,0.05,0.000109,"future-year change check, not alignment evidence",NO
+city30,连云港,registered_population,2021,534,2020,534.48,-1,SRC_JS_YEARBOOK_2020,0.48,0.000898,registered comparator,YES
+city30,连云港,urbanization_rate,2021,62,2020,61.5,-1,SRC_JS_YEARBOOK_2020,0.5,0.00813,structural comparator,YES
+city30,连云港,population_density,2021,,2020,603,-1,SRC_JS_CENSUS_2020,,,structural comparator,NO
+city31,江门,resident_population,2019,470,2017,456.17,-2,SRC_HIST_GD,13.83,0.030318,historical negative control,NO
+city31,江门,resident_population,2021,480,2020,479.809,-1,SRC_GD_CENSUS_2020,0.191,0.000398,CENSUS_BENCHMARK,YES
+city31,江门,resident_population,2018,465,2018,459.82,0,SRC_HIST_GD,5.18,0.011265,same-label negative control,NO
+city31,江门,resident_population,2020,475,2020,479.809,0,SRC_GD_CENSUS_2020,4.809,0.010023,same-label census negative control,NO
+city31,江门,resident_population,2021,480,2022,482.22,1,SRC_JM_2022_BULLETIN,2.22,0.004604,"future-year change check, not alignment evidence",NO
+city31,江门,registered_population,2021,402,2020,401.5866,-1,SRC_GD_CENSUS_2020,0.4134,0.001029,registered comparator,YES
+city31,江门,urbanization_rate,2021,68,2020,67.63,-1,SRC_GD_CENSUS_2020,0.37,0.005471,structural comparator,YES
+city31,江门,population_density,2021,504,2020,505,-1,SRC_GD_CENSUS_2020,1,0.00198,structural comparator,YES
+city32,淄博,resident_population,2019,470,2017,470.84,-2,SRC_HIST_SD,0.84,0.001784,historical negative control,YES
+city32,淄博,resident_population,2021,471,2020,470.4138,-1,SRC_SD_CENSUS_2020,0.5862,0.001246,CENSUS_BENCHMARK,YES
+city32,淄博,resident_population,2018,471,2018,470.18,0,SRC_HIST_SD,0.82,0.001744,same-label negative control,YES
+city32,淄博,resident_population,2020,470,2020,470.4138,0,SRC_SD_CENSUS_2020,0.4138,0.00088,same-label census negative control,YES
+city32,淄博,resident_population,2021,471,2022,470.59,1,SRC_ZB_2022_BULLETIN,0.41,0.000871,"future-year change check, not alignment evidence",NO
+city32,淄博,registered_population,2021,434,2020,434.4877,-1,SRC_SD_CENSUS_2020,0.4877,0.001122,registered comparator,YES
+city32,淄博,urbanization_rate,2021,75,2020,74.27,-1,SRC_SD_CENSUS_2020,0.73,0.009829,structural comparator,YES
+city32,淄博,population_density,2021,789,2020,788.9,-1,SRC_SD_CENSUS_2020,0.1,0.000127,structural comparator,YES
+city33,温州,resident_population,2019,925,2017,921.5,-2,SRC_HIST_ZJ,3.5,0.003798,historical negative control,NO
+city33,温州,resident_population,2021,956,2020,957.2903,-1,SRC_ZJ_CENSUS_2020,1.2903,0.001348,CENSUS_BENCHMARK,NO
+city33,温州,resident_population,2018,922,2018,925,0,SRC_HIST_ZJ,3,0.003243,same-label negative control,NO
+city33,温州,resident_population,2020,930,2020,957.2903,0,SRC_ZJ_CENSUS_2020,27.2903,0.028508,same-label census negative control,NO
+city33,温州,resident_population,2021,956,2022,967.9,1,SRC_ZJ_2022_POP_BULLETIN_REPRO,11.9,0.012295,"future-year change check, not alignment evidence",NO
+city33,温州,registered_population,2021,834,2020,833.75,-1,SRC_ZJ_CENSUS_2020,0.25,0.0003,registered comparator,YES
+city33,温州,urbanization_rate,2021,73,2020,72.2,-1,SRC_ZJ_CENSUS_2020,0.8,0.01108,structural comparator,YES
+city33,温州,population_density,2021,791,2020,789.4,-1,SRC_ZJ_CENSUS_2020,1.6,0.002027,structural comparator,YES
+city34,盐城,resident_population,2019,720,2017,724.22,-2,SRC_HIST_JS,4.22,0.005827,historical negative control,NO
+city34,盐城,resident_population,2021,671,2020,670.9629,-1,SRC_JS_CENSUS_2020,0.0371,0.000055,CENSUS_BENCHMARK,YES
+city34,盐城,resident_population,2018,724,2018,720,0,SRC_HIST_JS,4,0.005556,same-label negative control,NO
+city34,盐城,resident_population,2020,671,2020,670.9629,0,SRC_JS_CENSUS_2020,0.0371,0.000055,same-label census negative control,YES
+city34,盐城,resident_population,2021,671,2022,668.97,1,SRC_JS_2022_NJ0306,2.03,0.003035,"future-year change check, not alignment evidence",NO
+city34,盐城,registered_population,2021,814,2020,814.49,-1,SRC_JS_YEARBOOK_2020,0.49,0.000602,registered comparator,YES
+city34,盐城,urbanization_rate,2021,65,2020,64.1,-1,SRC_JS_YEARBOOK_2020,0.9,0.014041,structural comparator,YES
+city34,盐城,population_density,2021,,2020,396,-1,SRC_JS_CENSUS_2020,,,structural comparator,NO
+city35,湛江,resident_population,2019,698,2017,730.5,-2,SRC_HIST_GD,32.5,0.04449,historical negative control,NO
+city35,湛江,resident_population,2021,698,2020,698.1236,-1,SRC_GD_CENSUS_2020,0.1236,0.000177,CENSUS_BENCHMARK,YES
+city35,湛江,resident_population,2018,698,2018,733.2,0,SRC_HIST_GD,35.2,0.048009,same-label negative control,NO
+city35,湛江,resident_population,2020,698,2020,698.1236,0,SRC_GD_CENSUS_2020,0.1236,0.000177,same-label census negative control,YES
+city35,湛江,resident_population,2021,698,2022,703.54,1,SRC_GD_2022_YEARBOOK_REPRO,5.54,0.007874,"future-year change check, not alignment evidence",NO
+city35,湛江,registered_population,2021,860,2020,859.5758,-1,SRC_GD_CENSUS_2020,0.4242,0.000493,registered comparator,YES
+city35,湛江,urbanization_rate,2021,46,2020,45.46,-1,SRC_GD_CENSUS_2020,0.54,0.011879,structural comparator,YES
+city35,湛江,population_density,2021,526,2020,528,-1,SRC_GD_CENSUS_2020,2,0.003788,structural comparator,YES
+city36,枣庄,resident_population,2019,393,2017,392.03,-2,SRC_HIST_SD,0.97,0.002474,historical negative control,YES
+city36,枣庄,resident_population,2021,386,2020,385.5601,-1,SRC_SD_CENSUS_2020,0.4399,0.001141,CENSUS_BENCHMARK,YES
+city36,枣庄,resident_population,2018,392,2018,392.73,0,SRC_HIST_SD,0.73,0.001859,same-label negative control,YES
+city36,枣庄,resident_population,2020,393,2020,385.5601,0,SRC_SD_CENSUS_2020,7.4399,0.019296,same-label census negative control,NO
+city36,枣庄,resident_population,2021,386,2022,382.97,1,SRC_ZZ_2022_BULLETIN_REPRO,3.03,0.007912,"future-year change check, not alignment evidence",NO
+city36,枣庄,registered_population,2021,426,2020,426.1114,-1,SRC_SD_CENSUS_2020,0.1114,0.000261,registered comparator,YES
+city36,枣庄,urbanization_rate,2021,60,2020,59.32,-1,SRC_SD_CENSUS_2020,0.68,0.011463,structural comparator,YES
+city36,枣庄,population_density,2021,845,2020,845.5,-1,SRC_SD_CENSUS_2020,0.5,0.000591,structural comparator,YES
+city37,扬州,resident_population,2019,453,2017,450.82,-2,SRC_HIST_JS,2.18,0.004836,historical negative control,NO
+city37,扬州,resident_population,2021,456,2020,455.9797,-1,SRC_JS_CENSUS_2020,0.0203,0.000045,CENSUS_BENCHMARK,YES
+city37,扬州,resident_population,2018,451,2018,453.1,0,SRC_HIST_JS,2.1,0.004635,same-label negative control,NO
+city37,扬州,resident_population,2020,455,2020,455.9797,0,SRC_JS_CENSUS_2020,0.9797,0.002149,same-label census negative control,NO
+city37,扬州,resident_population,2021,456,2022,458.29,1,SRC_JS_2022_NJ0306,2.29,0.004997,"future-year change check, not alignment evidence",NO
+city37,扬州,registered_population,2021,455,2020,454.71,-1,SRC_JS_YEARBOOK_2020,0.29,0.000638,registered comparator,YES
+city37,扬州,urbanization_rate,2021,71,2020,71,-1,SRC_JS_YEARBOOK_2020,0,0,structural comparator,YES
+city37,扬州,population_density,2021,,2020,691,-1,SRC_JS_CENSUS_2020,,,structural comparator,NO
+city38,肇庆,resident_population,2019,407,2017,411.54,-2,SRC_HIST_GD,4.54,0.011032,historical negative control,NO
+city38,肇庆,resident_population,2021,412,2020,411.3594,-1,SRC_GD_CENSUS_2020,0.6406,0.001557,CENSUS_BENCHMARK,YES
+city38,肇庆,resident_population,2018,404,2018,415.17,0,SRC_HIST_GD,11.17,0.026905,same-label negative control,NO
+city38,肇庆,resident_population,2020,409,2020,411.3594,0,SRC_GD_CENSUS_2020,2.3594,0.005736,same-label census negative control,NO
+city38,肇庆,resident_population,2021,412,2022,412.84,1,SRC_GD_2022_YEARBOOK_REPRO,0.84,0.002035,"future-year change check, not alignment evidence",NO
+city38,肇庆,registered_population,2021,455,2020,455.4056,-1,SRC_GD_CENSUS_2020,0.4056,0.000891,registered comparator,YES
+city38,肇庆,urbanization_rate,2021,52,2020,51.02,-1,SRC_GD_CENSUS_2020,0.98,0.019208,structural comparator,YES
+city38,肇庆,population_density,2021,276,2020,273,-1,SRC_GD_CENSUS_2020,3,0.010989,structural comparator,YES
+city39,东营,resident_population,2019,217,2017,215.46,-2,SRC_HIST_SD,1.54,0.007147,historical negative control,NO
+city39,东营,resident_population,2021,219,2020,219.3518,-1,SRC_SD_CENSUS_2020,0.3518,0.001604,CENSUS_BENCHMARK,YES
+city39,东营,resident_population,2018,215,2018,217.21,0,SRC_HIST_SD,2.21,0.010174,same-label negative control,NO
+city39,东营,resident_population,2020,218,2020,219.3518,0,SRC_SD_CENSUS_2020,1.3518,0.006163,same-label census negative control,NO
+city39,东营,resident_population,2021,219,2022,220.9,1,SRC_DY_2022_BULLETIN_REPRO,1.9,0.008601,"future-year change check, not alignment evidence",NO
+city39,东营,registered_population,2021,198,2020,197.9605,-1,SRC_SD_CENSUS_2020,0.0395,0.0002,registered comparator,YES
+city39,东营,urbanization_rate,2021,72,2020,71.45,-1,SRC_SD_CENSUS_2020,0.55,0.007698,structural comparator,YES
+city39,东营,population_density,2021,266,2020,266.1,-1,SRC_SD_CENSUS_2020,0.1,0.000376,structural comparator,YES
+city40,镇江,resident_population,2019,320,2017,318.63,-2,SRC_HIST_JS,1.37,0.0043,historical negative control,NO
+city40,镇江,resident_population,2021,321,2020,321.0418,-1,SRC_JS_CENSUS_2020,0.0418,0.00013,CENSUS_BENCHMARK,YES
+city40,镇江,resident_population,2018,319,2018,319.64,0,SRC_HIST_JS,0.64,0.002002,same-label negative control,YES
+city40,镇江,resident_population,2020,320,2020,321.0418,0,SRC_JS_CENSUS_2020,1.0418,0.003245,same-label census negative control,NO
+city40,镇江,resident_population,2021,321,2022,322.22,1,SRC_JS_2022_NJ0306,1.22,0.003786,"future-year change check, not alignment evidence",NO
+city40,镇江,registered_population,2021,65,2020,269.25,-1,SRC_JS_YEARBOOK_2020,204.25,0.758589,registered comparator,NO
+city40,镇江,urbanization_rate,2021,80,2020,79.5,-1,SRC_JS_YEARBOOK_2020,0.5,0.006289,structural comparator,YES
+city40,镇江,population_density,2021,,2020,835,-1,SRC_JS_CENSUS_2020,,,structural comparator,NO
