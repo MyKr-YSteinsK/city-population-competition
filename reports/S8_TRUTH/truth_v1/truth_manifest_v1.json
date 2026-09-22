@@ -1,10 +1,10 @@
 {
   "truth_version": "candidate_truth_2023_v1",
-  "plan_id": "S8-Plan01",
+  "plan_id": "S8-Plan02",
   "base_commit": "0a74372ea4e3555b3d659e6a2c77647b92eabea4",
   "branch": "codex/s8-truth-reconstruction-v1",
-  "generation_script": "scripts/build_s8_truth_v1.py",
-  "generated_at": "2026-09-21T18:00:00+08:00",
+  "generation_script": "scripts/harden_s8_truth_v1.py",
+  "generated_at": "2026-09-22T12:00:00+08:00",
   "competition_target_year": 2023,
   "real_statistical_year": 2022,
   "target_semantics": "RESIDENT_POPULATION",
@@ -12,36 +12,43 @@
   "rounding_rule": "ROUND_HALF_UP_TO_INTEGER_WAN",
   "city_count": 40,
   "resolved_city_count": 40,
-  "provisional_city_count": 1,
+  "provisional_city_count": 0,
   "unresolved_city_count": 0,
-  "source_count": 29,
-  "tier1_source_count": 15,
+  "source_count": 37,
+  "tier1_source_count": 18,
   "fallback_source_count": 9,
   "truth_file": "candidate_truth_2023_v1_evaluator.csv",
   "truth_sha256": "026c2c4723eadad8ae8519586e0a146d47b1bd0525fde315aa4ec4994e86927d",
   "full_truth_file": "candidate_truth_2023_v1.csv",
-  "full_truth_sha256": "52f303a9a1f1cf08d8a0b3a1e67abf0e31e7d48896761606b6749fa5eefcfb38",
+  "full_truth_sha256": "ca7b86cc5cbc98f01562a2a7cabf14e01f90eae44986f841b3030451da940ad7",
   "evidence_files": [
-    "competition_city_fingerprints.csv",
-    "source_ledger.csv",
+    "candidate_truth_2023_raw.csv",
+    "candidate_truth_2023_v1.csv",
+    "candidate_truth_2023_v1_evaluator.csv",
+    "city23_truth_resolution.csv",
+    "city40_identity_resolution.csv",
+    "city40_registered_anomaly_audit.md",
     "city_identity_evidence.csv",
     "city_identity_mapping.csv",
-    "year_alignment_evidence.csv",
-    "year_alignment_summary.csv",
+    "competition_city_fingerprints.csv",
+    "rounding_unit_evidence.csv",
+    "source_ledger.csv",
+    "statistical_revision_ledger.csv",
     "target_semantics_evidence.csv",
     "target_semantics_summary.json",
-    "statistical_revision_ledger.csv",
-    "candidate_truth_2023_raw.csv",
     "truth_conflicts.csv",
-    "rounding_unit_evidence.csv",
-    "candidate_truth_2023_v1.csv",
-    "candidate_truth_2023_v1_evaluator.csv"
+    "truth_source_upgrade_queue.csv",
+    "truth_v1_source_upgrade_delta.csv",
+    "year_alignment_evidence.csv",
+    "year_alignment_summary.csv"
   ],
   "known_conflicts": [
     "city3 registered population mismatch retained",
-    "city40 registered population 2021 value 65 retained and mapping provisional",
+    "city40 registered population 2021 value 65 retained and mapping upgraded only to HIGH_CONFIDENCE",
+    "city40 density source conflict retained",
     "city12/city29 Taizhou name collision resolved by province and fingerprint",
-    "Tier-3 2022 values keep freeze provisional"
+    "four 2022 truth rows retain Tier-3 fallback pending direct first-party retrieval",
+    "city23 v1 value 245 retained; v2 official-attributed value renders to 248"
   ],
   "usage_scope": [
     "POST_HOC_HIDDEN_EVALUATOR_ONLY",
@@ -54,5 +61,35 @@
     "s9_predictions_read": false,
     "model_evaluation_performed": false,
     "test_xls_accessed": false
+  },
+  "plan02_base_commit": "380d1c7c496fb0bcf85a850f1fe1a2b6ecffb4c0",
+  "truth_tier_counts": {
+    "TIER1": 22,
+    "TIER2": 13,
+    "TIER3": 5,
+    "TIER4": 0
+  },
+  "truth_status_counts": {
+    "EXACT_OFFICIAL": 22,
+    "HIGH_CONFIDENCE": 18,
+    "PROVISIONAL": 0,
+    "UNRESOLVED": 0
+  },
+  "mapping_status_counts": {
+    "CONFIRMED": 19,
+    "HIGH_CONFIDENCE": 21,
+    "PROVISIONAL": 0,
+    "UNRESOLVED": 0
+  },
+  "city40_mapping_status": "HIGH_CONFIDENCE",
+  "successor_truth_version": "candidate_truth_2023_v2",
+  "v1_evaluator_sha256_before_hardening": "026c2c4723eadad8ae8519586e0a146d47b1bd0525fde315aa4ec4994e86927d",
+  "v1_evaluator_sha256": "026c2c4723eadad8ae8519586e0a146d47b1bd0525fde315aa4ec4994e86927d",
+  "provenance_hardening": {
+    "queue_rows": 21,
+    "rows_with_source_upgrade": 16,
+    "city40_status_before": "PROVISIONAL",
+    "city40_status_after": "HIGH_CONFIDENCE",
+    "city23_rendered_change": true
   }
 }

@@ -1,0 +1,2 @@
+city_id,real_city,official_2022_value,source_id,source_url,current_v1_value,old_chat_value_ignored,resolution,rendered_truth_v1,rendered_truth_v2,changed_vs_v1,version_decision
+city23,珠海,247.72,SRC_GD_ZHUHAI_2022_OFFICIAL_MEDIA,https://pub-zhtb.hizh.cn/a/202304/10/AP6433bdb3e4b07175af433fcd.html,245,248,The official-statistics-attributed 2022 value is 247.72; old chat 248 is ignored as evidence.,245,248,YES,CREATE_TRUTH_V2

@@ -1,41 +1,41 @@
 city_id,year,candidate_truth,raw_real_value,real_city,province,truth_status,mapping_confidence,value_confidence,primary_source_id,alternate_candidate,uncertainty_lower,uncertainty_upper,notes
-city1,2023,341,341.3,湖州,浙江,HIGH_CONFIDENCE,VERY_HIGH,HIGH_CONFIDENCE_REPRODUCED,SRC_ZJ_2022_POP_BULLETIN_REPRO,,340.5,341.5,Traceable reproduced source; remaining source-tier uncertainty is explicit.
-city2,2023,749,749.08,无锡,江苏,EXACT_OFFICIAL,HIGH,EXACT_OFFICIAL,SRC_JS_2022_NJ0306,,748.5,749.5,Primary official 2022 source; integer 万人 rendering is derived.
-city3,2023,1766,1766.18,深圳,广东,EXACT_OFFICIAL,HIGH,EXACT_OFFICIAL,SRC_SZ_2022_BULLETIN,,1765.5,1766.5,Primary official 2022 source; integer 万人 rendering is derived.
-city4,2023,117,117,舟山,浙江,HIGH_CONFIDENCE,HIGH,HIGH_CONFIDENCE_REPRODUCED,SRC_ZJ_2022_POP_BULLETIN_REPRO,,116.5,117.5,Traceable reproduced source; remaining source-tier uncertainty is explicit.
-city5,2023,1291,1291.06,苏州,江苏,EXACT_OFFICIAL,HIGH,EXACT_OFFICIAL,SRC_JS_2022_NJ0306,,1290.5,1291.5,Primary official 2022 source; integer 万人 rendering is derived.
-city6,2023,955,955.23,佛山,广东,HIGH_CONFIDENCE,VERY_HIGH,HIGH_CONFIDENCE_REPRODUCED,SRC_GD_2022_YEARBOOK_REPRO,,954.5,955.5,Traceable reproduced source; remaining source-tier uncertainty is explicit.
-city7,2023,535,535.3,绍兴,浙江,HIGH_CONFIDENCE,VERY_HIGH,HIGH_CONFIDENCE_REPRODUCED,SRC_ZJ_2022_POP_BULLETIN_REPRO,,534.5,535.5,Traceable reproduced source; remaining source-tier uncertainty is explicit.
-city8,2023,455,455.31,淮安,江苏,EXACT_OFFICIAL,HIGH,EXACT_OFFICIAL,SRC_JS_2022_NJ0306,,454.5,455.5,Primary official 2022 source; integer 万人 rendering is derived.
-city9,2023,624,623.82,茂名,广东,HIGH_CONFIDENCE,VERY_HIGH,HIGH_CONFIDENCE_REPRODUCED,SRC_GD_2022_YEARBOOK_REPRO,,623.5,624.5,Traceable reproduced source; remaining source-tier uncertainty is explicit.
-city10,2023,252,251.5,丽水,浙江,HIGH_CONFIDENCE,VERY_HIGH,HIGH_CONFIDENCE_REPRODUCED,SRC_ZJ_2022_POP_BULLETIN_REPRO,,251.5,252.5,Traceable reproduced source; remaining source-tier uncertainty is explicit.
-city11,2023,555,555.1,嘉兴,浙江,HIGH_CONFIDENCE,HIGH,HIGH_CONFIDENCE_REPRODUCED,SRC_ZJ_2022_POP_BULLETIN_REPRO,,554.5,555.5,Traceable reproduced source; remaining source-tier uncertainty is explicit.
-city12,2023,451,450.56,泰州,江苏,EXACT_OFFICIAL,HIGH,EXACT_OFFICIAL,SRC_JS_2022_NJ0306,浙江台州; province and fingerprint resolve collision,450.5,451.5,Primary official 2022 source; integer 万人 rendering is derived.
-city13,2023,498,497.53,宿迁,江苏,EXACT_OFFICIAL,HIGH,EXACT_OFFICIAL,SRC_JS_2022_NJ0306,,497.5,498.5,Primary official 2022 source; integer 万人 rendering is derived.
-city14,2023,284,284.17,河源,广东,HIGH_CONFIDENCE,VERY_HIGH,HIGH_CONFIDENCE_REPRODUCED,SRC_GD_2022_YEARBOOK_REPRO,,283.5,284.5,Traceable reproduced source; remaining source-tier uncertainty is explicit.
-city15,2023,902,901.85,徐州,江苏,EXACT_OFFICIAL,HIGH,EXACT_OFFICIAL,SRC_JS_2022_NJ0306,,901.5,902.5,Primary official 2022 source; integer 万人 rendering is derived.
-city16,2023,286,286.18,韶关,广东,HIGH_CONFIDENCE,HIGH,HIGH_CONFIDENCE_REPRODUCED,SRC_GD_2022_YEARBOOK_REPRO,,285.5,286.5,Traceable reproduced source; remaining source-tier uncertainty is explicit.
-city17,2023,1873,1873.41,广州,广东,EXACT_OFFICIAL,HIGH,EXACT_OFFICIAL,SRC_GZ_2022_BULLETIN,,1872.5,1873.5,Primary official 2022 source; integer 万人 rendering is derived.
-city18,2023,537,536.62,常州,江苏,EXACT_OFFICIAL,HIGH,EXACT_OFFICIAL,SRC_JS_2022_NJ0306,,536.5,537.5,Primary official 2022 source; integer 万人 rendering is derived.
-city19,2023,713,712.7,金华,浙江,HIGH_CONFIDENCE,HIGH,HIGH_CONFIDENCE_REPRODUCED,SRC_ZJ_2022_POP_BULLETIN_REPRO,,712.5,713.5,Traceable reproduced source; remaining source-tier uncertainty is explicit.
-city20,2023,229,229,衢州,浙江,HIGH_CONFIDENCE,HIGH,HIGH_CONFIDENCE_REPRODUCED,SRC_ZJ_2022_POP_BULLETIN_REPRO,,228.5,229.5,Traceable reproduced source; remaining source-tier uncertainty is explicit.
-city21,2023,1238,1237.6,杭州,浙江,HIGH_CONFIDENCE,VERY_HIGH,HIGH_CONFIDENCE_REPRODUCED,SRC_ZJ_2022_POP_BULLETIN_REPRO,,1237.5,1238.5,Traceable reproduced source; remaining source-tier uncertainty is explicit.
-city22,2023,949,949.11,南京,江苏,EXACT_OFFICIAL,HIGH,EXACT_OFFICIAL,SRC_JS_2022_NJ0306,,948.5,949.5,Primary official 2022 source; integer 万人 rendering is derived.
+city1,2023,341,341.3,湖州,浙江,HIGH_CONFIDENCE,VERY_HIGH,HIGH_CONFIDENCE_OFFICIAL_REPOST,SRC_ZJ_2022_POP_BULLETIN_GOV_REPOST,,340.8,341.8,Traceable reproduced source; remaining source-tier uncertainty is explicit.
+city2,2023,749,749.08,无锡,江苏,EXACT_OFFICIAL,HIGH,EXACT_OFFICIAL,SRC_JS_2022_NJ0306,,748.58,749.58,Primary official 2022 source; integer 万人 rendering is derived.
+city3,2023,1766,1766.18,深圳,广东,EXACT_OFFICIAL,HIGH,EXACT_OFFICIAL,SRC_SZ_2022_BULLETIN,,1765.68,1766.68,Primary official 2022 source; integer 万人 rendering is derived.
+city4,2023,117,117,舟山,浙江,HIGH_CONFIDENCE,HIGH,HIGH_CONFIDENCE_OFFICIAL_REPOST,SRC_ZJ_2022_POP_BULLETIN_GOV_REPOST,,116.5,117.5,Traceable reproduced source; remaining source-tier uncertainty is explicit.
+city5,2023,1291,1291.06,苏州,江苏,EXACT_OFFICIAL,HIGH,EXACT_OFFICIAL,SRC_JS_2022_NJ0306,,1290.56,1291.56,Primary official 2022 source; integer 万人 rendering is derived.
+city6,2023,955,955.23,佛山,广东,HIGH_CONFIDENCE,VERY_HIGH,HIGH_CONFIDENCE_OFFICIAL_REPOST,SRC_GD_FOSHAN_2022_OFFICIAL_MEDIA,,954.73,955.73,Traceable reproduced source; remaining source-tier uncertainty is explicit.
+city7,2023,535,535.3,绍兴,浙江,HIGH_CONFIDENCE,VERY_HIGH,HIGH_CONFIDENCE_OFFICIAL_REPOST,SRC_ZJ_2022_POP_BULLETIN_GOV_REPOST,,534.8,535.8,Traceable reproduced source; remaining source-tier uncertainty is explicit.
+city8,2023,455,455.31,淮安,江苏,EXACT_OFFICIAL,HIGH,EXACT_OFFICIAL,SRC_JS_2022_NJ0306,,454.81,455.81,Primary official 2022 source; integer 万人 rendering is derived.
+city9,2023,624,623.82,茂名,广东,HIGH_CONFIDENCE,VERY_HIGH,HIGH_CONFIDENCE_OFFICIAL_REPOST,SRC_GD_MAOMING_2022_OFFICIAL_MEDIA,,623.32,624.32,Traceable reproduced source; remaining source-tier uncertainty is explicit.
+city10,2023,252,251.5,丽水,浙江,HIGH_CONFIDENCE,VERY_HIGH,HIGH_CONFIDENCE_OFFICIAL_REPOST,SRC_ZJ_2022_POP_BULLETIN_GOV_REPOST,,251,252,Traceable reproduced source; remaining source-tier uncertainty is explicit.
+city11,2023,555,555.1,嘉兴,浙江,HIGH_CONFIDENCE,HIGH,HIGH_CONFIDENCE_OFFICIAL_REPOST,SRC_ZJ_2022_POP_BULLETIN_GOV_REPOST,,554.6,555.6,Traceable reproduced source; remaining source-tier uncertainty is explicit.
+city12,2023,451,450.56,泰州,江苏,EXACT_OFFICIAL,HIGH,EXACT_OFFICIAL,SRC_JS_2022_NJ0306,浙江台州; province and fingerprint resolve collision,450.06,451.06,Primary official 2022 source; integer 万人 rendering is derived.
+city13,2023,498,497.53,宿迁,江苏,EXACT_OFFICIAL,HIGH,EXACT_OFFICIAL,SRC_JS_2022_NJ0306,,497.03,498.03,Primary official 2022 source; integer 万人 rendering is derived.
+city14,2023,284,284.17,河源,广东,EXACT_OFFICIAL,VERY_HIGH,EXACT_OFFICIAL,SRC_GD_HEYUAN_2022_BULLETIN,,283.67,284.67,Traceable reproduced source; remaining source-tier uncertainty is explicit.
+city15,2023,902,901.85,徐州,江苏,EXACT_OFFICIAL,HIGH,EXACT_OFFICIAL,SRC_JS_2022_NJ0306,,901.35,902.35,Primary official 2022 source; integer 万人 rendering is derived.
+city16,2023,286,286.18,韶关,广东,HIGH_CONFIDENCE,HIGH,HIGH_CONFIDENCE_REPRODUCED,SRC_GD_2022_YEARBOOK_REPRO,,285.68,286.68,Traceable reproduced source; remaining source-tier uncertainty is explicit.
+city17,2023,1873,1873.41,广州,广东,EXACT_OFFICIAL,HIGH,EXACT_OFFICIAL,SRC_GZ_2022_BULLETIN,,1872.91,1873.91,Primary official 2022 source; integer 万人 rendering is derived.
+city18,2023,537,536.62,常州,江苏,EXACT_OFFICIAL,HIGH,EXACT_OFFICIAL,SRC_JS_2022_NJ0306,,536.12,537.12,Primary official 2022 source; integer 万人 rendering is derived.
+city19,2023,713,712.7,金华,浙江,HIGH_CONFIDENCE,HIGH,HIGH_CONFIDENCE_OFFICIAL_REPOST,SRC_ZJ_2022_POP_BULLETIN_GOV_REPOST,,712.2,713.2,Traceable reproduced source; remaining source-tier uncertainty is explicit.
+city20,2023,229,229,衢州,浙江,HIGH_CONFIDENCE,HIGH,HIGH_CONFIDENCE_OFFICIAL_REPOST,SRC_ZJ_2022_POP_BULLETIN_GOV_REPOST,,228.5,229.5,Traceable reproduced source; remaining source-tier uncertainty is explicit.
+city21,2023,1238,1237.6,杭州,浙江,HIGH_CONFIDENCE,VERY_HIGH,HIGH_CONFIDENCE_OFFICIAL_REPOST,SRC_ZJ_2022_POP_BULLETIN_GOV_REPOST,,1237.1,1238.1,Traceable reproduced source; remaining source-tier uncertainty is explicit.
+city22,2023,949,949.11,南京,江苏,EXACT_OFFICIAL,HIGH,EXACT_OFFICIAL,SRC_JS_2022_NJ0306,,948.61,949.61,Primary official 2022 source; integer 万人 rendering is derived.
 city23,2023,245,245,珠海,广东,HIGH_CONFIDENCE,VERY_HIGH,HIGH_CONFIDENCE_REPRODUCED,SRC_GD_2022_YEARBOOK_REPRO,,244.5,245.5,Traceable reproduced source; remaining source-tier uncertainty is explicit.
-city24,2023,942,941.5,济南,山东,EXACT_OFFICIAL,HIGH,EXACT_OFFICIAL,SRC_JN_2022_BULLETIN,,941.5,942.5,Primary official 2022 source; integer 万人 rendering is derived.
-city25,2023,962,961.8,宁波,浙江,HIGH_CONFIDENCE,VERY_HIGH,HIGH_CONFIDENCE_REPRODUCED,SRC_ZJ_2022_POP_BULLETIN_REPRO,,961.5,962.5,Traceable reproduced source; remaining source-tier uncertainty is explicit.
-city26,2023,774,774.35,南通,江苏,EXACT_OFFICIAL,HIGH,EXACT_OFFICIAL,SRC_JS_2022_NJ0306,,773.5,774.5,Primary official 2022 source; integer 万人 rendering is derived.
-city27,2023,554,554.19,汕头,广东,HIGH_CONFIDENCE,VERY_HIGH,HIGH_CONFIDENCE_REPRODUCED,SRC_GD_2022_YEARBOOK_REPRO,,553.5,554.5,Traceable reproduced source; remaining source-tier uncertainty is explicit.
-city28,2023,1034,1034.21,青岛,山东,EXACT_OFFICIAL,VERY_HIGH,EXACT_OFFICIAL,SRC_QD_2022_BULLETIN,,1033.5,1034.5,Primary official 2022 source; integer 万人 rendering is derived.
-city29,2023,668,667.8,台州,浙江,HIGH_CONFIDENCE,VERY_HIGH,HIGH_CONFIDENCE_REPRODUCED,SRC_ZJ_2022_POP_BULLETIN_REPRO,江苏泰州; province and fingerprint resolve collision,667.5,668.5,Traceable reproduced source; remaining source-tier uncertainty is explicit.
-city30,2023,460,460.05,连云港,江苏,EXACT_OFFICIAL,HIGH,EXACT_OFFICIAL,SRC_JS_2022_NJ0306,,459.5,460.5,Primary official 2022 source; integer 万人 rendering is derived.
-city31,2023,482,482.22,江门,广东,EXACT_OFFICIAL,VERY_HIGH,EXACT_OFFICIAL,SRC_JM_2022_BULLETIN,,481.5,482.5,Primary official 2022 source; integer 万人 rendering is derived.
-city32,2023,471,470.59,淄博,山东,EXACT_OFFICIAL,VERY_HIGH,EXACT_OFFICIAL,SRC_ZB_2022_BULLETIN,,470.5,471.5,Primary official 2022 source; integer 万人 rendering is derived.
-city33,2023,968,967.9,温州,浙江,HIGH_CONFIDENCE,VERY_HIGH,HIGH_CONFIDENCE_REPRODUCED,SRC_ZJ_2022_POP_BULLETIN_REPRO,,967.5,968.5,Traceable reproduced source; remaining source-tier uncertainty is explicit.
-city34,2023,669,668.97,盐城,江苏,EXACT_OFFICIAL,HIGH,EXACT_OFFICIAL,SRC_JS_2022_NJ0306,,668.5,669.5,Primary official 2022 source; integer 万人 rendering is derived.
-city35,2023,704,703.54,湛江,广东,HIGH_CONFIDENCE,VERY_HIGH,HIGH_CONFIDENCE_REPRODUCED,SRC_GD_2022_YEARBOOK_REPRO,,703.5,704.5,Traceable reproduced source; remaining source-tier uncertainty is explicit.
-city36,2023,383,382.97,枣庄,山东,HIGH_CONFIDENCE,VERY_HIGH,HIGH_CONFIDENCE_REPRODUCED,SRC_ZZ_2022_BULLETIN_REPRO,,382.5,383.5,Traceable reproduced source; remaining source-tier uncertainty is explicit.
-city37,2023,458,458.29,扬州,江苏,EXACT_OFFICIAL,HIGH,EXACT_OFFICIAL,SRC_JS_2022_NJ0306,,457.5,458.5,Primary official 2022 source; integer 万人 rendering is derived.
-city38,2023,413,412.84,肇庆,广东,HIGH_CONFIDENCE,VERY_HIGH,HIGH_CONFIDENCE_REPRODUCED,SRC_GD_2022_YEARBOOK_REPRO,,412.5,413.5,Traceable reproduced source; remaining source-tier uncertainty is explicit.
-city39,2023,221,220.9,东营,山东,HIGH_CONFIDENCE,VERY_HIGH,HIGH_CONFIDENCE_REPRODUCED,SRC_DY_2022_BULLETIN_REPRO,,220.5,221.5,Traceable reproduced source; remaining source-tier uncertainty is explicit.
-city40,2023,322,322.22,镇江,江苏,PROVISIONAL,MEDIUM,PROVISIONAL,SRC_JS_2022_NJ0306,,321.5,322.5,Mapping is provisional because a material registered conflict is retained.
+city24,2023,942,941.5,济南,山东,EXACT_OFFICIAL,HIGH,EXACT_OFFICIAL,SRC_JN_2022_BULLETIN,,941,942,Primary official 2022 source; integer 万人 rendering is derived.
+city25,2023,962,961.8,宁波,浙江,HIGH_CONFIDENCE,VERY_HIGH,HIGH_CONFIDENCE_OFFICIAL_REPOST,SRC_ZJ_2022_POP_BULLETIN_GOV_REPOST,,961.3,962.3,Traceable reproduced source; remaining source-tier uncertainty is explicit.
+city26,2023,774,774.35,南通,江苏,EXACT_OFFICIAL,HIGH,EXACT_OFFICIAL,SRC_JS_2022_NJ0306,,773.85,774.85,Primary official 2022 source; integer 万人 rendering is derived.
+city27,2023,554,554.19,汕头,广东,EXACT_OFFICIAL,VERY_HIGH,EXACT_OFFICIAL,SRC_GD_SHANTOU_2022_BULLETIN,,553.69,554.69,Traceable reproduced source; remaining source-tier uncertainty is explicit.
+city28,2023,1034,1034.21,青岛,山东,EXACT_OFFICIAL,VERY_HIGH,EXACT_OFFICIAL,SRC_QD_2022_BULLETIN,,1033.71,1034.71,Primary official 2022 source; integer 万人 rendering is derived.
+city29,2023,668,667.8,台州,浙江,HIGH_CONFIDENCE,VERY_HIGH,HIGH_CONFIDENCE_OFFICIAL_REPOST,SRC_ZJ_2022_POP_BULLETIN_GOV_REPOST,江苏泰州; province and fingerprint resolve collision,667.3,668.3,Traceable reproduced source; remaining source-tier uncertainty is explicit.
+city30,2023,460,460.05,连云港,江苏,EXACT_OFFICIAL,HIGH,EXACT_OFFICIAL,SRC_JS_2022_NJ0306,,459.55,460.55,Primary official 2022 source; integer 万人 rendering is derived.
+city31,2023,482,482.22,江门,广东,EXACT_OFFICIAL,VERY_HIGH,EXACT_OFFICIAL,SRC_JM_2022_BULLETIN,,481.72,482.72,Primary official 2022 source; integer 万人 rendering is derived.
+city32,2023,471,470.59,淄博,山东,EXACT_OFFICIAL,VERY_HIGH,EXACT_OFFICIAL,SRC_ZB_2022_BULLETIN,,470.09,471.09,Primary official 2022 source; integer 万人 rendering is derived.
+city33,2023,968,967.9,温州,浙江,HIGH_CONFIDENCE,VERY_HIGH,HIGH_CONFIDENCE_OFFICIAL_REPOST,SRC_ZJ_2022_POP_BULLETIN_GOV_REPOST,,967.4,968.4,Traceable reproduced source; remaining source-tier uncertainty is explicit.
+city34,2023,669,668.97,盐城,江苏,EXACT_OFFICIAL,HIGH,EXACT_OFFICIAL,SRC_JS_2022_NJ0306,,668.47,669.47,Primary official 2022 source; integer 万人 rendering is derived.
+city35,2023,704,703.54,湛江,广东,EXACT_OFFICIAL,VERY_HIGH,EXACT_OFFICIAL,SRC_GD_ZHANJIANG_2022_BULLETIN,,703.04,704.04,Traceable reproduced source; remaining source-tier uncertainty is explicit.
+city36,2023,383,382.97,枣庄,山东,HIGH_CONFIDENCE,VERY_HIGH,HIGH_CONFIDENCE_REPRODUCED,SRC_ZZ_2022_BULLETIN_REPRO,,382.47,383.47,Traceable reproduced source; remaining source-tier uncertainty is explicit.
+city37,2023,458,458.29,扬州,江苏,EXACT_OFFICIAL,HIGH,EXACT_OFFICIAL,SRC_JS_2022_NJ0306,,457.79,458.79,Primary official 2022 source; integer 万人 rendering is derived.
+city38,2023,413,412.84,肇庆,广东,HIGH_CONFIDENCE,VERY_HIGH,HIGH_CONFIDENCE_REPRODUCED,SRC_GD_2022_YEARBOOK_REPRO,,412.34,413.34,Traceable reproduced source; remaining source-tier uncertainty is explicit.
+city39,2023,221,220.9,东营,山东,HIGH_CONFIDENCE,VERY_HIGH,HIGH_CONFIDENCE_REPRODUCED,SRC_DY_2022_BULLETIN_REPRO,,220.4,221.4,Traceable reproduced source; remaining source-tier uncertainty is explicit.
+city40,2023,322,322.22,镇江,江苏,EXACT_OFFICIAL,HIGH,EXACT_OFFICIAL,SRC_JS_2022_NJ0306,,321.72,322.72,Identity upgraded to HIGH_CONFIDENCE from independent non-anomalous evidence; registered=65 and density conflicts are retained without correction.

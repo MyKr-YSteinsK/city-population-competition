@@ -1,0 +1,8 @@
+alignment_offset,indicator,city_count,row_count,exact_or_near_match_rate,median_absolute_difference,median_relative_difference,major_exceptions
+-2,resident_population,40,40,0.125,3.62,0.006667,"city1,city2,city3,city5,city6,city7,city8,city9,city10,city11,city12,city13..."
+-1,population_density,40,40,0.575,3.4,0.006102,"city2,city4,city5,city8,city11,city12,city13,city15,city17,city18,city22,city24..."
+-1,registered_population,40,40,0.8,0.335,0.00062,"city3,city15,city16,city17,city18,city19,city20,city40"
+-1,resident_population,40,40,0.775,0.3644,0.00079,"city3,city6,city15,city17,city18,city20,city23,city28,city33"
+-1,urbanization_rate,40,40,1,0.4,0.005807,
+0,resident_population,40,80,0.175,4.085,0.008002,"city1,city1,city2,city2,city3,city3,city4,city5,city5,city6,city6,city7..."
+1,resident_population,40,40,0,3.165,0.006279,"city1,city2,city3,city4,city5,city6,city7,city8,city9,city10,city11,city12..."

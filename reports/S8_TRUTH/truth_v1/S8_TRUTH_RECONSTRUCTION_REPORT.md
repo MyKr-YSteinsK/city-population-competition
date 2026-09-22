@@ -1,65 +1,48 @@
-# S8 Truth Reconstruction Report
+# S8 Truth Provenance Hardening Report (candidate_truth_2023_v1)
 
 Status: S8_TRUTH_V1_PROVISIONAL_FREEZE
 
-This is the post-hoc target-forensics track requested by S8-Plan01. It does
-not train, select, score, or compare models. The plan is task input; it is
-kept separate from the user's short request to continue this line.
+This report covers S8-Plan02 truth provenance hardening only. No model was
+trained, scored, ranked, or inspected, and no S9 artifact was read.
 
-## City identity
+## Source hardening
 
-All 40 competition IDs are mapped with resident trajectory anchors plus
-registered population, urbanization, density, and province evidence.
+- Reproduced truth rows before: 21
+- Tier1 truth rows after hardening: 22
+- Tier2 truth rows after hardening: 13
+- Tier3 fallback truth rows after hardening: 5
+- Tier4 fallback truth rows after hardening: 0
+- Direct source upgrade queue rows: 16
+- Rows retained without direct first-party value: 4
 
-Mapping counts: CONFIRMED=19,
-HIGH_CONFIDENCE=20,
-PROVISIONAL=1,
-UNRESOLVED=0.
+The remaining fallback rows are explicit in `truth_source_upgrade_queue.csv`.
+The old reproduced source rows remain in `source_ledger.csv` as historical
+fallback/cross-check records.
 
-city3 has a retained Shenzhen registered-field mismatch. city40 maps to
-Zhenjiang, but its 2021 registered value is 65 versus the 2020 anchor 269.25.
-No competition raw value is corrected.
+## City40
 
-## Year alignment
+`city40 -> 镇江` moves from `PROVISIONAL` to `HIGH_CONFIDENCE`. The raw
+registered value 65 is present in the legal XLSX and normalized CSV. It is not
+corrected. The non-anomalous registered trajectory, resident trajectory,
+urbanization and province fingerprint support Zhenjiang; the density conflict
+and cause of 65 remain unresolved.
 
-The selected hypothesis is competition year = real statistical year + 1.
-Therefore the candidate target year 2023 is reconstructed from real statistical
-year 2022. Resident, registered, urbanization, and density evidence supports
-the 2021 to 2020 comparison. Offsets -2, -1, 0, and +1 are all recorded.
+## City23 and versioning
 
-## Target semantics
+The current v1 value is 245. A 2022 official-statistics-attributed Zhuhai
+source gives 247.72, which renders to 248. The old chat value 248 is recorded
+only as ignored trigger context, not evidence. This material rendered change
+requires `candidate_truth_2023_v2`; v1 remains preserved.
 
-Selected semantics: RESIDENT_POPULATION.
-Confidence: HIGH_WITH_EXPLICIT_EXCEPTIONS.
-Resident matches: 31/40.
-Registered matches: 32/40.
-Urbanization matches: 40/40.
-Density matches: 23/40.
+- v1 evaluator SHA256: 026c2c4723eadad8ae8519586e0a146d47b1bd0525fde315aa4ec4994e86927d
+- candidate_truth_2023_v1 evaluator SHA256: 026c2c4723eadad8ae8519586e0a146d47b1bd0525fde315aa4ec4994e86927d
+- Rendered rows changed from v1: 0
 
-Registered is retained as an independent comparator. No model performance,
-MSE, ranking, or S9 artifact was used.
+## Freeze gate
 
-## Candidate truth and uncertainty
+The gate is not promoted to full freeze because four truth rows still lack a
+directly retrieved Tier1 source in this pass, and the city40 source anomalies
+remain explicit. No value was changed to improve any model result.
 
-candidate_truth_2023_raw.csv preserves 2022 raw values in 万人. The v1
-candidate uses ROUND_HALF_UP_TO_INTEGER_WAN, and the evaluator file is
-derived from the full provenance table. Primary raw rows: 19;
-reproduced-source raw rows: 21.
-
-The freeze is provisional because some 2022 values are Tier-3 reproductions
-and because the city40 identity/registered conflict remains explicit.
-
-## Isolation audit
-
-- S9 branch read: NO
-- S9 predictions or scoreboard read: NO
-- model evaluation performed: NO
-- test.xls accessed: NO
-- Main worktree modified: NO
-
-## Reproduction
-
-Run python scripts/build_s8_truth_v1.py --input-root <data-root> --repo-root <worktree-root>.
-Outputs are under reports/S8_TRUTH/truth_v1.
-
-Artifact commit at generation time: 2560c6e4b78c4d24eae2119b9eaab5a025af54e7.
+Isolation: S9 branch read NO; S9 predictions read NO; model scoring NO;
+test.xls accessed NO.

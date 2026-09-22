@@ -38,4 +38,4 @@ city36,枣庄,山东,CONFIRMED,VERY_HIGH,6,2,0,,,"Multi-year population plus reg
 city37,扬州,江苏,HIGH_CONFIDENCE,HIGH,5,3,1,DENSITY_STRUCTURE,,"Multi-year population plus registered, urbanization, and density evidence; no model evidence."
 city38,肇庆,广东,CONFIRMED,VERY_HIGH,4,2,0,,,"Multi-year population plus registered, urbanization, and density evidence; no model evidence."
 city39,东营,山东,CONFIRMED,VERY_HIGH,6,2,0,,,"Multi-year population plus registered, urbanization, and density evidence; no model evidence."
-city40,镇江,江苏,PROVISIONAL,MEDIUM,4,3,3,registered 2021 is 65 versus Zhenjiang 2020 registered 269.25,,"Multi-year population plus registered, urbanization, and density evidence; no model evidence."
+city40,镇江,江苏,HIGH_CONFIDENCE,HIGH,6,3,3,registered 2021=65; density source values 2017/2019/2020 conflict with Zhenjiang anchor,,"Resident trajectory, non-anomalous registered trajectory, urbanization, province fingerprint, and 2020 resident anchor independently support Zhenjiang; raw anomalies remain unresolved."

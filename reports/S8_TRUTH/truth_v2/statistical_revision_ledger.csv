@@ -1,0 +1,94 @@
+city,real_year,indicator,initial_value,revised_value,census_value,difference,revision_type,source_initial,source_revised,selected_value_for_truth,selection_reason
+湖州,2020,resident_population,336.7579,336.7579,336.7579,0,CENSUS_BENCHMARK,SRC_ZJ_CENSUS_2020,SRC_ZJ_CENSUS_2020,336.7579,Exact census benchmark retained for identity and alignment.
+湖州,2022,resident_population,341.3,341.3,,0,CAPTURED_EVIDENCE,SRC_ZJ_2022_POP_BULLETIN_REPRO,SRC_ZJ_2022_POP_BULLETIN_REPRO,341.3,Captured candidate value; tier and residual uncertainty remain explicit in raw truth and manifest.
+无锡,2020,resident_population,746.2135,746.2135,746.2135,0,CENSUS_BENCHMARK,SRC_JS_CENSUS_2020,SRC_JS_CENSUS_2020,746.2135,Exact census benchmark retained for identity and alignment.
+无锡,2020,resident_population,746.2135,746.4,746.2135,0.1865,REVISED_YEARBOOK_ROUNDING,SRC_JS_CENSUS_2020,SRC_JS_YEARBOOK_2020,746.2135,Rounded annual presentation is logged but does not replace the census value.
+无锡,2022,resident_population,749.08,749.08,,0,CAPTURED_EVIDENCE,SRC_JS_2022_NJ0306,SRC_JS_2022_NJ0306,749.08,Captured candidate value; tier and residual uncertainty remain explicit in raw truth and manifest.
+深圳,2020,resident_population,1756.0061,1756.0061,1756.0061,0,CENSUS_BENCHMARK,SRC_GD_CENSUS_2020,SRC_GD_CENSUS_2020,1756.0061,Exact census benchmark retained for identity and alignment.
+深圳,2022,resident_population,1766.18,1766.18,,0,CAPTURED_EVIDENCE,SRC_SZ_2022_BULLETIN,SRC_SZ_2022_BULLETIN,1766.18,Captured candidate value; tier and residual uncertainty remain explicit in raw truth and manifest.
+舟山,2020,resident_population,115.7817,115.7817,115.7817,0,CENSUS_BENCHMARK,SRC_ZJ_CENSUS_2020,SRC_ZJ_CENSUS_2020,115.7817,Exact census benchmark retained for identity and alignment.
+舟山,2022,resident_population,117,117,,0,CAPTURED_EVIDENCE,SRC_ZJ_2022_POP_BULLETIN_REPRO,SRC_ZJ_2022_POP_BULLETIN_REPRO,117,Captured candidate value; tier and residual uncertainty remain explicit in raw truth and manifest.
+苏州,2020,resident_population,1274.8262,1274.8262,1274.8262,0,CENSUS_BENCHMARK,SRC_JS_CENSUS_2020,SRC_JS_CENSUS_2020,1274.8262,Exact census benchmark retained for identity and alignment.
+苏州,2020,resident_population,1274.8262,1274.96,1274.8262,0.1338,REVISED_YEARBOOK_ROUNDING,SRC_JS_CENSUS_2020,SRC_JS_YEARBOOK_2020,1274.8262,Rounded annual presentation is logged but does not replace the census value.
+苏州,2022,resident_population,1291.06,1291.06,,0,CAPTURED_EVIDENCE,SRC_JS_2022_NJ0306,SRC_JS_2022_NJ0306,1291.06,Captured candidate value; tier and residual uncertainty remain explicit in raw truth and manifest.
+佛山,2020,resident_population,949.8863,949.8863,949.8863,0,CENSUS_BENCHMARK,SRC_GD_CENSUS_2020,SRC_GD_CENSUS_2020,949.8863,Exact census benchmark retained for identity and alignment.
+佛山,2022,resident_population,955.23,955.23,,0,CAPTURED_EVIDENCE,SRC_GD_2022_YEARBOOK_REPRO,SRC_GD_2022_YEARBOOK_REPRO,955.23,Captured candidate value; tier and residual uncertainty remain explicit in raw truth and manifest.
+绍兴,2020,resident_population,527.0977,527.0977,527.0977,0,CENSUS_BENCHMARK,SRC_ZJ_CENSUS_2020,SRC_ZJ_CENSUS_2020,527.0977,Exact census benchmark retained for identity and alignment.
+绍兴,2022,resident_population,535.3,535.3,,0,CAPTURED_EVIDENCE,SRC_ZJ_2022_POP_BULLETIN_REPRO,SRC_ZJ_2022_POP_BULLETIN_REPRO,535.3,Captured candidate value; tier and residual uncertainty remain explicit in raw truth and manifest.
+淮安,2020,resident_population,455.623,455.623,455.623,0,CENSUS_BENCHMARK,SRC_JS_CENSUS_2020,SRC_JS_CENSUS_2020,455.623,Exact census benchmark retained for identity and alignment.
+淮安,2020,resident_population,455.623,455.92,455.623,0.297,REVISED_YEARBOOK_ROUNDING,SRC_JS_CENSUS_2020,SRC_JS_YEARBOOK_2020,455.623,Rounded annual presentation is logged but does not replace the census value.
+淮安,2022,resident_population,455.31,455.31,,0,CAPTURED_EVIDENCE,SRC_JS_2022_NJ0306,SRC_JS_2022_NJ0306,455.31,Captured candidate value; tier and residual uncertainty remain explicit in raw truth and manifest.
+茂名,2020,resident_population,617.405,617.405,617.405,0,CENSUS_BENCHMARK,SRC_GD_CENSUS_2020,SRC_GD_CENSUS_2020,617.405,Exact census benchmark retained for identity and alignment.
+茂名,2022,resident_population,623.82,623.82,,0,CAPTURED_EVIDENCE,SRC_GD_2022_YEARBOOK_REPRO,SRC_GD_2022_YEARBOOK_REPRO,623.82,Captured candidate value; tier and residual uncertainty remain explicit in raw truth and manifest.
+丽水,2020,resident_population,250.7396,250.7396,250.7396,0,CENSUS_BENCHMARK,SRC_ZJ_CENSUS_2020,SRC_ZJ_CENSUS_2020,250.7396,Exact census benchmark retained for identity and alignment.
+丽水,2022,resident_population,251.5,251.5,,0,CAPTURED_EVIDENCE,SRC_ZJ_2022_POP_BULLETIN_REPRO,SRC_ZJ_2022_POP_BULLETIN_REPRO,251.5,Captured candidate value; tier and residual uncertainty remain explicit in raw truth and manifest.
+嘉兴,2020,resident_population,540.0868,540.0868,540.0868,0,CENSUS_BENCHMARK,SRC_ZJ_CENSUS_2020,SRC_ZJ_CENSUS_2020,540.0868,Exact census benchmark retained for identity and alignment.
+嘉兴,2022,resident_population,555.1,555.1,,0,CAPTURED_EVIDENCE,SRC_ZJ_2022_POP_BULLETIN_REPRO,SRC_ZJ_2022_POP_BULLETIN_REPRO,555.1,Captured candidate value; tier and residual uncertainty remain explicit in raw truth and manifest.
+泰州,2020,resident_population,451.2762,451.2762,451.2762,0,CENSUS_BENCHMARK,SRC_JS_CENSUS_2020,SRC_JS_CENSUS_2020,451.2762,Exact census benchmark retained for identity and alignment.
+泰州,2020,resident_population,451.2762,451.68,451.2762,0.4038,REVISED_YEARBOOK_ROUNDING,SRC_JS_CENSUS_2020,SRC_JS_YEARBOOK_2020,451.2762,Rounded annual presentation is logged but does not replace the census value.
+泰州,2022,resident_population,450.56,450.56,,0,CAPTURED_EVIDENCE,SRC_JS_2022_NJ0306,SRC_JS_2022_NJ0306,450.56,Captured candidate value; tier and residual uncertainty remain explicit in raw truth and manifest.
+宿迁,2020,resident_population,498.6192,498.6192,498.6192,0,CENSUS_BENCHMARK,SRC_JS_CENSUS_2020,SRC_JS_CENSUS_2020,498.6192,Exact census benchmark retained for identity and alignment.
+宿迁,2020,resident_population,498.6192,498.82,498.6192,0.2008,REVISED_YEARBOOK_ROUNDING,SRC_JS_CENSUS_2020,SRC_JS_YEARBOOK_2020,498.6192,Rounded annual presentation is logged but does not replace the census value.
+宿迁,2022,resident_population,497.53,497.53,,0,CAPTURED_EVIDENCE,SRC_JS_2022_NJ0306,SRC_JS_2022_NJ0306,497.53,Captured candidate value; tier and residual uncertainty remain explicit in raw truth and manifest.
+河源,2020,resident_population,283.7686,283.7686,283.7686,0,CENSUS_BENCHMARK,SRC_GD_CENSUS_2020,SRC_GD_CENSUS_2020,283.7686,Exact census benchmark retained for identity and alignment.
+河源,2022,resident_population,284.17,284.17,,0,CAPTURED_EVIDENCE,SRC_GD_2022_YEARBOOK_REPRO,SRC_GD_2022_YEARBOOK_REPRO,284.17,Captured candidate value; tier and residual uncertainty remain explicit in raw truth and manifest.
+徐州,2020,resident_population,908.379,908.379,908.379,0,CENSUS_BENCHMARK,SRC_JS_CENSUS_2020,SRC_JS_CENSUS_2020,908.379,Exact census benchmark retained for identity and alignment.
+徐州,2020,resident_population,908.379,908.39,908.379,0.011,REVISED_YEARBOOK_ROUNDING,SRC_JS_CENSUS_2020,SRC_JS_YEARBOOK_2020,908.379,Rounded annual presentation is logged but does not replace the census value.
+徐州,2022,resident_population,901.85,901.85,,0,CAPTURED_EVIDENCE,SRC_JS_2022_NJ0306,SRC_JS_2022_NJ0306,901.85,Captured candidate value; tier and residual uncertainty remain explicit in raw truth and manifest.
+韶关,2020,resident_population,285.5131,285.5131,285.5131,0,CENSUS_BENCHMARK,SRC_GD_CENSUS_2020,SRC_GD_CENSUS_2020,285.5131,Exact census benchmark retained for identity and alignment.
+韶关,2022,resident_population,286.18,286.18,,0,CAPTURED_EVIDENCE,SRC_GD_2022_YEARBOOK_REPRO,SRC_GD_2022_YEARBOOK_REPRO,286.18,Captured candidate value; tier and residual uncertainty remain explicit in raw truth and manifest.
+广州,2020,resident_population,1867.6605,1867.6605,1867.6605,0,CENSUS_BENCHMARK,SRC_GD_CENSUS_2020,SRC_GD_CENSUS_2020,1867.6605,Exact census benchmark retained for identity and alignment.
+广州,2022,resident_population,1873.41,1873.41,,0,CAPTURED_EVIDENCE,SRC_GZ_2022_BULLETIN,SRC_GZ_2022_BULLETIN,1873.41,Captured candidate value; tier and residual uncertainty remain explicit in raw truth and manifest.
+常州,2020,resident_population,527.8121,527.8121,527.8121,0,CENSUS_BENCHMARK,SRC_JS_CENSUS_2020,SRC_JS_CENSUS_2020,527.8121,Exact census benchmark retained for identity and alignment.
+常州,2020,resident_population,527.8121,527.96,527.8121,0.1479,REVISED_YEARBOOK_ROUNDING,SRC_JS_CENSUS_2020,SRC_JS_YEARBOOK_2020,527.8121,Rounded annual presentation is logged but does not replace the census value.
+常州,2022,resident_population,536.62,536.62,,0,CAPTURED_EVIDENCE,SRC_JS_2022_NJ0306,SRC_JS_2022_NJ0306,536.62,Captured candidate value; tier and residual uncertainty remain explicit in raw truth and manifest.
+金华,2020,resident_population,705.0683,705.0683,705.0683,0,CENSUS_BENCHMARK,SRC_ZJ_CENSUS_2020,SRC_ZJ_CENSUS_2020,705.0683,Exact census benchmark retained for identity and alignment.
+金华,2022,resident_population,712.7,712.7,,0,CAPTURED_EVIDENCE,SRC_ZJ_2022_POP_BULLETIN_REPRO,SRC_ZJ_2022_POP_BULLETIN_REPRO,712.7,Captured candidate value; tier and residual uncertainty remain explicit in raw truth and manifest.
+衢州,2020,resident_population,227.6184,227.6184,227.6184,0,CENSUS_BENCHMARK,SRC_ZJ_CENSUS_2020,SRC_ZJ_CENSUS_2020,227.6184,Exact census benchmark retained for identity and alignment.
+衢州,2022,resident_population,229,229,,0,CAPTURED_EVIDENCE,SRC_ZJ_2022_POP_BULLETIN_REPRO,SRC_ZJ_2022_POP_BULLETIN_REPRO,229,Captured candidate value; tier and residual uncertainty remain explicit in raw truth and manifest.
+杭州,2020,resident_population,1193.601,1193.601,1193.601,0,CENSUS_BENCHMARK,SRC_ZJ_CENSUS_2020,SRC_ZJ_CENSUS_2020,1193.601,Exact census benchmark retained for identity and alignment.
+杭州,2022,resident_population,1237.6,1237.6,,0,CAPTURED_EVIDENCE,SRC_ZJ_2022_POP_BULLETIN_REPRO,SRC_ZJ_2022_POP_BULLETIN_REPRO,1237.6,Captured candidate value; tier and residual uncertainty remain explicit in raw truth and manifest.
+南京,2020,resident_population,931.4685,931.4685,931.4685,0,CENSUS_BENCHMARK,SRC_JS_CENSUS_2020,SRC_JS_CENSUS_2020,931.4685,Exact census benchmark retained for identity and alignment.
+南京,2020,resident_population,931.4685,931.97,931.4685,0.5015,REVISED_YEARBOOK_ROUNDING,SRC_JS_CENSUS_2020,SRC_JS_YEARBOOK_2020,931.4685,Rounded annual presentation is logged but does not replace the census value.
+南京,2022,resident_population,949.11,949.11,,0,CAPTURED_EVIDENCE,SRC_JS_2022_NJ0306,SRC_JS_2022_NJ0306,949.11,Captured candidate value; tier and residual uncertainty remain explicit in raw truth and manifest.
+珠海,2020,resident_population,243.9585,243.9585,243.9585,0,CENSUS_BENCHMARK,SRC_GD_CENSUS_2020,SRC_GD_CENSUS_2020,243.9585,Exact census benchmark retained for identity and alignment.
+珠海,2022,resident_population,245,245,,0,CAPTURED_EVIDENCE,SRC_GD_2022_YEARBOOK_REPRO,SRC_GD_2022_YEARBOOK_REPRO,245,Captured candidate value; tier and residual uncertainty remain explicit in raw truth and manifest.
+济南,2020,resident_population,920.2432,920.2432,920.2432,0,CENSUS_BENCHMARK,SRC_SD_CENSUS_2020,SRC_SD_CENSUS_2020,920.2432,Exact census benchmark retained for identity and alignment.
+济南,2022,resident_population,941.5,941.5,,0,CAPTURED_EVIDENCE,SRC_JN_2022_BULLETIN,SRC_JN_2022_BULLETIN,941.5,Captured candidate value; tier and residual uncertainty remain explicit in raw truth and manifest.
+宁波,2020,resident_population,940.4283,940.4283,940.4283,0,CENSUS_BENCHMARK,SRC_ZJ_CENSUS_2020,SRC_ZJ_CENSUS_2020,940.4283,Exact census benchmark retained for identity and alignment.
+宁波,2022,resident_population,961.8,961.8,,0,CAPTURED_EVIDENCE,SRC_ZJ_2022_POP_BULLETIN_REPRO,SRC_ZJ_2022_POP_BULLETIN_REPRO,961.8,Captured candidate value; tier and residual uncertainty remain explicit in raw truth and manifest.
+南通,2020,resident_population,772.6635,772.6635,772.6635,0,CENSUS_BENCHMARK,SRC_JS_CENSUS_2020,SRC_JS_CENSUS_2020,772.6635,Exact census benchmark retained for identity and alignment.
+南通,2020,resident_population,772.6635,772.8,772.6635,0.1365,REVISED_YEARBOOK_ROUNDING,SRC_JS_CENSUS_2020,SRC_JS_YEARBOOK_2020,772.6635,Rounded annual presentation is logged but does not replace the census value.
+南通,2022,resident_population,774.35,774.35,,0,CAPTURED_EVIDENCE,SRC_JS_2022_NJ0306,SRC_JS_2022_NJ0306,774.35,Captured candidate value; tier and residual uncertainty remain explicit in raw truth and manifest.
+汕头,2020,resident_population,550.2031,550.2031,550.2031,0,CENSUS_BENCHMARK,SRC_GD_CENSUS_2020,SRC_GD_CENSUS_2020,550.2031,Exact census benchmark retained for identity and alignment.
+汕头,2022,resident_population,554.19,554.19,,0,CAPTURED_EVIDENCE,SRC_GD_2022_YEARBOOK_REPRO,SRC_GD_2022_YEARBOOK_REPRO,554.19,Captured candidate value; tier and residual uncertainty remain explicit in raw truth and manifest.
+青岛,2020,resident_population,1007.1722,1007.1722,1007.1722,0,CENSUS_BENCHMARK,SRC_SD_CENSUS_2020,SRC_SD_CENSUS_2020,1007.1722,Exact census benchmark retained for identity and alignment.
+青岛,2022,resident_population,1034.21,1034.21,,0,CAPTURED_EVIDENCE,SRC_QD_2022_BULLETIN,SRC_QD_2022_BULLETIN,1034.21,Captured candidate value; tier and residual uncertainty remain explicit in raw truth and manifest.
+台州,2020,resident_population,662.2888,662.2888,662.2888,0,CENSUS_BENCHMARK,SRC_ZJ_CENSUS_2020,SRC_ZJ_CENSUS_2020,662.2888,Exact census benchmark retained for identity and alignment.
+台州,2022,resident_population,667.8,667.8,,0,CAPTURED_EVIDENCE,SRC_ZJ_2022_POP_BULLETIN_REPRO,SRC_ZJ_2022_POP_BULLETIN_REPRO,667.8,Captured candidate value; tier and residual uncertainty remain explicit in raw truth and manifest.
+连云港,2020,resident_population,459.936,459.936,459.936,0,CENSUS_BENCHMARK,SRC_JS_CENSUS_2020,SRC_JS_CENSUS_2020,459.936,Exact census benchmark retained for identity and alignment.
+连云港,2020,resident_population,459.936,460.1,459.936,0.164,REVISED_YEARBOOK_ROUNDING,SRC_JS_CENSUS_2020,SRC_JS_YEARBOOK_2020,459.936,Rounded annual presentation is logged but does not replace the census value.
+连云港,2022,resident_population,460.05,460.05,,0,CAPTURED_EVIDENCE,SRC_JS_2022_NJ0306,SRC_JS_2022_NJ0306,460.05,Captured candidate value; tier and residual uncertainty remain explicit in raw truth and manifest.
+江门,2020,resident_population,479.809,479.809,479.809,0,CENSUS_BENCHMARK,SRC_GD_CENSUS_2020,SRC_GD_CENSUS_2020,479.809,Exact census benchmark retained for identity and alignment.
+江门,2022,resident_population,482.22,482.22,,0,CAPTURED_EVIDENCE,SRC_JM_2022_BULLETIN,SRC_JM_2022_BULLETIN,482.22,Captured candidate value; tier and residual uncertainty remain explicit in raw truth and manifest.
+淄博,2020,resident_population,470.4138,470.4138,470.4138,0,CENSUS_BENCHMARK,SRC_SD_CENSUS_2020,SRC_SD_CENSUS_2020,470.4138,Exact census benchmark retained for identity and alignment.
+淄博,2022,resident_population,470.59,470.59,,0,CAPTURED_EVIDENCE,SRC_ZB_2022_BULLETIN,SRC_ZB_2022_BULLETIN,470.59,Captured candidate value; tier and residual uncertainty remain explicit in raw truth and manifest.
+温州,2020,resident_population,957.2903,957.2903,957.2903,0,CENSUS_BENCHMARK,SRC_ZJ_CENSUS_2020,SRC_ZJ_CENSUS_2020,957.2903,Exact census benchmark retained for identity and alignment.
+温州,2022,resident_population,967.9,967.9,,0,CAPTURED_EVIDENCE,SRC_ZJ_2022_POP_BULLETIN_REPRO,SRC_ZJ_2022_POP_BULLETIN_REPRO,967.9,Captured candidate value; tier and residual uncertainty remain explicit in raw truth and manifest.
+盐城,2020,resident_population,670.9629,670.9629,670.9629,0,CENSUS_BENCHMARK,SRC_JS_CENSUS_2020,SRC_JS_CENSUS_2020,670.9629,Exact census benchmark retained for identity and alignment.
+盐城,2020,resident_population,670.9629,671.06,670.9629,0.0971,REVISED_YEARBOOK_ROUNDING,SRC_JS_CENSUS_2020,SRC_JS_YEARBOOK_2020,670.9629,Rounded annual presentation is logged but does not replace the census value.
+盐城,2022,resident_population,668.97,668.97,,0,CAPTURED_EVIDENCE,SRC_JS_2022_NJ0306,SRC_JS_2022_NJ0306,668.97,Captured candidate value; tier and residual uncertainty remain explicit in raw truth and manifest.
+湛江,2020,resident_population,698.1236,698.1236,698.1236,0,CENSUS_BENCHMARK,SRC_GD_CENSUS_2020,SRC_GD_CENSUS_2020,698.1236,Exact census benchmark retained for identity and alignment.
+湛江,2022,resident_population,703.54,703.54,,0,CAPTURED_EVIDENCE,SRC_GD_2022_YEARBOOK_REPRO,SRC_GD_2022_YEARBOOK_REPRO,703.54,Captured candidate value; tier and residual uncertainty remain explicit in raw truth and manifest.
+枣庄,2020,resident_population,385.5601,385.5601,385.5601,0,CENSUS_BENCHMARK,SRC_SD_CENSUS_2020,SRC_SD_CENSUS_2020,385.5601,Exact census benchmark retained for identity and alignment.
+枣庄,2022,resident_population,382.97,382.97,,0,CAPTURED_EVIDENCE,SRC_ZZ_2022_BULLETIN_REPRO,SRC_ZZ_2022_BULLETIN_REPRO,382.97,Captured candidate value; tier and residual uncertainty remain explicit in raw truth and manifest.
+扬州,2020,resident_population,455.9797,455.9797,455.9797,0,CENSUS_BENCHMARK,SRC_JS_CENSUS_2020,SRC_JS_CENSUS_2020,455.9797,Exact census benchmark retained for identity and alignment.
+扬州,2020,resident_population,455.9797,456.1,455.9797,0.1203,REVISED_YEARBOOK_ROUNDING,SRC_JS_CENSUS_2020,SRC_JS_YEARBOOK_2020,455.9797,Rounded annual presentation is logged but does not replace the census value.
+扬州,2022,resident_population,458.29,458.29,,0,CAPTURED_EVIDENCE,SRC_JS_2022_NJ0306,SRC_JS_2022_NJ0306,458.29,Captured candidate value; tier and residual uncertainty remain explicit in raw truth and manifest.
+肇庆,2020,resident_population,411.3594,411.3594,411.3594,0,CENSUS_BENCHMARK,SRC_GD_CENSUS_2020,SRC_GD_CENSUS_2020,411.3594,Exact census benchmark retained for identity and alignment.
+肇庆,2022,resident_population,412.84,412.84,,0,CAPTURED_EVIDENCE,SRC_GD_2022_YEARBOOK_REPRO,SRC_GD_2022_YEARBOOK_REPRO,412.84,Captured candidate value; tier and residual uncertainty remain explicit in raw truth and manifest.
+东营,2020,resident_population,219.3518,219.3518,219.3518,0,CENSUS_BENCHMARK,SRC_SD_CENSUS_2020,SRC_SD_CENSUS_2020,219.3518,Exact census benchmark retained for identity and alignment.
+东营,2022,resident_population,220.9,220.9,,0,CAPTURED_EVIDENCE,SRC_DY_2022_BULLETIN_REPRO,SRC_DY_2022_BULLETIN_REPRO,220.9,Captured candidate value; tier and residual uncertainty remain explicit in raw truth and manifest.
+镇江,2020,resident_population,321.0418,321.0418,321.0418,0,CENSUS_BENCHMARK,SRC_JS_CENSUS_2020,SRC_JS_CENSUS_2020,321.0418,Exact census benchmark retained for identity and alignment.
+镇江,2020,resident_population,321.0418,321.1,321.0418,0.0582,REVISED_YEARBOOK_ROUNDING,SRC_JS_CENSUS_2020,SRC_JS_YEARBOOK_2020,321.0418,Rounded annual presentation is logged but does not replace the census value.
+镇江,2022,resident_population,322.22,322.22,,0,CAPTURED_EVIDENCE,SRC_JS_2022_NJ0306,SRC_JS_2022_NJ0306,322.22,Captured candidate value; tier and residual uncertainty remain explicit in raw truth and manifest.

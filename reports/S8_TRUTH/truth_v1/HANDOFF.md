@@ -1,52 +1,46 @@
-# S8 Truth Track Handoff
+# S8 Plan02 Truth Provenance Hardening Handoff
 
 Status: S8_TRUTH_V1_PROVISIONAL_FREEZE
 Branch: codex/s8-truth-reconstruction-v1
 Base SHA: 0a74372ea4e3555b3d659e6a2c77647b92eabea4
-Final Commit SHA: 2560c6e4b78c4d24eae2119b9eaab5a025af54e7
-Working tree at generation: M reports/S8_TRUTH/truth_v1/S8_TRUTH_RECONSTRUCTION_REPORT.md
+Artifact Freeze Commit: PENDING_ARTIFACT_FREEZE_COMMIT
+Final Branch HEAD: PENDING_FINAL_BRANCH_HEAD
+Working tree at generation: metadata may be pending after artifact commit
 
-Truth version: candidate_truth_2023_v1
-Truth SHA256 evaluator: 026c2c4723eadad8ae8519586e0a146d47b1bd0525fde315aa4ec4994e86927d
+Truth version: candidate_truth_2023_v1 (successor v2 required)
+Evaluator SHA256: 026c2c4723eadad8ae8519586e0a146d47b1bd0525fde315aa4ec4994e86927d
+Full truth SHA256: ca7b86cc5cbc98f01562a2a7cabf14e01f90eae44986f841b3030451da940ad7
 
-City mapping:
-- confirmed: 19
-- high confidence: 20
-- provisional: 1
-- unresolved: 0
+Source upgrade:
+- Tier1 truth rows before: 19
+- Tier1 truth rows after: 22
+- Tier2 truth rows after: 13
+- fallback truth rows after: 5
+- unresolved source rows: 4
 
-Year alignment:
-- selected hypothesis: competition year = real year + 1
-- evidence scope: 40 cities; resident, registered, urbanization, density; four province groups
-- exceptions: city3 and city40 registered conflicts; census/yearbook presentation differences
+City40:
+- mapping before: PROVISIONAL
+- mapping after: HIGH_CONFIDENCE
+- registered=65 explanation: ANOMALY_CAUSE_UNRESOLVED; literal raw value propagated unchanged; no correction
+- remaining uncertainty: density conflict and anomaly cause
 
-Target semantics:
-- result: RESIDENT_POPULATION
-- confidence: HIGH_WITH_EXPLICIT_EXCEPTIONS
-- conflicts: retained in truth_conflicts.csv
+City23:
+- official 2022 value: 247.72
+- rendered truth: v1=245, v2=248
+- changed vs v1: YES; v2 required
+- old chat 248: ignored as evidence
 
-Sources:
-- total source ledger rows: 29
-- Tier 1 sources: 15
-- fallback source rows: 9
-
-Truth reconstruction:
-- resolved rows: 40
-- provisional rows: 1
-- unresolved rows: 0
-- unit: raw 万人; evaluator integer 万人
-- rendering rule: ROUND_HALF_UP_TO_INTEGER_WAN
+Truth delta:
+- raw value rows changed in v2: 1
+- evaluator rows changed: 1
+- v2 required: YES
 
 Isolation:
 - S9 branch read: NO
 - S9 predictions read: NO
-- model evaluation performed: NO
+- model scoring performed: NO
 - test.xls accessed: NO
 
-Project documentation drift:
-- CURRENT_LEARNING_CHECKPOINT.md and learning documents were not modified.
-- Main was not modified or merged.
-
 Return:
-S8 truth track remains provisional and waits for Main review. Do not feed the
-truth values to S9 from this worker.
+candidate_truth_2023_v1 (successor v2 required) remains provisional and waits for Main review. Do not reveal truth
+to S9 before the independent prediction freeze.

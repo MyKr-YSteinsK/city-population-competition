@@ -1,0 +1,41 @@
+city_id,real_city,province,competition_target_year,real_statistical_year,target_semantics,raw_value,raw_unit,normalized_value_wan,source_id,source_tier,revision_status,value_confidence,alternate_value,alternate_source_id,conflict_note
+city1,湖州,浙江,2023,2022,resident_population,341.3,万人,341.3,SRC_ZJ_2022_POP_BULLETIN_GOV_REPOST,TIER2,CAPTURED_EVIDENCE,HIGH_CONFIDENCE_OFFICIAL_REPOST,,,Provenance hardened; raw source retained in source ledger.
+city2,无锡,江苏,2023,2022,resident_population,749.08,万人,749.08,SRC_JS_2022_NJ0306,TIER1,CAPTURED_EVIDENCE,EXACT_OFFICIAL,,,
+city3,深圳,广东,2023,2022,resident_population,1766.18,万人,1766.18,SRC_SZ_2022_BULLETIN,TIER1,CAPTURED_EVIDENCE,EXACT_OFFICIAL,,,
+city4,舟山,浙江,2023,2022,resident_population,117,万人,117,SRC_ZJ_2022_POP_BULLETIN_GOV_REPOST,TIER2,CAPTURED_EVIDENCE,HIGH_CONFIDENCE_OFFICIAL_REPOST,,,Provenance hardened; raw source retained in source ledger.
+city5,苏州,江苏,2023,2022,resident_population,1291.06,万人,1291.06,SRC_JS_2022_NJ0306,TIER1,CAPTURED_EVIDENCE,EXACT_OFFICIAL,,,
+city6,佛山,广东,2023,2022,resident_population,955.23,万人,955.23,SRC_GD_FOSHAN_2022_OFFICIAL_MEDIA,TIER2,CAPTURED_EVIDENCE,HIGH_CONFIDENCE_OFFICIAL_REPOST,,,Provenance hardened; raw source retained in source ledger.
+city7,绍兴,浙江,2023,2022,resident_population,535.3,万人,535.3,SRC_ZJ_2022_POP_BULLETIN_GOV_REPOST,TIER2,CAPTURED_EVIDENCE,HIGH_CONFIDENCE_OFFICIAL_REPOST,,,Provenance hardened; raw source retained in source ledger.
+city8,淮安,江苏,2023,2022,resident_population,455.31,万人,455.31,SRC_JS_2022_NJ0306,TIER1,CAPTURED_EVIDENCE,EXACT_OFFICIAL,,,
+city9,茂名,广东,2023,2022,resident_population,623.82,万人,623.82,SRC_GD_MAOMING_2022_OFFICIAL_MEDIA,TIER2,CAPTURED_EVIDENCE,HIGH_CONFIDENCE_OFFICIAL_REPOST,,,Provenance hardened; raw source retained in source ledger.
+city10,丽水,浙江,2023,2022,resident_population,251.5,万人,251.5,SRC_ZJ_2022_POP_BULLETIN_GOV_REPOST,TIER2,CAPTURED_EVIDENCE,HIGH_CONFIDENCE_OFFICIAL_REPOST,,,Provenance hardened; raw source retained in source ledger.
+city11,嘉兴,浙江,2023,2022,resident_population,555.1,万人,555.1,SRC_ZJ_2022_POP_BULLETIN_GOV_REPOST,TIER2,CAPTURED_EVIDENCE,HIGH_CONFIDENCE_OFFICIAL_REPOST,,,Provenance hardened; raw source retained in source ledger.
+city12,泰州,江苏,2023,2022,resident_population,450.56,万人,450.56,SRC_JS_2022_NJ0306,TIER1,CAPTURED_EVIDENCE,EXACT_OFFICIAL,,,
+city13,宿迁,江苏,2023,2022,resident_population,497.53,万人,497.53,SRC_JS_2022_NJ0306,TIER1,CAPTURED_EVIDENCE,EXACT_OFFICIAL,,,
+city14,河源,广东,2023,2022,resident_population,284.17,万人,284.17,SRC_GD_HEYUAN_2022_BULLETIN,TIER1,CAPTURED_EVIDENCE,EXACT_OFFICIAL,,,Provenance hardened; raw source retained in source ledger.
+city15,徐州,江苏,2023,2022,resident_population,901.85,万人,901.85,SRC_JS_2022_NJ0306,TIER1,CAPTURED_EVIDENCE,EXACT_OFFICIAL,,,
+city16,韶关,广东,2023,2022,resident_population,286.18,万人,286.18,SRC_GD_2022_YEARBOOK_REPRO,TIER3,CAPTURED_EVIDENCE,HIGH_CONFIDENCE_REPRODUCED,,,
+city17,广州,广东,2023,2022,resident_population,1873.41,万人,1873.41,SRC_GZ_2022_BULLETIN,TIER1,CAPTURED_EVIDENCE,EXACT_OFFICIAL,,,
+city18,常州,江苏,2023,2022,resident_population,536.62,万人,536.62,SRC_JS_2022_NJ0306,TIER1,CAPTURED_EVIDENCE,EXACT_OFFICIAL,,,
+city19,金华,浙江,2023,2022,resident_population,712.7,万人,712.7,SRC_ZJ_2022_POP_BULLETIN_GOV_REPOST,TIER2,CAPTURED_EVIDENCE,HIGH_CONFIDENCE_OFFICIAL_REPOST,,,Provenance hardened; raw source retained in source ledger.
+city20,衢州,浙江,2023,2022,resident_population,229,万人,229,SRC_ZJ_2022_POP_BULLETIN_GOV_REPOST,TIER2,CAPTURED_EVIDENCE,HIGH_CONFIDENCE_OFFICIAL_REPOST,,,Provenance hardened; raw source retained in source ledger.
+city21,杭州,浙江,2023,2022,resident_population,1237.6,万人,1237.6,SRC_ZJ_2022_POP_BULLETIN_GOV_REPOST,TIER2,CAPTURED_EVIDENCE,HIGH_CONFIDENCE_OFFICIAL_REPOST,,,Provenance hardened; raw source retained in source ledger.
+city22,南京,江苏,2023,2022,resident_population,949.11,万人,949.11,SRC_JS_2022_NJ0306,TIER1,CAPTURED_EVIDENCE,EXACT_OFFICIAL,,,
+city23,珠海,广东,2023,2022,resident_population,247.72,万人,247.72,SRC_GD_ZHUHAI_2022_OFFICIAL_MEDIA,TIER2,CAPTURED_EVIDENCE,HIGH_CONFIDENCE_OFFICIAL_REPOST,,,Provenance hardened; raw source retained in source ledger.
+city24,济南,山东,2023,2022,resident_population,941.5,万人,941.5,SRC_JN_2022_BULLETIN,TIER1,CAPTURED_EVIDENCE,EXACT_OFFICIAL,,,
+city25,宁波,浙江,2023,2022,resident_population,961.8,万人,961.8,SRC_ZJ_2022_POP_BULLETIN_GOV_REPOST,TIER2,CAPTURED_EVIDENCE,HIGH_CONFIDENCE_OFFICIAL_REPOST,,,Provenance hardened; raw source retained in source ledger.
+city26,南通,江苏,2023,2022,resident_population,774.35,万人,774.35,SRC_JS_2022_NJ0306,TIER1,CAPTURED_EVIDENCE,EXACT_OFFICIAL,,,
+city27,汕头,广东,2023,2022,resident_population,554.19,万人,554.19,SRC_GD_SHANTOU_2022_BULLETIN,TIER1,CAPTURED_EVIDENCE,EXACT_OFFICIAL,,,Provenance hardened; raw source retained in source ledger.
+city28,青岛,山东,2023,2022,resident_population,1034.21,万人,1034.21,SRC_QD_2022_BULLETIN,TIER1,CAPTURED_EVIDENCE,EXACT_OFFICIAL,,,
+city29,台州,浙江,2023,2022,resident_population,667.8,万人,667.8,SRC_ZJ_2022_POP_BULLETIN_GOV_REPOST,TIER2,CAPTURED_EVIDENCE,HIGH_CONFIDENCE_OFFICIAL_REPOST,,,Provenance hardened; raw source retained in source ledger.
+city30,连云港,江苏,2023,2022,resident_population,460.05,万人,460.05,SRC_JS_2022_NJ0306,TIER1,CAPTURED_EVIDENCE,EXACT_OFFICIAL,,,
+city31,江门,广东,2023,2022,resident_population,482.22,万人,482.22,SRC_JM_2022_BULLETIN,TIER1,CAPTURED_EVIDENCE,EXACT_OFFICIAL,,,
+city32,淄博,山东,2023,2022,resident_population,470.59,万人,470.59,SRC_ZB_2022_BULLETIN,TIER1,CAPTURED_EVIDENCE,EXACT_OFFICIAL,,,
+city33,温州,浙江,2023,2022,resident_population,967.9,万人,967.9,SRC_ZJ_2022_POP_BULLETIN_GOV_REPOST,TIER2,CAPTURED_EVIDENCE,HIGH_CONFIDENCE_OFFICIAL_REPOST,,,Provenance hardened; raw source retained in source ledger.
+city34,盐城,江苏,2023,2022,resident_population,668.97,万人,668.97,SRC_JS_2022_NJ0306,TIER1,CAPTURED_EVIDENCE,EXACT_OFFICIAL,,,
+city35,湛江,广东,2023,2022,resident_population,703.54,万人,703.54,SRC_GD_ZHANJIANG_2022_BULLETIN,TIER1,CAPTURED_EVIDENCE,EXACT_OFFICIAL,,,Provenance hardened; raw source retained in source ledger.
+city36,枣庄,山东,2023,2022,resident_population,382.97,万人,382.97,SRC_ZZ_2022_BULLETIN_REPRO,TIER3,CAPTURED_EVIDENCE,HIGH_CONFIDENCE_REPRODUCED,,,
+city37,扬州,江苏,2023,2022,resident_population,458.29,万人,458.29,SRC_JS_2022_NJ0306,TIER1,CAPTURED_EVIDENCE,EXACT_OFFICIAL,,,
+city38,肇庆,广东,2023,2022,resident_population,412.84,万人,412.84,SRC_GD_2022_YEARBOOK_REPRO,TIER3,CAPTURED_EVIDENCE,HIGH_CONFIDENCE_REPRODUCED,,,
+city39,东营,山东,2023,2022,resident_population,220.9,万人,220.9,SRC_DY_2022_BULLETIN_REPRO,TIER3,CAPTURED_EVIDENCE,HIGH_CONFIDENCE_REPRODUCED,,,
+city40,镇江,江苏,2023,2022,resident_population,322.22,万人,322.22,SRC_JS_2022_NJ0306,TIER1,CAPTURED_EVIDENCE,EXACT_OFFICIAL,,,Registered 2021=65 and density-field conflict are retained; identity upgraded using independent non-anomalous evidence.
