@@ -14,6 +14,7 @@
 - S6 closeout engineering base：GitHub `main` @ `bfe265d3d57f43938e967890567a4162d7b3c896`。
 - S6 frozen final solution 继续保持不变；S8/S9 都是后续 research extensions，不回写或伪装成原 competition-legal final solution。
 - S9 完成后与 S8 证据一并返回 S7，整合后再做最终 Reproduction / Defense / Transfer Success Definition 审查。
+- 用户另行批准 **S10｜外部高分脚本取证、复现与机制审计**：对一份 MSE≈675 的外部脚本做独立 forensic / reproduction / leakage / mechanism audit；S10 可与 S8/S9 并行，但默认不污染 S9 blind contract，最终只向 Main 回传审计报告与 method-only evidence。
 
 ## S6 Confirmed
 
@@ -443,6 +444,144 @@ S9 完成后与 S8 truth/evidence 一并返回 S7。
 S7 最终 Transfer/Defense 需要回答：
 
 > 如果内部 backtest 与 blind final holdout 给出不同模型排序，应如何解释、怎样判断 validation misspecification、regime shift、statistical rebasing 与 post-hoc overfitting？
+
+## S10｜外部高分脚本取证、复现与机制审计
+
+### Stage Purpose
+
+用户获得一份声称 / 观察到 **MSE 约 675** 的外部脚本，并明确批准新增独立研究阶段 **S10｜External Script Forensics, Reproduction & Mechanism Audit**。
+
+S10 的任务不是立即把该脚本纳入当前最优方案，而是先回答：
+
+1. 这份脚本实际上在做什么？
+2. “MSE≈675”到底按什么数据、target、split、metric、聚合方式计算？
+3. 结果能否在 clean / controlled environment 中独立复现？
+4. 是否存在 target leakage、future leakage、split leakage、test contamination、metric mismatch、in-sample evaluation 或其他 validation distortion？
+5. 如果结果有效，它的提升来自什么机制，是否与当前 B3 / F4 / S9 方法存在真正不同的信息或建模结构？
+6. 哪些部分值得形成 **method-only handoff** 回 Main，并在不污染 S9 blind contract 的前提下决定是否纳入后续研究。
+
+### Parallel Position
+
+S10 可与 S8 / S9 并行，但默认作为 **forensic support stage**：
+
+- S8 继续只负责 truth reconstruction，不向 S10 提供 2023 candidate truth；
+- S9 继续按 blind model contract 独立运行；
+- S10 不读取 S8 truth / real-2022 target / 2023 reconstructed labels / 2023 row-level error；
+- S10 不修改 S6 frozen final artifacts；
+- S10 不直接改变 S9 candidate pool。
+
+如果 S10 证明脚本的 675 是在 **competition-legal historical validation** 上成立，且方法本身不依赖 2023 truth，Main 可以在独立复审后将其标记为 `S9_ELIGIBLE_METHOD`，再决定是否通过一个显式的新 Plan 纳入 S9。未经 Main 明确授权，不得自行 merge / 跳转。
+
+### Required Audit Dimensions
+
+S10 至少必须审计：
+
+- input files / sheets / years / city coverage；
+- target semantics；
+- train / validation construction；
+- forecast horizon / cutoff；
+- MSE implementation and aggregation；
+- preprocessing fit scope；
+- feature construction and lag direction；
+- missing-value handling；
+- scaling / encoding；
+- model family / hyperparameters；
+- target transformation；
+- ensemble / post-processing / clipping / manual corrections；
+- random seed / reproducibility；
+- dependency versions；
+- external data / test.xls / B-data / reconstructed 2023 truth contamination；
+- whether any full-dataset statistics are fit before split；
+- whether current/future target values leak through rolling / interpolation / merge / normalization；
+- whether the reported 675 is train, validation, cross-validation, pooled OOF, single-origin holdout, or some other quantity.
+
+### Reproduction Contract
+
+分析顺序必须是：
+
+`Static code reading → evaluation-contract reconstruction → clean reproduction → metric verification → leakage audit → controlled ablation → mechanism interpretation`
+
+不得先重构 / 优化脚本再尝试复现原结果。
+
+必须保留：
+
+- original script immutable copy / hash；
+- exact environment；
+- exact command；
+- stdout / metric evidence；
+- reproduced predictions where available；
+- independent MSE recomputation；
+- any deviations required to make the script runnable。
+
+若无法复现 675，必须区分：
+
+- missing dependency / asset；
+- nondeterminism；
+- undocumented preprocessing；
+- data mismatch；
+- metric mismatch；
+- code defect；
+- result claim unsupported。
+
+### Comparison Contract
+
+只有在脚本原始结果被复现并通过基本 leakage audit 后，才允许与项目模型比较。
+
+比较必须先转换到与 S2/S5 相同的 historical validation contract；不能把：
+
+- train MSE；
+- random split MSE；
+- single-origin MSE；
+- RMSE；
+- score = 1/(1+MSE)；
+- 不同 target；
+- 不同 city coverage；
+
+直接与 F4 pooled historical MSE 比较。
+
+### Final Labels
+
+S10 最终至少给脚本一个主标签：
+
+- `VALID_AND_REPRODUCIBLE_SAME_CONTRACT`
+- `VALID_BUT_DIFFERENT_VALIDATION_CONTRACT`
+- `METHOD_INTERESTING_BUT_RESULT_NOT_COMPARABLE`
+- `LEAKAGE_OR_CONTAMINATION_DETECTED`
+- `UNREPRODUCIBLE`
+- `INSUFFICIENT_EVIDENCE`
+
+若满足原 competition information boundary 且方法机制值得继续研究，可另加：
+
+- `S9_ELIGIBLE_METHOD_CANDIDATE`
+
+该标签只表示可以提交 Main 审查，不表示自动加入 S9。
+
+### Required Deliverable to Main
+
+S10 完成后返回一份 **human-readable forensic report + compact Main handoff**，至少包含：
+
+- 675 的准确来源和复现状态；
+- 脚本完整 data flow；
+- validation / metric reconstruction；
+- 核心模型和 feature / target framing；
+- leakage / contamination audit；
+- 与 B3 / F4 / S9 contract 的 apples-to-apples comparison；
+- 关键 ablation / mechanism evidence；
+- 优点、失败模式、适用边界；
+- 可迁移启发；
+- 是否值得进入 S9 / post-reveal research 的建议；
+- exact artifact / commit / branch / hash。
+
+S10 Lab 不自行宣布整个项目或 S9 完成。
+
+### Return Point
+
+S10 报告交回 Main。Main 决定：
+
+1. 仅作为项目复盘 evidence 保留；
+2. 生成 method-only handoff 给 S9；
+3. 放入 post-reveal research；
+4. 判定为不可比 / 泄漏 / 不可复现并关闭。
 
 ## S7 Entry Point
 
