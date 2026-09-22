@@ -1,0 +1,187 @@
+{
+  "plan_id": "S9-Plan02",
+  "status": "PLAN02_EVIDENCE_COMPLETE_READY_FOR_LAB_REVIEW",
+  "git": {
+    "branch": "codex/s9-plan02-f4-learner-cross",
+    "worker_commit": "2281166d474fdf4903a05c796092738489d43126",
+    "parent_sha": "098a4e7e169d528c378803078e33ec5f1450fd03",
+    "recovery_main_sha": "0a74372ea4e3555b3d659e6a2c77647b92eabea4"
+  },
+  "runtime": {
+    "started_at_utc": "2026-09-22T04:36:55.050196+00:00",
+    "finished_at_utc": "2026-09-22T04:36:58.348025+00:00",
+    "duration_seconds": 3.2979524999973364,
+    "fit_workers": 4,
+    "thread_count_per_fit": 1,
+    "inner_fit_count": 3960,
+    "outer_fit_count": 220,
+    "total_fit_count": 4180,
+    "outer_selection_count": 220,
+    "fallback_selection_count": 40
+  },
+  "library_versions": {
+    "python": "3.14.6",
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "scikit_learn": "1.9.1",
+    "lightgbm": "4.7.0",
+    "xgboost": "3.4.1",
+    "catboost": "1.2.10"
+  },
+  "data_contract": {
+    "feature_contract_version": "S5-Plan04-FULL-MULTISOURCE-V1",
+    "replay_contract_version": "S5-Plan04B-TRAINING-REPLAY-V1",
+    "formal_rows": 1760,
+    "replay_rows": 2320,
+    "outer_geometry_rows": 44,
+    "inner_geometry_rows": 484,
+    "eligible_inner_folds": 264,
+    "model_features": 144,
+    "targets": [
+      "resident",
+      "registered"
+    ],
+    "scenarios": [
+      "R1_REFERENCE_SNAPSHOT_LAG",
+      "R2_CONSERVATIVE_PUBLICATION_STRESS"
+    ],
+    "outer_origins": [
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021
+    ],
+    "framing_id": "F4_LOG_GROWTH_FROM_LATEST",
+    "candidate_count": 8,
+    "learner_count": 5,
+    "control_count": 3
+  },
+  "lineage": {
+    "historical_artifact_commit": "343970c608fa1a0f6d5e7ab5d355c29757d6ce2e",
+    "historical_source_commit": "469787d00b1dc220a017df02c6fbb6fcb76d2605",
+    "historical_source_blob": "4185ed8a95b26af4b203f26202e2f97cf9f6b8eb",
+    "plan01_parent": "098a4e7e169d528c378803078e33ec5f1450fd03",
+    "lineage_hash_checks": [
+      {
+        "path": "reports/S5_HANDOFFS/S5-Plan04/feature_definitions.csv",
+        "sha256": "e4bfc035b07939d8daabffeae05ba414b411249b74759776b8c2cbcfa0372650",
+        "status": "PASS"
+      },
+      {
+        "path": "reports/S5_HANDOFFS/S5-Plan04/feature_matrix_schema.json",
+        "sha256": "11fac319f0603d0608dcf91d95950e51c78f0ed4f78becbce04e619267fe7bad",
+        "status": "PASS"
+      },
+      {
+        "path": "reports/S5_HANDOFFS/S5-Plan04B/parallel_worker_input_contract.json",
+        "sha256": "91eebf578220c3afc649b012e98246ed9de08a95b2dcf42b1003a0734ad65962",
+        "status": "PASS"
+      },
+      {
+        "path": "reports/S5_HANDOFFS/S5-Plan04B/full_multisource_training_replay_matrix.csv",
+        "sha256": "c4af3688890b578d263a5fb9b224fc687e3c1c76997b30caa9c578e2858949b3",
+        "status": "PASS"
+      },
+      {
+        "path": "reports/S6_HANDOFFS/S6-Plan01/final_solution_contract.json",
+        "sha256": "f5deff350d96d2b688abf19ea63ad2edd0588750d20d6f9ecf52fd4d70561e2b",
+        "status": "PASS"
+      }
+    ]
+  },
+  "acceptance": {
+    "contract_geometry_passed": true,
+    "historical_catboost_compatibility_passed": true,
+    "coverage_passed": true,
+    "leakage_passed": true,
+    "preprocessing_leakage_passed": true,
+    "finite_prediction_passed": true,
+    "metrics_recomputed": true,
+    "blind_boundary_passed": true,
+    "s6_frozen_artifacts_unchanged": true,
+    "git_diff_check_passed": null
+  },
+  "boundary": {
+    "allowlist_only": true,
+    "allowed_input_paths": [
+      "reports/S9_HANDOFFS/S9-Plan01/HANDOFF.md",
+      "reports/S9_HANDOFFS/S9-Plan01/aggregate_metrics.csv",
+      "reports/S9_HANDOFFS/S9-Plan01/per_origin_metrics.csv",
+      "reports/S9_HANDOFFS/S9-Plan01/oof_predictions.csv",
+      "reports/S9_HANDOFFS/S9-Plan01/blind_boundary_audit.csv",
+      "reports/S9_HANDOFFS/S9-Plan01/compatibility_checks.csv",
+      "reports/S9_HANDOFFS/S9-Plan01/model_configuration.json",
+      "reports/S5_HANDOFFS/S5-Plan04/feature_definitions.csv",
+      "reports/S5_HANDOFFS/S5-Plan04/feature_matrix_schema.json",
+      "reports/S5_HANDOFFS/S5-Plan04/full_multisource_feature_matrix.csv",
+      "reports/S5_HANDOFFS/S5-Plan04B/parallel_worker_input_contract.json",
+      "reports/S5_HANDOFFS/S5-Plan04B/full_multisource_training_replay_matrix.csv",
+      "reports/S5_HANDOFFS/S5-Plan04B/outer_training_geometry.csv",
+      "reports/S5_HANDOFFS/S5-Plan04B/inner_split_geometry.csv",
+      "reports/S6_HANDOFFS/S6-Plan01/historical_lineage_hashes.csv",
+      "reports/S6_HANDOFFS/S6-Plan01/final_solution_contract.json",
+      "scripts/build_s5_plan06e_delta_growth_framing.py @ 469787d00b1dc220a017df02c6fbb6fcb76d2605",
+      "reports/S5_HANDOFFS/S5-Plan06E/* @ 343970c608fa1a0f6d5e7ab5d355c29757d6ce2e"
+    ],
+    "forbidden_read_scopes": [
+      "S8 branches",
+      "Truth artifacts",
+      "candidate_truth_2023*",
+      "test.xls",
+      "external final-population searches"
+    ],
+    "truth_accessed": false,
+    "prediction_2023_generated": false,
+    "blind_champion_frozen": false,
+    "plan03_started": false
+  },
+  "promotion_gate_by_candidate": {
+    "RIDGE_F4_NUMERIC_ONLY": "NOT_PROMOTED",
+    "LIGHTGBM_F4_NUMERIC_ONLY": "NOT_PROMOTED",
+    "XGBOOST_F4_NUMERIC_ONLY": "PROMOTE_COMPETITIVE",
+    "CATBOOST_F4_NUMERIC_ONLY": "PROMOTE_COMPETITIVE",
+    "CATBOOST_HISTORICAL_NATIVE_CITY_REFERENCE": "PROMOTE_COMPETITIVE",
+    "B3_RECENT_3POINT_OLS_TREND": "REFERENCE_ONLY",
+    "RLT3_RECENT_3POINT_MEDIAN_SLOPE_TREND": "REFERENCE_ONLY",
+    "ARIMA_011_FIXED_THETA05": "REFERENCE_ONLY"
+  },
+  "interpretation": {
+    "f4_signal_across_learners": "learner-agnostic support is present across multiple families",
+    "learner_effect": "multiple Layer-A learner families are competitive under the fixed F4 numeric representation",
+    "native_city_identity_effect": "native city identity effect is mixed or not uniformly beneficial",
+    "competitive_candidates": [
+      "XGBOOST_F4_NUMERIC_ONLY",
+      "CATBOOST_F4_NUMERIC_ONLY"
+    ],
+    "diversity_candidates": [],
+    "plan03_complementary_evidence": false,
+    "plan03_started": false
+  },
+  "runtime_before_fit_versions_recorded": true,
+  "actual_fit_counts": {
+    "inner_by_candidate": {
+      "RIDGE_F4_NUMERIC_ONLY": 792,
+      "LIGHTGBM_F4_NUMERIC_ONLY": 792,
+      "XGBOOST_F4_NUMERIC_ONLY": 792,
+      "CATBOOST_F4_NUMERIC_ONLY": 792,
+      "CATBOOST_HISTORICAL_NATIVE_CITY_REFERENCE": 792
+    },
+    "outer_by_candidate": {
+      "RIDGE_F4_NUMERIC_ONLY": 44,
+      "LIGHTGBM_F4_NUMERIC_ONLY": 44,
+      "XGBOOST_F4_NUMERIC_ONLY": 44,
+      "CATBOOST_F4_NUMERIC_ONLY": 44,
+      "CATBOOST_HISTORICAL_NATIVE_CITY_REFERENCE": 44
+    }
+  },
+  "delivery": {
+    "push_state": "pending_final_commit"
+  }
+}

@@ -1,0 +1,6 @@
+﻿candidate_id,layer,preprocessing,fit_scope,city_id_in_X,status
+RIDGE_F4_NUMERIC_ONLY,A_PRIMARY_LEARNER_CROSS,learner_required_preprocessing,each inner/outer training fold,False,FROZEN
+LIGHTGBM_F4_NUMERIC_ONLY,A_PRIMARY_LEARNER_CROSS,native_missing,not applicable; learner native missing handling,False,FROZEN
+XGBOOST_F4_NUMERIC_ONLY,A_PRIMARY_LEARNER_CROSS,native_missing,not applicable; learner native missing handling,False,FROZEN
+CATBOOST_F4_NUMERIC_ONLY,A_PRIMARY_LEARNER_CROSS,native_missing,not applicable; learner native missing handling,False,FROZEN
+CATBOOST_HISTORICAL_NATIVE_CITY_REFERENCE,B_HISTORICAL_CATBOOST_REFERENCE,native_missing,not applicable; learner native missing handling,True,FROZEN

@@ -1,0 +1,59 @@
+﻿check_type,target_id,scenario_id,metric,archived_value,reproduced_value,delta,tolerance,status,detail
+prediction_reproduction,ALL,ALL,max_abs_prediction_delta,0.0,2.2737367544323206e-13,2.2737367544323206e-13,1e-08,PASS,mean_abs_prediction_delta=9.043271182401275e-15; rows=1760
+aggregate_metric_reproduction,registered,R1_REFERENCE_SNAPSHOT_LAG,pooled_city_year_mse,243.24453133428585,243.24453133428582,-2.842170943040401e-14,1e-08,PASS,Plan06E immutable aggregate artifact
+aggregate_metric_reproduction,registered,R1_REFERENCE_SNAPSHOT_LAG,latest_2021_mse,1563.9759956063858,1563.9759956063858,0.0,1e-08,PASS,Plan06E immutable aggregate artifact
+aggregate_metric_reproduction,registered,R1_REFERENCE_SNAPSHOT_LAG,origin_win_count_vs_b3,4.0,4.0,0.0,0.0,PASS,integer origin wins
+aggregate_metric_reproduction,registered,R2_CONSERVATIVE_PUBLICATION_STRESS,pooled_city_year_mse,246.88989253238523,246.88989253238523,0.0,1e-08,PASS,Plan06E immutable aggregate artifact
+aggregate_metric_reproduction,registered,R2_CONSERVATIVE_PUBLICATION_STRESS,latest_2021_mse,1558.6918000529545,1558.6918000529545,0.0,1e-08,PASS,Plan06E immutable aggregate artifact
+aggregate_metric_reproduction,registered,R2_CONSERVATIVE_PUBLICATION_STRESS,origin_win_count_vs_b3,4.0,4.0,0.0,0.0,PASS,integer origin wins
+aggregate_metric_reproduction,resident,R1_REFERENCE_SNAPSHOT_LAG,pooled_city_year_mse,739.6006650728774,739.6006650728774,0.0,1e-08,PASS,Plan06E immutable aggregate artifact
+aggregate_metric_reproduction,resident,R1_REFERENCE_SNAPSHOT_LAG,latest_2021_mse,2956.28900115378,2956.2890011537797,-4.547473508864641e-13,1e-08,PASS,Plan06E immutable aggregate artifact
+aggregate_metric_reproduction,resident,R1_REFERENCE_SNAPSHOT_LAG,origin_win_count_vs_b3,5.0,5.0,0.0,0.0,PASS,integer origin wins
+aggregate_metric_reproduction,resident,R2_CONSERVATIVE_PUBLICATION_STRESS,pooled_city_year_mse,802.4457466793083,802.4457466793083,0.0,1e-08,PASS,Plan06E immutable aggregate artifact
+aggregate_metric_reproduction,resident,R2_CONSERVATIVE_PUBLICATION_STRESS,latest_2021_mse,3595.00128507024,3595.0012850702396,-4.547473508864641e-13,1e-08,PASS,Plan06E immutable aggregate artifact
+aggregate_metric_reproduction,resident,R2_CONSERVATIVE_PUBLICATION_STRESS,origin_win_count_vs_b3,7.0,7.0,0.0,0.0,PASS,integer origin wins
+configuration_reproduction,ALL,ALL,selected_config_mismatch_count,0.0,0.0,0.0,0.0,PASS,matched_selection_rows=44
+per_origin_metric_reproduction,registered,R1_REFERENCE_SNAPSHOT_LAG,origin_2011_mse,30.87660770299464,30.876607702994637,-3.552713678800501e-15,1e-08,PASS,Plan06E immutable per-origin artifact
+per_origin_metric_reproduction,registered,R1_REFERENCE_SNAPSHOT_LAG,origin_2012_mse,30.996717634268656,30.996717634268652,-3.552713678800501e-15,1e-08,PASS,Plan06E immutable per-origin artifact
+per_origin_metric_reproduction,registered,R1_REFERENCE_SNAPSHOT_LAG,origin_2013_mse,26.38048536976572,26.38048536976573,1.0658141036401503e-14,1e-08,PASS,Plan06E immutable per-origin artifact
+per_origin_metric_reproduction,registered,R1_REFERENCE_SNAPSHOT_LAG,origin_2014_mse,45.280234085122345,45.280234085122345,0.0,1e-08,PASS,Plan06E immutable per-origin artifact
+per_origin_metric_reproduction,registered,R1_REFERENCE_SNAPSHOT_LAG,origin_2015_mse,43.95907060660296,43.959070606602964,7.105427357601002e-15,1e-08,PASS,Plan06E immutable per-origin artifact
+per_origin_metric_reproduction,registered,R1_REFERENCE_SNAPSHOT_LAG,origin_2016_mse,31.69868517429574,31.69868517429574,0.0,1e-08,PASS,Plan06E immutable per-origin artifact
+per_origin_metric_reproduction,registered,R1_REFERENCE_SNAPSHOT_LAG,origin_2017_mse,52.61570007211986,52.615700072119864,7.105427357601002e-15,1e-08,PASS,Plan06E immutable per-origin artifact
+per_origin_metric_reproduction,registered,R1_REFERENCE_SNAPSHOT_LAG,origin_2018_mse,191.46801059663568,191.4680105966357,2.842170943040401e-14,1e-08,PASS,Plan06E immutable per-origin artifact
+per_origin_metric_reproduction,registered,R1_REFERENCE_SNAPSHOT_LAG,origin_2019_mse,168.0373833157074,168.0373833157074,0.0,1e-08,PASS,Plan06E immutable per-origin artifact
+per_origin_metric_reproduction,registered,R1_REFERENCE_SNAPSHOT_LAG,origin_2020_mse,490.40095451324544,490.40095451324544,0.0,1e-08,PASS,Plan06E immutable per-origin artifact
+per_origin_metric_reproduction,registered,R1_REFERENCE_SNAPSHOT_LAG,origin_2021_mse,1563.9759956063858,1563.9759956063858,0.0,1e-08,PASS,Plan06E immutable per-origin artifact
+per_origin_metric_reproduction,registered,R2_CONSERVATIVE_PUBLICATION_STRESS,origin_2011_mse,31.16498689368118,31.16498689368118,0.0,1e-08,PASS,Plan06E immutable per-origin artifact
+per_origin_metric_reproduction,registered,R2_CONSERVATIVE_PUBLICATION_STRESS,origin_2012_mse,29.684084504036225,29.684084504036225,0.0,1e-08,PASS,Plan06E immutable per-origin artifact
+per_origin_metric_reproduction,registered,R2_CONSERVATIVE_PUBLICATION_STRESS,origin_2013_mse,22.64364696422039,22.64364696422039,0.0,1e-08,PASS,Plan06E immutable per-origin artifact
+per_origin_metric_reproduction,registered,R2_CONSERVATIVE_PUBLICATION_STRESS,origin_2014_mse,45.30907595934144,45.309075959341435,-7.105427357601002e-15,1e-08,PASS,Plan06E immutable per-origin artifact
+per_origin_metric_reproduction,registered,R2_CONSERVATIVE_PUBLICATION_STRESS,origin_2015_mse,50.84228595624579,50.84228595624579,0.0,1e-08,PASS,Plan06E immutable per-origin artifact
+per_origin_metric_reproduction,registered,R2_CONSERVATIVE_PUBLICATION_STRESS,origin_2016_mse,30.05968916427668,30.059689164276676,-3.552713678800501e-15,1e-08,PASS,Plan06E immutable per-origin artifact
+per_origin_metric_reproduction,registered,R2_CONSERVATIVE_PUBLICATION_STRESS,origin_2017_mse,32.778204244353844,32.778204244353844,0.0,1e-08,PASS,Plan06E immutable per-origin artifact
+per_origin_metric_reproduction,registered,R2_CONSERVATIVE_PUBLICATION_STRESS,origin_2018_mse,152.58849603975804,152.588496039758,-2.842170943040401e-14,1e-08,PASS,Plan06E immutable per-origin artifact
+per_origin_metric_reproduction,registered,R2_CONSERVATIVE_PUBLICATION_STRESS,origin_2019_mse,201.19454356496817,201.19454356496817,0.0,1e-08,PASS,Plan06E immutable per-origin artifact
+per_origin_metric_reproduction,registered,R2_CONSERVATIVE_PUBLICATION_STRESS,origin_2020_mse,560.832004512401,560.8320045124009,-1.1368683772161603e-13,1e-08,PASS,Plan06E immutable per-origin artifact
+per_origin_metric_reproduction,registered,R2_CONSERVATIVE_PUBLICATION_STRESS,origin_2021_mse,1558.6918000529547,1558.6918000529545,-2.2737367544323206e-13,1e-08,PASS,Plan06E immutable per-origin artifact
+per_origin_metric_reproduction,resident,R1_REFERENCE_SNAPSHOT_LAG,origin_2011_mse,527.3734928749957,527.3734928749957,0.0,1e-08,PASS,Plan06E immutable per-origin artifact
+per_origin_metric_reproduction,resident,R1_REFERENCE_SNAPSHOT_LAG,origin_2012_mse,499.03129157401526,499.03129157401526,0.0,1e-08,PASS,Plan06E immutable per-origin artifact
+per_origin_metric_reproduction,resident,R1_REFERENCE_SNAPSHOT_LAG,origin_2013_mse,932.932347788094,932.9323477880944,3.410605131648481e-13,1e-08,PASS,Plan06E immutable per-origin artifact
+per_origin_metric_reproduction,resident,R1_REFERENCE_SNAPSHOT_LAG,origin_2014_mse,519.065598176154,519.0655981761539,-1.1368683772161603e-13,1e-08,PASS,Plan06E immutable per-origin artifact
+per_origin_metric_reproduction,resident,R1_REFERENCE_SNAPSHOT_LAG,origin_2015_mse,269.8608458440898,269.8608458440898,0.0,1e-08,PASS,Plan06E immutable per-origin artifact
+per_origin_metric_reproduction,resident,R1_REFERENCE_SNAPSHOT_LAG,origin_2016_mse,79.2732634089252,79.2732634089252,0.0,1e-08,PASS,Plan06E immutable per-origin artifact
+per_origin_metric_reproduction,resident,R1_REFERENCE_SNAPSHOT_LAG,origin_2017_mse,170.73071865216107,170.73071865216107,0.0,1e-08,PASS,Plan06E immutable per-origin artifact
+per_origin_metric_reproduction,resident,R1_REFERENCE_SNAPSHOT_LAG,origin_2018_mse,118.47315372981602,118.47315372981605,2.842170943040401e-14,1e-08,PASS,Plan06E immutable per-origin artifact
+per_origin_metric_reproduction,resident,R1_REFERENCE_SNAPSHOT_LAG,origin_2019_mse,67.13852324791436,67.13852324791438,1.4210854715202004e-14,1e-08,PASS,Plan06E immutable per-origin artifact
+per_origin_metric_reproduction,resident,R1_REFERENCE_SNAPSHOT_LAG,origin_2020_mse,1995.4390793517075,1995.4390793517073,-2.2737367544323206e-13,1e-08,PASS,Plan06E immutable per-origin artifact
+per_origin_metric_reproduction,resident,R1_REFERENCE_SNAPSHOT_LAG,origin_2021_mse,2956.28900115378,2956.2890011537797,-4.547473508864641e-13,1e-08,PASS,Plan06E immutable per-origin artifact
+per_origin_metric_reproduction,resident,R2_CONSERVATIVE_PUBLICATION_STRESS,origin_2011_mse,493.5969312455187,493.59693124551876,5.684341886080802e-14,1e-08,PASS,Plan06E immutable per-origin artifact
+per_origin_metric_reproduction,resident,R2_CONSERVATIVE_PUBLICATION_STRESS,origin_2012_mse,430.9262043611493,430.9262043611493,0.0,1e-08,PASS,Plan06E immutable per-origin artifact
+per_origin_metric_reproduction,resident,R2_CONSERVATIVE_PUBLICATION_STRESS,origin_2013_mse,960.784901804441,960.784901804441,0.0,1e-08,PASS,Plan06E immutable per-origin artifact
+per_origin_metric_reproduction,resident,R2_CONSERVATIVE_PUBLICATION_STRESS,origin_2014_mse,639.5222523904877,639.5222523904877,0.0,1e-08,PASS,Plan06E immutable per-origin artifact
+per_origin_metric_reproduction,resident,R2_CONSERVATIVE_PUBLICATION_STRESS,origin_2015_mse,188.22867625353783,188.2286762535378,-2.842170943040401e-14,1e-08,PASS,Plan06E immutable per-origin artifact
+per_origin_metric_reproduction,resident,R2_CONSERVATIVE_PUBLICATION_STRESS,origin_2016_mse,94.51998580745804,94.51998580745804,0.0,1e-08,PASS,Plan06E immutable per-origin artifact
+per_origin_metric_reproduction,resident,R2_CONSERVATIVE_PUBLICATION_STRESS,origin_2017_mse,112.3742929275754,112.3742929275754,0.0,1e-08,PASS,Plan06E immutable per-origin artifact
+per_origin_metric_reproduction,resident,R2_CONSERVATIVE_PUBLICATION_STRESS,origin_2018_mse,78.01283414493756,78.01283414493756,0.0,1e-08,PASS,Plan06E immutable per-origin artifact
+per_origin_metric_reproduction,resident,R2_CONSERVATIVE_PUBLICATION_STRESS,origin_2019_mse,67.65404325337805,67.65404325337806,1.4210854715202004e-14,1e-08,PASS,Plan06E immutable per-origin artifact
+per_origin_metric_reproduction,resident,R2_CONSERVATIVE_PUBLICATION_STRESS,origin_2020_mse,2166.281806213667,2166.2818062136666,-4.547473508864641e-13,1e-08,PASS,Plan06E immutable per-origin artifact
+per_origin_metric_reproduction,resident,R2_CONSERVATIVE_PUBLICATION_STRESS,origin_2021_mse,3595.00128507024,3595.0012850702396,-4.547473508864641e-13,1e-08,PASS,Plan06E immutable per-origin artifact
