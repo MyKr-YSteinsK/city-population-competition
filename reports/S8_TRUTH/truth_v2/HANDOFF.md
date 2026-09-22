@@ -3,9 +3,9 @@
 Status: S8_TRUTH_V2_FROZEN_WAITING_FOR_S9
 Branch: codex/s8-truth-reconstruction-v1
 Base SHA: 0a74372ea4e3555b3d659e6a2c77647b92eabea4
-Artifact Freeze Commit: e965748
-Metadata Finalization Commit: e965748
-Final Branch HEAD: e965748
+Artifact Freeze Commit: e96574868b6e3a35c1afe375814b0148286d8e94
+Metadata Finalization Commit: 217556cddad697ce2e071cb2c35831cc3a169ab9
+Final Branch HEAD: 217556cddad697ce2e071cb2c35831cc3a169ab9
 Validator: PASS
 
 Truth version: candidate_truth_2023_v2
