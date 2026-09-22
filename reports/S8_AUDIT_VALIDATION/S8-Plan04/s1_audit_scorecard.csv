@@ -1,0 +1,17 @@
+﻿dataset,externally_verified_cells,s1_material_decisions,externally_verified_decisions,verified_correct_decisions,correct_decisions,wrong_decisions,false_positive_count,verified_anomaly_count,caught_anomaly_count,missed_anomaly_count,verified_universe_precision,verified_universe_recall,critical_misses,overall_assessment
+population,28,10,0,0,10,0,0,1,0,1,,0.0,1,MIXED
+density,0,27,0,0,27,0,0,0,0,0,,,0,INSUFFICIENT_EXTERNAL_EVIDENCE
+urbanization,13,1,0,0,1,0,0,0,0,0,,,0,ADEQUATE_WITH_GAPS
+unemployment,0,1,0,0,1,0,0,0,0,0,,,0,INSUFFICIENT_EXTERNAL_EVIDENCE
+employees,13,176,4,4,176,0,0,0,0,0,1.0,,0,STRONG
+sector,39,121,0,0,121,0,0,0,0,0,,,0,ADEQUATE_WITH_GAPS
+wage,0,1,0,0,1,0,0,0,0,0,,,0,INSUFFICIENT_EXTERNAL_EVIDENCE
+age,0,7,0,0,7,0,0,0,0,0,,,0,INSUFFICIENT_EXTERNAL_EVIDENCE
+overall_income,0,32,0,0,32,0,0,0,0,0,,,0,INSUFFICIENT_EXTERNAL_EVIDENCE
+overall_consumption,0,2,0,0,2,0,0,0,0,0,,,0,INSUFFICIENT_EXTERNAL_EVIDENCE
+urban_income,0,2,0,0,2,0,0,0,0,0,,,0,INSUFFICIENT_EXTERNAL_EVIDENCE
+rural_income,0,0,0,0,0,0,0,0,0,0,,,0,INSUFFICIENT_EXTERNAL_EVIDENCE
+urban_consumption,0,0,0,0,0,0,0,0,0,0,,,0,INSUFFICIENT_EXTERNAL_EVIDENCE
+rural_consumption,0,0,0,0,0,0,0,0,0,0,,,0,INSUFFICIENT_EXTERNAL_EVIDENCE
+overall_income+urban_income,0,1,0,0,1,0,0,0,0,0,,,0,INSUFFICIENT_EXTERNAL_EVIDENCE
+source,0,1,0,0,1,0,0,0,0,0,,,0,INSUFFICIENT_EXTERNAL_EVIDENCE

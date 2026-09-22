@@ -1,0 +1,147 @@
+﻿dataset,city_id,real_city,competition_year,real_year,field,competition_value,official_value,source_id,source_tier,definition_match,revision_status,verification_strength,observed_in_s1_source,notes
+density,city12,泰州,2021,2021,人口密度（人/平方公里）,,781.0,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,False,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+density,city13,宿迁,2021,2021,人口密度（人/平方公里）,,586.0,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,False,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+density,city15,徐州,2021,2021,人口密度（人/平方公里）,,767.0,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,False,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+density,city18,常州,2021,2021,人口密度（人/平方公里）,,1224.0,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,False,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+density,city2,无锡,2021,2021,人口密度（人/平方公里）,,1616.0,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,False,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+density,city22,南京,2021,2021,人口密度（人/平方公里）,,1431.0,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,False,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+density,city26,南通,2021,2021,人口密度（人/平方公里）,,736.0,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,False,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+density,city30,连云港,2021,2021,人口密度（人/平方公里）,,603.0,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,False,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+density,city34,盐城,2021,2021,人口密度（人/平方公里）,,379.0,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,False,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+density,city37,扬州,2021,2021,人口密度（人/平方公里）,,694.0,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,False,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+density,city40,镇江,2021,2021,人口密度（人/平方公里）,,838.0,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,False,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+density,city5,苏州,2021,2021,人口密度（人/平方公里）,,1484.0,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,False,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+density,city8,淮安,2021,2021,人口密度（人/平方公里）,,455.0,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,False,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+employees,city12,泰州,2021,2021,employeesNumber,276.0,275.6,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+employees,city13,宿迁,2021,2021,employeesNumber,280.0,279.8,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+employees,city15,徐州,2021,2021,employeesNumber,482.0,475.2,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+employees,city18,常州,2021,2021,employeesNumber,300.0,300.4,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+employees,city2,无锡,2021,2021,employeesNumber,419.0,418.7,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+employees,city22,南京,2021,2021,employeesNumber,484.0,485.1,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+employees,city26,南通,2021,2021,employeesNumber,486.0,481.9,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+employees,city30,连云港,2021,2021,employeesNumber,253.0,249.4,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+employees,city34,盐城,2021,2021,employeesNumber,418.0,413.0,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+employees,city37,扬州,2021,2021,employeesNumber,272.0,270.8,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+employees,city40,镇江,2021,2021,employeesNumber,199.0,198.7,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+employees,city5,苏州,2021,2021,employeesNumber,749.0,748.8,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+employees,city8,淮安,2021,2021,employeesNumber,265.0,265.4,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+population,city1,湖州,2023,2022,常住人口（万人）,,341.3,SRC_ZJ_2022_POP_BULLETIN_GOV_REPOST,TIER2,True,CAPTURED_EVIDENCE,ACCEPTABLE,False,Frozen S8 target anchor; outside the S1 observed source range.
+population,city10,丽水,2023,2022,常住人口（万人）,,251.5,SRC_ZJ_2022_POP_BULLETIN_GOV_REPOST,TIER2,True,CAPTURED_EVIDENCE,ACCEPTABLE,False,Frozen S8 target anchor; outside the S1 observed source range.
+population,city11,嘉兴,2023,2022,常住人口（万人）,,555.1,SRC_ZJ_2022_POP_BULLETIN_GOV_REPOST,TIER2,True,CAPTURED_EVIDENCE,ACCEPTABLE,False,Frozen S8 target anchor; outside the S1 observed source range.
+population,city12,泰州,2021,2021,常住人口（万人）,452.0,452.18,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+population,city12,泰州,2021,2021,户籍人口（万人）,497.0,492.7,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+population,city12,泰州,2023,2022,常住人口（万人）,,450.56,SRC_JS_2022_NJ0306,TIER1,True,CAPTURED_EVIDENCE,STRONG,False,Frozen S8 target anchor; outside the S1 observed source range.
+population,city13,宿迁,2021,2021,常住人口（万人）,499.0,499.9,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+population,city13,宿迁,2021,2021,户籍人口（万人）,592.0,590.86,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+population,city13,宿迁,2023,2022,常住人口（万人）,,497.53,SRC_JS_2022_NJ0306,TIER1,True,CAPTURED_EVIDENCE,STRONG,False,Frozen S8 target anchor; outside the S1 observed source range.
+population,city14,河源,2023,2022,常住人口（万人）,,284.17,SRC_GD_HEYUAN_2022_BULLETIN,TIER1,True,CAPTURED_EVIDENCE,STRONG,False,Frozen S8 target anchor; outside the S1 observed source range.
+population,city15,徐州,2021,2021,常住人口（万人）,905.0,902.85,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+population,city15,徐州,2021,2021,户籍人口（万人）,1035.0,1035.29,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+population,city15,徐州,2023,2022,常住人口（万人）,,901.85,SRC_JS_2022_NJ0306,TIER1,True,CAPTURED_EVIDENCE,STRONG,False,Frozen S8 target anchor; outside the S1 observed source range.
+population,city16,韶关,2023,2022,常住人口（万人）,,286.18,SRC_GD_SHAOGUAN_2023_YEARBOOK_OFFICIAL,TIER2,True,CAPTURED_EVIDENCE_FINAL_FOUR,ACCEPTABLE,False,Frozen S8 target anchor; outside the S1 observed source range.
+population,city17,广州,2023,2022,常住人口（万人）,,1873.41,SRC_GZ_2022_BULLETIN,TIER1,True,CAPTURED_EVIDENCE,STRONG,False,Frozen S8 target anchor; outside the S1 observed source range.
+population,city18,常州,2021,2021,常住人口（万人）,525.0,534.96,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+population,city18,常州,2021,2021,户籍人口（万人）,385.0,388.16,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+population,city18,常州,2023,2022,常住人口（万人）,,536.62,SRC_JS_2022_NJ0306,TIER1,True,CAPTURED_EVIDENCE,STRONG,False,Frozen S8 target anchor; outside the S1 observed source range.
+population,city19,金华,2023,2022,常住人口（万人）,,712.7,SRC_ZJ_2022_POP_BULLETIN_GOV_REPOST,TIER2,True,CAPTURED_EVIDENCE,ACCEPTABLE,False,Frozen S8 target anchor; outside the S1 observed source range.
+population,city2,无锡,2021,2021,常住人口（万人）,746.0,747.95,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+population,city2,无锡,2021,2021,户籍人口（万人）,509.0,515.25,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+population,city2,无锡,2023,2022,常住人口（万人）,,749.08,SRC_JS_2022_NJ0306,TIER1,True,CAPTURED_EVIDENCE,STRONG,False,Frozen S8 target anchor; outside the S1 observed source range.
+population,city20,衢州,2023,2022,常住人口（万人）,,229.0,SRC_ZJ_2022_POP_BULLETIN_GOV_REPOST,TIER2,True,CAPTURED_EVIDENCE,ACCEPTABLE,False,Frozen S8 target anchor; outside the S1 observed source range.
+population,city21,杭州,2023,2022,常住人口（万人）,,1237.6,SRC_ZJ_2022_POP_BULLETIN_GOV_REPOST,TIER2,True,CAPTURED_EVIDENCE,ACCEPTABLE,False,Frozen S8 target anchor; outside the S1 observed source range.
+population,city22,南京,2021,2021,常住人口（万人）,932.0,942.34,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+population,city22,南京,2021,2021,户籍人口（万人）,723.0,733.73,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+population,city22,南京,2023,2022,常住人口（万人）,,949.11,SRC_JS_2022_NJ0306,TIER1,True,CAPTURED_EVIDENCE,STRONG,False,Frozen S8 target anchor; outside the S1 observed source range.
+population,city23,珠海,2023,2022,常住人口（万人）,,247.72,SRC_GD_ZHUHAI_2022_OFFICIAL_MEDIA,TIER2,True,CAPTURED_EVIDENCE,ACCEPTABLE,False,Frozen S8 target anchor; outside the S1 observed source range.
+population,city24,济南,2023,2022,常住人口（万人）,,941.5,SRC_JN_2022_BULLETIN,TIER1,True,CAPTURED_EVIDENCE,STRONG,False,Frozen S8 target anchor; outside the S1 observed source range.
+population,city25,宁波,2023,2022,常住人口（万人）,,961.8,SRC_ZJ_2022_POP_BULLETIN_GOV_REPOST,TIER2,True,CAPTURED_EVIDENCE,ACCEPTABLE,False,Frozen S8 target anchor; outside the S1 observed source range.
+population,city26,南通,2021,2021,常住人口（万人）,773.0,773.3,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+population,city26,南通,2021,2021,户籍人口（万人）,756.0,751.7,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+population,city26,南通,2023,2022,常住人口（万人）,,774.35,SRC_JS_2022_NJ0306,TIER1,True,CAPTURED_EVIDENCE,STRONG,False,Frozen S8 target anchor; outside the S1 observed source range.
+population,city27,汕头,2023,2022,常住人口（万人）,,554.19,SRC_GD_SHANTOU_2022_BULLETIN,TIER1,True,CAPTURED_EVIDENCE,STRONG,False,Frozen S8 target anchor; outside the S1 observed source range.
+population,city28,青岛,2023,2022,常住人口（万人）,,1034.21,SRC_QD_2022_BULLETIN,TIER1,True,CAPTURED_EVIDENCE,STRONG,False,Frozen S8 target anchor; outside the S1 observed source range.
+population,city29,台州,2023,2022,常住人口（万人）,,667.8,SRC_ZJ_2022_POP_BULLETIN_GOV_REPOST,TIER2,True,CAPTURED_EVIDENCE,ACCEPTABLE,False,Frozen S8 target anchor; outside the S1 observed source range.
+population,city3,深圳,2023,2022,常住人口（万人）,,1766.18,SRC_SZ_2022_BULLETIN,TIER1,True,CAPTURED_EVIDENCE,STRONG,False,Frozen S8 target anchor; outside the S1 observed source range.
+population,city30,连云港,2021,2021,常住人口（万人）,460.0,460.2,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+population,city30,连云港,2021,2021,户籍人口（万人）,534.0,533.21,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+population,city30,连云港,2023,2022,常住人口（万人）,,460.05,SRC_JS_2022_NJ0306,TIER1,True,CAPTURED_EVIDENCE,STRONG,False,Frozen S8 target anchor; outside the S1 observed source range.
+population,city31,江门,2023,2022,常住人口（万人）,,482.22,SRC_JM_2022_BULLETIN,TIER1,True,CAPTURED_EVIDENCE,STRONG,False,Frozen S8 target anchor; outside the S1 observed source range.
+population,city32,淄博,2023,2022,常住人口（万人）,,470.59,SRC_ZB_2022_BULLETIN,TIER1,True,CAPTURED_EVIDENCE,STRONG,False,Frozen S8 target anchor; outside the S1 observed source range.
+population,city33,温州,2023,2022,常住人口（万人）,,967.9,SRC_ZJ_2022_POP_BULLETIN_GOV_REPOST,TIER2,True,CAPTURED_EVIDENCE,ACCEPTABLE,False,Frozen S8 target anchor; outside the S1 observed source range.
+population,city34,盐城,2021,2021,常住人口（万人）,671.0,671.3,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+population,city34,盐城,2021,2021,户籍人口（万人）,814.0,803.84,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+population,city34,盐城,2023,2022,常住人口（万人）,,668.97,SRC_JS_2022_NJ0306,TIER1,True,CAPTURED_EVIDENCE,STRONG,False,Frozen S8 target anchor; outside the S1 observed source range.
+population,city35,湛江,2023,2022,常住人口（万人）,,703.54,SRC_GD_ZHANJIANG_2022_BULLETIN,TIER1,True,CAPTURED_EVIDENCE,STRONG,False,Frozen S8 target anchor; outside the S1 observed source range.
+population,city36,枣庄,2023,2022,常住人口（万人）,,382.97,SRC_SD_ZAOZHUANG_2022_TRACEABLE_CROSSCHECK,TIER2,True,CAPTURED_EVIDENCE_FINAL_FOUR,ACCEPTABLE,False,Frozen S8 target anchor; outside the S1 observed source range.
+population,city37,扬州,2021,2021,常住人口（万人）,456.0,457.7,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+population,city37,扬州,2021,2021,户籍人口（万人）,455.0,451.56,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+population,city37,扬州,2023,2022,常住人口（万人）,,458.29,SRC_JS_2022_NJ0306,TIER1,True,CAPTURED_EVIDENCE,STRONG,False,Frozen S8 target anchor; outside the S1 observed source range.
+population,city38,肇庆,2023,2022,常住人口（万人）,,412.84,SRC_GD_ZHAOQING_2022_OFFICIAL_YEARBOOK,TIER2,True,CAPTURED_EVIDENCE_FINAL_FOUR,ACCEPTABLE,False,Frozen S8 target anchor; outside the S1 observed source range.
+population,city39,东营,2023,2022,常住人口（万人）,,220.9,SRC_SD_DONGYING_2022_TRACEABLE_CROSSCHECK,TIER2,True,CAPTURED_EVIDENCE_FINAL_FOUR,ACCEPTABLE,False,Frozen S8 target anchor; outside the S1 observed source range.
+population,city4,舟山,2023,2022,常住人口（万人）,,117.0,SRC_ZJ_2022_POP_BULLETIN_GOV_REPOST,TIER2,True,CAPTURED_EVIDENCE,ACCEPTABLE,False,Frozen S8 target anchor; outside the S1 observed source range.
+population,city40,镇江,2020,2020,常住人口（万人）,320.0,321.0418,SRC_JS_CENSUS_2020,TIER1,True,CENSUS_ANCHOR,STRONG,True,Frozen S8 identity evidence; official 2020 Zhenjiang census anchor.
+population,city40,镇江,2020,2020,户籍人口（万人）,270.0,269.25,SRC_JS_YEARBOOK_2020,TIER1,True,ANNUAL_YEARBOOK_2020,STRONG,True,Frozen S8 identity evidence; official 2020 Jiangsu annual table.
+population,city40,镇江,2021,2021,常住人口（万人）,321.0,321.72,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+population,city40,镇江,2021,2021,户籍人口（万人）,65.0,268.1,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+population,city40,镇江,2023,2022,常住人口（万人）,,322.22,SRC_JS_2022_NJ0306,TIER1,True,CAPTURED_EVIDENCE,STRONG,False,Frozen S8 target anchor; outside the S1 observed source range.
+population,city5,苏州,2021,2021,常住人口（万人）,1275.0,1284.78,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+population,city5,苏州,2021,2021,户籍人口（万人）,744.0,762.11,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+population,city5,苏州,2023,2022,常住人口（万人）,,1291.06,SRC_JS_2022_NJ0306,TIER1,True,CAPTURED_EVIDENCE,STRONG,False,Frozen S8 target anchor; outside the S1 observed source range.
+population,city6,佛山,2023,2022,常住人口（万人）,,955.23,SRC_GD_FOSHAN_2022_OFFICIAL_MEDIA,TIER2,True,CAPTURED_EVIDENCE,ACCEPTABLE,False,Frozen S8 target anchor; outside the S1 observed source range.
+population,city7,绍兴,2023,2022,常住人口（万人）,,535.3,SRC_ZJ_2022_POP_BULLETIN_GOV_REPOST,TIER2,True,CAPTURED_EVIDENCE,ACCEPTABLE,False,Frozen S8 target anchor; outside the S1 observed source range.
+population,city8,淮安,2021,2021,常住人口（万人）,456.0,456.22,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+population,city8,淮安,2021,2021,户籍人口（万人）,558.0,555.25,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+population,city8,淮安,2023,2022,常住人口（万人）,,455.31,SRC_JS_2022_NJ0306,TIER1,True,CAPTURED_EVIDENCE,STRONG,False,Frozen S8 target anchor; outside the S1 observed source range.
+population,city9,茂名,2023,2022,常住人口（万人）,,623.82,SRC_GD_MAOMING_2022_OFFICIAL_MEDIA,TIER2,True,CAPTURED_EVIDENCE,ACCEPTABLE,False,Frozen S8 target anchor; outside the S1 observed source range.
+sector,city12,泰州,2021,2021,pi_Employment,46.0,46.1,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+sector,city12,泰州,2021,2021,si_Employment,109.0,108.5,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+sector,city12,泰州,2021,2021,ti_Employment,121.0,121.0,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+sector,city13,宿迁,2021,2021,pi_Employment,70.0,70.0,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+sector,city13,宿迁,2021,2021,si_Employment,94.0,94.1,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+sector,city13,宿迁,2021,2021,ti_Employment,116.0,115.7,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+sector,city15,徐州,2021,2021,pi_Employment,95.0,87.0,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+sector,city15,徐州,2021,2021,si_Employment,167.0,167.6,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+sector,city15,徐州,2021,2021,ti_Employment,221.0,220.6,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+sector,city18,常州,2021,2021,pi_Employment,27.0,25.3,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+sector,city18,常州,2021,2021,si_Employment,133.0,134.1,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+sector,city18,常州,2021,2021,ti_Employment,141.0,141.1,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+sector,city2,无锡,2021,2021,pi_Employment,13.0,13.0,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+sector,city2,无锡,2021,2021,si_Employment,207.0,206.6,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+sector,city2,无锡,2021,2021,ti_Employment,199.0,199.1,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+sector,city22,南京,2021,2021,pi_Employment,38.0,36.2,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+sector,city22,南京,2021,2021,si_Employment,150.0,152.3,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+sector,city22,南京,2021,2021,ti_Employment,296.0,296.6,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+sector,city26,南通,2021,2021,pi_Employment,72.0,66.3,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+sector,city26,南通,2021,2021,si_Employment,204.0,205.5,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+sector,city26,南通,2021,2021,ti_Employment,210.0,210.2,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+sector,city30,连云港,2021,2021,pi_Employment,70.0,65.7,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+sector,city30,连云港,2021,2021,si_Employment,77.0,78.1,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+sector,city30,连云港,2021,2021,ti_Employment,106.0,105.7,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+sector,city34,盐城,2021,2021,pi_Employment,85.0,79.2,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+sector,city34,盐城,2021,2021,si_Employment,153.0,153.9,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+sector,city34,盐城,2021,2021,ti_Employment,180.0,180.0,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+sector,city37,扬州,2021,2021,pi_Employment,41.0,38.4,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+sector,city37,扬州,2021,2021,si_Employment,103.0,104.3,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+sector,city37,扬州,2021,2021,ti_Employment,128.0,128.1,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+sector,city40,镇江,2021,2021,pi_Employment,20.0,18.4,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+sector,city40,镇江,2021,2021,si_Employment,79.0,80.0,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+sector,city40,镇江,2021,2021,ti_Employment,100.0,100.4,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+sector,city5,苏州,2021,2021,pi_Employment,18.0,18.1,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+sector,city5,苏州,2021,2021,si_Employment,386.0,386.1,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+sector,city5,苏州,2021,2021,ti_Employment,345.0,344.6,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+sector,city8,淮安,2021,2021,pi_Employment,66.0,66.2,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+sector,city8,淮安,2021,2021,si_Employment,86.0,85.9,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+sector,city8,淮安,2021,2021,ti_Employment,113.0,113.4,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+urbanization,city12,泰州,2021,2021,urbanizationRate,68.0,68.6,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+urbanization,city13,宿迁,2021,2021,urbanizationRate,62.0,63.2,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+urbanization,city15,徐州,2021,2021,urbanizationRate,66.0,66.2,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+urbanization,city18,常州,2021,2021,urbanizationRate,77.0,77.6,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+urbanization,city2,无锡,2021,2021,urbanizationRate,83.0,82.9,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+urbanization,city22,南京,2021,2021,urbanizationRate,87.0,86.9,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+urbanization,city26,南通,2021,2021,urbanizationRate,71.0,71.2,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+urbanization,city30,连云港,2021,2021,urbanizationRate,62.0,62.4,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+urbanization,city34,盐城,2021,2021,urbanizationRate,65.0,64.8,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+urbanization,city37,扬州,2021,2021,urbanizationRate,71.0,71.4,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+urbanization,city40,镇江,2021,2021,urbanizationRate,80.0,79.9,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+urbanization,city5,苏州,2021,2021,urbanizationRate,82.0,81.7,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.
+urbanization,city8,淮安,2021,2021,urbanizationRate,66.0,66.2,SRC_JS_YEARBOOK_2021,TIER1,True,ANNUAL_YEARBOOK_2021,STRONG,True,Official Jiangsu yearbook table 19-2; city row and indicator definition align.

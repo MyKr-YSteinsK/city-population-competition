@@ -1,0 +1,200 @@
+﻿dataset,field,candidate_offset,exact_match_rate,status,evidence
+population,常住人口（万人）,0,1.0,NO_SHIFT,Official Jiangsu 2021 yearbook cells compared at the same year.
+population,户籍人口（万人）,0,0.9285714285714286,NO_SHIFT,Official Jiangsu 2021 yearbook cells compared at the same year.
+density,人口密度（人/平方公里）,,,UNRESOLVED,No definition-matched official time anchor available.
+urbanization,urbanizationRate,0,1.0,NO_SHIFT,Official Jiangsu 2021 yearbook cells compared at the same year.
+unemployment,unemploymentRate,,,UNRESOLVED,No definition-matched official time anchor available.
+employees,employeesNumber,0,1.0,NO_SHIFT,Official Jiangsu 2021 yearbook cells compared at the same year.
+sector,pi_Employment,0,0.38461538461538464,REVISION_ARTIFACT,Official Jiangsu 2021 yearbook cells compared at the same year.
+sector,si_Employment,0,1.0,NO_SHIFT,Official Jiangsu 2021 yearbook cells compared at the same year.
+sector,ti_Employment,0,1.0,NO_SHIFT,Official Jiangsu 2021 yearbook cells compared at the same year.
+wage,averageWage,,,UNRESOLVED,No definition-matched official time anchor available.
+age,0-14,,,UNRESOLVED,No definition-matched official time anchor available.
+age,15-64,,,UNRESOLVED,No definition-matched official time anchor available.
+age,65+,,,UNRESOLVED,No definition-matched official time anchor available.
+overall_income,disposableIncome,,,UNRESOLVED,No definition-matched official time anchor available.
+overall_consumption,consumptionExpenditures,,,UNRESOLVED,No definition-matched official time anchor available.
+urban_income,urbanDisposableIncome,,,UNRESOLVED,No definition-matched official time anchor available.
+rural_income,ruralDisposableIncome,,,UNRESOLVED,No definition-matched official time anchor available.
+urban_consumption,urbanConsumptionExpenditures,,,UNRESOLVED,No definition-matched official time anchor available.
+rural_consumption,ruralConsumptionExpenditures,,,UNRESOLVED,No definition-matched official time anchor available.
+unemployment,unemploymentRate,2,0.8888888888888888,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-2,0.9411764705882353,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-1,0.9444444444444444,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-2,0.8333333333333334,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-1,0.8421052631578947,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,1,0.85,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,2,0.8421052631578947,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-2,0.8823529411764706,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-1,0.8888888888888888,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-1,0.8095238095238095,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,1,0.9,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-2,0.8947368421052632,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-1,0.9,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-2,0.8333333333333334,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-2,0.8947368421052632,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-1,1.0,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-1,0.8947368421052632,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,1,0.8421052631578947,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,1,0.8947368421052632,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,2,0.9473684210526315,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,1,0.8666666666666667,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,2,0.8571428571428571,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-2,0.8333333333333334,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,1,0.8421052631578947,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,1,0.9411764705882353,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,2,0.8333333333333334,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-1,0.8125,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,1,0.875,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-1,0.8235294117647058,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,1,0.8235294117647058,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,2,0.8,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-2,0.8947368421052632,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-1,0.85,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-1,0.85,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,1,0.9047619047619048,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,2,0.9,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-1,0.8,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-1,0.8,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-2,0.8,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-1,0.8571428571428571,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,1,0.8095238095238095,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,2,0.8,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,1,0.8,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,2,0.85,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,1,0.8181818181818182,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,2,0.9047619047619048,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,1,0.8,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,2,0.8,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-2,0.85,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,1,0.8095238095238095,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,2,0.85,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,2,0.8571428571428571,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-2,0.8,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,1,0.9,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,1,0.9444444444444444,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,2,0.8235294117647058,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,1,0.8421052631578947,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,1,0.9047619047619048,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,1,0.8095238095238095,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,2,0.8,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-1,0.8666666666666667,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,1,1.0,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,2,0.8,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,1,0.8421052631578947,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-1,0.8,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,1,0.85,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-2,0.8421052631578947,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,2,0.8421052631578947,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-2,0.8235294117647058,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-1,0.8823529411764706,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-1,0.8421052631578947,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,1,0.8333333333333334,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-2,0.8,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,2,0.8,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,1,0.8095238095238095,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,2,0.8,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-2,0.95,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-1,0.9047619047619048,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,1,0.8571428571428571,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,2,0.8,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-2,0.8,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-1,0.8571428571428571,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,1,0.95,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,2,1.0,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,1,0.8571428571428571,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,2,0.8,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-2,0.95,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-1,0.9047619047619048,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,1,0.8571428571428571,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,2,0.8,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,1,0.8235294117647058,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,2,0.8125,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-2,0.8095238095238095,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-1,0.8636363636363636,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,1,0.95,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,2,0.9473684210526315,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-1,0.9285714285714286,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-1,0.8666666666666667,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,1,0.8666666666666667,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-1,0.8095238095238095,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-2,0.8333333333333334,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-1,0.8947368421052632,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-2,0.8888888888888888,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-1,0.9473684210526315,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-1,0.8,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-2,0.8421052631578947,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-1,0.8,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-1,0.8181818181818182,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-2,0.85,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-1,0.8571428571428571,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,1,0.8,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,2,0.8421052631578947,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-2,0.85,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,1,0.85,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,1,0.8095238095238095,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-1,0.8,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-2,0.8,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,2,0.8,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-1,0.8571428571428571,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-1,1.0,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,1,0.8,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-1,1.0,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,1,0.8333333333333334,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,1,0.8,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,2,0.8421052631578947,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-2,0.85,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-1,0.9047619047619048,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,1,0.8095238095238095,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,2,0.8125,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,2,0.8235294117647058,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,1,0.85,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,2,0.8947368421052632,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-2,0.8095238095238095,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-1,0.8,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-2,0.8421052631578947,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-1,0.9,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-2,0.8333333333333334,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-2,0.9,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-1,0.9523809523809523,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,1,0.85,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,2,0.8421052631578947,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-2,0.8421052631578947,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-2,0.8095238095238095,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,1,0.8235294117647058,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,1,0.875,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,1,0.8,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,2,0.8947368421052632,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,1,0.8,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,2,0.8947368421052632,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-1,0.8235294117647058,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-1,0.8333333333333334,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,1,0.8235294117647058,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+unemployment,unemploymentRate,-1,0.8125,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+employees,employeesNumber,1,1.0,TRUE_YEAR_SHIFT,contiguous raw blocks match another city after a candidate year offset
+employees,employeesNumber,-1,1.0,TRUE_YEAR_SHIFT,contiguous raw blocks match another city after a candidate year offset
+sector,pi_Employment,-2,1.0,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+sector,pi_Employment,-1,1.0,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+sector,pi_Employment,1,1.0,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+sector,pi_Employment,2,1.0,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+sector,pi_Employment,-2,1.0,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+sector,pi_Employment,-1,1.0,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+sector,pi_Employment,1,1.0,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+sector,pi_Employment,2,1.0,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+sector,pi_Employment,-2,0.8666666666666667,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+sector,pi_Employment,-1,0.875,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+sector,pi_Employment,1,0.8823529411764706,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+sector,pi_Employment,2,0.9375,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+sector,pi_Employment,-2,1.0,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+sector,pi_Employment,-1,1.0,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+sector,pi_Employment,1,1.0,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+sector,pi_Employment,2,1.0,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+sector,pi_Employment,-2,0.8666666666666667,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+sector,pi_Employment,-1,0.875,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+sector,pi_Employment,1,0.9375,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+sector,pi_Employment,2,1.0,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+sector,pi_Employment,-2,0.8,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+sector,pi_Employment,-2,0.8666666666666667,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+sector,pi_Employment,-1,0.875,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+sector,pi_Employment,1,0.9375,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
+sector,pi_Employment,2,1.0,UNRESOLVED,multi-year raw trajectories match after a candidate year offset
