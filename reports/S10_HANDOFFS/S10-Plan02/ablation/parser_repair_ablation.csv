@@ -1,0 +1,2 @@
+status,source_semantics,income_parser_original_frame_count,known_quarantine_excluded,note
+NOT_RUN_LOW_PRIORITY,PARSER_REPAIRED_ONLY,0,yes,Bounded diagnostic only; not part of primary selector pool.

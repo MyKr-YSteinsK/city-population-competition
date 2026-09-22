@@ -1,0 +1,13 @@
+{
+  "base_sha": "8cb00034791482d34cc3e5d3bc8df7fdcdf9d174",
+  "f4_source_path": "reports/S5_HANDOFFS/S5-Plan06E/oof_predictions.csv",
+  "f4_source_sha256": "420c9b80fcfa75fc03c8d12fb04da31ae5c5934d326846105a1daed09ef0cb2b",
+  "f4_source_tag": "archive/pre-s6/s5-plan06e-delta-growth-framing",
+  "head_at_run": "8cb00034791482d34cc3e5d3bc8df7fdcdf9d174",
+  "numpy": "2.5.3",
+  "pandas": "3.0.6",
+  "population_max_year_read": 2021,
+  "python": "3.14.6 (tags/v3.14.6:c63aec6, Jun 10 2026, 10:26:10) [MSC v.1944 64 bit (AMD64)]",
+  "sklearn": "1.9.1",
+  "truth_access_boundary": "no S8 truth and no 2022/2023 target labels read"
+}

@@ -1,0 +1,6 @@
+{
+  "employment_duplicate_semantics": "original source frames grouped by city/year mean before outer merge",
+  "income_features_included": false,
+  "income_parser_semantics": "original _long_income_tables output is empty on current workbook header geometry",
+  "source_semantics": "ORIGINAL_SOURCE_SEMANTICS"
+}

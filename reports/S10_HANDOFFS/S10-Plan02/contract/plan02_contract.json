@@ -1,0 +1,336 @@
+{
+  "base_sha": "8cb00034791482d34cc3e5d3bc8df7fdcdf9d174",
+  "candidate_pool": [
+    {
+      "family": "A_TARGET_ONLY",
+      "frozen_before_scoring": "yes",
+      "method": "local_last",
+      "pool_id": "A_TARGET_ONLY",
+      "pool_order": 1
+    },
+    {
+      "family": "A_TARGET_ONLY",
+      "frozen_before_scoring": "yes",
+      "method": "local_slope3",
+      "pool_id": "A_TARGET_ONLY",
+      "pool_order": 2
+    },
+    {
+      "family": "A_TARGET_ONLY",
+      "frozen_before_scoring": "yes",
+      "method": "local_slope5",
+      "pool_id": "A_TARGET_ONLY",
+      "pool_order": 3
+    },
+    {
+      "family": "A_TARGET_ONLY",
+      "frozen_before_scoring": "yes",
+      "method": "local_mean_slope5",
+      "pool_id": "A_TARGET_ONLY",
+      "pool_order": 4
+    },
+    {
+      "family": "A_TARGET_ONLY",
+      "frozen_before_scoring": "yes",
+      "method": "local_linear3",
+      "pool_id": "A_TARGET_ONLY",
+      "pool_order": 5
+    },
+    {
+      "family": "A_TARGET_ONLY",
+      "frozen_before_scoring": "yes",
+      "method": "local_linear5",
+      "pool_id": "A_TARGET_ONLY",
+      "pool_order": 6
+    },
+    {
+      "family": "A_TARGET_ONLY",
+      "frozen_before_scoring": "yes",
+      "method": "local_last",
+      "pool_id": "B_PLUS_DENSITY",
+      "pool_order": 1
+    },
+    {
+      "family": "A_TARGET_ONLY",
+      "frozen_before_scoring": "yes",
+      "method": "local_slope3",
+      "pool_id": "B_PLUS_DENSITY",
+      "pool_order": 2
+    },
+    {
+      "family": "A_TARGET_ONLY",
+      "frozen_before_scoring": "yes",
+      "method": "local_slope5",
+      "pool_id": "B_PLUS_DENSITY",
+      "pool_order": 3
+    },
+    {
+      "family": "A_TARGET_ONLY",
+      "frozen_before_scoring": "yes",
+      "method": "local_mean_slope5",
+      "pool_id": "B_PLUS_DENSITY",
+      "pool_order": 4
+    },
+    {
+      "family": "A_TARGET_ONLY",
+      "frozen_before_scoring": "yes",
+      "method": "local_linear3",
+      "pool_id": "B_PLUS_DENSITY",
+      "pool_order": 5
+    },
+    {
+      "family": "A_TARGET_ONLY",
+      "frozen_before_scoring": "yes",
+      "method": "local_linear5",
+      "pool_id": "B_PLUS_DENSITY",
+      "pool_order": 6
+    },
+    {
+      "family": "B_DENSITY",
+      "frozen_before_scoring": "yes",
+      "method": "density_hold",
+      "pool_id": "B_PLUS_DENSITY",
+      "pool_order": 7
+    },
+    {
+      "family": "B_DENSITY",
+      "frozen_before_scoring": "yes",
+      "method": "density_plus_slope5",
+      "pool_id": "B_PLUS_DENSITY",
+      "pool_order": 8
+    },
+    {
+      "family": "A_TARGET_ONLY",
+      "frozen_before_scoring": "yes",
+      "method": "local_last",
+      "pool_id": "C_PLUS_POOLED_ML",
+      "pool_order": 1
+    },
+    {
+      "family": "A_TARGET_ONLY",
+      "frozen_before_scoring": "yes",
+      "method": "local_slope3",
+      "pool_id": "C_PLUS_POOLED_ML",
+      "pool_order": 2
+    },
+    {
+      "family": "A_TARGET_ONLY",
+      "frozen_before_scoring": "yes",
+      "method": "local_slope5",
+      "pool_id": "C_PLUS_POOLED_ML",
+      "pool_order": 3
+    },
+    {
+      "family": "A_TARGET_ONLY",
+      "frozen_before_scoring": "yes",
+      "method": "local_mean_slope5",
+      "pool_id": "C_PLUS_POOLED_ML",
+      "pool_order": 4
+    },
+    {
+      "family": "A_TARGET_ONLY",
+      "frozen_before_scoring": "yes",
+      "method": "local_linear3",
+      "pool_id": "C_PLUS_POOLED_ML",
+      "pool_order": 5
+    },
+    {
+      "family": "A_TARGET_ONLY",
+      "frozen_before_scoring": "yes",
+      "method": "local_linear5",
+      "pool_id": "C_PLUS_POOLED_ML",
+      "pool_order": 6
+    },
+    {
+      "family": "C_POOLED_SKLEARN",
+      "frozen_before_scoring": "yes",
+      "method": "model_ridge",
+      "pool_id": "C_PLUS_POOLED_ML",
+      "pool_order": 7
+    },
+    {
+      "family": "C_POOLED_SKLEARN",
+      "frozen_before_scoring": "yes",
+      "method": "model_extra_trees",
+      "pool_id": "C_PLUS_POOLED_ML",
+      "pool_order": 8
+    },
+    {
+      "family": "C_POOLED_SKLEARN",
+      "frozen_before_scoring": "yes",
+      "method": "model_random_forest",
+      "pool_id": "C_PLUS_POOLED_ML",
+      "pool_order": 9
+    },
+    {
+      "family": "C_POOLED_SKLEARN",
+      "frozen_before_scoring": "yes",
+      "method": "model_hist_gradient",
+      "pool_id": "C_PLUS_POOLED_ML",
+      "pool_order": 10
+    },
+    {
+      "family": "C_POOLED_SKLEARN",
+      "frozen_before_scoring": "yes",
+      "method": "model_gradient_huber",
+      "pool_id": "C_PLUS_POOLED_ML",
+      "pool_order": 11
+    },
+    {
+      "family": "A_TARGET_ONLY",
+      "frozen_before_scoring": "yes",
+      "method": "local_last",
+      "pool_id": "D_FULL_LEGAL_POOL",
+      "pool_order": 1
+    },
+    {
+      "family": "A_TARGET_ONLY",
+      "frozen_before_scoring": "yes",
+      "method": "local_slope3",
+      "pool_id": "D_FULL_LEGAL_POOL",
+      "pool_order": 2
+    },
+    {
+      "family": "A_TARGET_ONLY",
+      "frozen_before_scoring": "yes",
+      "method": "local_slope5",
+      "pool_id": "D_FULL_LEGAL_POOL",
+      "pool_order": 3
+    },
+    {
+      "family": "A_TARGET_ONLY",
+      "frozen_before_scoring": "yes",
+      "method": "local_mean_slope5",
+      "pool_id": "D_FULL_LEGAL_POOL",
+      "pool_order": 4
+    },
+    {
+      "family": "A_TARGET_ONLY",
+      "frozen_before_scoring": "yes",
+      "method": "local_linear3",
+      "pool_id": "D_FULL_LEGAL_POOL",
+      "pool_order": 5
+    },
+    {
+      "family": "A_TARGET_ONLY",
+      "frozen_before_scoring": "yes",
+      "method": "local_linear5",
+      "pool_id": "D_FULL_LEGAL_POOL",
+      "pool_order": 6
+    },
+    {
+      "family": "B_DENSITY",
+      "frozen_before_scoring": "yes",
+      "method": "density_hold",
+      "pool_id": "D_FULL_LEGAL_POOL",
+      "pool_order": 7
+    },
+    {
+      "family": "B_DENSITY",
+      "frozen_before_scoring": "yes",
+      "method": "density_plus_slope5",
+      "pool_id": "D_FULL_LEGAL_POOL",
+      "pool_order": 8
+    },
+    {
+      "family": "C_POOLED_SKLEARN",
+      "frozen_before_scoring": "yes",
+      "method": "model_ridge",
+      "pool_id": "D_FULL_LEGAL_POOL",
+      "pool_order": 9
+    },
+    {
+      "family": "C_POOLED_SKLEARN",
+      "frozen_before_scoring": "yes",
+      "method": "model_extra_trees",
+      "pool_id": "D_FULL_LEGAL_POOL",
+      "pool_order": 10
+    },
+    {
+      "family": "C_POOLED_SKLEARN",
+      "frozen_before_scoring": "yes",
+      "method": "model_random_forest",
+      "pool_id": "D_FULL_LEGAL_POOL",
+      "pool_order": 11
+    },
+    {
+      "family": "C_POOLED_SKLEARN",
+      "frozen_before_scoring": "yes",
+      "method": "model_hist_gradient",
+      "pool_id": "D_FULL_LEGAL_POOL",
+      "pool_order": 12
+    },
+    {
+      "family": "C_POOLED_SKLEARN",
+      "frozen_before_scoring": "yes",
+      "method": "model_gradient_huber",
+      "pool_id": "D_FULL_LEGAL_POOL",
+      "pool_order": 13
+    }
+  ],
+  "city_count": 40,
+  "f4_reference_path": "reports/S5_HANDOFFS/S5-Plan06E/oof_predictions.csv",
+  "f4_reference_tag": "archive/pre-s6/s5-plan06e-delta-growth-framing",
+  "fixed_candidate_pool_frozen": true,
+  "forbidden_inputs": [
+    "S8 truth",
+    "candidate_truth_2023",
+    "real-2022/2023 population labels",
+    "2023 row-level errors",
+    "S9 merge",
+    "S6 mutation"
+  ],
+  "horizon_years": 2,
+  "macro_metric": "macro-origin MSE",
+  "model_parameters_fixed_no_sweep": true,
+  "nested_scoring_origins": [
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021
+  ],
+  "origins": [
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021
+  ],
+  "plan01_branch": "codex/s10-plan01-external-script-forensics",
+  "plan_id": "S10-Plan02",
+  "population_profile": {
+    "canonical_row_count": 718,
+    "city_count": 40,
+    "duplicate_key_rows": 0,
+    "population_sha256": "7f12e54c5c8d72a20182a117ad26564e6f1892d6f4b9add0dc80135aabb18797",
+    "registered_latest_observed_year": 2021,
+    "registered_nonempty_count": 707,
+    "resident_latest_observed_year": 2021,
+    "resident_nonempty_count": 693,
+    "unique_key_count": 718,
+    "year_max": 2021,
+    "year_min": 2001
+  },
+  "primary_metric": "pooled city-year MSE",
+  "primary_repair_variant": "NO_MANUAL_TARGET_REPAIR",
+  "source_semantics": [
+    "CANONICAL_PROVENANCE_SAFE",
+    "ORIGINAL_SOURCE_SEMANTICS"
+  ],
+  "target_history_cutoff": "T-2",
+  "targets": {
+    "primary": "resident",
+    "sensitivity": "registered"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "fallback": "prior-only global ranking then current availability; no current target used",
+  "nested_selector": "PASS: prior origins strictly less than current; warm-up 2011-2012 excluded from scoring",
+  "non_nested_selector": "INVALID_FOR_UNBIASED_HISTORICAL_COMPARISON",
+  "oracle": "UNDEPLOYABLE_ORACLE_UPPER_BOUND"
+}

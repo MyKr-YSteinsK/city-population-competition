@@ -1,0 +1,15 @@
+{
+  "city": "city40",
+  "prior_2017_2020": [
+    272.0,
+    271.0,
+    271.0,
+    270.0
+  ],
+  "registered_after": 270.5,
+  "registered_before": 65.0,
+  "repair_variant": "ORIGINAL_REGISTERED_REPAIR",
+  "resident_changed": false,
+  "triggered": true,
+  "year": 2021
+}

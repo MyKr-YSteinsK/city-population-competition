@@ -1,0 +1,5 @@
+selector_type,status,evidence
+NON_NESTED_APPARENT_SELECTOR,INVALID_FOR_UNBIASED_HISTORICAL_COMPARISON,selection uses all 2011-2021 target errors before scoring the same rows
+VALID_TEMPORAL_SELECTOR_EVALUATION,PASS,each origin T ranks using only origins < T; 2011-2012 are warm-up only
+VALID_TEMPORAL_SELECTOR_EVALUATION_FALLBACK,PASS,"fallback uses prior-only global ranking and current availability, never current target"
+UNDEPLOYABLE_ORACLE_UPPER_BOUND,DIAGNOSTIC_ONLY,uses current true error and is not deployable
