@@ -14,7 +14,7 @@ city12,2023,451,450.56,泰州,江苏,EXACT_OFFICIAL,HIGH,EXACT_OFFICIAL,SRC_JS_2
 city13,2023,498,497.53,宿迁,江苏,EXACT_OFFICIAL,HIGH,EXACT_OFFICIAL,SRC_JS_2022_NJ0306,,497.03,498.03,Primary official 2022 source; integer 万人 rendering is derived.
 city14,2023,284,284.17,河源,广东,EXACT_OFFICIAL,VERY_HIGH,EXACT_OFFICIAL,SRC_GD_HEYUAN_2022_BULLETIN,,283.67,284.67,Traceable reproduced source; remaining source-tier uncertainty is explicit.
 city15,2023,902,901.85,徐州,江苏,EXACT_OFFICIAL,HIGH,EXACT_OFFICIAL,SRC_JS_2022_NJ0306,,901.35,902.35,Primary official 2022 source; integer 万人 rendering is derived.
-city16,2023,286,286.18,韶关,广东,HIGH_CONFIDENCE,HIGH,HIGH_CONFIDENCE_REPRODUCED,SRC_GD_2022_YEARBOOK_REPRO,,285.68,286.68,Traceable reproduced source; remaining source-tier uncertainty is explicit.
+city16,2023,286,286.18,韶关,广东,HIGH_CONFIDENCE,HIGH,HIGH_CONFIDENCE_OFFICIAL_REPOST,SRC_GD_SHAOGUAN_2023_YEARBOOK_OFFICIAL,,285.68,286.68,官方统计局年鉴发布页及其 PDF 作为第一方出版物；独立公报复现给出同值 286.18。另见的 286.00 明确标注为估计值，视为前期估计而非最终年鉴值，不覆盖最终值。 Raw value and rendered evaluator value unchanged from v2.
 city17,2023,1873,1873.41,广州,广东,EXACT_OFFICIAL,HIGH,EXACT_OFFICIAL,SRC_GZ_2022_BULLETIN,,1872.91,1873.91,Primary official 2022 source; integer 万人 rendering is derived.
 city18,2023,537,536.62,常州,江苏,EXACT_OFFICIAL,HIGH,EXACT_OFFICIAL,SRC_JS_2022_NJ0306,,536.12,537.12,Primary official 2022 source; integer 万人 rendering is derived.
 city19,2023,713,712.7,金华,浙江,HIGH_CONFIDENCE,HIGH,HIGH_CONFIDENCE_OFFICIAL_REPOST,SRC_ZJ_2022_POP_BULLETIN_GOV_REPOST,,712.2,713.2,Traceable reproduced source; remaining source-tier uncertainty is explicit.
@@ -34,8 +34,8 @@ city32,2023,471,470.59,淄博,山东,EXACT_OFFICIAL,VERY_HIGH,EXACT_OFFICIAL,SRC
 city33,2023,968,967.9,温州,浙江,HIGH_CONFIDENCE,VERY_HIGH,HIGH_CONFIDENCE_OFFICIAL_REPOST,SRC_ZJ_2022_POP_BULLETIN_GOV_REPOST,,967.4,968.4,Traceable reproduced source; remaining source-tier uncertainty is explicit.
 city34,2023,669,668.97,盐城,江苏,EXACT_OFFICIAL,HIGH,EXACT_OFFICIAL,SRC_JS_2022_NJ0306,,668.47,669.47,Primary official 2022 source; integer 万人 rendering is derived.
 city35,2023,704,703.54,湛江,广东,EXACT_OFFICIAL,VERY_HIGH,EXACT_OFFICIAL,SRC_GD_ZHANJIANG_2022_BULLETIN,,703.04,704.04,Traceable reproduced source; remaining source-tier uncertainty is explicit.
-city36,2023,383,382.97,枣庄,山东,HIGH_CONFIDENCE,VERY_HIGH,HIGH_CONFIDENCE_REPRODUCED,SRC_ZZ_2022_BULLETIN_REPRO,,382.47,383.47,Traceable reproduced source; remaining source-tier uncertainty is explicit.
+city36,2023,383,382.97,枣庄,山东,HIGH_CONFIDENCE,VERY_HIGH,HIGH_CONFIDENCE_TRACEABLE_CROSSCHECK,SRC_SD_ZAOZHUANG_2022_TRACEABLE_CROSSCHECK,,382.47,383.47,官方统计局索引确认 2022 公报存在；统计局署名复现与独立年鉴历史表均为 382.97。原始页面本轮仍受技术可取性限制，因此采用可追溯官方来源加独立交叉核对，不伪装为 direct raw page。 Raw value and rendered evaluator value unchanged from v2.
 city37,2023,458,458.29,扬州,江苏,EXACT_OFFICIAL,HIGH,EXACT_OFFICIAL,SRC_JS_2022_NJ0306,,457.79,458.79,Primary official 2022 source; integer 万人 rendering is derived.
-city38,2023,413,412.84,肇庆,广东,HIGH_CONFIDENCE,VERY_HIGH,HIGH_CONFIDENCE_REPRODUCED,SRC_GD_2022_YEARBOOK_REPRO,,412.34,413.34,Traceable reproduced source; remaining source-tier uncertainty is explicit.
-city39,2023,221,220.9,东营,山东,HIGH_CONFIDENCE,VERY_HIGH,HIGH_CONFIDENCE_REPRODUCED,SRC_DY_2022_BULLETIN_REPRO,,220.4,221.4,Traceable reproduced source; remaining source-tier uncertainty is explicit.
+city38,2023,413,412.84,肇庆,广东,HIGH_CONFIDENCE,VERY_HIGH,HIGH_CONFIDENCE_OFFICIAL_REPOST,SRC_GD_ZHAOQING_2022_OFFICIAL_YEARBOOK,,412.34,413.34,官方统计年鉴表直接列出肇庆 2022 年末人口 412.84；独立公报复现同值，target semantics 均为年末常住人口。 Raw value and rendered evaluator value unchanged from v2.
+city39,2023,221,220.9,东营,山东,HIGH_CONFIDENCE,VERY_HIGH,HIGH_CONFIDENCE_TRACEABLE_CROSSCHECK,SRC_SD_DONGYING_2022_TRACEABLE_CROSSCHECK,,220.4,221.4,统计公报明确署名东营市统计局与国家统计局东营调查队；独立地方权威媒体对 220.9 万人作同值交叉核对，口径均为 2022 年末常住人口。 Raw value and rendered evaluator value unchanged from v2.
 city40,2023,322,322.22,镇江,江苏,EXACT_OFFICIAL,HIGH,EXACT_OFFICIAL,SRC_JS_2022_NJ0306,,321.72,322.72,Identity upgraded to HIGH_CONFIDENCE from independent non-anomalous evidence; registered=65 and density conflicts are retained without correction.

@@ -1,0 +1,5 @@
+city_id,real_city,province,v2_raw_value,new_raw_value,delta_raw,v2_rendered_truth,new_rendered_truth,rendered_changed,v2_source_id,new_source_id,v2_source_tier,new_source_tier,resolution_status,new_truth_version_required,notes
+city16,韶关,广东,286.18,286.18,0,286,286,NO,SRC_GD_2022_YEARBOOK_REPRO,SRC_GD_SHAOGUAN_2023_YEARBOOK_OFFICIAL,TIER3,TIER2,TIER2_OFFICIAL_REPOST,NO,Provenance only; v2 evaluator is retained unchanged.
+city36,枣庄,山东,382.97,382.97,0,383,383,NO,SRC_ZZ_2022_BULLETIN_REPRO,SRC_SD_ZAOZHUANG_2022_TRACEABLE_CROSSCHECK,TIER3,TIER2,TRACEABLE_OFFICIAL_WITH_INDEPENDENT_CROSSCHECK,NO,Provenance only; v2 evaluator is retained unchanged.
+city38,肇庆,广东,412.84,412.84,0,413,413,NO,SRC_GD_2022_YEARBOOK_REPRO,SRC_GD_ZHAOQING_2022_OFFICIAL_YEARBOOK,TIER3,TIER2,TIER2_OFFICIAL_REPOST,NO,Provenance only; v2 evaluator is retained unchanged.
+city39,东营,山东,220.9,220.9,0,221,221,NO,SRC_DY_2022_BULLETIN_REPRO,SRC_SD_DONGYING_2022_TRACEABLE_CROSSCHECK,TIER3,TIER2,TRACEABLE_OFFICIAL_WITH_INDEPENDENT_CROSSCHECK,NO,Provenance only; v2 evaluator is retained unchanged.

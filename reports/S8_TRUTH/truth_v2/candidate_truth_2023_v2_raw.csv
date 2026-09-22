@@ -14,7 +14,7 @@ city12,泰州,江苏,2023,2022,resident_population,450.56,万人,450.56,SRC_JS_2
 city13,宿迁,江苏,2023,2022,resident_population,497.53,万人,497.53,SRC_JS_2022_NJ0306,TIER1,CAPTURED_EVIDENCE,EXACT_OFFICIAL,,,
 city14,河源,广东,2023,2022,resident_population,284.17,万人,284.17,SRC_GD_HEYUAN_2022_BULLETIN,TIER1,CAPTURED_EVIDENCE,EXACT_OFFICIAL,,,Provenance hardened; raw source retained in source ledger.
 city15,徐州,江苏,2023,2022,resident_population,901.85,万人,901.85,SRC_JS_2022_NJ0306,TIER1,CAPTURED_EVIDENCE,EXACT_OFFICIAL,,,
-city16,韶关,广东,2023,2022,resident_population,286.18,万人,286.18,SRC_GD_2022_YEARBOOK_REPRO,TIER3,CAPTURED_EVIDENCE,HIGH_CONFIDENCE_REPRODUCED,,,
+city16,韶关,广东,2023,2022,resident_population,286.18,万人,286.18,SRC_GD_SHAOGUAN_2023_YEARBOOK_OFFICIAL,TIER2,CAPTURED_EVIDENCE_FINAL_FOUR,HIGH_CONFIDENCE_OFFICIAL_REPOST,,,官方统计局年鉴发布页及其 PDF 作为第一方出版物；独立公报复现给出同值 286.18。另见的 286.00 明确标注为估计值，视为前期估计而非最终年鉴值，不覆盖最终值。
 city17,广州,广东,2023,2022,resident_population,1873.41,万人,1873.41,SRC_GZ_2022_BULLETIN,TIER1,CAPTURED_EVIDENCE,EXACT_OFFICIAL,,,
 city18,常州,江苏,2023,2022,resident_population,536.62,万人,536.62,SRC_JS_2022_NJ0306,TIER1,CAPTURED_EVIDENCE,EXACT_OFFICIAL,,,
 city19,金华,浙江,2023,2022,resident_population,712.7,万人,712.7,SRC_ZJ_2022_POP_BULLETIN_GOV_REPOST,TIER2,CAPTURED_EVIDENCE,HIGH_CONFIDENCE_OFFICIAL_REPOST,,,Provenance hardened; raw source retained in source ledger.
@@ -34,8 +34,8 @@ city32,淄博,山东,2023,2022,resident_population,470.59,万人,470.59,SRC_ZB_2
 city33,温州,浙江,2023,2022,resident_population,967.9,万人,967.9,SRC_ZJ_2022_POP_BULLETIN_GOV_REPOST,TIER2,CAPTURED_EVIDENCE,HIGH_CONFIDENCE_OFFICIAL_REPOST,,,Provenance hardened; raw source retained in source ledger.
 city34,盐城,江苏,2023,2022,resident_population,668.97,万人,668.97,SRC_JS_2022_NJ0306,TIER1,CAPTURED_EVIDENCE,EXACT_OFFICIAL,,,
 city35,湛江,广东,2023,2022,resident_population,703.54,万人,703.54,SRC_GD_ZHANJIANG_2022_BULLETIN,TIER1,CAPTURED_EVIDENCE,EXACT_OFFICIAL,,,Provenance hardened; raw source retained in source ledger.
-city36,枣庄,山东,2023,2022,resident_population,382.97,万人,382.97,SRC_ZZ_2022_BULLETIN_REPRO,TIER3,CAPTURED_EVIDENCE,HIGH_CONFIDENCE_REPRODUCED,,,
+city36,枣庄,山东,2023,2022,resident_population,382.97,万人,382.97,SRC_SD_ZAOZHUANG_2022_TRACEABLE_CROSSCHECK,TIER2,CAPTURED_EVIDENCE_FINAL_FOUR,HIGH_CONFIDENCE_TRACEABLE_CROSSCHECK,,,官方统计局索引确认 2022 公报存在；统计局署名复现与独立年鉴历史表均为 382.97。原始页面本轮仍受技术可取性限制，因此采用可追溯官方来源加独立交叉核对，不伪装为 direct raw page。
 city37,扬州,江苏,2023,2022,resident_population,458.29,万人,458.29,SRC_JS_2022_NJ0306,TIER1,CAPTURED_EVIDENCE,EXACT_OFFICIAL,,,
-city38,肇庆,广东,2023,2022,resident_population,412.84,万人,412.84,SRC_GD_2022_YEARBOOK_REPRO,TIER3,CAPTURED_EVIDENCE,HIGH_CONFIDENCE_REPRODUCED,,,
-city39,东营,山东,2023,2022,resident_population,220.9,万人,220.9,SRC_DY_2022_BULLETIN_REPRO,TIER3,CAPTURED_EVIDENCE,HIGH_CONFIDENCE_REPRODUCED,,,
+city38,肇庆,广东,2023,2022,resident_population,412.84,万人,412.84,SRC_GD_ZHAOQING_2022_OFFICIAL_YEARBOOK,TIER2,CAPTURED_EVIDENCE_FINAL_FOUR,HIGH_CONFIDENCE_OFFICIAL_REPOST,,,官方统计年鉴表直接列出肇庆 2022 年末人口 412.84；独立公报复现同值，target semantics 均为年末常住人口。
+city39,东营,山东,2023,2022,resident_population,220.9,万人,220.9,SRC_SD_DONGYING_2022_TRACEABLE_CROSSCHECK,TIER2,CAPTURED_EVIDENCE_FINAL_FOUR,HIGH_CONFIDENCE_TRACEABLE_CROSSCHECK,,,统计公报明确署名东营市统计局与国家统计局东营调查队；独立地方权威媒体对 220.9 万人作同值交叉核对，口径均为 2022 年末常住人口。
 city40,镇江,江苏,2023,2022,resident_population,322.22,万人,322.22,SRC_JS_2022_NJ0306,TIER1,CAPTURED_EVIDENCE,EXACT_OFFICIAL,,,Registered 2021=65 and density-field conflict are retained; identity upgraded using independent non-anomalous evidence.

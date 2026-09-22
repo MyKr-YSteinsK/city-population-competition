@@ -1,9 +1,9 @@
 {
   "truth_version": "candidate_truth_2023_v2",
-  "plan_id": "S8-Plan02",
+  "plan_id": "S8-Plan03",
   "base_commit": "0a74372ea4e3555b3d659e6a2c77647b92eabea4",
   "branch": "codex/s8-truth-reconstruction-v1",
-  "generation_script": "scripts/harden_s8_truth_v1.py",
+  "generation_script": "scripts/resolve_s8_final_four.py",
   "generated_at": "2026-09-22T12:00:00+08:00",
   "competition_target_year": 2023,
   "real_statistical_year": 2022,
@@ -14,13 +14,13 @@
   "resolved_city_count": 40,
   "provisional_city_count": 0,
   "unresolved_city_count": 0,
-  "source_count": 37,
+  "source_count": 41,
   "tier1_source_count": 18,
   "fallback_source_count": 9,
   "truth_file": "candidate_truth_2023_v2_evaluator.csv",
   "truth_sha256": "de8ae0feb8b4061610b82a235a673fc2a841d2969f04924d7f69185c5e4db02c",
   "full_truth_file": "candidate_truth_2023_v2.csv",
-  "full_truth_sha256": "2c4d3eafe6eb1eb0b0297944cbdf421a60fae809cb86dc81949b955337e0b692",
+  "full_truth_sha256": "448c462caf21960e554f08d635dc69e407617de967926b9724322f686389edb4",
   "evidence_files": [
     "candidate_truth_2023_raw.csv",
     "candidate_truth_2023_v1.csv",
@@ -28,12 +28,18 @@
     "candidate_truth_2023_v2.csv",
     "candidate_truth_2023_v2_evaluator.csv",
     "candidate_truth_2023_v2_raw.csv",
+    "city16_source_resolution.csv",
     "city23_truth_resolution.csv",
+    "city36_source_resolution.csv",
+    "city38_source_resolution.csv",
+    "city39_source_resolution.csv",
     "city40_identity_resolution.csv",
     "city40_registered_anomaly_audit.md",
     "city_identity_evidence.csv",
     "city_identity_mapping.csv",
     "competition_city_fingerprints.csv",
+    "final_four_source_resolution_queue.csv",
+    "final_four_truth_delta.csv",
     "rounding_unit_evidence.csv",
     "source_ledger.csv",
     "statistical_revision_ledger.csv",
@@ -48,10 +54,10 @@
   ],
   "known_conflicts": [
     "city3 registered population mismatch retained",
-    "city40 registered population 2021 value 65 retained and mapping upgraded only to HIGH_CONFIDENCE",
+    "city40 registered population 2021 value 65 retained and mapping remains HIGH_CONFIDENCE",
     "city40 density source conflict retained",
     "city12/city29 Taizhou name collision resolved by province and fingerprint",
-    "four 2022 truth rows retain Tier-3 fallback pending direct first-party retrieval",
+    "city16 preliminary 286.00 estimate explicitly superseded by final 286.18 yearbook value; no material truth conflict",
     "city23 v1 value 245 retained; v2 official-attributed value renders to 248"
   ],
   "usage_scope": [
@@ -59,7 +65,7 @@
     "NOT_FOR_MODEL_SELECTION",
     "NOT_SHARED_WITH_S9"
   ],
-  "freeze_status": "S8_TRUTH_PROVISIONAL_FREEZE_RETAINED",
+  "freeze_status": "S8_TRUTH_V2_FROZEN_WAITING_FOR_S9",
   "isolation": {
     "s9_branch_read": false,
     "s9_predictions_read": false,
@@ -69,8 +75,8 @@
   "plan02_base_commit": "b87793311244235ad75b519471a79f6ef7ba5b5a",
   "truth_tier_counts": {
     "TIER1": 22,
-    "TIER2": 14,
-    "TIER3": 4,
+    "TIER2": 18,
+    "TIER3": 0,
     "TIER4": 0
   },
   "truth_status_counts": {
@@ -86,7 +92,7 @@
     "UNRESOLVED": 0
   },
   "city40_mapping_status": "HIGH_CONFIDENCE",
-  "successor_truth_version": "candidate_truth_2023_v2",
+  "successor_truth_version": null,
   "v1_evaluator_sha256_before_hardening": "026c2c4723eadad8ae8519586e0a146d47b1bd0525fde315aa4ec4994e86927d",
   "v1_evaluator_sha256": "026c2c4723eadad8ae8519586e0a146d47b1bd0525fde315aa4ec4994e86927d",
   "provenance_hardening": {
@@ -100,5 +106,25 @@
   "v1_full_truth_sha256_after_hardening": "ca7b86cc5cbc98f01562a2a7cabf14e01f90eae44986f841b3030451da940ad7",
   "rendered_evaluator_rows_changed": 1,
   "raw_value_rows_changed": 1,
-  "versioning_decision": "truth_v2 required because city23 247.72 renders to 248 versus v1 245"
+  "versioning_decision": "truth_v2 required because city23 247.72 renders to 248 versus v1 245",
+  "plan03_base_commit": "41f3a113577836ae0d8709d12e259a9a24092ddd",
+  "artifact_freeze_commit": "PENDING_ARTIFACT_FREEZE_COMMIT",
+  "metadata_finalization_commit": "PENDING_METADATA_FINALIZATION_COMMIT",
+  "final_branch_head": "PENDING_FINAL_BRANCH_HEAD",
+  "validator_status": "PENDING_VALIDATOR",
+  "remaining_fallback_count": 0,
+  "remaining_blocking_truth_rows": 0,
+  "final_four_resolution_rows": 4,
+  "final_four_resolution_status_counts": {
+    "TIER1_DIRECT_OFFICIAL": 0,
+    "TIER2_OFFICIAL_REPOST": 2,
+    "TRACEABLE_OFFICIAL_WITH_INDEPENDENT_CROSSCHECK": 2,
+    "TIER3_FALLBACK_ONLY": 0,
+    "CONFLICTING_VALUES": 0,
+    "UNRESOLVED": 0
+  },
+  "material_truth_value_conflicts": 0,
+  "plan03_raw_value_rows_changed": 0,
+  "plan03_rendered_evaluator_rows_changed": 0,
+  "new_truth_version_required": false
 }

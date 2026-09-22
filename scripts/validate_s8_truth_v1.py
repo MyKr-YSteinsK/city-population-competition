@@ -12,6 +12,15 @@ from pathlib import Path
 
 
 EXPECTED_CITY_IDS = [f"city{i}" for i in range(1, 41)]
+FINAL_FOUR_IDS = {"city16", "city36", "city38", "city39"}
+FINAL_FOUR_ALLOWED_STATUSES = {
+    "TIER1_DIRECT_OFFICIAL",
+    "TIER2_OFFICIAL_REPOST",
+    "TRACEABLE_OFFICIAL_WITH_INDEPENDENT_CROSSCHECK",
+    "TIER3_FALLBACK_ONLY",
+    "CONFLICTING_VALUES",
+    "UNRESOLVED",
+}
 UPGRADE_CITY_IDS = {
     "city1", "city4", "city6", "city7", "city9", "city10", "city11", "city14",
     "city16", "city19", "city20", "city21", "city23", "city25", "city27", "city29",
@@ -101,7 +110,12 @@ def require_files(truth_dir: Path, version: str, manifest: dict[str, object]) ->
     if version == "v1":
         required += ["candidate_truth_2023_raw.csv", "candidate_truth_2023_v1.csv", "candidate_truth_2023_v1_evaluator.csv", "truth_manifest_v1.json"]
     else:
-        required += ["candidate_truth_2023_v2_raw.csv", "candidate_truth_2023_v2.csv", "candidate_truth_2023_v2_evaluator.csv", "truth_v1_to_v2_delta.csv", "truth_manifest_v2.json"]
+        required += [
+            "candidate_truth_2023_v2_raw.csv", "candidate_truth_2023_v2.csv", "candidate_truth_2023_v2_evaluator.csv",
+            "truth_v1_to_v2_delta.csv", "truth_manifest_v2.json", "final_four_source_resolution_queue.csv",
+            "city16_source_resolution.csv", "city36_source_resolution.csv", "city38_source_resolution.csv",
+            "city39_source_resolution.csv", "final_four_truth_delta.csv",
+        ]
     required = sorted(set(required))
     missing = [name for name in required if not (truth_dir / name).is_file()]
     if missing:
@@ -228,6 +242,64 @@ def validate_upgrade_artifacts(truth_dir: Path, version: str, raw_truth: list[di
             fail("v2 delta has unexpected raw changes")
 
 
+def validate_final_four_artifacts(
+    truth_dir: Path,
+    raw_truth: list[dict[str, str]],
+    evaluator: list[dict[str, str]],
+    source_ledger: list[dict[str, str]],
+    manifest: dict[str, object],
+) -> None:
+    queue = read_csv(truth_dir / "final_four_source_resolution_queue.csv")
+    if {row.get("city_id") for row in queue} != FINAL_FOUR_IDS or len(queue) != 4:
+        fail("Final-four resolution queue is not exactly city16/city36/city38/city39")
+    queue_by_city = {row["city_id"]: row for row in queue}
+    raw_by_city = {row["city_id"]: row for row in raw_truth}
+    evaluator_by_city = {row["city_id"]: row for row in evaluator}
+    ledger_by_id = {row["source_id"]: row for row in source_ledger}
+    for city_id in sorted(FINAL_FOUR_IDS):
+        row = queue_by_city[city_id]
+        if row.get("resolution_status") not in FINAL_FOUR_ALLOWED_STATUSES:
+            fail(f"Invalid final-four status for {city_id}: {row.get('resolution_status')}")
+        if row.get("new_source_tier") not in {"TIER1", "TIER2"}:
+            fail(f"Final-four source remains fallback for {city_id}")
+        if row.get("new_raw_value") != row.get("current_raw_value") or row.get("delta_raw") not in {"0", "0.0", "0.00"}:
+            fail(f"Final-four raw value changed unexpectedly for {city_id}")
+        if row.get("rendered_changed") != "NO" or row.get("new_rendered_truth") != evaluator_by_city[city_id].get("truth"):
+            fail(f"Final-four evaluator delta mismatch for {city_id}")
+        raw = raw_by_city[city_id]
+        if raw.get("source_id") != row.get("new_source_id") or raw.get("source_tier") != row.get("new_source_tier"):
+            fail(f"Final-four raw/source resolution mismatch for {city_id}")
+        if row.get("new_source_id") not in ledger_by_id:
+            fail(f"Final-four source missing from ledger for {city_id}")
+        resolution_file = read_csv(truth_dir / f"{city_id}_source_resolution.csv")
+        if len(resolution_file) != 1 or resolution_file[0] != row:
+            fail(f"Per-city final-four resolution does not match queue for {city_id}")
+    delta = read_csv(truth_dir / "final_four_truth_delta.csv")
+    if {row.get("city_id") for row in delta} != FINAL_FOUR_IDS or len(delta) != 4:
+        fail("Final-four truth delta is not exactly four rows")
+    if any(row.get("rendered_changed") != "NO" or row.get("new_truth_version_required") != "NO" for row in delta):
+        fail("Final-four delta indicates an unexpected evaluator/version change")
+    status_counts = Counter(row["resolution_status"] for row in queue)
+    expected_status_counts = {status: status_counts.get(status, 0) for status in sorted(FINAL_FOUR_ALLOWED_STATUSES)}
+    if manifest.get("final_four_resolution_status_counts") != expected_status_counts:
+        fail("Manifest final-four resolution status counts mismatch")
+    blocking = sum(status_counts.get(status, 0) for status in {"TIER3_FALLBACK_ONLY", "CONFLICTING_VALUES", "UNRESOLVED"})
+    if int(manifest.get("remaining_blocking_truth_rows", -1)) != blocking:
+        fail("Manifest remaining_blocking_truth_rows mismatch")
+    if int(manifest.get("remaining_fallback_count", -1)) != 0:
+        fail("Manifest remaining_fallback_count is not zero")
+    if int(manifest.get("material_truth_value_conflicts", -1)) != 0:
+        fail("Manifest material_truth_value_conflicts is not zero")
+    if int(manifest.get("plan03_raw_value_rows_changed", -1)) != 0 or int(manifest.get("plan03_rendered_evaluator_rows_changed", -1)) != 0:
+        fail("Plan03 reports unexpected value/evaluator changes")
+    if manifest.get("new_truth_version_required") is not False or manifest.get("successor_truth_version") is not None:
+        fail("Plan03 versioning decision is inconsistent with unchanged evaluator values")
+    handoff = (truth_dir / "HANDOFF.md").read_text(encoding="utf-8")
+    for marker in ("Artifact Freeze Commit:", "Metadata Finalization Commit:", "Final Branch HEAD:"):
+        if marker not in handoff or "PENDING" in handoff.split(marker, 1)[1].splitlines()[0]:
+            fail(f"Final handoff metadata is missing or pending: {marker}")
+
+
 def validate_version_linkage(truth_dir: Path, version: str, manifest: dict[str, object], evaluator_path: Path, full_path: Path) -> None:
     evaluator_sha = sha256_file(evaluator_path)
     full_sha = sha256_file(full_path)
@@ -247,7 +319,7 @@ def validate_version_linkage(truth_dir: Path, version: str, manifest: dict[str, 
         if not sibling.is_dir():
             fail("v2 validation requires sibling truth_v1 artifacts")
         v1_manifest = json.loads((sibling / "truth_manifest_v1.json").read_text(encoding="utf-8"))
-        if manifest.get("freeze_status") != "S8_TRUTH_PROVISIONAL_FREEZE_RETAINED":
+        if manifest.get("freeze_status") not in {"S8_TRUTH_PROVISIONAL_FREEZE_RETAINED", "S8_TRUTH_V2_FROZEN_WAITING_FOR_S9"}:
             fail("Unexpected v2 freeze status")
         if manifest.get("supersedes_truth_version") != "candidate_truth_2023_v1":
             fail("v2 supersedes version is not recorded")
@@ -257,6 +329,15 @@ def validate_version_linkage(truth_dir: Path, version: str, manifest: dict[str, 
             fail("v2 does not link to hardened v1 full-truth SHA")
         if int(manifest.get("rendered_evaluator_rows_changed", -1)) != 1 or int(manifest.get("raw_value_rows_changed", -1)) != 1:
             fail("v2 manifest change counts are not exactly one")
+        if manifest.get("freeze_status") == "S8_TRUTH_V2_FROZEN_WAITING_FOR_S9":
+            if manifest.get("validator_status") != "PASS":
+                fail("Full-freeze manifest validator_status is not PASS")
+            if int(manifest.get("remaining_blocking_truth_rows", -1)) != 0:
+                fail("Full-freeze manifest still reports blocking rows")
+            for key in ("artifact_freeze_commit", "metadata_finalization_commit", "final_branch_head"):
+                value = str(manifest.get(key, ""))
+                if not value or "PENDING" in value:
+                    fail(f"Full-freeze manifest metadata is missing: {key}")
 
 
 def main() -> None:
@@ -285,6 +366,8 @@ def main() -> None:
         if int(manifest.get(field, -1)) != actual:
             fail(f"Manifest {field} mismatch: {manifest.get(field)} != {actual}")
     validate_upgrade_artifacts(truth_dir, version, raw_truth, evaluator)
+    if version == "v2":
+        validate_final_four_artifacts(truth_dir, raw_truth, evaluator, source_ledger, manifest)
     validate_version_linkage(truth_dir, version, manifest, truth_dir / str(manifest["truth_file"]), truth_dir / str(manifest["full_truth_file"]))
     if manifest.get("target_semantics") != "RESIDENT_POPULATION":
         fail("Unexpected target semantics")
