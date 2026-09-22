@@ -1,0 +1,13 @@
+﻿metric,plan04_value,plan05_value,delta,reason
+verified_false_negative_count,1,1,0,unchanged: matching cleanup does not change the definition-matched official universe or city40 comparison.
+critical_miss_count,1,1,0,unchanged: city40 registered=65 remains the same verified critical miss.
+true_year_shift_s1_caught_count,0,2,2,The two employment shifted trajectories now match city25/city29 quarantine blocks by pairwise relation.
+true_year_shift_uncaught_count,2,0,-2,The former false non-match is removed by block-level relation matching.
+malformed_ctiy_label_s1_caught_count,0,2,2,ctiy22 and ctiy31 now resolve through the S1-derived raw-label map.
+trailing_space_city29_label_caught_count,36,36,0,city29 trailing-space rows retain their caught status with explicit canonical identity.
+externally_verified_correct_decisions,4,4,0,unchanged: no new external research and the Plan04 external universe is reused as frozen evidence.
+externally_verified_decisions,4,4,0,"unchanged: matching cleanup changes candidate-to-decision attribution, not exact-cell external evidence."
+not_externally_verifiable_decisions,378,378,0,"unchanged: non-external decisions remain explicitly internal or cautious, never externally proven."
+candidate_rows,1031,1031,0,unchanged: Plan05 reuses the Plan04 candidate universe and only repairs matching.
+s1_caught_candidate_rows,57,118,61,The count changes only where canonical label and pairwise block relations were previously missed.
+verified_missed_anomalies_in_scorecard,1,1,0,unchanged: the only externally verified anomaly remains city40 registered=65.

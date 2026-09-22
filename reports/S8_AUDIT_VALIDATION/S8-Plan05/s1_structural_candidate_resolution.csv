@@ -1,0 +1,30 @@
+﻿candidate_type,dataset,candidate_count,s1_caught_count,s1_missed_count,externally_verified_count,unresolved_count,material_new_findings,evidence
+BLOCK_CONTAMINATION,overall_income,32,32,0,0,0,S1_QUARANTINE_RETAINED,The existing contaminated income block remains an internally supported S1 quarantine boundary.
+CITY_PERMUTATION,ALL,0,0,0,0,0,NO_CONFIRMED_GLOBAL_PERMUTATION,No candidate survived as a confirmed canonical multi-year city permutation.
+CROSS_FIELD_CONSISTENCY,population,1,0,0,0,1,NO_NEW_CONFIRMED_FINDING,Plan04 candidate rows resolved under the Plan05 matching contract.
+DUPLICATE_KEY,density,1,1,0,0,0,S1_CAUGHT_INTERNAL_RULE_MATCH,Plan04 candidate rows resolved under the Plan05 matching contract.
+DUPLICATE_KEY,employees,72,55,0,0,17,S1_CAUGHT_INTERNAL_RULE_MATCH,Plan04 candidate rows resolved under the Plan05 matching contract.
+INDICATOR_SEMANTICS,age,19,1,0,0,1,POSSIBLE_DEFINITION_OR_SOURCE_CONFLICT,Age is benchmark-year data; no annual interpolation was introduced.
+INDICATOR_SEMANTICS,employees+sector,18,1,0,0,1,CONFLICT_WITH_EXTERNAL_OR_INTERNAL,"S1 excluded source-derived employee rows from circular independent validation; this check is reported, not used to rewrite data."
+INDICATOR_SEMANTICS,overall_income+urban_income,7,1,0,0,1,POSSIBLE_SHIFTED_COPY,Preserve-with-warning remains appropriate without an independent semantic anchor.
+INDICATOR_SEMANTICS,population,1,0,0,0,1,CROSS_FIELD_CONFLICT,Ordinary resident < registered relationships are not treated as errors; city40-2021 is the material ratio discontinuity.
+INDICATOR_SEMANTICS,raw_workbooks,38,1,0,0,0,LABEL_REMAP_CANDIDATE,The two ctiy labels were repaired in the urban-income S1 report; other raw label candidates remain evidence rows only.
+INVALID_CITY_LABEL,employees,36,36,0,0,0,S1_CAUGHT_NORMALIZED_LABEL,Plan04 candidate rows resolved under the Plan05 matching contract.
+INVALID_CITY_LABEL,urban_income,2,2,0,0,0,S1_CAUGHT_NORMALIZED_LABEL,Plan04 candidate rows resolved under the Plan05 matching contract.
+SHIFTED_DUPLICATE_TRAJECTORY,employees,2,2,0,0,0,S1_CAUGHT_BLOCK_RELATION,Plan04 candidate rows resolved under the Plan05 matching contract.
+SHIFTED_DUPLICATE_TRAJECTORY,sector,25,0,0,0,25,NO_NEW_CONFIRMED_FINDING,Plan04 candidate rows resolved under the Plan05 matching contract.
+SHIFTED_DUPLICATE_TRAJECTORY,unemployment,153,0,0,0,153,NO_NEW_CONFIRMED_FINDING,Plan04 candidate rows resolved under the Plan05 matching contract.
+TEMPORAL_JUMP,age,133,0,0,0,133,NO_NEW_CONFIRMED_FINDING,Plan04 candidate rows resolved under the Plan05 matching contract.
+TEMPORAL_JUMP,density,21,14,0,0,7,S1_CAUGHT_INTERNAL_RULE_MATCH,Plan04 candidate rows resolved under the Plan05 matching contract.
+TEMPORAL_JUMP,employees,27,1,0,0,26,S1_CAUGHT_INTERNAL_RULE_MATCH,Plan04 candidate rows resolved under the Plan05 matching contract.
+TEMPORAL_JUMP,overall_consumption,13,0,0,0,13,NO_NEW_CONFIRMED_FINDING,Plan04 candidate rows resolved under the Plan05 matching contract.
+TEMPORAL_JUMP,population,8,0,1,1,7,CITY40_CRITICAL_FALSE_NEGATIVE_RETAINED,Plan04 candidate rows resolved under the Plan05 matching contract.
+TEMPORAL_JUMP,rural_consumption,30,0,0,0,30,NO_NEW_CONFIRMED_FINDING,Plan04 candidate rows resolved under the Plan05 matching contract.
+TEMPORAL_JUMP,rural_income,17,0,0,0,17,NO_NEW_CONFIRMED_FINDING,Plan04 candidate rows resolved under the Plan05 matching contract.
+TEMPORAL_JUMP,sector,152,7,0,2,145,S1_CAUGHT_INTERNAL_RULE_MATCH,Plan04 candidate rows resolved under the Plan05 matching contract.
+TEMPORAL_JUMP,unemployment,115,0,0,0,115,NO_NEW_CONFIRMED_FINDING,Plan04 candidate rows resolved under the Plan05 matching contract.
+TEMPORAL_JUMP,urban_consumption,28,0,0,0,28,NO_NEW_CONFIRMED_FINDING,Plan04 candidate rows resolved under the Plan05 matching contract.
+TEMPORAL_JUMP,urban_income,14,0,0,0,14,NO_NEW_CONFIRMED_FINDING,Plan04 candidate rows resolved under the Plan05 matching contract.
+TEMPORAL_JUMP,urbanization,14,0,0,0,14,NO_NEW_CONFIRMED_FINDING,Plan04 candidate rows resolved under the Plan05 matching contract.
+TEMPORAL_JUMP,wage,167,0,0,0,167,NO_NEW_CONFIRMED_FINDING,Plan04 candidate rows resolved under the Plan05 matching contract.
+YEAR_SHIFT,employees,2,2,0,0,0,S1_CAUGHT_BLOCK_RELATION,Both TRUE_YEAR_SHIFT blocks match historical S1 quarantine rows.
