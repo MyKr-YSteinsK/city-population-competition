@@ -1701,7 +1701,7 @@ def build_handoff(summary: dict[str, Any], aggregate: pd.DataFrame, sensitivity:
         "## Acceptance",
         f"- Contract/geometry checks: `{summary['acceptance']['contract_geometry_passed']}`; historical CatBoost reproduction: `{summary['acceptance']['historical_catboost_compatibility_passed']}`.",
         f"- Coverage: `{summary['acceptance']['coverage_passed']}`; leakage: `{summary['acceptance']['leakage_passed']}`; preprocessing leakage: `{summary['acceptance']['preprocessing_leakage_passed']}`; metric recomputation: `{summary['acceptance']['metrics_recomputed']}`.",
-        f"- Blind boundary: `{summary['acceptance']['blind_boundary_passed']}`; no truth: `{summary['boundary']['truth_accessed']}`; no 2023 prediction: `{summary['boundary']['prediction_2023_generated']}`.",
+        f"- Blind boundary: `{summary['acceptance']['blind_boundary_passed']}`; no truth: `{not summary['boundary']['truth_accessed']}`; no 2023 prediction: `{not summary['boundary']['prediction_2023_generated']}`.",
         "",
         "## Required Evidence",
         f"- Actual fits: inner `{summary['runtime']['inner_fit_count']}`, outer `{summary['runtime']['outer_fit_count']}`, total `{summary['runtime']['total_fit_count']}`.",
