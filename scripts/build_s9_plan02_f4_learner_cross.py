@@ -49,6 +49,10 @@ HISTORICAL_SOURCE_BLOB = "4185ed8a95b26af4b203f26202e2f97cf9f6b8eb"
 HISTORICAL_SOURCE_PATH = "scripts/build_s5_plan06e_delta_growth_framing.py"
 SEED = 20260919
 CHECKPOINT_VERSION = 1
+# The completed checkpoints were produced by this fit-producing contract.
+# Keep the identity stable for post-fit aggregation fixes; any change to the
+# fit geometry, learner configs, or payload shape must bump CHECKPOINT_VERSION.
+CHECKPOINT_CONTRACT_COMMIT = "c5d0c648eb98db33f2ac2c5e6eadd02a3213e97d"
 TARGETS = ("resident", "registered")
 SCENARIOS = (
     "R1_REFERENCE_SNAPSHOT_LAG",
@@ -413,7 +417,7 @@ def checkpoint_identity(
     return {
         "checkpoint_version": CHECKPOINT_VERSION,
         "plan_id": PLAN_ID,
-        "runner_commit": worker_commit,
+        "runner_commit": CHECKPOINT_CONTRACT_COMMIT,
         "parent_sha": PARENT_SHA,
         "framing_id": FRAMING_ID,
         "feature_contract": FEATURE_CONTRACT,
@@ -1909,11 +1913,15 @@ def run(root: Path, fit_workers: int, stop_after_groups: int | None = None) -> d
     if int(inner_evidence["fold_eligible"].sum()) != 264 * len(LEARNER_IDS) * 3:
         raise ValueError("inner evidence fit count drift")
     compatibility_native = learner_oof.loc[learner_oof["candidate_id"] == "CATBOOST_HISTORICAL_NATIVE_CITY_REFERENCE"].copy()
-    aggregate_learners, origin_learners, city_learners = build_metrics(learner_oof)
-    compatibility_placeholder = pd.DataFrame()
-    compatibility = compare_historical_catboost(root, compatibility_native, selection_frame.loc[selection_frame["candidate_id"] == "CATBOOST_HISTORICAL_NATIVE_CITY_REFERENCE"], aggregate_learners, origin_learners)
     combined_oof = pd.concat([learner_oof, controls], ignore_index=True, sort=False)
     aggregate, per_origin, city_errors = build_metrics(combined_oof)
+    compatibility = compare_historical_catboost(
+        root,
+        compatibility_native,
+        selection_frame.loc[selection_frame["candidate_id"] == "CATBOOST_HISTORICAL_NATIVE_CITY_REFERENCE"],
+        aggregate.loc[aggregate["candidate_id"] == "CATBOOST_HISTORICAL_NATIVE_CITY_REFERENCE"],
+        per_origin.loc[per_origin["candidate_id"] == "CATBOOST_HISTORICAL_NATIVE_CITY_REFERENCE"],
+    )
     correlations = build_correlations(combined_oof)
     aggregate = add_reference_metrics(aggregate, correlations)
     coverage = build_coverage(combined_oof)
