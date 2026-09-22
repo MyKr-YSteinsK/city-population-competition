@@ -3,8 +3,8 @@
 Status: S8_TRUTH_PROVISIONAL_FREEZE_RETAINED
 Branch: codex/s8-truth-reconstruction-v1
 Base SHA: 0a74372ea4e3555b3d659e6a2c77647b92eabea4
-Artifact Freeze Commit: PENDING_ARTIFACT_FREEZE_COMMIT
-Final Branch HEAD: PENDING_FINAL_BRANCH_HEAD
+Artifact Freeze Commit: b877933
+Final Branch HEAD: b877933
 Working tree at generation: metadata may be pending after artifact commit
 
 Truth version: candidate_truth_2023_v2
