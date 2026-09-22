@@ -1,0 +1,18 @@
+{
+  "base_prefix": "C:\\Users\\Yukis\\AppData\\Local\\Python\\pythoncore-3.14-64",
+  "captured_at_utc": "2026-09-22T04:29:41.118484+00:00",
+  "disposable_runtime_root": "C:\\Users\\Yukis\\AppData\\Local\\Temp\\s10_plan01_original_run_20260922",
+  "exact_command": "python forecast_population.py",
+  "module_path": "C:\\Users\\Yukis\\AppData\\Local\\Temp\\s10_plan01_original_run_20260922\\forecast_population.py",
+  "os": "Windows-11-10.0.26200-SP0",
+  "packages": {
+    "numpy": "2.5.3",
+    "openpyxl": "3.1.5",
+    "pandas": "3.0.6",
+    "scikit-learn": "1.9.1"
+  },
+  "python_executable": "C:\\Users\\Yukis\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+  "python_version": "3.14.6",
+  "sys_prefix": "C:\\Users\\Yukis\\AppData\\Local\\Python\\pythoncore-3.14-64",
+  "virtualenv": false
+}

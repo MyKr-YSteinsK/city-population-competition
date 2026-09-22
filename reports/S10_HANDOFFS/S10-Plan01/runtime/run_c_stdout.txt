@@ -1,0 +1,196 @@
+
+=== resident ===
+                        n     mae   medae    rmse
+method                                           
+local_linear3         200  16.133   3.167  35.908
+local_slope3          200  16.395   3.000  36.533
+local_slope5          200  16.625   4.000  37.029
+local_mean_slope5     200  16.907   4.300  36.799
+local_linear5         200  16.967   4.100  37.381
+local_last            200  24.885   6.000  50.399
+model_extra_trees     200  27.166   8.665  54.163
+model_random_forest   200  30.679  10.566  60.801
+model_gradient_huber  200  31.275  13.028  59.414
+model_ridge           200  46.563  26.753  71.583
+chosen methods:
+  city  year        pred               method
+ city1  2023  340.574106  density_plus_slope5
+ city2  2023  768.411154          model_ridge
+ city3  2023 1858.500000        local_linear3
+ city4  2023  117.447876  density_plus_slope5
+ city5  2023 1333.607667    model_extra_trees
+ city6  2023  979.333333        local_linear3
+ city7  2023  530.639191  density_plus_slope5
+ city8  2023  440.000000         local_slope3
+ city9  2023  630.000000        local_linear3
+city10  2023  253.000000  density_plus_slope5
+city11  2023  550.701447  density_plus_slope5
+city12  2023  438.000000        local_linear3
+city13  2023  503.000000         local_slope3
+city14  2023  282.000000        local_linear3
+city15  2023  905.480322 model_gradient_huber
+city16  2023  285.000000           local_last
+city17  2023 1944.166667        local_linear3
+city18  2023  525.000000           local_last
+city19  2023  705.000000         density_hold
+city20  2023  229.411765         density_hold
+city21  2023 1289.937429    model_extra_trees
+city22  2023  973.472698          model_ridge
+city23  2023  269.000000        local_linear3
+city24  2023  946.788879  density_plus_slope5
+city25  2023  985.674472 model_gradient_huber
+city26  2023  821.666667        local_linear3
+city27  2023  552.000000         local_slope3
+city28  2023 1031.400000        local_linear5
+city29  2023  668.000000         local_slope5
+city30  2023  462.000000         local_slope3
+city31  2023  490.000000        local_linear3
+city32  2023  472.000000  density_plus_slope5
+city33  2023  968.251580  density_plus_slope5
+city34  2023  613.833333        local_linear3
+city35  2023  698.000000           local_last
+city36  2023  393.609334 model_gradient_huber
+city37  2023  459.166667        local_linear3
+city38  2023  416.000000         local_slope5
+city39  2023  222.200000    local_mean_slope5
+city40  2023  321.833333        local_linear3
+predictions:
+city_id  year    pred
+  city1  2023  340.57
+  city2  2023  768.41
+  city3  2023 1858.50
+  city4  2023  117.45
+  city5  2023 1333.61
+  city6  2023  979.33
+  city7  2023  530.64
+  city8  2023  440.00
+  city9  2023  630.00
+ city10  2023  253.00
+ city11  2023  550.70
+ city12  2023  438.00
+ city13  2023  503.00
+ city14  2023  282.00
+ city15  2023  905.48
+ city16  2023  285.00
+ city17  2023 1944.17
+ city18  2023  525.00
+ city19  2023  705.00
+ city20  2023  229.41
+ city21  2023 1289.94
+ city22  2023  973.47
+ city23  2023  269.00
+ city24  2023  946.79
+ city25  2023  985.67
+ city26  2023  821.67
+ city27  2023  552.00
+ city28  2023 1031.40
+ city29  2023  668.00
+ city30  2023  462.00
+ city31  2023  490.00
+ city32  2023  472.00
+ city33  2023  968.25
+ city34  2023  613.83
+ city35  2023  698.00
+ city36  2023  393.61
+ city37  2023  459.17
+ city38  2023  416.00
+ city39  2023  222.20
+ city40  2023  321.83
+
+=== registered ===
+                        n     mae   medae    rmse
+method                                           
+local_linear3         200   6.536   3.333  15.457
+local_slope3          200   7.152   4.000  16.069
+local_mean_slope5     200   7.560   3.800  16.546
+local_linear5         200   8.303   4.400  17.192
+local_slope5          200   8.462   5.000  17.113
+model_extra_trees     200  11.734   5.682  23.023
+local_last            200  12.442   6.000  23.527
+model_random_forest   200  14.151   8.067  25.567
+model_hist_gradient   200  18.578   9.509  30.450
+model_gradient_huber  200  19.551  13.447  30.526
+chosen methods:
+  city  year        pred              method
+ city1  2023  270.000000       local_linear5
+ city2  2023  521.000000       local_linear3
+ city3  2023  554.000000        local_slope3
+ city4  2023   96.000000          local_last
+ city5  2023  775.117951 model_hist_gradient
+ city6  2023  512.833333       local_linear3
+ city7  2023  450.000000        local_slope3
+ city8  2023  558.000000          local_last
+ city9  2023  830.824550 model_random_forest
+city10  2023  273.000000       local_linear5
+city11  2023  378.890190   model_extra_trees
+city12  2023  491.333333       local_linear3
+city13  2023  592.000000          local_last
+city14  2023  372.000000        local_slope3
+city15  2023 1035.000000          local_last
+city16  2023  335.000000          local_last
+city17  2023 1034.166667       local_linear3
+city18  2023  391.000000       local_linear5
+city19  2023  503.000000   local_mean_slope5
+city20  2023  255.000000          local_last
+city21  2023  856.093079 model_hist_gradient
+city22  2023  749.000000       local_linear3
+city23  2023  173.071946 model_hist_gradient
+city24  2023  734.781720         model_ridge
+city25  2023  624.833333       local_linear3
+city26  2023  749.166667       local_linear3
+city27  2023  585.312772 model_random_forest
+city28  2023  851.498898 model_random_forest
+city29  2023  613.541619   model_extra_trees
+city30  2023  534.000000          local_last
+city31  2023  406.400000   local_mean_slope5
+city32  2023  434.333333       local_linear3
+city33  2023  845.546072 model_random_forest
+city34  2023  814.000000          local_last
+city35  2023  874.800000   local_mean_slope5
+city36  2023  430.000000        local_slope3
+city37  2023  451.000000       local_linear3
+city38  2023  463.000000        local_slope5
+city39  2023  199.166667       local_linear3
+city40  2023  270.500000          local_last
+predictions:
+city_id  year    pred
+  city1  2023  270.00
+  city2  2023  521.00
+  city3  2023  554.00
+  city4  2023   96.00
+  city5  2023  775.12
+  city6  2023  512.83
+  city7  2023  450.00
+  city8  2023  558.00
+  city9  2023  830.82
+ city10  2023  273.00
+ city11  2023  378.89
+ city12  2023  491.33
+ city13  2023  592.00
+ city14  2023  372.00
+ city15  2023 1035.00
+ city16  2023  335.00
+ city17  2023 1034.17
+ city18  2023  391.00
+ city19  2023  503.00
+ city20  2023  255.00
+ city21  2023  856.09
+ city22  2023  749.00
+ city23  2023  173.07
+ city24  2023  734.78
+ city25  2023  624.83
+ city26  2023  749.17
+ city27  2023  585.31
+ city28  2023  851.50
+ city29  2023  613.54
+ city30  2023  534.00
+ city31  2023  406.40
+ city32  2023  434.33
+ city33  2023  845.55
+ city34  2023  814.00
+ city35  2023  874.80
+ city36  2023  430.00
+ city37  2023  451.00
+ city38  2023  463.00
+ city39  2023  199.17
+ city40  2023  270.50

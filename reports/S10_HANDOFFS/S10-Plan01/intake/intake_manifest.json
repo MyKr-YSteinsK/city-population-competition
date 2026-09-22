@@ -1,0 +1,20 @@
+{
+  "source": "user_supplied_external_script",
+  "original_filename": "forecast_population.py",
+  "original_source_path": "D:\\CS\\temp\\实验-城市人口\\forecast_population.py",
+  "intake_path": "reports/S10_HANDOFFS/S10-Plan01/intake/original/forecast_population.py",
+  "byte_size": 20738,
+  "line_count_lf_split": 441,
+  "sha256": "f719fa577d2c5b8fd51a024af0dd084390f849e7c3564a34ac816a4b35fb8342",
+  "expected_byte_size": 20738,
+  "expected_sha256": "f719fa577d2c5b8fd51a024af0dd084390f849e7c3564a34ac816a4b35fb8342",
+  "hash_match": true,
+  "git_base_sha": "0f8479f740ca938acc5ff2d7026d22ca1cdd1755",
+  "branch_at_intake": "codex/s10-plan01-external-script-forensics",
+  "intake_timestamp_utc": "2026-09-22T04:15:22.2267115Z",
+  "script_syntax_check": {
+    "command": "python -c \"import ast; from pathlib import Path; p=Path(r'D:\\\\CS\\\\temp\\\\实验-城市人口\\\\forecast_population.py'); ast.parse(p.read_bytes(), filename=str(p)); print('syntax=PASS')\"",
+    "result": "PASS",
+    "original_script_modified": false
+  }
+}

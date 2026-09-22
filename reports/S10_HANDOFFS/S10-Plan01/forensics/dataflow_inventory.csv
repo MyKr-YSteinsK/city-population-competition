@@ -1,0 +1,16 @@
+stage,code_evidence,inputs,operation,outputs,contract_note
+file_selection,forecast_population.py:20-24,RAW/*.xlsx,sorted glob and first match,one path per pattern,exact runtime path and hash required
+population_input,forecast_population.py:70-81,*人口规模*.xlsx,read first four columns rename/filter/numeric/sort,population city-year with resident and registered,raw target table is used directly
+auxiliary_input,forecast_population.py:85-133,6 auxiliary workbook patterns,reshape source-specific tables,auxiliary frames,density urbanization employment wage age and six income sheets
+duplicate_handling,forecast_population.py:135-146,auxiliary frames,groupby city/year mean then outer merge,exog city-year table,employment and other duplicate semantics are mean aggregation
+target_mutation,forecast_population.py:150-160,population,conditional city40 registered 2021 repair,repaired population,manual target mutation only on registered
+lookup_maps,forecast_population.py:163-200,population and exog,sorted per-city maps with as-of/exact/history helpers,target and exog maps,as-of carries stale observations
+local_candidates,forecast_population.py:234-258,target/exog maps,local trend and exact density candidates,local predictions,8 names but density pair resident-only and exact cutoff+1
+feature_construction,forecast_population.py:261-293,population/exog/maps/years,lag slope ratio proxy and as-of feature construction,feature rows,target history <= year-2 and exog as-of year-1
+preprocessing,forecast_population.py:296-304,train/test feature rows,train+test dummy union then train-only imputer,imputed matrices,no numerical test-statistic fit
+models,forecast_population.py:307-318,model name,instantiate fixed sklearn models,model object,5 pooled candidates and no search
+panel_fit,forecast_population.py:321-330,train/test matrices,target/model,optional train-only scaling then fit/predict,panel predictions,tree n_jobs=-1
+historical_validation,forecast_population.py:333-383,features/population/target maps,5 origins and local/panel predictions,validation records and method table,prints n MAE MedAE RMSE but not MSE
+final_fit,forecast_population.py:385-398,features/maps,cutoff 2021 and target year 2023,per-city-method final predictions,exog requested as-of 2022
+selector,forecast_population.py:400-415,city validation metrics and final predictions,per-city MAE ranking with n>=2 then global fallback,chosen city methods,non-nested apparent selector
+submission,forecast_population.py:418-436,chosen predictions,nonnegative clamp and two-decimal CSV output,submission_resident.csv/submission_registered.csv,output identity must be hash-compared across runs

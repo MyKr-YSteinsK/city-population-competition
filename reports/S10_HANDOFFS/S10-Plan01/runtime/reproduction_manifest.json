@@ -1,0 +1,64 @@
+{
+  "exact_command": "python forecast_population.py",
+  "runtime_policy": "disposable runtime with exactly seven competition-legal official XLSX files and no test.xls",
+  "original_script_sha256": "f719fa577d2c5b8fd51a024af0dd084390f849e7c3564a34ac816a4b35fb8342",
+  "original_script_modified": false,
+  "run_artifact_mapping": {
+    "run_a": "reports/S10_HANDOFFS/S10-Plan01/runtime/*_run_a.*",
+    "run_b": "reports/S10_HANDOFFS/S10-Plan01/runtime/*_run_b.*",
+    "run_c": "reports/S10_HANDOFFS/S10-Plan01/runtime/*_run_c.*"
+  },
+  "runs": [
+    {
+      "label": "Run A",
+      "runtime_root": "C:\\Users\\Yukis\\AppData\\Local\\Temp\\s10_plan01_original_run_20260922",
+      "status": "PASS_OUTPUTS_GENERATED_EXIT_UNOBSERVED",
+      "exit_code": "UNOBSERVED_AFTER_HOST_30_SECOND_WAIT",
+      "stdout_sha256": "e7b2ebf711e0f5892fcc2a1354e64b224e0f538cc2d1580d9930cd11e5a07fd0",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 7027,
+      "stderr_bytes": 0,
+      "resident_submission_sha256": "023b711c07d9efb72fdb1cf697195f50b8e4e68dd5cb94644c630b2c5e341676",
+      "registered_submission_sha256": "6ea774709b3712faad0e9fab587f8dde5d46b52f3112221b860a3bbfd0df70ea"
+    },
+    {
+      "label": "Run B",
+      "runtime_root": "C:\\Users\\Yukis\\AppData\\Local\\Temp\\s10_plan01_original_run_20260922_c",
+      "status": "PASS",
+      "exit_code": 0,
+      "elapsed_seconds": 65.847,
+      "stdout_sha256": "e7b2ebf711e0f5892fcc2a1354e64b224e0f538cc2d1580d9930cd11e5a07fd0",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 7027,
+      "stderr_bytes": 0,
+      "resident_submission_sha256": "023b711c07d9efb72fdb1cf697195f50b8e4e68dd5cb94644c630b2c5e341676",
+      "registered_submission_sha256": "6ea774709b3712faad0e9fab587f8dde5d46b52f3112221b860a3bbfd0df70ea"
+    },
+    {
+      "label": "Run C",
+      "runtime_root": "C:\\Users\\Yukis\\AppData\\Local\\Temp\\s10_plan01_original_run_20260922_b",
+      "status": "PASS_OUTPUTS_GENERATED_EXIT_UNOBSERVED",
+      "exit_code": "UNOBSERVED_AFTER_HOST_30_SECOND_WAIT",
+      "stdout_sha256": "e7b2ebf711e0f5892fcc2a1354e64b224e0f538cc2d1580d9930cd11e5a07fd0",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_bytes": 7027,
+      "stderr_bytes": 0,
+      "resident_submission_sha256": "023b711c07d9efb72fdb1cf697195f50b8e4e68dd5cb94644c630b2c5e341676",
+      "registered_submission_sha256": "6ea774709b3712faad0e9fab587f8dde5d46b52f3112221b860a3bbfd0df70ea"
+    }
+  ],
+  "comparison": {
+    "run_a_b_stdout_byte_equal": true,
+    "run_a_c_stdout_byte_equal": true,
+    "resident_submissions_byte_equal_all_three": true,
+    "registered_submissions_byte_equal_all_three": true,
+    "deterministic_verdict": "deterministic_exact"
+  },
+  "harness": {
+    "command": "python scripts/s10_plan01_forensic_recompute.py --module-path <runtime>/forecast_population.py --repo-root <repo> --output-dir <repo>/reports/S10_HANDOFFS/S10-Plan01/forensics",
+    "exit_code": 0,
+    "elapsed_seconds": 58.585,
+    "stdout_bytes": 0,
+    "stderr_bytes": 0
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "city": "city40",
+  "prior_2017_2020_values": [
+    272.0,
+    271.0,
+    271.0,
+    270.0
+  ],
+  "prior_full_median": 271.0,
+  "prior_tail_two_median": 270.5,
+  "registered_after_repair": 270.5,
+  "registered_before_repair": 65.0,
+  "repair_triggered": true,
+  "resident_changed_by_repair": false,
+  "trigger_condition_len_prior_at_least_2": true,
+  "trigger_condition_ratio_gt_2": true,
+  "trigger_ratio_full_prior_median_over_current": 4.1692307692307695,
+  "year": 2021
+}
