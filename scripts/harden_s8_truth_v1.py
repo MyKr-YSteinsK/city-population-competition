@@ -623,7 +623,7 @@ def manifest_base(manifest: dict[str, Any], repo_root: Path, generated_at: str, 
     result.update({
         "truth_version": truth_version,
         "plan_id": PLAN_ID,
-        "plan02_base_commit": git(repo_root, "rev-parse", "HEAD"),
+        "plan02_base_commit": manifest.get("plan02_base_commit") or git(repo_root, "rev-parse", "HEAD"),
         "branch": git(repo_root, "rev-parse", "--abbrev-ref", "HEAD"),
         "generation_script": "scripts/harden_s8_truth_v1.py",
         "generated_at": generated_at,

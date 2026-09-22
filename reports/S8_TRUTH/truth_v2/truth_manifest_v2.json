@@ -66,7 +66,7 @@
     "model_evaluation_performed": false,
     "test_xls_accessed": false
   },
-  "plan02_base_commit": "380d1c7c496fb0bcf85a850f1fe1a2b6ecffb4c0",
+  "plan02_base_commit": "b87793311244235ad75b519471a79f6ef7ba5b5a",
   "truth_tier_counts": {
     "TIER1": 22,
     "TIER2": 14,
